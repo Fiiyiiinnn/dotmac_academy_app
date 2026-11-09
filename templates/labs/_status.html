@@ -1,0 +1,86 @@
+{% if recovered_operation and recovered_operation.kind != "check" and recovered_operation.state in ("queued", "claimed") %}
+  {% with operation=recovered_operation, score=none %}
+    {% include "labs/_operation.html" %}
+  {% endwith %}
+{% else %}
+{% if recovered_operation and recovered_operation.kind != "check" %}
+  {% with operation=recovered_operation, score=none %}
+    {% include "labs/_operation.html" %}
+  {% endwith %}
+{% endif %}
+<div class="card p-6">
+  {% if instance.status in ("queued", "provisioning", "resetting") %}
+    <div class="flex items-center gap-2.5">
+      <span class="h-2 w-2 animate-pulse rounded-full bg-clay-500"></span>
+      <span class="text-xs font-semibold uppercase tracking-[0.16em] text-ink-soft">Status</span>
+      <span class="inline-flex items-center rounded-full bg-sand-200 px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide text-ink-soft">{{ instance.status }}</span>
+    </div>
+    <p class="mt-3 text-ink-soft">Provisioning your lab&hellip;</p>
+    <div hx-get="/labs/instances/{{ instance.id }}/status"
+         hx-trigger="load delay:2s"
+         hx-target="#lab-state" hx-swap="innerHTML"></div>
+  {% elif instance.status == "active" %}
+    <div class="flex items-center gap-2.5">
+      <span class="h-2 w-2 rounded-full bg-brand-600"></span>
+      <span class="text-xs font-semibold uppercase tracking-[0.16em] text-ink-soft">Status</span>
+      <span class="inline-flex items-center rounded-full bg-brand-100 px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide text-brand-800">{{ instance.status }}</span>
+    </div>
+
+    {% if lab_console_live(instance) %}
+      <h2 class="mt-5 font-display text-lg text-ink">Consoles</h2>
+      <ul class="mt-2 space-y-1.5">
+      {% for node in instance.consoles %}
+        <li>
+          <a class="group inline-flex min-h-11 items-center gap-2 font-medium text-brand-700 hover:text-brand-800" target="_blank"
+             href="/labs/instances/{{ instance.id }}/console/{{ node }}/">
+            <span class="font-mono text-sm">{{ node }}</span>
+            <span class="text-xs text-ink-soft transition-transform group-hover:translate-x-0.5" aria-hidden="true">open &nearr;</span>
+          </a>
+          {% set kind = instance.consoles[node].get("kind", "") %}
+          {% if kind == "vr-ros" or kind.startswith("vr-") %}
+          <p class="text-sm text-ink-soft">The router may still be starting; retry the console if it is not available.</p>
+          {% endif %}
+        </li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+
+    {% if instance.error %}
+      <p class="mt-4 rounded-lg bg-clay-500/10 px-4 py-3 text-sm text-clay-700">
+        This lab has an unresolved infrastructure error and cannot be checked yet: {{ instance.error }}
+      </p>
+    {% endif %}
+
+    <div class="mt-6 flex flex-wrap gap-3 border-t border-sand-200 pt-5">
+      {% if not instance.error %}
+      <form hx-post="/labs/instances/{{ instance.id }}/check" hx-target="#lab-checks" hx-swap="innerHTML">
+        <button class="btn-primary" type="submit">Run checks</button>
+      </form>
+      {% endif %}
+      <form hx-post="/labs/instances/{{ instance.id }}/reset" hx-target="#lab-state" hx-swap="innerHTML">
+        <button class="btn-ghost" type="submit">Reset lab</button>
+      </form>
+    </div>
+    <div id="lab-checks" class="mt-5">
+      {% if recovered_operation and recovered_operation.kind == "check" %}
+        {% with operation=recovered_operation, score=none %}
+          {% include "labs/_operation.html" %}
+        {% endwith %}
+      {% elif saved_score %}
+        <p class="mb-2 text-sm text-ink-soft">Last saved checks for this lab environment. Run checks again after making changes.</p>
+        {% with score=saved_score %}{% include "labs/_checks.html" %}{% endwith %}
+      {% endif %}
+    </div>
+  {% elif instance.status == "error" %}
+    <div class="flex items-center gap-2.5">
+      <span class="text-xs font-semibold uppercase tracking-[0.16em] text-ink-soft">Status</span>
+      <span class="inline-flex items-center rounded-full bg-clay-500/15 px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide text-clay-600">{{ instance.status }}</span>
+    </div>
+    <p class="mt-3 text-clay-600">{{ instance.error }}</p>
+    <form class="mt-5" hx-post="/labs/instances/{{ instance.id }}/reset" hx-target="#lab-state" hx-swap="innerHTML">
+      <button class="btn-primary" type="submit">Retry lab</button>
+    </form>
+  {% endif %}
+</div>
+
+{% endif %}

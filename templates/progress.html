@@ -1,0 +1,142 @@
+{% extends "base.html" %}{% block content_width %}max-w-5xl{% endblock %}{% block content %}
+<p class="page-eyebrow">Track record</p>
+<h1 class="page-title">Your progress</h1>
+
+{% if activity %}
+<section class="card mt-8 p-6" id="learning-activity">
+  <h2 class="text-xl font-medium text-ink">My learning activity</h2>
+  <div class="mt-4 grid gap-4 sm:grid-cols-4">
+    <div>
+      <p class="text-xs font-semibold uppercase tracking-wide text-ink-soft">Last 8 weeks</p>
+      <div class="mt-2 flex h-14 items-end gap-1" aria-label="Weekly activity">
+        {% for b in activity.weekly %}
+        <div class="w-4 rounded-t bg-brand-400" title="{{ b.week_start }}: {{ b.count }} events"
+             style="height: {{ (100 * b.count / activity.max_week) | round | int if activity.max_week else 4 }}%; min-height: 4px"></div>
+        {% endfor %}
+      </div>
+    </div>
+    <div>
+      <p class="text-xs font-semibold uppercase tracking-wide text-ink-soft">Completion velocity</p>
+      <p class="mt-2 text-2xl font-medium text-ink">{{ activity.velocity_per_week }}</p>
+      <p class="text-xs text-ink-soft">completions per week (4-week average)</p>
+    </div>
+    <div>
+      <p class="text-xs font-semibold uppercase tracking-wide text-ink-soft">Grade trend</p>
+      <p class="mt-2 text-2xl font-medium text-ink">
+        {% if activity.grade_trend.direction == 'up' %}&#8599; Improving
+        {% elif activity.grade_trend.direction == 'down' %}&#8600; Slipping
+        {% else %}&#8594; Steady{% endif %}
+      </p>
+      <p class="text-xs text-ink-soft">last {{ activity.grade_trend.points | length }} scores</p>
+    </div>
+    <div>
+      <p class="text-xs font-semibold uppercase tracking-wide text-ink-soft">Last activity</p>
+      <p class="mt-2 text-2xl font-medium text-ink">
+        {% if activity.days_since_last is none %}&mdash;{% elif activity.days_since_last == 0 %}Today{% else %}{{ activity.days_since_last }}d ago{% endif %}
+      </p>
+    </div>
+  </div>
+  {% if activity.disciplines.strong %}
+  <p class="mt-4 text-sm text-ink-soft">
+    Strongest area: <span class="font-semibold text-ink">{{ activity.disciplines.strong }}</span>
+    {% if activity.disciplines.weak %} &middot; needs attention: <span class="font-semibold text-ink">{{ activity.disciplines.weak }}</span>{% endif %}
+    <span class="text-xs">(by average best score per discipline)</span>
+  </p>
+  {% endif %}
+  <div class="mt-4 rounded-lg {% if activity.blocker %}bg-clay-500/10{% else %}bg-brand-50{% endif %} p-4">
+    <p class="text-sm font-semibold text-ink">Next step</p>
+    <p class="mt-1 text-sm text-ink-soft">{{ activity.recommendation }}
+      {% if activity.blocker %}<span class="text-xs">(rule: {{ activity.blocker.rule }})</span>{% endif %}
+    </p>
+  </div>
+</section>
+{% endif %}
+
+{% if not overview %}
+<div class="card mt-8 p-8 text-center text-ink-soft">Nothing to show yet — progress appears here once you're enrolled.</div>
+{% endif %}
+
+{% for o in overview %}
+<section class="card mt-8 p-6" id="course-{{ o.course.id }}">
+  <div class="flex flex-wrap items-baseline gap-3">
+    <h2 class="text-xl font-medium text-ink">{{ o.course.title }}</h2>
+    {% if o.trend == 'up' %}
+    <span class="inline-flex items-center rounded-full bg-brand-100 px-2.5 py-0.5 text-xs font-semibold text-brand-800">Trending up</span>
+    {% elif o.trend == 'down' %}
+    <span class="inline-flex items-center rounded-full bg-clay-500/15 px-2.5 py-0.5 text-xs font-semibold text-clay-600">Trending down</span>
+    {% endif %}
+    <span class="ml-auto font-mono text-sm tabular-nums text-ink-soft">Grade {{ o.grade_pct }}%{% if o.final_threshold_pct %} &middot; final pass mark {{ o.final_threshold_pct }}%{% endif %}</span>
+  </div>
+
+  <div class="mt-3 h-2 w-full overflow-hidden rounded-full bg-sand-200">
+    <div class="h-full rounded-full bg-brand-500" style="width: {{ o.completion_pct }}%"></div>
+  </div>
+  <p class="mt-2 text-xs text-ink-soft">{{ o.completion_pct }}% complete
+    {% if o.certificate.status == 'issued' %} &middot; <a class="font-semibold text-brand-700 hover:underline" href="{{ '/certificates/' ~ o.course.id }}">Download certificate ({{ o.certificate.serial }})</a>
+    {% elif o.certificate.status == 'eligible' %} &middot; <a class="font-semibold text-brand-700 hover:underline" href="{{ '/certificates/' ~ o.course.id }}">Certificate ready — download</a>
+    {% endif %}</p>
+
+  {% if o.overdue or o.upcoming %}
+  <div class="mt-4 flex flex-wrap gap-x-6 gap-y-1 text-xs">
+    {% for r in o.overdue %}
+    <span class="font-semibold text-clay-600">Overdue: {{ r.activity.title }} (was due {{ r.due_at | localtime | datefmt }})</span>
+    {% endfor %}
+    {% for r in o.upcoming[:3] %}
+    <span class="text-ink-soft">Due {{ r.due_at | localtime | datefmt }}: {{ r.activity.title }}</span>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <div class="table-frame mt-5 rounded-xl border border-sand-200" role="region" aria-label="Course progress table; scroll horizontally to see all columns" tabindex="0">
+    <table class="data-table">
+      <thead>
+        <tr class="border-b border-sand-300 bg-sand-200/60 text-left text-xs uppercase tracking-wider text-ink-soft">
+          <th scope="col" class="p-3 font-semibold">Activity</th>
+          <th scope="col" class="p-3 font-semibold">Ch</th>
+          <th scope="col" class="p-3 font-semibold">Score</th>
+          <th scope="col" class="p-3 font-semibold">Pass mark</th>
+          <th scope="col" class="p-3 font-semibold">Attempts</th>
+          <th scope="col" class="p-3 font-semibold">Result</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-sand-200">
+        {% for r in o.rows %}
+        <tr class="transition-colors hover:bg-sand-100 {{ 'bg-clay-500/5' if r.overdue else '' }}">
+          <td class="p-3 font-medium text-ink">
+            <a href="/activities/{{ r.activity.id }}" class="hover:underline">{{ r.activity.title }}</a>
+            {% if r.feedback_available %}<span class="ml-1 text-xs text-brand-700">feedback</span>{% endif %}
+          </td>
+          <td class="p-3 font-mono tabular-nums text-ink-soft">{{ r.chapter_number }}</td>
+          <td class="p-3 font-mono tabular-nums text-ink">
+            {% if r.score %}{{ r.score.score }}/{{ r.score.max_score }} ({{ r.pct }}%){% else %}&mdash;{% endif %}
+          </td>
+          <td class="p-3 font-mono tabular-nums text-ink-soft">{{ r.threshold_pct }}%</td>
+          <td class="p-3 font-mono tabular-nums text-ink-soft">
+            {{ r.attempts_used }}{% if r.max_attempts %}/{{ r.max_attempts }}{% endif %}
+            {% if r.attempts_left is not none and not r.passed %}<span class="text-xs"> ({{ r.attempts_left }} left)</span>{% endif %}
+          </td>
+          <td class="p-3">
+            {% if r.passed %}
+            <span class="inline-flex items-center rounded-full bg-brand-100 px-2.5 py-0.5 text-xs font-semibold text-brand-800">Pass</span>
+            {% elif r.score %}
+            <span class="inline-flex items-center rounded-full bg-clay-500/15 px-2.5 py-0.5 text-xs font-semibold text-clay-600">Fail</span>
+            {% elif r.overdue %}
+            <span class="inline-flex items-center rounded-full bg-clay-500/15 px-2.5 py-0.5 text-xs font-semibold text-clay-600">Overdue</span>
+            {% else %}
+            <span class="inline-flex items-center rounded-full bg-sand-200 px-2.5 py-0.5 text-xs font-semibold text-ink-soft">Not attempted</span>
+            {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  {% if o.trend_points | length >= 2 %}
+  <p class="mt-3 text-xs text-ink-soft">Recent scores:
+    {% for pt in o.trend_points %}<span class="font-mono tabular-nums">{{ pt }}%</span>{{ ' → ' if not loop.last }}{% endfor %}
+  </p>
+  {% endif %}
+</section>
+{% endfor %}
+{% endblock %}

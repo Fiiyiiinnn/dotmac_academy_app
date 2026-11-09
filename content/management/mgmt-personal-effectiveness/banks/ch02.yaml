@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-personal-effectiveness
+  kind: chapter
+  chapter: 2
+  version: 1
+  policy:
+    mode: practice
+  questions:
+    - id: pe2-01
+      stem: "The quadrant where the returns are is:"
+      type: single
+      options: ["Important, not urgent", "Urgent and important", "Urgent, not important", "Neither urgent nor important"]
+      correct: ["Important, not urgent"]
+      rubric_category: recall
+      explanation: "Planning, prevention, coaching, systems \u2014 the work that stops quadrant one recurring. It has no deadline, so it needs a defended block."
+      weight: 1
+    - id: pe2-02
+      stem: "A priority list reading \"high, high, high, medium\" is best described as:"
+      type: single
+      options: ["An inventory", "A ranking", "A backlog", "A forecast"]
+      correct: ["An inventory"]
+      rubric_category: application
+      explanation: "A real order is 1, 2, 3, and its value is answering whether something new goes above or below number three."
+      weight: 1
+    - id: pe2-03
+      stem: "Ranking on value alone tends to produce a list on which:"
+      type: single
+      options: ["Nothing finishes", "Everything slips", "Costs rise", "Quality falls"]
+      correct: ["Nothing finishes"]
+      rubric_category: analysis
+      explanation: "The item worth a great deal that needs forty hours may lose to three items worth less needing two hours each."
+      weight: 1
+    - id: pe2-04
+      stem: "The strongest form of declining work is:"
+      type: single
+      options: ["The trade-off", "The flat refusal", "The soft delay", "The counter-offer"]
+      correct: ["The trade-off"]
+      rubric_category: application
+      explanation: "\"Yes, and that pushes X \u2014 is that the right swap?\" It hands the decision to whoever owns the priority, with the cost attached."
+      weight: 1
+    - id: pe2-05
+      stem: "Absorbing extra work into evenings is damaging chiefly because it makes the overcommitment:"
+      type: single
+      options: ["Invisible", "Permanent", "Unpaid", "Unfair"]
+      correct: ["Invisible"]
+      rubric_category: analysis
+      explanation: "So the plan that caused it never gets corrected."
+      weight: 1
+    - id: pe2-06
+      stem: "Taking on six hours of work against 2.8 hours of headroom consumes the headroom and:"
+      type: single
+      options: ["Hours that do not exist", "The unplanned buffer only", "Next week's capacity", "Another person's time"]
+      correct: ["Hours that do not exist"]
+      rubric_category: application
+      explanation: "Which will be found in the buffer, in quality, or in evenings \u2014 none of which appear on a plan."
+      weight: 1
+    - id: pe2-07
+      stem: "The trade-off conversation only works if you can point to:"
+      type: single
+      options: ["Your real number", "A written policy", "Your manager's approval", "A team agreement"]
+      correct: ["Your real number"]
+      rubric_category: analysis
+      explanation: "A manager who has never logged a week has no figure to cite, and \"I'm quite busy\" is not an argument anyone must accept."
+      weight: 1
+    - id: pe2-08
+      stem: "Re-ranking priorities continuously rather than on a rhythm means:"
+      type: single
+      options: ["The loudest request wins", "Nothing gets ranked", "Deadlines are missed", "Quality declines"]
+      correct: ["The loudest request wins"]
+      rubric_category: application
+      explanation: "A weekly pass beats re-arguing the order every time somebody asks."
+      weight: 1
+    - id: pe2-09
+      stem: "If the honest plan still exceeds honest capacity after removing waste, the issue is:"
+      type: single
+      options: ["Resourcing", "Prioritisation", "Discipline", "Delegation"]
+      correct: ["Resourcing"]
+      rubric_category: recall
+      explanation: "No technique fixes it, and treating it as a discipline failure leads to the work being absorbed quietly until something gives."
+      weight: 1
+    - id: pe2-10
+      stem: "A defended block survives a busy week mainly because it is treated as:"
+      type: single
+      options: ["A real meeting", "A personal goal", "A team policy", "An experiment"]
+      correct: ["A real meeting"]
+      rubric_category: application
+      explanation: "With the seriousness of an appointment with your manager. That is the only protection that holds."
+      weight: 1

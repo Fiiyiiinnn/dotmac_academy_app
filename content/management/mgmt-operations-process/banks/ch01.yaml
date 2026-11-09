@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-operations-process
+  kind: chapter
+  chapter: 1
+  version: 1
+  policy:
+    mode: practice
+  questions:
+    - id: op1-01
+      stem: "A process map should be drawn as the process:"
+      type: single
+      options: ["Actually runs", "Should ideally run", "Was designed to run", "Is documented to run"]
+      correct: ["Actually runs"]
+      rubric_category: recall
+      explanation: "An ideal-state map is a proposal rather than a diagnosis, and it hides exactly the steps you need to see."
+      weight: 1
+    - id: op1-02
+      stem: "Before mapping anything, the first question is what the process:"
+      type: single
+      options: ["Produces, and for whom", "Costs to operate", "Was designed to do", "Reports to management"]
+      correct: ["Produces, and for whom"]
+      rubric_category: recall
+      explanation: "Efficiency without that optimises the wrong thing, and faster production of something nobody needed is the most expensive outcome available."
+      weight: 1
+    - id: op1-03
+      stem: "A rework loop occurring in one job out of eight should be drawn as:"
+      type: single
+      options: ["A step", "An exception", "A risk item", "A quality note"]
+      correct: ["A step"]
+      rubric_category: application
+      explanation: "It is where most processes leak, and people forget to draw it because it feels like an exception."
+      weight: 1
+    - id: op1-04
+      stem: "The middle category \u2014 necessary but not value-adding \u2014 must not be removed because it covers:"
+      type: single
+      options: ["Safety and controls", "Manager preferences", "Legacy habits", "Reporting overhead"]
+      correct: ["Safety and controls"]
+      rubric_category: application
+      explanation: "Compliance records, safety checks and financial controls. The goal is to make them cheap, not absent."
+      weight: 1
+    - id: op1-05
+      stem: "A step nobody can explain should first be treated as:"
+      type: single
+      options: ["A possible control", "Obvious waste", "A training gap", "A documentation error"]
+      correct: ["A possible control"]
+      rubric_category: analysis
+      explanation: "It may be a control whose original incident nobody remembers. Ask why it exists before removing it."
+      weight: 1
+    - id: op1-06
+      stem: "Comparing working time to elapsed time across a process usually shows that most duration is:"
+      type: single
+      options: ["Waiting", "Processing", "Approvals", "Travel"]
+      correct: ["Waiting"]
+      rubric_category: recall
+      explanation: "Jobs sit in queues: waiting for approval, for parts, for someone to notice, or because that team processes on Mondays."
+      weight: 1
+    - id: op1-07
+      stem: "To make a process faster, the higher-return target is:"
+      type: single
+      options: ["The queues", "The working steps", "The staffing", "The equipment"]
+      correct: ["The queues"]
+      rubric_category: analysis
+      explanation: "Asking people to work faster targets the small number and damages quality; removing a queue targets the large one and often costs only a decision."
+      weight: 1
+    - id: op1-08
+      stem: "Each handoff in a process adds a queue and:"
+      type: single
+      options: ["A chance to drop work", "A cost centre", "A quality check", "An approval step"]
+      correct: ["A chance to drop work"]
+      rubric_category: application
+      explanation: "A process with nine handoffs has nine of each, and the count alone often makes the case for redesign."
+      weight: 1
+    - id: op1-09
+      stem: "Walking one real job rather than collecting descriptions reveals:"
+      type: single
+      options: ["The workarounds", "The official steps", "The cost drivers", "The staffing levels"]
+      correct: ["The workarounds"]
+      rubric_category: application
+      explanation: "The one everyone uses and nobody mentions \u2014 which is usually the most informative thing in the exercise."
+      weight: 1
+    - id: op1-10
+      stem: "Making a process efficient without knowing what it is for risks:"
+      type: single
+      options: ["Optimising the wrong thing", "Overspending on tools", "Slowing the team", "Losing documentation"]
+      correct: ["Optimising the wrong thing"]
+      rubric_category: analysis
+      explanation: "A team can make a broken process wonderfully efficient."
+      weight: 1

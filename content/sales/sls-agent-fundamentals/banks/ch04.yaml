@@ -1,0 +1,89 @@
+bank:
+  course: sls-agent-fundamentals
+  kind: chapter
+  chapter: 4
+  version: 1
+  policy:
+    mode: practice
+  questions:
+    - id: s4-01
+      stem: "When a Sent quote is marked Accepted, which of these is one of the four things that happen together in that one atomic action?"
+      type: single
+      options: ["A Sales Order linked to the accepted quote is created as part of the same action", "The currency is converted to default", "The lead's estimated_value field is permanently locked against any future editing", "The quote's expiry date is extended automatically by exactly thirty additional days"]
+      correct: ["A Sales Order linked to the accepted quote is created as part of the same action"]
+      rubric_category: recall
+      explanation: "Acceptance atomically creates a Subscriber, a linked Sales Order, a linked Project, and flips the Lead to won — all together, as this chapter describes."
+      weight: 1
+    - id: s4-02
+      stem: "According to this chapter, what is the only way a lead's status ever actually becomes won?"
+      type: single
+      options: ["Automatically, as one consequence of that lead's own quote being accepted", "By manual selection from the dropdown", "Automatically, once the lead has remained in negotiation for more than thirty days", "Manually, by a supervisor overriding the lead's status through an admin-only screen"]
+      correct: ["Automatically, as one consequence of that lead's own quote being accepted"]
+      rubric_category: recall
+      explanation: "won is reached only via quote acceptance's automatic status flip — never a manual dropdown selection, as Chapter 2 already established."
+      weight: 1
+    - id: s4-03
+      stem: "You are about to mark a quote Accepted. What should you quickly re-check first, based on this chapter's guidance?"
+      type: single
+      options: ["That the lead's display_name and email already look like real, usable contact data", "That the quote's currency exactly matches the currency used on the customer's very first inquiry", "That the lead's estimated_value is set to a number higher than the quote's actual total price", "That the quote has already been printed and physically signed by the customer beforehand"]
+      correct: ["That the lead's display_name and email already look like real, usable contact data"]
+      rubric_category: application
+      explanation: "A thirty-second check of the lead's name and email avoids the most common, fixable acceptance failure this chapter describes."
+      weight: 1
+    - id: s4-04
+      stem: "Acceptance fails with 'A sales-conversion participant rejected Quote acceptance,' and the lead's display_name reads 'BEST FIBER DEALS NOW' with no email on file. What should you do first?"
+      type: single
+      options: ["Fix the lead's display_name to a real person's name and add a real, deliverable email, then retry", "Escalate immediately as a Project Template issue, since the error message never names the lead directly", "Re-attempt acceptance repeatedly without changing anything, expecting it to eventually succeed", "Delete the lead entirely and ask the customer to re-submit their interest through a new channel"]
+      correct: ["Fix the lead's display_name to a real person's name and add a real, deliverable email, then retry"]
+      rubric_category: application
+      explanation: "The lead clearly fails the two things this chapter names as validated at acceptance — fixing them first is the correct, in-your-control response."
+      weight: 1
+    - id: s4-05
+      stem: "Acceptance fails with the same generic rejection message, but the lead's data already shows a clearly real name and a working email address. What is the correct next step?"
+      type: single
+      options: ["Escalate it as a possible missing Project Template or environment configuration issue", "Keep editing the lead's name and email repeatedly until the rejection eventually stops appearing", "Assume the customer secretly changed their mind and treat the lead as lost going forward", "Manually create a Sales Order directly for this customer instead of retrying the quote's acceptance"]
+      correct: ["Escalate it as a possible missing Project Template or environment configuration issue"]
+      rubric_category: application
+      explanation: "With good lead data already confirmed, this chapter is explicit that the right move is escalating a likely configuration gap, not further data edits."
+      weight: 1
+    - id: s4-06
+      stem: "An agent assumes that because the quote itself was rejected, only the quote record was affected by the failed acceptance attempt. What does this chapter's description of acceptance suggest is actually at stake?"
+      type: single
+      options: ["A failed acceptance means none of the four linked outcomes happen at all, not just the quote's own status", "Nothing further is at stake, since the Subscriber and Sales Order are always created before the quote check runs", "Only the Lead's status is affected by a failed acceptance, while the Sales Order still gets created regardless", "Only the Project record is affected by a failed acceptance, while the Subscriber is still created regardless"]
+      correct: ["A failed acceptance means none of the four linked outcomes happen at all, not just the quote's own status"]
+      rubric_category: analysis
+      explanation: "Acceptance is atomic — all four outcomes happen together or none do, so a failure blocks the Subscriber, Sales Order, and Project too, not just the quote."
+      weight: 1
+    - id: s4-07
+      stem: "Two leads both fail acceptance with the identical generic rejection message. One has a business-slogan name and no email; the other has a real name and a working email. What does this pair of cases illustrate?"
+      type: single
+      options: ["The same error text can point to two genuinely different causes, so the lead's own data must be checked before concluding which one applies", "Both failures must share the identical root cause, since the system only ever produces this exact message for one specific reason", "The second lead's failure proves the first lead's data was actually fine all along and never needed correcting", "Neither failure is meaningful, since this particular rejection message is known to appear at random regardless of any lead data"]
+      correct: ["The same error text can point to two genuinely different causes, so the lead's own data must be checked before concluding which one applies"]
+      rubric_category: analysis
+      explanation: "This chapter's central diagnostic skill is exactly this: the identical generic message can mean bad lead data or a missing configuration, and only checking the lead's data tells you which."
+      weight: 1
+    - id: s4-08
+      stem: "An agent, after confirming a lead's name and email are genuinely fine, keeps re-editing the lead anyway every time acceptance fails, rather than escalating. What is the cost of this habit?"
+      type: single
+      options: ["Real time is spent repeatedly fixing data that was never the actual problem, while a genuine configuration gap goes unreported", "There is no real cost, since re-editing a lead's fields can never itself cause any harm to the eventual outcome", "The cost is limited only to the lead's estimated_value field being recalculated incorrectly each time it is saved", "The cost is limited only to the quote's expiry date silently resetting itself with every additional save attempt"]
+      correct: ["Real time is spent repeatedly fixing data that was never the actual problem, while a genuine configuration gap goes unreported"]
+      rubric_category: analysis
+      explanation: "Repeating the fixable-cause fix when the real cause is environmental wastes time and leaves the actual configuration gap unescalated and unresolved."
+      weight: 1
+    - id: s4-09
+      stem: "Which statement correctly reflects why lead data quality from Chapter 2 was emphasized before this chapter's material?"
+      type: single
+      options: ["Because quote acceptance directly uses the lead's own party data to create the new Subscriber account", "Because lead data quality only affects how the Leads list visually sorts and filters existing rows on screen", "Because lead data quality only affects which lead_source options later appear in the quote's own dropdown menu", "Because lead data quality is purely a reporting concern with no bearing on whether acceptance itself can succeed"]
+      correct: ["Because quote acceptance directly uses the lead's own party data to create the new Subscriber account"]
+      rubric_category: recall
+      explanation: "Acceptance copies the lead's own party data directly onto the new Subscriber — exactly why Chapter 2's data-quality guidance mattered concretely, not just generally."
+      weight: 1
+    - id: s4-10
+      stem: "A lead's quote acceptance succeeds cleanly on the first attempt. Based on this chapter, what does that success actually confirm happened, beyond the quote's own status changing?"
+      type: single
+      options: ["A Subscriber, a linked Sales Order, and a linked Project were all created, and the lead itself moved to won", "Only the quote's own status field changed, with no other record in the system affected in any way", "Only the lead's status changed to won, with the quote itself remaining in its previous sent status", "Only a Sales Order was created, with the Subscriber and Project left to be created manually afterward"]
+      correct: ["A Subscriber, a linked Sales Order, and a linked Project were all created, and the lead itself moved to won"]
+      rubric_category: application
+      explanation: "A clean acceptance means all four linked outcomes actually happened together — this is the atomic conversion this chapter centers on."
+      weight: 1
+

@@ -1,0 +1,33 @@
+"""Thin facade over canonical Learning declarations; no product mappings."""
+
+from dotmac_learning.models import (
+    EVENT_KINDS,
+    KIND_ACTIVITY_STARTED,
+    KIND_CERTIFICATE_EARNED,
+    KIND_CHAPTER_COMPLETED,
+    KIND_CHAPTER_VIEWED,
+    KIND_COURSE_VIEWED,
+    KIND_LAB_CHECK_FAILED,
+    KIND_LAB_CHECK_PASSED,
+    KIND_LAB_LAUNCHED,
+    KIND_SESSION_ATTENDED,
+    KIND_SUBMISSION_MADE,
+    KIND_WORK_GRADED,
+    LearningEvent,
+)
+
+__all__ = [
+    "EVENT_KINDS",
+    "KIND_ACTIVITY_STARTED",
+    "KIND_CERTIFICATE_EARNED",
+    "KIND_CHAPTER_COMPLETED",
+    "KIND_CHAPTER_VIEWED",
+    "KIND_COURSE_VIEWED",
+    "KIND_LAB_CHECK_FAILED",
+    "KIND_LAB_CHECK_PASSED",
+    "KIND_LAB_LAUNCHED",
+    "KIND_SESSION_ATTENDED",
+    "KIND_SUBMISSION_MADE",
+    "KIND_WORK_GRADED",
+    "LearningEvent",
+]

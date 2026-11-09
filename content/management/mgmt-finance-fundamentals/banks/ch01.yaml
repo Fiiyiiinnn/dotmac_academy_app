@@ -1,0 +1,89 @@
+bank:
+  course: mgmt-finance-fundamentals
+  kind: chapter
+  chapter: 1
+  version: 2
+  policy:
+    mode: practice
+  questions:
+    - id: fn1-01
+      stem: "Contribution per sale is its revenue minus:"
+      type: single
+      options: ["Its variable costs", "All costs for the period", "Tax and interest charges", "The discounts granted"]
+      correct: ["Its variable costs"]
+      rubric_category: recall
+      explanation: "Contribution first covers the fixed-cost treadmill, and only then becomes profit."
+      weight: 1
+    - id: fn1-02
+      stem: "Buying a vehicle that will serve for years is:"
+      type: single
+      options: ["Capex", "Opex", "Overhead", "Variable cost"]
+      correct: ["Capex"]
+      rubric_category: recall
+      explanation: "Capital expenditure buys a durable asset and is spread over its life; opex consumes a resource in the period."
+      weight: 1
+    - id: fn1-03
+      stem: "Fixed costs are ₦2,400,000 a month and each sale contributes ₦8,000. How many sales a month are needed to break even?"
+      type: numeric
+      options:
+        tolerance: 2
+      correct: 300
+      rubric_category: application
+      explanation: "2,400,000 ÷ 8,000 = 300. Below it every month loses money regardless of effort; above it each sale's contribution falls almost straight through to profit."
+      weight: 1
+    - id: fn1-04
+      stem: "A business signs a large contract this month, delivers next month, and is paid in ninety days. When is the revenue earned, and when is the cash received?"
+      type: single
+      options: ["Revenue on delivery, cash on payment", "Revenue on signing, cash on delivery", "Revenue and cash both on delivery", "Revenue on payment, cash on payment"]
+      correct: ["Revenue on delivery, cash on payment"]
+      rubric_category: application
+      explanation: "Revenue is not cash, and the interval between them is where businesses die."
+      weight: 1
+    - id: fn1-05
+      stem: "Which question does gross profit answer?"
+      type: single
+      options: ["Is the thing we sell worth selling?", "Is the whole business run economically?", "What did the owners actually earn?", "Can the business cover its overheads?"]
+      correct: ["Is the thing we sell worth selling?"]
+      rubric_category: application
+      explanation: "Operating profit asks about the business as a whole; net profit asks what the owners earned."
+      weight: 1
+    - id: fn1-06
+      stem: "Which of these are fixed costs? (Select all that apply.)"
+      type: multi
+      options: ["The monthly rent on the depot", "Insurance premiums for the year", "Software licences paid monthly", "Delivery fuel for each job"]
+      correct: ["The monthly rent on the depot", "Insurance premiums for the year", "Software licences paid monthly"]
+      rubric_category: application
+      explanation: "Fixed costs stay roughly the same whether you sell a lot or a little. Fuel travels with each job."
+      weight: 1
+    - id: fn1-07
+      stem: "A business with very high fixed costs is running at low volume. What is its position?"
+      type: single
+      options: ["Dangerous — the treadmill runs before anything counts", "Efficient — its cost per unit will fall as volume grows", "Stable — fixed costs are predictable and easy to plan", "Flexible — it can absorb extra volume without new cost"]
+      correct: ["Dangerous — the treadmill runs before anything counts"]
+      rubric_category: application
+      explanation: "High-fixed-cost businesses are dangerous at low volume and wonderful at high volume; the break-even point is the dividing line."
+      weight: 1
+    - id: fn1-08
+      stem: "Why is 'we're selling a lot' a different claim from 'we're making money'?"
+      type: single
+      options: ["A sale below its true cost makes scale lose money faster", "Sales are recorded before the customer has actually paid", "Selling volume includes discounts that reduce the headline", "Sales figures cover revenue rather than the profit margin"]
+      correct: ["A sale below its true cost makes scale lose money faster"]
+      rubric_category: analysis
+      explanation: "Busy is not the same as profitable, and none of the classic failure modes announce themselves in the shop-floor bustle."
+      weight: 1
+    - id: fn1-09
+      stem: "Why does a discount come out of margin rather than out of revenue?"
+      type: single
+      options: ["The costs of the sale do not fall when the price does", "Revenue is recorded gross and discounts are netted later", "Margin is the only figure discounts are reported against", "Discounts are treated as a marketing cost in the accounts"]
+      correct: ["The costs of the sale do not fall when the price does"]
+      rubric_category: analysis
+      explanation: "The whole price cut lands on the thin margin slice, not the big revenue number — which is why the arithmetic surprises people."
+      weight: 1
+    - id: fn1-10
+      stem: "Why is recurring revenue worth more per unit than one-off revenue?"
+      type: single
+      options: ["It starts each month from last month's base, so it compounds", "It is collected faster than revenue from one-off sales", "It carries lower variable costs than one-off work does", "It is easier to forecast, so it needs less working capital"]
+      correct: ["It starts each month from last month's base, so it compounds"]
+      rubric_category: analysis
+      explanation: "One-off businesses start every month at zero; recurring ones start at the base minus cancellations — which is why retention matters so brutally."
+      weight: 1

@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-operations-process
+  kind: chapter
+  chapter: 3
+  version: 1
+  policy:
+    mode: practice
+  questions:
+    - id: op3-01
+      stem: "Output for a whole process is set by:"
+      type: single
+      options: ["The constraint", "The first step", "The slowest person", "Total headcount"]
+      correct: ["The constraint"]
+      rubric_category: recall
+      explanation: "Improving any other step builds inventory in front of the constraint or idle time behind it."
+      weight: 1
+    - id: op3-02
+      stem: "Before adding capacity at a bottleneck, the first move is to ensure it is:"
+      type: single
+      options: ["Never idle", "Fully staffed", "Newly equipped", "Closely supervised"]
+      correct: ["Never idle"]
+      rubric_category: application
+      explanation: "No waiting for materials, no doing work that could be done elsewhere, no gaps in coverage. Adding capacity is the expensive option teams reach for first."
+      weight: 1
+    - id: op3-03
+      stem: "After relieving a bottleneck, a manager should:"
+      type: single
+      options: ["Recheck the constraint", "Repeat the change", "Reduce monitoring", "Reassign the whole team"]
+      correct: ["Recheck the constraint"]
+      rubric_category: analysis
+      explanation: "It moves. Optimising last quarter's bottleneck is the same error as managing yesterday's critical path."
+      weight: 1
+    - id: op3-04
+      stem: "Processing fifty jobs as one batch means every job inherits:"
+      type: single
+      options: ["The whole batch duration", "The setup cost", "The slowest step", "The queue position"]
+      correct: ["The whole batch duration"]
+      rubric_category: application
+      explanation: "Which is how a process can be efficient at every step and slow end to end."
+      weight: 1
+    - id: op3-05
+      stem: "If setup cost is what forces large batches, the higher-return project is to:"
+      type: single
+      options: ["Reduce the setup", "Add capacity", "Increase staffing", "Extend the shift"]
+      correct: ["Reduce the setup"]
+      rubric_category: analysis
+      explanation: "Reducing changeover time is almost always the thing nobody has looked at."
+      weight: 1
+    - id: op3-06
+      stem: "The cost of a defect rises with the distance between where it was created and:"
+      type: single
+      options: ["Where it was found", "Who created it", "When it was logged", "How it was fixed"]
+      correct: ["Where it was found"]
+      rubric_category: recall
+      explanation: "Caught at the creating step it costs minutes; caught by the customer it costs everything in between plus the relationship."
+      weight: 1
+    - id: op3-07
+      stem: "Twelve percent rework on 500 jobs a month at N9,000 each costs about:"
+      type: single
+      options: ["N6.5m a year", "N540,000 a year", "N1.1m a year", "About N13m a year"]
+      correct: ["N6.5m a year"]
+      rubric_category: application
+      explanation: "N540,000 a month. Halving the rate saves roughly N3.24m a year."
+      weight: 1
+    - id: op3-08
+      stem: "Final inspection is the weakest quality control partly because it:"
+      type: single
+      options: ["Transfers responsibility", "Costs the most staff", "Slows delivery", "Needs trained specialists"]
+      correct: ["Transfers responsibility"]
+      rubric_category: analysis
+      explanation: "If someone else checks later, the incentive to get it right first time weakens. That is what the system is arranging, not a character flaw."
+      weight: 1
+    - id: op3-09
+      stem: "A connector that only fits one way is an example of:"
+      type: single
+      options: ["Making the defect impossible", "Standard work", "Final inspection", "Operator training"]
+      correct: ["Making the defect impossible"]
+      rubric_category: application
+      explanation: "The elimination level of the safety hierarchy applied to quality \u2014 it beats every check because it needs nobody to remember."
+      weight: 1
+    - id: op3-10
+      stem: "Driving a rework rate to zero is usually:"
+      type: single
+      options: ["Uneconomic", "Straightforward", "Legally required", "The fastest win"]
+      correct: ["Uneconomic"]
+      rubric_category: analysis
+      explanation: "The last few percent typically cost more than they save. The available gain is in moving detection earlier."
+      weight: 1

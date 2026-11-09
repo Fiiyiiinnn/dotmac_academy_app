@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-personal-effectiveness
+  kind: chapter
+  chapter: 3
+  version: 1
+  policy:
+    mode: practice
+  questions:
+    - id: pe3-01
+      stem: "Four hours split into eight fragments is worth less than four whole hours because of:"
+      type: single
+      options: ["Repeated re-entry", "Shorter attention", "Meeting overhead", "Task switching costs alone"]
+      correct: ["Repeated re-entry"]
+      rubric_category: recall
+      explanation: "Each fragment is spent getting back to where you were, and some work never reaches depth at all."
+      weight: 1
+    - id: pe3-02
+      stem: "Work that is not divisible \u2014 analysis, hard writing, an actual plan \u2014 will otherwise:"
+      type: single
+      options: ["Slide indefinitely", "Be delegated", "Take longer", "Lose quality steadily"]
+      correct: ["Slide indefinitely"]
+      rubric_category: application
+      explanation: "It either gets a long block or it does not get done, which is why it lives permanently at \"tomorrow\"."
+      weight: 1
+    - id: pe3-03
+      stem: "Shallow work such as approvals and filing belongs in:"
+      type: single
+      options: ["The afternoon trough", "Your very best window", "The first hour", "Protected time"]
+      correct: ["The afternoon trough"]
+      rubric_category: application
+      explanation: "It is perfectly suited to the low-energy period, and it should not occupy the hours where difficult thinking is easiest."
+      weight: 1
+    - id: pe3-04
+      stem: "A focus block should be labelled in the calendar with:"
+      type: single
+      options: ["A real project name", "The words focus time", "A private marker", "No label at all"]
+      correct: ["A real project name"]
+      rubric_category: application
+      explanation: "Vague labels get overwritten by anyone who believes their meeting is more concrete than your intention."
+      weight: 1
+    - id: pe3-05
+      stem: "The objection \"my team needs access to me\" is answered by noting that access is not:"
+      type: single
+      options: ["Constant availability", "A core management duty", "A team right", "A daily need"]
+      correct: ["Constant availability"]
+      rubric_category: analysis
+      explanation: "And if a team genuinely cannot survive two hours, that is a delegation finding rather than a reason to drop the block."
+      weight: 1
+    - id: pe3-06
+      stem: "A notification is best described as:"
+      type: single
+      options: ["An instruction to switch", "A genuinely useful signal", "A courtesy", "An efficiency"]
+      correct: ["An instruction to switch"]
+      rubric_category: analysis
+      explanation: "Issued by whoever happened to type. Deciding when to look is the entire point of batching."
+      weight: 1
+    - id: pe3-07
+      stem: "Handling each message once means doing it, delegating it, diarising it, or:"
+      type: single
+      options: ["Deleting it", "Flagging it", "Filing it", "Forwarding it"]
+      correct: ["Deleting it"]
+      rubric_category: recall
+      explanation: "Re-reading the same message four times across a day is the commonest invisible waste in an inbox."
+      weight: 1
+    - id: pe3-08
+      stem: "Being reliably responsive within a known window is better than being instant because it is:"
+      type: single
+      options: ["Cheaper to sustain", "Faster overall", "More popular", "Rather easier to measure"]
+      correct: ["Cheaper to sustain"]
+      rubric_category: analysis
+      explanation: "And it is better service than being erratically immediate."
+      weight: 1
+    - id: pe3-09
+      stem: "Roles that genuinely require continuous monitoring should handle it as:"
+      type: single
+      options: ["A defined shift", "A permanent duty", "An informal rota", "A personal choice"]
+      correct: ["A defined shift"]
+      rubric_category: application
+      explanation: "With a defined end, rather than as a standing condition of employment."
+      weight: 1
+    - id: pe3-10
+      stem: "Fatigue is best classified as:"
+      type: single
+      options: ["A decision-making risk", "A wellbeing issue", "A performance factor", "A poor scheduling problem"]
+      correct: ["A decision-making risk"]
+      rubric_category: analysis
+      explanation: "And it is the one nobody puts on a risk register, because output holds up while judgement quietly degrades."
+      weight: 1

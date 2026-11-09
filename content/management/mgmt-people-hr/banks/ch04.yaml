@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-people-hr
+  kind: chapter
+  chapter: 4
+  version: 1
+  policy:
+    mode: practice
+  questions:
+    - id: ph4-01
+      stem: 'Conduct differs from capability in that conduct concerns:'
+      type: single
+      options: ["Choice", "Skill", "Health", "Workload"]
+      correct: ["Choice"]
+      rubric_category: recall
+      explanation: "Someone did something they knew they should not. Capability is someone trying and not yet able."
+      weight: 1
+    - id: ph4-02
+      stem: 'An appeal should be heard by:'
+      type: single
+      options: ["Someone new", "The original decider", "The investigator", "A panel of peers"]
+      correct: ["Someone new"]
+      rubric_category: recall
+      explanation: "Not the person defending their own decision. Separating the roles is what makes each stage capable of catching the previous stage's error."
+      weight: 1
+    - id: ph4-03
+      stem: 'Disciplining someone for being unable to do the job is wrong because it is:'
+      type: single
+      options: ["Unjust and ineffective", "Slow and costly", "Unpopular", "Hard to document"]
+      correct: ["Unjust and ineffective"]
+      rubric_category: application
+      explanation: "Capability is answered with training, support, adjustment and time. Process and consequence do not create ability."
+      weight: 1
+    - id: ph4-04
+      stem: 'The allegation must be put in writing in advance because otherwise the person cannot:'
+      type: single
+      options: ["Answer the case", "Bring a companion", "Appeal the outcome", "Consult a lawyer"]
+      correct: ["Answer the case"]
+      rubric_category: application
+      explanation: "Someone cannot respond to a case they first hear in the room, and a hearing without a prepared answer is theatre."
+      weight: 1
+    - id: ph4-05
+      stem: 'A sanction exists in order to:'
+      type: single
+      options: ["Change behaviour", "Express seriousness", "Satisfy policy", "Deter observers"]
+      correct: ["Change behaviour"]
+      rubric_category: application
+      explanation: "That reframing answers most proportionality questions on its own, and it is why warnings should expire."
+      weight: 1
+    - id: ph4-06
+      stem: 'The fact most likely to turn a disciplinary matter into a discrimination claim is:'
+      type: single
+      options: ["Inconsistent treatment", "Delayed process", "Missing evidence", "A harsh sanction"]
+      correct: ["Inconsistent treatment"]
+      rubric_category: application
+      explanation: "The same behaviour handled differently for two people. Check what happened last time rather than assuming."
+      weight: 1
+    - id: ph4-07
+      stem: 'A correct outcome reached without fair process is usually:'
+      type: single
+      options: ["Unusable", "Appealable", "Delayed", "Reduced"]
+      correct: ["Unusable"]
+      rubric_category: analysis
+      explanation: "The organisation ends up paying compensation for conduct nobody disputes, because the defensible part of the case evaporated."
+      weight: 1
+    - id: ph4-08
+      stem: 'Skipping steps in a fair process does not save time because it:'
+      type: single
+      options: ["Relocates the error", "Invites an appeal", "Annoys the regulator", "Slows the hearing"]
+      correct: ["Relocates the error"]
+      rubric_category: analysis
+      explanation: "Each step catches an error the previous one cannot. Skipping moves the discovery of that error to the most expensive possible point."
+      weight: 1
+    - id: ph4-09
+      stem: 'When a grievance concerns you personally, you must:'
+      type: single
+      options: ["Step aside immediately", "Respond in writing", "Investigate carefully", "Seek a witness"]
+      correct: ["Step aside immediately"]
+      rubric_category: analysis
+      explanation: "You cannot investigate a complaint about yourself. Hand it to someone independent, at once, and without visible resentment."
+      weight: 1
+    - id: ph4-10
+      stem: 'An organisation reporting no grievances at all most often has:'
+      type: single
+      options: ["No safe route", "No real problems", "Good management", "Strong informal resolution"]
+      correct: ["No safe route"]
+      rubric_category: analysis
+      explanation: "Or no confidence that the route is safe. Silence is the more common explanation than health."
+      weight: 1

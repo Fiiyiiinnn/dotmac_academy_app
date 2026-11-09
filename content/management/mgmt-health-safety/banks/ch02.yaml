@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-health-safety
+  kind: chapter
+  chapter: 2
+  version: 1
+  policy:
+    mode: practice
+  questions:
+    - id: hs2-01
+      stem: "A risk assessment should be reviewed principally when:"
+      type: single
+      options: ["Something changes", "A year passes", "An audit is due", "Staff request it"]
+      correct: ["Something changes"]
+      rubric_category: recall
+      explanation: "Method, equipment, people, environment \u2014 or after anything that went wrong or nearly did."
+      weight: 1
+    - id: hs2-02
+      stem: "The likelihood x severity score is best understood as:"
+      type: single
+      options: ["A shared vocabulary", "A measurement", "A legal reporting threshold", "An audit metric"]
+      correct: ["A shared vocabulary"]
+      rubric_category: recall
+      explanation: "Its real value is comparative: this job is worse than that one, this control moved us further than that one."
+      weight: 1
+    - id: hs2-03
+      stem: "Severity should be scored on the outcome that is:"
+      type: single
+      options: ["Credibly possible", "Statistically average", "Most recent", "Least disputed"]
+      correct: ["Credibly possible"]
+      rubric_category: application
+      explanation: "Scoring by average outcome is how fatal hazards end up rated moderate. A fall is scored on the injury it can cause."
+      weight: 1
+    - id: hs2-04
+      stem: "Residual risk differs from inherent risk in that residual is scored:"
+      type: single
+      options: ["With controls in place", "Before any controls", "By the regulator", "Across the whole site at once"]
+      correct: ["With controls in place"]
+      rubric_category: application
+      explanation: "And only the residual number answers whether it is acceptable to do this job today."
+      weight: 1
+    - id: hs2-05
+      stem: "The residual score must be assessed against:"
+      type: single
+      options: ["What is present today", "Whatever the file lists", "What was purchased", "What was trained"]
+      correct: ["What is present today"]
+      rubric_category: application
+      explanation: "The paperwork may say 4 while the job runs at 16, because two listed controls are not actually on site."
+      weight: 1
+    - id: hs2-06
+      stem: "A risk assessment that is generic, undated and unread by the crew is worse than none because it creates:"
+      type: single
+      options: ["A documented belief", "A legal exposure", "A likely audit failure", "A training gap"]
+      correct: ["A documented belief"]
+      rubric_category: analysis
+      explanation: "It records that the risk is managed when nobody has checked whether it is."
+      weight: 1
+    - id: hs2-07
+      stem: "In the worked example the controls moved likelihood far more than severity, which is typical because:"
+      type: single
+      options: ["A fall stays severe", "Controls are cheap", "Severity is fixed by law", "Likelihood is easier to score"]
+      correct: ["A fall stays severe"]
+      rubric_category: analysis
+      explanation: "Which is why the biggest single win was pre-assembling at ground level \u2014 removing time at height rather than protecting the person in it."
+      weight: 1
+    - id: hs2-08
+      stem: "A hazard scoring 5x1 and one scoring 1x5 produce the same number but are not the same situation because:"
+      type: single
+      options: ["One can kill", "One is rarer", "One is cheaper", "One is visible"]
+      correct: ["One can kill"]
+      rubric_category: analysis
+      explanation: "A credible fatal outcome demands attention whatever the likelihood \u2014 the ruin clause in a different uniform."
+      weight: 1
+    - id: hs2-09
+      stem: "Identifying hazards should involve the people who do the job because they know:"
+      type: single
+      options: ["The shortcuts", "The regulations", "The equipment cost", "The audit history"]
+      correct: ["The shortcuts"]
+      rubric_category: application
+      explanation: "And the awkward step, and the thing that nearly went wrong last month. A desk-written assessment finds hazards you already knew about."
+      weight: 1
+    - id: hs2-10
+      stem: "Work being done differently from the assessment is information about:"
+      type: single
+      options: ["The assessment", "The crew's attitude", "The training", "The supervision"]
+      correct: ["The assessment"]
+      rubric_category: analysis
+      explanation: "At least as much as about the crew \u2014 and it is a review trigger, not simply a discipline matter."
+      weight: 1

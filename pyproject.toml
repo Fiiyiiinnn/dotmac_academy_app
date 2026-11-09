@@ -1,0 +1,92 @@
+[project]
+name = "dotmac_academy_v2"
+version = "0.1.0"
+description = "Dotmac Academy, composed thin from Starter (kernel + learning + ui)"
+authors = [{ name = "DotMac" }]
+readme = "README.md"
+requires-python = ">=3.12,<3.14"
+dynamic = ["dependencies"]
+
+[tool.poetry]
+package-mode = false
+
+[tool.poetry.dependencies]
+python = ">=3.12,<3.14"
+sqlalchemy = "2.0.51"
+psycopg = {extras = ["binary"], version = "^3.2"}
+alembic = "^1.13"
+pydantic = "^2.9"
+pydantic-settings = "^2.5"
+prometheus-client = "^0.26.0"
+jsonpath-ng = "^1.8.0"
+pyyaml = "6.0.1"
+markdown = "^3.10.2"
+httpx = "^0.28.1"
+fpdf2 = "^2.8.7"
+python-multipart = "0.0.32"
+websockets = "^16.0"
+sentry-sdk = {extras = ["fastapi", "sqlalchemy"], version = "2.66.1"}
+uvicorn = {extras = ["standard"], version = "^0.30"}
+gunicorn = "^22.0"
+
+# Starter platform + modules. Pinned exactly, never caret ranges: adopting
+# a kernel or module release is a deliberate act with a changelog to read.
+dotmac-kernel = { version = "0.1.0a108", source = "forgejo" }
+dotmac-learning = { version = "0.1.0a6", source = "forgejo" }
+dotmac-ui = { version = "0.1.0a9", source = "forgejo" }
+dotmac-delivery-resend = { version = "0.1.0a1", source = "forgejo" }
+# App-sync pilot: source-only by its own release gate; exact-pinned by
+# git rev (same rev as dotmac_erp_v2's receiver pin) until it releases.
+dotmac-app-sync = { git = "https://github.com/michaelayoade/dotmac_starter_mt.git", rev = "e1bfa54e23bd8184c20beb2dc1d9f0938fa336f6", subdirectory = "packages/dotmac-app-sync" }
+
+[tool.poetry.group.dev.dependencies]
+pytest-asyncio = "^1.4.0"
+pytest = "^8.3"
+ruff = "0.16.10"
+mypy = "^1.11"
+
+[[tool.poetry.source]]
+name = "forgejo"
+url = "https://registry.dotmac.io/api/packages/dotmac/pypi/simple/"
+priority = "explicit"
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "S", "RUF"]
+ignore = [
+    "B008",  # FastAPI dependency injection uses calls in defaults.
+    "S101",  # asserts in tests
+    "E702",  # project uses a deliberate compact `a; b` style in models/migrations.
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S105", "S106", "S107", "S108", "E501", "RUF012"]
+"alembic/versions/*" = ["E501", "E402"]
+"app/services/labengine/*" = ["S603", "S607", "S311"]
+"app/services/lab_lifecycle.py" = ["S603", "S607"]
+"app/services/lab_jobs.py" = ["S603"]
+"app/services/lab_seed.py" = ["S311"]
+
+[tool.mypy]
+python_version = "3.12"
+files = ["app"]
+explicit_package_bases = true
+namespace_packages = true
+ignore_missing_imports = true
+check_untyped_defs = true
+warn_unused_ignores = true
+
+[[tool.mypy.overrides]]
+module = ["yaml", "markdown", "jsonpath_ng.*"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

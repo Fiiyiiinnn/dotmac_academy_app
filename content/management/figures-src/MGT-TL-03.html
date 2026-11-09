@@ -1,0 +1,66 @@
+<!doctype html>
+<meta charset="utf-8">
+<style>
+* { margin:0; padding:0; box-sizing:border-box }
+body { width:1344px; height:768px; background:#f9f1dd;
+  font-family:-apple-system,"Helvetica Neue",Helvetica,Arial,sans-serif; color:#2f3733 }
+.wrap { padding:70px 76px }
+h1 { font-size:42px; font-weight:650; letter-spacing:-.5px }
+.sub { font-size:22px; color:#6c7671; margin-top:9px }
+.chart { margin-top:40px; position:relative }
+.cap { position:absolute; top:-24px; bottom:96px; width:2px; background:#2f6d5c; left:calc(210px + 476px) }
+.caplab { position:absolute; top:-52px; left:calc(210px + 476px); transform:translateX(-50%);
+  font-size:17px; color:#2f6d5c; white-space:nowrap; font-weight:600 }
+.row { display:grid; grid-template-columns:210px 1fr; align-items:center;
+  column-gap:22px; height:62px }
+.who { font-size:21px; color:#4a544f; text-align:right }
+.who b { font-weight:650; color:#2f3733 }
+.track { position:relative; height:40px }
+.bar { position:absolute; left:0; height:40px; border-radius:3px; display:flex;
+  align-items:center; padding-left:16px; color:#fff; font-size:19px; font-weight:650 }
+.ok { background:#6f9f91 } .over { background:#b04a2f }
+.pct { position:absolute; top:50%; transform:translateY(-50%); font-size:19px;
+  font-weight:650; margin-left:14px }
+.pct.over { color:#b04a2f; background:none } .pct.ok { color:#6c7671; background:none }
+.rule { height:1px; background:#e0d5ba; margin:22px 0 22px }
+.foot { display:flex; gap:30px; align-items:flex-start }
+.big { font-size:50px; font-weight:700; color:#b04a2f; letter-spacing:-2px; line-height:1; flex:none }
+.note { font-size:20px; color:#5c6560; line-height:1.45 }
+</style>
+<body>
+<div class="wrap">
+  <h1>The comfortable average with two people underwater</h1>
+  <div class="sub">Five people, 23.8 plannable hours each after meetings, admin and unplanned work.
+    The team is committed to 81% of capacity.</div>
+
+  <div class="chart">
+    <div class="caplab">23.8h — one person's real capacity</div>
+    <div class="cap"></div>
+    <!-- 476px = 23.8h, so 20px per hour -->
+    <div class="row"><div class="who"><b>A</b></div><div class="track">
+      <div class="bar over" style="width:620px">31h</div>
+      <div class="pct over" style="left:620px">130%</div></div></div>
+    <div class="row"><div class="who"><b>B</b></div><div class="track">
+      <div class="bar over" style="width:520px">26h</div>
+      <div class="pct over" style="left:520px">109%</div></div></div>
+    <div class="row"><div class="who"><b>C</b></div><div class="track">
+      <div class="bar ok" style="width:400px">20h</div>
+      <div class="pct ok" style="left:400px">84%</div></div></div>
+    <div class="row"><div class="who"><b>D</b></div><div class="track">
+      <div class="bar ok" style="width:240px">12h</div>
+      <div class="pct ok" style="left:240px">50%</div></div></div>
+    <div class="row"><div class="who"><b>E</b></div><div class="track">
+      <div class="bar ok" style="width:140px">7h</div>
+      <div class="pct ok" style="left:140px">29%</div></div></div>
+  </div>
+
+  <div class="rule"></div>
+  <div class="foot">
+    <div class="big">81%</div>
+    <div class="note">
+      is what the team total says, and it is true. Reliable people attract work — they say
+      yes, they deliver, so the next thing goes to them too. <b>A is almost always the person
+      you would least like to lose.</b> Neither problem is visible in a total.
+    </div>
+  </div>
+</div>

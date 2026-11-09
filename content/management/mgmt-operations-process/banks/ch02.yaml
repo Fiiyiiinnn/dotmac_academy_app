@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-operations-process
+  kind: chapter
+  chapter: 2
+  version: 1
+  policy:
+    mode: practice
+  questions:
+    - id: op2-01
+      stem: "Two crews with the same mean output can differ most importantly in their:"
+      type: single
+      options: ["Spread", "Headcount", "Equipment", "Experience"]
+      correct: ["Spread"]
+      rubric_category: recall
+      explanation: "The customer never experiences your average; they experience the week they happened to arrive in."
+      weight: 1
+    - id: op2-02
+      stem: "A crew whose weekly output ranges from 28 to 61 can only safely be promised at:"
+      type: single
+      options: ["Their worst week", "Their rolling average", "Their best week", "The median"]
+      correct: ["Their worst week"]
+      rubric_category: application
+      explanation: "Which throws away a third of their apparent capacity, so their usable capacity is lower than a steadier crew with a lower mean."
+      weight: 1
+    - id: op2-03
+      stem: "Unpredictable output generates a second workload consisting of:"
+      type: single
+      options: ["Chasing and rescheduling", "Additional training", "Extra inspection", "Overtime approval"]
+      correct: ["Chasing and rescheduling"]
+      rubric_category: analysis
+      explanation: "Work that exists only because output was unpredictable, and that lands on people who were not involved."
+      weight: 1
+    - id: op2-04
+      stem: "The primary reason for standard work is that you cannot improve a process that is:"
+      type: single
+      options: ["Done differently each time", "Poorly documented", "Under-resourced", "Rarely measured"]
+      correct: ["Done differently each time"]
+      rubric_category: recall
+      explanation: "Without a baseline you cannot tell whether a result came from the change or from who happened to do the job."
+      weight: 1
+    - id: op2-05
+      stem: "Standard work written by people who do not do the job produces:"
+      type: single
+      options: ["Variation plus a false document", "Slower adoption", "Higher training cost", "More supervision"]
+      correct: ["Variation plus a false document"]
+      rubric_category: analysis
+      explanation: "It gets quietly bypassed, and then the document lies as well."
+      weight: 1
+    - id: op2-06
+      stem: "A standard that has not been revised in three years is either perfect or:"
+      type: single
+      options: ["Ignored", "Optimal", "Well designed", "Only rarely used"]
+      correct: ["Ignored"]
+      rubric_category: application
+      explanation: "A standard is the current best-known method and should change whenever somebody finds better."
+      weight: 1
+    - id: op2-07
+      stem: "Investigating every fluctuation in a stable process is harmful because it:"
+      type: single
+      options: ["Adds variation", "Wastes budget", "Delays reporting", "Annoys the team"]
+      correct: ["Adds variation"]
+      rubric_category: analysis
+      explanation: "Each correction changes a process that was working, and it teaches the team to explain randomness with causes that then get believed."
+      weight: 1
+    - id: op2-08
+      stem: "A vehicle breakdown causing a bad week is an example of:"
+      type: single
+      options: ["Special cause", "Common cause", "Seasonal effect", "Measurement error"]
+      correct: ["Special cause"]
+      rubric_category: recall
+      explanation: "Investigate the instance \u2014 it is a maintenance finding rather than bad luck."
+      weight: 1
+    - id: op2-09
+      stem: "Standard work is most easily accepted by teams when framed as what makes a new person:"
+      type: single
+      options: ["Useful in weeks", "Easier to supervise", "Cheaper to employ", "Simpler to assess"]
+      correct: ["Useful in weeks"]
+      rubric_category: application
+      explanation: "Rather than months \u2014 and it stops the operation depending on the two people who know how things really work."
+      weight: 1
+    - id: op2-10
+      stem: "When someone finds a better method, the act that converts it into the organisation's improvement is:"
+      type: single
+      options: ["Changing the standard", "Praising them publicly", "Recording the outcome", "Training their team"]
+      correct: ["Changing the standard"]
+      rubric_category: application
+      explanation: "And telling everyone. Without it, one person improves and the organisation does not."
+      weight: 1

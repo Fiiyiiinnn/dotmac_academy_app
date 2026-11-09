@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-health-safety
+  kind: chapter
+  chapter: 5
+  version: 1
+  policy:
+    mode: practice
+  questions:
+    - id: hs5-01
+      stem: "In the first hour of an incident, the step that comes before securing the scene is:"
+      type: single
+      options: ["Making people safe", "Notifying the regulator", "Photographing damage", "Taking statements"]
+      correct: ["Making people safe"]
+      rubric_category: recall
+      explanation: "Casualty care, then removing the continuing danger so nobody else is hurt \u2014 responders are regularly the second casualty."
+      weight: 1
+    - id: hs5-02
+      stem: "Evidence is most often destroyed after an incident by:"
+      type: single
+      options: ["Restoring operation", "Deliberate concealment", "Regulator seizure", "Weather damage"]
+      correct: ["Restoring operation"]
+      rubric_category: application
+      explanation: "The instinct to clear, repair and tidy removes exactly what would have explained the event."
+      weight: 1
+    - id: hs5-03
+      stem: "\"The guard was off\" is an observation; \"he removed it to work faster\" is:"
+      type: single
+      options: ["A theory to test", "A root cause", "A conduct finding", "A witness account"]
+      correct: ["A theory to test"]
+      rubric_category: application
+      explanation: "Separating observation from inference is what keeps an investigation from confirming its first idea."
+      weight: 1
+    - id: hs5-04
+      stem: "An investigation should ask why the error was possible and additionally why it was:"
+      type: single
+      options: ["Not caught", "Not reported", "Not predicted", "Not prevented"]
+      correct: ["Not caught"]
+      rubric_category: application
+      explanation: "Two different questions with two different system answers \u2014 what allowed it, and what should have detected it before harm."
+      weight: 1
+    - id: hs5-05
+      stem: "If an investigation's root cause is a person's name, it has found:"
+      type: single
+      options: ["A symptom", "A conduct issue", "A training need", "A supervision gap"]
+      correct: ["A symptom"]
+      rubric_category: recall
+      explanation: "Keep going: fatigue, pressure, missing equipment, unclear method, a defeated control, an untested competence assumption."
+      weight: 1
+    - id: hs5-06
+      stem: "A recommendation should be tested against whether it would have prevented:"
+      type: single
+      options: ["This event", "Any incident", "The worst case", "A repeat elsewhere"]
+      correct: ["This event"]
+      rubric_category: analysis
+      explanation: "A recommendation that would not have prevented the incident it came from is a good idea in the wrong document."
+      weight: 1
+    - id: hs5-07
+      stem: "\"Reinforce training\" is a weak finding chiefly because it names:"
+      type: single
+      options: ["A person's effort", "An old control", "A cost item", "A future date"]
+      correct: ["A person's effort"]
+      rubric_category: analysis
+      explanation: "Rather than a system change with one owner and a date."
+      weight: 1
+    - id: hs5-08
+      stem: "The most dangerous reading on a safety dashboard is:"
+      type: single
+      options: ["Silence", "A spike", "A downward trend", "An outlier"]
+      correct: ["Silence"]
+      rubric_category: analysis
+      explanation: "No incidents, no near misses and no reports means either an extraordinary team or one that is not telling you \u2014 and the second is far more common."
+      weight: 1
+    - id: hs5-09
+      stem: "The substitution test asks whether another competent person, under the same pressures, would:"
+      type: single
+      options: ["Plausibly have done the same", "Have refused the work", "Have reported it sooner", "Have been supervised"]
+      correct: ["Plausibly have done the same"]
+      rubric_category: application
+      explanation: "If yes, you are looking at a system problem wearing an individual's name."
+      weight: 1
+    - id: hs5-10
+      stem: "Under a just culture, someone who voluntarily reports their own error must be:"
+      type: single
+      options: ["Protected", "Retrained", "Suspended", "Reassigned"]
+      correct: ["Protected"]
+      rubric_category: recall
+      explanation: "However the underlying conduct is handled. An organisation that disciplines the disclosure will not be told anything twice."
+      weight: 1

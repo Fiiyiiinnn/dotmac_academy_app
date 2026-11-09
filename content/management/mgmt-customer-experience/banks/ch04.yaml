@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-customer-experience
+  kind: chapter
+  chapter: 4
+  version: 2
+  policy:
+    mode: practice
+  questions:
+    - id: cx4-01
+      stem: "Compliance should be understood as:"
+      type: single
+      options: ["A floor, not a target", "A target to be met exactly", "A cost of doing business", "A matter for the legal team"]
+      correct: ["A floor, not a target"]
+      rubric_category: recall
+      explanation: "A business can meet every regulation and still deliver miserable service. Aiming at the floor guarantees living near it."
+      weight: 1
+    - id: cx4-02
+      stem: "Customer data collected to deliver a service belongs to:"
+      type: single
+      options: ["That purpose", "The business", "The account holder", "Whoever collected it"]
+      correct: ["That purpose"]
+      rubric_category: recall
+      explanation: "Protected, not oversold, not overshared, retained no longer than needed — and usually visible and correctable by the customer."
+      weight: 1
+    - id: cx4-03
+      stem: "Your regulator requires complaints to be acknowledged within a set time. Where should that rule live?"
+      type: single
+      options: ["In the ticket system's clock, enforcing it automatically", "In the induction training every new agent completes", "In the team's written procedures and quick-reference guide", "In the supervisor's daily review of the open queue"]
+      correct: ["In the ticket system's clock, enforcing it automatically"]
+      rubric_category: application
+      explanation: "Processes comply by design; memories comply until busy."
+      weight: 1
+    - id: cx4-04
+      stem: "A charge appears on customer bills that nobody on the team wants to explain. What test has it failed?"
+      type: single
+      options: ["Whether you could justify it to the customer's face in plain language", "Whether it was disclosed somewhere in the terms before purchase", "Whether the regulator has issued guidance on charges of that type", "Whether comparable businesses apply a similar charge to customers"]
+      correct: ["Whether you could justify it to the customer's face in plain language"]
+      rubric_category: application
+      explanation: "Reluctance to explain a charge is the reliable early signal that it is not a fair term."
+      weight: 1
+    - id: cx4-05
+      stem: "A regulator writes asking about a complaint from eight months ago. What determines how this goes?"
+      type: single
+      options: ["Whether you can show the record: capture, acknowledgement, actions, resolution", "Whether the complaint was ultimately resolved to the customer's satisfaction", "Whether the failure was a one-off rather than part of a wider pattern", "Whether the business has since changed the process that caused the issue"]
+      correct: ["Whether you can show the record: capture, acknowledgement, actions, resolution"]
+      rubric_category: application
+      explanation: "Nearly every regime asks the same question when something goes wrong: show us. Your lifecycle records are the evidence."
+      weight: 1
+    - id: cx4-06
+      stem: "Which of these are among the recurring consumer rights across regimes? (Select all that apply.)"
+      type: multi
+      options: ["Accurate information before purchase", "Fair terms and understandable billing", "Redress when the service fails", "A discount for longer contract terms"]
+      correct: ["Accurate information before purchase", "Fair terms and understandable billing", "Redress when the service fails"]
+      rubric_category: application
+      explanation: "Plus the right to be heard and the right to privacy — five themes that recur almost everywhere."
+      weight: 1
+    - id: cx4-07
+      stem: "Your team resolves complaints reliably on day fourteen of a fourteen-day limit. What is the position?"
+      type: single
+      options: ["Compliant, and delivering a poor experience", "Compliant, and therefore performing adequately", "Non-compliant, since the limit is being tested", "Compliant, but exposed if volumes increase"]
+      correct: ["Compliant, and delivering a poor experience"]
+      rubric_category: analysis
+      explanation: "Legally accurate and technically fair, with every customer seething. The law sets where punishment begins, not where fairness does."
+      weight: 1
+    - id: cx4-08
+      stem: "A new consumer rule feels burdensome. What is the honest question to ask about it?"
+      type: single
+      options: ["Whether the burden is paperwork or the end of a profitable practice", "Whether competitors are complying with it any more thoroughly", "Whether the regulator will enforce it consistently across the market", "Whether the cost of complying exceeds the penalty for not doing so"]
+      correct: ["Whether the burden is paperwork or the end of a profitable practice"]
+      rubric_category: analysis
+      explanation: "The first is worth streamlining; the second is worth thanking the regulator for."
+      weight: 1
+    - id: cx4-09
+      stem: "Why does regulation tend to benefit an already well-run business?"
+      type: single
+      options: ["It forces the worst competitors to stop eroding trust in the industry", "It creates barriers that reduce the number of new entrants", "It standardises practices so customers compare on price alone", "It gives well-run businesses a certificate they can advertise"]
+      correct: ["It forces the worst competitors to stop eroding trust in the industry"]
+      rubric_category: analysis
+      explanation: "A business already running a proper journey, lifecycle and commitments finds most obligations are things it does anyway."
+      weight: 1
+    - id: cx4-10
+      stem: "Why do businesses that get made examples of usually have something in common beyond the original failure?"
+      type: single
+      options: ["They ignored the letters rather than answering them", "They failed repeatedly rather than once", "They operated in heavily regulated sectors", "They disputed the regulator's jurisdiction"]
+      correct: ["They ignored the letters rather than answering them"]
+      rubric_category: analysis
+      explanation: "Regulators grade cooperation. A well-documented, promptly-answered case closes quietly."
+      weight: 1

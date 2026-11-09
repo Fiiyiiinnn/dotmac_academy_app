@@ -1,0 +1,852 @@
+{
+  "repository": "michaelayoade/dotmac_academy_app",
+  "ref": "0968881fc40ad86b3abfea2fc40044dd2dbf47c9",
+  "files": [
+    {
+      "path": "alembic/versions/0005_labs.py",
+      "blob": "2a979e20bde7ebadd003239905ca4d1c47d90918",
+      "bytes": 3933,
+      "source": "verified immutable MCP archive",
+      "sha256": "1febeebbae42ab1aa66f6e0a3648fc5b84b53d53644ef7e19a7779b0bb2e8404"
+    },
+    {
+      "path": "alembic/versions/0006_platform_settings.py",
+      "blob": "438605b06918143cba4517fbd1e55fe5e7000c55",
+      "bytes": 1136,
+      "source": "verified immutable MCP archive",
+      "sha256": "638f6cbf8e210aee9e56f95740fec16c32d5bea4d5280beac8ca32c7f73d10d9"
+    },
+    {
+      "path": "alembic/versions/0007_person_profile.py",
+      "blob": "6b7cadd31a26065817ce9270406de67fb9fc51e6",
+      "bytes": 984,
+      "source": "verified immutable MCP archive",
+      "sha256": "5ba2d46aa152ce4531289fcdfe500a1de5195d606fab6d480bb258e1efd2b40a"
+    },
+    {
+      "path": "alembic/versions/0008_course_offerings.py",
+      "blob": "15e9255ad6314cec935c049d216a02a49e641c10",
+      "bytes": 3270,
+      "source": "verified immutable MCP archive",
+      "sha256": "e818b9f05c60067b25999a9a3494aa4d7d26ea3a8cebcc598c0851aaaeedd548"
+    },
+    {
+      "path": "alembic/versions/0009_offering_window.py",
+      "blob": "2516ad00c98e3c2f6e3ec7f8c7641580b696c781",
+      "bytes": 770,
+      "source": "verified immutable MCP archive",
+      "sha256": "4376d5c7b121e84ef671829a0293de3e95d6ea6772dbbdb9f7303bf39f632772"
+    },
+    {
+      "path": "alembic/versions/0010_course_completions.py",
+      "blob": "155be58fedb04e3c541a03d0f2c3bb5f88331f4c",
+      "bytes": 2420,
+      "source": "verified immutable MCP archive",
+      "sha256": "71a5685aaee0de29b84b10c4b915cae9a28b81d896b2514c6d53232b9c5d497b"
+    },
+    {
+      "path": "alembic/versions/0011_certificates.py",
+      "blob": "9b889131e2530945f3b616a3e0f07465c56046f8",
+      "bytes": 2268,
+      "source": "verified immutable MCP archive",
+      "sha256": "971d76b1e8ba215153639992f0e4f065ef39205bfeae84137786d631d256921f"
+    },
+    {
+      "path": "alembic/versions/0012_offering_activities.py",
+      "blob": "3d4ea3d2f953a0645a685cce1773765f6d2d8e47",
+      "bytes": 2561,
+      "source": "verified immutable MCP archive",
+      "sha256": "b3980420b3b5bdbedf497f4725f3081c551decf3437ea224e52031fab90610d0"
+    },
+    {
+      "path": "alembic/versions/0013_course_prerequisites.py",
+      "blob": "ab16834f7300ddc0aea6d4d3f0d1a626dec054ae",
+      "bytes": 2430,
+      "source": "verified immutable MCP archive",
+      "sha256": "76150f830515a1e75f3e355364fd9f5c49e33d08218b0be14a349d775c611af8"
+    },
+    {
+      "path": "alembic/versions/0014_account_tokens.py",
+      "blob": "f10e472515e38b3a59de16bb417fbb298a3f6dd0",
+      "bytes": 2267,
+      "source": "verified immutable MCP archive",
+      "sha256": "bbe1d5ab93f59424b8183b997ad1541eaaeb161f776f1ca8b6ec2e4559536996"
+    },
+    {
+      "path": "alembic/versions/0015_person_status.py",
+      "blob": "ab669fad338bbe0762ad3a9575d40176616f2725",
+      "bytes": 502,
+      "source": "verified immutable MCP archive",
+      "sha256": "f3157118ce9e4dfbe85fa6141f9dc3d9e900552a90d81af168e11ee48d6479c8"
+    },
+    {
+      "path": "alembic/versions/0016_activity_max_attempts.py",
+      "blob": "77641645c3208f806bd4ace0172787949a97f244",
+      "bytes": 464,
+      "source": "verified immutable MCP archive",
+      "sha256": "7c26ff37a40b81f662a49c6788bfbdf1889e4cd2b8de7f86eff57e457c44f2bd"
+    },
+    {
+      "path": "alembic/versions/0017_activity_grading.py",
+      "blob": "8d946703f5183f618e3b6596c5295ddb297291fb",
+      "bytes": 504,
+      "source": "verified immutable MCP archive",
+      "sha256": "7623567feb5649b0655977ff9bcab51f5386f453839989110a1d079d928aca03"
+    },
+    {
+      "path": "alembic/versions/0018_course_status.py",
+      "blob": "b51e638532c52ab10ad8f10f54a6119732dfd5cf",
+      "bytes": 556,
+      "source": "verified immutable MCP archive",
+      "sha256": "c0e34afcfd3498b9a54db72386d6ca0d08fc91266218bc0612c64291452dc911"
+    },
+    {
+      "path": "alembic/versions/0019_chapter_body_md.py",
+      "blob": "d50161d1d043b5de75dfa67ef16554bdb450efea",
+      "bytes": 467,
+      "source": "verified immutable MCP archive",
+      "sha256": "269908422fbe6e9c520ec3f3593b911065dc0912a4c831266d4a189bc1a0d152"
+    },
+    {
+      "path": "alembic/versions/0020_activity_attempts.py",
+      "blob": "14799ca0f004d2e895fc2282a6f258e70f23c8a8",
+      "bytes": 2498,
+      "source": "verified immutable MCP archive",
+      "sha256": "81adde48bcd94469ecb02300d714c11b778a51cf4fdb3988b4336ced9824325f"
+    },
+    {
+      "path": "alembic/versions/0020_notifications.py",
+      "blob": "d4d715443c7c81dc46a358f182fdfd6cfb97437c",
+      "bytes": 2287,
+      "source": "verified immutable MCP archive",
+      "sha256": "f3bf479ae08977b1b38286fa5b0b143dd394d13f298c39494a031a5a25c40f33"
+    },
+    {
+      "path": "alembic/versions/0021_announcements.py",
+      "blob": "5ec6414a6df1b2e7c9ac0b6911475f5fe78667db",
+      "bytes": 2475,
+      "source": "verified immutable MCP archive",
+      "sha256": "0b77f7ebb01d2eba8fb10ad25c94a40d280b6b07ad210594cba49fe697528c7e"
+    },
+    {
+      "path": "alembic/versions/0022_activity_weight.py",
+      "blob": "6633f898f316fde0cf7a3572308a7da57eed0b33",
+      "bytes": 423,
+      "source": "verified immutable MCP archive",
+      "sha256": "9abfce03c6dbbc9ba2f0206a560ba864be0bfc8da1c6e04259a737fcdc9c47dc"
+    },
+    {
+      "path": "alembic/versions/0023_merge_gaps_attempts_heads.py",
+      "blob": "81c03904f223e3b076bbaae757435ec406af0b83",
+      "bytes": 597,
+      "source": "verified immutable MCP archive",
+      "sha256": "47e10f287a34d7e2af369deaf8863f3468ac8e8875c19e03faad7eefa470932b"
+    },
+    {
+      "path": "alembic/versions/0024_chapter_reads.py",
+      "blob": "5d6df5f677d1e54a6a5082e148966af6272b63a0",
+      "bytes": 1970,
+      "source": "verified immutable MCP archive",
+      "sha256": "0d187a865509021e2152e1c06ff5ef6e9a47e4c1400874718870de542d9a7bee"
+    },
+    {
+      "path": "alembic/versions/0025_admissions.py",
+      "blob": "1a90d8afcf2f9b6e60efebfe57338fdb55081ead",
+      "bytes": 2988,
+      "source": "verified immutable MCP archive",
+      "sha256": "e8e5ab8015b353f67b6d4e9324cfb054d4c6498f8b58ef8f1c633e2da55c63a7"
+    },
+    {
+      "path": "alembic/versions/0026_class_sessions.py",
+      "blob": "1ea54d3a5c6ae85ccbe5c1c4e6371f8da3ea7c4d",
+      "bytes": 3201,
+      "source": "verified immutable MCP archive",
+      "sha256": "5a41c425aa7c3064432d43db5ce1bea9fc39874816af60fcc01715e18357e82b"
+    },
+    {
+      "path": "alembic/versions/0027_assessment_mode.py",
+      "blob": "22c530d7262aea2a0bb3c95ff5e5b6f821c2b753",
+      "bytes": 721,
+      "source": "verified immutable MCP archive",
+      "sha256": "7981defee43ef9398d36d64e02f69b675aa3657e73a2b7d5ae22e61d31082726"
+    },
+    {
+      "path": "alembic/versions/0028_onboarding_tasks.py",
+      "blob": "e5f6e8ef40271c8e264695e10f3cb338fb68f3bd",
+      "bytes": 2812,
+      "source": "verified immutable MCP archive",
+      "sha256": "8f07415391080426dd6f645cbcb9d1a7f3dc89d683f7cd432257860017823a78"
+    },
+    {
+      "path": "alembic/versions/0029_completion_erp_synced.py",
+      "blob": "25a51e5b5110f0c28ef5489a79c766eb01d61e99",
+      "bytes": 517,
+      "source": "verified immutable MCP archive",
+      "sha256": "b81a71ef6378ae84a7135f4c0d21f532230b3546d3dc9f3b5b9df2a16bb9c436"
+    },
+    {
+      "path": "alembic/versions/0030_entrance_assessment.py",
+      "blob": "c632115b63e51ef8b97416a306676c5be704ca08",
+      "bytes": 1715,
+      "source": "verified immutable MCP archive",
+      "sha256": "a4eb78a5115b18711506cb6db722c31e9c60b0875dd776e76e5ed7c367c1b580"
+    },
+    {
+      "path": "alembic/versions/0031_applicant_assessment_token.py",
+      "blob": "d7923b061e32380323479664d975bdca40981b1f",
+      "bytes": 502,
+      "source": "verified immutable MCP archive",
+      "sha256": "300e85d6eee504a76afd4aa1a321b4fb732766c69a7c4219b0a2c6627e60d38c"
+    },
+    {
+      "path": "alembic/versions/0032_entrance_timer.py",
+      "blob": "cd4a0cf7669f1c4519a11c6088fec522eee1d9de",
+      "bytes": 887,
+      "source": "verified immutable MCP archive",
+      "sha256": "54e3794198ff270344a858d8a0a012038e841768765f9ce8105a85a5981e879b"
+    },
+    {
+      "path": "alembic/versions/0033_tenant_default_entrance.py",
+      "blob": "2e45ec13d28a0404c92d063a874e1619c6ef0d4f",
+      "bytes": 733,
+      "source": "verified immutable MCP archive",
+      "sha256": "e00d7d823b9c4843b1b3e7e3ec6174b1785e88bcd3ae4b0f6ef63a9bd97c875e"
+    },
+    {
+      "path": "alembic/versions/0036_tracks.py",
+      "blob": "338fc69f434ad8809c6983499361b3563f9a84ef",
+      "bytes": 7418,
+      "source": "verified immutable MCP archive",
+      "sha256": "1c8297a03559f09f8ddda42b21255587276a36f933f13d0bff2913ced053be2a"
+    },
+    {
+      "path": "alembic/versions/0037_pause_entrance_timer.py",
+      "blob": "98bf13eb60ab7b49201a9aed268232492c6af646",
+      "bytes": 585,
+      "source": "verified immutable MCP archive",
+      "sha256": "f44ee8eb3b5e1fa408acc21a120a3c71d6b24391b136f9019cf4f52b59973bec"
+    },
+    {
+      "path": "alembic/versions/0038_onboarding_token.py",
+      "blob": "12edb5cb0c92004ab3794eab7a5355ae055b2044",
+      "bytes": 497,
+      "source": "verified immutable MCP archive",
+      "sha256": "def53e06c77a7e64d06a0b2d9d7dfde9a802104edab3142b6482f2de586a9424"
+    },
+    {
+      "path": "alembic/versions/0039_auto_accept_threshold.py",
+      "blob": "cee6ff369f310048fb00e153fb7188a012c3e520",
+      "bytes": 487,
+      "source": "verified immutable MCP archive",
+      "sha256": "3729acc0356709216c2f92983ea350a45b356b13970a172eef308dce430446da"
+    },
+    {
+      "path": "alembic/versions/0040_merge_tracks_admissions.py",
+      "blob": "fe81bc3ab999e20fa327437f145d966bae26b9e8",
+      "bytes": 561,
+      "source": "verified immutable MCP archive",
+      "sha256": "bf2090ebe86706087c17a3a2bdc903c284b97545aa751fcbbe8d6b63e9eb9182"
+    },
+    {
+      "path": "alembic/versions/0041_review_remediation.py",
+      "blob": "dd62055fa2037d7b57b1f4005e1f1b8a06b98e02",
+      "bytes": 7663,
+      "source": "verified immutable MCP archive",
+      "sha256": "04f1566ea2ab508eea96207652917a3b6ce5d278f7cefc4f99f94224a0b93060"
+    },
+    {
+      "path": "alembic/versions/0042_course_listed.py",
+      "blob": "a57bb676a599277d7d4f03e3c11024b66d93e8b5",
+      "bytes": 1196,
+      "source": "verified immutable MCP archive",
+      "sha256": "3def18d99d255ab0cd13adb66c5eb6023e1ae061ad0fedc47c74ed46199eb68e"
+    },
+    {
+      "path": "alembic/versions/0043_bookmarks_notes.py",
+      "blob": "b4a7edcf3203dc65e51b31a2fcfb913742f1ebb5",
+      "bytes": 2324,
+      "source": "verified immutable MCP archive",
+      "sha256": "07515bb75f3d652b0b3029c560b2edcfc5fc72c3ce42bb825cc74084db3cc546"
+    },
+    {
+      "path": "alembic/versions/0044_reminders.py",
+      "blob": "9c12dfdca9d5caf116064fcbcc6fe03d02997327",
+      "bytes": 3898,
+      "source": "verified immutable MCP archive",
+      "sha256": "04d7532c390e95c4d88d0ebf69fe92d681450b643d94d131e4f55768bf3153e3"
+    },
+    {
+      "path": "alembic/versions/0045_learning_events.py",
+      "blob": "317080b48a91a5b5a1e5845692880d16f933c8b7",
+      "bytes": 2761,
+      "source": "verified immutable MCP archive",
+      "sha256": "870e0345e74481a4451d487afdcf7e40abc2b10ba3e114a68089448b3ef5d570"
+    },
+    {
+      "path": "alembic/versions/0046_success_queue.py",
+      "blob": "9e91ad195218a0ec514863aa96cbd027803492d0",
+      "bytes": 3611,
+      "source": "verified immutable MCP archive",
+      "sha256": "25d94ccc54d14ff95861345d0b15a20e6823b03b1899b40d2a57d14490809199"
+    },
+    {
+      "path": "alembic/versions/0047_learning_event_dedup.py",
+      "blob": "bfdef285e5d2fbae84b97c81f33f419033ee2ea4",
+      "bytes": 1208,
+      "source": "verified immutable MCP archive",
+      "sha256": "4f06d99be151b6a97d47951e85e06176c6dc4ab54df4c69c8e9aece8a2751dd8"
+    },
+    {
+      "path": "alembic/versions/0048_subtopic_reads.py",
+      "blob": "c24b8288fa8db95413c485105e55ddcf85b0b6a2",
+      "bytes": 2181,
+      "source": "verified immutable MCP archive",
+      "sha256": "218a2e066370724baca846429f3ce89d7723f9d0cba9e0b3883bac25ce5721d5"
+    },
+    {
+      "path": "alembic/versions/0049_enrollment_audience.py",
+      "blob": "8e41b7f777d46edbe1caa48ba44e9e66ef2ce518",
+      "bytes": 1856,
+      "source": "verified immutable MCP archive",
+      "sha256": "211b36f1b8055304c2aa84f2c3c37856011a0447211754ca3eb555c5d30456f7"
+    },
+    {
+      "path": "alembic/versions/0050_enrollment_access_extension.py",
+      "blob": "60c1fac76b13ae86afe9c78c8d28377a86d269a0",
+      "bytes": 729,
+      "source": "verified immutable MCP archive",
+      "sha256": "589c23d4078e5ee08476614987eb2a82fa1b23ef66954712ad07b723388ca577"
+    },
+    {
+      "path": "alembic/versions/0051_attempt_grants.py",
+      "blob": "0e11ad7c0ab36cfe3412eec56fe609db44f5533e",
+      "bytes": 2952,
+      "source": "verified immutable MCP archive",
+      "sha256": "bb787257721d4521d71b8823e2ffcdf142035c6269a2550f0e8e9865c8482338"
+    },
+    {
+      "path": "alembic/versions/0052_erp_applicant_assessments.py",
+      "blob": "91d7f72cd84249f76e42bd3bdb368837688a9834",
+      "bytes": 2627,
+      "source": "verified immutable MCP archive",
+      "sha256": "e7c67dbcc7ff2dc6eb59d2334f3a3c73eda89478bc7733cdb1bcfa46a1da1d9a"
+    },
+    {
+      "path": "alembic/versions/0053_entrance_defaults_table.py",
+      "blob": "9eb303fac1f5a59a0d4fc7817299e3fb8fb9c33a",
+      "bytes": 3923,
+      "source": "verified immutable MCP archive",
+      "sha256": "d9a77e4084e5fbf68d74b61b278738396b3b1156ec8720cbe3976bdb4242f71d"
+    },
+    {
+      "path": "alembic/versions/0054_lab_instructions_md.py",
+      "blob": "67d20871424c3573fa07ab7a7fad5123466d3297",
+      "bytes": 2031,
+      "source": "verified immutable MCP archive",
+      "sha256": "ce94d46eab8f7a0b5ce8e109291a66ca964fa9fe71418080e6721ffd92276bf5"
+    },
+    {
+      "path": "alembic/versions/0055_lab_operations.py",
+      "blob": "972e8ec3b9f18a7dd29ed5b6a24b45d9007c7a0e",
+      "bytes": 6946,
+      "source": "verified immutable MCP archive",
+      "sha256": "5f1befb9f90c0db8fe3944c545e5802dd8eeb21eea9b55868311a835833905c5"
+    },
+    {
+      "path": "alembic/versions/0056_lab_instance_worker_grants.py",
+      "blob": "494140ab5be6b9412c758ffaf4f2cacf34116460",
+      "bytes": 6243,
+      "source": "verified immutable MCP archive",
+      "sha256": "fd75319dd804b8f0a388d0fde8f164421503d8e26b695c1c4459bed519e52aa7"
+    },
+    {
+      "path": "alembic/versions/0057_lab_instance_name_unique.py",
+      "blob": "c2db0e21f4bcbbdceac35c8b610814dbc420c557",
+      "bytes": 4118,
+      "source": "verified immutable MCP archive",
+      "sha256": "a62e6765da087bff95c0f23431ef3e6b11a6eca9bde45c357b2ac644175bc849"
+    },
+    {
+      "path": "alembic/versions/0058_lab_runtime_presence.py",
+      "blob": "8d30e97bde76e52f99093965438e30161ccd9ab6",
+      "bytes": 10723,
+      "source": "verified immutable MCP archive",
+      "sha256": "90b055ad7a308bb2a4f4413e54d1d73e4ab97fe8da41c07f59c1bd0d76fe6e49"
+    },
+    {
+      "path": "alembic/versions/0059_lab_claim_owner.py",
+      "blob": "b652aa1c88e9c20bba2c13e5b68d36575e4cfe8d",
+      "bytes": 6926,
+      "source": "verified immutable MCP archive",
+      "sha256": "a1d08823ab75bc8049dc86e1738fb52ae25b71e43f5f3d48b4134bdfa9810f1e"
+    },
+    {
+      "path": "alembic/versions/0060_lab_conditional_ops.py",
+      "blob": "1c2413c2ea13cf94145f33e409ef63ab75a3f579",
+      "bytes": 12881,
+      "source": "verified immutable MCP archive",
+      "sha256": "a9d670de50e1c9d8d0048edcf6c98524372fe6b562e27278a3bf37612daa5937"
+    },
+    {
+      "path": "alembic/versions/0061_lab_completion_grants.py",
+      "blob": "777b7fbc758b891ffb9e4fae0054ca25ac04c64f",
+      "bytes": 1588,
+      "source": "verified immutable MCP archive",
+      "sha256": "e2da178268685378e46239391f0455cfb3937f1ee632254d9baf0600d31b3f65"
+    },
+    {
+      "path": "alembic/versions/20260504_0001_initial_tenant_schema.py",
+      "blob": "b57abe48a37799fc6f6dd61d46e0f81f810f3656",
+      "bytes": 15464,
+      "source": "verified immutable MCP archive",
+      "sha256": "33f9569bccc1562a2973df75e597332bb13b3003bab4d1815943e6cbee3eba3e"
+    },
+    {
+      "path": "alembic/versions/20260626_0002_courses.py",
+      "blob": "6b9038a7a44e28921bd093269c8b8646e69cfacd",
+      "bytes": 3080,
+      "source": "verified immutable MCP archive",
+      "sha256": "89eae42c361a70b81bd2416b9c1338072b4be67788e6dfe76137e12f31fb53ca"
+    },
+    {
+      "path": "alembic/versions/20260626_0003_cohorts.py",
+      "blob": "ccfa6766ece490d225fed52108e0f87c80bbb833",
+      "bytes": 2851,
+      "source": "verified immutable MCP archive",
+      "sha256": "eb479ff244a1d5b65f395a6c1f188c079a0f0e9db3f72e4d6dc253cb82cd06bb"
+    },
+    {
+      "path": "alembic/versions/20260626_0004_assessment.py",
+      "blob": "7138735005032cba5cbf4a13677fd41d90c75f77",
+      "bytes": 6540,
+      "source": "verified immutable MCP archive",
+      "sha256": "a118b1658abced245f04994afc0989ead3c203dc93c71a48d99bfd5c2008b5eb"
+    },
+    {
+      "path": "alembic/versions/20260711_0034_entrance_resilience.py",
+      "blob": "3455014780d81663f5a1a49a7a2fe15b1e4c0581",
+      "bytes": 1860,
+      "source": "verified immutable MCP archive",
+      "sha256": "0b14733170a5c9cb84edb6be6e1c57e703851537f6447aa173bd2046e80b2554"
+    },
+    {
+      "path": "alembic/versions/20260711_0035_applicant_profile.py",
+      "blob": "aa64a7b5d842f5e2774b4ed87041ac568a08b835",
+      "bytes": 2280,
+      "source": "verified immutable MCP archive",
+      "sha256": "d6bcfc0f7932cdb1aa8df3f2608e3a4911e32673512da3e3ea2533ed7d82fdc0"
+    },
+    {
+      "path": "app/api/admissions.py",
+      "blob": "8ce9c7da2f4ae36ea7c9376481e2bde447096387",
+      "bytes": 6335,
+      "url": "https://github.com/michaelayoade/dotmac_academy_app/blob/0968881fc40ad86b3abfea2fc40044dd2dbf47c9/app/api/admissions.py",
+      "source": "immutable GitHub MCP at 0968881fc40ad86b3abfea2fc40044dd2dbf47c9",
+      "sha256": "192c1ec1a14cc1fdd92c2ab3e1c1f1a4f96f8366806705e67d35d77565bad11f"
+    },
+    {
+      "path": "app/api/deps.py",
+      "blob": "73afcd6f329f212a8e0ef71fe508a880a9770ecb",
+      "bytes": 3642,
+      "url": "https://github.com/michaelayoade/dotmac_academy_app/blob/0968881fc40ad86b3abfea2fc40044dd2dbf47c9/app/api/deps.py",
+      "source": "immutable GitHub MCP at 0968881fc40ad86b3abfea2fc40044dd2dbf47c9",
+      "sha256": "8b3ecc66b6ee1f9db3d8f02c86985ed6a126eb04cb6aaf79679cffe0324f91ef"
+    },
+    {
+      "path": "app/models/admissions.py",
+      "blob": "84b5d135a4181f4cf68ca4d7d4a2362b35db28a6",
+      "bytes": 10369,
+      "url": "https://github.com/michaelayoade/dotmac_academy_app/blob/0968881fc40ad86b3abfea2fc40044dd2dbf47c9/app/models/admissions.py",
+      "source": "immutable GitHub MCP at 0968881fc40ad86b3abfea2fc40044dd2dbf47c9",
+      "sha256": "334529eaccc8c7f67c855e2baad7f2ada688a48a9091a5c35b2850df48e44329"
+    },
+    {
+      "path": "app/models/announcement.py",
+      "blob": "c1e55443b5e472d54c0520c2aa4721850da24de5",
+      "bytes": 1538,
+      "url": "https://github.com/michaelayoade/dotmac_academy_app/blob/0968881fc40ad86b3abfea2fc40044dd2dbf47c9/app/models/announcement.py",
+      "source": "immutable GitHub MCP at 0968881fc40ad86b3abfea2fc40044dd2dbf47c9",
+      "sha256": "9c5addbea31e21969ecc52b338df1b2f8e3fd403fdfab783ae0c9070720d82a4"
+    },
+    {
+      "path": "app/models/assessment.py",
+      "blob": "dc32097d88f5086e39408ff8d08cbd3612866469",
+      "bytes": 6472,
+      "url": "https://github.com/michaelayoade/dotmac_academy_app/blob/0968881fc40ad86b3abfea2fc40044dd2dbf47c9/app/models/assessment.py",
+      "source": "immutable GitHub MCP at 0968881fc40ad86b3abfea2fc40044dd2dbf47c9",
+      "sha256": "e92bc944396a971d8d423877c46d8ccc88252bde5d51764e13bc6530b057fe6f"
+    },
+    {
+      "blob": "569671e08aed2b24629a920c5932d72d3cbfe132",
+      "bytes": 4067,
+      "path": "app/models/attempt.py",
+      "sha256": "c809d2e84bb23cd1e5af27057f2800c536306b66dab0005db6a27ed64ca15a8f"
+    },
+    {
+      "path": "app/models/base.py",
+      "blob": "d7138b7f703a945a284b03562104856fae2861ef",
+      "bytes": 823,
+      "url": "https://github.com/michaelayoade/dotmac_academy_app/blob/0968881fc40ad86b3abfea2fc40044dd2dbf47c9/app/models/base.py",
+      "source": "immutable GitHub MCP at 0968881fc40ad86b3abfea2fc40044dd2dbf47c9",
+      "sha256": "4849e6e30ada37e70a2bc368dd15095c4661d4cddee6e90fe8a6e93e775b83ea"
+    },
+    {
+      "path": "app/models/class_session.py",
+      "blob": "b1a26d1610e27c677a7acac557a4c2b3d513dbe0",
+      "bytes": 3155,
+      "url": "https://github.com/michaelayoade/dotmac_academy_app/blob/0968881fc40ad86b3abfea2fc40044dd2dbf47c9/app/models/class_session.py",
+      "source": "immutable GitHub MCP at 0968881fc40ad86b3abfea2fc40044dd2dbf47c9",
+      "sha256": "f1da9baa35de01a9db3441406ade728940be0cd1e2ba549469ff99837498561f"
+    },
+    {
+      "path": "app/models/cohort.py",
+      "blob": "27e5c7ab5007390ac5f79f6394b154853f006c04",
+      "bytes": 4047,
+      "url": "https://github.com/michaelayoade/dotmac_academy_app/blob/0968881fc40ad86b3abfea2fc40044dd2dbf47c9/app/models/cohort.py",
+      "source": "immutable GitHub MCP at 0968881fc40ad86b3abfea2fc40044dd2dbf47c9",
+      "sha256": "778c0b75cef754061356f1ac4c082955fdc1ca066ed5923a1579437c100fe87d"
+    },
+    {
+      "path": "app/models/lab.py",
+      "blob": "d933304ab5701f188bdac36b7ce802cef69be4fb",
+      "bytes": 12596,
+      "url": "https://github.com/michaelayoade/dotmac_academy_app/blob/0968881fc40ad86b3abfea2fc40044dd2dbf47c9/app/models/lab.py",
+      "source": "immutable GitHub MCP at 0968881fc40ad86b3abfea2fc40044dd2dbf47c9",
+      "sha256": "2b8c9133b0a02ddd00d3b173aa9e33e51e008f7c44d5ce70dfcdd954429e94ef"
+    },
+    {
+      "path": "app/models/offering.py",
+      "blob": "72031e8a3d0adc5ebb5b22c963eb15ad601c6399",
+      "bytes": 2035,
+      "url": "https://github.com/michaelayoade/dotmac_academy_app/blob/0968881fc40ad86b3abfea2fc40044dd2dbf47c9/app/models/offering.py",
+      "source": "immutable GitHub MCP at 0968881fc40ad86b3abfea2fc40044dd2dbf47c9",
+      "sha256": "c6d3148de0a0b35cb6ed8e4060e90a5cf724211286d58e90a2ad6e4499df6ca3"
+    },
+    {
+      "path": "app/models/pacing.py",
+      "blob": "030daffea28a7f9af2a9ca4be50b7732b4bc72b9",
+      "bytes": 2005,
+      "url": "https://github.com/michaelayoade/dotmac_academy_app/blob/0968881fc40ad86b3abfea2fc40044dd2dbf47c9/app/models/pacing.py",
+      "source": "immutable GitHub MCP at 0968881fc40ad86b3abfea2fc40044dd2dbf47c9",
+      "sha256": "86c0a9a846019630af2a1c05470201c3db7a5a86e20d90b05affb819e302b693"
+    },
+    {
+      "path": "app/models/person.py",
+      "blob": "2039525cf576e6ddca7700cd6cc2a867f3e0647e",
+      "bytes": 1771,
+      "url": "https://github.com/michaelayoade/dotmac_academy_app/blob/0968881fc40ad86b3abfea2fc40044dd2dbf47c9/app/models/person.py",
+      "source": "immutable GitHub MCP at 0968881fc40ad86b3abfea2fc40044dd2dbf47c9",
+      "sha256": "a9d8b3914bd8427cd074dcd07e26bdc25440df28233b5d878093481f18b363af"
+    },
+    {
+      "path": "app/models/prerequisite.py",
+      "blob": "375a23aa3015fb0564f78ca5a9a82d44c436da00",
+      "bytes": 1529,
+      "url": "https://github.com/michaelayoade/dotmac_academy_app/blob/0968881fc40ad86b3abfea2fc40044dd2dbf47c9/app/models/prerequisite.py",
+      "source": "immutable GitHub MCP at 0968881fc40ad86b3abfea2fc40044dd2dbf47c9",
+      "sha256": "46c58d283ab0371633036044490395118cce4a403cddf5c028a0b4e803eca284"
+    },
+    {
+      "path": "app/models/rbac.py",
+      "blob": "c49a9c27041e1e94524fe01f346fd1af6dd5a8ff",
+      "bytes": 2868,
+      "sha256": "99ee83ba75b4f45c07ec22452511c522b456ed63d413efe3bfe80dbf22467f51"
+    },
+    {
+      "path": "app/models/track.py",
+      "blob": "baa8309fd87151e70427a8a481825773534d7894",
+      "bytes": 3395,
+      "url": "https://github.com/michaelayoade/dotmac_academy_app/blob/0968881fc40ad86b3abfea2fc40044dd2dbf47c9/app/models/track.py",
+      "source": "immutable GitHub MCP at 0968881fc40ad86b3abfea2fc40044dd2dbf47c9",
+      "sha256": "8ca162f5bfe9f9b4e93ea76dc4ac44f74df68e340257dcdcd0256d3a61639152"
+    },
+    {
+      "path": "app/services/admissions.py",
+      "blob": "a287d2b3f0fa46a8f49dd992430f34e4216a74b5",
+      "bytes": 35521,
+      "url": "https://github.com/michaelayoade/dotmac_academy_app/blob/0968881fc40ad86b3abfea2fc40044dd2dbf47c9/app/services/admissions.py",
+      "source": "immutable GitHub MCP at 0968881fc40ad86b3abfea2fc40044dd2dbf47c9",
+      "sha256": "696c8ad93c6553f1092450bf4fd24e077ec491efaabd69b64b73d12db01974c4"
+    },
+    {
+      "blob": "1465567f144981b2e19d1812830a7e7e180b431c",
+      "bytes": 13219,
+      "path": "app/services/assessment.py",
+      "sha256": "1018e4b652e024bbe171e087ee402001d906f6136b25e0b0b1c044102458db2e"
+    },
+    {
+      "path": "app/services/attempt_policy.py",
+      "blob": "2411d1b1d74df126e03afe572a321f2daa051af6",
+      "bytes": 6741,
+      "url": "https://github.com/michaelayoade/dotmac_academy_app/blob/0968881fc40ad86b3abfea2fc40044dd2dbf47c9/app/services/attempt_policy.py",
+      "source": "immutable GitHub MCP at 0968881fc40ad86b3abfea2fc40044dd2dbf47c9",
+      "sha256": "603c403189a73669f2f9cc70147cd4fd030250d1fe3d6420d0bd7b20b2f79367"
+    },
+    {
+      "blob": "d1fb0257f1e2710d040d67676c5e785451baaf82",
+      "bytes": 5399,
+      "path": "app/services/attempts.py",
+      "sha256": "45bf15a3111ed85bea3d65539527b530b6a69755898ed3e0fc97d660c444c0c4"
+    },
+    {
+      "path": "app/services/audience.py",
+      "blob": "c688b779a6551ab89ed72421cc5278f13cc7d8f1",
+      "bytes": 4991,
+      "url": "https://github.com/michaelayoade/dotmac_academy_app/blob/0968881fc40ad86b3abfea2fc40044dd2dbf47c9/app/services/audience.py",
+      "source": "immutable GitHub MCP at 0968881fc40ad86b3abfea2fc40044dd2dbf47c9",
+      "sha256": "3262b87952f9c82c2474b44c62f68749ddab8bec00f342a55c0ef747ff4afe7a"
+    },
+    {
+      "path": "app/services/audit.py",
+      "blob": "88e432b9d7ad9f61b982e642e62ca4d139aa9d36",
+      "bytes": 1526,
+      "sha256": "50d584fa52f902e1ad9bd979347d41fe72d18cd2dd715c5677c4a37de833fa98"
+    },
+    {
+      "path": "app/services/entitlements.py",
+      "blob": "19c890435e29a4e19703ddf91e3a6a7250ab7cdd",
+      "bytes": 11126,
+      "url": "https://github.com/michaelayoade/dotmac_academy_app/blob/0968881fc40ad86b3abfea2fc40044dd2dbf47c9/app/services/entitlements.py",
+      "source": "immutable GitHub MCP at 0968881fc40ad86b3abfea2fc40044dd2dbf47c9",
+      "sha256": "92ab934d4d1bf5c7f32ce4ccbc4e42886ca9a3e1298c67d6337ef45a1e9f6134"
+    },
+    {
+      "path": "app/services/erp_sync.py",
+      "blob": "5aeae696b8223219c254e3c2b11a1f9152ae35a3",
+      "bytes": 6570,
+      "url": "https://github.com/michaelayoade/dotmac_academy_app/blob/0968881fc40ad86b3abfea2fc40044dd2dbf47c9/app/services/erp_sync.py",
+      "source": "immutable GitHub MCP at 0968881fc40ad86b3abfea2fc40044dd2dbf47c9",
+      "sha256": "b0ce39b9297e71da91d5c6e9ec6638a1875f1ae759c65a2a441b3c98872e09bf"
+    },
+    {
+      "blob": "2e66aaf15b7424d7cdb2fa1fab43d980488a7e58",
+      "bytes": 8421,
+      "path": "app/services/exam_engine.py",
+      "sha256": "030636ebb8abcd1b14a0ca014159a94dbc0cc80fe667c1ad77713082531ee4cd"
+    },
+    {
+      "blob": "6bc3ad03c50f701e5c2e5070f9a4578544cf5a29",
+      "bytes": 3188,
+      "path": "app/services/grading.py",
+      "sha256": "2293cd677eab43b65485a2816404759ea20b472c0449e1ef5db1d164a0ef478f"
+    },
+    {
+      "path": "app/services/roster.py",
+      "blob": "1f8825602df1516675cc896b74e7a64b6d0aea7b",
+      "bytes": 9179,
+      "url": "https://github.com/michaelayoade/dotmac_academy_app/blob/0968881fc40ad86b3abfea2fc40044dd2dbf47c9/app/services/roster.py",
+      "source": "immutable GitHub MCP at 0968881fc40ad86b3abfea2fc40044dd2dbf47c9",
+      "sha256": "4dedf2bbecdcfc2dc782923da6ed42a61dbe472fdf58d7cf510d259fc9488e7c"
+    },
+    {
+      "path": "app/services/tracks.py",
+      "blob": "1ffdcc9143fc7f7b5bc0eac3000d1e16cb5bd31d",
+      "bytes": 14690,
+      "url": "https://github.com/michaelayoade/dotmac_academy_app/blob/0968881fc40ad86b3abfea2fc40044dd2dbf47c9/app/services/tracks.py",
+      "source": "immutable GitHub MCP at 0968881fc40ad86b3abfea2fc40044dd2dbf47c9",
+      "sha256": "439fdbddfd4d03ef3f1c20cc2984808aea6d506524f141ef7296ae5f9270ce7f"
+    },
+    {
+      "path": "app/web/instructor.py",
+      "blob": "1c71d39f3f712b9b6356709824249939b063aef4",
+      "bytes": 55566,
+      "url": "https://github.com/michaelayoade/dotmac_academy_app/blob/0968881fc40ad86b3abfea2fc40044dd2dbf47c9/app/web/instructor.py",
+      "source": "immutable GitHub MCP at 0968881fc40ad86b3abfea2fc40044dd2dbf47c9",
+      "sha256": "c760aa0cbcb8d4967f045fcf4601785d7f2459ceb6710417a74541e4b86103d2"
+    },
+    {
+      "path": "docs/SOT_RELATIONSHIP_MAP.md",
+      "blob": "03f099ce13e996475173a6ea62a8b3c35be063bb",
+      "bytes": 25121,
+      "url": "https://github.com/michaelayoade/dotmac_academy_app/blob/0968881fc40ad86b3abfea2fc40044dd2dbf47c9/docs/SOT_RELATIONSHIP_MAP.md",
+      "source": "immutable GitHub MCP at 0968881fc40ad86b3abfea2fc40044dd2dbf47c9",
+      "sha256": "88b250b699138ef14174353f5ac71d3024a923fb8add06525707be4c1291efb8"
+    },
+    {
+      "path": "docs/adr/0004-learning-ownership-and-staff-learners.md",
+      "blob": "eebdb2f238732d12baca92bde129a4cde0c4bfad",
+      "bytes": 9387,
+      "url": "https://github.com/michaelayoade/dotmac_academy_app/blob/0968881fc40ad86b3abfea2fc40044dd2dbf47c9/docs/adr/0004-learning-ownership-and-staff-learners.md",
+      "source": "immutable GitHub MCP at 0968881fc40ad86b3abfea2fc40044dd2dbf47c9",
+      "sha256": "05fb0cc9182edf36bcb2dfe781e118f5dd973b2a77eb02f63d91ef985dba4d39"
+    },
+    {
+      "path": "docs/adr/0005-assessment-engine-owns-exam-logic.md",
+      "blob": "e50959a992224a4cf99e587a951f46c3d577940c",
+      "bytes": 7697,
+      "sha256": "b46992066b1552a56471770fb704a49452c556bf54bd0501eaa962b807fc2b79"
+    },
+    {
+      "path": "tests/models/test_assessment_models.py",
+      "blob": "3dacd824cdaea6b9fd42fe143f42db50ba21296a",
+      "bytes": 1487,
+      "sha256": "a57524ce9bff1e003f8dc265956b781c295503954b113fa88f546cbadd652cee"
+    },
+    {
+      "path": "tests/models/test_cohort_models.py",
+      "blob": "ace6a4092e42728fd912c4db9b8115e10eba974d",
+      "bytes": 660,
+      "url": "https://github.com/michaelayoade/dotmac_academy_app/blob/0968881fc40ad86b3abfea2fc40044dd2dbf47c9/tests/models/test_cohort_models.py",
+      "source": "immutable GitHub MCP at 0968881fc40ad86b3abfea2fc40044dd2dbf47c9",
+      "sha256": "2e52a14292bdb9bcab742080fbc6622ae9a1cad094a494b47ee049a3f4872cba"
+    },
+    {
+      "path": "tests/models/test_concurrency_constraints.py",
+      "blob": "3014f06a69a375a97b9906e74fe2755fdea48a8b",
+      "bytes": 2595,
+      "sha256": "0f03044f3afb8fc4f744147162d78040ac23a88e576a55802b05be8d332a8657"
+    },
+    {
+      "path": "tests/services/test_assessment_modes.py",
+      "blob": "2804f7cbb0d54f787c9ab0ba172eee0562e33d7e",
+      "bytes": 1235,
+      "sha256": "f81691db303b2cdc090f0f62ca057c4bd20623216160db6aee4e87423541aa97"
+    },
+    {
+      "path": "tests/services/test_assessment_service.py",
+      "blob": "77a72621da4035543f6a9129d35cf878334bf350",
+      "bytes": 7472,
+      "sha256": "410206585e829ee76e55c42a28ff20d2ed965bfe29b39397796ac5e327db6227"
+    },
+    {
+      "path": "tests/services/test_attempt_policy.py",
+      "blob": "a5a0f2a641d97c9babb7800cc4a0770b8c9919e5",
+      "bytes": 6280,
+      "url": "https://github.com/michaelayoade/dotmac_academy_app/blob/0968881fc40ad86b3abfea2fc40044dd2dbf47c9/tests/services/test_attempt_policy.py",
+      "source": "immutable GitHub MCP at 0968881fc40ad86b3abfea2fc40044dd2dbf47c9",
+      "sha256": "c5dbde8a52abccca7ae0e7e3627f548b12e40d101d07475b5e5cea97ce47dc49"
+    },
+    {
+      "path": "tests/services/test_audience_hr.py",
+      "blob": "120d8f4e76add3bf6ffb1f33380a87098630e47b",
+      "bytes": 7645,
+      "url": "https://github.com/michaelayoade/dotmac_academy_app/blob/0968881fc40ad86b3abfea2fc40044dd2dbf47c9/tests/services/test_audience_hr.py",
+      "source": "immutable GitHub MCP at 0968881fc40ad86b3abfea2fc40044dd2dbf47c9",
+      "sha256": "e4a70999a17a750f53414333451b123c71abf71ecacb28b8a507d966503d527b"
+    },
+    {
+      "path": "tests/services/test_erp_sync.py",
+      "blob": "a8fe3c959a59ccb19f68ff6d6a39efbda0916c99",
+      "bytes": 9557,
+      "url": "https://github.com/michaelayoade/dotmac_academy_app/blob/0968881fc40ad86b3abfea2fc40044dd2dbf47c9/tests/services/test_erp_sync.py",
+      "source": "immutable GitHub MCP at 0968881fc40ad86b3abfea2fc40044dd2dbf47c9",
+      "sha256": "9767df3d1c23caf8b12b341dc028ff68ae68b58836b5cf84281d968ec385dcaa"
+    },
+    {
+      "blob": "4897b63f1d554601350ec575c59a39a7b3636d3b",
+      "bytes": 8569,
+      "path": "tests/services/test_exam_engine_characterisation.py",
+      "sha256": "177da6a76947977226aec73f5ef0cafa3ea793255db01ef4ac33e666c070956d"
+    },
+    {
+      "path": "tests/services/test_grading.py",
+      "blob": "90c782a51789813d53493e038e69cb5fcc3a28ba",
+      "bytes": 2554,
+      "sha256": "e88e28d4e0ee2aad90e3c6b378b724161edbbec66f34b1aae7e6216ff87900fe"
+    },
+    {
+      "blob": "66a6bb3531d1534c3f2261c143d7fc8b5718571a",
+      "bytes": 2055,
+      "path": "tests/services/test_manual_grading.py",
+      "sha256": "f4bb9f394dae6737744c9ceb018c60758123e70dc4549af82fda3f6523e500e2"
+    },
+    {
+      "blob": "9684a24bdefa7cf620cd3e92201e84537db9bf86",
+      "bytes": 8704,
+      "path": "tests/services/test_question_types.py",
+      "sha256": "22a619bd79b2e82a700379bbf506d445d552ec3b35dd580a0ab3ca33a94b22fd"
+    },
+    {
+      "path": "tests/services/test_review_corrections.py",
+      "blob": "59d34fd4b475d2a740e24e70f20d70f043633a7e",
+      "bytes": 7337,
+      "sha256": "0f7acb437deb9d686644371dc3b109377c0a1c3ab99183af58d7a98e77731914"
+    },
+    {
+      "path": "tests/services/test_review_fixes.py",
+      "blob": "447ed82560d275131671b79444404366df1a61aa",
+      "bytes": 2172,
+      "sha256": "574a25b869ced434aa6b8107f5357858888dbc4e4e1ce59a3dda46cb70d2e585"
+    },
+    {
+      "path": "tests/services/test_roster.py",
+      "blob": "6e9b13fb07cc018430a2bd8ed6c84b7382ef8be0",
+      "bytes": 5741,
+      "url": "https://github.com/michaelayoade/dotmac_academy_app/blob/0968881fc40ad86b3abfea2fc40044dd2dbf47c9/tests/services/test_roster.py",
+      "source": "immutable GitHub MCP at 0968881fc40ad86b3abfea2fc40044dd2dbf47c9",
+      "sha256": "e8dccf969807cbed20f346963dc0329f20f3da9167159a20d8b8afa701d8314e"
+    },
+    {
+      "path": "tests/services/test_tracks.py",
+      "blob": "01907825f0d974be5b72b6cb28b6bc75626e622c",
+      "bytes": 14375,
+      "url": "https://github.com/michaelayoade/dotmac_academy_app/blob/0968881fc40ad86b3abfea2fc40044dd2dbf47c9/tests/services/test_tracks.py",
+      "source": "immutable GitHub MCP at 0968881fc40ad86b3abfea2fc40044dd2dbf47c9",
+      "sha256": "df1181460079d889a972a71812f75c7e4573eecf14741ee75f4196c052737e96"
+    },
+    {
+      "path": "tests/test_admissions_enrollment.py",
+      "blob": "8e8e0e5a194db87f84a6f6bc60a0466e3b152f57",
+      "bytes": 6875,
+      "url": "https://github.com/michaelayoade/dotmac_academy_app/blob/0968881fc40ad86b3abfea2fc40044dd2dbf47c9/tests/test_admissions_enrollment.py",
+      "source": "immutable GitHub MCP at 0968881fc40ad86b3abfea2fc40044dd2dbf47c9",
+      "sha256": "8362ef549fc65a3942b8ff59f308eff5888f7a187a8303126df238020d374ff5"
+    },
+    {
+      "path": "tests/test_admissions_isolation.py",
+      "blob": "ad7676f6329ac0a96b91392409d6d95851fb8672",
+      "bytes": 4802,
+      "url": "https://github.com/michaelayoade/dotmac_academy_app/blob/0968881fc40ad86b3abfea2fc40044dd2dbf47c9/tests/test_admissions_isolation.py",
+      "source": "immutable GitHub MCP at 0968881fc40ad86b3abfea2fc40044dd2dbf47c9",
+      "sha256": "cd0e9bdc13ddfe5607371aed82f73174d4dbde0bac78661a0810e21b8a2325f0"
+    },
+    {
+      "path": "tests/test_assessment_isolation.py",
+      "blob": "33a61b828ab3acd2ce49d2b6725add85abb45374",
+      "bytes": 1345,
+      "sha256": "bdfaca10884c6783d260018a44206e469bda339c141e719699ac6d4fdb1be58f"
+    },
+    {
+      "path": "tests/test_cohort_isolation.py",
+      "blob": "2f94d23b01115586dbd06c420fc176f772fb09ae",
+      "bytes": 860,
+      "url": "https://github.com/michaelayoade/dotmac_academy_app/blob/0968881fc40ad86b3abfea2fc40044dd2dbf47c9/tests/test_cohort_isolation.py",
+      "source": "immutable GitHub MCP at 0968881fc40ad86b3abfea2fc40044dd2dbf47c9",
+      "sha256": "52573ee7062b07fff7a26eb4432dfe54273bee481352403298b5d77aa5be3990"
+    },
+    {
+      "path": "tests/web/test_attempt_limits.py",
+      "blob": "fd8dbdb1671506718120027a982ea97e1cf24868",
+      "bytes": 3817,
+      "sha256": "6e468d898f1291402af3c20fba5c81d21397d9832216e95b17980d3c878a47f5"
+    },
+    {
+      "path": "tests/web/test_entitlements.py",
+      "blob": "3c5b6914d8700bf9c80c600a2284f06f10427383",
+      "bytes": 11913,
+      "url": "https://github.com/michaelayoade/dotmac_academy_app/blob/0968881fc40ad86b3abfea2fc40044dd2dbf47c9/tests/web/test_entitlements.py",
+      "source": "immutable GitHub MCP at 0968881fc40ad86b3abfea2fc40044dd2dbf47c9",
+      "sha256": "c97cb108fc7879c2d982d61252630ccd31ecb832d654dc4e76ee565689687d08"
+    },
+    {
+      "path": "tests/web/test_prerequisites.py",
+      "blob": "54abf5412819d7cb9cbd71fd710cf1523460d2fd",
+      "bytes": 5868,
+      "url": "https://github.com/michaelayoade/dotmac_academy_app/blob/0968881fc40ad86b3abfea2fc40044dd2dbf47c9/tests/web/test_prerequisites.py",
+      "source": "immutable GitHub MCP at 0968881fc40ad86b3abfea2fc40044dd2dbf47c9",
+      "sha256": "e60e46873dd96bdb807116a59079de3a97d9b90198b9c9c908b9a77d5a93a6b0"
+    },
+    {
+      "path": "tests/web/test_random_pool.py",
+      "blob": "c12aa9856cef26930555d5612a05b87556fbd9ee",
+      "bytes": 4919,
+      "sha256": "e5af4ad0807e3459dac7f93a39cbb9d14f649da32253b8ff2b3a17b2927a9b66"
+    },
+    {
+      "path": "tests/web/test_review_fixes.py",
+      "blob": "f7af2200a83d396c341f9fa9d2b58586702713b5",
+      "bytes": 1982,
+      "sha256": "523c521e32f293a75cb1f23a0cc8547b729e7ea653607a307ebd3ec4912fcef2"
+    }
+  ]
+}

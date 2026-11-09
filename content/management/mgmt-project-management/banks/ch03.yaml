@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-project-management
+  kind: chapter
+  chapter: 3
+  version: 2
+  policy:
+    mode: practice
+  questions:
+    - id: pm3-01
+      stem: "A stakeholder is anyone who is affected by the project or who:"
+      type: single
+      options: ["Can affect it", "Pays for it", "Reports on it", "Approves it"]
+      correct: ["Can affect it"]
+      rubric_category: recall
+      explanation: "Both directions count, which is why the map includes people the project would rather ignore."
+      weight: 1
+    - id: pm3-02
+      stem: "Stakeholders are mapped against influence and:"
+      type: single
+      options: ["Stake", "Their seniority", "Their proximity", "Their availability"]
+      correct: ["Stake"]
+      rubric_category: recall
+      explanation: "How much they can affect it, and how much it affects them — the pair decides the treatment."
+      weight: 1
+    - id: pm3-03
+      stem: "A department head can veto your project but barely cares about it. How should they be handled?"
+      type: single
+      options: ["Learn their requirements precisely and meet them", "Involve them closely in shaping the decisions", "Keep them informed through the regular updates", "Monitor politely without building any machinery"]
+      correct: ["Learn their requirements precisely and meet them"]
+      rubric_category: application
+      explanation: "High influence, low stake: keep them satisfied without drama rather than dragging them into the detail."
+      weight: 1
+    - id: pm3-04
+      stem: "The staff whose daily work the project changes cannot stop it. Why do they still matter?"
+      type: single
+      options: ["They decide whether the result is adopted", "They can complain about it to the sponsor", "They will be needed to test the deliverables", "They influence how long the training takes"]
+      correct: ["They decide whether the result is adopted"]
+      rubric_category: application
+      explanation: "Low influence, high stake — and they hold operational facts the plan needs."
+      weight: 1
+    - id: pm3-05
+      stem: "The schedule is tight and the permit has not come through. The site team wants to start the covered work. What is the position?"
+      type: single
+      options: ["It is a sponsor-level risk decision, made explicitly", "It is acceptable if the permit is expected shortly", "It is a normal site judgement for the lead to make", "It is fine provided the work could be undone later"]
+      correct: ["It is a sponsor-level risk decision, made explicitly"]
+      rubric_category: application
+      explanation: "Building past an ungranted approval bets on someone else's decision and hands them leverage. Never a site-level habit."
+      weight: 1
+    - id: pm3-06
+      stem: "Which are treated as first-class plan tasks rather than background? (Select all that apply.)"
+      type: multi
+      options: ["Permits and statutory consents", "Budget releases and sign-offs", "Safety inspections and windows", "The sponsor's monthly briefing"]
+      correct: ["Permits and statutory consents", "Budget releases and sign-offs", "Safety inspections and windows"]
+      rubric_category: application
+      explanation: "Each gets an owner, a submission date, and a duration measured from complete submission."
+      weight: 1
+    - id: pm3-07
+      stem: "Your project will slip by three weeks. You are at month three of six. What do you do?"
+      type: single
+      options: ["Disclose it now, with options attached", "Wait until you have tried to recover it", "Report it at the next scheduled milestone", "Absorb it into the remaining contingency"]
+      correct: ["Disclose it now, with options attached"]
+      rubric_category: application
+      explanation: "A slip disclosed at month three with options is management; the same slip discovered at month six is betrayal."
+      weight: 1
+    - id: pm3-08
+      stem: "Most approval delay turns out to be rework rather than queueing. What follows for how you plan approvals?"
+      type: single
+      options: ["Find the real requirements before the first submission", "Submit as early as possible and chase more often", "Allow twice the stated duration in the schedule", "Escalate to the approving authority's manager sooner"]
+      correct: ["Find the real requirements before the first submission"]
+      rubric_category: analysis
+      explanation: "The application bounced for a missing item nobody had asked about — the documents, format, fees and windows are learnable up front."
+      weight: 1
+    - id: pm3-09
+      stem: "Two stakeholders want incompatible things and the project lead keeps trying to satisfy both. What is the error?"
+      type: single
+      options: ["The collision should be surfaced and routed to its owner", "The lead should decide between them on the project's behalf", "The requirements should be renegotiated to find a middle ground", "The conflict should be escalated only if it delays the schedule"]
+      correct: ["The collision should be surfaced and routed to its owner"]
+      rubric_category: analysis
+      explanation: "Unresolved stakeholder conflict resolves itself at the worst moment, in the approver's favour, with interest."
+      weight: 1
+    - id: pm3-10
+      stem: "A disputed instruction surfaces in month five. Why does a decision log settle it in one line?"
+      type: single
+      options: ["It records who agreed what, when, and why", "It shows which of the meetings each party attended", "It carries the sponsor's signature on each entry", "It lists the changes approved during the project"]
+      correct: ["It records who agreed what, when, and why"]
+      rubric_category: analysis
+      explanation: "Not bureaucracy — the polite end of arguments that meetings would otherwise relitigate for a week."
+      weight: 1

@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-vendor-procurement
+  kind: chapter
+  chapter: 4
+  version: 2
+  policy:
+    mode: practice
+  questions:
+    - id: vp4-01
+      stem: "Goods arriving should be counted against:"
+      type: single
+      options: ["The purchase order", "The delivery note", "The supplier invoice", "The stock record"]
+      correct: ["The purchase order"]
+      rubric_category: recall
+      explanation: "The delivery note says what the supplier sent; the PO says what you ordered."
+      weight: 1
+    - id: vp4-02
+      stem: "Every durable asset must have, at all times:"
+      type: single
+      options: ["A named holder", "A service record", "An insurance value", "A replacement date"]
+      correct: ["A named holder"]
+      rubric_category: recall
+      explanation: "Issue, transfer and return all go through the record, not the corridor."
+      weight: 1
+    - id: vp4-03
+      stem: "A carton is visibly damaged as the driver waits for your signature. What do you do?"
+      type: single
+      options: ["Note it on the document before signing", "Sign, then report it to the supplier", "Refuse the whole delivery outright", "Photograph it and sign as normal"]
+      correct: ["Note it on the document before signing"]
+      rubric_category: application
+      explanation: "The signature is evidence of acceptance. Note, photograph, and notify the same day within the contract's window."
+      weight: 1
+    - id: vp4-04
+      stem: "A supplier delivers 40 of the 60 items ordered and promises the rest next week. What must happen to the PO?"
+      type: single
+      options: ["It stays open until it is actually filled", "It is closed and a new PO is raised", "It is amended to show the 40 received", "It is settled and the balance tracked separately"]
+      correct: ["It stays open until it is actually filled"]
+      rubric_category: application
+      explanation: "Partial deliveries are fine when tracked and a silent shortfall when not."
+      weight: 1
+    - id: vp4-05
+      stem: "A stock count shows fewer items than the record says. What is the count actually giving you?"
+      type: single
+      options: ["A variance whose root cause needs finding", "A number to correct in the record system", "Evidence that theft has taken place", "A measure of how well stock is managed"]
+      correct: ["A variance whose root cause needs finding"]
+      rubric_category: application
+      explanation: "Records and shelves drifting apart is the early warning for process failure, theft, or breakage being hidden."
+      weight: 1
+    - id: vp4-06
+      stem: "Which does a signed, condition-noted issue record protect? (Select all that apply.)"
+      type: multi
+      options: ["The technician handing a worn tool back", "The business, which knows where assets are", "The manager investigating a later loss", "The supplier who provided the equipment"]
+      correct: ["The technician handing a worn tool back", "The business, which knows where assets are", "The manager investigating a later loss"]
+      rubric_category: application
+      explanation: "Custody records protect the holder — the one who took it informally inherits every doubt."
+      weight: 1
+    - id: vp4-07
+      stem: "Shelves are full of items nobody has issued in over a year. What are you looking at?"
+      type: single
+      options: ["Cash sleeping in a less useful shape", "A prudent buffer against stockouts", "Stock that should be written off now", "A reordering process working correctly"]
+      correct: ["Cash sleeping in a less useful shape"]
+      rubric_category: application
+      explanation: "Inventory is money in a less useful shape, and the dead-stock audit is the reverse of the reorder-point discipline."
+      weight: 1
+    - id: vp4-08
+      stem: "Why is 'we noticed later' the weakest sentence in procurement?"
+      type: single
+      options: ["Delivery is the last cheap moment to fix a discrepancy", "Suppliers dispute claims made outside the contract window", "The goods will have dispersed and cannot be recounted", "The delivery driver is no longer available as a witness"]
+      correct: ["Delivery is the last cheap moment to fix a discrepancy"]
+      rubric_category: analysis
+      explanation: "After the driver leaves it is your word against theirs; after the goods disperse it is nobody's word at all."
+      weight: 1
+    - id: vp4-09
+      stem: "A site has decided that 'some loss is normal' and stopped measuring it. What follows?"
+      type: single
+      options: ["What is unmeasured grows", "Losses stabilise at the accepted level", "Staff become more careful over time", "The cost is absorbed into overheads"]
+      correct: ["What is unmeasured grows"]
+      rubric_category: analysis
+      explanation: "Normalisation is the pattern to watch hardest — shrinkage should be measured, visible, and boring."
+      weight: 1
+    - id: vp4-10
+      stem: "Why should the person receiving goods not be the person who ordered them?"
+      type: single
+      options: ["One person could otherwise order and confirm anything", "Receiving requires different technical knowledge", "The orderer is rarely available at delivery time", "Suppliers prefer dealing with separate contacts"]
+      correct: ["One person could otherwise order and confirm anything"]
+      rubric_category: analysis
+      explanation: "The same separation-of-duties logic as approval; in a small team, a second pair of eyes on high-value items is the affordable version."
+      weight: 1

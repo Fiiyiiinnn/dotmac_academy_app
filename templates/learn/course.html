@@ -1,0 +1,99 @@
+{% extends "base.html" %}{% block content %}
+<img src="/static/img/cover-{{ course.slug }}.webp" alt=""
+     class="mb-6 h-44 w-full rounded-2xl object-cover" loading="lazy"
+     data-hide-on-error>
+<p class="page-eyebrow">
+  <a href="/courses" class="hover:text-brand-800">Courses</a> &rsaquo;
+</p>
+<h1 class="page-title">{{ course.title }}</h1>
+
+{% if structure.locked %}
+<div class="card mt-6 border border-clay-500/30 bg-clay-500/5 p-5">
+  <p class="font-medium text-clay-700">Prerequisite not yet completed</p>
+  <p class="mt-1 text-sm text-ink-soft">Finish the required prerequisite course(s) before accessing this content.</p>
+</div>
+{% endif %}
+
+<div class="mt-6 flex items-center gap-4">
+  <div class="min-w-0 flex-1">
+    <div class="h-2 w-full overflow-hidden rounded-full bg-sand-200">
+      <div class="h-full rounded-full bg-brand-500" style="width: {{ pct }}%"></div>
+    </div>
+    <p class="mt-1 text-xs text-ink-soft">{{ pct }}% complete</p>
+  </div>
+  {% if structure.continue_target and not structure.locked %}
+  <a class="btn-primary shrink-0"
+     href="/courses/{{ course.slug }}/chapters/{{ structure.continue_target.number }}">
+    Continue &rarr;
+  </a>
+  {% endif %}
+</div>
+
+{% for part in structure.parts %}
+{% if part.part %}
+<h2 class="mt-10 text-lg font-semibold tracking-wide text-ink">Part {{ part.part }}</h2>
+{% else %}
+<div class="mt-8"></div>
+{% endif %}
+<div class="mt-4 space-y-3">
+{% for ch in part.chapters %}
+  {% if structure.locked %}
+  <div class="card p-5 opacity-75">
+  {% else %}
+  <a class="card block p-5 transition hover:-translate-y-0.5 hover:border-brand-300 hover:shadow-soft focus:outline-none focus:ring-2 focus:ring-brand-200"
+     href="/courses/{{ course.slug }}/chapters/{{ ch.chapter.number }}">
+  {% endif %}
+    <div class="flex items-start gap-3">
+      <div class="min-w-0 flex-1">
+        <p class="font-medium text-ink">Ch {{ ch.chapter.number }}. {{ ch.chapter.title }}</p>
+        {% if ch.activities %}
+        <div class="mt-2 space-y-1">
+          {% for act_info in ch.activities %}
+          <p class="flex items-center gap-2 text-sm text-ink-soft">
+            <span class="min-w-0 flex-1 truncate">{{ act_info.activity.title }}</span>
+            <span class="font-mono tabular-nums">{{ act_info.pct }}%</span>
+            {% if act_info.passed %}
+            <span class="inline-flex items-center rounded-full bg-brand-100 px-2 py-0.5 text-xs font-semibold text-brand-800">Pass</span>
+            {% endif %}
+          </p>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  {% if structure.locked %}
+  </div>
+  {% else %}
+  </a>
+  {% endif %}
+{% endfor %}
+</div>
+{% endfor %}
+
+{% if structure.course_activities %}
+<h2 class="mt-10 text-lg font-semibold tracking-wide text-ink">Course assessments</h2>
+<p class="mt-1 text-sm text-ink-soft">These cover the whole course and are required to complete it.</p>
+<div class="mt-4 space-y-3">
+{% for act_info in structure.course_activities %}
+  {% if structure.locked %}
+  <div class="card p-5 opacity-75">
+  {% else %}
+  <a class="card block p-5 transition hover:-translate-y-0.5 hover:border-brand-300 hover:shadow-soft focus:outline-none focus:ring-2 focus:ring-brand-200"
+     href="{% if act_info.activity.type == 'lab' %}/labs/{{ act_info.activity.id }}{% else %}/activities/{{ act_info.activity.id }}{% endif %}">
+  {% endif %}
+    <p class="flex items-center gap-2 font-medium text-ink">
+      <span class="min-w-0 flex-1 truncate">{{ act_info.activity.title }}</span>
+      <span class="font-mono text-sm tabular-nums text-ink-soft">{{ act_info.pct }}%</span>
+      {% if act_info.passed %}
+      <span class="inline-flex items-center rounded-full bg-brand-100 px-2 py-0.5 text-xs font-semibold text-brand-800">Pass</span>
+      {% endif %}
+    </p>
+  {% if structure.locked %}
+  </div>
+  {% else %}
+  </a>
+  {% endif %}
+{% endfor %}
+</div>
+{% endif %}
+{% endblock %}

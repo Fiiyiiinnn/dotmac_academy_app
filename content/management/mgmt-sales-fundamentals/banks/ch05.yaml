@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-sales-fundamentals
+  kind: chapter
+  chapter: 5
+  version: 2
+  policy:
+    mode: practice
+  questions:
+    - id: sf5-01
+      stem: "Every entry in a pipeline record must carry:"
+      type: single
+      options: ["A next action with a date", "The expected close value", "The competitor being faced", "The date of first contact"]
+      correct: ["A next action with a date"]
+      rubric_category: recall
+      explanation: "A deal with no next action is not paused; it is abandoned without the honesty of saying so."
+      weight: 1
+    - id: sf5-02
+      stem: "Which outcome should a seller refuse to accept?"
+      type: single
+      options: ["The eternal maybe", "A firm and final no", "A yes that is delayed", "A partial first order"]
+      correct: ["The eternal maybe"]
+      rubric_category: recall
+      explanation: "If a deal cannot say yes, your job is to help it say something."
+      weight: 1
+    - id: sf5-03
+      stem: "The buyer starts asking about delivery timelines and what happens after signing. What should you do?"
+      type: single
+      options: ["Stop presenting and ask for the decision", "Answer fully and continue the presentation", "Move to the strongest remaining benefit", "Confirm the price before going further"]
+      correct: ["Stop presenting and ask for the decision"]
+      rubric_category: application
+      explanation: "Every additional feature past readiness re-opens deliberation."
+      weight: 1
+    - id: sf5-04
+      stem: "You are unsure whether the buyer is ready. What is the useful test question?"
+      type: single
+      options: ["Is anything still standing between you and a decision?", "Would you like me to talk you through all of the options once again?", "Is there a date by which you need this in place?", "Shall I send a revised quotation for you to review?"]
+      correct: ["Is anything still standing between you and a decision?"]
+      rubric_category: application
+      explanation: "Either you surface the remaining concern or you learn there is none — in which case, ask."
+      weight: 1
+    - id: sf5-05
+      stem: "The buyer says yes. What happens to everything promised verbally along the way?"
+      type: single
+      options: ["It goes into the written confirmation", "It is remembered and passed on by the account team", "It is added at the delivery handover", "It is confirmed if the buyer asks"]
+      correct: ["It goes into the written confirmation"]
+      rubric_category: application
+      explanation: "Misremembered promises are the top source of early disputes, and the seller's memory is not the one that counts."
+      weight: 1
+    - id: sf5-06
+      stem: "Delivery passes to colleagues and the customer calls you with a problem. What must you never say?"
+      type: single
+      options: ["That it is another department's responsibility", "That you will find out and call them back", "That you will be passing it straight to the delivery team", "That you are no longer handling the account"]
+      correct: ["That it is another department's responsibility"]
+      rubric_category: application
+      explanation: "To the customer you are the company, especially to the person who took their money."
+      weight: 1
+    - id: sf5-07
+      stem: "When is the moment to ask for a referral?"
+      type: single
+      options: ["When the customer says it is working well", "At the point the invoice is settled", "At some point during the next scheduled account review", "Once a repeat order has been placed"]
+      correct: ["When the customer says it is working well"]
+      rubric_category: application
+      explanation: "Satisfied customers are usually happy to introduce someone. They just need asking, at the moment of satisfaction."
+      weight: 1
+    - id: sf5-08
+      stem: "Why is 'proposal out' recorded only when a proposal is genuinely out?"
+      type: single
+      options: ["Inflated stages produce forecasts that produce droughts", "Managers will audit those stage labels for their accuracy", "The stage determines which follow-up is scheduled", "Conversion rates cannot be compared across sellers"]
+      correct: ["Inflated stages produce forecasts that produce droughts"]
+      rubric_category: analysis
+      explanation: "Predictable numbers are made of truthful small entries; fictional stages produce real shortfalls."
+      weight: 1
+    - id: sf5-09
+      stem: "Why does buyer's remorse grow between the yes and the delivery?"
+      type: single
+      options: ["The decision is made and nothing yet confirms it", "The buyer compares against the alternatives again", "Colleagues question the choice after it is made", "The price becomes real once the invoice arrives"]
+      correct: ["The decision is made and nothing yet confirms it"]
+      rubric_category: analysis
+      explanation: "Momentum is the antidote: prompt confirmation, a fast first step, a check-in."
+      weight: 1
+    - id: sf5-10
+      stem: "Why is the after-delivery check-in the complaint-prevention system?"
+      type: single
+      options: ["Problems found early are fixed while goodwill is high", "It demonstrates that the seller has remained interested in them", "It creates a record that the delivery was completed", "It gives the customer a route to raise concerns"]
+      correct: ["Problems found early are fixed while goodwill is high"]
+      rubric_category: analysis
+      explanation: "Most sellers abandon the customer the moment the invoice clears — which is exactly when the cheapest pipeline is standing there."
+      weight: 1

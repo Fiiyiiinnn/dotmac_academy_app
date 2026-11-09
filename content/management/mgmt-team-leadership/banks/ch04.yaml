@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-team-leadership
+  kind: chapter
+  chapter: 4
+  version: 2
+  policy:
+    mode: practice
+  questions:
+    - id: tl4-01
+      stem: "The feedback structure runs situation, then behaviour, then:"
+      type: single
+      options: ["Impact", "Warning", "Agreement", "Instruction"]
+      correct: ["Impact"]
+      rubric_category: recall
+      explanation: "Describe when and where, what they observably did, and the effect it had — then stop and let them respond."
+      weight: 1
+    - id: tl4-02
+      stem: "Underperformance has four common roots: unclear expectations, missing skills, obstacles, and:"
+      type: single
+      options: ["Will", "Attitude problems in the wider team", "Poor recruitment at the hiring stage", "Insufficient supervision from above"]
+      correct: ["Will"]
+      rubric_category: recall
+      explanation: "Only the last is a pure discipline problem, and it is the rarest of the four."
+      weight: 1
+    - id: tl4-03
+      stem: "You want to tell someone to 'be more professional in client meetings'. Rewrite it so it can actually change behaviour."
+      type: single
+      options: ["In yesterday's meeting you promised a date we had not agreed, and now two people say it cannot be met", "You need to be more careful about what you commit to when you are speaking with clients on our behalf", "Your conduct in client meetings has not been meeting the standard this team expects of its senior people", "Please check with me before you make any commitment at all to a client during a meeting in future"]
+      correct: ["In yesterday's meeting you promised a date we had not agreed, and now two people say it cannot be met"]
+      rubric_category: application
+      explanation: "Situation, observable behaviour, impact — no motive-guessing, no character verdict."
+      weight: 1
+    - id: tl4-04
+      stem: "Someone brings you a problem they could reasonably work through themselves. What is the coaching response?"
+      type: single
+      options: ["Ask what they have tried and what options they see", "Give them the answer and explain your reasoning for it", "Tell them to come back once they have attempted a fix", "Work through it together so they see the method used"]
+      correct: ["Ask what they have tried and what options they see"]
+      rubric_category: application
+      explanation: "Telling someone the answer solves today's problem and guarantees they bring you tomorrow's."
+      weight: 1
+    - id: tl4-05
+      stem: "One of your team has been redoing tasks and missing handovers for two months. You have said nothing because they are well liked. What has that silence already done?"
+      type: single
+      options: ["Set the team's real standard at what you are tolerating", "Given the person a fair chance to correct it themselves", "Preserved the team's morale through a difficult period", "Kept the issue from becoming a formal matter too early"]
+      correct: ["Set the team's real standard at what you are tolerating"]
+      rubric_category: application
+      explanation: "What you accept is your actual standard, whatever your stated one, and everyone else is watching."
+      weight: 1
+    - id: tl4-06
+      stem: "You have just held a first serious performance conversation. What should happen afterwards?"
+      type: single
+      options: ["A short note of what you discussed, agreed, and when you review — shared with them", "A confidential file note kept by you in case the matter escalates further later", "Nothing in writing yet, so the conversation stays supportive rather than formal", "A formal warning letter issued through whoever handles personnel matters here"]
+      correct: ["A short note of what you discussed, agreed, and when you review — shared with them"]
+      rubric_category: application
+      explanation: "Documentation is fairness and memory, not aggression: it protects the employee's expectations and your own record."
+      weight: 1
+    - id: tl4-07
+      stem: "A capable team member has done the same work well for a year. What should you deliberately hand them next?"
+      type: single
+      options: ["Work one level beyond their proven ability, with the matching delegation level", "More of the same work, since they have demonstrated they are reliable at it", "A formal training course before any change is made to their responsibilities", "Supervision of a junior colleague doing the work they have already mastered"]
+      correct: ["Work one level beyond their proven ability, with the matching delegation level"]
+      rubric_category: application
+      explanation: "Growth lives in that gap. A manager who never assigns beyond proven ability caps the team at its current size."
+      weight: 1
+    - id: tl4-08
+      stem: "Why does saving up feedback for a quarterly review fail even when every individual point is fair?"
+      type: single
+      options: ["The stakes have grown, the detail has gone, and nothing could be corrected in between", "Quarterly reviews are designed for pay decisions rather than for behavioural feedback", "Managers reliably remember the recent incidents better than the early ones by then", "The employee will contest a long list more readily than they would contest one item"]
+      correct: ["The stakes have grown, the detail has gone, and nothing could be corrected in between"]
+      rubric_category: analysis
+      explanation: "Promptly, privately, small — while the stakes are still low. The quarterly ambush is the worst of all the options."
+      weight: 1
+    - id: tl4-09
+      stem: "A performance plan is reviewed monthly and the bar is raised at each review, with improvement noted but never acknowledged as sufficient. What does the plan now teach?"
+      type: single
+      options: ["That recovery is not actually available, so effort is pointless", "That the manager is committed to a high and consistent standard", "That the original diagnosis of the problem was probably wrong", "That the review cadence is too frequent to show real change"]
+      correct: ["That recovery is not actually available, so effort is pointless"]
+      rubric_category: analysis
+      explanation: "A plan that only ever tightens stops being a performance plan and becomes an exit process nobody has named."
+      weight: 1
+    - id: tl4-10
+      stem: "Why does diagnosing the root cause before choosing a response matter more than the response itself?"
+      type: single
+      options: ["Clarity, skill, obstacle and will problems need four different fixes; the wrong one makes it worse", "Diagnosis creates the written record that a later formal process will need to rely upon", "It slows the manager down, which prevents an emotional reaction to the situation", "Most managers over-diagnose willingness problems and should be checking skills first"]
+      correct: ["Clarity, skill, obstacle and will problems need four different fixes; the wrong one makes it worse"]
+      rubric_category: analysis
+      explanation: "Confronting a skills gap as a will problem is not a slower fix — it is the wrong one, and it costs you the person."
+      weight: 1

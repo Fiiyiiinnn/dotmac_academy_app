@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-health-safety
+  kind: chapter
+  chapter: 3
+  version: 1
+  policy:
+    mode: practice
+  questions:
+    - id: hs3-01
+      stem: "The hierarchy of controls ranks options by how little they depend on:"
+      type: single
+      options: ["Human compliance", "Capital spend", "Regulator approval", "Site conditions"]
+      correct: ["Human compliance"]
+      rubric_category: recall
+      explanation: "Level 1 depends on nobody; level 5 depends on one person, continuously, and fails silently when they are wrong."
+      weight: 1
+    - id: hs3-02
+      stem: "PPE sits last in the hierarchy because it protects:"
+      type: single
+      options: ["One person", "The employer", "The equipment", "The public"]
+      correct: ["One person"]
+      rubric_category: recall
+      explanation: "The hazard remains entirely present; PPE only changes the outcome for whoever is wearing it correctly."
+      weight: 1
+    - id: hs3-03
+      stem: "The forgetting test asks what happens if the person is distracted, new, or:"
+      type: single
+      options: ["Forgets", "Untrained", "Unwell", "Alone"]
+      correct: ["Forgets"]
+      rubric_category: application
+      explanation: "If the answer is serious harm, the control sits too low on the hierarchy."
+      weight: 1
+    - id: hs3-04
+      stem: "Three administrative controls are not equivalent to one engineering control because they:"
+      type: single
+      options: ["Share a failure mode", "Cost more overall", "Expire together", "Need more records"]
+      correct: ["Share a failure mode"]
+      rubric_category: application
+      explanation: "All three depend on the same person remembering under the same pressure. Diversity of control type beats quantity."
+      weight: 1
+    - id: hs3-05
+      stem: "Elimination often fails to be discussed in safety meetings because it usually lives in:"
+      type: single
+      options: ["Procurement or scheduling", "Engineering design", "Regulatory policy", "Site supervision"]
+      correct: ["Procurement or scheduling"]
+      rubric_category: analysis
+      explanation: "Ordering pre-cut material or moving a visit to daylight removes the hazard, and neither is a safety decision on paper."
+      weight: 1
+    - id: hs3-06
+      stem: "A control that is taped, wedged or bypassed should first be read as:"
+      type: single
+      options: ["A design problem", "A discipline problem", "A training problem", "A supervision problem"]
+      correct: ["A design problem"]
+      rubric_category: analysis
+      explanation: "It was defeated because it made the job slower. Ask that before asking who did it."
+      weight: 1
+    - id: hs3-07
+      stem: "Every control needs an owner and a check, otherwise it:"
+      type: single
+      options: ["Decays into paperwork", "Becomes non-compliant", "Costs more to run", "Fails the audit"]
+      correct: ["Decays into paperwork"]
+      rubric_category: application
+      explanation: "While still appearing on the assessment as a live control, which is what makes the residual score wrong."
+      weight: 1
+    - id: hs3-08
+      stem: "The hierarchy is most useful to a manager as:"
+      type: single
+      options: ["A prompt for options", "A scoring system", "A compliance checklist", "A budget ranking"]
+      correct: ["A prompt for options"]
+      rubric_category: analysis
+      explanation: "Teams generate administrative controls and PPE unaided; the framework is what makes levels 1 to 3 visible at all."
+      weight: 1
+    - id: hs3-09
+      stem: "Asking \"show me how you actually do this\" is better than \"do you follow the procedure?\" because the second:"
+      type: single
+      options: ["Has one answer", "Takes longer", "Sounds accusatory", "Needs a witness"]
+      correct: ["Has one answer"]
+      rubric_category: application
+      explanation: "The gap between the demonstration and the document is your real control position."
+      weight: 1
+    - id: hs3-10
+      stem: "PPE fails silently, meaning a worn or wrong item:"
+      type: single
+      options: ["Looks like protection", "Is easy to spot", "Triggers an alarm", "Fails an inspection"]
+      correct: ["Looks like protection"]
+      rubric_category: recall
+      explanation: "Right up to the moment it is not \u2014 a worn harness, a cracked lens, the wrong cartridge, an out-of-date helmet."
+      weight: 1

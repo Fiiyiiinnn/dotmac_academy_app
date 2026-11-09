@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en" {{ dotmac_ui_theme_attribute }}="{{ dotmac_ui_theme }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Courses — {{ branding_name | default("Dotmac Academy") }}</title>
+  <meta name="description" content="The full Dotmac Academy catalog: technical training for network careers and management short courses for professionals — chaptered, assessed, certified.">
+  <link rel="icon" type="image/png" href="/static/img/dotmac-favicon.png">
+  {% include "_dotmac_ui_head.html" %}
+  <link rel="stylesheet" href="/static/public.css?v=4">
+</head>
+<body class="pub">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <nav class="nav" aria-label="Main navigation">
+    <div class="wrap">
+      <a href="/" class="nav-logo"><img src="/static/img/dotmac-logo.png" alt="Dotmac" width="132" height="30"> <span>Academy</span></a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="#technical">Technical</a>
+        <a href="#management">Management</a>
+        <a href="/apply" class="btn btn-orange">Apply now</a>
+        <a href="/login" class="btn btn-ghost">Sign in</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-head">
+    <div class="wrap">
+      <span class="eyebrow">Curriculum</span>
+      <h1>Course catalog</h1>
+      <p>
+        Live from the learning platform — every course is chaptered, practice-
+        tested, and closed by a final assessment that gates its certificate.
+      </p>
+    </div>
+  </header>
+
+  <main id="main-content" class="section">
+    <div class="wrap">
+
+      <div class="group-head" id="technical">
+        <h2>Technical training</h2>
+        <span>{{ tech | length }} courses</span>
+      </div>
+      <p class="group-note">
+        The cohort-based academy: from foundation through fiber, wireless,
+        routing, operations and support. Join via
+        <a href="/apply" style="color:var(--g3);font-weight:700">application</a> —
+        the entrance assessment places you.
+      </p>
+      {% if tech %}
+      <div class="row-wrap"><div class="row-nav"><button type="button" data-dir="-1" aria-label="Scroll back">&#8592;</button><button type="button" data-dir="1" aria-label="Scroll forward">&#8594;</button></div>
+      <div class="cards row-scroll" role="region" aria-label="Technical courses; scroll horizontally for more" tabindex="0">
+        {% for item in tech %}
+        <article class="card">
+          <img src="/static/img/cover-{{ item.course.slug }}.webp" alt="" loading="lazy" data-hide-on-error>
+          <div class="card-body">
+            <h3>{{ item.course.title }}</h3>
+            <p class="card-meta"><b>{{ item.chapter_count }}</b> chapters · chapter tests + final assessment</p>
+          </div>
+        </article>
+        {% endfor %}
+      </div></div>
+      {% else %}
+      <p class="group-note">The technical catalog is being prepared — check back shortly.</p>
+      {% endif %}
+
+      <div class="group-head" id="management">
+        <h2>Management &amp; professional development</h2>
+        <span>{{ mgmt | length }} short courses</span>
+      </div>
+      <p class="group-note">
+        Short, self-paced courses for supervisors, managers and professionals —
+        industry-neutral, five to six chapters each. Enrollment for teams and
+        individuals: <a href="mailto:{{ management_contact_email | default("fiberacademy@dotmac.ng") }}" style="color:var(--g3);font-weight:700">{{ management_contact_email | default("fiberacademy@dotmac.ng") }}</a>.
+      </p>
+      {% if mgmt %}
+      <div class="row-wrap"><div class="row-nav"><button type="button" data-dir="-1" aria-label="Scroll back">&#8592;</button><button type="button" data-dir="1" aria-label="Scroll forward">&#8594;</button></div>
+      <div class="cards row-scroll" role="region" aria-label="Management courses; scroll horizontally for more" tabindex="0">
+        {% for item in mgmt %}
+        <article class="card">
+          <img src="/static/img/cover-{{ item.course.slug }}.webp" alt="" loading="lazy" data-hide-on-error>
+          <div class="card-body">
+            <h3>{{ item.course.title }}</h3>
+            <p class="card-meta"><b>{{ item.chapter_count }}</b> chapters · chapter tests + final assessment</p>
+          </div>
+        </article>
+        {% endfor %}
+      </div></div>
+      {% else %}
+      <p class="group-note">The management catalog is being prepared — check back shortly.</p>
+      {% endif %}
+
+      <div class="cta" style="margin-top:64px">
+        <div>
+          <h2>Found your starting point?</h2>
+          <p>Technical: apply and sit the placement assessment. Management: write to us and we'll set up enrollment.</p>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="/apply" class="btn btn-orange">Apply — Technical</a>
+          <a href="/management-enrollment" class="btn btn-mint">Enroll — Management</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© {{ branding_name | default("Dotmac Academy") }} · part of <a href="https://dotmac.ng/">Dotmac Technologies</a></span>
+      <span><a href="/">Home</a> · <a href="/apply">Apply</a> · <a href="/login">Student sign in</a></span>
+    </div>
+  </footer>
+
+<script src="/static/public_courses.js?v=1"></script>
+</body>
+</html>

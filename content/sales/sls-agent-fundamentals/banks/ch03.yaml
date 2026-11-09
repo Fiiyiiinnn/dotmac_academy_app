@@ -1,0 +1,88 @@
+bank:
+  course: sls-agent-fundamentals
+  kind: chapter
+  chapter: 3
+  version: 1
+  policy:
+    mode: practice
+  questions:
+    - id: s3-01
+      stem: "Which quote status must a quote pass through before it can move to accepted?"
+      type: single
+      options: ["sent, since draft cannot transition directly into accepted", "rejected, since draft cannot transition directly into accepted", "expired, since draft cannot transition directly into accepted", "draft, since sent cannot transition directly into accepted"]
+      correct: ["sent, since draft cannot transition directly into accepted"]
+      rubric_category: recall
+      explanation: "The real state machine requires draft to sent before accepted will ever succeed — jumping straight from draft to accepted is rejected."
+      weight: 1
+    - id: s3-02
+      stem: "Which field is required on the quote form but not visually flagged as required until you submit without it?"
+      type: single
+      options: ["project_type, which produces a generic error message only after a failed submit attempt", "currency, which produces this exact same generic error message only after a failed submit attempt", "expiry date, which produces this exact same generic error message only after a failed submit attempt", "notes, which produces this exact same generic error message only after a failed submit attempt"]
+      correct: ["project_type, which produces a generic error message only after a failed submit attempt"]
+      rubric_category: recall
+      explanation: "project_type is required but the form does not visually flag it until submit, producing the generic 'Please select an item in the list' error."
+      weight: 1
+    - id: s3-03
+      stem: "You are quoting work that does not map cleanly to any catalog offer. What is the correct approach, according to this chapter?"
+      type: single
+      options: ["Use a custom line item with your own description, quantity, and unit price, since that is a fully valid way to quote", "Decline to quote until a matching catalog offer is added to the system by someone else first", "Force the closest catalog offer onto the quote even though its description does not really match", "Leave the line items section empty and describe the work only in the free-text notes field instead"]
+      correct: ["Use a custom line item with your own description, quantity, and unit price, since that is a fully valid way to quote"]
+      rubric_category: application
+      explanation: "Custom line items (item_description, item_quantity, item_unit_price) are not a fallback — they are a fully normal, valid way to build a quote."
+      weight: 1
+    - id: s3-04
+      stem: "You submit a new quote and get back 'Please select an item in the list' with no other detail. What should you check first?"
+      type: single
+      options: ["Whether a project_type was actually selected before submitting the form", "Whether the customer's email address was entered correctly on the lead", "Whether the quote's expiry date was left blank on the form before submitting", "Whether the quote's currency field was left at its default selection"]
+      correct: ["Whether a project_type was actually selected before submitting the form"]
+      rubric_category: application
+      explanation: "This generic error is the known signature of a missing project_type selection, the field this chapter names as the real gotcha at submit time."
+      weight: 1
+    - id: s3-05
+      stem: "A quote's status already reads sent, and a colleague assumes the customer must have already received it in their inbox. What should you actually verify?"
+      type: single
+      options: ["Whether the separate Send Email action was actually used, since status and delivery are two distinct actions", "Nothing further, since status sent and email delivery always happen together automatically in this system", "Whether the quote's currency matches the customer's own local currency before assuming anything else", "Whether the quote has since expired, since an expired quote silently reverts its status back to sent"]
+      correct: ["Whether the separate Send Email action was actually used, since status and delivery are two distinct actions"]
+      rubric_category: application
+      explanation: "Setting status to Sent and using Send Email are two mechanically separate actions — one does not automatically trigger the other."
+      weight: 1
+    - id: s3-06
+      stem: "An agent tries to move a quote directly from draft to accepted and the system rejects the change. Why does this happen?"
+      type: single
+      options: ["Because the real state machine requires the quote to pass through sent before accepted is ever a valid transition", "Because only quotes with a custom line item are allowed to ever reach the accepted status", "Because accepted is reserved exclusively for quotes created directly from a Sales Order rather than a lead", "Because the currency field must first be changed away from its original value before accepted becomes valid"]
+      correct: ["Because the real state machine requires the quote to pass through sent before accepted is ever a valid transition"]
+      rubric_category: analysis
+      explanation: "This is the state-machine rule this chapter names directly — draft to accepted is an invalid transition regardless of readiness to close."
+      weight: 1
+    - id: s3-07
+      stem: "Two agents both build quotes with identical pricing. One sets status to sent and also clicks Send Email; the other only sets status to sent. What is the practical difference for the customer?"
+      type: single
+      options: ["Only the first customer has actually received the quote in their inbox, despite both quotes showing the same status", "There is no practical difference, since setting status to sent always delivers the quote by email automatically as well", "The second customer receives the quote later automatically, once the quote's expiry date approaches", "The difference only affects which currency displays on the quote, not whether the customer received it"]
+      correct: ["Only the first customer has actually received the quote in their inbox, despite both quotes showing the same status"]
+      rubric_category: analysis
+      explanation: "Status and delivery are separate — a quote can show sent without the customer ever having actually received an email."
+      weight: 1
+    - id: s3-08
+      stem: "A new agent assumes that because a quote's line items look fine and the currency is set, the quote is ready to submit without further checks. What real risk does this assumption carry?"
+      type: single
+      options: ["Missing project_type will still block the submission, and the resulting error will not point at the actual missing field", "There is no real risk, since project_type only matters after a quote has already reached accepted status", "The risk only applies to quotes tied to leads sourced from Referrer, not to any other lead source", "The risk only applies if the quote also happens to include a custom line item rather than a catalog offer"]
+      correct: ["Missing project_type will still block the submission, and the resulting error will not point at the actual missing field"]
+      rubric_category: analysis
+      explanation: "Line items and currency being correct says nothing about project_type — the chapter's central gotcha is exactly this invisible required field."
+      weight: 1
+    - id: s3-09
+      stem: "Which of the following is a real, valid project_type option on the quote form?"
+      type: single
+      options: ["fiber_optics_installation, one of the six defined project types on this form", "wireless_signal_boost, incorrectly assumed by some agents to be one of the six defined project types", "router_replacement, incorrectly assumed by some agents to be one of the six defined project types", "premises_rewiring, incorrectly assumed by some agents to be one of the six defined project types"]
+      correct: ["fiber_optics_installation, one of the six defined project types on this form"]
+      rubric_category: recall
+      explanation: "fiber_optics_installation is a real project type, alongside cable_rerun, fiber_optics_relocation, air_fiber_relocation, air_fiber_installation, and cross_connect."
+      weight: 1
+    - id: s3-10
+      stem: "You are ready to have a customer actually receive their quote by email today. What is the correct pair of actions to take?"
+      type: single
+      options: ["Set the quote's status to sent, and separately use the Send Email action in the same pass", "Set the quote's status to sent only, and trust that email delivery happens automatically behind the scenes", "Use only the Send Email action, and leave the quote's own status field at draft indefinitely", "Set the quote's status directly to accepted, since that implies the customer has already agreed and been notified"]
+      correct: ["Set the quote's status to sent, and separately use the Send Email action in the same pass"]
+      rubric_category: application
+      explanation: "In the normal flow both actions happen together — setting status to sent and using Send Email — since neither triggers the other automatically."
+      weight: 1

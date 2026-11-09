@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-vendor-procurement
+  kind: chapter
+  chapter: 1
+  version: 2
+  policy:
+    mode: practice
+  questions:
+    - id: vp1-01
+      stem: "The three-step purchasing spine is requisition, approval and:"
+      type: single
+      options: ["Purchase order", "Delivery note", "Goods receipt", "Payment run"]
+      correct: ["Purchase order"]
+      rubric_category: recall
+      explanation: "The need stated, the spend authorised in advance, the order specified."
+      weight: 1
+    - id: vp1-02
+      stem: "Three-way matching checks the invoice against the purchase order and:"
+      type: single
+      options: ["The delivery", "The budget", "The contract", "The quote"]
+      correct: ["The delivery"]
+      rubric_category: recall
+      explanation: "That chain is what makes overbilling, duplicate invoices and phantom deliveries visible."
+      weight: 1
+    - id: vp1-03
+      stem: "An invoice arrives for more than anyone remembers agreeing, and no PO was raised. What happens?"
+      type: single
+      options: ["The supplier's memory of the price wins", "The purchase must be approved after the fact", "The invoice is checked against the delivery note", "The buyer's recollection settles the difference"]
+      correct: ["The supplier's memory of the price wins"]
+      rubric_category: application
+      explanation: "The PO's superpower is that when the invoice arrives there is something to check it against."
+      weight: 1
+    - id: vp1-04
+      stem: "A storekeeper can order from any supplier with no counter-signature. Who does the missing control fail?"
+      type: single
+      options: ["The storekeeper, who cannot disprove an accusation", "The business, which loses visibility over its spend", "The supplier, who has nobody to confirm the order", "The budget holder, who sees the cost afterwards"]
+      correct: ["The storekeeper, who cannot disprove an accusation"]
+      rubric_category: application
+      explanation: "Approval protects the trusted more than it polices them — the controls are what let honest people prove it."
+      weight: 1
+    - id: vp1-05
+      stem: "A large share of purchases are travelling the emergency lane. What does that indicate?"
+      type: single
+      options: ["A planning problem wearing a siren", "A business that responds well to urgency", "An approval ladder that is set too slowly", "A supplier base that cannot hold stock"]
+      correct: ["A planning problem wearing a siren"]
+      rubric_category: application
+      explanation: "Design an emergency path with after-the-fact review — but watch the ratio, because 'urgent' becomes the password that switches controls off."
+      weight: 1
+    - id: vp1-06
+      stem: "The best supplier for a purchase happens to be your cousin's company. What must you do?"
+      type: single
+      options: ["Declare it and step out of the choice", "Obtain a second quote for comparison", "Proceed if the price is demonstrably best", "Ask your manager to approve it instead"]
+      correct: ["Declare it and step out of the choice"]
+      rubric_category: application
+      explanation: "The purchase may still be right; the undeclared version of it is always wrong."
+      weight: 1
+    - id: vp1-07
+      stem: "Which are separated under separation of duties? (Select all that apply.)"
+      type: multi
+      options: ["Who requests the purchase", "Who approves the spend", "Who receives the goods", "Who uses the item afterwards"]
+      correct: ["Who requests the purchase", "Who approves the spend", "Who receives the goods"]
+      rubric_category: application
+      explanation: "Three different people where headcount allows; the user is not part of the control."
+      weight: 1
+    - id: vp1-08
+      stem: "Why does routing all purchases through one defined path change how suppliers treat you?"
+      type: single
+      options: ["Pricing games and favour-trading need side doors", "Suppliers prefer dealing with a single contact", "Order volumes look larger through one channel", "Payment terms become easier to standardise"]
+      correct: ["Pricing games and favour-trading need side doors"]
+      rubric_category: analysis
+      explanation: "Suppliers learn quickly who can be talked into an informal order."
+      weight: 1
+    - id: vp1-09
+      stem: "Why is the no-self-approval rule applied to senior people as well as junior ones?"
+      type: single
+      options: ["The rule only protects anyone if it protects everyone", "Senior spending decisions carry the largest amounts", "Seniority makes the conflict of interest more visible", "Auditors specifically test the senior approval trail"]
+      correct: ["The rule only protects anyone if it protects everyone"]
+      rubric_category: analysis
+      explanation: "Not because seniors are suspect — because an exception hollows out the control for everyone below it."
+      weight: 1
+    - id: vp1-10
+      stem: "A small business runs procurement on a duplicate requisition book, initials and a numbered PO pad. What is that?"
+      type: single
+      options: ["A real system — the sequence is the control", "An interim arrangement until software arrives", "Insufficient without a separate approval log", "Adequate only while volumes remain low"]
+      correct: ["A real system — the sequence is the control"]
+      rubric_category: analysis
+      explanation: "The spine and the separation of duties are identical from market stall to multinational; the tooling grows with volume."
+      weight: 1

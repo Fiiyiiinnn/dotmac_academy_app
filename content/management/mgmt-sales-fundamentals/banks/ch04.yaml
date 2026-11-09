@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-sales-fundamentals
+  kind: chapter
+  chapter: 4
+  version: 2
+  policy:
+    mode: practice
+  questions:
+    - id: sf4-01
+      stem: "The rule that separates negotiating from crumbling is:"
+      type: single
+      options: ["Every concession earns one back", "Never concede on the headline price", "Concede early to build the goodwill", "Match whatever the competitor offers"]
+      correct: ["Every concession earns one back"]
+      rubric_category: recall
+      explanation: "Freely given concessions teach the buyer that pushing produces gifts."
+      weight: 1
+    - id: sf4-02
+      stem: "When should the walk-away floor be decided?"
+      type: single
+      options: ["Coolly, before the conversation", "During the negotiation itself", "After the buyer's first offer", "Once the margin is calculated"]
+      correct: ["Coolly, before the conversation"]
+      rubric_category: recall
+      explanation: "A floor negotiated live, under pressure, always sinks."
+      weight: 1
+    - id: sf4-03
+      stem: "A buyer says the switch feels risky. What comes before your answer?"
+      type: single
+      options: ["Asking what scenario they are picturing", "Offering a trial to remove the risk", "Naming a reference customer who switched", "Explaining how your onboarding works"]
+      correct: ["Asking what scenario they are picturing"]
+      rubric_category: application
+      explanation: "Most objections arrive as headlines; answering the headline misses the concern underneath."
+      weight: 1
+    - id: sf4-04
+      stem: "You have answered three objections and a fourth has appeared. What should you do?"
+      type: single
+      options: ["Ask what would need to be true to go ahead", "Answer the fourth as carefully as the others", "Offer a concession to break the deadlock", "Summarise the value one more time clearly"]
+      correct: ["Ask what would need to be true to go ahead"]
+      rubric_category: application
+      explanation: "The smokescreen pattern: the stated objection stands in for an unstated one. That question, asked kindly, saves weeks."
+      weight: 1
+    - id: sf4-05
+      stem: "A buyer says 'what we have is fine' and discovery found no real pain. What is this?"
+      type: single
+      options: ["A qualification miss, not an objection", "An inertia objection to be worked through", "A timing issue to revisit in a quarter", "A signal to present stronger benefits"]
+      correct: ["A qualification miss, not an objection"]
+      rubric_category: application
+      explanation: "If there genuinely is no pain, there was never a deal to lose."
+      weight: 1
+    - id: sf4-06
+      stem: "The buyer wants a lower price. Which of these are legitimate things to trade for it? (Select all that apply.)"
+      type: multi
+      options: ["A longer commitment", "A larger volume", "Payment up front", "A faster delivery date"]
+      correct: ["A longer commitment", "A larger volume", "Payment up front"]
+      rubric_category: application
+      explanation: "A faster date costs you more; it is something to charge for, not to give alongside a discount."
+      weight: 1
+    - id: sf4-07
+      stem: "A buyer has said 'call me next quarter' twice. What is it?"
+      type: single
+      options: ["A no wearing a coat", "A genuine timing constraint", "A signal to reduce the price", "An invitation to stay in touch"]
+      correct: ["A no wearing a coat"]
+      rubric_category: application
+      explanation: "A parked deal with a concrete revisit date and reason is fine; a repeated vague date is not."
+      weight: 1
+    - id: sf4-08
+      stem: "Why does a reflex discount cost more than the margin it gives away?"
+      type: single
+      options: ["It teaches the buyer your first price was fiction", "It sets a precedent the next customer will hear about", "It removes the room needed for a later concession", "It signals the product is worth less than claimed"]
+      correct: ["It teaches the buyer your first price was fiction"]
+      rubric_category: analysis
+      explanation: "And it answers none of the four things 'too expensive' might actually mean."
+      weight: 1
+    - id: sf4-09
+      stem: "Why do big, fast concessions invite more demands rather than closing the deal?"
+      type: single
+      options: ["They signal there is more room still hidden", "They make the buyer question the quality", "They shorten the time available to negotiate", "They remove the seller's remaining leverage"]
+      correct: ["They signal there is more room still hidden"]
+      rubric_category: analysis
+      explanation: "Small, reluctant, reciprocated steps signal a real floor nearby."
+      weight: 1
+    - id: sf4-10
+      stem: "Why can a seller with one prospect not hold a floor?"
+      type: single
+      options: ["Losing that deal means losing everything", "Single prospects negotiate more aggressively", "The margin on one deal is always thinner", "There is no comparable price to refer to"]
+      correct: ["Losing that deal means losing everything"]
+      rubric_category: analysis
+      explanation: "A full pipeline is what buys the calm to decline; pipeline discipline and negotiating strength are the same thing."
+      weight: 1

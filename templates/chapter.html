@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+{% block title %}{{ chapter.title }} — {{ course.title }}{% endblock %}
+{% block shell_sidebar %}{% endblock %}
+{% block shell_layout_class %}shell-layout-full{% endblock %}
+{% block shell_footer_class %}shell-footer-full{% endblock %}
+{% block content %}
+{% set chapter_progress = (100 * chapter.number / total_chapters)|round(0, "floor") if total_chapters else 0 %}
+{% set read_progress = (100 * completed_chapters / total_chapters)|round(0, "floor") if total_chapters else 0 %}
+<div id="reading-progress"></div>
+
+<div class="coursework-wide">
+  <div class="coursework-shell">
+    <aside class="coursework-sidebar" aria-label="Course navigation">
+      <details class="disclosure coursework-menu">
+        <summary class="flex items-center justify-between rounded-xl px-3 py-2 text-sm font-semibold text-ink hover:bg-sand-200">
+          <span>Main menu</span>
+          <span class="disclosure-chevron text-ink-soft" aria-hidden="true">›</span>
+        </summary>
+        <nav class="mt-2 grid gap-1 text-sm" aria-label="Learning menu">
+          <a class="shell-navlink" href="/">Home</a>
+          <a class="shell-navlink" href="/courses">Courses</a>
+          <a class="shell-navlink" href="/calendar">Calendar</a>
+          <a class="shell-navlink" href="/announcements">Announcements</a>
+          <a class="shell-navlink" href="/progress">Progress</a>
+        </nav>
+      </details>
+
+      <section class="coursework-panel" aria-labelledby="course-progress-heading">
+        <p id="course-progress-heading" class="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-brand-700">Course progress</p>
+        <div class="mt-3 h-2 overflow-hidden rounded-full bg-sand-300" aria-hidden="true">
+          <div class="h-full rounded-full bg-brand-600" style="width: {{ read_progress }}%"></div>
+        </div>
+        <div class="mt-2 flex items-center justify-between gap-3 text-xs text-ink-soft">
+          <span>{{ read_progress }}% completed</span>
+          <span class="font-mono tabular-nums text-brand-700">{{ completed_chapters }}/{{ total_chapters or 0 }}</span>
+        </div>
+      </section>
+
+      <section class="coursework-panel coursework-scroll" aria-labelledby="coursework-page-heading">
+        {% if chapter_modules %}
+        <p id="coursework-page-heading" class="mb-2 text-[0.68rem] font-bold uppercase tracking-[0.16em] text-ink-soft">Chapter modules</p>
+        <nav class="grid gap-2" aria-label="Chapter modules">
+          {% for module in chapter_modules %}
+          {% set item = module.chapter %}
+          {% if item.id == chapter.id %}
+          <div class="coursework-chapter-group">
+            <a href="/courses/{{ course.slug }}/chapters/{{ item.number }}"
+               class="coursework-chapter-link coursework-chapter-link-active"
+               aria-current="page">
+              <span class="min-w-0 flex-1 whitespace-nowrap">{{ item.number }}. {{ item.title }}</span>
+              {% if item.id in completed_chapter_ids %}<span class="text-brand-700" aria-label="Completed">✓</span>{% endif %}
+            </a>
+            {% if module.subtopics %}
+            <div class="coursework-subtopics" aria-label="Subtopics for {{ item.title }}">
+              {% for subtopic in module.subtopics %}
+              {% set subtopic_done = subtopic.slug in module.done_slugs %}
+              <a class="coursework-subtopic-link coursework-subtopic-link-current {% if subtopic_done %}coursework-subtopic-complete{% else %}coursework-subtopic-locked action-disabled{% endif %}"
+                 href="{% if subtopic_done %}#{{ subtopic.slug }}{% else %}#{% endif %}"
+                 aria-disabled="{{ 'false' if subtopic_done else 'true' }}"
+                 {% if not subtopic_done %}tabindex="-1"{% endif %}
+                 data-subtopic-href="#{{ subtopic.slug }}"
+                 data-subtopic-key="{{ course.slug }}:{{ item.number }}:{{ subtopic.slug }}"
+                 data-subtopic-done="{{ 'true' if subtopic_done else 'false' }}"
+                 data-subtopic-slug="{{ subtopic.slug }}">
+                <span class="coursework-subtopic-title">{{ subtopic.title }}</span>
+                <span class="coursework-subtopic-check" aria-hidden="true">✓</span>
+              </a>
+              {% endfor %}
+            </div>
+            {% endif %}
+          </div>
+          {% endif %}
+          {% endfor %}
+        </nav>
+        {% endif %}
+      </section>
+
+      <a id="sidebar-continue-link" class="btn-primary action-disabled w-full" href="#" aria-disabled="true" tabindex="-1" data-next-chapter-href="{% if next_chapter %}/courses/{{ course.slug }}/chapters/{{ next_chapter.number }}{% endif %}">
+        Continue learning <span aria-hidden="true">&rarr;</span>
+      </a>
+    </aside>
+
+    <div class="coursework-main">
+      <section class="coursework-hero">
+        <img src="/static/img/cover-{{ course.slug }}.webp" alt="" class="coursework-hero-img" loading="lazy" data-hide-on-error>
+        <div class="coursework-hero-content">
+          <p class="font-sans text-sm font-semibold uppercase tracking-[0.16em] text-brand-100">{{ course.title }}</p>
+          <p class="mt-3 font-mono text-sm tabular-nums text-sand-100/85">Chapter {{ chapter.number }}{% if total_chapters %} of {{ total_chapters }}{% endif %} &middot; ~{{ reading_minutes }} min read</p>
+          <h1 class="mt-1 max-w-2xl text-3xl text-sand-50 sm:text-4xl">{{ chapter.title }}</h1>
+        </div>
+      </section>
+
+      <div class="coursework-status card p-4">
+        <div class="min-w-0 flex-1">
+          <div class="flex items-center justify-between gap-4 text-xs text-ink-soft">
+            <span>Chapter position</span>
+            <span class="font-mono tabular-nums">{{ chapter_progress }}%</span>
+          </div>
+          <div class="mt-2 h-2 overflow-hidden rounded-full bg-sand-300" aria-hidden="true">
+            <div class="h-full rounded-full bg-brand-600" style="width: {{ chapter_progress }}%"></div>
+          </div>
+        </div>
+        <div class="flex shrink-0 flex-wrap items-center gap-2">
+          <a class="btn-ghost px-3.5 py-2 text-sm" href="/courses/{{ course.slug }}">Course home</a>
+          <span hx-get="/bookmarks/chapters/{{ course.slug }}/{{ chapter.number }}/toggle" hx-trigger="load" hx-swap="outerHTML"></span>
+        </div>
+      </div>
+
+      <article class="prose coursework-article" data-course-slug="{{ course.slug }}" data-chapter-number="{{ chapter.number }}" data-activity-taken="{{ 'true' if activity_taken else 'false' }}" data-has-activity="{{ 'true' if activity else 'false' }}" data-subtopics-complete="{{ 'true' if chapter_subtopics_complete else 'false' }}">{{ chapter.body_html | safe }}</article>
+
+      <div hx-get="/bookmarks/chapters/{{ course.slug }}/{{ chapter.number }}/note" hx-trigger="load" hx-swap="outerHTML"></div>
+
+      <nav class="coursework-actions" aria-label="Chapter navigation">
+        {% if previous_chapter %}
+        <a class="btn-ghost" href="/courses/{{ course.slug }}/chapters/{{ previous_chapter.number }}"><span aria-hidden="true">&larr;</span> Chapter {{ previous_chapter.number }}</a>
+        {% else %}<span></span>{% endif %}
+        <div class="flex flex-wrap items-center justify-end gap-3">
+          <div id="subtopic-step-actions" class="subtopic-step-actions" hidden>
+            <span id="subtopic-step-status" class="subtopic-complete-label">Ready to continue?</span>
+            <button id="subtopic-complete-button" type="button" class="subtopic-complete-button">Mark as complete</button>
+            <button id="subtopic-next-button" type="button" class="subtopic-next-button">Next</button>
+          </div>
+          {% if activity_items %}
+          <div class="flex w-full flex-col items-stretch gap-2 sm:w-auto sm:min-w-80" aria-label="Chapter activities">
+            <p class="text-right text-xs font-semibold uppercase tracking-[0.12em] text-ink-soft">Chapter activities</p>
+            {% for item in activity_items %}
+            {% set item_activity = item.activity %}
+            {# The gate is decided server-side, so the links arrive in the right
+               state on any device and work without JavaScript. #}
+            <a {% if activity and item_activity.id == activity.id %}id="chapter-test-link"{% endif %}
+               class="chapter-activity-link btn-ghost justify-between gap-3{% if not chapter_subtopics_complete %} action-disabled{% endif %}"
+               href="{{ item.href }}"
+               aria-disabled="{{ 'false' if chapter_subtopics_complete else 'true' }}"
+               {% if not chapter_subtopics_complete %}tabindex="-1"{% endif %}>
+              <span class="min-w-0 truncate">{{ item_activity.title }}</span>
+              <span class="shrink-0 text-xs text-ink-soft">
+                {% if item.passed %}Passed{% elif item.attempts %}{{ item.pct or 0 }}%{% elif item_activity.type == "lab" %}Lab{% else %}Test{% endif %}
+              </span>
+            </a>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<script src="/static/chapter.js?v=10" defer></script>
+{% endblock %}

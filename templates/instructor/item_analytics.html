@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content_width %}max-w-5xl{% endblock %}
+{% block title %}Item analysis — {{ activity.title }}{% endblock %}
+{% block content %}
+<p class="page-eyebrow">Item analysis</p>
+<h1 class="page-title">{{ activity.title }}</h1>
+<p class="page-intro">Per-question difficulty (p-value = fraction answering correctly; lower is harder).</p>
+
+{% if items %}
+<div class="card table-frame mt-10" role="region" aria-label="Question analytics table; scroll horizontally to see all columns" tabindex="0">
+  <table class="data-table">
+    <thead>
+      <tr class="border-b border-sand-300 bg-sand-200/60 text-left text-xs uppercase tracking-wider text-ink-soft">
+        <th scope="col" class="p-3.5 font-semibold">Question</th>
+        <th scope="col" class="p-3.5 font-semibold">Responses</th>
+        <th scope="col" class="p-3.5 font-semibold">Correct</th>
+        <th scope="col" class="p-3.5 font-semibold">p-value</th>
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-sand-200">
+      {% for i in items %}
+      <tr class="align-top transition-colors hover:bg-sand-100">
+        <td class="p-3.5 font-mono text-ink">{{ i.id }}</td>
+        <td class="p-3.5 tabular-nums text-ink">{{ i.responses }}</td>
+        <td class="p-3.5 tabular-nums text-ink">{{ i.correct }}</td>
+        <td class="p-3.5 tabular-nums font-medium text-ink">{{ "%.2f"|format(i.p_value) }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% else %}
+<div class="card mt-10 p-10 text-center text-ink-soft">No responses yet.</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-decision-making
+  kind: chapter
+  chapter: 1
+  version: 2
+  policy:
+    mode: practice
+  questions:
+    - id: dm1-01
+      stem: "A decision should be judged by:"
+      type: single
+      options: ["The process and information available at the time", "The outcome that it eventually went on to produce", "Whether the team agreed with it", "How quickly it was arrived at"]
+      correct: ["The process and information available at the time"]
+      rubric_category: recall
+      explanation: "You can decide well and get unlucky, or decide recklessly and get away with it. Judging on outcomes teaches the wrong lesson."
+      weight: 1
+    - id: dm1-02
+      stem: "Which bias makes the first number on the table drag every later estimate toward it?"
+      type: single
+      options: ["Anchoring", "Availability", "Confirmation bias", "Status quo bias"]
+      correct: ["Anchoring"]
+      rubric_category: recall
+      explanation: "Generate your own estimate before you look at anyone else's."
+      weight: 1
+    - id: dm1-03
+      stem: "A project has consumed eight months and most of its budget, and is going badly. Which question cuts through the sunk-cost argument?"
+      type: single
+      options: ["Knowing what we know now, would we start this today?", "How much more would it cost to finish the work?", "Who approved the original budget set for this whole project?", "What was the return we originally projected here?"]
+      correct: ["Knowing what we know now, would we start this today?"]
+      rubric_category: application
+      explanation: "Spent resources are gone under every future option; only future costs and benefits differ between choices."
+      weight: 1
+    - id: dm1-04
+      stem: "Your team is convinced a supplier is the cause of a recurring fault. What should you deliberately go and look for?"
+      type: single
+      options: ["Evidence you would expect if the theory were wrong", "More examples of the same fault, to strengthen the case", "The supplier's own explanation of what happened", "A second opinion from someone outside the team"]
+      correct: ["Evidence you would expect if the theory were wrong"]
+      rubric_category: application
+      explanation: "This is the defence against confirmation bias: investigations 'confirm' their first theory far too often."
+      weight: 1
+    - id: dm1-05
+      stem: "Planning is dominated by last month's dramatic failure while a small weekly problem goes unmanaged. Which bias is at work, and what is the defence?"
+      type: single
+      options: ["Availability — check the records rather than memories", "Anchoring — produce your own estimate before others", "Sunk cost — set aside what has already been spent", "Overconfidence — widen the estimate ranges being used"]
+      correct: ["Availability — check the records rather than memories"]
+      rubric_category: application
+      explanation: "Vivid and recent events feel more likely than they are; frequency lives in records, not recollection."
+      weight: 1
+    - id: dm1-06
+      stem: "You are told a decision must be made this afternoon. What is the first question to ask?"
+      type: single
+      options: ["What actually happens if we decide tomorrow?", "Who holds the authority to make this call?", "What options have already been considered so far?", "Could we make a smaller version of the decision?"]
+      correct: ["What actually happens if we decide tomorrow?"]
+      rubric_category: application
+      explanation: "Often the honest answer is 'nothing', and a day buys real information. Separate decision deadlines from discomfort deadlines."
+      weight: 1
+    - id: dm1-07
+      stem: "You genuinely do want to postpone a decision. What makes the deferral legitimate rather than drift?"
+      type: single
+      options: ["A named reason, an owner, and a revisit date", "Agreement from everyone the decision will affect", "A note in the minutes of the current meeting", "Confidence that the option will remain open"]
+      correct: ["A named reason, an owner, and a revisit date"]
+      rubric_category: application
+      explanation: "Deferral is sometimes right; unconscious deferral never is. If you are postponing, postpone on purpose."
+      weight: 1
+    - id: dm1-08
+      stem: "Why does judging decisions by their outcomes make honest reporting of bad news harder?"
+      type: single
+      options: ["Sound reasoning that met bad luck gets punished, so people hide the result", "Bad outcomes take longer to surface than good ones do in most teams", "Managers become reluctant to record any decision at all in writing", "It encourages people to delay decisions until the outcome is certain"]
+      correct: ["Sound reasoning that met bad luck gets punished, so people hide the result"]
+      rubric_category: analysis
+      explanation: "Process-based judgement is what makes it safe to bring you an honest account of a decision that went badly."
+      weight: 1
+    - id: dm1-09
+      stem: "An ambiguous ownership question was deferred in January and became a turf war by June. Why is this the toxic kind of decision debt?"
+      type: single
+      options: ["Nobody knew a decision was pending, so nobody gathered the information", "The team chose to wait for information that never actually arrived", "The decision belonged a level down and was never passed there", "The January position could have been unwound at any point since"]
+      correct: ["Nobody knew a decision was pending, so nobody gathered the information"]
+      rubric_category: analysis
+      explanation: "Some decision debt is a sensible loan. The toxic kind is invisible, so the cost compounds silently."
+      weight: 1
+    - id: dm1-10
+      stem: "Under pressure, teams typically compare the two options already in front of them. What does the urgency actually destroy first?"
+      type: single
+      options: ["Option generation — nobody asks whether better choices exist", "Analysis — the two options get compared far too quickly", "Consultation — the people affected are not asked in time", "Documentation — the reasoning never gets written down"]
+      correct: ["Option generation — nobody asks whether better choices exist"]
+      rubric_category: analysis
+      explanation: "The first casualty of manufactured urgency is the search for options, which is where most decision quality lives."
+      weight: 1

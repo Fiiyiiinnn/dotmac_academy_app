@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-communication
+  kind: chapter
+  chapter: 5
+  version: 2
+  policy:
+    mode: practice
+  questions:
+    - id: cm5-01
+      stem: "In a difficult conversation, you prepare the facts and:"
+      type: single
+      options: ["The issue and the outcome you want", "A script covering the likely replies", "The consequences if nothing changes", "A record of the previous discussions"]
+      correct: ["The issue and the outcome you want"]
+      rubric_category: recall
+      explanation: "Scripts shatter on the first unexpected reply; the two anchors survive it."
+      weight: 1
+    - id: cm5-02
+      stem: "In mediating a conflict, what must each party do before any solutions are discussed?"
+      type: single
+      options: ["Restate the other's view to their satisfaction", "Set out the outcome they want from the meeting", "Agree the facts of what actually happened", "Accept their own share of the responsibility"]
+      correct: ["Restate the other's view to their satisfaction"]
+      rubric_category: recall
+      explanation: "This single mechanic dissolves more conflict than any ruling, because most workplace war is mutual misreading."
+      weight: 1
+    - id: cm5-03
+      stem: "You open a performance conversation with ten minutes of pleasantries before raising the issue. What has that cost?"
+      type: single
+      options: ["The pivot lands harder, and the message arrives muddled", "The time available for the person to respond properly", "The chance to establish the facts before the discussion", "The impression that the matter is being taken seriously"]
+      correct: ["The pivot lands harder, and the message arrives muddled"]
+      rubric_category: application
+      explanation: "Say it plainly in the first minute, then stop and listen. Cushioning leaves people genuinely unsure what was said."
+      weight: 1
+    - id: cm5-04
+      stem: "Two of your team are in conflict and each keeps coming to you separately to make their case. What is happening?"
+      type: single
+      options: ["You have become the message-carrier in a proxy war", "You are gathering the information needed to rule on it", "You are being asked to take a side rather than mediate", "You are managing the situation before it reaches the team"]
+      correct: ["You have become the message-carrier in a proxy war"]
+      rubric_category: application
+      explanation: "Hear each side once, separately, to understand — then bring them together, because the agreement has to be theirs."
+      weight: 1
+    - id: cm5-05
+      stem: "An escalated customer reaches you, furious. What does your arrival need to establish first?"
+      type: single
+      options: ["That you are the manager and you own this now", "That you understand exactly what went wrong", "That the team member acted in good faith", "That there is a resolution already in progress"]
+      correct: ["That you are the manager and you own this now"]
+      rubric_category: application
+      explanation: "That satisfies half of what the escalation was seeking: proof of being taken seriously."
+      weight: 1
+    - id: cm5-06
+      stem: "A customer is right that your team made a mistake, and has also been abusive to the team member. How do you handle both?"
+      type: single
+      options: ["Own the mistake plainly, and correct the conduct politely and squarely", "Resolve the mistake first and let the conduct issue pass this time", "Address the conduct first, since the team member must be supported", "Apologise for both, then debrief the team member separately after"]
+      correct: ["Own the mistake plainly, and correct the conduct politely and squarely"]
+      rubric_category: application
+      explanation: "A manager who trades staff dignity for customer appeasement pays in a currency no refund reimburses."
+      weight: 1
+    - id: cm5-07
+      stem: "Which are true of where and how a difficult conversation should be held? (Select all that apply.)"
+      type: multi
+      options: ["Privately, never in front of the team", "Face-to-face rather than by message", "With enough time that neither is rushed", "After the next scheduled review point"]
+      correct: ["Privately, never in front of the team", "Face-to-face rather than by message", "With enough time that neither is rushed"]
+      rubric_category: application
+      explanation: "Hard content deserves the richest channel — and early beats polished, so waiting for a review point is the wrong instinct."
+      weight: 1
+    - id: cm5-08
+      stem: "You raise a performance issue as 'people have been saying you're hard to work with'. Why does this fail?"
+      type: single
+      options: ["It is unanswerable, so it reads as an ambush rather than feedback", "It fails to specify which behaviours actually need to change here", "It brings a general impression instead of a single evidenced pattern", "It puts the manager in the position of speaking for other people"]
+      correct: ["It is unanswerable, so it reads as an ambush rather than feedback"]
+      rubric_category: analysis
+      explanation: "Own the message yourself — 'I'm raising this'. There is no way to respond to an anonymous consensus."
+      weight: 1
+    - id: cm5-09
+      stem: "A conversation you have been putting off for three months finally happens. What has the delay changed?"
+      type: single
+      options: ["The talk must now carry months of accumulated freight", "The evidence has become harder to recall precisely", "The behaviour has been implicitly approved by your silence", "The other person will be surprised that it is being raised"]
+      correct: ["The talk must now carry months of accumulated freight"]
+      rubric_category: analysis
+      explanation: "A slightly clumsy conversation this week beats an eloquent one next quarter."
+      weight: 1
+    - id: cm5-10
+      stem: "The room has become too heated for either of you to think clearly. Why is naming it and pausing better than pushing through?"
+      type: single
+      options: ["A paused conversation resumes; a detonated one gets remembered", "It gives both parties time to gather better evidence for their case", "It transfers the decision about when to continue to the other person", "It prevents the conversation from being overheard by the wider team"]
+      correct: ["A paused conversation resumes; a detonated one gets remembered"]
+      rubric_category: analysis
+      explanation: "Plan for the emotion rather than around it — the damage from one detonation outlasts the issue that caused it."
+      weight: 1

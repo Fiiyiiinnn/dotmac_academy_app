@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-health-safety
+  kind: chapter
+  chapter: 1
+  version: 1
+  policy:
+    mode: practice
+  questions:
+    - id: hs1-01
+      stem: "Telling someone to \"be more careful\" fails because it asks a person to supply what:"
+      type: single
+      options: ["The system did not", "Training clearly omitted", "Policy forbade", "Budget denied"]
+      correct: ["The system did not"]
+      rubric_category: recall
+      explanation: "Continuously and under pressure. Individual care varies with fatigue, weather, deadline and experience \u2014 it is the least reliable control there is."
+      weight: 1
+    - id: hs1-02
+      stem: "A hazard is the potential for harm; a risk is how likely it is and:"
+      type: single
+      options: ["How bad", "How often", "How visible", "How costly"]
+      correct: ["How bad"]
+      rubric_category: recall
+      explanation: "The distinction decides what you do next: you can often eliminate a hazard, whereas a risk can only be managed."
+      weight: 1
+    - id: hs1-03
+      stem: "\"Reasonably practicable\" weighs the control against:"
+      type: single
+      options: ["The risk", "The budget", "The schedule", "Industry norms"]
+      correct: ["The risk"]
+      rubric_category: application
+      explanation: "If the control is not grossly disproportionate to the risk, do it. Cost is legitimate only in proportion."
+      weight: 1
+    - id: hs1-04
+      stem: "The reasonably-practicable test is ultimately applied:"
+      type: single
+      options: ["With hindsight, from records", "At the planning stage", "By the site team", "Against wider industry averages"]
+      correct: ["With hindsight, from records"]
+      rubric_category: application
+      explanation: "The question after an incident is what a reasonable manager would have done and what you can show you did."
+      weight: 1
+    - id: hs1-05
+      stem: "Near misses are valuable to a manager chiefly because they are:"
+      type: single
+      options: ["Free information", "Legally required", "Easy to count", "Rarely serious"]
+      correct: ["Free information"]
+      rubric_category: application
+      explanation: "The same system failure as the serious version, arriving without the cost."
+      weight: 1
+    - id: hs1-06
+      stem: "A team's near-miss reports rise sharply after you promise no blame. This most likely means:"
+      type: single
+      options: ["Reporting became safe", "Work became riskier", "Standards slipped", "Supervision has weakened"]
+      correct: ["Reporting became safe"]
+      rubric_category: analysis
+      explanation: "A manager who reads it as deterioration will destroy the thing they have just built."
+      weight: 1
+    - id: hs1-07
+      stem: "Eliminating a hazard is preferable to controlling it because elimination requires:"
+      type: single
+      options: ["No one's compliance", "Less equipment", "Fewer records", "Much shorter training"]
+      correct: ["No one's compliance"]
+      rubric_category: analysis
+      explanation: "It works while everyone is tired, rushed and new \u2014 which is precisely when controls that need compliance fail."
+      weight: 1
+    - id: hs1-08
+      stem: "Of the things a manager owns, the two that cannot be delegated are the standard enforced and:"
+      type: single
+      options: ["The escalation", "The training budget", "The inspection rota", "The method statement"]
+      correct: ["The escalation"]
+      rubric_category: analysis
+      explanation: "A hazard reported verbally to someone who forgot is a hazard you still own. Raise it in writing and chase it."
+      weight: 1
+    - id: hs1-09
+      stem: "A preventable incident cost N2.25m against N352,800 of annual prevention. The honest comparison is between:"
+      type: single
+      options: ["Certainty and probability", "Two certainties", "Two estimates", "Cost against future benefit"]
+      correct: ["Certainty and probability"]
+      rubric_category: analysis
+      explanation: "Prevention buys a lower probability rather than immunity, so the comparison is a certain spend against a probability-weighted loss."
+      weight: 1
+    - id: hs1-10
+      stem: "The phrase \"what you walk past is what you accept\" describes:"
+      type: single
+      options: ["Your real standard", "A legal duty", "A training gap", "An external audit finding"]
+      correct: ["Your real standard"]
+      rubric_category: application
+      explanation: "The team reads what you tolerate, not what the policy says."
+      weight: 1

@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block title %}Question banks — {{ course.title }} — Dotmac Academy{% endblock %}
+{% block content %}
+<div class="flex flex-wrap items-end justify-between gap-4">
+  <div>
+    <p class="page-eyebrow">Authoring</p>
+    <h1 class="page-title">Question banks</h1>
+    <p class="page-intro">{{ course.title }} — drafts are invisible to learners until an admin publishes and repoints.</p>
+  </div>
+  <a class="btn-ghost px-3.5 py-2 text-sm" href="/instructor/courses/{{ course.id }}/edit">Back to authoring</a>
+</div>
+
+{% if error %}<div class="card mt-6 p-4 text-sm" role="alert">{{ error }}</div>{% endif %}
+{% if notice %}<div class="card mt-6 p-4 text-sm" role="status">{{ notice }}</div>{% endif %}
+
+<section class="card mt-8 p-5">
+  <h2 class="text-lg font-semibold text-ink">New draft</h2>
+  <form class="mt-4 flex flex-wrap items-end gap-4" method="post" action="/instructor/courses/{{ course.id }}/banks/drafts">
+    <label class="block">
+      <span class="mb-1 block text-sm font-semibold text-ink">Kind</span>
+      <input name="kind" required value="chapter" class="px-3 py-2 text-sm">
+    </label>
+    <label class="block">
+      <span class="mb-1 block text-sm font-semibold text-ink">Chapter # (optional)</span>
+      <input name="chapter_number" type="number" min="1" class="px-3 py-2 text-sm">
+    </label>
+    <label class="flex items-center gap-2 text-sm">
+      <input name="from_empty" type="checkbox" value="1"> Start empty (do not copy current version)
+    </label>
+    <button class="btn-primary px-4 py-2 text-sm" type="submit">Create draft</button>
+  </form>
+</section>
+
+<section class="card mt-6 p-5">
+  <h2 class="text-lg font-semibold text-ink">Import YAML as draft</h2>
+  <p class="mt-1 text-sm text-ink-soft">Import never publishes, never overwrites a UI draft, and never changes activity pass marks.</p>
+  <form class="mt-4 flex flex-wrap items-end gap-4" method="post" enctype="multipart/form-data"
+        action="/instructor/courses/{{ course.id }}/banks/import">
+    <label class="block">
+      <span class="mb-1 block text-sm font-semibold text-ink">Bank YAML file</span>
+      <input name="bank_file" type="file" accept=".yaml,.yml,text/yaml" required class="text-sm">
+    </label>
+    <label class="flex items-center gap-2 text-sm">
+      <input name="replace_imported_draft" type="checkbox" value="1"> Replace an untouched imported draft
+    </label>
+    <button class="btn-primary px-4 py-2 text-sm" type="submit">Import as draft</button>
+  </form>
+</section>
+
+<div class="mt-8 space-y-4">
+  {% for bank in banks %}
+  {% set history = histories[bank.id] %}
+  {% set draft = history | selectattr("state", "equalto", "draft") | first %}
+  <section class="card p-5">
+    <div class="flex flex-wrap items-start justify-between gap-3">
+      <p class="font-medium text-ink">
+        {% if bank.chapter_number %}<span class="font-mono text-ink-soft">Ch{{ bank.chapter_number }}</span> &nbsp;{% endif %}
+        {{ bank.kind }}
+        <span class="ml-2 text-sm text-ink-soft">current version {{ bank.version if bank.current_version_id else "none" }}</span>
+        {% if draft %}<span class="ml-2 text-sm">draft open ({{ draft.question_count }}q, {{ draft.lint_violation_count }} lint)</span>{% endif %}
+      </p>
+      <a class="btn-ghost px-3 py-1.5 text-sm" href="/instructor/courses/{{ course.id }}/banks/{{ bank.id }}">Open bank</a>
+    </div>
+  </section>
+  {% else %}
+  <div class="card p-8 text-center text-ink-soft">No question banks yet for this course.</div>
+  {% endfor %}
+</div>
+{% endblock %}

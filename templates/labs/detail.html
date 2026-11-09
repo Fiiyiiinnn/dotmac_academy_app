@@ -1,0 +1,43 @@
+{% extends "base.html" %}{% block content_width %}max-w-5xl{% endblock %}{% block content %}
+<p class="page-eyebrow">Hands-on lab</p>
+<h1 class="page-title">{{ template.title }}</h1>
+
+<div class="mt-8 lg:grid lg:grid-cols-3 lg:items-start lg:gap-10">
+  <!-- Control panel — sticky beside the instructions on large screens, on top on small. -->
+  <aside class="shell-sticky-panel lg:order-2 lg:col-span-1 lg:sticky lg:self-start">
+    <p class="font-sans text-xs font-semibold uppercase tracking-[0.16em] text-ink-soft">Lab controls</p>
+    <div id="lab-state" class="mt-3">
+    {% if instance %}
+      {% include "labs/_status.html" %}
+    {% else %}
+      <div class="card p-6">
+        <form hx-post="/labs/{{ activity.id }}/launch" hx-target="#lab-state" hx-swap="innerHTML">
+          <button class="btn-primary w-full" type="submit">Launch lab</button>
+          <p class="mt-3 text-sm text-ink-soft">Your environment starts in its own sandbox. Consoles become available as each device finishes starting.</p>
+        </form>
+      </div>
+    {% endif %}
+    </div>
+    {% if device_access %}
+    <section class="card mt-4 p-6" aria-labelledby="lab-access-heading" data-lab-access>
+      <h2 id="lab-access-heading" class="font-display text-lg text-ink">Device access</h2>
+      <p class="mt-1 text-sm text-ink-soft">Logins for the devices in your lab. They only work inside your own lab and are not used anywhere else.</p>
+      <dl class="mt-3 space-y-3">
+        {% for a in device_access %}
+        <div>
+          <dt class="font-mono text-sm font-semibold text-ink">{{ a.node }} <span class="font-sans text-xs font-normal text-ink-soft">({{ a.protocol }})</span></dt>
+          <dd class="text-sm text-ink-soft">
+            {% if a.username %}Username <code>{{ a.username }}</code>{% if a.default_password %}, password <code>{{ a.default_password }}</code>{% else %}, no password{% endif %}.{% else %}No login needed.{% endif %}
+            {% if a.note %} {{ a.note }}{% endif %}
+          </dd>
+        </div>
+        {% endfor %}
+      </dl>
+    </section>
+    {% endif %}
+  </aside>
+
+  <!-- Instructions — main scrolling column. -->
+  <article class="prose mt-8 lg:order-1 lg:col-span-2 lg:mt-0">{{ instructions_html | safe }}</article>
+</div>
+{% endblock %}

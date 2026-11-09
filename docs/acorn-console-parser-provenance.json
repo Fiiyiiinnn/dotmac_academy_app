@@ -1,0 +1,73 @@
+{
+  "package": "acorn",
+  "version": "8.19.0",
+  "license": "MIT",
+  "metadata_url": "https://registry.npmjs.org/acorn/8.19.0",
+  "tarball_url": "https://registry.npmjs.org/acorn/-/acorn-8.19.0.tgz",
+  "tarball_integrity": "sha512-oJlA3XiRm7Cyk6qFD2Jn8ak9B7jSy0qy00ADO3+8dpT0LSjFihQYv4C02LFCSYJV3Q37xYwwRy5m+IpIiUzqWw==",
+  "tarball_sha512_hex": "a09940dd78919bb0b293aa850f6267f1a93d07b8d2cb4ab2d340033b7fbc7694f42d28c58a1418bf80b4d8b142498255dd0dfbc58c30472e66f88a48894cea5b",
+  "github_tag": "https://github.com/acornjs/acorn/tree/8.19.0",
+  "source_parse_url": "https://github.com/acornjs/acorn/blob/8.19.0/acorn/src/expression.js",
+  "files": {
+    "static/console/acorn-8.19.0.js": {
+      "package_path": "package/dist/acorn.js",
+      "sha256": "b95392d79457d0357555c5ed3e56302d074b92dff119bcf3b44179500b10e9df"
+    },
+    "static/console/ACORN-LICENSE.txt": {
+      "package_path": "package/LICENSE",
+      "sha256": "76a876cf886ff9be2a8b5e2e86514fed06223c8c9f0c1e9ee9606e93841e00b7"
+    }
+  },
+  "review": {
+    "supported_syntax": "ECMAScript 5 syntax parsed to AST; wrapper accepts only a closed data-only subset, including numeric object keys. No provider source or AST is executed.",
+    "dynamic_code_generation": false,
+    "token_preflight": "onToken callback enforces bounded token count, balanced-delimiter depth budget, closed token vocabulary, and single unary numeric sign. No callback reentry.",
+    "source_review": "Unmodified dist/acorn.js exposes parse and tokenizes/parses source into ESTree nodes without invoking eval or Function. The wrapper uses the official Parser.extend hook and overrides readRegexp to throw before regex validation or native RegExp compilation; both readToken_slash and parseExprAtom dispatch through this method. Comment skipping occurs separately in skipSpace through skipBlockComment and skipLineComment. The class parse method is captured once and bound to the extended class.",
+    "documentation_url": "https://github.com/acornjs/acorn/tree/8.19.0/acorn#interface",
+    "regex_lexical_hook": {
+      "pinned_version": "8.19.0",
+      "extension_api": "Parser.extend(plugin) returns the plugin subclass; static Parser.parse constructs new this(options, input).parse().",
+      "override": "readRegexp() throws SyntaxError(\"WebFig data forbids regular expressions\") without calling the parent method.",
+      "reviewed_package_locations": {
+        "Parser.extend": 682,
+        "Parser.parse": 691,
+        "parseExprAtom_regex_reinterpretation": 3069,
+        "skipSpace_comments": 5623,
+        "readToken_slash": 5681,
+        "readRegexp": 5883
+      },
+      "primary_sources": [
+        "https://github.com/acornjs/acorn/blob/8.19.0/acorn/src/state.js",
+        "https://github.com/acornjs/acorn/blob/8.19.0/acorn/src/tokenize.js",
+        "https://github.com/acornjs/acorn/blob/8.19.0/acorn/src/expression.js"
+      ],
+      "qualification": "Hosted tests require the exact custom regex refusal for a deeply nested regex and malformed regex character classes, and retain block/line comments and slash-containing strings. The wrapper refuses any Acorn version other than 8.19.0."
+    }
+  },
+  "wrapper_contract": {
+    "global": "globalThis.AcademyWebFigDataV1",
+    "load_order": [
+      "static/console/acorn-8.19.0.js",
+      "static/console/webfig-data-v1.js"
+    ],
+    "api_frozen": true,
+    "parseList": "String of comma-terminated object literals; wraps in [text{}], requires ordinary-object entries and preserves the final empty object. Empty input returns [{}].",
+    "parseSchema": "String containing one array expression in the closed data grammar.",
+    "parseSkin": "String containing one ordinary-object expression in the closed data grammar; empty or whitespace-only input returns {}.",
+    "parse_scope": "Pinned Acorn 8.19.0 Parser.extend subclass with regex lexical hook. Captured class parse method bound once to the subclass parses the entire parenthesized input plus separating newline, ECMAScript 5 script, exactly one ExpressionStatement. Nested source parentheses and suffix programs are rejected. No parseExpressionAt, revivers, source execution, or AST execution.",
+    "closed_data_grammar": "Only null, strings, booleans, finite numeric literals, a single unary +/- on a numeric literal, arrays without holes, and ordinary init properties with identifier/string/finite numeric keys. Numeric keys use String(value). Own properties are defined explicitly. Duplicate keys retain their last value. __proto__, prototype, constructor are always rejected after key decoding.",
+    "limits": {
+      "input_utf8_bytes": 2097152,
+      "total_output_values_including_containers": 500000,
+      "depth_root_is_one": 128,
+      "tokens": 2000008,
+      "delimiter_depth_including_artificial_parentheses": 129,
+      "ast_work_nodes_including_property_and_key_nodes": 1500000
+    },
+    "materialization": "Iterative work stack. Output-value and depth budgets are charged before container allocation and child scheduling; AST property/key work is charged before allocation. Output objects use Object.defineProperty for own data properties.",
+    "errors": "Throws TypeError, RangeError, or Acorn SyntaxError. Callers must fail closed.",
+    "hosted_test_command": "node --test tests/js/test_webfig_data_parser.cjs",
+    "hosted_qualification": "VM string and Wasm code generation disabled; all nine captured ROM schemas, actual module list, numeric-key and skin vectors, forbidden AST categories, malicious suffixes and resource budgets. Provider JavaScript is never evaluated.",
+    "local_validation": "Syntax-only node --check, diff whitespace, and provenance hash inspection; hosted tests are not run locally."
+  }
+}

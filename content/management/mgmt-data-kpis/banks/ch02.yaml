@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-data-kpis
+  kind: chapter
+  chapter: 2
+  version: 2
+  policy:
+    mode: practice
+  questions:
+    - id: dk2-01
+      stem: "How many KPIs should a team carry?"
+      type: single
+      options: ["Three to six", "One to two", "Eight to ten", "One per person"]
+      correct: ["Three to six"]
+      rubric_category: recall
+      explanation: "Few enough that every member can recite them and the weekly review actually looks at each."
+      weight: 1
+    - id: dk2-02
+      stem: "The five KPI families are output, quality, speed, satisfaction and:"
+      type: single
+      options: ["Cost", "Risk", "Growth", "Effort"]
+      correct: ["Cost"]
+      rubric_category: recall
+      explanation: "Cost is the family managers most often omit — until the year-end conversation where it is all anyone discusses."
+      weight: 1
+    - id: dk2-03
+      stem: "Where should the choice of a team's KPIs start?"
+      type: single
+      options: ["From what the team exists to produce, and to what standard", "From the reports the operational system can already produce", "From the measures comparable teams elsewhere are using", "From the numbers senior leadership currently asks about"]
+      correct: ["From what the team exists to produce, and to what standard"]
+      rubric_category: application
+      explanation: "Starting from the system produces metrics shaped by what is easy to count."
+      weight: 1
+    - id: dk2-04
+      stem: "A dispatch team is measured on jobs completed per day and nothing else. What will happen?"
+      type: single
+      options: ["Output will rise at the expense of quality or the work mix", "The team will focus on the highest-value jobs available", "Completion times will improve while volumes stay level", "Costs per job will fall as the team becomes more practised"]
+      correct: ["Output will rise at the expense of quality or the work mix"]
+      rubric_category: application
+      explanation: "Any single metric maximised alone is achieved at the expense of the others. The families discipline each other."
+      weight: 1
+    - id: dk2-05
+      stem: "Two managers report different honest figures for the same KPI. What is missing?"
+      type: single
+      options: ["A written definition of what counts and where the formula runs", "A single system of record that both managers draw from", "Agreement about which period the figure should cover", "An owner responsible for explaining the number's movement"]
+      correct: ["A written definition of what counts and where the formula runs"]
+      rubric_category: application
+      explanation: "Undefined metrics generate the worst arguments in management — and every ambiguity is eventually resolved in the flattering direction."
+      weight: 1
+    - id: dk2-06
+      stem: "Which belong in a KPI's written definition? (Select all that apply.)"
+      type: multi
+      options: ["Exactly what counts, including the edge cases", "The formula and where it starts and stops", "The source system and the query used", "The target the team must reach"]
+      correct: ["Exactly what counts, including the edge cases", "The formula and where it starts and stops", "The source system and the query used"]
+      rubric_category: application
+      explanation: "Plus one named owner. The target belongs to the target-setting conversation, not the definition."
+      weight: 1
+    - id: dk2-07
+      stem: "Someone proposes a seventh KPI for a team that already carries six. What is the right question?"
+      type: single
+      options: ["Which of the six does it replace, and what decision needs it?", "Is the number available in the systems we already run?", "Does it belong to a family the current set does not cover?", "Would the team be able to influence it through its own work?"]
+      correct: ["Which of the six does it replace, and what decision needs it?"]
+      rubric_category: application
+      explanation: "The question is never 'is it interesting?' — the wall is finite by design."
+      weight: 1
+    - id: dk2-08
+      stem: "A team's output number is stable while its backlog age climbs steadily. What is actually happening?"
+      type: single
+      options: ["The team is falling behind while appearing to hold steady", "The mix of work has shifted toward more complex cases", "The output metric is being measured over the wrong period", "The backlog contains items that should have been closed"]
+      correct: ["The team is falling behind while appearing to hold steady"]
+      rubric_category: analysis
+      explanation: "Speed is where problems queue up quietly, which is exactly why the family belongs on the wall."
+      weight: 1
+    - id: dk2-09
+      stem: "Why is the KPI set itself a statement of priorities, whatever the mission statement says?"
+      type: single
+      options: ["The team reads the chosen numbers as the definition of what management wants", "The set determines which parts of the work get resourced each quarter", "Metrics are reviewed more often than mission statements are revisited", "The chosen numbers are what performance conversations end up citing"]
+      correct: ["The team reads the chosen numbers as the definition of what management wants"]
+      rubric_category: analysis
+      explanation: "Choose the set as deliberately as you would write the priorities down, because that is what it is."
+      weight: 1
+    - id: dk2-10
+      stem: "A KPI has not influenced a decision in six months. What is it, and what should happen?"
+      type: single
+      options: ["A diagnostic wearing a KPI's badge — give its slot away", "A stable measure — keep it as evidence of consistency", "A lagging indicator — pair it with a leading one instead", "A poorly defined measure — rewrite its definition first"]
+      correct: ["A diagnostic wearing a KPI's badge — give its slot away"]
+      rubric_category: analysis
+      explanation: "Its slot belongs to whatever you are currently arguing about from anecdote."
+      weight: 1

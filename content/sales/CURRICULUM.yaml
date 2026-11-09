@@ -1,0 +1,21 @@
+# Curriculum structure for the sales discipline.
+#
+# `python -m app.cli load-curriculum` is the canonical writer for this file,
+# same as the management and support disciplines' CURRICULUM.yaml files — see
+# those files for the full rationale. This is the first course in the `sales`
+# discipline, so there is no prerequisite graph yet: a single course cannot
+# depend on anything, and nothing yet depends on it.
+
+curriculum:
+  discipline: sales
+
+  groups:
+    Frontline:
+      - sls-agent-fundamentals
+
+  # No prerequisites yet — the first course in a new discipline is always
+  # its own entry point. Add edges here only once a second sales course
+  # exists and a genuine, content-level dependency between them is
+  # identified (see the management CURRICULUM.yaml for the bar an edge
+  # has to clear: content that is actually assumed, not merely related).
+  prerequisites: []

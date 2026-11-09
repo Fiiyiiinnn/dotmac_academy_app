@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en" {{ dotmac_ui_theme_attribute }}="{{ dotmac_ui_theme }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ branding_name | default("Dotmac Academy") }} — Technical and management training that proves itself</title>
+  <meta name="description" content="The Dotmac Academy: cohort-based technical training for network careers, and self-paced management short courses for working professionals. Real labs, honest assessments, verifiable certificates.">
+  <link rel="icon" type="image/png" href="/static/img/dotmac-favicon.png">
+  {% include "_dotmac_ui_head.html" %}
+  <link rel="stylesheet" href="/static/public.css?v=4">
+</head>
+<body class="pub">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <nav class="nav" aria-label="Main navigation">
+    <div class="wrap">
+      <a href="/" class="nav-logo"><img src="/static/img/dotmac-logo.png" alt="Dotmac" width="132" height="30"> <span>Academy</span></a>
+      <div class="nav-links">
+        <a href="#programs">Programs</a>
+        <a href="/courses">Courses</a>
+        <a href="#faq">FAQ</a>
+        <a href="/apply" class="btn btn-orange">Apply now</a>
+        <a href="/login" class="btn btn-ghost">Sign in</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+  <header class="hero">
+    <div class="wrap">
+      <div class="hero-inner-l">
+        <span class="hero-badge">Admissions open</span>
+        <h1>Train for the work.<br><em>Prove it</em> with results.</h1>
+        <p>
+          One academy, two paths: cohort-based technical training for the
+          people who build and run networks, and focused management courses
+          for the people who lead the work.
+        </p>
+        <div class="hero-ctas">
+          <a href="#programs" class="btn btn-orange">Explore the programs</a>
+          <a href="/courses" class="btn btn-mint">Browse the courses</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><b>{{ tech_count }}</b><span>Technical courses</span></div>
+          <div class="hero-stat"><b>{{ mgmt_count }}</b><span>Management courses</span></div>
+          <div class="hero-stat"><b>{{ chapter_count }}</b><span>Chapters of curriculum</span></div>
+        </div>
+      </div>
+      <div class="hero-media hero-carousel" id="heroCarousel" role="region" aria-roledescription="carousel" aria-label="Academy programs">
+        <div class="slide on"><img src="/static/img/academy-hero.png" alt="Trainees working on live network equipment" width="900" height="491"><span class="slide-tag">Technical Academy</span></div>
+        <div class="slide"><img src="/static/img/scene-management.png" alt="A management training session in progress" width="900" height="514" loading="lazy"><span class="slide-tag">Management &amp; Professional Development</span></div>
+        <div class="slide"><img src="/static/img/scene-labs.png" alt="Trainees practising in the hands-on lab" width="900" height="514" loading="lazy"><span class="slide-tag">Labs &amp; Certification</span></div>
+        <div class="dots" role="group" aria-label="Choose hero slide"></div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section" id="programs">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Programs</span>
+        <h2>Choose your path.</h2>
+        <p>Different starting points, the same standard: skills demonstrated under assessment, certificates anyone can verify.</p>
+      </div>
+      <div class="pillars">
+        <article class="pillar">
+          <span class="eyebrow">Technical Academy</span>
+          <h3>Build the network. Run the network.</h3>
+          <p>Cohort-based training from foundation to specialisation — chaptered courses, hands-on lab environments, and a placement assessment that meets you where you are.</p>
+          <ul class="pillar-facts">
+            <li>{{ tech_count }} courses across the full network lifecycle</li>
+            <li>Real lab environments, not simulations of simulations</li>
+            <li>Entrance assessment places you — effort does the rest</li>
+          </ul>
+          <div class="chips">
+            <span class="chip">Fiber Engineering</span><span class="chip">Wireless &amp; Radio</span><span class="chip">Routing &amp; Switching</span><span class="chip">Network Support</span><span class="chip">Technical Support</span>
+          </div>
+          <div class="pillar-ctas">
+            <a href="/apply" class="btn btn-orange">Apply to the academy</a>
+            <a href="/courses#technical" class="btn btn-ghost">See the curriculum</a>
+          </div>
+        </article>
+        <article class="pillar alt">
+          <span class="eyebrow">Management &amp; Professional Development</span>
+          <h3>Lead the work. Read the numbers.</h3>
+          <p>Short, focused courses for supervisors, managers and professionals — industry-neutral principles taught for practice, not theory. Five to six chapters each; assessed, certified.</p>
+          <ul class="pillar-facts">
+            <li>{{ mgmt_count }} short courses, from first-time management to finance</li>
+            <li>Self-paced — built for people with a day job</li>
+            <li>Delivered to teams and individuals by enrollment</li>
+          </ul>
+          <div class="chips">
+            <span class="chip">Leadership</span><span class="chip">Decision Making</span><span class="chip">Sales</span><span class="chip">Customer Experience</span><span class="chip">Finance</span><span class="chip">Projects</span><span class="chip">Data &amp; KPIs</span>
+          </div>
+          <div class="pillar-ctas">
+            <a href="/courses#management" class="btn btn-mint">Browse the short courses</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="how" style="background:var(--g-xlight)">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">How it works</span>
+        <h2>Structured from the first click.</h2>
+      </div>
+      <div class="steps">
+        <div class="step"><span class="step-k">1</span><h3>Join</h3><p>Technical academy: apply and sit the entrance assessment from home. Management courses: enroll directly — no entrance exam.</p></div>
+        <div class="step"><span class="step-k">2</span><h3>Learn and practice</h3><p>Chaptered reading at your pace, labs where the work is technical, chapter tests as practice along the way.</p></div>
+        <div class="step"><span class="step-k">3</span><h3>Certify</h3><p>A final assessment gates every certificate, and every certificate carries a verification ID anyone can check.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Questions</span>
+        <h2>Before you start</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Do I need experience for the technical academy?</summary>
+          <p>No. The entrance assessment measures where you are today — numeracy, reading, reasoning — and places you accordingly. Effort and consistency do the rest.</p>
+        </details>
+        <details>
+          <summary>Who are the management courses for?</summary>
+          <p>Anyone who leads work or people — supervisors, team leads, managers, business owners. The principles are industry-neutral; no technical background is needed or assumed.</p>
+        </details>
+        <details>
+          <summary>Are the certificates real?</summary>
+          <p>Every certificate carries a verification ID that anyone — including an employer — can check on this site. If it can't be verified, we didn't issue it.</p>
+        </details>
+        <details>
+          <summary>How do I enroll my team in the management courses?</summary>
+          <p>Write to <a href="mailto:{{ management_contact_email | default("fiberacademy@dotmac.ng") }}" style="color:var(--g3);font-weight:700">{{ management_contact_email | default("fiberacademy@dotmac.ng") }}</a> — enrollment is set up per team or individual, and invitations arrive by email with everything needed to start.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="cta">
+        <div>
+          <h2>Ready when you are.</h2>
+          <p>Technical cohorts are forming; management courses enroll year-round.</p>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="/apply" class="btn btn-orange">Apply — Technical</a>
+          <a href="/courses#management" class="btn btn-mint">Short courses</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© {{ branding_name | default("Dotmac Academy") }} · part of <a href="https://dotmac.ng/">Dotmac Technologies</a></span>
+      <span><a href="/courses">Courses</a> · <a href="/apply">Apply</a> · <a href="/login">Student sign in</a></span>
+    </div>
+  </footer>
+
+<script src="/static/landing.js?v=1"></script>
+</body>
+</html>

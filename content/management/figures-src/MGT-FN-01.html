@@ -1,0 +1,69 @@
+<!doctype html>
+<meta charset="utf-8">
+<style>
+* { margin:0; padding:0; box-sizing:border-box }
+body { width:1344px; height:768px; background:#f9f1dd;
+  font-family:-apple-system,"Helvetica Neue",Helvetica,Arial,sans-serif; color:#2f3733 }
+.wrap { padding:64px 76px }
+h1 { font-size:42px; font-weight:650; letter-spacing:-.5px }
+.sub { font-size:22px; color:#6c7671; margin-top:9px }
+.chart { position:relative; height:330px; margin:40px 0 0 96px; width:1000px }
+.gl { position:absolute; left:0; right:0; height:1px; background:#e6dcc4 }
+.ylab { position:absolute; right:calc(100% + 14px); font-size:16px; color:#8a938d;
+  transform:translateY(-50%); white-space:nowrap }
+svg { position:absolute; inset:0; overflow:visible }
+.be { position:absolute; top:-14px; bottom:0; width:2px; background:#2f3733 }
+.belab { position:absolute; top:-42px; transform:translateX(-50%); font-size:17px;
+  font-weight:650; white-space:nowrap }
+.loss { position:absolute; font-size:17px; color:#b04a2f; font-weight:600 }
+.prof { position:absolute; font-size:17px; color:#2f6d5c; font-weight:600 }
+.xax { display:flex; justify-content:space-between; margin:10px 0 0 96px; width:1000px;
+  font-size:16px; color:#8a938d }
+.key { display:flex; gap:32px; margin:22px 0 0 96px; font-size:18px; color:#4a544f }
+.k { display:flex; align-items:center; gap:10px }
+.sw { width:26px; height:4px; border-radius:2px; flex:none }
+.rule { height:1px; background:#e0d5ba; margin:22px 0 18px }
+.note { font-size:20px; color:#5c6560; line-height:1.45 }
+.note b { color:#2f6d5c }
+</style>
+<body>
+<div class="wrap">
+  <h1>Break-even, and the leverage either side of it</h1>
+  <div class="sub">₦8,200 of contribution per customer against ₦4,000,000 a month of fixed cost.</div>
+
+  <div class="chart">
+    <!-- x: 0..800 customers over 1000px. y: 0..6.5m over 330px (inverted) -->
+    <div class="gl" style="top:0"></div>    <div class="ylab" style="top:0">₦6.5m</div>
+    <div class="gl" style="top:76px"></div> <div class="ylab" style="top:76px">₦5m</div>
+    <div class="gl" style="top:127px"></div><div class="ylab" style="top:127px">₦4m</div>
+    <div class="gl" style="top:229px"></div><div class="ylab" style="top:229px">₦2m</div>
+    <div class="gl" style="top:330px"></div><div class="ylab" style="top:330px">0</div>
+
+    <svg viewBox="0 0 1000 330" preserveAspectRatio="none">
+      <!-- fixed cost: flat at 4,000,000 -> y = 330 - 4/6.5*330 = 126.9 -->
+      <line x1="0" y1="126.9" x2="1000" y2="126.9" stroke="#b04a2f" stroke-width="3.5" stroke-dasharray="9 7"/>
+      <!-- contribution: 8200 per customer; at 800 customers = 6.56m -> just off top -->
+      <line x1="0" y1="330" x2="1000" y2="-3" stroke="#2f6d5c" stroke-width="3.5"/>
+    </svg>
+
+    <!-- break-even at 488 customers -> x = 488/800*1000 = 610 -->
+    <div class="be" style="left:610px"></div>
+    <div class="belab" style="left:610px">break-even — 488 customers</div>
+    <div class="loss" style="left:250px; top:60px">every month here loses money,<br>however hard anyone works</div>
+    <div class="prof" style="left:700px; top:210px">every extra sale's contribution<br>falls almost straight to profit</div>
+  </div>
+  <div class="xax"><span>0</span><span>200</span><span>400</span><span>600</span><span>800 customers</span></div>
+
+  <div class="key">
+    <div class="k"><div class="sw" style="background:#2f6d5c"></div>total contribution (₦8,200 × customers)</div>
+    <div class="k"><div class="sw" style="background:#b04a2f"></div>fixed costs (₦4,000,000, whatever the volume)</div>
+  </div>
+
+  <div class="rule"></div>
+  <div class="note">
+    400 customers is a <b style="color:#b04a2f">₦720,000 loss</b>; 600 is a <b>₦920,000 profit</b>.
+    A 50% rise in volume swung profit by ₦1.64m — and the same leverage runs in reverse,
+    which is why a high-fixed-cost business losing a fifth of its customers is in more trouble
+    than "a fifth" sounds.
+  </div>
+</div>

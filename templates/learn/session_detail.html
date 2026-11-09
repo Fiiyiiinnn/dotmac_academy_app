@@ -1,0 +1,31 @@
+{% extends "base.html" %}{% block content %}
+<a href="/timetable" class="text-sm font-semibold text-brand-600 hover:text-brand-700">&larr; My timetable</a>
+<div class="mt-4 flex flex-wrap items-center gap-3">
+  <h1 class="text-3xl tracking-tight">{{ s.title }}</h1>
+  <span class="rounded-full px-2.5 py-0.5 text-xs font-medium
+    {%- if s.session_type == 'live_class' %} bg-brand-100 text-brand-800
+    {%- else %} bg-sand-200 text-ink-soft{% endif %}">
+    {{ 'live session' if s.session_type == 'live_class' else s.session_type }}
+  </span>
+  {% if s.status != 'scheduled' %}
+  <span class="rounded-full bg-sand-200 px-2.5 py-0.5 text-xs font-medium text-ink-soft">{{ s.status }}</span>
+  {% endif %}
+</div>
+
+<div class="card mt-6 space-y-3 p-6 text-sm">
+  <p><span class="font-semibold text-ink">Cohort:</span> {{ cohort_name }}</p>
+  <p><span class="font-semibold text-ink">When:</span>
+    {{ (s.starts_at | localtime).strftime('%A %-d %B %Y, %H:%M') }}
+    {%- if s.ends_at %} – {{ (s.ends_at | localtime).strftime('%H:%M') }}{% endif %}
+    <span class="text-ink-soft">({{ academy_tz_label }})</span></p>
+  {% if s.location %}<p><span class="font-semibold text-ink">Location:</span> {{ s.location }}</p>{% endif %}
+  {% if s.notes %}<p><span class="font-semibold text-ink">Notes:</span> {{ s.notes }}</p>{% endif %}
+  {% if s.join_url %}
+    {% if join_open %}
+    <a href="{{ s.join_url }}" target="_blank" rel="noopener" class="btn-primary inline-block px-5 py-2.5">Join now</a>
+    {% else %}
+    <p class="text-ink-soft">The join link opens shortly before the session starts.</p>
+    {% endif %}
+  {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-data-kpis
+  kind: chapter
+  chapter: 5
+  version: 2
+  policy:
+    mode: practice
+  questions:
+    - id: dk5-01
+      stem: "In an operational review, every genuine signal must end in one of two sentences. They are 'we understand and accept it' and:"
+      type: single
+      options: ["An owner will do X by date Y", "We will monitor it next month", "The cause needs investigating", "It falls to another department"]
+      correct: ["An owner will do X by date Y"]
+      rubric_category: recall
+      explanation: "No thirds, and no 'we should look into it' without a name."
+      weight: 1
+    - id: dk5-02
+      stem: "What comes first in every operational review?"
+      type: single
+      options: ["Last review's actions and whether the metric moved", "The KPI that has changed most since last time", "The lines that are furthest from their target path", "A summary of the period's operational events"]
+      correct: ["Last review's actions and whether the metric moved"]
+      rubric_category: recall
+      explanation: "Checking whether actions worked, not just happened, is what separates an improvement loop from activity theatre."
+      weight: 1
+    - id: dk5-03
+      stem: "A KPI has dropped and the cause is not obvious from the chart. What do you do before choosing a fix?"
+      type: single
+      options: ["Go to the cases and sites behind the number", "Break the metric down by team and by period", "Check the definition has not drifted recently", "Ask the owner to explain the movement first"]
+      correct: ["Go to the cases and sites behind the number"]
+      rubric_category: application
+      explanation: "The metric says that something changed, never why. The why lives on the floor."
+      weight: 1
+    - id: dk5-04
+      stem: "You are agreeing a corrective action. What must be stated alongside the owner and the date?"
+      type: single
+      options: ["What it should do to the number, and by when", "Which root cause the action is addressing", "What resources the owner will need for it", "Which other metrics it might affect"]
+      correct: ["What it should do to the number, and by when"]
+      rubric_category: application
+      explanation: "Fixes without predicted effects can never fail, which means they can never teach."
+      weight: 1
+    - id: dk5-05
+      stem: "You discover a team has been reclassifying cases to keep a metric inside target. What is the first response?"
+      type: single
+      options: ["Ask what pressure made the fake cheaper than the real thing", "Correct the classifications and restate the affected periods", "Tighten the definition so the reclassification is impossible", "Treat it as a conduct matter with the individuals involved"]
+      correct: ["Ask what pressure made the fake cheaper than the real thing"]
+      rubric_category: application
+      explanation: "Gaming is rational behaviour under pressure. Treat it as system feedback first; reserve discipline for dishonesty that survives a fixed system."
+      weight: 1
+    - id: dk5-06
+      stem: "Which are design defences against gaming? (Select all that apply.)"
+      type: multi
+      options: ["Paired guard metrics from other families", "Written definitions with owned edges", "Occasional audits against raw reality", "Individual bonuses tied to the score"]
+      correct: ["Paired guard metrics from other families", "Written definitions with owned edges", "Occasional audits against raw reality"]
+      rubric_category: application
+      explanation: "Metrics wired directly to individual pay corrupt fastest — the design response matters more than the moral one."
+      weight: 1
+    - id: dk5-07
+      stem: "A review interrogates every downtick in every metric. What does the team learn to do?"
+      type: single
+      options: ["Dread the numbers, and then decorate them", "Prepare explanations for each metric in advance", "Focus attention on the metrics under scrutiny", "Push back on the frequency of the review itself"]
+      correct: ["Dread the numbers, and then decorate them"]
+      rubric_category: application
+      explanation: "The chair's job is enforcing the pattern-not-wobble distinction, precisely because of where the alternative leads."
+      weight: 1
+    - id: dk5-08
+      stem: "Why does 'people optimise what you inspect, by the cheapest available route' describe a design problem rather than a character problem?"
+      type: single
+      options: ["The cheapest route is set by how the measure was built, not by who is measured", "Most people will not game a metric unless the incentive is unusually strong", "Gaming disappears once the definitions have been written down properly", "The behaviour is only rational where the targets were unrealistic to begin with"]
+      correct: ["The cheapest route is set by how the measure was built, not by who is measured"]
+      rubric_category: analysis
+      explanation: "Sometimes the cheapest route is better work — that is the system succeeding. The design decides which route is cheapest."
+      weight: 1
+    - id: dk5-09
+      stem: "A manager reacts badly the first time someone brings an honest bad number. What begins?"
+      type: single
+      options: ["The dashboard's drift toward permanent green", "A reluctance to attend the operational review", "A shift of attention to the metrics that look good", "A dispute about how the number was calculated"]
+      correct: ["The dashboard's drift toward permanent green"]
+      rubric_category: analysis
+      explanation: "Publicly valuing an honest bad number over a decorated good one is what keeps the data truthful."
+      weight: 1
+    - id: dk5-10
+      stem: "A fix for slow turnaround is deployed and speed improves. What must be checked before calling it a success?"
+      type: single
+      options: ["Whether the guard metrics in other families held", "Whether the improvement is outside the normal wobble", "Whether the fix addressed a class or a single instance", "Whether the owner completed the action as agreed"]
+      correct: ["Whether the guard metrics in other families held"]
+      rubric_category: analysis
+      explanation: "Corrective pressure on one family squeezes the others — and the squeeze is visible only because you kept the guard on the wall."
+      weight: 1

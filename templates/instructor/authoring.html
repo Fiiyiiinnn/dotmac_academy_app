@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% block title %}Author {{ course.title }} — Dotmac Academy{% endblock %}
+{% block content %}
+<div class="flex flex-wrap items-end justify-between gap-4">
+  <div>
+    <p class="page-eyebrow">Authoring</p>
+    <h1 class="page-title">{{ course.title }}</h1>
+    <p class="page-intro">
+      <span class="inline-flex items-center rounded-full bg-sand-200 px-2.5 py-0.5 text-xs font-medium text-ink-soft">{{ course.status }}</span>
+      <span class="ml-2 text-sm">version {{ course.version }}</span>
+    </p>
+  </div>
+  <div class="flex flex-wrap gap-2">
+    <a class="btn-ghost px-3.5 py-2 text-sm" href="/instructor/courses/{{ course.id }}/preview">Preview course</a>
+    <a class="btn-ghost px-3.5 py-2 text-sm" href="/instructor/courses/{{ course.id }}/banks">Question banks</a>
+    <a class="btn-ghost px-3.5 py-2 text-sm" href="/instructor/courses">All courses</a>
+  </div>
+</div>
+
+<section class="card mt-8 p-5">
+  <h2 class="text-lg font-semibold text-ink">Course status</h2>
+  <div class="mt-4 flex flex-wrap gap-2">
+    <form hx-post="/instructor/courses/{{ course.id }}/status" hx-swap="none">
+      <input type="hidden" name="status_value" value="draft">
+      <button class="btn-ghost px-3.5 py-2 text-sm" type="submit">Save as draft</button>
+    </form>
+    <form hx-post="/instructor/courses/{{ course.id }}/status" hx-swap="none">
+      <input type="hidden" name="status_value" value="published">
+      <button class="btn-primary px-3.5 py-2 text-sm" type="submit">Publish</button>
+    </form>
+    <form hx-post="/instructor/courses/{{ course.id }}/status" hx-swap="none">
+      <input type="hidden" name="status_value" value="completed">
+      <button class="btn-ghost px-3.5 py-2 text-sm" type="submit">Mark completed</button>
+    </form>
+  </div>
+</section>
+
+<h2 class="mt-10 text-lg font-semibold text-ink">Chapters</h2>
+<div class="mt-3 space-y-4">
+  {% for row in chapters %}
+  {% set c = row.chapter %}
+  <section class="card p-5">
+    <div class="flex flex-wrap items-start justify-between gap-3">
+      <div>
+        <p class="font-medium text-ink"><span class="font-mono text-ink-soft">Ch{{ c.number }}</span> &nbsp; {{ c.title }}</p>
+        {% if c.part %}<p class="mt-0.5 text-sm text-ink-soft">Part {{ c.part }}</p>{% endif %}
+      </div>
+      <form hx-post="/instructor/courses/{{ course.id }}/chapters/{{ c.id }}/delete" hx-swap="none"
+            hx-confirm="Delete chapter {{ c.number }}?">
+        <button class="btn-ghost px-3 py-1.5 text-sm" type="submit">Delete</button>
+      </form>
+    </div>
+    <form class="mt-4 space-y-4" hx-post="/instructor/courses/{{ course.id }}/chapters" hx-swap="none">
+      <div class="grid gap-4 sm:grid-cols-[8rem_1fr_8rem]">
+        <label class="block">
+          <span class="mb-1 block text-sm font-semibold text-ink">Chapter #</span>
+          <input name="number" type="number" min="1" required value="{{ c.number }}" class="w-full px-3 py-2 text-sm">
+        </label>
+        <label class="block">
+          <span class="mb-1 block text-sm font-semibold text-ink">Title</span>
+          <input name="title" required value="{{ c.title }}" class="w-full px-3 py-2 text-sm">
+        </label>
+        <label class="block">
+          <span class="mb-1 block text-sm font-semibold text-ink">Part</span>
+          <input name="part" value="{{ c.part }}" class="w-full px-3 py-2 text-sm">
+        </label>
+      </div>
+      <label class="block">
+        <span class="mb-1 block text-sm font-semibold text-ink">Content</span>
+        <textarea name="body_md" required rows="10" class="w-full px-3 py-2 font-mono text-sm">{{ row.source }}</textarea>
+      </label>
+      <button class="btn-primary px-4 py-2 text-sm" type="submit">Save changes</button>
+    </form>
+  </section>
+  {% else %}
+  <div class="card p-8 text-center text-ink-soft">No chapters yet. Add the first one below.</div>
+  {% endfor %}
+</div>
+
+<section class="card mt-10 p-5">
+  <h2 class="text-lg font-semibold text-ink">Add chapter</h2>
+  <form class="mt-4 space-y-4" hx-post="/instructor/courses/{{ course.id }}/chapters" hx-swap="none">
+    <div class="grid gap-4 sm:grid-cols-[8rem_1fr_8rem]">
+      <label class="block">
+        <span class="mb-1 block text-sm font-semibold text-ink">Chapter #</span>
+        <input name="number" type="number" min="1" required class="w-full px-3 py-2 text-sm">
+      </label>
+      <label class="block">
+        <span class="mb-1 block text-sm font-semibold text-ink">Title</span>
+        <input name="title" required class="w-full px-3 py-2 text-sm">
+      </label>
+      <label class="block">
+        <span class="mb-1 block text-sm font-semibold text-ink">Part</span>
+        <input name="part" class="w-full px-3 py-2 text-sm">
+      </label>
+    </div>
+    <label class="block">
+      <span class="mb-1 block text-sm font-semibold text-ink">Content</span>
+      <textarea name="body_md" required rows="10" class="w-full px-3 py-2 font-mono text-sm" placeholder="Write or paste the chapter content here..."></textarea>
+    </label>
+    <button class="btn-primary px-4 py-2 text-sm" type="submit">Add chapter</button>
+  </form>
+</section>
+{% endblock %}

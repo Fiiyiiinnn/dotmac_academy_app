@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% from "components/_pagination.html" import table_pagination %}
+{% block title %}Teaching — Dotmac Academy{% endblock %}
+{% block content_width %}max-w-[1360px]{% endblock %}
+{% block content %}
+<header class="page-header">
+  <div class="page-header-copy"><p class="page-eyebrow">Teaching console</p><h1 class="page-title">Teaching home</h1><p class="page-intro">Your cohorts, enrollment, reports, and labs at a glance.</p></div>
+  <div class="page-header-actions"><a class="btn-primary" href="{% if has_cohort_scope %}/instructor/cohorts{% else %}/instructor/courses{% endif %}">{% if has_cohort_scope %}Manage cohorts{% else %}Course content{% endif %}</a></div>
+</header>
+<section class="data-table-card" aria-labelledby="cohorts-heading">
+  <div class="flex flex-wrap items-center justify-between gap-3 border-b border-sand-200 px-4 py-4 sm:px-5"><div><h2 id="cohorts-heading" class="section-title">Cohort directory</h2><p class="mt-1 text-sm text-ink-soft">Active enrollment and delivery details for your assignment.</p></div>{% if has_cohort_scope %}<a class="inline-flex min-h-11 items-center font-semibold text-brand-700 hover:text-brand-800" href="/instructor/cohorts">View detailed management</a>{% endif %}</div>
+  <div class="table-frame" role="region" aria-label="Cohort directory; scroll horizontally to see all columns" tabindex="0">
+    <table class="data-table">
+      <thead><tr><th scope="col">Cohort name &amp; track</th><th scope="col">Enrollment</th><th scope="col">Delivery mode</th><th scope="col">Status</th><th scope="col" class="text-right">Actions</th></tr></thead>
+      <tbody>
+        {% for item in cohorts %}
+        <tr><td><p class="cell-primary">{{ item.cohort.name }}</p><p class="cell-secondary">{{ item.cohort.discipline }}</p></td><td><p class="cell-primary font-mono tabular-nums">{{ item.count }} students</p><p class="cell-secondary">Active enrollment</p></td><td><p class="cell-primary">{{ item.cohort.delivery_mode | replace('_', ' ') | title }}</p></td><td><span class="status-badge {% if item.cohort.status == 'active' %}bg-brand-50 text-brand-700{% else %}bg-sand-200 text-ink-soft{% endif %}">{{ item.cohort.status | capitalize }}</span></td><td class="text-right"><a class="btn-ghost text-xs" href="{% if has_cohort_scope %}/instructor/cohorts/{{ item.cohort.id }}{% else %}/instructor/courses{% endif %}" aria-label="{% if has_cohort_scope %}Manage {{ item.cohort.name }}{% else %}View assigned course content{% endif %}">{% if has_cohort_scope %}Manage{% else %}Course content{% endif %}</a></td></tr>
+        {% else %}<tr><td colspan="5" class="py-12 text-center text-ink-soft">No cohorts yet. <a class="font-semibold text-brand-700" href="/instructor/cohorts">Create your first cohort</a>.</td></tr>{% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {{ table_pagination(request, pagination, "cohorts", (6, 12, 24, 48)) }}
+</section>
+<section class="mt-8" aria-labelledby="quick-links-heading"><h2 id="quick-links-heading" class="section-title">Quick links</h2><div class="card mt-4 p-2"><ul class="action-list grid md:grid-cols-2 md:gap-px md:bg-sand-300">{% if has_cohort_scope %}<li class="bg-white"><a class="action-row flex min-h-16 items-center justify-between gap-4 p-4 hover:bg-sand-100" href="/instructor/cohorts"><span class="font-semibold text-ink">Cohorts</span><span aria-hidden="true">→</span></a></li>{% endif %}<li class="bg-white"><a class="action-row flex min-h-16 items-center justify-between gap-4 p-4 hover:bg-sand-100" href="/instructor/courses"><span class="font-semibold text-ink">Course content</span><span aria-hidden="true">→</span></a></li>{% if has_cohort_scope %}<li class="bg-white"><a class="action-row flex min-h-16 items-center justify-between gap-4 p-4 hover:bg-sand-100" href="/instructor/reports"><span class="font-semibold text-ink">Reports</span><span aria-hidden="true">→</span></a></li>{% endif %}{% if has_global_staff_access %}<li class="bg-white"><a class="action-row flex min-h-16 items-center justify-between gap-4 p-4 hover:bg-sand-100" href="/instructor/labs"><span class="font-semibold text-ink">Lab monitor</span><span aria-hidden="true">→</span></a></li>{% endif %}</ul></div></section>
+{% endblock %}

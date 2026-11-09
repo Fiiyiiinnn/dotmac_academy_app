@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-decision-making
+  kind: chapter
+  chapter: 3
+  version: 2
+  policy:
+    mode: practice
+  questions:
+    - id: dm3-01
+      stem: "A five-whys chain should stop when you reach:"
+      type: single
+      options: ["Something actionable you could change", "The fifth why, whatever that one produces", "The person who made the mistake", "A cause outside the team's control"]
+      correct: ["Something actionable you could change"]
+      rubric_category: recall
+      explanation: "Deep enough means you have reached something you can change that would have prevented the problem."
+      weight: 1
+    - id: dm3-02
+      stem: "The fishbone diagram's main function in a root-cause session is:"
+      type: single
+      options: ["Coverage", "Speed", "Ranking", "Documentation"]
+      correct: ["Coverage"]
+      rubric_category: recall
+      explanation: "It forces the group past its favourite theory into categories nobody was defending."
+      weight: 1
+    - id: dm3-03
+      stem: "An investigation concludes: 'root cause — Ada entered the wrong figure.' What is wrong with stopping there?"
+      type: single
+      options: ["A name is a symptom; ask why the error was possible and why it went uncaught", "The finding should first be verified with Ada before it is written into any report", "Data-entry errors are too common to be treated as a genuine root cause", "The investigation has not yet asked why the figure mattered to the outcome"]
+      correct: ["A name is a symptom; ask why the error was possible and why it went uncaught"]
+      rubric_category: application
+      explanation: "If your root cause is a name, you have a symptom with feelings — and the same failure remains available to everyone else."
+      weight: 1
+    - id: dm3-04
+      stem: "A colleague reports 'the system was slow yesterday'. What should you ask for?"
+      type: single
+      options: ["The observation behind it — what they saw and when", "A second opinion from someone who was also working", "The system logs covering the whole of that afternoon", "Confirmation of whether it has happened again since"]
+      correct: ["The observation behind it — what they saw and when"]
+      rubric_category: application
+      explanation: "'The system was slow' is an inference; 'my screen took a minute to load at 9:40' is an observation you can work with."
+      weight: 1
+    - id: dm3-05
+      stem: "Which of these belong in the first hour of a root-cause investigation? (Select all that apply.)"
+      type: multi
+      options: ["Examining the actual failed item, not a summary", "Building the timeline of what happened in order", "Separating what was observed from what was inferred", "Agreeing the most likely cause to focus effort"]
+      correct: ["Examining the actual failed item, not a summary", "Building the timeline of what happened in order", "Separating what was observed from what was inferred"]
+      rubric_category: application
+      explanation: "Facts before theories. Agreeing a likely cause early is exactly how confirmation bias gets in."
+      weight: 1
+    - id: dm3-06
+      stem: "The same invoice error has been corrected by hand every month for a year. What distinguishes the instance from the class here?"
+      type: single
+      options: ["The instance is this invoice; the class is that invoices of this type can be wrong", "The instance is the customer's complaint; the class is the billing team's workload", "The instance is the manual correction; the class is the time it consumes monthly", "The instance is the amount involved; the class is the total error across the year"]
+      correct: ["The instance is this invoice; the class is that invoices of this type can be wrong"]
+      rubric_category: application
+      explanation: "Instance-fixing is rented relief. A team that only ever instance-fixes is busy, competent, and not improving."
+      weight: 1
+    - id: dm3-07
+      stem: "You have deployed a fix you believe addresses the cause. What makes the exercise complete?"
+      type: single
+      options: ["A named measure, checked on a named date, showing no recurrence", "Sign-off from the manager who authorised the corrective work", "A written record of the five whys and the conclusion reached", "Confirmation from the whole team that the problem now feels properly resolved"]
+      correct: ["A named measure, checked on a named date, showing no recurrence"]
+      rubric_category: application
+      explanation: "Predict what should change, check on a date, and reopen honestly if the class of problem returns."
+      weight: 1
+    - id: dm3-08
+      stem: "Twelve causes have been identified for a recurring quality problem and the team wants to fix all of them. Why is a Pareto check the better next move?"
+      type: single
+      options: ["A small handful usually carries most of the cost, and that is where the budget goes", "Twelve fixes cannot be deployed at once without disrupting normal operations", "Ranking them will show which causes the team has the authority to address", "Some of the twelve will turn out to be symptoms rather than genuine causes"]
+      correct: ["A small handful usually carries most of the cost, and that is where the budget goes"]
+      rubric_category: analysis
+      explanation: "You do not need to slay every rib of the fish; you need the two ribs causing 80% of it."
+      weight: 1
+    - id: dm3-09
+      stem: "A problem you investigated and fixed six weeks ago has returned. What does that actually tell you?"
+      type: single
+      options: ["The real cause survived the fix, and the second investigation starts ahead", "The fix was correct but was not applied consistently across the team", "The problem has more than one cause and you addressed the smaller one", "The measure chosen to verify the fix was the wrong one for this problem"]
+      correct: ["The real cause survived the fix, and the second investigation starts ahead"]
+      rubric_category: analysis
+      explanation: "Recurrence is the test, and a returned problem is information rather than humiliation."
+      weight: 1
+    - id: dm3-10
+      stem: "Why does closing the loop with the people who lived the problem matter beyond courtesy?"
+      type: single
+      options: ["It turns an annoyance into visible improvement and trains the habit of asking why", "It creates the written record that the next investigation will need to rely on", "It ensures the fix is applied consistently by everyone who touches the process", "It gives the team a chance to correct any errors in the investigation's findings"]
+      correct: ["It turns an annoyance into visible improvement and trains the habit of asking why"]
+      rubric_category: analysis
+      explanation: "The people who report problems stop reporting them when nothing visibly follows."
+      weight: 1

@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-operations-process
+  kind: chapter
+  chapter: 4
+  version: 1
+  policy:
+    mode: practice
+  questions:
+    - id: op4-01
+      stem: "Improvement effort is best directed first at:"
+      type: single
+      options: ["The constraint", "The loudest complaint", "The newest process", "The largest team"]
+      correct: ["The constraint"]
+      rubric_category: recall
+      explanation: "Improvements elsewhere produce no additional output, which alone redirects most misplaced effort."
+      weight: 1
+    - id: op4-02
+      stem: "Deleting a step is preferable to speeding one up because a deleted step needs no:"
+      type: single
+      options: ["Training or monitoring", "Approval or budget", "Documentation", "Measurement"]
+      correct: ["Training or monitoring"]
+      rubric_category: application
+      explanation: "And it cannot decay. A step made 20% faster needs training, monitoring and maintenance."
+      weight: 1
+    - id: op4-03
+      stem: "Writing the expected result before making a change converts an opinion into:"
+      type: single
+      options: ["A testable claim", "A formal plan", "A team commitment", "A project milestone"]
+      correct: ["A testable claim"]
+      rubric_category: recall
+      explanation: "It also stops the change being declared successful simply because it was implemented."
+      weight: 1
+    - id: op4-04
+      stem: "Defining in advance what result means stop is an application of:"
+      type: single
+      options: ["A tripwire", "A milestone", "A budget cap", "A review gate"]
+      correct: ["A tripwire"]
+      rubric_category: application
+      explanation: "Decided while calm and specific, so it fires even when the moment is busy and awkward."
+      weight: 1
+    - id: op4-05
+      stem: "Piloting a change with your best crew and generalising the result risks discovering that you have:"
+      type: single
+      options: ["A staffing arrangement", "A training gap", "A measurement error", "A budget problem"]
+      correct: ["A staffing arrangement"]
+      rubric_category: analysis
+      explanation: "Everything works with your strongest people. If it only survives with them, it is not a process change."
+      weight: 1
+    - id: op4-06
+      stem: "The unchanged part of an operation during a pilot serves as:"
+      type: single
+      options: ["A control group", "A backup plan", "A training base", "A comparison cost"]
+      correct: ["A control group"]
+      rubric_category: application
+      explanation: "Which is worth more than a before-and-after that may have coincided with a seasonal change."
+      weight: 1
+    - id: op4-07
+      stem: "Process changes most often revert through:"
+      type: single
+      options: ["Drift", "Resistance", "Sabotage", "Cost pressure"]
+      correct: ["Drift"]
+      rubric_category: analysis
+      explanation: "New people trained on the old method, the busy week where the old habit is faster, the one person who understood why moving on."
+      weight: 1
+    - id: op4-08
+      stem: "The step most often forgotten when standardising a change, and the one that guarantees reversion within a year, is updating:"
+      type: single
+      options: ["New-starter training", "The process map", "The team briefing", "The audit record"]
+      correct: ["New-starter training"]
+      rubric_category: analysis
+      explanation: "Everyone trained after the change learns the old way from someone who never heard about it."
+      weight: 1
+    - id: op4-09
+      stem: "A pilot that fails should be understood as:"
+      type: single
+      options: ["The pilot working", "A wasted effort", "A planning failure", "A team problem"]
+      correct: ["The pilot working"]
+      rubric_category: application
+      explanation: "That was the point of running it small. Revert quickly, say what you learned, and do not quietly keep it."
+      weight: 1
+    - id: op4-10
+      stem: "Keeping a failed change because reverting is embarrassing is an instance of:"
+      type: single
+      options: ["Sunk cost", "Scope creep", "Status quo bias", "Anchoring"]
+      correct: ["Sunk cost"]
+      rubric_category: analysis
+      explanation: "With the added cost that everyone can see it."
+      weight: 1

@@ -1,0 +1,250 @@
+bank:
+  course: mgmt-operations-process
+  kind: final
+  version: 1
+  policy:
+    mode: exam
+    pool: 20
+    max_attempts: 2
+    pass_threshold: 0.70
+  questions:
+    - id: opf-01
+      stem: "A process map is only useful if drawn as the process:"
+      type: single
+      options: ["Actually runs", "Should ideally run", "Was first designed", "Is written down"]
+      correct: ["Actually runs"]
+      rubric_category: recall
+      explanation: "An ideal-state map is a proposal rather than a diagnosis, and it hides exactly the steps you need to see."
+      weight: 1
+    - id: opf-02
+      stem: "A rework loop affecting one job in eight should appear on the map as:"
+      type: single
+      options: ["A step", "An exception", "A risk note", "A footnote"]
+      correct: ["A step"]
+      rubric_category: application
+      explanation: "It is where most processes leak, and people omit it because it feels like an exception."
+      weight: 1
+    - id: opf-03
+      stem: "Steps that are necessary but not value-adding must be kept because they include:"
+      type: single
+      options: ["Safety and controls", "Manager preferences", "Historic habits", "Internal reporting"]
+      correct: ["Safety and controls"]
+      rubric_category: application
+      explanation: "The goal is to make them cheap rather than absent."
+      weight: 1
+    - id: opf-04
+      stem: "A step nobody can explain should be treated first as:"
+      type: single
+      options: ["A possible control", "Obvious waste", "A training gap", "A simple mapping error"]
+      correct: ["A possible control"]
+      rubric_category: analysis
+      explanation: "It may exist because of an incident nobody remembers. Ask before removing."
+      weight: 1
+    - id: opf-05
+      stem: "Across most end-to-end processes, the majority of elapsed time is spent:"
+      type: single
+      options: ["Waiting", "Processing", "In approvals", "In transit"]
+      correct: ["Waiting"]
+      rubric_category: application
+      explanation: "Which is why attacking queues beats asking people to work faster."
+      weight: 1
+    - id: opf-06
+      stem: "Every handoff adds a queue and:"
+      type: single
+      options: ["A chance to drop work", "A cost centre", "An approval", "An extra quality gate"]
+      correct: ["A chance to drop work"]
+      rubric_category: application
+      explanation: "Counting handoffs often makes the case for redesign more effectively than analysing the steps."
+      weight: 1
+    - id: opf-07
+      stem: "Two crews with the same mean differ most importantly in their:"
+      type: single
+      options: ["Spread", "Headcount", "Tooling", "Seniority"]
+      correct: ["Spread"]
+      rubric_category: recall
+      explanation: "The customer never experiences your average; they experience the week they arrived in."
+      weight: 1
+    - id: opf-08
+      stem: "A crew ranging from 28 to 61 jobs a week can only safely be promised at:"
+      type: single
+      options: ["Their worst week", "Their rolling average", "Their best week", "The median week"]
+      correct: ["Their worst week"]
+      rubric_category: application
+      explanation: "Which discards a third of their apparent capacity, so their usable capacity is lower than a steadier crew's."
+      weight: 1
+    - id: opf-09
+      stem: "Unpredictable output creates a second workload of:"
+      type: single
+      options: ["Chasing and rescheduling", "Additional final inspection", "Extra training", "Overtime approval"]
+      correct: ["Chasing and rescheduling"]
+      rubric_category: analysis
+      explanation: "Work that exists only because output was unpredictable, landing on people who were not involved."
+      weight: 1
+    - id: opf-10
+      stem: "Standard work exists primarily because you cannot improve a process that is:"
+      type: single
+      options: ["Done differently each time", "Poorly documented anywhere", "Under-resourced", "Rarely audited"]
+      correct: ["Done differently each time"]
+      rubric_category: recall
+      explanation: "Without a baseline you cannot tell whether a result came from the change or from who did the job."
+      weight: 1
+    - id: opf-11
+      stem: "A standard unchanged for three years is either perfect or:"
+      type: single
+      options: ["Ignored", "Optimal", "Well written", "Rarely needed"]
+      correct: ["Ignored"]
+      rubric_category: application
+      explanation: "A standard is the current best-known method and should change whenever someone finds better."
+      weight: 1
+    - id: opf-12
+      stem: "Investigating every fluctuation in a stable process:"
+      type: single
+      options: ["Adds variation", "Wastes budget only", "Improves accuracy", "Speeds detection"]
+      correct: ["Adds variation"]
+      rubric_category: analysis
+      explanation: "Each correction changes a process that was working, and it teaches people to explain randomness."
+      weight: 1
+    - id: opf-13
+      stem: "A supplier missing one delivery is an example of:"
+      type: single
+      options: ["Special cause", "Common cause", "Seasonal drift", "Measurement noise"]
+      correct: ["Special cause"]
+      rubric_category: recall
+      explanation: "Investigate the instance \u2014 it is free information rather than bad luck."
+      weight: 1
+    - id: opf-14
+      stem: "The output of a whole process is set by:"
+      type: single
+      options: ["The constraint", "The first step", "Total headcount", "The slowest person"]
+      correct: ["The constraint"]
+      rubric_category: recall
+      explanation: "Improving any other step builds inventory in front of it or idle time behind it."
+      weight: 1
+    - id: opf-15
+      stem: "Before buying capacity at a bottleneck, first ensure the constraint is:"
+      type: single
+      options: ["Never idle", "Fully staffed", "Newly equipped", "Closely watched"]
+      correct: ["Never idle"]
+      rubric_category: application
+      explanation: "No waiting for materials, no work that could be done elsewhere, no gaps in coverage."
+      weight: 1
+    - id: opf-16
+      stem: "After relieving a bottleneck you must:"
+      type: single
+      options: ["Recheck the constraint", "Repeat the change", "Reduce monitoring", "Rebalance the whole team"]
+      correct: ["Recheck the constraint"]
+      rubric_category: analysis
+      explanation: "It moves. Optimising last quarter's is the same error as managing yesterday's critical path."
+      weight: 1
+    - id: opf-17
+      stem: "Running fifty jobs as one batch means each job inherits:"
+      type: single
+      options: ["The whole batch duration", "The setup cost", "The slowest step", "Its original queue position"]
+      correct: ["The whole batch duration"]
+      rubric_category: application
+      explanation: "Which is how a process can be efficient at every step and slow end to end."
+      weight: 1
+    - id: opf-18
+      stem: "If setup cost forces large batches, the higher-return project is to:"
+      type: single
+      options: ["Reduce the setup", "Add more capacity", "Increase headcount", "Extend the shift"]
+      correct: ["Reduce the setup"]
+      rubric_category: analysis
+      explanation: "Changeover reduction is almost always the thing nobody has looked at."
+      weight: 1
+    - id: opf-19
+      stem: "Defect cost rises with the distance between where it was created and:"
+      type: single
+      options: ["Where it was found", "Who created it", "When it was logged", "How it was fixed"]
+      correct: ["Where it was found"]
+      rubric_category: application
+      explanation: "Minutes at the creating step; everything in between plus the relationship at the customer."
+      weight: 1
+    - id: opf-20
+      stem: "Twelve percent rework on 500 jobs a month at N9,000 each costs roughly:"
+      type: single
+      options: ["N6.5m a year", "N540,000 a year", "N1.1m a year", "About N13m a year"]
+      correct: ["N6.5m a year"]
+      rubric_category: application
+      explanation: "N540,000 a month; halving the rate saves about N3.24m a year."
+      weight: 1
+    - id: opf-21
+      stem: "Final inspection is the weakest quality control partly because it:"
+      type: single
+      options: ["Transfers responsibility", "Requires trained specialists", "Delays despatch", "Costs more staff"]
+      correct: ["Transfers responsibility"]
+      rubric_category: analysis
+      explanation: "If someone checks later, the incentive to get it right first time weakens \u2014 the system arranging that, not a character flaw."
+      weight: 1
+    - id: opf-22
+      stem: "A connector that only fits one way is an example of:"
+      type: single
+      options: ["Making the defect impossible", "Standard work", "Thorough operator training", "Final inspection"]
+      correct: ["Making the defect impossible"]
+      rubric_category: application
+      explanation: "Elimination applied to quality \u2014 it beats every check because it needs nobody to remember."
+      weight: 1
+    - id: opf-23
+      stem: "Improvement effort should be directed first at:"
+      type: single
+      options: ["The constraint", "The loudest complaint", "The newest process", "The biggest team"]
+      correct: ["The constraint"]
+      rubric_category: recall
+      explanation: "Improvements elsewhere produce no additional output."
+      weight: 1
+    - id: opf-24
+      stem: "Deleting a step beats speeding one up because a deleted step needs no:"
+      type: single
+      options: ["Training or monitoring", "Budget approval each year", "Documentation", "Measurement"]
+      correct: ["Training or monitoring"]
+      rubric_category: application
+      explanation: "And it cannot decay."
+      weight: 1
+    - id: opf-25
+      stem: "Writing the expected result before a change converts an opinion into:"
+      type: single
+      options: ["A testable claim", "A formal plan", "A team commitment", "A project milestone"]
+      correct: ["A testable claim"]
+      rubric_category: recall
+      explanation: "And stops the change being called a success merely because it was implemented."
+      weight: 1
+    - id: opf-26
+      stem: "Piloting with your best crew and generalising risks discovering you have:"
+      type: single
+      options: ["A staffing arrangement", "A training gap", "A measurement error somewhere", "A budgeting issue"]
+      correct: ["A staffing arrangement"]
+      rubric_category: analysis
+      explanation: "Everything works with your strongest people."
+      weight: 1
+    - id: opf-27
+      stem: "Process changes most often revert through:"
+      type: single
+      options: ["Drift", "Active resistance", "Deliberate sabotage", "Budget pressure"]
+      correct: ["Drift"]
+      rubric_category: analysis
+      explanation: "New people trained on the old way, the busy week where the old habit is faster, the person who understood why moving on."
+      weight: 1
+    - id: opf-28
+      stem: "The standardising step most often forgotten, guaranteeing reversion within a year, is updating:"
+      type: single
+      options: ["New-starter training", "The process map", "The standing team briefing", "The audit file"]
+      correct: ["New-starter training"]
+      rubric_category: analysis
+      explanation: "Everyone hired after the change learns the old method from someone who never heard about it."
+      weight: 1
+    - id: opf-29
+      stem: "The real score of an escalation system is the share of complaints that were:"
+      type: single
+      options: ["Already known", "Quickly resolved", "Formally logged", "Fairly raised"]
+      correct: ["Already known"]
+      rubric_category: analysis
+      explanation: "If most complaints are news to you, the triggers are not firing."
+      weight: 1
+    - id: opf-30
+      stem: "Committing 100% of capacity to planned work is best described as:"
+      type: single
+      options: ["A decision to miss dates", "Efficient scheduling", "Full utilisation", "Highly disciplined planning"]
+      correct: ["A decision to miss dates"]
+      rubric_category: application
+      explanation: "The unplanned share is historically reliable even when its content is not."
+      weight: 1

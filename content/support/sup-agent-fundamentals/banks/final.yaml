@@ -1,0 +1,170 @@
+bank:
+  course: sup-agent-fundamentals
+  kind: final
+  chapter: null
+  version: 1
+  policy:
+    mode: exam
+    max_attempts: 5
+    pool: 15
+  questions:
+    - id: supf-01
+      stem: "What makes Sub 'the record' rather than just a tool agents happen to use?"
+      type: single
+      options: ["If an action is not entered in Sub, it did not officially happen", "It was the very first system the support team ever adopted", "It happens to be the only software installed on company laptops", "It automatically imports every chat message sent on every channel"]
+      correct: ["If an action is not entered in Sub, it did not officially happen"]
+      rubric_category: recall
+      explanation: "Sub is the operator's official record — status, service, and support history all live there, and only there."
+      weight: 1
+    - id: supf-02
+      stem: "You cannot open the network monitoring console from your support account. What should you do?"
+      type: single
+      options: ["Treat it as a designed boundary and ask NOC for what you need instead", "Ask a colleague with more tenure to log in and open it for you", "Report it upward as a bug that is currently blocking your work", "Look for an alternate URL that quietly bypasses the restriction altogether"]
+      correct: ["Treat it as a designed boundary and ask NOC for what you need instead"]
+      rubric_category: application
+      explanation: "A missing screen for your role is a deliberate boundary, matched to risk — not an error to route around."
+      weight: 1
+    - id: supf-03
+      stem: "A colleague solves a customer's problem entirely through a personal chat app and never touches Sub. What is the real cost of this, even though the customer is satisfied?"
+      type: single
+      options: ["No other agent or system can ever see what happened, or understand why", "The resolution stays technically invalid until it is entered into Sub", "The customer will very likely come to distrust the resolution given", "Nothing meaningful at all, since the customer's outcome is what matters most"]
+      correct: ["No other agent or system can ever see what happened, or understand why"]
+      rubric_category: application
+      explanation: "Solving the problem is only half the job — an action left out of Sub leaves no trace for the next agent or for reporting."
+      weight: 1
+    - id: supf-04
+      stem: "Your account holds rich customer, subscription, and ticket permissions but no network-monitoring access. What does this combination demonstrate about Sub's access model?"
+      type: single
+      options: ["Access is scoped to the risk of the job, not granted as one all-or-nothing block", "It most likely shows an inconsistency that should eventually be corrected", "It suggests that support agents are not yet fully trusted with the system", "It signals that network access is gradually being phased out for every single role"]
+      correct: ["Access is scoped to the risk of the job, not granted as one all-or-nothing block"]
+      rubric_category: analysis
+      explanation: "A deliberately rich ticket/customer permission set alongside a deliberately absent console permission reflects risk-matched design, not an oversight."
+      weight: 1
+    - id: supf-05
+      stem: "Which status correctly describes a ticket that is waiting on the customer to reply, not on internal work?"
+      type: single
+      options: ["waiting_on_customer, distinct from an internal pending state", "pending, meaning it is currently waiting on your own side instead", "on_hold, meaning internal work has paused for now", "closed, meaning the ticket has already been resolved"]
+      correct: ["waiting_on_customer, distinct from an internal pending state"]
+      rubric_category: recall
+      explanation: "waiting_on_customer specifically means the ball is with the customer; pending means the wait is on your side."
+      weight: 1
+    - id: supf-06
+      stem: "A new ticket arrives with type unset and priority at its default. What is the correct first step?"
+      type: single
+      options: ["Set an accurate type and priority before doing anything else on the ticket", "Assign it straight over to a colleague and let them handle the triage instead", "Wait patiently for the customer to follow up with more useful detail", "Leave the ticket exactly as it is until someone else escalates it"]
+      correct: ["Set an accurate type and priority before doing anything else on the ticket"]
+      rubric_category: application
+      explanation: "Triage — accurate type and priority — is the first real step; skipping it makes the ticket invisible to reporting and automation."
+      weight: 1
+    - id: supf-07
+      stem: "You are tempted to hand-assign a ticket to a specific colleague because they seem free right now. What should you do instead, absent a specific reason?"
+      type: single
+      options: ["Use Manual Auto-Assign so the routing follows the same rules as intake", "Assign it to yourself regardless of how full your own workload already is", "Leave the ticket unassigned until somebody else happens to notice it", "Ask the whole team in chat and see who volunteers to take it on"]
+      correct: ["Use Manual Auto-Assign so the routing follows the same rules as intake"]
+      rubric_category: application
+      explanation: "Guessing at availability and hand-picking an assignee quietly breaks load balancing across the team."
+      weight: 1
+    - id: supf-08
+      stem: "Several tickets sit marked pending for days, each with your own unanswered question to the customer as the last comment. What does this reveal, and what is the fix?"
+      type: single
+      options: ["It disguises an external customer wait as an internal backlog that is not real", "It reveals nothing unusual at all, since pending simply covers every kind of waiting", "It means the tickets in question should simply be closed as abandoned", "It means the customers involved should be blocked for failing to respond"]
+      correct: ["It disguises an external customer wait as an internal backlog that is not real"]
+      rubric_category: analysis
+      explanation: "Mislabeling customer-side waits as pending hides where the real bottleneck is — with the customer, not with your team."
+      weight: 1
+    - id: supf-09
+      stem: "Which two fields does Sub track completely separately, such that a customer's account can be in good standing while one specific service is not?"
+      type: single
+      options: ["Account status and subscription status, tracked as two independent fields", "Ticket priority and ticket channel, both tracked directly on the ticket record itself", "Connection state and ticket type, shown together on the ticket sidebar", "Service Team and Assigned Technician, both used during ticket handoffs"]
+      correct: ["Account status and subscription status, tracked as two independent fields"]
+      rubric_category: recall
+      explanation: "Account status (the relationship) and subscription status (the specific service) are independent fields that can genuinely disagree."
+      weight: 1
+    - id: supf-10
+      stem: "A customer asks 'why is my internet not working' — which level of status should you check first?"
+      type: single
+      options: ["The specific subscription's own status, not merely the account status", "Only the account status, on the assumption that it covers everything", "Only the connection indicator, while ignoring both status fields entirely", "Only the ticket's channel field, since that recorded how they contacted you"]
+      correct: ["The specific subscription's own status, not merely the account status"]
+      rubric_category: application
+      explanation: "'Why isn't it working' is almost always a subscription- or connection-level question, distinct from whether the account overall is in good standing."
+      weight: 1
+    - id: supf-11
+      stem: "An overdue-balance customer's connection shows offline and they are frustrated. What should you check to explain this correctly?"
+      type: single
+      options: ["Whether the subscription has moved to a payment-related status such as suspended", "Whether the customer's router model happens to be outdated or unsupported", "Whether the ticket's priority field was mistakenly set to urgent by someone earlier", "Whether the account in question was renamed at some point recently"]
+      correct: ["Whether the subscription has moved to a payment-related status such as suspended"]
+      rubric_category: application
+      explanation: "When a payment-related subscription status explains an offline connection, that is the system working correctly, not a fault."
+      weight: 1
+    - id: supf-12
+      stem: "A brand-new account has no subscription yet, and the customer insists something is broken. Two agents interpret this differently — one assumes a fault, one checks the account's stage first. Which approach is sound, and why?"
+      type: single
+      options: ["Checking the stage first, since a new account can legitimately lack a subscription", "Assuming a fault first, since any 'not active' report should be treated as broken", "Neither approach, since this can only ever be resolved through escalation", "Assuming a fault first, since brand-new accounts are generally the most error-prone"]
+      correct: ["Checking the stage first, since a new account can legitimately lack a subscription"]
+      rubric_category: analysis
+      explanation: "The status alone does not tell you whether something is wrong — you have to know what stage the account is actually meant to be at."
+      weight: 1
+    - id: supf-13
+      stem: "What is the real, supported way to record that a ticket is connected to a known outage?"
+      type: single
+      options: ["Link the outage ticket's reference through the Related Outage / Links panel", "Change the ticket's Channel field so that it reads 'outage' instead", "Mention the outage only informally, in an internal chat with NOC", "Set the ticket's priority to urgent and leave a comment describing it instead"]
+      correct: ["Link the outage ticket's reference through the Related Outage / Links panel"]
+      rubric_category: recall
+      explanation: "Related Outage / Links is the mechanism that puts the outage connection on the ticket's permanent record."
+      weight: 1
+    - id: supf-14
+      stem: "Four tickets arrive within twenty minutes, same region, same symptom. What should you do before triaging the fourth exactly like the first three?"
+      type: single
+      options: ["Ask NOC whether there is a known or suspected incident in that specific area", "Close the extra three tickets as duplicates without any further review", "Assign all four tickets to the same technician automatically right away", "Ignore the pattern entirely, since each customer's ticket always stands on its own"]
+      correct: ["Ask NOC whether there is a known or suspected incident in that specific area"]
+      rubric_category: application
+      explanation: "Clustered, same-symptom tickets are the outage-shaped pattern worth checking before troubleshooting each in isolation."
+      weight: 1
+    - id: supf-15
+      stem: "An agent, frustrated at not being told about outages proactively, starts flagging every connectivity ticket as a suspected outage regardless of pattern. What is the likely long-term effect on NOC's response to that agent's reports?"
+      type: single
+      options: ["NOC gradually begins discounting the reports, since most turn out not to be real", "NOC responds by granting the agent full console access to fix the frustration directly", "NOC's response time to genuine outages actually improves as a direct result", "Nothing changes at all, since every report receives exactly equal attention"]
+      correct: ["NOC gradually begins discounting the reports, since most turn out not to be real"]
+      rubric_category: analysis
+      explanation: "Over-escalating without checking the real pattern first erodes the credibility of future reports from the same source."
+      weight: 1
+    - id: supf-16
+      stem: "Which screen do you actually use to change Service Team and record a ticket handoff to another team?"
+      type: single
+      options: ["Edit Ticket, where the field appears as 'Service / User Group'", "The Ticket Metadata panel on the ticket detail page, directly", "Merge Ticket, since a handoff and a merge use the same form", "Customer search, by reassigning the account to a different team"]
+      correct: ["Edit Ticket, where the field appears as 'Service / User Group'"]
+      rubric_category: recall
+      explanation: "The ticket detail page shows Service Team as read-only text; the actual change happens on Edit Ticket, where the same field is labeled 'Service / User Group.'"
+      weight: 1
+    - id: supf-17
+      stem: "You find two open tickets from the same customer about the same issue — one detailed, one empty. How should you merge them?"
+      type: single
+      options: ["Merge the empty ticket into the detailed one, regardless of ticket numbers", "Merge the detailed ticket into the empty one, purely to keep the lower ID number", "Leave both tickets open indefinitely, to avoid losing any history at all", "Close both tickets and ask the customer to open a brand-new one instead"]
+      correct: ["Merge the empty ticket into the detailed one, regardless of ticket numbers"]
+      rubric_category: application
+      explanation: "The merge target should be chosen for the history it already carries, not for which ticket number happens to be lower or older."
+      weight: 1
+    - id: supf-18
+      stem: "A ticket is handed off via chat message only, with no Service Team change and no note. What is the deeper problem, beyond being informal?"
+      type: single
+      options: ["The handoff is invisible on the ticket, so no reviewer can see it happened", "The ticket's SLA clock will automatically reset itself back to zero", "The receiving colleague will almost certainly refuse to take on the work", "Nothing at all, provided the colleague agrees verbally to take it on"]
+      correct: ["The handoff is invisible on the ticket, so no reviewer can see it happened"]
+      rubric_category: analysis
+      explanation: "Without a Service Team change on the ticket, the handoff exists nowhere Sub can show anyone reviewing the case afterward."
+      weight: 1
+    - id: supf-19
+      stem: "A ticket breaches its due date shortly after being handed off. How should responsibility for that breach be understood?"
+      type: single
+      options: ["It reflects on the whole chain of ownership, since the SLA clock never pauses", "It belongs entirely to whichever team happened to be holding it at that moment", "It belongs entirely to the original agent who first opened the ticket", "Breaches immediately following any handoff are excluded from SLA reporting"]
+      correct: ["It reflects on the whole chain of ownership, since the SLA clock never pauses"]
+      rubric_category: analysis
+      explanation: "A handoff does not pause or reset the due date — the case is one continuous clock across everyone who has held it."
+      weight: 1
+    - id: supf-20
+      stem: "What should a handoff note cover, at minimum, before you change Service Team?"
+      type: single
+      options: ["The actual problem, what has been checked, and what the customer already knows", "Only the ticket's ID number and its original creation timestamp", "A short restatement of the ticket's existing priority and channel fields", "Nothing specific at all, since the receiving team can simply ask if they need to"]
+      correct: ["The actual problem, what has been checked, and what the customer already knows"]
+      rubric_category: application
+      explanation: "A useful handoff note answers the three questions the next person would otherwise have to ask the customer all over again."
+      weight: 1

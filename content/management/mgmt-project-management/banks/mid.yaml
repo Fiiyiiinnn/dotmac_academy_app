@@ -1,0 +1,129 @@
+bank:
+  course: mgmt-project-management
+  kind: mid
+  version: 1
+  policy:
+    mode: graded
+    max_attempts: 2
+    pass_threshold: 0.60
+  questions:
+    - id: pmmid-01
+      stem: "What distinguishes a project from ongoing operations?"
+      type: single
+      options: ["A defined ending", "A larger budget", "External suppliers", "Senior sponsorship"]
+      correct: ["A defined ending"]
+      rubric_category: recall
+      explanation: "A project is defined by its ending: a stated outcome after which the work stops. Budget, suppliers and sponsors describe how it is run, not what makes it a project."
+      weight: 1
+    - id: pmmid-02
+      stem: "Success criteria must be written so that:"
+      type: single
+      options: ["Two people agree", "Sponsors feel confident", "The scope stays fixed", "Progress looks steady"]
+      correct: ["Two people agree"]
+      rubric_category: recall
+      explanation: "The test of a success criterion is whether two people would reach the same verdict on whether it was met. \"Improved efficiency\" fails; a stated rate passes."
+      weight: 1
+    - id: pmmid-03
+      stem: "The decomposition test — walking the task list against the outcome — exists mainly to reveal:"
+      type: single
+      options: ["Work nobody listed", "Tasks taking too long", "Unavailable people", "Overspent budget"]
+      correct: ["Work nobody listed"]
+      rubric_category: recall
+      explanation: "Plans overrun less because tasks took longer than because whole categories — approvals, training, testing, clean-up — were never on the list at all."
+      weight: 1
+    - id: pmmid-04
+      stem: "An estimate given as \"three to six days depending on what we find\" is better than \"four days\" because it:"
+      type: single
+      options: ["Carries the uncertainty", "Protects the estimator", "Allows extra float time", "Sounds more considered"]
+      correct: ["Carries the uncertainty"]
+      rubric_category: application
+      explanation: "The range is information: it tells the planner which tasks are uncertain, and those tasks are the risk register forming. A single figure is false precision."
+      weight: 1
+    - id: pmmid-05
+      stem: "A task with eight days of slack finishes four days early. The project's finish date:"
+      type: single
+      options: ["Does not move", "Improves by four", "Improves by eight", "Depends on cost"]
+      correct: ["Does not move"]
+      rubric_category: application
+      explanation: "Only the critical path governs the finish. Effort spent accelerating a task with slack produces visible activity and no earlier delivery — the commonest waste in project management."
+      weight: 1
+    - id: pmmid-06
+      stem: "On a 23-day critical path, the longest single item is a 10-day supplier delivery. Your attention belongs on it because it is:"
+      type: single
+      options: ["Outside your control", "The most expensive item", "Technically most complex", "Scheduled the earliest"]
+      correct: ["Outside your control"]
+      rubric_category: application
+      explanation: "A day lost there is a day lost on the project, one for one, and it belongs to someone whose priorities are not yours. Confirm the lead time in writing and order earlier than feels necessary."
+      weight: 1
+    - id: pmmid-07
+      stem: "Contingency is best held as a visible project-level buffer rather than hidden inside each task estimate because hidden padding:"
+      type: single
+      options: ["Teaches numbers are fiction", "Costs more overall in total", "Breaks the critical path", "Confuses the project sponsor"]
+      correct: ["Teaches numbers are fiction"]
+      rubric_category: application
+      explanation: "Padding every task does the same job dishonestly, and once everyone knows the estimates contain slack, no estimate can be taken at face value again."
+      weight: 1
+    - id: pmmid-08
+      stem: "A stakeholder with high influence and low stake is most often mishandled by being:"
+      type: single
+      options: ["Sent too much detail", "Consulted too rarely", "Excluded from decisions", "Given false assurance"]
+      correct: ["Sent too much detail"]
+      rubric_category: application
+      explanation: "Long updates they do not read train them to ignore you — right up to the moment you need a fast approval. They need brief, on-time, no-surprise contact."
+      weight: 1
+    - id: pmmid-09
+      stem: "Staff whose daily work the project changes have little influence over it. They still matter because they decide whether the result is:"
+      type: single
+      options: ["Actually adopted", "Delivered on time", "Correctly budgeted", "Formally approved"]
+      correct: ["Actually adopted"]
+      rubric_category: application
+      explanation: "They cannot stop the project. They can decline to use what you built, work around it, or mention on go-live day the constraint that was obvious from their desk in week one."
+      weight: 1
+    - id: pmmid-10
+      stem: "An approval that \"takes three weeks\" should be planned as three weeks from:"
+      type: single
+      options: ["A complete submission", "The first enquiry", "The project start", "The sponsor's request"]
+      correct: ["A complete submission"]
+      rubric_category: application
+      explanation: "Most approval delay is rework on an application that bounced for a missing item. Projects routinely lose a month by submitting late paperwork punctually."
+      weight: 1
+    - id: pmmid-11
+      stem: "A project's schedule is compressed to a wished-for date by decree, with no change to scope or resources. The most likely effect is that:"
+      type: single
+      options: ["The truth surfaces later", "The team works faster", "Quality holds steady", "The sponsor recalculates"]
+      correct: ["The truth surfaces later"]
+      rubric_category: analysis
+      explanation: "A shorter date is buyable — with more people, less scope, or accepted risk, chosen explicitly. Compression by decree relocates the overrun to the end of the project, where it costs the most."
+      weight: 1
+    - id: pmmid-12
+      stem: "Halfway through, the supplier delivers early and the trench work hits rock. The most important response is to:"
+      type: single
+      options: ["Recompute the path", "Chase the trench crew", "Inform the sponsor", "Rebaseline the budget"]
+      correct: ["Recompute the path"]
+      rubric_category: analysis
+      explanation: "The critical path moves. Managing yesterday's is how projects overrun while everyone watches the wrong task — the trench may now govern the finish, and the supplier may not."
+      weight: 1
+    - id: pmmid-13
+      stem: "A project has a sponsor, a lead, and suppliers, but nobody named to operate the result afterwards. The likeliest consequence is:"
+      type: single
+      options: ["A failed handover", "A budget overrun", "A late approval", "A supplier dispute"]
+      correct: ["A failed handover"]
+      rubric_category: analysis
+      explanation: "The people who must run what the project delivers are the group forgotten most reliably, and their involvement has to start during planning rather than at closeout."
+      weight: 1
+    - id: pmmid-14
+      stem: "Two stakeholders want incompatible things — the sponsor wants the date, operations wants no disruption. The project lead's job is to:"
+      type: single
+      options: ["Surface the trade-off", "Find a workable compromise", "Satisfy the sponsor first", "Delay the whole decision"]
+      correct: ["Surface the trade-off"]
+      rubric_category: analysis
+      explanation: "The lead frames the options with their costs and gets the trade-off decided by whoever owns it. Unresolved stakeholder conflict resolves itself later, at the worst moment, with interest."
+      weight: 1
+    - id: pmmid-15
+      stem: "Your plan shows every task estimated, sequenced and owned, but the people are all committed elsewhere at 90%. This plan is best described as:"
+      type: single
+      options: ["Not yet a schedule", "Adequately resourced", "Ready for approval", "Optimistically costed"]
+      correct: ["Not yet a schedule"]
+      rubric_category: analysis
+      explanation: "Real availability — day jobs, leave, the other project — is a planning fact, not a detail. A sequence built on people who do not have the hours is a wish with dependencies."
+      weight: 1

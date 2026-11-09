@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-team-leadership
+  kind: chapter
+  chapter: 1
+  version: 2
+  policy:
+    mode: practice
+  questions:
+    - id: tl1-01
+      stem: "A manager's primary output is:"
+      type: single
+      options: ["The output of the team they lead", "The tasks they complete themselves", "The reports they send to leadership", "The hours they put in each week"]
+      correct: ["The output of the team they lead"]
+      rubric_category: recall
+      explanation: "The defining shift from individual contributor: you are judged by what the team achieved, not what you produced."
+      weight: 1
+    - id: tl1-02
+      stem: "Clarity, throughput, quality, and which fourth thing make up what a manager produces?"
+      type: single
+      options: ["Growth", "Budget", "Loyalty", "Reports"]
+      correct: ["Growth"]
+      rubric_category: recall
+      explanation: "Each person able to do a little more this quarter than last."
+      weight: 1
+    - id: tl1-03
+      stem: "You spent the day personally fixing three hard problems while two of your people sat blocked waiting on decisions from you. How should you judge the day?"
+      type: single
+      options: ["A bad day — the team stalled while you did IC work", "A good day — three genuinely hard problems got solved", "A neutral day — some blocked time is always unavoidable", "A good day if those three problems were the urgent ones"]
+      correct: ["A bad day — the team stalled while you did IC work"]
+      rubric_category: application
+      explanation: "An hour spent unblocking three people returns three hours of team output; an hour of your own hands-on work returns one."
+      weight: 1
+    - id: tl1-04
+      stem: "A new supervisor takes the hardest task personally every time, because they finish it fastest. What does this predictably produce over a year?"
+      type: single
+      options: ["A bottleneck at the supervisor, and nobody else developing", "A team that learns the advanced skills by watching them work", "A steady rise in quality across everything the team touches", "A workload that balances itself once the backlog clears down"]
+      correct: ["A bottleneck at the supervisor, and nobody else developing"]
+      rubric_category: application
+      explanation: "Hard tasks routed to the fastest person keep everyone else slow, permanently."
+      weight: 1
+    - id: tl1-05
+      stem: "You have just been promoted and you can see several things you would change. What should the first weeks look like?"
+      type: single
+      options: ["Meet each person one-to-one and fix small irritations", "Announce your vision on day one to set the direction", "Change nothing at all for at least the first six months", "Restructure the team now, before its habits harden further"]
+      correct: ["Meet each person one-to-one and fix small irritations"]
+      rubric_category: application
+      explanation: "The problems people repeat back to you are your real backlog, and a fixed rota earns more trust than an announced vision."
+      weight: 1
+    - id: tl1-06
+      stem: "Your team delivered a difficult project and your director asks how it went. What does giving credit down look like here?"
+      type: single
+      options: ["Name the people who did it and what each contributed", "Explain the management approach that produced the result", "Say it was a team effort, then move on", "Highlight the obstacles you personally removed along the way"]
+      correct: ["Name the people who did it and what each contributed"]
+      rubric_category: application
+      explanation: "Credit goes down specifically and by name; pressure from above is what you absorb."
+      weight: 1
+    - id: tl1-07
+      stem: "You now manage someone who was a close friend before the promotion. Which behaviour best protects the team's trust?"
+      type: single
+      options: ["Same standards and access for everyone", "Be tougher on them, to prove your neutrality", "Keep your distance so the friendship stays invisible", "Let them deputise informally, since you trust them most"]
+      correct: ["Same standards and access for everyone"]
+      rubric_category: application
+      explanation: "Consistency is the requirement, not distance. Visible favouritism and visible overcorrection both cost you the room."
+      weight: 1
+    - id: tl1-08
+      stem: "You keep meaning to do the planning and feedback work, and it keeps not happening. What is the structural reason?"
+      type: single
+      options: ["It is interruptible and carries no deadline of its own", "It matters less than the work that displaces it", "It needs skills that most new managers have never been taught", "It is normally assigned by someone more senior than you are"]
+      correct: ["It is interruptible and carries no deadline of its own"]
+      rubric_category: analysis
+      explanation: "Management work always loses to work with a deadline unless you schedule and defend it."
+      weight: 1
+    - id: tl1-09
+      stem: "A team runs well but only its manager can operate it — every non-routine call routes through them. How should that be read?"
+      type: single
+      options: ["A management failure, however capable that manager is", "A sign of a manager who stays close to the work", "An efficient arrangement for as long as the manager stays", "Normal for a small team, and not worth changing right now"]
+      correct: ["A management failure, however capable that manager is"]
+      rubric_category: analysis
+      explanation: "Growth is one of the four outputs. A team that cannot run without you is a single point of failure you built."
+      weight: 1
+    - id: tl1-10
+      stem: "A working supervisor protects half the week for hands-on work and lets the management half absorb whatever the week throws at it. Why does this fail?"
+      type: single
+      options: ["The protected half is the one that should have been managing", "Half is far too much hands-on time for any supervising role", "Hands-on work should be eliminated entirely once you manage", "The split is right but should be reviewed each quarter"]
+      correct: ["The protected half is the one that should have been managing"]
+      rubric_category: analysis
+      explanation: "The split is fine; the protection is backwards. Hands-on work is the scheduled minority you sacrifice, not the refuge you defend."
+      weight: 1

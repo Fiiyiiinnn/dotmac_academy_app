@@ -1,0 +1,250 @@
+bank:
+  course: mgmt-sales-fundamentals
+  kind: final
+  chapter: null
+  version: 2
+  policy:
+    mode: exam
+    max_attempts: 5
+    pool: 20
+  questions:
+    - id: sff-01
+      stem: "Selling is best described as:"
+      type: single
+      options: ["Helping a buyer decide well, at a profit", "Persuading any buyer to choose your own offer", "Presenting the product's best features", "Meeting the price the buyer will accept"]
+      correct: ["Helping a buyer decide well, at a profit"]
+      rubric_category: recall
+      explanation: "Problem-solvers get repeat business; pressure-sellers get one transaction."
+      weight: 1
+    - id: sff-02
+      stem: "The four qualification tests are need, means, timing and:"
+      type: single
+      options: ["Authority", "Their interest", "Fit", "Budget"]
+      correct: ["Authority"]
+      rubric_category: recall
+      explanation: "Can this person decide, or are you performing for someone who cannot?"
+      weight: 1
+    - id: sff-03
+      stem: "The bridge from feature to benefit is:"
+      type: single
+      options: ["Which means that…", "In other words…", "The upside here is…", "This lets you…"]
+      correct: ["Which means that…"]
+      rubric_category: recall
+      explanation: "Completed with something the buyer said they care about."
+      weight: 1
+    - id: sff-04
+      stem: "The rule that separates negotiating from crumbling:"
+      type: single
+      options: ["Every concession earns one back", "Never move on the headline price at all", "Concede early to build trust", "Match the competitor's offer"]
+      correct: ["Every concession earns one back"]
+      rubric_category: recall
+      explanation: "Free concessions teach the buyer that pushing produces gifts."
+      weight: 1
+    - id: sff-05
+      stem: "Every pipeline entry must carry:"
+      type: single
+      options: ["A next action with a date", "An expected close value", "The competitor in play", "The date of first contact"]
+      correct: ["A next action with a date"]
+      rubric_category: recall
+      explanation: "Without one the deal is abandoned, not paused."
+      weight: 1
+    - id: sff-06
+      stem: "Most so-called closing problems actually trace back to:"
+      type: single
+      options: ["Discovery", "Proposing", "Prospecting", "Negotiating"]
+      correct: ["Discovery"]
+      rubric_category: recall
+      explanation: "The proposal answered a question nobody asked."
+      weight: 1
+    - id: sff-07
+      stem: "Your quarter is weak. Which lever do you actually control?"
+      type: single
+      options: ["How many conversations you start this week", "Whether any of the current prospects decide", "How fast buyers move through stages", "What competitors are quoting now"]
+      correct: ["How many conversations you start this week"]
+      rubric_category: application
+      explanation: "Results this quarter reflect prospecting from months ago."
+      weight: 1
+    - id: sff-08
+      stem: "Many proposals go out and few come back. Which skill needs work?"
+      type: single
+      options: ["Discovery or proposal quality", "Prospecting, since volume is fine", "Closing, since asks fail to land", "Negotiation, since price is the block"]
+      correct: ["Discovery or proposal quality"]
+      rubric_category: application
+      explanation: "Stage conversions tell you which skill to fix."
+      weight: 1
+    - id: sff-09
+      stem: "A buyer mentions that deliveries are sometimes late. What comes next?"
+      type: single
+      options: ["Ask how often and what it costs them", "Explain how your process prevents it", "Record it as a criterion for later", "Move on to the next topic area"]
+      correct: ["Ask how often and what it costs them"]
+      rubric_category: application
+      explanation: "The gap between an annoyance and a burning problem is the sale."
+      weight: 1
+    - id: sff-10
+      stem: "Your contact is enthusiastic but cannot approve spend. What is your job?"
+      type: single
+      options: ["Reach the decider or equip them to", "Build the whole case with this one contact", "Wait for them to obtain approval", "Qualify the opportunity out now"]
+      correct: ["Reach the decider or equip them to"]
+      rubric_category: application
+      explanation: "An enthusiastic non-decider is a route, not a deal."
+      weight: 1
+    - id: sff-11
+      stem: "You have eleven benefits and the buyer named three criteria. What do you present?"
+      type: single
+      options: ["The two or three that match", "All eleven for completeness", "The five with most impact", "Whatever rivals cannot match"]
+      correct: ["The two or three that match"]
+      rubric_category: application
+      explanation: "Every extra claim dilutes the ones that matter."
+      weight: 1
+    - id: sff-12
+      stem: "What must be agreed at the moment you send a written quote?"
+      type: single
+      options: ["When you will follow it up", "How long the price holds", "Who else will see it", "What discount is available"]
+      correct: ["When you will follow it up"]
+      rubric_category: application
+      explanation: "A quote without an agreed follow-up is a message in a bottle."
+      weight: 1
+    - id: sff-13
+      stem: "'Too expensive' should be met first with:"
+      type: single
+      options: ["A question", "A discount", "A comparison", "A restatement"]
+      correct: ["A question"]
+      rubric_category: application
+      explanation: "It means one of four different things, each needing a different answer."
+      weight: 1
+    - id: sff-14
+      stem: "You have answered three objections and a fourth appears. What now?"
+      type: single
+      options: ["Ask what would need to be true", "Answer the fourth as carefully", "Offer something to break it", "Summarise the value again"]
+      correct: ["Ask what would need to be true"]
+      rubric_category: application
+      explanation: "The stated objection is standing in for an unstated one."
+      weight: 1
+    - id: sff-15
+      stem: "Which are legitimate trades for a lower price? (Select all that apply.)"
+      type: multi
+      options: ["A longer commitment", "A larger volume", "Payment up front", "A faster delivery date"]
+      correct: ["A longer commitment", "A larger volume", "Payment up front"]
+      rubric_category: application
+      explanation: "A faster date costs you more — charge for it, do not bundle it with a discount."
+      weight: 1
+    - id: sff-16
+      stem: "The buyer asks about delivery timelines and what happens after signing. What do you do?"
+      type: single
+      options: ["Stop presenting and ask for it", "Answer it, and then keep on presenting", "Move to the strongest benefit", "Reconfirm the price first"]
+      correct: ["Stop presenting and ask for it"]
+      rubric_category: application
+      explanation: "Every feature past readiness re-opens deliberation."
+      weight: 1
+    - id: sff-17
+      stem: "Everything promised verbally during the sale should end up:"
+      type: single
+      options: ["In the written confirmation", "In the account team's notes", "In the delivery handover", "In the pipeline record"]
+      correct: ["In the written confirmation"]
+      rubric_category: application
+      explanation: "Misremembered promises are the top source of early disputes."
+      weight: 1
+    - id: sff-18
+      stem: "When should a referral be requested?"
+      type: single
+      options: ["When they say it is working", "When the invoice is settled", "At the next scheduled review", "After a repeat order lands"]
+      correct: ["When they say it is working"]
+      rubric_category: application
+      explanation: "At the moment of satisfaction, and they usually just need asking."
+      weight: 1
+    - id: sff-19
+      stem: "A prospect is pleasant, months old, with no trigger and no timeline. What do you do?"
+      type: single
+      options: ["Drop it and reclaim the hours", "Keep it warm with occasional contact", "Discount to create urgency", "Escalate to their manager"]
+      correct: ["Drop it and reclaim the hours"]
+      rubric_category: application
+      explanation: "Chasing everything equally is the most common way sellers waste a year."
+      weight: 1
+    - id: sff-20
+      stem: "What the buyer needs is something you genuinely do not do well. What is strongest?"
+      type: single
+      options: ["Say so and point them elsewhere", "Offer the closest thing you have", "Keep in touch for a future need", "Quote and let them judge fit"]
+      correct: ["Say so and point them elsewhere"]
+      rubric_category: application
+      explanation: "It builds more long-term revenue than any forced sale ever did."
+      weight: 1
+    - id: sff-21
+      stem: "Why does a stalled sale usually sit at an earlier stage than it appears?"
+      type: single
+      options: ["A skipped early stage poisons the later ones", "Buyers rarely state the stage they are at", "Sellers label stages optimistically by habit", "Later stages simply take longer to complete"]
+      correct: ["A skipped early stage poisons the later ones"]
+      rubric_category: analysis
+      explanation: "The stages are a diagnostic, so locate where it actually stopped."
+      weight: 1
+    - id: sff-22
+      stem: "Why does pitching too early stop you learning as well as costing the sale?"
+      type: single
+      options: ["The buyer stops explaining and starts defending", "The pitch consumes the time discovery needed", "The buyer assumes you have already decided", "You commit to claims you cannot later revise"]
+      correct: ["The buyer stops explaining and starts defending"]
+      rubric_category: analysis
+      explanation: "Two things stop at once. Reverse the order."
+      weight: 1
+    - id: sff-23
+      stem: "Why is the opportunity cost of a dead deal a seller's biggest hidden tax?"
+      type: single
+      options: ["The hour is invisible but taken from a live deal", "Dead deals consume more hours than live ones", "Sellers carry more prospects than they can work", "The effort already spent makes leaving feel wasteful"]
+      correct: ["The hour is invisible but taken from a live deal"]
+      rubric_category: analysis
+      explanation: "Nothing on the calendar records what that hour could have been."
+      weight: 1
+    - id: sff-24
+      stem: "Why is 'saves you money' close to worthless as a benefit?"
+      type: single
+      options: ["Every competitor says it, so it proves nothing", "Buyers distrust any claim about savings", "It cannot be evidenced in a proposal", "It opens a negotiation about price"]
+      correct: ["Every competitor says it, so it proves nothing"]
+      rubric_category: analysis
+      explanation: "A benefit in the buyer's own words is proof you listened."
+      weight: 1
+    - id: sff-25
+      stem: "A seller wincing as they state the price communicates:"
+      type: single
+      options: ["That they do not believe it is worth it", "That the number is open to negotiation", "That they expect an objection to follow", "That a discount has already been planned"]
+      correct: ["That they do not believe it is worth it"]
+      rubric_category: analysis
+      explanation: "If you do not act like it is worth it, why would they?"
+      weight: 1
+    - id: sff-26
+      stem: "Why does a reflex discount cost more than the margin it surrenders?"
+      type: single
+      options: ["It teaches the buyer your first price was fiction", "It sets a precedent other customers will hear of", "It removes room needed for a later concession", "It suggests the product is worth less than stated"]
+      correct: ["It teaches the buyer your first price was fiction"]
+      rubric_category: analysis
+      explanation: "And it answers none of the four things the objection might mean."
+      weight: 1
+    - id: sff-27
+      stem: "Why do large, fast concessions invite further demands?"
+      type: single
+      options: ["They signal that more room remains hidden", "They make the buyer doubt the quality", "They shorten the window left for negotiating", "They exhaust the seller's leverage"]
+      correct: ["They signal that more room remains hidden"]
+      rubric_category: analysis
+      explanation: "Small, reluctant, reciprocated steps signal a real floor nearby."
+      weight: 1
+    - id: sff-28
+      stem: "Why can a seller with one prospect not hold a price floor?"
+      type: single
+      options: ["Losing that deal means losing everything", "Single prospects negotiate more aggressively", "The margin on one deal is always thinner", "There is no comparable price to point to"]
+      correct: ["Losing that deal means losing everything"]
+      rubric_category: analysis
+      explanation: "A full pipeline is what buys the calm to decline."
+      weight: 1
+    - id: sff-29
+      stem: "Why do inflated pipeline stage labels produce real revenue shortfalls?"
+      type: single
+      options: ["Fictional forecasts hide the drought until it lands", "Managers allocate resources against the wrong deals", "Sellers stop prospecting when the pipeline looks full", "Conversion rates become impossible to measure"]
+      correct: ["Fictional forecasts hide the drought until it lands"]
+      rubric_category: analysis
+      explanation: "Predictable numbers are made of truthful small entries."
+      weight: 1
+    - id: sff-30
+      stem: "Why is the after-delivery check-in a complaint-prevention system rather than a courtesy?"
+      type: single
+      options: ["Problems found early are fixed while goodwill holds", "It shows that the seller has remained interested throughout", "It records that delivery actually completed", "It gives the customer a route to complain"]
+      correct: ["Problems found early are fixed while goodwill holds"]
+      rubric_category: analysis
+      explanation: "And the satisfied customer is the highest-probability pipeline most sellers abandon."
+      weight: 1

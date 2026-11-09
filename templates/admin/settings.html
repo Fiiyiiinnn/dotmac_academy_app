@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+{% block title %}Settings — {{ branding_name | default("Dotmac Academy") }}{% endblock %}
+{% block content %}
+<p class="page-eyebrow">Administration</p>
+<h1 class="page-title">Platform settings</h1>
+<p class="page-intro">Branding, outbound email, and lab capacity. These override environment defaults.</p>
+
+<form hx-post="/admin/settings" hx-target="#settings-save-result" hx-swap="innerHTML" class="mt-10 space-y-6">
+  <section class="card p-6">
+    <h2 class="text-xl">Branding</h2>
+    <p class="mt-1.5 text-sm text-ink-soft">The name shown across the portal header and emails.</p>
+    <div class="mt-5">
+      <label for="branding_name" class="mb-1.5 block text-sm font-semibold text-ink">Branding name</label>
+      <input id="branding_name" type="text" name="branding_name" value="{{ cfg.branding_name }}"
+             class="w-full px-3.5 py-2.5 text-[0.95rem]">
+    </div>
+  </section>
+
+  <section class="card p-6">
+    <h2 class="text-xl">SMTP &amp; email</h2>
+    <p class="mt-1.5 text-sm text-ink-soft">Connection details for outbound mail and automatic notifications.</p>
+    <div class="mt-4 rounded-lg bg-sand-100 p-3 text-sm text-ink-soft">
+      <span class="font-semibold text-ink">Saved SMTP:</span>
+      {% if cfg.smtp_host %}
+        {{ cfg.smtp_user or "no username" }} via {{ cfg.smtp_host }}:{{ cfg.smtp_port }}, from {{ cfg.smtp_from }}
+      {% else %}
+        not configured
+      {% endif %}
+    </div>
+    <div class="mt-5 grid gap-4 sm:grid-cols-2">
+      <div>
+        <label for="smtp_host" class="mb-1.5 block text-sm font-semibold text-ink">SMTP host</label>
+        <input id="smtp_host" type="text" name="smtp_host" value="{{ cfg.smtp_host }}"
+               class="w-full px-3.5 py-2.5 text-[0.95rem]">
+      </div>
+      <div>
+        <label for="smtp_port" class="mb-1.5 block text-sm font-semibold text-ink">SMTP port</label>
+        <input id="smtp_port" type="number" name="smtp_port" value="{{ cfg.smtp_port }}"
+               class="w-full px-3.5 py-2.5 text-[0.95rem] tabular-nums">
+      </div>
+      <div>
+        <label for="smtp_user" class="mb-1.5 block text-sm font-semibold text-ink">SMTP user</label>
+        <input id="smtp_user" type="text" name="smtp_user" value="{{ cfg.smtp_user }}"
+               class="w-full px-3.5 py-2.5 text-[0.95rem]">
+      </div>
+      <div>
+        <label for="smtp_password" class="mb-1.5 block text-sm font-semibold text-ink">SMTP password</label>
+        <input id="smtp_password" type="password" name="smtp_password" value=""
+               placeholder="leave blank to keep unchanged"
+               class="w-full px-3.5 py-2.5 text-[0.95rem]">
+      </div>
+      <div class="sm:col-span-2">
+        <label for="smtp_from" class="mb-1.5 block text-sm font-semibold text-ink">From address</label>
+        <input id="smtp_from" type="text" name="smtp_from" value="{{ cfg.smtp_from }}"
+               class="w-full px-3.5 py-2.5 text-[0.95rem]">
+      </div>
+    </div>
+
+    <div class="mt-6 space-y-3 border-t border-sand-200 pt-5">
+      <label class="flex cursor-pointer items-start gap-3">
+        <input type="checkbox" name="smtp_starttls" {% if cfg.smtp_starttls %}checked{% endif %}
+               class="mt-0.5 h-4 w-4 accent-[oklch(0.44_0.10_161)]">
+        <span class="text-sm text-ink">Use STARTTLS</span>
+      </label>
+      <label class="flex cursor-pointer items-start gap-3">
+        <input type="checkbox" name="email_auto_on_pass" {% if cfg.email_auto_on_pass %}checked{% endif %}
+               class="mt-0.5 h-4 w-4 accent-[oklch(0.44_0.10_161)]">
+        <span class="text-sm text-ink">Email students on first pass</span>
+      </label>
+      <label class="flex cursor-pointer items-start gap-3">
+        <input type="checkbox" name="email_digest_enabled" {% if cfg.email_digest_enabled %}checked{% endif %}
+               class="mt-0.5 h-4 w-4 accent-[oklch(0.44_0.10_161)]">
+        <span class="text-sm text-ink">Weekly instructor digest enabled</span>
+      </label>
+    </div>
+  </section>
+
+  <section class="card p-6">
+    <h2 class="text-xl">Lab limits</h2>
+    <p class="mt-1.5 text-sm text-ink-soft">Guardrails for concurrent lab usage and idle reclamation.</p>
+    <div class="mt-5 grid gap-4 sm:grid-cols-3">
+      <div>
+        <label for="max_concurrent_labs" class="mb-1.5 block text-sm font-semibold text-ink">Max concurrent labs</label>
+        <input id="max_concurrent_labs" type="number" name="max_concurrent_labs" value="{{ cfg.max_concurrent_labs }}"
+               class="w-full px-3.5 py-2.5 text-[0.95rem] tabular-nums">
+      </div>
+      <div>
+        <label for="max_concurrent_labs_per_tenant" class="mb-1.5 block text-sm font-semibold text-ink">Per-tenant lab limit</label>
+        <input id="max_concurrent_labs_per_tenant" type="number" min="0"
+               name="max_concurrent_labs_per_tenant" value="{{ cfg.max_concurrent_labs_per_tenant }}"
+               class="w-full px-3.5 py-2.5 text-[0.95rem] tabular-nums">
+        <p class="mt-1 text-xs text-ink-soft">0 inherits the global limit.</p>
+      </div>
+      <div>
+        <label for="lab_idle_minutes" class="mb-1.5 block text-sm font-semibold text-ink">Lab idle minutes</label>
+        <input id="lab_idle_minutes" type="number" name="lab_idle_minutes" value="{{ cfg.lab_idle_minutes }}"
+               class="w-full px-3.5 py-2.5 text-[0.95rem] tabular-nums">
+      </div>
+    </div>
+  </section>
+
+  <div class="flex flex-wrap items-center gap-3">
+    <button type="submit" class="btn-primary">Save settings</button>
+    <span id="settings-save-result"></span>
+  </div>
+</form>
+
+<div class="mt-6 flex items-center gap-3 border-t border-sand-300 pt-6">
+  <form hx-post="/admin/settings/test-email" hx-target="#test-email-result" hx-swap="innerHTML">
+    <button type="submit" class="btn-ghost">Send test email</button>
+  </form>
+  <span id="test-email-result"></span>
+</div>
+{% endblock %}

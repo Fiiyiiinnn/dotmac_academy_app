@@ -1,0 +1,252 @@
+bank:
+  course: mgmt-decision-making
+  kind: final
+  chapter: null
+  version: 2
+  policy:
+    mode: exam
+    max_attempts: 5
+    pool: 20
+  questions:
+    - id: dmf-01
+      stem: "Decision quality is assessed on the process at the time. What is the consequence of assessing it on outcomes instead?"
+      type: single
+      options: ["You punish sound reasoning that got unlucky", "You reward speed over any careful deliberation", "You lose the ability to compare decisions", "You make consultation harder to justify"]
+      correct: ["You punish sound reasoning that got unlucky"]
+      rubric_category: recall
+      explanation: "And you repeat the reckless gambles that happened to pay off."
+      weight: 1
+    - id: dmf-02
+      stem: "A two-way door is a decision that:"
+      type: single
+      options: ["Can be undone at modest cost", "Affects two teams at once", "Has exactly two viable options", "Requires two levels of approval"]
+      correct: ["Can be undone at modest cost"]
+      rubric_category: recall
+      explanation: "Decide those quickly at about 70% information and correct course as you learn."
+      weight: 1
+    - id: dmf-03
+      stem: "In a five-whys chain, reaching a person's name means:"
+      type: single
+      options: ["You have stopped one level too early", "The investigation is complete", "The cause is a training gap", "You should restart again from the symptom"]
+      correct: ["You have stopped one level too early"]
+      rubric_category: recall
+      explanation: "Ask why the mistake was possible and why it was not caught."
+      weight: 1
+    - id: dmf-04
+      stem: "Being consulted on a decision entitles you to:"
+      type: single
+      options: ["A hearing before the call", "A veto over the outcome", "A vote of equal weight", "A written justification after"]
+      correct: ["A hearing before the call"]
+      rubric_category: recall
+      explanation: "Say so explicitly, or the meeting afterwards is poisoned by the ambiguity."
+      weight: 1
+    - id: dmf-05
+      stem: "A vendor's first quote arrives at ₦2.4m and every subsequent discussion circles that figure. What should you have done before opening it?"
+      type: single
+      options: ["Produced your own estimate of what the work should cost", "Asked two more vendors to quote at the same time", "Set the maximum you were authorised to approve", "Established the criteria that the quotes would then be judged on"]
+      correct: ["Produced your own estimate of what the work should cost"]
+      rubric_category: application
+      explanation: "Anchoring: treat the first quote as one candidate, never as the baseline."
+      weight: 1
+    - id: dmf-06
+      stem: "An option carries a 70% chance of gaining ₦400,000 and a 30% chance of losing ₦150,000. Its expected value, in naira, is:"
+      type: numeric
+      options:
+        tolerance: 1000
+      correct: 235000
+      rubric_category: application
+      explanation: "280,000 − 45,000 = ₦235,000 — and you still have to check that the business survives the loss case."
+      weight: 1
+    - id: dmf-07
+      stem: "A programme is eight months in, over budget, and behind. Which question should open the review?"
+      type: single
+      options: ["Knowing what we know now, would we start this today?", "How much of the original budget is still unspent?", "What would it cost to finish from where we are?", "Who signed off on the original business case?"]
+      correct: ["Knowing what we know now, would we start this today?"]
+      rubric_category: application
+      explanation: "Sunk cost: what is spent is gone under every option, so only future costs and benefits distinguish the choices."
+      weight: 1
+    - id: dmf-08
+      stem: "You need a decision from a group but must avoid the loudest voice setting the frame. What do you do first?"
+      type: single
+      options: ["Have everyone write their view before anyone speaks", "Ask the quietest people for their view at the start", "Circulate the options and ask for written comments", "State that all contributions carry the same weight"]
+      correct: ["Have everyone write their view before anyone speaks"]
+      rubric_category: application
+      explanation: "Silent parallel input, and the senior person speaks last."
+      weight: 1
+    - id: dmf-09
+      stem: "Which of these make a deferral conscious rather than drift? (Select all that apply.)"
+      type: multi
+      options: ["A named reason for waiting", "A named owner of the decision", "A date it will be revisited", "Agreement from all stakeholders"]
+      correct: ["A named reason for waiting", "A named owner of the decision", "A date it will be revisited"]
+      rubric_category: application
+      explanation: "Deferral is sometimes right; unconscious deferral never is."
+      weight: 1
+    - id: dmf-10
+      stem: "A proposal shows benefits exceeding costs. What has almost certainly been left out?"
+      type: single
+      options: ["The opportunity cost of the same money and people", "The sensitivity of the result to its key assumptions", "The time the implementation will take to complete", "The team's capacity to absorb another initiative"]
+      correct: ["The opportunity cost of the same money and people"]
+      rubric_category: application
+      explanation: "'Worth doing' is not the bar; 'worth doing instead' is."
+      weight: 1
+    - id: dmf-11
+      stem: "You are about to run a trial before committing to an annual contract. What must the trial define up front?"
+      type: single
+      options: ["The result that would stop you proceeding", "The budget available for the trial period", "The people who will run the evaluation", "The date the full contract would start"]
+      correct: ["The result that would stop you proceeding"]
+      rubric_category: application
+      explanation: "Otherwise the pilot is a ceremony, not a test."
+      weight: 1
+    - id: dmf-12
+      stem: "A decision meeting keeps looping: every new fact reopens the debate and every opinion smuggles in a fact-claim. What structure is missing?"
+      type: single
+      options: ["Separating the phases — facts first, then merits, then the call", "A chair holding the authority to close down the discussion entirely", "A written note circulated in advance of the meeting", "A time limit on each contribution from the participants"]
+      correct: ["Separating the phases — facts first, then merits, then the call"]
+      rubric_category: application
+      explanation: "Groups that blur clarify, debate, and decide will loop indefinitely."
+      weight: 1
+    - id: dmf-13
+      stem: "A recurring fault has twelve candidate causes. Where should the fixing budget go?"
+      type: single
+      options: ["To the few causes carrying most of the cost", "To the causes the team can fix most quickly", "To every cause, in order of discovery", "To the cause with the clearest evidence"]
+      correct: ["To the few causes carrying most of the cost"]
+      rubric_category: application
+      explanation: "Pareto: you need the two ribs of the fish causing 80% of the pain."
+      weight: 1
+    - id: dmf-14
+      stem: "Why is 'we've invested too much to stop now' the wrong frame, even when the investment really was large?"
+      type: single
+      options: ["The spend is identical under every future option, so it cannot distinguish them", "Large investments are usually recoverable through the partial completion of the work", "The argument confuses the size of the loss with the probability of recovery", "It assumes the original business case is still an accurate view of the return"]
+      correct: ["The spend is identical under every future option, so it cannot distinguish them"]
+      rubric_category: analysis
+      explanation: "Only future costs and benefits differ between choices — which is exactly what makes sunk cost so persuasive and so wrong."
+      weight: 1
+    - id: dmf-15
+      stem: "A team consistently applies heavy analysis to reversible decisions and decides irreversible ones quickly. Beyond wasted time, what does this cost?"
+      type: single
+      options: ["The expensive mistakes land where they cannot be undone", "The team's confidence in its own analytical capability declines", "Stakeholders lose patience with being consulted so frequently", "The decisions that matter get taken by whoever is available"]
+      correct: ["The expensive mistakes land where they cannot be undone"]
+      rubric_category: analysis
+      explanation: "The sizing is not a matter of style — it determines which errors you can recover from."
+      weight: 1
+    - id: dmf-16
+      stem: "Why does 'consulted means heard, not veto' need to be said out loud before the consultation, not after?"
+      type: single
+      options: ["Said afterwards it reads as a retrospective excuse for overruling people", "It shortens the consultation by discouraging unnecessary contributions", "It establishes who the decider is for the record of the decision", "It gives people the chance to decline to be consulted at all"]
+      correct: ["Said afterwards it reads as a retrospective excuse for overruling people"]
+      rubric_category: analysis
+      explanation: "The rule has to be visible before the input is given, or the person overruled experiences it as a rule invented to overrule them."
+      weight: 1
+    - id: dmf-17
+      stem: "An option loses everything one time in twenty and gains modestly the rest of the time. Why is expected value the wrong lens?"
+      type: single
+      options: ["Repeated, the ruinous outcome becomes near-certain rather than unlikely", "The 5% figure is an estimate and could easily be materially higher", "Modest gains do not compound quickly enough to justify any real risk", "Expected value only applies where the outcomes are independent events"]
+      correct: ["Repeated, the ruinous outcome becomes near-certain rather than unlikely"]
+      rubric_category: analysis
+      explanation: "Make the worst case survivable first — smaller commitment, staged rollout, explicit fallback — or decline the option."
+      weight: 1
+    - id: dmf-18
+      stem: "A team keeps no decision log. What compounds most expensively over two years?"
+      type: single
+      options: ["Constant low-grade renegotiation of decisions already taken", "The loss of the evidence that supported each original choice", "The difficulty of holding individual deciders accountable later", "The tendency for decisions to drift upward to more senior people"]
+      correct: ["Constant low-grade renegotiation of decisions already taken"]
+      rubric_category: analysis
+      explanation: "Without recorded reasoning, every new person re-litigates from scratch and the same arguments recur indefinitely."
+      weight: 1
+    - id: dmf-19
+      stem: "In a team where dissent has quietly stopped appearing, what has been lost that matters most?"
+      type: single
+      options: ["The warning that arrives before an expensive decision goes wrong", "The diversity of options considered at the start of each decision", "The engagement of the people who used to raise the objections", "The record of alternatives that were considered and rejected"]
+      correct: ["The warning that arrives before an expensive decision goes wrong"]
+      rubric_category: analysis
+      explanation: "The silence costs you exactly when you most need someone to say the thing nobody wants to hear."
+      weight: 1
+    - id: dmf-20
+      stem: "Why does a tripwire agreed in advance outperform a commitment to monitor a situation closely?"
+      type: single
+      options: ["It fires without needing anyone's attention at the awkward moment", "It can be assigned to a specific owner with a specific deadline", "It produces a record that can be audited after the fact", "It forces the measure to be agreed before opinions harden"]
+      correct: ["It fires without needing anyone's attention at the awkward moment"]
+      rubric_category: analysis
+      explanation: "Vigilance decays precisely when things get busy; a tripwire set while you were calm does not."
+      weight: 1
+    - id: dmf-21
+      stem: "A risk you have decided to accept should be:"
+      type: single
+      options: ["Recorded, owned, no action", "Removed from the register", "Reviewed only if it fires", "Escalated to the sponsor"]
+      correct: ["Recorded, owned, no action"]
+      rubric_category: recall
+      explanation: "Acceptance by decision is management; acceptance by silence is luck."
+      weight: 1
+    - id: dmf-22
+      stem: "Which bias gives the current arrangement a free pass that no new option would survive?"
+      type: single
+      options: ["Status quo bias", "Anchoring", "Availability", "Sunk cost"]
+      correct: ["Status quo bias"]
+      rubric_category: recall
+      explanation: "The incumbent option is rarely subjected to the scrutiny applied to its challengers."
+      weight: 1
+    - id: dmf-23
+      stem: "A supplier's first quote arrives well above expectation and every later discussion circles it. What should have happened first?"
+      type: single
+      options: ["Your own estimate, made before opening it", "A second quote requested at the same time", "A cap set on what you could approve", "Criteria agreed for judging the quotes"]
+      correct: ["Your own estimate, made before opening it"]
+      rubric_category: application
+      explanation: "Anchoring: the first number drags every later estimate toward it, so produce yours in advance."
+      weight: 1
+    - id: dmf-24
+      stem: "You are told a decision cannot wait until tomorrow. What separates a real deadline from a manufactured one?"
+      type: single
+      options: ["Whether an option actually expires", "Whether the request came from above", "Whether the team feels the pressure", "Whether the analysis is complete"]
+      correct: ["Whether an option actually expires"]
+      rubric_category: application
+      explanation: "Decision deadlines expire options; discomfort deadlines only exist to stop the anxiety."
+      weight: 1
+    - id: dmf-25
+      stem: "An option pays out 60% of the time at ₦500,000 and loses ₦200,000 otherwise. What is its expected value, in naira?"
+      type: numeric
+      options:
+        tolerance: 2000
+      correct: 220000
+      rubric_category: application
+      explanation: "(0.60 × 500,000) − (0.40 × 200,000) = 300,000 − 80,000 = ₦220,000 — then ask whether the loss case is survivable."
+      weight: 1
+    - id: dmf-26
+      stem: "Which of these belong in a five-line decision log? (Select all that apply.)"
+      type: multi
+      options: ["What was decided", "Who decided, and when", "What would change our minds", "How long the debate ran"]
+      correct: ["What was decided", "Who decided, and when", "What would change our minds"]
+      rubric_category: application
+      explanation: "Plus the reasoning and who was told. The length of the argument is not a fact worth keeping."
+      weight: 1
+    - id: dmf-27
+      stem: "Your investigation has settled on a cause within an hour and everyone agrees. What should you deliberately do?"
+      type: single
+      options: ["Look for what the theory fails to explain", "Move to the fix while agreement holds", "Document the conclusion and close it", "Ask a second team to confirm the finding"]
+      correct: ["Look for what the theory fails to explain"]
+      rubric_category: application
+      explanation: "Fast unanimous agreement is when confirmation bias is least visible and most expensive."
+      weight: 1
+    - id: dmf-28
+      stem: "Why does a group that reaches consensus quickly warrant more scrutiny, not less?"
+      type: single
+      options: ["Cohesion suppresses the doubts people hold", "Quick agreement usually means a simple problem", "The loudest voice has usually prevailed early", "Consensus takes longer on important decisions"]
+      correct: ["Cohesion suppresses the doubts people hold"]
+      rubric_category: analysis
+      explanation: "Groupthink makes a group more confident than any member, which is why dissent is assigned rather than hoped for."
+      weight: 1
+    - id: dmf-29
+      stem: "Why is 'we never actually decided that' the signature phrase of the most invisible failure mode?"
+      type: single
+      options: ["The calendar made the choice while nobody owned it", "The decision was made informally and not recorded", "Responsibility was spread across too many people", "The options were never properly written down"]
+      correct: ["The calendar made the choice while nobody owned it"]
+      rubric_category: analysis
+      explanation: "Deferral is sometimes right; unconscious deferral never is, and it leaves no trace until the cost arrives."
+      weight: 1
+    - id: dmf-30
+      stem: "Why does a pilot with no defined stopping condition tell you nothing?"
+      type: single
+      options: ["It can only confirm what was already decided", "It takes longer than a full rollout would", "It produces results too small to generalise", "It cannot be compared against the status quo"]
+      correct: ["It can only confirm what was already decided"]
+      rubric_category: analysis
+      explanation: "Define the result that would stop you, or the pilot is a ceremony rather than a test."
+      weight: 1

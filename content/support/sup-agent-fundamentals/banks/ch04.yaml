@@ -1,0 +1,88 @@
+bank:
+  course: sup-agent-fundamentals
+  kind: chapter
+  chapter: 4
+  version: 1
+  policy:
+    mode: practice
+  questions:
+    - id: s4-01
+      stem: "What is the operator-declared outage lifecycle?"
+      type: single
+      options: ["open then resolved", "suspected then confirmed then clearing then resolved", "new then open then closed", "pending then active then expired"]
+      correct: ["open then resolved"]
+      rubric_category: recall
+      explanation: "Operator-declared incidents move open to resolved; the longer suspected/confirmed/clearing/resolved path belongs to classifier-detected incidents."
+      weight: 1
+    - id: s4-02
+      stem: "Which panel do you use to record that a ticket belongs to a known outage?"
+      type: single
+      options: ["Related Outage / Links", "Ticket Metadata, further up the same page", "Merge Ticket, further down the same page", "Customer / Subscriber"]
+      correct: ["Related Outage / Links"]
+      rubric_category: recall
+      explanation: "Related Outage / Links is where you paste the covering ticket's identifier to link it to the current ticket."
+      weight: 1
+    - id: s4-03
+      stem: "A customer reports no internet. What should you check first, before troubleshooting their equipment or contacting anyone else?"
+      type: single
+      options: ["Check the customer's own Network tab for a known-incident reading", "Open the general network monitoring console, since only NOC's screens are authoritative", "Post in the team chat and wait for someone from NOC to reply", "Set the ticket's Channel field, which is what actually routes outage checks"]
+      correct: ["Check the customer's own Network tab for a known-incident reading"]
+      rubric_category: application
+      explanation: "The customer's own Network tab is real, immediate self-service — reachable through the customer:read access you already have — and it is the first thing to check."
+      weight: 1
+    - id: s4-04
+      stem: "A subscription card shows a red 'Known area outage' banner with an 'Open the covering ticket' button. What should you do?"
+      type: single
+      options: ["Use the button to reach the covering ticket, and link your own ticket to it", "Raise a new ticket anyway, since only NOC can officially confirm an outage", "Ignore the banner and wait for NOC to separately confirm the same thing", "Follow the console link on the same panel to verify the incident yourself before doing anything else"]
+      correct: ["Use the button to reach the covering ticket, and link your own ticket to it"]
+      rubric_category: application
+      explanation: "The banner's own message says this customer is already covered — the correct response is to open the covering ticket and link to it, not to raise a duplicate or wait for NOC to repeat what the panel already shows."
+      weight: 1
+    - id: s4-05
+      stem: "You try to open the network monitoring console and get an access-denied page. What should you conclude?"
+      type: single
+      options: ["This is a designed boundary, not a bug — the right move is to ask NOC instead", "Your account was probably provisioned incorrectly and needs review by IT", "The console is only temporarily down for absolutely everyone right now", "You should ask a colleague to log in on your behalf and check the console there for you"]
+      correct: ["This is a designed boundary, not a bug — the right move is to ask NOC instead"]
+      rubric_category: application
+      explanation: "Support does not carry monitoring:read by design — the correct next step is to ask NOC, not to find another way in, even though a customer's own known-incident status is separately visible to you."
+      weight: 1
+    - id: s4-06
+      stem: "Your role carries customer:read, which is enough to see a subscription's own 'Known incident' or 'No known outage' status, but not monitoring:read, which opens the general console. What does this combination reveal about how the outage workflow is meant to work?"
+      type: single
+      options: ["You can check whether this specific customer is already covered yourself; the general console stays with NOC", "You cannot see any outage information yourself, and must always ask NOC first", "It reveals a gap that should promptly be fixed by granting full, permanent console access to every single agent on the team", "It means the two permission sets were probably assigned inconsistently by mistake"]
+      correct: ["You can check whether this specific customer is already covered yourself; the general console stays with NOC"]
+      rubric_category: analysis
+      explanation: "customer:read already gives you a real, per-customer known-incident check; the design intentionally keeps the general, console-level view of all incidents with NOC rather than withholding outage visibility from you entirely."
+      weight: 1
+    - id: s4-07
+      stem: "Within twenty minutes, four tickets arrive from the same region all reporting the identical symptom, and each customer's own Network tab shows 'No known outage.' What should you do before triaging the fourth exactly like the first three?"
+      type: single
+      options: ["Ask NOC whether there is a known or suspected incident affecting that specific area", "Trust each 'No known outage' reading and troubleshoot all four independently, one at a time", "Close three of the four as duplicates without giving them any further review", "Raise all four tickets to the highest possible priority automatically right away"]
+      correct: ["Ask NOC whether there is a known or suspected incident affecting that specific area"]
+      rubric_category: application
+      explanation: "Same symptom, same area, clustered in time outweighs four individually 'clean' per-customer readings — an outage can exist before it is confirmed against any one customer's own service."
+      weight: 1
+    - id: s4-08
+      stem: "An agent, frustrated at how often they still have to escalate, starts treating every connectivity complaint as a suspected outage without first checking the customer's own record or the clustering pattern. What is the likely consequence?"
+      type: single
+      options: ["NOC starts discounting the agent's reports because most turn out not to be outages", "NOC will grant the agent console access to resolve the frustration", "Reporting accuracy actually improves overall because more cases get NOC's direct attention", "Nothing changes at all, since escalation has no real cost to anyone"]
+      correct: ["NOC starts discounting the agent's reports because most turn out not to be outages"]
+      rubric_category: analysis
+      explanation: "Escalating without checking the real, available signals first erodes the signal value of a report, training the receiving team to discount it."
+      weight: 1
+    - id: s4-09
+      stem: "A ticket is linked to a confirmed outage, but the agent working it never mentions this to the customer, assuming the link speaks for itself. What is missing?"
+      type: single
+      options: ["The customer still needs to be told directly — the link is the internal record, not customer communication", "Nothing more at all — linking the ticket is already fully and permanently sufficient on its own", "The link should be removed again since customers can never see it anyway", "The ticket should instead be merged directly into the outage incident's own separate master ticket, closing this one out"]
+      correct: ["The customer still needs to be told directly — the link is the internal record, not customer communication"]
+      rubric_category: analysis
+      explanation: "Linking the outage is the internal-record half of the job; the customer-facing half — actually telling them — is a separate, still-necessary step."
+      weight: 1
+    - id: s4-10
+      stem: "A customer mentions that their neighbour has the same problem right now, and their own Network tab shows 'No known outage.' On its own, what does this prove?"
+      type: single
+      options: ["Nothing conclusively — it is a reason to ask about a possible outage, not proof of one", "It proves beyond any doubt that an outage is already confirmed and should be linked immediately", "It proves the underlying issue is specifically the customer's own equipment", "It proves the ticket should be closed as entirely unrelated to Sub going forward"]
+      correct: ["Nothing conclusively — it is a reason to ask about a possible outage, not proof of one"]
+      rubric_category: application
+      explanation: "A neighbour reporting the same issue, even against a 'No known outage' reading, is one of the outage-shaped signals worth asking NOC about — not, by itself, confirmation."
+      weight: 1

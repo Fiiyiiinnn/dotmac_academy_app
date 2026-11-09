@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en" {{ dotmac_ui_theme_attribute }}="{{ dotmac_ui_theme }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Entrance assessment — {{ branding_name | default("Dotmac Academy") }}</title>
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+  {% include "_dotmac_ui_head.html" %}
+  <link rel="stylesheet" href="/static/app.css?v=9">
+  <script src="/static/htmx.min.js" defer></script>
+</head>
+<body class="min-h-screen bg-sand-100 text-ink antialiased">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <main id="main-content" class="flex items-center justify-center px-6 py-12 sm:px-12">
+    <div class="w-full max-w-2xl">
+      <p class="page-eyebrow">Dotmac Academy</p>
+      <h1 class="mt-2 font-display text-3xl font-[560] tracking-tight text-ink">Entrance assessment</h1>
+
+      {% if notice %}
+      <div class="mt-8 rounded-lg border border-brand-200 bg-brand-50 p-6">
+        <h2 class="font-display text-xl font-[560] text-ink">{{ notice.title }}</h2>
+        <p class="mt-2 text-sm text-ink-soft">{{ notice.body }}</p>
+      </div>
+      {% elif intro %}
+      <div class="mt-8 rounded-lg border border-brand-200 bg-brand-50 p-6">
+        <h2 class="font-display text-xl font-[560] text-ink">Before you begin</h2>
+        <ul class="mt-3 space-y-2 text-sm text-ink-soft">
+          <li><strong class="text-ink">{{ intro.question_count }} multiple-choice questions.</strong> Choose the single best answer for each.</li>
+          {% if intro.minutes %}
+          <li><strong class="text-ink">Timed: {{ intro.minutes }} minutes.</strong> The clock starts when you press Start below — not before — and the assessment submits automatically when time runs out. A countdown stays visible while you work.</li>
+          {% else %}
+          <li><strong class="text-ink">No time limit.</strong> Take the time you need.</li>
+          {% endif %}
+          <li><strong class="text-ink">One attempt.</strong> Start only when you can finish uninterrupted.</li>
+          <li><strong class="text-ink">Your answers save as you go.</strong> Once started, the server clock keeps running. If a serious outage interrupts you, an administrator can reopen the sitting.</li>
+          <li><strong class="text-ink">It tests general aptitude</strong> — numeracy, reading, reasoning, and safety sense. You are not expected to have prior technical knowledge.</li>
+        </ul>
+        <div id="start-panel">
+          <form method="post" action="/apply/assessment/start" hx-post="/apply/assessment/start" class="mt-5">
+            <input type="hidden" name="token" value="{{ token }}">
+            <button type="submit" class="btn-primary w-full py-2.5 text-[0.95rem]">Start my assessment</button>
+          </form>
+        </div>
+        <p class="mt-3 text-center text-xs text-ink-soft">Not ready? Just close this page — your link stays valid until your deadline.</p>
+      </div>
+      {% else %}
+      <p class="mt-2 text-sm text-ink-soft">
+        Answer each question as best you can. You have one attempt — choose the single best answer.
+      </p>
+      {% if remaining_seconds is not none %}
+      <div id="exam-timer" data-remaining="{{ remaining_seconds }}"
+           class="sticky top-2 z-10 mt-4 rounded-lg bg-sand-200 px-4 py-2 text-sm font-semibold text-ink">
+        Time remaining: <span id="timer-display" role="timer" aria-live="off" aria-label="Assessment time remaining" class="font-mono tabular-nums">--:--</span>
+        <span class="font-normal text-ink-soft">— the assessment submits automatically when time runs out.</span>
+      </div>
+      {% endif %}
+      <div id="exam-result" role="status" aria-live="polite" aria-atomic="true">
+        <form hx-post="/apply/assessment" hx-target="#exam-result" hx-swap="outerHTML" class="mt-6 space-y-6">
+          <input type="hidden" name="token" value="{{ token }}">
+          {% for q in questions %}
+          <fieldset class="card p-5">
+            <legend class="text-sm font-semibold text-ink">{{ loop.index }}. {{ q.stem }}</legend>
+            <div class="mt-3 space-y-2">
+              {% for opt in q.options %}
+              <label class="flex items-start gap-2.5 text-sm">
+                <input type="{{ 'checkbox' if q.type == 'multi' else 'radio' }}" name="{{ q.ext_id }}" value="{{ opt }}"
+                       class="mt-0.5" {% if q.type != 'multi' %}required{% endif %}
+                       {% if opt in (saved.get(q.ext_id) or []) %}checked{% endif %}>
+                <span>{{ opt }}</span>
+              </label>
+              {% endfor %}
+            </div>
+          </fieldset>
+          {% endfor %}
+          <button type="submit" class="btn-primary w-full py-2.5 text-[0.95rem]">Submit assessment</button>
+        </form>
+      </div>
+      {% endif %}
+    </div>
+  </main>
+
+  <script src="/static/csrf.js?v=2"></script>
+  <script src="/static/apply_assessment.js?v=2"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-personal-effectiveness
+  kind: chapter
+  chapter: 5
+  version: 1
+  policy:
+    mode: practice
+  questions:
+    - id: pe5-01
+      stem: "After a system lapses, the recommended move is to:"
+      type: single
+      options: ["Correct the old list", "Start a new list", "Change tools", "Rebuild from scratch"]
+      correct: ["Correct the old list"]
+      rubric_category: recall
+      explanation: "Starting again is how people end up on their fifth tool with nothing carried forward."
+      weight: 1
+    - id: pe5-02
+      stem: "Most items captured before a lapse turn out to be:"
+      type: single
+      options: ["Dead", "Urgent", "Delegable", "Duplicated"]
+      correct: ["Dead"]
+      rubric_category: application
+      explanation: "The moment passed, someone else did it, or it stopped mattering. Deleting is a legitimate and common outcome."
+      weight: 1
+    - id: pe5-03
+      stem: "A busy period differs from sustained overload chiefly in having:"
+      type: single
+      options: ["A visible end", "A clear cause", "More support", "Higher stakes"]
+      correct: ["A visible end"]
+      rubric_category: recall
+      explanation: "Pushing through the first is right. Pushing through the second conceals it."
+      weight: 1
+    - id: pe5-04
+      stem: "Pushing through sustained overload guarantees it continues because from outside:"
+      type: single
+      options: ["The job looks resourced", "Nobody is watching", "The reports all look normal", "Costs stay flat"]
+      correct: ["The job looks resourced"]
+      rubric_category: analysis
+      explanation: "A job being done is a job that appears correctly staffed."
+      weight: 1
+    - id: pe5-05
+      stem: "\"I'm overloaded\" changes nothing chiefly because it is:"
+      type: single
+      options: ["Not actionable", "Not believed", "Too personal", "Far too frequent"]
+      correct: ["Not actionable"]
+      rubric_category: application
+      explanation: "What lands is the same message with capacity numbers, named consequences, options and a decision date."
+      weight: 1
+    - id: pe5-06
+      stem: "A capacity escalation should be brought:"
+      type: single
+      options: ["Before the slip", "Only after the slip", "At the review", "When asked"]
+      correct: ["Before the slip"]
+      rubric_category: analysis
+      explanation: "The same conversation after things have slipped is about blame, and the numbers stop being persuasive."
+      weight: 1
+    - id: pe5-07
+      stem: "A capacity escalation is best understood not as a complaint but as:"
+      type: single
+      options: ["A prioritisation question", "A resourcing demand", "A performance issue", "A personal boundary issue"]
+      correct: ["A prioritisation question"]
+      rubric_category: analysis
+      explanation: "Handed to the person who owns the priorities, which is precisely their job."
+      weight: 1
+    - id: pe5-08
+      stem: "The earliest warning sign of overload in yourself is usually:"
+      type: single
+      options: ["Dropping what keeps you effective", "Working later", "Missing deadlines", "Feeling generally irritable and short"]
+      correct: ["Dropping what keeps you effective"]
+      rubric_category: application
+      explanation: "The review, the block, the one-to-ones, the exercise. It shows before output does."
+      weight: 1
+    - id: pe5-09
+      stem: "Fatigue degrades judgement:"
+      type: single
+      options: ["Before performance", "Well after performance", "At the same time", "Only in crises"]
+      correct: ["Before performance"]
+      rubric_category: application
+      explanation: "Which is why \"I'm coping\" is a poor test \u2014 you will still deliver while the decisions quietly get worse."
+      weight: 1
+    - id: pe5-10
+      stem: "The three things to protect when everything else lapses are capture, one block, and:"
+      type: single
+      options: ["The one-to-ones", "The weekly review", "The templates", "The waiting-on list"]
+      correct: ["The one-to-ones"]
+      rubric_category: recall
+      explanation: "Everything else restarts in ten minutes; what those three would have caught does not come back."
+      weight: 1

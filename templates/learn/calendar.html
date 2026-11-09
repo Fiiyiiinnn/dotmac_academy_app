@@ -1,0 +1,39 @@
+{% extends "base.html" %}{% block content %}
+<p class="page-eyebrow">{{ branding_name | default("Technical Academy") }}</p>
+<h1 class="page-title">Calendar</h1>
+
+{% if grouped %}
+<div class="mt-8 space-y-8">
+{% for group in grouped %}
+  <div>
+    <h2 class="text-sm font-semibold uppercase tracking-wide text-ink-soft">{{ group.day.strftime("%A, %-d %B %Y") }}</h2>
+    <div class="mt-3 space-y-3">
+    {% for item in group.events %}
+      <a href="{{ item.link }}"
+         class="card flex items-start gap-4 p-5 transition-colors hover:border-brand-300">
+        <div class="min-w-0 flex-1">
+          <p class="font-medium text-ink">{{ item.title }}</p>
+          <p class="mt-0.5 text-sm text-ink-soft">{{ (item.when | localtime).strftime('%H:%M') }} · {{ item.course }}</p>
+        </div>
+        {% if item.kind == 'session' and item.joinable and item.join_url %}
+        <a href="{{ item.join_url }}" target="_blank" rel="noopener" class="btn-primary shrink-0 px-3 py-1.5 text-xs">Join now</a>
+        {% endif %}
+        <span class="shrink-0 rounded-full px-2.5 py-0.5 text-xs font-medium
+          {%- if item.kind == 'session' %} bg-brand-100 text-brand-800
+          {%- elif item.kind == 'due' %} bg-amber-100 text-amber-800
+          {%- elif item.kind == 'opens' %} bg-green-100 text-green-800
+          {%- else %} bg-red-100 text-red-800
+          {%- endif %}">{{ 'live session' if item.kind == 'session' else item.kind }}</span>
+      </a>
+    {% endfor %}
+    </div>
+  </div>
+{% endfor %}
+</div>
+{% else %}
+<div class="card mt-8 p-8 text-center">
+  <p class="text-lg font-medium text-ink">No upcoming events</p>
+  <p class="page-intro">Your course schedule and activity deadlines will appear here.</p>
+</div>
+{% endif %}
+{% endblock %}

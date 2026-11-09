@@ -1,0 +1,89 @@
+bank:
+  course: mgmt-communication
+  kind: chapter
+  chapter: 4
+  version: 2
+  policy:
+    mode: practice
+  questions:
+    - id: cm4-01
+      stem: "Agenda items should be phrased as:"
+      type: single
+      options: ["Outcomes", "Topics", "Questions", "Owners"]
+      correct: ["Outcomes"]
+      rubric_category: recall
+      explanation: "'Decide vendor for the generator contract' tells everyone what done looks like. 'Generators' tells them nothing."
+      weight: 1
+    - id: cm4-02
+      stem: "The same-day record of a meeting contains decisions, parked items, and:"
+      type: single
+      options: ["Actions with one owner and a date", "A summary of the discussion held", "The attendance list for the session", "The agenda items that were covered"]
+      correct: ["Actions with one owner and a date"]
+      rubric_category: recall
+      explanation: "'The team will look into it' is the no-owner anti-pattern wearing meeting clothes."
+      weight: 1
+    - id: cm4-03
+      stem: "A weekly one-hour meeting has six attendees whose loaded cost averages ₦4,500 an hour. What does it cost over 48 weeks, in naira?"
+      type: numeric
+      options:
+        tolerance: 5000
+      correct: 1296000
+      rubric_category: application
+      explanation: "6 × 1 × ₦4,500 × 48 = ₦1,296,000 a year. Meetings are the only channel routinely spent without anyone checking the price."
+      weight: 1
+    - id: cm4-04
+      stem: "A standing weekly meeting has produced no decision or output in its last three sessions. What do you do?"
+      type: single
+      options: ["Kill it, shorten it, or halve its frequency and see what breaks", "Restructure the agenda so that it produces a decision each week", "Reduce the invite list to the people who contribute most often", "Keep it, since alignment is a legitimate outcome in its own right"]
+      correct: ["Kill it, shorten it, or halve its frequency and see what breaks"]
+      rubric_category: application
+      explanation: "Recurring meetings outlive their purpose because cancelling feels rude. Usually nothing breaks."
+      weight: 1
+    - id: cm4-05
+      stem: "You need to transmit a straightforward operational update to nine people. What is the right channel?"
+      type: single
+      options: ["A written update they read at their own pace", "A short meeting to make sure everyone hears it", "A meeting for the affected half, a note for the rest", "A written update followed by a meeting for questions"]
+      correct: ["A written update they read at their own pace"]
+      rubric_category: application
+      explanation: "Meetings buy interaction. One-way information transfer is a document, and the recital meeting is the largest single meeting waste."
+      weight: 1
+    - id: cm4-06
+      stem: "Discussion in your meeting has drifted onto a real but different problem. What do you do?"
+      type: single
+      options: ["Name it, park it visibly, and return to the item", "Let it run, since the problem is genuinely important", "Cut it off and move to the next agenda item", "Hand it to whoever raised it as a follow-up action"]
+      correct: ["Name it, park it visibly, and return to the item"]
+      rubric_category: application
+      explanation: "A visible parking list makes redirection feel like filing rather than dismissal."
+      weight: 1
+    - id: cm4-07
+      stem: "The timebox on an agenda item has expired and the room has not converged. What are the three legitimate moves?"
+      type: single
+      options: ["Decide, explicitly defer, or explicitly escalate", "Extend, decide, or bring it back next week", "Vote, delegate, or hand it to the chair", "Pause, reframe, or split it into two items"]
+      correct: ["Decide, explicitly defer, or explicitly escalate"]
+      rubric_category: application
+      explanation: "Never just drift on. Blur is the default outcome of discussion and the chair exists to prevent it."
+      weight: 1
+    - id: cm4-08
+      stem: "A team reviews meeting actions only when someone remembers to. What does that teach the room?"
+      type: single
+      options: ["That meeting commitments are decorative", "That the actions were not truly important", "That follow-up belongs to individuals, not the group", "That the meeting is a discussion rather than a decision forum"]
+      correct: ["That meeting commitments are decorative"]
+      rubric_category: analysis
+      explanation: "After which no meeting in that room produces action again. Open the next meeting with the last one's actions."
+      weight: 1
+    - id: cm4-09
+      stem: "Why does trimming the invite list make a meeting franker, not just faster?"
+      type: single
+      options: ["People speak more openly in a smaller room than a large one", "Fewer people means each has more time to make their point", "The remaining attendees all have a reason to be accountable", "Observers tend to raise topics outside the meeting's purpose"]
+      correct: ["People speak more openly in a smaller room than a large one"]
+      rubric_category: analysis
+      explanation: "Every attendee should be there to decide, contribute, or commit. 'Kept in the loop' is what minutes are for."
+      weight: 1
+    - id: cm4-10
+      stem: "A chair who starts ten minutes late every week to accommodate stragglers is doing what, structurally?"
+      type: single
+      options: ["Taxing the punctual to subsidise the late, and training next week", "Being pragmatic about a problem they cannot otherwise solve", "Losing an hour a month that could have been spent deciding", "Signalling that the meeting's content is not especially urgent"]
+      correct: ["Taxing the punctual to subsidise the late, and training next week"]
+      rubric_category: analysis
+      explanation: "The lateness is not the cost; the reinforcement is."
+      weight: 1

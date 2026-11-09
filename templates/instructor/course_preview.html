@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block content_width %}max-w-5xl{% endblock %}
+{% block title %}Preview {{ course.title }} — Dotmac Academy{% endblock %}
+{% block content %}
+<div class="flex flex-wrap items-end justify-between gap-4">
+  <div>
+    <p class="page-eyebrow">Course preview</p>
+    <h1 class="page-title">{{ course.title }}</h1>
+    <p class="mt-2 text-sm text-ink-soft">
+      <span class="inline-flex items-center rounded-full bg-sand-200 px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide text-ink-soft">{{ course.status }}</span>
+      <span class="ml-2">{{ course.slug }} &middot; {{ course.discipline }} &middot; version {{ course.version }}</span>
+    </p>
+  </div>
+  <div class="flex flex-wrap gap-2">
+    <a class="btn-ghost px-3.5 py-2 text-sm" href="/instructor/courses/{{ course.id }}/edit">Edit content</a>
+    <a class="btn-ghost px-3.5 py-2 text-sm" href="/instructor/courses">All courses</a>
+  </div>
+</div>
+
+{% if chapter %}
+<div class="mt-8 grid gap-6 lg:grid-cols-[18rem_1fr]">
+  <aside class="card h-fit overflow-hidden">
+    <div class="border-b border-sand-200 p-4">
+      <p class="text-sm font-semibold text-ink">Chapters</p>
+    </div>
+    <nav class="grid gap-1 p-3" aria-label="Preview chapters">
+      {% for item in chapters %}
+      <a href="/instructor/courses/{{ course.id }}/preview/chapters/{{ item.number }}"
+         class="shell-navlink{% if item.id == chapter.id %} shell-navlink-active{% endif %}">
+        <span class="min-w-0 flex-1 truncate">{{ item.number }}. {{ item.title }}</span>
+      </a>
+      {% endfor %}
+    </nav>
+  </aside>
+
+  <div class="min-w-0">
+    <section class="coursework-hero">
+      <img src="/static/img/cover-{{ course.slug }}.webp" alt="" class="coursework-hero-img" loading="lazy" data-hide-on-error>
+      <div class="coursework-hero-content">
+        <p class="font-sans text-sm font-semibold uppercase tracking-[0.16em] text-brand-100">{{ course.title }}</p>
+        <p class="mt-3 font-mono text-sm tabular-nums text-sand-100/85">Chapter {{ chapter.number }} of {{ chapters|length }} &middot; ~{{ reading_minutes }} min read</p>
+        <h2 class="mt-1 max-w-2xl text-3xl text-sand-50 sm:text-4xl">{{ chapter.title }}</h2>
+      </div>
+    </section>
+
+    <div class="coursework-status card p-4">
+      <div class="min-w-0 flex-1">
+        <p class="text-sm font-semibold text-ink">Preview mode</p>
+        <p class="mt-1 text-sm text-ink-soft">{{ "Test available: " ~ activity.title if activity else "No test attached to this chapter" }}</p>
+      </div>
+      <div class="flex shrink-0 flex-wrap items-center gap-2">
+        <a class="btn-ghost px-3.5 py-2 text-sm" href="/instructor/courses/{{ course.id }}/edit">Edit chapter</a>
+      </div>
+    </div>
+
+    <article class="prose coursework-article">{{ chapter.body_html | safe }}</article>
+
+    <nav class="coursework-actions" aria-label="Preview chapter navigation">
+      {% if previous_chapter %}
+      <a class="btn-ghost" href="/instructor/courses/{{ course.id }}/preview/chapters/{{ previous_chapter.number }}"><span aria-hidden="true">&larr;</span> Chapter {{ previous_chapter.number }}</a>
+      {% else %}<span></span>{% endif %}
+      {% if next_chapter %}
+      <a class="btn-primary" href="/instructor/courses/{{ course.id }}/preview/chapters/{{ next_chapter.number }}">Chapter {{ next_chapter.number }} <span aria-hidden="true">&rarr;</span></a>
+      {% endif %}
+    </nav>
+  </div>
+</div>
+{% else %}
+<div class="card mt-8 p-8 text-center text-ink-soft">No chapters have been added to this course yet.</div>
+{% endif %}
+{% endblock %}

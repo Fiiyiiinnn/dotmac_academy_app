@@ -1,0 +1,10 @@
+<form hx-post="/courses/{{ course.slug }}/chapters/{{ chapter.number }}/complete"
+      hx-target="this" hx-swap="outerHTML" class="inline-flex">
+  {% if completed %}
+  <button type="submit" class="btn-ghost border-brand-300 px-3.5 py-2 text-sm text-brand-700">
+    <span aria-hidden="true">&#10003;</span> Completed
+  </button>
+  {% else %}
+  <button type="submit" class="btn-primary px-3.5 py-2 text-sm">Mark complete</button>
+  {% endif %}
+</form>

@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-customer-experience
+  kind: chapter
+  chapter: 1
+  version: 2
+  policy:
+    mode: practice
+  questions:
+    - id: cx1-01
+      stem: "Experience is built in which order?"
+      type: single
+      options: ["Reliability, effort, feeling", "Feeling, reliability, effort", "Effort, feeling, reliability", "Reliability, feeling, effort"]
+      correct: ["Reliability, effort, feeling"]
+      rubric_category: recall
+      explanation: "Fix the thing that fails, then reduce the effort of dealing with you, then polish the warmth."
+      weight: 1
+    - id: cx1-02
+      stem: "Customers do not average their experience. What dominates the memory?"
+      type: single
+      options: ["Peaks and endings", "The first contact", "The typical week", "The total duration"]
+      correct: ["Peaks and endings"]
+      rubric_category: recall
+      explanation: "A year of quiet good service can be erased by one badly handled problem."
+      weight: 1
+    - id: cx1-03
+      stem: "A customer repeats their story to three departments during one issue. What has actually failed?"
+      type: single
+      options: ["The seam between departments, which only they can see", "The first department, which should have resolved it", "The record system, which is not sharing the history", "The training, since each department asks differently"]
+      correct: ["The seam between departments, which only they can see"]
+      rubric_category: application
+      explanation: "Journeys fail at the seams far more often than at the stations, and handovers are invisible to you and visible to them."
+      weight: 1
+    - id: cx1-04
+      stem: "Sales has been promising activation in two days; operations reliably takes five. What is the effect on the customer?"
+      type: single
+      options: ["Their trust baseline is set at the first delivery, and it is set low", "They experience a delay, which most customers will accept once", "They lose confidence in operations rather than in the business", "They compare the five days against what competitors would offer"]
+      correct: ["Their trust baseline is set at the first delivery, and it is set low"]
+      rubric_category: application
+      explanation: "Overpromising at signup is borrowing experience from the future at punishing interest."
+      weight: 1
+    - id: cx1-05
+      stem: "Your satisfaction scores are slipping and someone proposes friendliness training for the frontline. What is likely wrong with that?"
+      type: single
+      options: ["Customers rarely leave over cheerfulness; they leave over unowned failures", "Training takes months to change behaviour and the slip is happening now", "The frontline is not where most of the customer's journey actually happens", "Scores measure the relationship rather than any individual interaction"]
+      correct: ["Customers rarely leave over cheerfulness; they leave over unowned failures"]
+      rubric_category: application
+      explanation: "Politeness is the paint. Fix reliability and effort first."
+      weight: 1
+    - id: cx1-06
+      stem: "Which moments carry decisive weight in the journey? (Select all that apply.)"
+      type: multi
+      options: ["The first delivery of the promise", "The first problem the customer has", "The way a departure is handled", "The second year of quiet service"]
+      correct: ["The first delivery of the promise", "The first problem the customer has", "The way a departure is handled"]
+      rubric_category: application
+      explanation: "Peaks and endings — plus the moments of vulnerability, which is where reputation is actually made."
+      weight: 1
+    - id: cx1-07
+      stem: "A customer's problem spans three departments. What is the test of whether the journey has a real owner?"
+      type: single
+      options: ["Whether one person's job is unambiguously to see it resolved", "Whether each department has acknowledged its own part of it", "Whether the customer has been given a single point of contact", "Whether a manager is monitoring the case through to completion"]
+      correct: ["Whether one person's job is unambiguously to see it resolved"]
+      rubric_category: application
+      explanation: "Every department owns its touchpoints, which is precisely why nobody owns the seams between them."
+      weight: 1
+    - id: cx1-08
+      stem: "Why does a well-handled failure often produce more loyalty than an untroubled year?"
+      type: single
+      options: ["It is the only moment the customer sees how you behave when things are hard", "It gives the business a chance to compensate the customer generously", "It creates a memorable interaction in a relationship that is otherwise routine", "It demonstrates that the business has the resources to correct its mistakes"]
+      correct: ["It is the only moment the customer sees how you behave when things are hard"]
+      rubric_category: analysis
+      explanation: "Untroubled service demonstrates your process; a failure demonstrates your character."
+      weight: 1
+    - id: cx1-09
+      stem: "Why is 'did we make it easy?' more predictive than 'were we excellent?'"
+      type: single
+      options: ["Every unit of customer effort is experience burned, whatever the outcome", "Excellence is subjective and customers score it inconsistently over time", "Ease is measurable from operational records without asking the customer", "Customers rate excellence against competitors rather than against you"]
+      correct: ["Every unit of customer effort is experience burned, whatever the outcome"]
+      rubric_category: analysis
+      explanation: "Repeating a story to three people, chasing for updates, navigating a menu maze — high effort drives people out even when the result was right."
+      weight: 1
+    - id: cx1-10
+      stem: "A business makes cancellation deliberately difficult to reduce churn. What is the second-order cost?"
+      type: single
+      options: ["Departures become the loudest negative stories the brand earns", "Retained customers cost more to serve than they contribute", "Regulators treat obstruction as evidence of unfair terms", "Staff spend time on retention rather than on new customers"]
+      correct: ["Departures become the loudest negative stories the brand earns"]
+      rubric_category: analysis
+      explanation: "Endings dominate memory. Graceful departures seed returns and referrals; obstructed ones seed the opposite."
+      weight: 1

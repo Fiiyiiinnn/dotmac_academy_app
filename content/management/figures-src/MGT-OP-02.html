@@ -1,0 +1,74 @@
+<!doctype html>
+<meta charset="utf-8">
+<style>
+* { margin:0; padding:0; box-sizing:border-box }
+body { width:1344px; height:768px; background:#f9f1dd;
+  font-family:-apple-system,"Helvetica Neue",Helvetica,Arial,sans-serif; color:#2f3733 }
+.wrap { padding:64px 76px }
+h1 { font-size:42px; font-weight:650; letter-spacing:-.5px }
+.sub { font-size:22px; color:#6c7671; margin-top:9px }
+.chart { position:relative; height:300px; margin:38px 0 0 62px; width:1030px }
+.gl { position:absolute; left:0; right:0; height:1px; background:#e6dcc4 }
+.ylab { position:absolute; right:calc(100% + 14px); font-size:16px; color:#8a938d;
+  transform:translateY(-50%) }
+svg { position:absolute; inset:0; overflow:visible }
+.promise { position:absolute; left:0; right:0; border-top:2px dashed #b04a2f }
+.plab { position:absolute; right:4px; top:-24px; font-size:16px; color:#b04a2f; font-weight:600 }
+.xax { display:flex; justify-content:space-between; margin:10px 0 0 62px; width:1030px;
+  font-size:16px; color:#8a938d }
+.key { display:flex; gap:34px; margin:26px 0 0 62px; font-size:18px; color:#4a544f }
+.k { display:flex; align-items:center; gap:10px }
+.sw { width:26px; height:4px; border-radius:2px; flex:none }
+.rule { height:1px; background:#e0d5ba; margin:24px 0 20px }
+.cards { display:flex; gap:70px }
+.card { display:flex; gap:16px; align-items:baseline }
+.n { font-size:44px; font-weight:700; letter-spacing:-1.5px; line-height:1 }
+.cl { font-size:18px; color:#6c7671; line-height:1.35 }
+.note { font-size:20px; color:#5c6560; line-height:1.45; margin-top:20px }
+</style>
+<body>
+<div class="wrap">
+  <h1>Same average, different businesses</h1>
+  <div class="sub">Jobs completed per week, eight weeks. Crew B has the better mean.</div>
+
+  <div class="chart">
+    <!-- 25 at bottom, 65 at top: y = (65 - v) / 40 * 300 -->
+    <div class="gl" style="top:0"></div>    <div class="ylab" style="top:0">65</div>
+    <div class="gl" style="top:75px"></div> <div class="ylab" style="top:75px">55</div>
+    <div class="gl" style="top:150px"></div><div class="ylab" style="top:150px">45</div>
+    <div class="gl" style="top:225px"></div><div class="ylab" style="top:225px">35</div>
+    <div class="gl" style="top:300px"></div><div class="ylab" style="top:300px">25</div>
+
+    <!-- what you can safely promise from crew B: their worst week, 28 -->
+    <div class="promise" style="top:277.5px"></div>
+    <div class="plab" style="top:254px">28 — all Crew B can safely be promised at</div>
+
+    <svg viewBox="0 0 1030 300" preserveAspectRatio="none">
+      <!-- Crew B: 28 61 39 52 35 58 41 49 -->
+      <polyline fill="none" stroke="#b04a2f" stroke-width="3.5" stroke-linejoin="round"
+        points="0,277.5 147,30 294,195 441,97.5 588,225 735,52.5 882,180 1029,120"/>
+      <!-- Crew A: 42 45 44 43 46 44 45 43 -->
+      <polyline fill="none" stroke="#2f6d5c" stroke-width="3.5" stroke-linejoin="round"
+        points="0,172.5 147,150 294,157.5 441,165 588,142.5 735,157.5 882,150 1029,165"/>
+    </svg>
+  </div>
+  <div class="xax"><span>wk 1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span></div>
+
+  <div class="key">
+    <div class="k"><div class="sw" style="background:#2f6d5c"></div>Crew A — mean 44.0, range 4</div>
+    <div class="k"><div class="sw" style="background:#b04a2f"></div>Crew B — mean 45.4, range 33</div>
+  </div>
+
+  <div class="rule"></div>
+  <div class="cards">
+    <div class="card"><div class="n" style="color:#2f6d5c">42</div>
+      <div class="cl">what Crew A can<br>promise and keep</div></div>
+    <div class="card"><div class="n" style="color:#b04a2f">28</div>
+      <div class="cl">what Crew B can<br>promise and keep</div></div>
+    <div class="card"><div class="n">−33%</div>
+      <div class="cl">usable capacity, for the crew<br>with the better average</div></div>
+  </div>
+  <div class="note">
+    The customer never experiences your average. They experience the week they arrived in.
+  </div>
+</div>

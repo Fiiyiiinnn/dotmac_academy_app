@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% from "components/_pagination.html" import table_pagination %}
+{% block title %}Reminder history — {{ branding_name | default("Dotmac Academy") }}{% endblock %}
+{% block content_width %}max-w-[1360px]{% endblock %}
+{% block content %}
+<header class="page-header">
+  <div class="page-header-copy">
+    <p class="page-eyebrow">Administration · Notification engine</p>
+    <h1 class="page-title">Reminder history</h1>
+    <p class="page-intro">Every reminder decision recorded by the policy service, paired with its email delivery evidence.</p>
+  </div>
+</header>
+<section class="mt-6 grid gap-3 sm:grid-cols-2 xl:grid-cols-4" aria-label="Reminder summary">
+  <article class="card p-4"><p class="page-eyebrow">Total dispatched</p><p class="mt-2 font-display text-2xl font-bold text-ink">{{ metrics.total }}</p><p class="mt-1 text-xs text-ink-soft">All recorded decisions</p></article>
+  <article class="card p-4"><p class="page-eyebrow">Delivered</p><p class="mt-2 font-display text-2xl font-bold text-brand-700">{{ metrics.sent }}</p><p class="mt-1 text-xs text-ink-soft">Handed to the outbox</p></article>
+  <article class="card p-4"><p class="page-eyebrow">Queued</p><p class="mt-2 font-display text-2xl font-bold text-amber-700">{{ metrics.queued }}</p><p class="mt-1 text-xs text-ink-soft">Waiting for dispatch</p></article>
+  <article class="card p-4"><p class="page-eyebrow">Provider errors</p><p class="mt-2 font-display text-2xl font-bold {% if metrics.errors %}text-red-700{% else %}text-ink{% endif %}">{{ metrics.errors }}</p><p class="mt-1 text-xs text-ink-soft">Recorded retry errors</p></article>
+</section>
+<form method="get" action="/admin/reminders" class="filter-toolbar">
+  <div class="filter-grid">
+    <div class="filter-field"><label for="reminder-search">Search</label><input id="reminder-search" name="q" type="search" value="{{ search_query }}" placeholder="Recipient, title, or type"></div>
+    <div class="filter-field"><label for="reminder-status">Status</label><select id="reminder-status" name="status"><option value="">All statuses</option>{% for value in ("sent", "queued", "skipped") %}<option value="{{ value }}" {% if selected_status == value %}selected{% endif %}>{{ value | capitalize }}</option>{% endfor %}</select></div>
+    <div class="filter-field"><label for="reminder-kind">Template / type</label><select id="reminder-kind" name="event_kind"><option value="">All types</option>{% for value in event_kinds %}<option value="{{ value }}" {% if selected_event_kind == value %}selected{% endif %}>{{ value | replace('_', ' ') | title }}</option>{% endfor %}</select></div>
+    <div class="flex flex-wrap items-end gap-2"><button type="submit" class="btn-primary">Apply filters</button>{% if search_query or selected_status or selected_event_kind %}<a href="/admin/reminders" class="btn-ghost">Clear</a>{% endif %}</div>
+  </div>
+</form>
+<section class="data-table-card" aria-labelledby="reminder-table-heading">
+  <div class="flex flex-wrap items-center justify-between gap-3 border-b border-sand-200 px-4 py-4 sm:px-5">
+    <div><h2 id="reminder-table-heading" class="section-title">Notification activity</h2><p class="mt-1 text-sm text-ink-soft">A complete, ordered history of reminder and provider status.</p></div>
+  </div>
+  <div class="table-frame" role="region" aria-label="Reminder delivery table; scroll horizontally to see all columns" tabindex="0">
+    <table class="data-table">
+      <thead><tr><th scope="col">Time</th><th scope="col">Recipient</th><th scope="col">Template / type</th><th scope="col">Reminder</th><th scope="col">Status</th><th scope="col">Provider / details</th><th scope="col" class="text-right">Actions</th></tr></thead>
+      <tbody>
+        {% for log, person in rows %}
+        {% set ob = delivery.get(log.outbox_key) if log.outbox_key else none %}
+        <tr class="align-top">
+          <td class="whitespace-nowrap tabular-nums"><p class="cell-primary">{{ log.created_at | localtime }}</p></td>
+          <td><p class="cell-primary">{{ person.email }}</p><p class="cell-secondary">{{ log.channel | capitalize }} recipient</p></td>
+          <td><p class="cell-primary">{{ log.event_kind | replace('_', ' ') | title }}</p><p class="cell-secondary font-mono">{{ log.event_kind }}</p></td>
+          <td><p class="cell-primary">{{ log.title }}</p></td>
+          <td><span class="status-badge gap-1.5 {% if log.status == 'sent' %}bg-brand-50 text-brand-700{% elif log.status == 'queued' %}bg-amber-50 text-amber-700{% else %}bg-sand-200 text-ink-soft{% endif %}"><span class="status-dot"></span>{{ log.status | capitalize }}</span></td>
+          <td>
+            {% if ob %}{% if ob.sent_at %}<p class="cell-primary text-brand-700">Delivered</p><p class="cell-secondary">{{ ob.sent_at | localtime }}</p>{% elif ob.last_error %}<p class="cell-primary text-red-700">Retrying · attempt {{ ob.attempts }}</p><p class="cell-secondary max-w-xs break-words">{{ ob.last_error }}</p>{% else %}<p class="cell-primary text-amber-700">Pending in outbox</p>{% endif %}
+            {% elif log.status == 'sent' %}<span class="text-ink-soft">—</span>{% else %}<span class="text-ink-soft">Not emailed</span>{% endif %}
+          </td>
+          <td class="text-right">{% if log.status != 'skipped' %}<form hx-post="/admin/reminders/{{ log.id }}/resend" hx-target="this" hx-swap="innerHTML"><button type="submit" class="btn-ghost text-xs">Resend</button></form>{% else %}<span class="text-ink-soft">—</span>{% endif %}</td>
+        </tr>
+        {% else %}<tr><td colspan="7" class="py-12 text-center text-ink-soft">No reminders recorded yet—the sweep runs automatically once the timer is installed.</td></tr>{% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {{ table_pagination(request, pagination, "reminders", (10, 25, 50), (("q", search_query), ("status", selected_status), ("event_kind", selected_event_kind))) }}
+</section>
+{% endblock %}

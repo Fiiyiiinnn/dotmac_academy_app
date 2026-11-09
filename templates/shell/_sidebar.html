@@ -1,0 +1,19 @@
+{# Contextual sidebar: persistent on desktop, accessible off-canvas drawer on mobile. #}
+<button type="button" class="shell-sidebar-scrim" data-sidebar-dismiss aria-label="Close navigation" tabindex="-1"></button>
+<aside id="academy-sidebar" class="shell-sidebar shrink-0 border-r border-sand-300 bg-sand-50">
+  <div class="flex h-16 items-center justify-between border-b border-sand-300 px-4 md:hidden">
+    <span class="font-display text-sm font-bold text-ink">{{ current_area | capitalize }}</span>
+    <button type="button" class="grid h-11 w-11 place-items-center rounded text-ink-soft hover:bg-sand-200 hover:text-brand-700" data-sidebar-dismiss aria-label="Close navigation">
+      <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+  </div>
+  <nav class="shell-sidebar-nav flex flex-col gap-1 px-3 py-5" aria-label="{{ current_area | capitalize }} navigation">
+    {% for item in nav_sidebar %}
+    {% set is_active = item.path == request.url.path or (item.path == '/learn' and request.url.path == '/') or (item.path != '/learn' and item.path != '/admin' and item.path != '/instructor' and request.url.path.startswith(item.path ~ '/')) %}
+    <a href="{{ item.path }}" class="shell-navlink{% if is_active %} shell-navlink-active{% endif %}"{% if is_active %} aria-current="page"{% endif %}>
+      {% include "shell/_nav_icon.html" %}<span>{{ item.label }}</span>
+    </a>
+    {% endfor %}
+  </nav>
+  <p class="mt-auto hidden border-t border-sand-300 px-5 py-4 text-[11px] font-semibold uppercase tracking-[0.14em] text-ink-soft md:block">{{ current_area }} workspace</p>
+</aside>

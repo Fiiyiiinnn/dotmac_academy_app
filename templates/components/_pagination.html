@@ -1,0 +1,40 @@
+{% macro table_pagination(request, pagination, label="items", page_sizes=(10, 25, 50), hidden_fields=()) %}
+<nav class="table-pagination" aria-label="{{ label | capitalize }} pagination">
+  <p class="table-pagination-summary">
+    Showing <strong>{{ pagination.page_start }}</strong> to <strong>{{ pagination.page_end }}</strong> of <strong>{{ pagination.total }}</strong> {{ label }}
+  </p>
+  <div class="table-pagination-controls">
+    <form method="get" action="{{ request.url.path }}" class="rows-per-page">
+      {% for name, value in hidden_fields %}
+        {% if value is not none and value != "" %}<input type="hidden" name="{{ name }}" value="{{ value }}">{% endif %}
+      {% endfor %}
+      <label for="rows-per-page-{{ label | replace(' ', '-') }}">Rows per page</label>
+      <select id="rows-per-page-{{ label | replace(' ', '-') }}" name="limit" data-submit-on-change>
+        {% for size in page_sizes %}<option value="{{ size }}" {% if pagination.limit == size %}selected{% endif %}>{{ size }}</option>{% endfor %}
+      </select>
+      <input type="hidden" name="offset" value="0">
+      <button type="submit" class="sr-only">Apply rows per page</button>
+    </form>
+    <div class="pagination-pages">
+      {% if pagination.has_prev %}
+      <a class="pagination-button pagination-direction" href="{{ request.url.include_query_params(offset=[pagination.offset - pagination.limit, 0] | max, limit=pagination.limit) }}" aria-label="Previous page">
+        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m12.5 15-5-5 5-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"/></svg><span>Previous</span>
+      </a>
+      {% else %}
+      <span class="pagination-button pagination-direction is-disabled" aria-disabled="true"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m12.5 15-5-5 5-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"/></svg><span>Previous</span></span>
+      {% endif %}
+      {% for page in pagination.page_items %}
+        {% if page is none %}<span class="pagination-ellipsis" aria-hidden="true">?</span>
+        {% elif page == pagination.current_page %}<span class="pagination-button is-current" aria-current="page">{{ page }}</span>
+        {% else %}<a class="pagination-button" href="{{ request.url.include_query_params(offset=(page - 1) * pagination.limit, limit=pagination.limit) }}" aria-label="Page {{ page }}">{{ page }}</a>
+        {% endif %}
+      {% endfor %}
+      {% if pagination.has_next %}
+      <a class="pagination-button pagination-direction" href="{{ request.url.include_query_params(offset=pagination.offset + pagination.limit, limit=pagination.limit) }}" aria-label="Next page"><span>Next</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7.5 5 5 5-5 5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"/></svg></a>
+      {% else %}
+      <span class="pagination-button pagination-direction is-disabled" aria-disabled="true"><span>Next</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7.5 5 5 5-5 5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"/></svg></span>
+      {% endif %}
+    </div>
+  </div>
+</nav>
+{% endmacro %}

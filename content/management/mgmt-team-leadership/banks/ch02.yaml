@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-team-leadership
+  kind: chapter
+  chapter: 2
+  version: 2
+  policy:
+    mode: practice
+  questions:
+    - id: tl2-01
+      stem: "When you hand over a meaningful task, you specify the outcome, the constraints, the authority, and:"
+      type: single
+      options: ["The check-in", "A named reviewer for the work", "The reporting line to follow", "An estimate of the cost involved"]
+      correct: ["The check-in"]
+      rubric_category: recall
+      explanation: "Agreeing when and how you will look at progress is what makes later follow-up routine rather than distrust."
+      weight: 1
+    - id: tl2-02
+      stem: "At delegation level 3, the person you delegated to:"
+      type: single
+      options: ["Decides, and tells you before they act on it", "Gathers the facts so you can decide together", "Acts first and reports what they did afterwards", "Follows step-by-step instructions you have given"]
+      correct: ["Decides, and tells you before they act on it"]
+      rubric_category: recall
+      explanation: "They own the decision; you retain a veto for a while before moving them to level 4."
+      weight: 1
+    - id: tl2-03
+      stem: "A supervisor will not delegate a recurring weekly report: doing it themselves takes twenty minutes, teaching it would take two hours. What is wrong with that reasoning?"
+      type: single
+      options: ["Two hours is a one-off cost against twenty minutes every week", "Twenty minutes a week is not enough time to be worth saving", "The report is probably not needed and should be discontinued", "Teaching always costs less than the estimate people give for it"]
+      correct: ["Two hours is a one-off cost against twenty minutes every week"]
+      rubric_category: application
+      explanation: "Doing it yourself is faster once. Teaching is faster every time after the first — and it removes a queue with one server."
+      weight: 1
+    - id: tl2-04
+      stem: "You have just explained a task in detail and the person nodded throughout. What should you do before they start?"
+      type: single
+      options: ["Ask them to play the plan back in their own words", "Send a written summary of what you have told them", "Ask whether they have questions about the task", "Arrange to check progress within the next two days"]
+      correct: ["Ask them to play the plan back in their own words"]
+      rubric_category: application
+      explanation: "Thirty seconds of playback catches the specification failures that otherwise cost a week."
+      weight: 1
+    - id: tl2-05
+      stem: "You delegated a supplier negotiation clearly, yet every small decision still comes back to you for approval. Which part of the handover was most likely missing?"
+      type: single
+      options: ["Authority — what they may decide without asking", "Outcome — a concrete description of what done looks like", "Check-in — an agreed schedule for reviewing progress", "Constraints — the budget and deadline the work must respect"]
+      correct: ["Authority — what they may decide without asking"]
+      rubric_category: application
+      explanation: "Authority is the piece new managers most often omit, and its absence is exactly why everything still routes back to them."
+      weight: 1
+    - id: tl2-06
+      stem: "A meeting ends with 'we should really sort out the stock room'. What do you do before people leave the room?"
+      type: single
+      options: ["Convert it to who does what by when, and write that down", "Add it to the agenda for the next scheduled meeting", "Ask for a volunteer to look into it during the week", "Assign it to the team as a shared piece of ownership"]
+      correct: ["Convert it to who does what by when, and write that down"]
+      rubric_category: application
+      explanation: "Shared ownership is a polite name for no ownership; every action needs exactly one named owner."
+      weight: 1
+    - id: tl2-07
+      stem: "Which of these are follow-up rather than micromanagement? (Select all that apply.)"
+      type: multi
+      options: ["A check-in agreed at the point of delegation", "Asking about the outcome and any blockers", "Dropping by unannounced to inspect the method", "Reworking their approach because yours differs"]
+      correct: ["A check-in agreed at the point of delegation", "Asking about the outcome and any blockers"]
+      rubric_category: application
+      explanation: "Follow-up is agreed in advance and looks at outcomes; micromanagement is unannounced and re-litigates methods."
+      weight: 1
+    - id: tl2-08
+      stem: "A manager quietly finishes a delegated task themselves after it slips, and says nothing about it. What does the team learn?"
+      type: single
+      options: ["That missed expectations cost nothing, and delegation here is temporary", "That the manager is supportive and will step in when the load gets heavy", "That the deadline mattered more than the assignment did on this occasion", "That the task was harder than expected and should never have been handed over"]
+      correct: ["That missed expectations cost nothing, and delegation here is temporary"]
+      rubric_category: analysis
+      explanation: "Reclaiming work silently is worse than reclaiming it openly: it teaches the team that handovers are theatre."
+      weight: 1
+    - id: tl2-09
+      stem: "Work comes back wrong. Why does it matter whether the cause was a specification failure or an execution failure?"
+      type: single
+      options: ["They call for opposite responses — one is yours to own, the other is theirs to redo", "Specification failures are more serious, since they waste the whole team's time", "Execution failures should be escalated formally while specification ones stay informal", "The distinction matters for the written record more than for what happens next"]
+      correct: ["They call for opposite responses — one is yours to own, the other is theirs to redo"]
+      rubric_category: analysis
+      explanation: "If you were unclear, own it. If they had what they needed, the redo is where the learning happens."
+      weight: 1
+    - id: tl2-10
+      stem: "Someone has sat at delegation level 1 on the same recurring task for six months. Why is holding them there a cost to you both?"
+      type: single
+      options: ["It keeps consuming your instruction time and produces no growth in theirs", "It signals to the rest of the team that you do not trust that person", "It means the task was wrongly scoped and should be split between two", "It breaches the expectation that everyone reaches level 4 in a quarter"]
+      correct: ["It keeps consuming your instruction time and produces no growth in theirs"]
+      rubric_category: analysis
+      explanation: "Level 1 is a teaching stage, not a resting place. Months there means coaching differently or reconsidering the assignment."
+      weight: 1

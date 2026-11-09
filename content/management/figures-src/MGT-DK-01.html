@@ -1,0 +1,65 @@
+<!doctype html>
+<meta charset="utf-8">
+<style>
+* { margin:0; padding:0; box-sizing:border-box }
+body { width:1344px; height:768px; background:#f9f1dd;
+  font-family:-apple-system,"Helvetica Neue",Helvetica,Arial,sans-serif; color:#2f3733 }
+.wrap { padding:70px 76px }
+h1 { font-size:42px; font-weight:650; letter-spacing:-.5px }
+.sub { font-size:22px; color:#6c7671; margin-top:9px }
+.chart { position:relative; height:340px; margin-top:44px; margin-left:70px; width:1010px }
+.grid { position:absolute; inset:0 }
+.gl { position:absolute; left:0; right:0; height:1px; background:#e6dcc4 }
+.gl.zero { background:#cfc3a4 }
+.ylab { position:absolute; right:calc(100% + 14px); font-size:17px; color:#8a938d;
+  transform:translateY(-50%); white-space:nowrap }
+svg { position:absolute; inset:0; overflow:visible }
+.xax { display:flex; justify-content:space-between; margin-left:70px; width:1010px;
+  margin-top:12px; font-size:17px; color:#8a938d }
+.step { position:absolute; left:0; top:0; width:84px; height:22.4px;
+  border:2px solid #3f8f7a; border-radius:3px; background:#3f8f7a; opacity:.16 }
+.steplab { position:absolute; left:100px; top:-6px; font-size:16px; color:#3f7a68;
+  line-height:1.35 }
+.dot { fill:#b04a2f }
+.foot { display:flex; align-items:flex-start; gap:26px; margin-top:52px }
+.big { font-size:58px; font-weight:700; color:#b04a2f; letter-spacing:-2px; line-height:1; flex:none }
+.note { font-size:20px; color:#5c6560; line-height:1.45 }
+</style>
+<body>
+<div class="wrap">
+  <h1>The drift nobody sees</h1>
+  <div class="sub">A measure falling 2% a month. Every single month is inside normal variation.</div>
+
+  <div class="chart">
+    <!-- 100 at top of plot, 70 at bottom: y = (100 - v) / 30 * 340 -->
+    <div class="grid">
+      <div class="gl zero" style="top:0"></div>      <div class="ylab" style="top:0">100</div>
+      <div class="gl" style="top:113px"></div>       <div class="ylab" style="top:113px">90</div>
+      <div class="gl" style="top:227px"></div>       <div class="ylab" style="top:227px">80</div>
+      <div class="gl" style="top:340px"></div>       <div class="ylab" style="top:340px">70</div>
+      <!-- the size of ONE month's step: what a month-on-month reader is asked to notice -->
+      <div class="step"></div>
+      <div class="steplab">one month's change<br>— all anyone ever sees</div>
+    </div>
+    <svg viewBox="0 0 1010 340" preserveAspectRatio="none">
+      <polyline fill="none" stroke="#b04a2f" stroke-width="4" stroke-linejoin="round"
+        points="0,0 84,22.4 168,44.3 252,65.7 337,86.5 421,106.9 505,126.8 589,146.2 673,165.2 758,183.7 842,201.8 926,219.5 1010,236.7"/>
+    </svg>
+    <svg viewBox="0 0 1010 340" preserveAspectRatio="none">
+      <circle class="dot" cx="0" cy="0" r="7"/>
+      <circle class="dot" cx="1010" cy="236.7" r="7"/>
+    </svg>
+  </div>
+  <div class="xax">
+    <span>month 0</span><span>3</span><span>6</span><span>9</span><span>12</span>
+  </div>
+
+  <div class="foot">
+    <div class="big">−21.5%</div>
+    <div class="note">
+      No month triggers an alarm. No day is a bad day. Nobody is negligent.<br>
+      Feel compares this month to last, where the signal is 2% and the noise is larger —
+      so feel concludes nothing is wrong, correctly, every month, all the way down.
+    </div>
+  </div>
+</div>

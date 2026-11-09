@@ -1,0 +1,89 @@
+bank:
+  course: mgmt-customer-experience
+  kind: chapter
+  chapter: 5
+  version: 2
+  policy:
+    mode: practice
+  questions:
+    - id: cx5-01
+      stem: "Which metric is the strongest known predictor of disloyalty in a service interaction?"
+      type: single
+      options: ["Customer effort", "Satisfaction", "Net promoter score", "Time to resolve"]
+      correct: ["Customer effort"]
+      rubric_category: recall
+      explanation: "High-effort experiences drive customers out even when the eventual outcome was good."
+      weight: 1
+    - id: cx5-02
+      stem: "In the standard NPS scoring, which scores count as detractors?"
+      type: single
+      options: ["0 to 6", "0 to 5", "1 to 6", "0 to 7"]
+      correct: ["0 to 6"]
+      rubric_category: recall
+      explanation: "9–10 promoters, 7–8 passive, 0–6 detractors; the score is promoters minus detractors."
+      weight: 1
+    - id: cx5-03
+      stem: "Of 200 survey responses, 96 scored 9-10, 64 scored 7-8, and 40 scored 0-6. What is the NPS?"
+      type: numeric
+      options:
+        tolerance: 1
+      correct: 28
+      rubric_category: application
+      explanation: "(96 − 40) ÷ 200 = 28. The passives count in the denominator but not the numerator."
+      weight: 1
+    - id: cx5-04
+      stem: "You want to know how the installation process is performing. Which measure fits?"
+      type: single
+      options: ["CSAT asked right after the installation", "NPS asked at the next renewal point", "Attrition among recently installed customers", "Complaint volume for the installation team"]
+      correct: ["CSAT asked right after the installation"]
+      rubric_category: application
+      explanation: "CSAT is transactional and diagnostic — it tells you how that specific process is performing, in volume."
+      weight: 1
+    - id: cx5-05
+      stem: "A manager proposes tying frontline bonuses to individual satisfaction scores. What happens?"
+      type: single
+      options: ["The scores start measuring begging rather than experience", "The scores improve, then plateau at an artificial level", "The team starts focusing on the customers who are most likely to respond well", "The metric becomes more reliable because attention rises"]
+      correct: ["The scores start measuring begging rather than experience"]
+      rubric_category: application
+      explanation: "Keep metrics low-stakes for individuals and high-stakes for decisions."
+      weight: 1
+    - id: cx5-06
+      stem: "Which experience measurements does a business already own before it sends any survey? (Select all that apply.)"
+      type: multi
+      options: ["Complaint categories and their trend", "Repeat contacts about the same issue", "Service-level hit rates and resolve times", "Promoter scores from the last campaign"]
+      correct: ["Complaint categories and their trend", "Repeat contacts about the same issue", "Service-level hit rates and resolve times"]
+      rubric_category: application
+      explanation: "The customer experiences your operations, not your intentions — so operational records are experience data."
+      weight: 1
+    - id: cx5-07
+      stem: "A customer leaves a bitter comment with a low score. What is the inner loop?"
+      type: single
+      options: ["Someone contacts them within days to understand and fix it", "The comment gets added to the monthly analysis of recurring themes", "The score is excluded until the complaint is verified", "The team responsible is told what the customer said"]
+      correct: ["Someone contacts them within days to understand and fix it"]
+      rubric_category: application
+      explanation: "Being followed up on is the rarest experience in commerce, and it routinely converts the angriest scorers into the most loyal customers."
+      weight: 1
+    - id: cx5-08
+      stem: "Three months of dashboards have been reviewed, lamented and filed. What does the business have?"
+      type: single
+      options: ["A subscription to bad news rather than a measurement programme", "A baseline that will make future improvements visible", "A cultural problem rather than a measurement problem", "A dashboard measuring the wrong things for its decisions"]
+      correct: ["A subscription to bad news rather than a measurement programme"]
+      rubric_category: analysis
+      explanation: "Measurement earns nothing until it changes something."
+      weight: 1
+    - id: cx5-09
+      stem: "Why is a taxonomy of ten honest complaint categories better than fifty precise ones?"
+      type: single
+      options: ["Fifty will not be applied consistently, so the trend becomes noise", "Ten can be reviewed by a manager within a reasonable time", "Fifty requires training that frontline staff rarely receive", "Ten maps more cleanly onto the departments that must respond"]
+      correct: ["Fifty will not be applied consistently, so the trend becomes noise"]
+      rubric_category: analysis
+      explanation: "Categorise at capture, and consistency matters more than precision because the value is in the trend."
+      weight: 1
+    - id: cx5-10
+      stem: "Tickets are being closed and reopened to reset the clock. What has the metric become?"
+      type: single
+      options: ["A number that has drifted from the experience it described", "An indicator that the resolve-time target is set too tightly", "A management problem rather than a measurement problem", "A signal that the team lacks capacity to meet the target"]
+      correct: ["A number that has drifted from the experience it described"]
+      rubric_category: analysis
+      explanation: "The customer's actual experience is the referee, and any number that drifts from it has stopped being information."
+      weight: 1

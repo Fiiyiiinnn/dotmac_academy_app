@@ -1,0 +1,88 @@
+bank:
+  course: sup-agent-fundamentals
+  kind: chapter
+  chapter: 2
+  version: 1
+  policy:
+    mode: practice
+  questions:
+    - id: t2-01
+      stem: "Which status means the ticket is waiting on the customer to respond?"
+      type: single
+      options: ["waiting_on_customer", "pending, meaning it waits on your side", "on_hold, meaning work has paused internally", "new, meaning it has not yet been triaged"]
+      correct: ["waiting_on_customer"]
+      rubric_category: recall
+      explanation: "waiting_on_customer specifically means the ball is in the customer's court; pending means it is waiting on your side."
+      weight: 1
+    - id: t2-02
+      stem: "What does a red 'breached' badge on a ticket's Due field mean?"
+      type: single
+      options: ["The ticket passed its deadline while still open", "The ticket was closed later than usual", "The customer missed a scheduled callback", "Someone set the ticket's priority field incorrectly at intake"]
+      correct: ["The ticket passed its deadline while still open"]
+      rubric_category: recall
+      explanation: "Due is a real deadline; breached means the ticket is still open after that deadline passed."
+      weight: 1
+    - id: t2-03
+      stem: "You open your queue at the start of a shift. What is the most useful first filter to apply?"
+      type: single
+      options: ["Assignee set to yourself", "Type set to maintenance", "Region set to your usual coverage area", "Channel set to phone"]
+      correct: ["Assignee set to yourself"]
+      rubric_category: application
+      explanation: "Filtering by yourself as assignee shows your real personal queue, distinct from the whole team's open tickets."
+      weight: 1
+    - id: t2-04
+      stem: "A new ticket arrives with no type set and priority left at its default. What should you do before anything else?"
+      type: single
+      options: ["Set an accurate type and priority as the first triage step", "Leave it until the customer clarifies further", "Assign it to yourself immediately, before setting anything else on the ticket", "Wait for automation rules to fill in the type"]
+      correct: ["Set an accurate type and priority as the first triage step"]
+      rubric_category: application
+      explanation: "Triage is the first real step on a ticket — an untyped, unprioritised ticket is invisible to reporting and automation."
+      weight: 1
+    - id: t2-05
+      stem: "You are tempted to hand-pick a specific colleague as assignee because 'they're usually free.' What should you do instead, absent a specific reason?"
+      type: single
+      options: ["Use Manual Auto-Assign and let the routing rules decide", "Assign it to yourself regardless of how full your own workload already is", "Leave it unassigned until someone asks about it", "Message the whole team and let someone volunteer"]
+      correct: ["Use Manual Auto-Assign and let the routing rules decide"]
+      rubric_category: application
+      explanation: "Hand-picking based on a guess about availability quietly breaks load balancing; auto-assign uses the same logic as intake."
+      weight: 1
+    - id: t2-06
+      stem: "A queue shows many tickets marked pending that have not moved in days, each with the agent's own unanswered question to the customer as the last comment. What does this pattern actually indicate?"
+      type: single
+      options: ["These should be waiting_on_customer, not pending — the queue looks like an internal backlog it is not", "The team is genuinely behind on internal processing and urgently needs more staff assigned", "The tickets are correctly tracked as pending and are simply moving more slowly than usual", "The customers involved have all churned already and the tickets should now be canceled"]
+      correct: ["These should be waiting_on_customer, not pending — the queue looks like an internal backlog it is not"]
+      rubric_category: analysis
+      explanation: "Mislabeling waiting_on_customer tickets as pending makes an external-wait problem look like an internal backlog, hiding the real bottleneck."
+      weight: 1
+    - id: t2-07
+      stem: "A normal-priority ticket is not yet breached but its Age is 40 hours, well beyond what similar tickets usually take. What is the right response?"
+      type: single
+      options: ["Look at it now, before it becomes a breach statistic", "Leave it, since only breached tickets need attention", "Lower its priority further since it has waited this long already", "Close it as stale without further review"]
+      correct: ["Look at it now, before it becomes a breach statistic"]
+      rubric_category: analysis
+      explanation: "Age is an independent early-warning signal — waiting for an actual breach ignores information you already have."
+      weight: 1
+    - id: t2-08
+      stem: "A ticket keeps missing its due date, and each time an agent simply pushes the due date out rather than investigating. What is wrong with this pattern?"
+      type: single
+      options: ["It defeats the purpose of Due, which exists to surface a real problem", "It is correct, since due dates are only estimates to be adjusted freely", "It only matters if the customer complains about the delay", "It is fine as long as the ticket eventually closes"]
+      correct: ["It defeats the purpose of Due, which exists to surface a real problem"]
+      rubric_category: analysis
+      explanation: "Due is a real deadline meant to force a check-in on a stuck ticket; resetting it repeatedly removes that signal entirely."
+      weight: 1
+    - id: t2-09
+      stem: "Which field records how a ticket physically arrived — by phone, email, chat, web, or API?"
+      type: single
+      options: ["Channel", "Type", "Priority", "Service Team"]
+      correct: ["Channel"]
+      rubric_category: recall
+      explanation: "Channel records how the ticket arrived; Type classifies what the underlying issue is."
+      weight: 1
+    - id: t2-10
+      stem: "A ticket came in by phone and the customer described a whole-street outage while on the call. How should channel and content together shape your triage?"
+      type: single
+      options: ["Raise priority and set an accurate type immediately, using the first-hand detail the call gave you", "Treat it exactly the same as any ordinary web ticket, since channel does not affect triage at all", "Lower priority since a phone call generally means the customer already feels heard and reassured", "Wait for a second, independent ticket to arrive before changing anything about this one"]
+      correct: ["Raise priority and set an accurate type immediately, using the first-hand detail the call gave you"]
+      rubric_category: application
+      explanation: "A whole-street outage reported live by phone is a strong, first-hand signal to triage urgently and accurately, not to wait on."
+      weight: 1

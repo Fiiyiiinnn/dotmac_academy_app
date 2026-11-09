@@ -1,0 +1,83 @@
+<!doctype html>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box }
+  body {
+    width: 1344px; height: 768px; background: #f9f1dd;
+    font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #2f3733;
+  }
+  .wrap { padding: 84px 76px }
+  h1 { font-size: 42px; font-weight: 650; letter-spacing: -.5px }
+  .sub { font-size: 22px; color: #6c7671; margin-top: 9px }
+
+  .row { display: grid; grid-template-columns: 232px 810px 1fr; align-items: center;
+         column-gap: 20px; margin-top: 48px }
+  .lbl { font-size: 21px; color: #4a544f; text-align: right }
+  .track { position: relative; height: 58px }
+  .seg { position: absolute; top: 0; height: 58px; border-radius: 3px;
+         display: flex; align-items: center; justify-content: center;
+         font-size: 19px; font-weight: 600; color: #fff; white-space: nowrap }
+  .rev  { background: #3f8f7a }
+  .marg { background: #2f6d5c }
+  .c1 { background: #d0714d } .c2 { background: #dd8f6c }
+  .c3 { background: #e8ab8c } .c4 { background: #f0c4ae }
+  .amt { font-size: 23px; font-weight: 650; letter-spacing: -.3px }
+
+  .parts { display: grid; grid-template-columns: 232px 810px 1fr; column-gap: 20px; margin-top: 11px }
+  .parts .keys { grid-column: 2; display: flex; gap: 26px; font-size: 15px; color: #6c7671 }
+  .key { display: flex; align-items: center; gap: 7px; white-space: nowrap }
+  .dot { width: 11px; height: 11px; border-radius: 2px; flex: none }
+
+  .rule { height: 1px; background: #e0d5ba; margin: 74px 0 44px }
+  .foot { display: flex; align-items: center; gap: 22px }
+  .big { font-size: 62px; font-weight: 700; color: #2f6d5c; letter-spacing: -2px; line-height: 1 }
+  .was { font-size: 26px; color: #b04a2f; font-weight: 600 }
+  .was s { opacity: .85 }
+  .caption { font-size: 21px; color: #5c6560; line-height: 1.45 }
+</style>
+<body>
+<div class="wrap">
+  <h1>One customer, honestly costed</h1>
+  <div class="sub">Per customer, per month — the same figures finance called “about 64%”</div>
+
+  <div class="row">
+    <div class="lbl">Revenue collected</div>
+    <div class="track"><div class="seg rev" style="left:0; width:804px">Realised revenue, after discounts</div></div>
+    <div class="amt">₦16,200</div>
+  </div>
+
+  <div class="row">
+    <div class="lbl">What it consumes</div>
+    <div class="track">
+      <div class="seg c1" style="left:0;     width:322px">Delivery</div>
+      <div class="seg c2" style="left:324px; width:30px"></div>
+      <div class="seg c3" style="left:356px; width:45px"></div>
+      <div class="seg c4" style="left:403px; width:12px"></div>
+    </div>
+    <div class="amt">₦8,243</div>
+  </div>
+  <div class="parts">
+    <div class="keys">
+      <span class="key"><i class="dot" style="background:#d0714d"></i>Delivery ₦6,500</span>
+      <span class="key"><i class="dot" style="background:#dd8f6c"></i>Support time ₦600</span>
+      <span class="key"><i class="dot" style="background:#e8ab8c"></i>Field visit ₦900</span>
+      <span class="key"><i class="dot" style="background:#f0c4ae"></i>Payment fees ₦243</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="lbl">What remains</div>
+    <div class="track"><div class="seg marg" style="left:0; width:395px">Margin</div></div>
+    <div class="amt">₦7,957</div>
+  </div>
+
+  <div class="rule"></div>
+  <div class="foot">
+    <div class="big">49%</div>
+    <div class="was">not <s>64%</s></div>
+    <div class="caption">The missing 15 points were support time, an amortised field visit and<br>
+      payment fees — every one of them a cost someone had called overhead.</div>
+  </div>
+</div>
+</body>

@@ -1,0 +1,13 @@
+<form hx-post="/bookmarks/chapters/{{ course.slug }}/{{ chapter.number }}/toggle"
+      hx-target="this" hx-swap="outerHTML" class="inline-flex">
+  {% if bookmarked %}
+  <button type="submit" class="btn-ghost border-brand-300 px-3.5 py-2 text-sm text-brand-700"
+          aria-pressed="true" title="Remove bookmark">
+    <span aria-hidden="true">&#9733;</span> Bookmarked
+  </button>
+  {% else %}
+  <button type="submit" class="btn-ghost px-3.5 py-2 text-sm" aria-pressed="false" title="Bookmark this chapter">
+    <span aria-hidden="true">&#9734;</span> Bookmark
+  </button>
+  {% endif %}
+</form>

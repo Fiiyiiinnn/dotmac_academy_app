@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-vendor-procurement
+  kind: chapter
+  chapter: 5
+  version: 2
+  policy:
+    mode: practice
+  questions:
+    - id: vp5-01
+      stem: "A supplier scorecard should be built from:"
+      type: single
+      options: ["Records", "Recollection", "Interviews", "Impressions"]
+      correct: ["Records"]
+      rubric_category: recall
+      explanation: "A scorecard assembled from memory is the loudest recent incident wearing a table."
+      weight: 1
+    - id: vp5-02
+      stem: "Consolidate the routine and diversify the:"
+      type: single
+      options: ["Critical", "Expensive", "Frequent", "Unfamiliar"]
+      correct: ["Critical"]
+      rubric_category: recall
+      explanation: "Any critical input with a single source is a single point of failure."
+      weight: 1
+    - id: vp5-03
+      stem: "A delivery is two days late for the first time. What is the right first move?"
+      type: single
+      options: ["Raise it factually at working level, fast", "Log it on the scorecard for the quarterly review", "Invoke the contract's service credit provisions", "Escalate to your manager and theirs together"]
+      correct: ["Raise it factually at working level, fast"]
+      rubric_category: application
+      explanation: "Most failures die here, and a supplier hearing specific facts responds better than one hearing accumulated temper."
+      weight: 1
+    - id: vp5-04
+      stem: "Late deliveries have now recurred four times. What goes up a level with the escalation?"
+      type: single
+      options: ["The scorecard, not the anecdote", "A formal notice of termination", "The complaint from the operations team", "A request for a revised price"]
+      correct: ["The scorecard, not the anecdote"]
+      rubric_category: application
+      explanation: "Consequences applied predictably read as fairness; consequences applied in anger read as war."
+      weight: 1
+    - id: vp5-05
+      stem: "You have decided to switch suppliers. How should the change be run?"
+      type: single
+      options: ["As a project, with the replacement qualified first", "As a clean break at the end of the notice period", "As an immediate stop once the contract permits", "As a split award until the new supplier proves itself"]
+      correct: ["As a project, with the replacement qualified first"]
+      rubric_category: application
+      explanation: "Qualify, overlap deliveries, protect stock through the cutover, and exit on the contract's terms — not a tantrum."
+      weight: 1
+    - id: vp5-06
+      stem: "Which lever do most businesses never think to pull with suppliers?"
+      type: single
+      options: ["Paying good ones on time", "Increasing order volumes", "Offering longer contracts", "Sharing demand forecasts"]
+      correct: ["Paying good ones on time"]
+      rubric_category: application
+      explanation: "It buys priority when supply is short, favours when schedules are tight, and honesty when problems loom."
+      weight: 1
+    - id: vp5-07
+      stem: "Which belong on a supplier scorecard? (Select all that apply.)"
+      type: multi
+      options: ["On-time delivery rate", "Quality rejects at receiving", "Responsiveness when things went wrong", "The account manager's personality"]
+      correct: ["On-time delivery rate", "Quality rejects at receiving", "Responsiveness when things went wrong"]
+      rubric_category: application
+      explanation: "Measure the few things that hurt when they slip, sourced from records that already exist."
+      weight: 1
+    - id: vp5-08
+      stem: "Why does a supplier squeezed to breaking point become a risk rather than a bargain?"
+      type: single
+      options: ["They rationally cut the corners you cannot see", "They will raise prices at the next renewal", "They prioritise their better-paying customers", "They lose the staff who knew your account"]
+      correct: ["They rationally cut the corners you cannot see"]
+      rubric_category: analysis
+      explanation: "Aligned incentives means margin enough on both sides that nobody needs invisible corners."
+      weight: 1
+    - id: vp5-09
+      stem: "Why does a supplier who recovers after a hard, fair escalation often become your most reliable one?"
+      type: single
+      options: ["They have seen that you notice and are worth keeping", "They owe the relationship after being given a chance", "They have fixed the process that caused the failure", "They fear the contractual consequences of a repeat"]
+      correct: ["They have seen that you notice and are worth keeping"]
+      rubric_category: analysis
+      explanation: "The goal is performance, not victory — which is why the repair path stays open at every stage."
+      weight: 1
+    - id: vp5-10
+      stem: "Why should a supplier relationship be institutional rather than personal?"
+      type: single
+      options: ["The knowledge must survive any individual's departure", "Personal relationships compromise objective judgement", "Suppliers exploit relationships built on friendship", "It prevents favouritism in the award of contracts"]
+      correct: ["The knowledge must survive any individual's departure"]
+      rubric_category: analysis
+      explanation: "Records, reviews and files belonging to the business — which is this whole course in one sentence."
+      weight: 1

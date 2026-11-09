@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en" {{ dotmac_ui_theme_attribute }}="{{ dotmac_ui_theme }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Apply — {{ branding_name | default("Dotmac Academy") }}</title>
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+  {% include "_dotmac_ui_head.html" %}
+  <link rel="stylesheet" href="/static/app.css?v=9">
+  <script src="/static/htmx.min.js" defer></script>
+</head>
+<body class="min-h-screen bg-sand-100 text-ink antialiased">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <main id="main-content" class="flex items-center justify-center px-6 py-12 sm:px-12">
+    <div class="w-full max-w-md">
+      <a href="/" class="mb-8 flex min-h-11 items-center gap-2.5" aria-label="{{ branding_name | default('Dotmac Academy') }}">
+        <span class="font-display text-lg font-[560] tracking-tight">{{ branding_name | default("Dotmac Academy") }}</span>
+      </a>
+
+      <p class="page-eyebrow">Dotmac Academy</p>
+      <h1 class="mt-2 font-display text-3xl font-[560] tracking-tight text-ink">Apply to train with us</h1>
+      <p class="mt-2 text-sm text-ink-soft">Self-paced online courses, hands-on labs, and field practicals across fiber, wireless, networking, power, and customer operations. Tell us who you are and we'll be in touch.</p>
+
+      <div id="apply-result" role="status" aria-live="polite" aria-atomic="true">
+        <form hx-post="/apply" hx-target="#apply-result" hx-swap="outerHTML" class="mt-6 space-y-5">
+          <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div>
+              <label for="first_name" class="mb-1.5 block text-sm font-semibold text-ink">First name</label>
+              <input id="first_name" name="first_name" type="text" autocomplete="given-name" required maxlength="80"
+                     class="w-full px-3.5 py-2.5 text-[0.95rem]">
+            </div>
+            <div>
+              <label for="last_name" class="mb-1.5 block text-sm font-semibold text-ink">Last name</label>
+              <input id="last_name" name="last_name" type="text" autocomplete="family-name" required maxlength="80"
+                     class="w-full px-3.5 py-2.5 text-[0.95rem]">
+            </div>
+          </div>
+          <div>
+            <label for="email" class="mb-1.5 block text-sm font-semibold text-ink">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required
+                   placeholder="you@example.com" class="w-full px-3.5 py-2.5 text-[0.95rem]">
+          </div>
+          <div>
+            <label for="phone" class="mb-1.5 block text-sm font-semibold text-ink">Phone <span class="font-normal text-ink-soft">(optional)</span></label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="40"
+                   class="w-full px-3.5 py-2.5 text-[0.95rem]">
+          </div>
+          <div>
+            <label for="track_choice" class="mb-1.5 block text-sm font-semibold text-ink">Training track</label>
+            <select id="track_choice" name="track_choice" required class="w-full px-3.5 py-2.5 text-[0.95rem]">
+              <option value="" disabled selected>Choose a track…</option>
+              {% for choice in track_choices %}
+              <option value="{{ choice.value }}">{{ choice.label }} — {{ choice.cohort }}</option>
+              {% endfor %}
+            </select>
+            <p class="mt-1.5 text-xs text-ink-soft">Your selection determines the curriculum and intake you will receive if admitted.</p>
+          </div>
+
+          <div class="border-t border-sand-300 pt-5">
+            <p class="text-sm font-semibold text-ink">About you</p>
+            <p class="mt-0.5 text-xs text-ink-soft">We use this to assess your application. Nothing here needs prior experience.</p>
+          </div>
+
+          <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div>
+              <label for="date_of_birth" class="mb-1.5 block text-sm font-semibold text-ink">Date of birth</label>
+              <input id="date_of_birth" name="date_of_birth" type="date" autocomplete="bday" required
+                     class="w-full px-3.5 py-2.5 text-[0.95rem]">
+            </div>
+            <div>
+              <label for="state" class="mb-1.5 block text-sm font-semibold text-ink">State</label>
+              <input id="state" name="state" type="text" autocomplete="address-level1" required maxlength="60"
+                     class="w-full px-3.5 py-2.5 text-[0.95rem]">
+            </div>
+          </div>
+          <div>
+            <label for="city" class="mb-1.5 block text-sm font-semibold text-ink">City / town</label>
+            <input id="city" name="city" type="text" autocomplete="address-level2" required maxlength="60"
+                   class="w-full px-3.5 py-2.5 text-[0.95rem]">
+          </div>
+
+          <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div>
+              <label for="highest_qualification" class="mb-1.5 block text-sm font-semibold text-ink">Highest qualification</label>
+              <select id="highest_qualification" name="highest_qualification" required
+                      class="w-full px-3.5 py-2.5 text-[0.95rem]">
+                <option value="" disabled selected>Choose…</option>
+                <option>SSCE / WAEC</option>
+                <option>OND</option>
+                <option>NCE</option>
+                <option>HND</option>
+                <option>BSc / BEng</option>
+                <option>MSc and above</option>
+                <option>Trade / vocational certificate</option>
+                <option>None of these</option>
+              </select>
+            </div>
+            <div>
+              <label for="field_of_study" class="mb-1.5 block text-sm font-semibold text-ink">Field of study <span class="font-normal text-ink-soft">(optional)</span></label>
+              <input id="field_of_study" name="field_of_study" type="text" maxlength="120"
+                     class="w-full px-3.5 py-2.5 text-[0.95rem]">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div>
+              <label for="years_experience" class="mb-1.5 block text-sm font-semibold text-ink">Years of work experience</label>
+              <input id="years_experience" name="years_experience" type="number" min="0" max="60" required
+                     class="w-full px-3.5 py-2.5 text-[0.95rem]">
+            </div>
+            <div>
+              <label for="current_role" class="mb-1.5 block text-sm font-semibold text-ink">Current role <span class="font-normal text-ink-soft">(optional)</span></label>
+              <input id="current_role" name="current_role" type="text" autocomplete="organization-title" maxlength="120"
+                     class="w-full px-3.5 py-2.5 text-[0.95rem]">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+            <div>
+              <label for="has_device" class="mb-1.5 block text-sm font-semibold text-ink">Laptop or smartphone?</label>
+              <select id="has_device" name="has_device" required class="w-full px-3.5 py-2.5 text-[0.95rem]">
+                <option value="" disabled selected>…</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+            <div>
+              <label for="has_internet" class="mb-1.5 block text-sm font-semibold text-ink">Reliable internet?</label>
+              <select id="has_internet" name="has_internet" required class="w-full px-3.5 py-2.5 text-[0.95rem]">
+                <option value="" disabled selected>…</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+            <div>
+              <label for="can_work_at_height" class="mb-1.5 block text-sm font-semibold text-ink">Able to work at height?</label>
+              <select id="can_work_at_height" name="can_work_at_height" class="w-full px-3.5 py-2.5 text-[0.95rem]">
+                <option value="" disabled selected>…</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div>
+              <label for="available_from" class="mb-1.5 block text-sm font-semibold text-ink">Available from <span class="font-normal text-ink-soft">(optional)</span></label>
+              <input id="available_from" name="available_from" type="date"
+                     class="w-full px-3.5 py-2.5 text-[0.95rem]">
+            </div>
+            <div>
+              <label for="heard_from" class="mb-1.5 block text-sm font-semibold text-ink">How did you hear about us? <span class="font-normal text-ink-soft">(optional)</span></label>
+              <input id="heard_from" name="heard_from" type="text" maxlength="60"
+                     class="w-full px-3.5 py-2.5 text-[0.95rem]">
+            </div>
+          </div>
+          <div>
+            <label for="cv_url" class="mb-1.5 block text-sm font-semibold text-ink">Link to your CV <span class="font-normal text-ink-soft">(optional — Google Drive, Dropbox…)</span></label>
+            <input id="cv_url" name="cv_url" type="url" maxlength="500" placeholder="https://…"
+                   class="w-full px-3.5 py-2.5 text-[0.95rem]">
+          </div>
+
+          <button type="submit" class="btn-primary w-full py-2.5 text-[0.95rem]">Submit application</button>
+          <p class="text-center text-xs text-ink-soft">
+            We'll email you your entrance assessment link straight away — check your spam folder if you don't see it.
+          </p>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script src="/static/csrf.js?v=2"></script>
+</body>
+</html>

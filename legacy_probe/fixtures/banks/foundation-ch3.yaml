@@ -1,0 +1,16 @@
+bank:
+  course: foundation
+  chapter: 3
+  kind: chapter
+  version: 1
+  questions:
+    - {id: q1, stem: "Recall A?", type: single, options: ["A","B"], correct: ["A"], rubric_category: recall, weight: 1, explanation: ""}
+    - {id: q2, stem: "Apply B?", type: single, options: ["A","B"], correct: ["B"], rubric_category: application, weight: 1, explanation: ""}
+    - {id: q3, stem: "Apply C?", type: single, options: ["A","B"], correct: ["A"], rubric_category: application, weight: 1, explanation: ""}
+    - {id: q4, stem: "Apply D?", type: multi, options: ["A","B","C"], correct: ["A","C"], rubric_category: application, weight: 1, explanation: ""}
+    - {id: q5, stem: "Apply E?", type: single, options: ["A","B"], correct: ["A"], rubric_category: application, weight: 1, explanation: ""}
+    - {id: q6, stem: "Analyse F?", type: single, options: ["A","B"], correct: ["B"], rubric_category: analysis, weight: 1, explanation: ""}
+    - {id: q7, stem: "Analyse G?", type: single, options: ["A","B"], correct: ["A"], rubric_category: analysis, weight: 1, explanation: ""}
+    - {id: q8, stem: "Analyse H?", type: single, options: ["A","B"], correct: ["B"], rubric_category: analysis, weight: 1, explanation: ""}
+    - {id: q9, stem: "Recall I?", type: truefalse, options: ["true","false"], correct: ["true"], rubric_category: recall, weight: 1, explanation: ""}
+    - {id: q10, stem: "Apply J?", type: single, options: ["A","B"], correct: ["B"], rubric_category: application, weight: 1, explanation: ""}

@@ -1,0 +1,70 @@
+<!doctype html>
+<meta charset="utf-8">
+<style>
+* { margin:0; padding:0; box-sizing:border-box }
+body { width:1344px; height:768px; background:#f9f1dd;
+  font-family:-apple-system,"Helvetica Neue",Helvetica,Arial,sans-serif; color:#2f3733 }
+.wrap { padding:60px 76px }
+h1 { font-size:42px; font-weight:650; letter-spacing:-.5px }
+.sub { font-size:22px; color:#6c7671; margin-top:9px }
+.panes { display:flex; gap:74px; margin-top:36px }
+.pane { flex:1 }
+.ph { font-size:21px; font-weight:650; margin-bottom:16px }
+.ph span { font-weight:400; color:#6c7671; font-size:18px }
+.chart { position:relative; height:250px }
+.gl { position:absolute; left:0; right:0; height:1px; background:#e6dcc4 }
+.ylab { position:absolute; right:calc(100% + 10px); font-size:15px; color:#8a938d;
+  transform:translateY(-50%); white-space:nowrap }
+svg { position:absolute; inset:0; overflow:visible }
+.xax { display:flex; justify-content:space-between; margin-top:10px; font-size:15px; color:#8a938d }
+.verdict { margin-top:18px; font-size:21px; font-weight:650; padding:11px 16px; border-radius:4px }
+.bad { background:#f3dcd3; color:#8f3b24 }
+.good { background:#dceae4; color:#2f6d5c }
+.rule { height:1px; background:#e0d5ba; margin:28px 0 20px }
+.note { font-size:20px; color:#5c6560; line-height:1.45 }
+.note b { color:#b04a2f }
+</style>
+<body>
+<div class="wrap">
+  <h1>The same five months, read two ways</h1>
+  <div class="sub">One dataset. Only the denominator differs — and nobody has to be dishonest.</div>
+
+  <div class="panes">
+    <div class="pane">
+      <div class="ph">Complaints received <span>— the count</span></div>
+      <div class="chart" style="margin-left:52px">
+        <div class="gl" style="top:0"></div>   <div class="ylab" style="top:0">40</div>
+        <div class="gl" style="top:125px"></div><div class="ylab" style="top:125px">20</div>
+        <div class="gl" style="top:250px"></div><div class="ylab" style="top:250px">0</div>
+        <svg viewBox="0 0 460 250" preserveAspectRatio="none">
+          <polyline fill="none" stroke="#b04a2f" stroke-width="4" stroke-linejoin="round"
+            points="0,125 115,100 230,75 345,44 460,13"/>
+        </svg>
+      </div>
+      <div class="xax" style="margin-left:52px"><span>M1</span><span>M2</span><span>M3</span><span>M4</span><span>M5</span></div>
+      <div class="verdict bad">Complaints up 90% — a crisis</div>
+    </div>
+
+    <div class="pane">
+      <div class="ph">Complaints per 100 customers <span>— the rate</span></div>
+      <div class="chart" style="margin-left:52px">
+        <div class="gl" style="top:0"></div>   <div class="ylab" style="top:0">6.0</div>
+        <div class="gl" style="top:125px"></div><div class="ylab" style="top:125px">3.0</div>
+        <div class="gl" style="top:250px"></div><div class="ylab" style="top:250px">0</div>
+        <svg viewBox="0 0 460 250" preserveAspectRatio="none">
+          <polyline fill="none" stroke="#2f6d5c" stroke-width="4" stroke-linejoin="round"
+            points="0,42 115,50 230,63 345,75 460,84"/>
+        </svg>
+      </div>
+      <div class="xax" style="margin-left:52px"><span>M1</span><span>M2</span><span>M3</span><span>M4</span><span>M5</span></div>
+      <div class="verdict good">Rate down a fifth — service improving</div>
+    </div>
+  </div>
+
+  <div class="rule"></div>
+  <div class="note">
+    The business grew 138% underneath both lines. This is the commonest way a dashboard misleads,
+    and it requires nobody to lie — only <b>the denominator to go unmentioned</b>. Publish both:
+    the rate says whether the process is improving, the count says how much work is arriving.
+  </div>
+</div>

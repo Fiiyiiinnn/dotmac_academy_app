@@ -1,0 +1,72 @@
+<!doctype html>
+<meta charset="utf-8">
+<style>
+* { margin:0; padding:0; box-sizing:border-box }
+body { width:1344px; height:768px; background:#f9f1dd;
+  font-family:-apple-system,"Helvetica Neue",Helvetica,Arial,sans-serif; color:#2f3733 }
+.wrap { padding:60px 76px }
+h1 { font-size:42px; font-weight:650; letter-spacing:-.5px }
+.sub { font-size:22px; color:#6c7671; margin-top:9px }
+.cols { display:flex; gap:70px; margin-top:34px; align-items:flex-end }
+.col { width:480px }
+.head { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px }
+.who { font-size:26px; font-weight:650 }
+.price { font-size:18px; color:#6c7671 }
+/* Costs stack upward; residual is NOT stacked — it subtracts, and drawing it as a
+   band would read as adding cost. It appears as a deduction under the stack. */
+.stack { display:flex; flex-direction:column-reverse }
+.seg { display:flex; align-items:center; padding:0 16px; color:#fff;
+  font-size:17px; font-weight:600; justify-content:space-between; white-space:nowrap }
+.buy { background:#2f6d5c } .fuel { background:#3f8f7a } .svc { background:#7aa89b }
+.hit { background:#b04a2f }
+.ded { display:flex; justify-content:space-between; font-size:17px; color:#7c7561;
+  padding:9px 16px 0 }
+.tot { margin-top:8px; display:flex; justify-content:space-between; align-items:baseline;
+  border-top:2px solid #cfc3a4; padding:11px 16px 0 }
+.tl { font-size:18px; color:#6c7671 } .tv { font-size:33px; font-weight:700; letter-spacing:-1px }
+.win { color:#2f6d5c } .lose { color:#b04a2f }
+.rule { height:1px; background:#e0d5ba; margin:26px 0 22px }
+.foot { display:flex; gap:28px; align-items:flex-start }
+.big { font-size:50px; font-weight:700; color:#b04a2f; letter-spacing:-2px; line-height:1; flex:none }
+.note { font-size:20px; color:#5c6560; line-height:1.45 }
+</style>
+<body>
+<div class="wrap">
+  <h1>The cheaper generator that costs 31% more</h1>
+  <div class="sub">Five-year total cost of ownership. Bar height is proportional to naira; residual value is deducted below.</div>
+
+  <div class="cols">
+    <div class="col">
+      <div class="head"><div class="who">Generator A</div><div class="price">₦800,000 cheaper to buy</div></div>
+      <div class="stack">
+        <div class="seg buy"  style="height:81px"><span>Purchase</span><span>₦1.80m</span></div>
+        <div class="seg fuel" style="height:108px"><span>Fuel, 5 years</span><span>₦2.40m</span></div>
+        <div class="seg svc"  style="height:27px"><span>Servicing</span><span>₦0.60m</span></div>
+        <div class="seg hit"  style="height:52px"><span>Repair + downtime</span><span>₦1.16m</span></div>
+      </div>
+      <div class="ded"><span>less residual value at year 5</span><span>−₦0.15m</span></div>
+      <div class="tot"><div class="tl">5-year cost of ownership</div><div class="tv lose">₦5,810,000</div></div>
+    </div>
+
+    <div class="col">
+      <div class="head"><div class="who">Generator B</div><div class="price">₦800,000 dearer to buy</div></div>
+      <div class="stack">
+        <div class="seg buy"  style="height:117px"><span>Purchase</span><span>₦2.60m</span></div>
+        <div class="seg fuel" style="height:81px"><span>Fuel, 5 years</span><span>₦1.80m</span></div>
+        <div class="seg svc"  style="height:20px"><span>Servicing</span><span>₦0.45m</span></div>
+      </div>
+      <div class="ded"><span>less residual value at year 5</span><span>−₦0.40m</span></div>
+      <div class="tot"><div class="tl">5-year cost of ownership</div><div class="tv win">₦4,450,000</div></div>
+    </div>
+  </div>
+
+  <div class="rule"></div>
+  <div class="foot">
+    <div class="big">₦1.36m</div>
+    <div class="note">
+      more, over five years, for the option that won at the quote stage. The band that decides
+      it is the one that appears on no invoice: <b>three days of downtime</b> during A's expected
+      repair — which is exactly why it appears in no comparison either.
+    </div>
+  </div>
+</div>

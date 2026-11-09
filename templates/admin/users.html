@@ -1,0 +1,169 @@
+{% extends "base.html" %}
+{% block title %}Users — {{ branding_name | default("Dotmac Academy") }}{% endblock %}
+{% block content %}
+<p class="page-eyebrow">Admin</p>
+<h1 class="page-title">Users</h1>
+<p class="page-intro">Invite people, set roles, and manage account access.</p>
+
+<section class="card mt-10 p-6">
+  <h2 class="text-xl">Invite user</h2>
+  <p class="mt-1.5 text-sm text-ink-soft">Creates a user without a password and sends an activation link.</p>
+  <form class="mt-5 grid max-w-3xl gap-4 sm:grid-cols-2"
+        hx-post="/admin/users/invite"
+        hx-target="#invite-result"
+        hx-swap="innerHTML">
+    <div>
+      <label for="invite-first" class="mb-1.5 block text-sm font-semibold text-ink">First name</label>
+      <input id="invite-first" name="first_name" type="text" class="w-full px-3.5 py-2.5 text-[0.95rem]" required>
+    </div>
+    <div>
+      <label for="invite-last" class="mb-1.5 block text-sm font-semibold text-ink">Last name</label>
+      <input id="invite-last" name="last_name" type="text" class="w-full px-3.5 py-2.5 text-[0.95rem]" required>
+    </div>
+    <div class="sm:col-span-2">
+      <label for="invite-email" class="mb-1.5 block text-sm font-semibold text-ink">Email</label>
+      <input id="invite-email" name="email" type="email" placeholder="user@example.com" class="w-full px-3.5 py-2.5 text-[0.95rem]" required>
+    </div>
+    <div class="sm:col-span-2">
+      <label for="invite-role" class="mb-1.5 block text-sm font-semibold text-ink">Role</label>
+      <select id="invite-role" name="role" class="w-full px-3.5 py-2.5 text-[0.95rem]">
+        <option value="student">Student</option>
+        <option value="instructor">Teacher / Instructor</option>
+        <option value="admin">Administrator</option>
+      </select>
+    </div>
+    <div>
+      <label for="invite-cohort" class="mb-1.5 block text-sm font-semibold text-ink">Cohorts</label>
+      <select id="invite-cohort" name="cohort_ids" multiple size="6" class="w-full px-3.5 py-2.5 text-[0.95rem]">
+        {% for cohort in cohorts %}
+        <option value="{{ cohort.id }}">{{ cohort.name }}</option>
+        {% endfor %}
+      </select>
+      <p class="mt-1.5 text-xs text-ink-soft">Hold Ctrl or Cmd to choose multiple cohorts.</p>
+    </div>
+    <div>
+      <label for="invite-track" class="mb-1.5 block text-sm font-semibold text-ink">Track in selected cohort</label>
+      <select id="invite-track" name="track_ids" multiple size="10" class="w-full px-3.5 py-2.5 text-[0.95rem]" disabled>
+        {% for group in cohort_track_groups %}
+        <optgroup label="{{ group.cohort.name }}" data-cohort-id="{{ group.cohort.id }}" disabled hidden>
+          {% for track in group.tracks %}
+          <option value="{{ group.cohort.id }}:{{ track.id }}">{{ track.name }}</option>
+          {% else %}
+          <option value="" disabled>No tracks assigned</option>
+          {% endfor %}
+        </optgroup>
+        {% endfor %}
+      </select>
+      <p id="invite-track-help" class="mt-1.5 text-xs text-ink-soft">Select one or more cohorts to see their tracks.</p>
+    </div>
+    <div class="sm:col-span-2">
+      <details class="disclosure rounded-lg border border-sand-200 bg-sand-100 p-3">
+        <summary class="cursor-pointer list-none text-sm font-semibold text-ink">Legacy direct course assignment</summary>
+        <div class="mt-3">
+          <label for="invite-course" class="mb-1.5 block text-sm font-semibold text-ink">Courses in selected cohorts</label>
+          <select id="invite-course" name="course_ids" multiple size="8" class="w-full px-3.5 py-2.5 text-[0.95rem]" disabled>
+            {% for group in cohort_course_groups %}
+            <optgroup label="{{ group.cohort.name }}" data-cohort-id="{{ group.cohort.id }}" disabled hidden>
+              {% for course in group.courses %}
+              <option value="{{ group.cohort.id }}:{{ course.id }}">{{ course.title }}{% if course.status != 'published' %} ({{ course.status }}){% endif %}</option>
+              {% else %}
+              <option value="" disabled>No active courses assigned</option>
+              {% endfor %}
+            </optgroup>
+            {% endfor %}
+          </select>
+          <p id="invite-course-help" class="mt-1.5 text-xs text-ink-soft">Use only when no track is selected.</p>
+        </div>
+      </details>
+    </div>
+    <div class="sm:col-span-2 flex flex-wrap items-center gap-3">
+      <button type="submit" class="btn-primary">Send invite</button>
+      <div id="invite-result"></div>
+    </div>
+  </form>
+</section>
+
+<div class="card mt-10" id="user-list">
+  <div class="border-b border-sand-200 p-5">
+    <div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+      <div>
+        <h2 class="text-xl">Manage accounts</h2>
+        <p class="mt-1 text-sm text-ink-soft">Search for a user, then manage access and roles.</p>
+      </div>
+      <form method="get" action="/admin/users" class="flex w-full flex-col gap-2 sm:flex-row lg:max-w-xl">
+        <label for="user-search" class="sr-only">Search users</label>
+        <input id="user-search" name="q" type="search" value="{{ search_query }}"
+               placeholder="Search name or email" class="min-w-0 flex-1 px-3.5 py-2.5 text-[0.95rem]">
+        <button type="submit" class="btn-primary shrink-0">Search</button>
+        {% if search_query %}
+        <a href="/admin/users" class="btn-ghost shrink-0">Clear</a>
+        {% endif %}
+      </form>
+    </div>
+    {% if search_query %}
+    <p class="mt-3 text-sm text-ink-soft">Showing results for <span class="font-semibold text-ink">{{ search_query }}</span>.</p>
+    {% endif %}
+  </div>
+  <ul class="divide-y divide-sand-200">
+    {% for row in users %}
+    {% set u = row.person %}
+    <li class="p-4 transition-colors hover:bg-sand-100">
+      <div class="flex flex-wrap items-center gap-3">
+        <div class="min-w-0">
+          <p class="font-medium text-ink">{{ u.first_name }} {{ u.last_name }}</p>
+          <p class="break-all text-sm text-ink-soft">{{ u.email }}</p>
+        </div>
+        <div class="ml-auto flex flex-wrap items-center justify-end gap-2">
+          <span class="inline-flex items-center rounded-full bg-sand-200 px-2.5 py-0.5 font-mono text-xs text-ink-soft">{{ row.roles | join(', ') }}</span>
+          <span class="inline-flex items-center rounded-full bg-sand-100 px-2.5 py-0.5 text-xs font-semibold text-ink-soft">{{ u.status }}</span>
+          {% if is_admin %}
+          <details class="disclosure relative">
+            <summary class="btn-ghost select-none">Manage</summary>
+            <div class="absolute right-0 z-20 mt-2 w-[min(22rem,calc(100vw-2rem))] rounded-lg border border-sand-200 bg-white p-4 text-left shadow-lg">
+              <div class="space-y-3">
+                <form hx-post="/admin/users/{{ u.id }}/reset-link" hx-target="#user-action-{{ u.id }}" hx-swap="innerHTML">
+                  <button type="submit" class="btn-ghost w-full justify-center">Send reset link</button>
+                </form>
+                <form hx-post="/admin/users/{{ u.id }}/invite-link" hx-target="#user-action-{{ u.id }}" hx-swap="innerHTML">
+                  <button type="submit" class="btn-ghost w-full justify-center">Send invite</button>
+                </form>
+                {% if u.status == 'active' %}
+                <form hx-post="/admin/users/{{ u.id }}/status" hx-target="#user-action-{{ u.id }}" hx-swap="innerHTML">
+                  <input type="hidden" name="status_value" value="suspended">
+                  <button type="submit" class="btn-ghost w-full justify-center">Suspend</button>
+                </form>
+                {% else %}
+                <form hx-post="/admin/users/{{ u.id }}/status" hx-target="#user-action-{{ u.id }}" hx-swap="innerHTML">
+                  <input type="hidden" name="status_value" value="active">
+                  <button type="submit" class="btn-ghost w-full justify-center">Reactivate</button>
+                </form>
+                {% endif %}
+                <form hx-post="/admin/users/{{ u.id }}/role" hx-target="body" hx-push-url="true" class="border-t border-sand-200 pt-3">
+                  <label for="role-{{ u.id }}" class="mb-1.5 block text-sm font-semibold text-ink">Change role</label>
+                  <div class="flex gap-2">
+                    <select id="role-{{ u.id }}" name="role" class="min-w-0 flex-1 px-3 py-2 text-sm">
+                      <option value="student" {% if 'student' in row.roles and 'instructor' not in row.roles and 'admin' not in row.roles %}selected{% endif %}>Student</option>
+                      <option value="instructor" {% if 'instructor' in row.roles and 'admin' not in row.roles %}selected{% endif %}>Teacher / Instructor</option>
+                      <option value="admin" {% if 'admin' in row.roles %}selected{% endif %}>Administrator</option>
+                    </select>
+                    <button type="submit" class="btn-primary shrink-0">Save</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </details>
+          {% endif %}
+        </div>
+      </div>
+      {% if is_admin %}
+      <div id="user-action-{{ u.id }}" class="mt-3 min-w-0"></div>
+      {% endif %}
+    </li>
+    {% else %}
+    <li class="p-8 text-center text-ink-soft">No users found.</li>
+    {% endfor %}
+  </ul>
+</div>
+
+<script src="/static/admin_users.js?v=1"></script>
+{% endblock %}

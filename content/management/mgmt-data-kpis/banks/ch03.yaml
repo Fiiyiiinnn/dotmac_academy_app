@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-data-kpis
+  kind: chapter
+  chapter: 3
+  version: 2
+  policy:
+    mode: practice
+  questions:
+    - id: dk3-01
+      stem: "A baseline tells you a metric's level, its shape, and:"
+      type: single
+      options: ["Its spread", "Its owner", "Its source", "Its target"]
+      correct: ["Its spread"]
+      rubric_category: recall
+      explanation: "How much it bounces in normal operation — which decides how often it can honestly be judged."
+      weight: 1
+    - id: dk3-02
+      stem: "What is the honest first target for a metric that has never been measured?"
+      type: single
+      options: ["Measure it for a quarter", "Match last year's outcome", "Improve on the first month", "Whatever the business needs"]
+      correct: ["Measure it for a quarter"]
+      rubric_category: recall
+      explanation: "Not stalling — the difference between aiming and gesturing."
+      weight: 1
+    - id: dk3-03
+      stem: "On-time delivery baselines at 74%, and the two delay causes you found account for roughly six points. Which target has a theory behind it?"
+      type: single
+      options: ["80% this quarter, because those two causes close the gap", "95% this quarter, because that is what excellence looks like", "85% this quarter, splitting the difference with leadership", "78% this quarter, since a modest goal is more achievable"]
+      correct: ["80% this quarter, because those two causes close the gap"]
+      rubric_category: application
+      explanation: "A team that can see how the gap closes will chase it; a team handed a number with no path negotiates it or fakes it."
+      weight: 1
+    - id: dk3-04
+      stem: "A metric swings ±20% in normal operation. What follows for how you judge it?"
+      type: single
+      options: ["It cannot support a target judged weekly", "It needs a wider target band each quarter", "It should be replaced with a steadier measure", "It requires a longer baseline before any target"]
+      correct: ["It cannot support a target judged weekly"]
+      rubric_category: application
+      explanation: "The spread decides the review cadence; judging inside the wobble means reacting to noise every week."
+      weight: 1
+    - id: dk3-05
+      stem: "You are about to push hard on turnaround time. What must go on the wall alongside it?"
+      type: single
+      options: ["A quality floor that must hold while speed rises", "A cost ceiling for the period being measured", "A baseline chart showing the previous six months", "A record of who owns each stage of the process"]
+      correct: ["A quality floor that must hold while speed rises"]
+      rubric_category: application
+      explanation: "An unguarded target announces exactly which corner may be cut, and the announcement is reliably heard."
+      weight: 1
+    - id: dk3-06
+      stem: "The gap between the baseline and where the business needs to be is very large. How do you set the target?"
+      type: single
+      options: ["Set the destination and quarterly waypoints toward it", "Set the destination and let the team find its own pace", "Set a first-year target and revisit it after that", "Set the largest step the team believes is achievable"]
+      correct: ["Set the destination and quarterly waypoints toward it"]
+      rubric_category: application
+      explanation: "Teams climb stairs; they balk at cliffs."
+      weight: 1
+    - id: dk3-07
+      stem: "Conditions genuinely changed and a January target is now nonsense. What makes resetting it legitimate?"
+      type: single
+      options: ["Doing it openly, with the reason stated", "Doing it before the period has ended", "Agreeing it with the team affected", "Recording the original target alongside"]
+      correct: ["Doing it openly, with the reason stated"]
+      rubric_category: application
+      explanation: "Legitimate when the world changed; corrosive when it is quietly done to convert a miss into a hit. The difference is daylight."
+      weight: 1
+    - id: dk3-08
+      stem: "Deliveries are now 96% on-time, achieved by redefining what 'on-time' means. What has happened to the metric?"
+      type: single
+      options: ["It has stopped indicating and started lying", "It has become easier to hit than intended", "It has drifted away from its written definition", "It has been optimised at the cost of another family"]
+      correct: ["It has stopped indicating and started lying"]
+      rubric_category: analysis
+      explanation: "The target is a proxy for the real goal. When hitting the number and serving the goal come apart, believe the goal."
+      weight: 1
+    - id: dk3-09
+      stem: "A team hits its quarterly target in week five and coasts. What does the pattern reveal about the target?"
+      type: single
+      options: ["It became a ceiling once it was reached", "It was set too low against the baseline", "It was not paired with a guard metric", "It was measured over too short a period"]
+      correct: ["It became a ceiling once it was reached"]
+      rubric_category: analysis
+      explanation: "Review the metric's trend rather than target attainment, and celebrate beating the path."
+      weight: 1
+    - id: dk3-10
+      stem: "A target is missed. Why does the diagnosis matter more than the miss?"
+      type: single
+      options: ["Wrong theory, changed conditions and poor execution need different fixes", "A documented diagnosis protects the team from being blamed for it", "The diagnosis determines whether the target should be reset openly", "Missed targets are only informative when their cause is recorded"]
+      correct: ["Wrong theory, changed conditions and poor execution need different fixes"]
+      rubric_category: analysis
+      explanation: "Only one of the three is 'try harder' — and a miss quietly waved through teaches that targets are decorative."
+      weight: 1

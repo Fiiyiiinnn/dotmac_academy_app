@@ -1,0 +1,44 @@
+{
+  "schema": "academy.console-document-assets.v1",
+  "binding": {
+    "facet": "staff_admin",
+    "module": "academy",
+    "surface": "legacy",
+    "route": "console"
+  },
+  "source": {
+    "project": "ttyd",
+    "version": "1.7.4",
+    "ubuntu_package": "1.7.4-1build2",
+    "url": "https://github.com/tsl0922/ttyd/tree/1.7.4",
+    "binary_bytes": 662024,
+    "binary_sha256": "a79d657f3a0187d5c1d6c6fda0d8a3736b11221e32d7c0a517db1f9c6924269e"
+  },
+  "document": {
+    "bytes": 701420,
+    "sha256": "065fa93ecafdd9e5c8bb687b9c59e8aa3c292518b20b4e896abb858b2ae67fe8",
+    "fixture": "tests/fixtures/console/ttyd-1.7.4.index.html.gz",
+    "fixture_format": "gzip; deterministic mtime 0; decompresses to original unmodified HTML"
+  },
+  "inline_scripts": [
+    {
+      "bytes": 695225,
+      "sha256": "f0b422e81e9b3cd470652c7c0126f9a4110fdf6ab8b692366633409f94b7a22d",
+      "csp_sha256": "8LQi6B6bPNRwZSx8ASb5pBEP32q4tpI2ZjNAn5S3oi0="
+    }
+  ],
+  "review": {
+    "date": "2026-11-08",
+    "evidence": "academy-console-csp-followthrough-20261108",
+    "served_bytes": "Identical at two base paths and ports; no /webfig/ literals; no rewrite required",
+    "permissions": "No unsafe-eval, wasm, blob, or worker grants; all other baseline directives retained",
+    "limitations": "Static reviewed asset identity; browser WebSocket/input and production isolation acceptance remain separate evidence"
+  },
+  "attribution": {
+    "ttyd": "MIT; Copyright (c) 2016-2022 Shuanglei Tao",
+    "license": "../tests/fixtures/console/ttyd-LICENSE.txt",
+    "embedded_dependencies": "Original embedded third-party notices are preserved verbatim in the compressed HTML fixture; no bundle content was stripped",
+    "distribution_copyright": "../tests/fixtures/console/ttyd-ubuntu-copyright.txt",
+    "distribution_copyright_source": "Exact deployed /usr/share/doc/ttyd/copyright, retrieved read-only on 2026-11-08"
+  }
+}

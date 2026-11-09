@@ -1,0 +1,171 @@
+bank:
+  course: sls-agent-fundamentals
+  kind: final
+  chapter: null
+  version: 1
+  policy:
+    mode: exam
+    max_attempts: 5
+    pool: 15
+  questions:
+    - id: slsf-01
+      stem: "Does dotmac_sub currently ship a seeded 'sales' role with its own scoped permissions?"
+      type: single
+      options: ["No — the relevant permission keys exist but stay admin-implicit until a role is defined", "Yes — a dedicated sales role ships with exactly the crm:lead, crm:quote, and crm:sales_order keys attached", "Yes — but that shipped role deliberately excludes crm:sales_order permissions from its default set", "No — no sales-related permission key of any kind exists anywhere in the current configuration"]
+      correct: ["No — the relevant permission keys exist but stay admin-implicit until a role is defined"]
+      rubric_category: recall
+      explanation: "The relevant permission keys exist and are UI-assignable but stay admin-implicit — no seeded role carries them yet."
+      weight: 1
+    - id: slsf-02
+      stem: "What does the Sales Agent attribution dropdown on a Sales Order actually list?"
+      type: single
+      options: ["Only users holding the specific role literally named 'Customer Experience'", "Every user who holds any crm:lead, crm:quote, or crm:sales_order permission at all", "Only the single agent who is currently assigned ownership of the originating lead", "Every user in the system regardless of role, sorted alphabetically by their display name"]
+      correct: ["Only users holding the specific role literally named 'Customer Experience'"]
+      rubric_category: recall
+      explanation: "The dropdown is populated by the Customer Experience role specifically — a narrower, different thing than general sales permissions."
+      weight: 1
+    - id: slsf-03
+      stem: "Which lead status is never something an agent selects directly from the dropdown?"
+      type: single
+      options: ["won, reached only through a separate, later automatic action", "qualified, reached only through a separate, later automatic action", "contacted, reached only through a separate, later automatic action", "proposal, reached only through a separate, later automatic action"]
+      correct: ["won, reached only through a separate, later automatic action"]
+      rubric_category: recall
+      explanation: "won is set automatically by quote acceptance — it is never a manual dropdown selection."
+      weight: 1
+    - id: slsf-04
+      stem: "Which quote status must a quote pass through before accepted becomes a valid transition?"
+      type: single
+      options: ["sent, since draft cannot move directly into accepted", "rejected, since draft cannot move directly into accepted", "expired, since draft cannot move directly into accepted", "draft, since sent cannot move directly into accepted"]
+      correct: ["sent, since draft cannot move directly into accepted"]
+      rubric_category: recall
+      explanation: "The real state machine requires draft to sent before accepted becomes valid — draft straight to accepted is rejected."
+      weight: 1
+    - id: slsf-05
+      stem: "You notice your sales account can reach several screens beyond Leads, Quotes, and Sales Orders. What is the most likely explanation?"
+      type: single
+      options: ["No seeded sales role exists yet, so your access is likely broader, admin-implicit access instead of a purpose-built role", "Your job description has formally and permanently expanded to include those additional administrative areas", "Every account in Sub is provisioned identically, regardless of what job that particular account performs", "Those extra screens were granted specifically as a one-time reward for a recently closed large deal"]
+      correct: ["No seeded sales role exists yet, so your access is likely broader, admin-implicit access instead of a purpose-built role"]
+      rubric_category: application
+      explanation: "With no dedicated sales role seeded, whoever does sales work most likely does so from broader, admin-like access."
+      weight: 1
+    - id: slsf-06
+      stem: "You are entering a synthetic training email address and want to avoid the validator's reserved-TLD rejection. Which is the safest choice?"
+      type: single
+      options: ["A realistic-looking address ending in a normal domain, such as an @example.com style address", "An address ending in the reserved .invalid top-level domain, since that domain is meant for training use", "Any string containing an @ symbol, since the validator only checks for that one character's presence", "An address with no domain portion at all, since a domain-less address bypasses validation entirely"]
+      correct: ["A realistic-looking address ending in a normal domain, such as an @example.com style address"]
+      rubric_category: application
+      explanation: "The validator rejects reserved-invalid TLDs like .invalid outright — a realistic @example.com-style address avoids the rejection."
+      weight: 1
+    - id: slsf-07
+      stem: "A lead is ready to be priced. What is the correct next action?"
+      type: single
+      options: ["Open the lead's own detail page and use its Create Quote button directly", "Look for a separate 'Convert Lead' action in the Leads list next to that row", "Create a new customer record manually first, then attach a quote to it afterward", "Set the lead's status to proposal and wait for a quote to be generated automatically"]
+      correct: ["Open the lead's own detail page and use its Create Quote button directly"]
+      rubric_category: application
+      explanation: "There is no separate conversion action — Create Quote, from the lead's own detail page, is the real next step."
+      weight: 1
+    - id: slsf-08
+      stem: "You submit a new quote and get back 'Please select an item in the list' with no further detail. What should you check first?"
+      type: single
+      options: ["Whether a project_type was actually selected before the form was submitted", "Whether the lead's email address was entered correctly during earlier intake work", "Whether the quote's currency field was left at its original default selected value", "Whether the quote's expiry date field was left completely blank before submitting it"]
+      correct: ["Whether a project_type was actually selected before the form was submitted"]
+      rubric_category: application
+      explanation: "This generic error is the known signature of a missing project_type, the field this course names as the real submit-time gotcha."
+      weight: 1
+    - id: slsf-09
+      stem: "A quote's status already reads sent, and a colleague assumes the customer must already have it in their inbox. What should you verify?"
+      type: single
+      options: ["Whether the separate Send Email action was actually used, since status and delivery are two distinct actions", "Nothing further, since status sent and email delivery always occur together automatically in this system", "Whether the quote's currency matches the customer's own local currency before assuming anything else", "Whether the quote has expired, since an expired quote silently reverts its own status back to sent"]
+      correct: ["Whether the separate Send Email action was actually used, since status and delivery are two distinct actions"]
+      rubric_category: application
+      explanation: "Setting status to Sent and using Send Email are mechanically separate actions — one does not automatically trigger the other."
+      weight: 1
+    - id: slsf-10
+      stem: "You are about to mark a Sent quote Accepted. What should you quickly re-check first?"
+      type: single
+      options: ["That the lead's display_name and email already look like real, usable contact data", "That the quote's currency exactly matches the currency used on the customer's original inquiry", "That the lead's estimated_value is higher than the quote's own actual total price", "That the quote has already been printed out and physically signed by the customer"]
+      correct: ["That the lead's display_name and email already look like real, usable contact data"]
+      rubric_category: application
+      explanation: "A quick check of the lead's name and email avoids the most common, fixable acceptance failure this course describes."
+      weight: 1
+    - id: slsf-11
+      stem: "Acceptance fails with the generic rejection message, and the lead's data already shows a clearly real name and a working email. What is the correct next step?"
+      type: single
+      options: ["Escalate it as a possible missing Project Template or environment configuration issue", "Keep editing the lead's name and email repeatedly until the rejection eventually stops", "Assume the customer secretly changed their mind and mark the lead lost going forward", "Manually create a Sales Order directly for the customer instead of retrying acceptance"]
+      correct: ["Escalate it as a possible missing Project Template or environment configuration issue"]
+      rubric_category: application
+      explanation: "With good lead data already confirmed, the correct move is escalating a likely configuration gap, not further data edits."
+      weight: 1
+    - id: slsf-12
+      stem: "A new Subscriber created by quote acceptance shows status Active but the Plan card reads 'No active plan.' What should you tell a customer who asks about this?"
+      type: single
+      options: ["Explain honestly that account creation happened automatically but activating a billed plan is a separate, later step", "Tell them nothing is wrong, since an Active account status always guarantees a fully working paid service", "Tell them this is a system error you will personally resolve right now by clicking a button yourself", "Tell them their account was created incorrectly and must be deleted and recreated from scratch"]
+      correct: ["Explain honestly that account creation happened automatically but activating a billed plan is a separate, later step"]
+      rubric_category: application
+      explanation: "This is the honest handoff point: Active account, no plan yet, activation handled by a separate, later step."
+      weight: 1
+    - id: slsf-13
+      stem: "You click a 'Project: PROJ-1108' link on a Sales Order and receive an access-denied page. What is the correct response?"
+      type: single
+      options: ["Treat it as a genuine, deliberate permission boundary, and follow up through the right channel instead of routing around it", "Ask a colleague with broader access to open the Project and relay its full details back to you instead", "Assume your account is broken and immediately request Project-level access to prevent this recurring", "Ignore the link entirely going forward, since it clearly should never have appeared on that page at all"]
+      correct: ["Treat it as a genuine, deliberate permission boundary, and follow up through the right channel instead of routing around it"]
+      rubric_category: application
+      explanation: "The sales role can see the Project reference but not open it — a real, deliberate boundary to respect, not a bug to route around."
+      weight: 1
+    - id: slsf-14
+      stem: "Two agents both hold broad access beyond the three sales screens, and one starts using extra screens for routine prospecting because 'the account can technically reach them.' What is the flaw in that reasoning?"
+      type: single
+      options: ["Technical ability to reach a screen is not the same as that screen being part of the actual sales job", "There is no real flaw, since any screen a sales account happens to be able to open was clearly intended for sales use", "The flaw applies only narrowly to billing-related screens specifically, and not to any other kind of screen", "The flaw is that this would formally violate a written, published sales-role policy document somewhere"]
+      correct: ["Technical ability to reach a screen is not the same as that screen being part of the actual sales job"]
+      rubric_category: analysis
+      explanation: "Broad access reflects a gap in the role model, not an intentional expansion of the sales job — reachability and job scope differ."
+      weight: 1
+    - id: slsf-15
+      stem: "Two leads fail acceptance with the identical generic rejection message. One has a business-slogan name and no email; the other has a real name and a working email. What does this pair illustrate?"
+      type: single
+      options: ["The same error text can point to two genuinely different causes, so the lead's own data must be checked first", "Both failures must share the identical root cause, since the message only ever appears for one specific reason", "The second lead's failure proves the first lead's data was actually fine all along and needed no correction", "Neither failure is meaningful, since this rejection message is known to appear at random regardless of lead data"]
+      correct: ["The same error text can point to two genuinely different causes, so the lead's own data must be checked first"]
+      rubric_category: analysis
+      explanation: "The identical generic message can mean bad lead data or a missing configuration — checking the lead's data tells you which."
+      weight: 1
+    - id: slsf-16
+      stem: "A Sales Order shows 'Project: PROJ-1108' as a visible link, yet opening that Project directly returns a 403. What does this combination demonstrate about the sales role's access?"
+      type: single
+      options: ["Reference visibility and full access are two separate things — the role can see a link without being able to open it", "It demonstrates a broken link that should be reported and removed from the Sales Order page entirely", "It demonstrates that Project records are visible only to the specific customer that order belongs to", "It demonstrates that the Sales Order itself was created incorrectly and must be regenerated from the quote"]
+      correct: ["Reference visibility and full access are two separate things — the role can see a link without being able to open it"]
+      rubric_category: analysis
+      explanation: "Seeing a reference to a Project is not the same as holding permission to open its full detail page."
+      weight: 1
+    - id: slsf-17
+      stem: "An agent, after confirming a lead's name and email are genuinely fine, keeps re-editing the lead anyway every time acceptance fails, instead of escalating. What is the cost of this habit?"
+      type: single
+      options: ["Real time is spent fixing data that was never the actual problem, while a genuine configuration gap goes unreported", "There is no real cost, since re-editing a lead's fields can never itself cause any harm to the eventual outcome", "The cost is limited only to the lead's estimated_value field recalculating incorrectly on every additional save", "The cost is limited only to the quote's own expiry date silently resetting with every additional save attempt"]
+      correct: ["Real time is spent fixing data that was never the actual problem, while a genuine configuration gap goes unreported"]
+      rubric_category: analysis
+      explanation: "Repeating the fixable-cause fix when the real cause is environmental wastes time and leaves the real gap unescalated."
+      weight: 1
+    - id: slsf-18
+      stem: "Comparing the sales role's Project boundary to the general pattern of a role's screen access being scoped by design, what principle do both illustrate?"
+      type: single
+      options: ["A missing or partial screen boundary reflects a deliberate scope decision tied to a different operational role, not an oversight", "Both boundaries exist purely because of unrelated, temporary technical limitations that will eventually be lifted", "Both boundaries only ever apply to brand-new employee accounts and disappear after a fixed probation period", "Neither boundary is real; both are simple misunderstandings a support ticket to IT would immediately resolve"]
+      correct: ["A missing or partial screen boundary reflects a deliberate scope decision tied to a different operational role, not an oversight"]
+      rubric_category: analysis
+      explanation: "A screen you cannot fully reach belongs to a different role's risk boundary by design — the same principle across both cases."
+      weight: 1
+    - id: slsf-19
+      stem: "An agent tells a customer 'I'll personally turn your subscription on for you this afternoon' right after their quote is accepted. What is wrong with this promise?"
+      type: single
+      options: ["Activating a real, billed Subscription is a separate, later step outside the sales agent's own conversion workflow", "Nothing is wrong, since the sales agent is the one described as directly activating every new Subscription", "The only problem is the specific time named, not the claim that the agent personally performs the activation", "The problem is only that 'this afternoon' is too soon, not the claim of personally doing the activation"]
+      correct: ["Activating a real, billed Subscription is a separate, later step outside the sales agent's own conversion workflow"]
+      rubric_category: analysis
+      explanation: "Plan activation is a different, later step — not something the sales agent is described as personally performing."
+      weight: 1
+    - id: slsf-20
+      stem: "A customer with a known overdue balance from a support context is unrelated here — instead, a Sales Order shows 'Payment: Pending' right after a quote's acceptance. What is the accurate explanation?"
+      type: single
+      options: ["No payment has been recorded against the order yet, which is the normal, accurate state at this point", "Something has gone seriously wrong with the order, and it needs escalation to a supervisor right away", "Pending means the order itself was silently rejected and will need to be entirely recreated from scratch", "Pending is only a temporary display glitch that will correct itself automatically within a few hours"]
+      correct: ["No payment has been recorded against the order yet, which is the normal, accurate state at this point"]
+      rubric_category: application
+      explanation: "Payment status reflects recorded payments — Pending immediately after conversion is the normal, accurate state, not a fault."
+      weight: 1
+

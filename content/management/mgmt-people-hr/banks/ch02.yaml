@@ -1,0 +1,90 @@
+bank:
+  course: mgmt-people-hr
+  kind: chapter
+  chapter: 2
+  version: 1
+  policy:
+    mode: practice
+  questions:
+    - id: ph2-01
+      stem: 'Onboarding''s three jobs are productivity, confirming the choice, and teaching:'
+      type: single
+      options: ["How things work", "The org chart", "The handbook", "The policies"]
+      correct: ["How things work"]
+      rubric_category: recall
+      explanation: "Who to ask about what, which rules are firm and which are habits, what good looks like here. A colleague transmits it; a handbook does not."
+      weight: 1
+    - id: ph2-02
+      stem: 'Probation should be treated as:'
+      type: single
+      options: ["A decision", "A waiting period", "A formality", "A notice term"]
+      correct: ["A decision"]
+      rubric_category: recall
+      explanation: "It fails when the date simply elapses and the form gets signed, because the manager then inherits a performance problem that is much harder to address."
+      weight: 1
+    - id: ph2-03
+      stem: 'A new starter''s buddy is best chosen as:'
+      type: single
+      options: ["A peer", "Their manager", "A senior leader", "An HR contact"]
+      correct: ["A peer"]
+      rubric_category: application
+      explanation: "Most new-starter questions are too small to interrupt a manager with and too important to guess at."
+      weight: 1
+    - id: ph2-04
+      stem: 'Probation criteria should be stated:'
+      type: single
+      options: ["On day one", "At the review", "After the first month", "When concerns arise"]
+      correct: ["On day one"]
+      rubric_category: application
+      explanation: "Criteria produced at the end are criteria fitted to the outcome. Stated up front, they are something the person can actually aim at."
+      weight: 1
+    - id: ph2-05
+      stem: 'Someone leaving within six months is most often evidence of a failure in:'
+      type: single
+      options: ["Onboarding", "Recruitment", "Pay banding", "Selection testing"]
+      correct: ["Onboarding"]
+      rubric_category: application
+      explanation: "The job differing from its description, no clarity on good, no early feedback, nobody to ask, or a manager too busy to notice."
+      weight: 1
+    - id: ph2-06
+      stem: 'A new starter should complete one real task within:'
+      type: single
+      options: ["Week one", "Month one", "The probation period", "Day one"]
+      correct: ["Week one"]
+      rubric_category: application
+      explanation: "Nothing settles a new starter like having done something useful. Meeting the work beats reading about it."
+      weight: 1
+    - id: ph2-07
+      stem: 'Deciding a failing probation at month three rather than month five saved N576,800
+  in the example, and that figure understates it because it omits:'
+      type: single
+      options: ["Team and individual costs", "Recruitment fees", "Statutory notice", "Training spend"]
+      correct: ["Team and individual costs"]
+      rubric_category: analysis
+      explanation: "The team can see the situation clearly and is watching what gets tolerated; the individual spends two more months in a job they were never going to keep."
+      weight: 1
+    - id: ph2-08
+      stem: 'Extending probation indefinitely is best described as:'
+      type: single
+      options: ["Deferring at their expense", "A generous compromise", "Standard practice", "A legal safeguard"]
+      correct: ["Deferring at their expense"]
+      rubric_category: analysis
+      explanation: "They are building a life on a job you have privately decided about. Extend with stated reasons and a short horizon, or decide."
+      weight: 1
+    - id: ph2-09
+      stem: 'If a probation review genuinely surprises the employee, it is also reporting on:'
+      type: single
+      options: ["Your supervision", "Their attitude", "The selection process", "The job description"]
+      correct: ["Your supervision"]
+      rubric_category: analysis
+      explanation: "Feedback should have been honest and regular enough that the review confirms something already discussed rather than announcing it."
+      weight: 1
+    - id: ph2-10
+      stem: 'How someone is treated when their probation ends matters most because it is observed
+  by:'
+      type: single
+      options: ["Everyone staying", "The regulator", "Future candidates", "Their referees"]
+      correct: ["Everyone staying"]
+      rubric_category: analysis
+      explanation: "It becomes the version of your organisation the remaining team describes for years."
+      weight: 1

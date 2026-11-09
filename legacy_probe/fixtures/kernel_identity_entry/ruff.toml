@@ -1,0 +1,6 @@
+# Historical migration bytes are immutable. Match the production migration
+# exception for their existing late imports without modifying those bytes.
+extend = "../../../pyproject.toml"
+
+[lint.extend-per-file-ignores]
+"alembic/versions/*.py" = ["E402"]

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% from "components/_pagination.html" import table_pagination %}
+{% block title %}Audit log — {{ branding_name | default("Dotmac Academy") }}{% endblock %}
+{% block content_width %}max-w-[1360px]{% endblock %}
+{% block content %}
+<header class="page-header">
+  <div class="page-header-copy"><p class="page-eyebrow">Administration</p><h1 class="page-title">Audit log</h1><p class="page-intro">A comprehensive, immutable ledger of administrator and system actions across the academy.</p></div>
+  <div class="page-header-actions"><a href="{{ request.url }}" class="btn-ghost">Refresh log</a></div>
+</header>
+<form method="get" action="/admin/audit" class="filter-toolbar">
+  <div class="filter-grid">
+    <div class="filter-field"><label for="action">Action</label><input id="action" name="action" type="text" value="{{ action_filter }}" placeholder="e.g. user.created"></div>
+    <div class="filter-field"><label for="actor_email">Actor email</label><input id="actor_email" name="actor_email" type="email" value="{{ actor_email_filter }}" placeholder="actor@example.com"></div>
+    <div class="flex flex-wrap items-center gap-2 sm:col-span-2"><button type="submit" class="btn-primary">Apply filters</button>{% if action_filter or actor_email_filter %}<a href="/admin/audit" class="btn-ghost">Clear filters</a>{% endif %}</div>
+  </div>
+</form>
+<section class="data-table-card" aria-labelledby="audit-table-heading">
+  <div class="flex items-center justify-between gap-3 border-b border-sand-200 px-4 py-4 sm:px-5"><div><h2 id="audit-table-heading" class="section-title">Event ledger</h2><p class="mt-1 text-sm text-ink-soft">Newest activity appears first.</p></div></div>
+  <div class="table-frame" role="region" aria-label="Audit events table; scroll horizontally to see all columns" tabindex="0">
+    <table class="data-table">
+      <thead><tr><th scope="col">Time</th><th scope="col">Actor</th><th scope="col">Action</th><th scope="col">Entity type</th><th scope="col">Entity ID</th><th scope="col">Details</th></tr></thead>
+      <tbody>
+        {% for event in events %}
+        <tr class="align-top">
+          <td class="whitespace-nowrap tabular-nums">{% if event.created_at is not none %}<p class="cell-primary">{{ event.created_at.strftime("%Y-%m-%d") }}</p><p class="cell-secondary">{{ event.created_at.strftime("%H:%M:%S") }}</p>{% else %}<p class="cell-primary">—</p>{% endif %}</td>
+          <td>
+            {% if event.actor_type is none and event.actor_id is none and event.actor_party_id is none and event.actor_label is none %}
+            <p class="cell-primary">System</p><p class="cell-secondary">Automated action</p>
+            {% else %}
+            <p class="cell-primary">{{ event.actor_label if event.actor_label is not none else ("System" if event.actor_type == "system" else "Unknown actor") }}</p>
+            {% if event.actor_type is not none or event.actor_id is not none %}<p class="cell-secondary font-mono">{% if event.actor_type is not none %}{{ event.actor_type }}{% endif %}{% if event.actor_id is not none %} {{ event.actor_id }}{% endif %}</p>{% endif %}
+            {% if event.actor_party_id is not none %}<p class="cell-secondary">{{ actor_map.get(event.actor_party_id, "Unknown actor") }}</p><p class="cell-secondary font-mono">{{ event.actor_party_id }}</p>{% endif %}
+            {% endif %}
+          </td>
+          <td><span class="inline-flex rounded bg-brand-50 px-2 py-1 font-mono text-xs font-semibold text-brand-700">{{ event.action }}</span></td>
+          <td><p class="cell-primary">{{ event.entity_type | replace('_', ' ') | title }}</p><p class="cell-secondary font-mono">{{ event.entity_type }}</p></td>
+          <td class="font-mono text-xs text-ink-soft">{{ event.entity_id if event.entity_id else "—" }}</td>
+          <td><div class="max-w-md whitespace-normal break-words font-mono text-xs leading-relaxed text-ink-soft">{{ event.details | tojson if event.details else "—" }}</div></td>
+        </tr>
+        {% else %}<tr><td colspan="6" class="py-12 text-center text-ink-soft">No audit events found for these filters.</td></tr>{% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {{ table_pagination(request, pagination, "events", (10, 25, 50), (("action", action_filter), ("actor_email", actor_email_filter))) }}
+</section>
+{% endblock %}

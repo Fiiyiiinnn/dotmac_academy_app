@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}Course content — Dotmac Academy{% endblock %}
+{% block content %}
+<div class="flex flex-wrap items-end justify-between gap-4">
+  <div>
+    <p class="page-eyebrow">Teaching</p>
+    <h1 class="page-title">Course content</h1>
+    <p class="page-intro">Edit course chapters, manage publishing, and mark finished courses as completed.</p>
+  </div>
+</div>
+
+<div class="card mt-8 overflow-hidden">
+  <ul class="divide-y divide-sand-200">
+    {% for c in courses %}
+    <li class="flex flex-wrap items-center justify-between gap-3 p-4">
+      <div class="min-w-0">
+        <p class="font-medium text-ink">{{ c.title }}</p>
+        <p class="mt-0.5 text-sm text-ink-soft">{{ c.slug }} &middot; {{ c.discipline }} &middot; version {{ c.version }}</p>
+      </div>
+      <span class="flex items-center gap-3">
+        <span class="inline-flex items-center rounded-full bg-sand-200 px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide text-ink-soft">{{ c.status }}</span>
+        <a class="btn-ghost px-3.5 py-2 text-sm" href="/instructor/courses/{{ c.id }}/preview">Preview</a>
+        <a class="btn-ghost px-3.5 py-2 text-sm" href="/instructor/courses/{{ c.id }}/edit">Edit</a>
+      </span>
+    </li>
+    {% else %}
+    <li class="p-8 text-center text-ink-soft">{{ "No courses yet. Create the first one below." if is_admin else "No courses have been assigned to you yet." }}</li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% if is_admin %}
+<section class="card mt-10 p-6">
+  <h2 class="text-xl">Create course</h2>
+  <form class="mt-5 grid gap-4 sm:grid-cols-2" hx-post="/instructor/courses" hx-swap="none">
+    <label class="block">
+      <span class="mb-1.5 block text-sm font-semibold text-ink">Slug</span>
+      <input name="slug" required placeholder="fiber-engineering" class="w-full px-3.5 py-2.5 text-sm">
+    </label>
+    <label class="block">
+      <span class="mb-1.5 block text-sm font-semibold text-ink">Discipline</span>
+      <input name="discipline" required placeholder="networking" class="w-full px-3.5 py-2.5 text-sm">
+    </label>
+    <label class="block sm:col-span-2">
+      <span class="mb-1.5 block text-sm font-semibold text-ink">Title</span>
+      <input name="title" required placeholder="Fiber Engineering" class="w-full px-3.5 py-2.5 text-sm">
+    </label>
+    <div class="sm:col-span-2">
+      <button class="btn-primary" type="submit">Create course</button>
+    </div>
+  </form>
+</section>
+{% endif %}
+{% endblock %}

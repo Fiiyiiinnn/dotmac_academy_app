@@ -1,0 +1,89 @@
+bank:
+  course: sls-agent-fundamentals
+  kind: chapter
+  chapter: 5
+  version: 1
+  policy:
+    mode: practice
+  questions:
+    - id: s5-01
+      stem: "How is a Sales Order's Payment status (Pending, Partial, Paid, Waived) actually determined?"
+      type: single
+      options: ["It is derived from the payments that have actually been recorded against the order, not set directly", "It is set directly by the sales agent from a dropdown menu at the exact moment the order is first created", "It is copied automatically from the originating lead's own estimated_value field on conversion", "It is fixed permanently to Pending until a supervisor manually overrides it through a separate admin screen"]
+      correct: ["It is derived from the payments that have actually been recorded against the order, not set directly"]
+      rubric_category: recall
+      explanation: "Payment status is derived from recorded payments, not something the agent sets directly on the order."
+      weight: 1
+    - id: s5-02
+      stem: "What does the Sales Ownership & Source note on a Sales Order actually preserve?"
+      type: single
+      options: ["Where the deal originally came from, drawing on the lead's own lead_source field, such as Facebook", "The exact login timestamp of whichever sales agent most recently opened the Sales Order record itself", "The customer's preferred contact method, copied directly from the original quote's own notes field", "The full name of whichever colleague happens to hold the Customer Experience role at this moment"]
+      correct: ["Where the deal originally came from, drawing on the lead's own lead_source field, such as Facebook"]
+      rubric_category: recall
+      explanation: "Sales Ownership & Source preserves original provenance, e.g. 'Created from an accepted quote. Facebook' — the lead_source field surfacing here."
+      weight: 1
+    - id: s5-03
+      stem: "A new Subscriber created by quote acceptance shows status Active but the Plan card reads 'No active plan.' What should you tell a customer who asks about this?"
+      type: single
+      options: ["Explain honestly that account creation happened automatically but activating a billed plan is a separate, later step", "Tell them nothing is wrong at all, since an Active account status always guarantees a fully working paid service", "Tell them this is a system error that you will personally resolve right now by clicking a button yourself", "Tell them their account was created incorrectly and needs to be deleted and recreated from scratch immediately"]
+      correct: ["Explain honestly that account creation happened automatically but activating a billed plan is a separate, later step"]
+      rubric_category: application
+      explanation: "This is the honest handoff point this chapter names — Active account, no plan yet, activation handled by a separate, later step."
+      weight: 1
+    - id: s5-04
+      stem: "You click a 'Project: PROJ-1108' link from a Sales Order's Links card and receive an access-denied page. What is the correct response?"
+      type: single
+      options: ["Treat it as a genuine, deliberate permission boundary, and follow up through the right channel instead of routing around it", "Ask a colleague with broader access to open the Project and relay its full details back to you instead", "Assume your account is broken and immediately request Project-level access to prevent this in the future", "Ignore the link entirely going forward, since it clearly should never have appeared on the Sales Order at all"]
+      correct: ["Treat it as a genuine, deliberate permission boundary, and follow up through the right channel instead of routing around it"]
+      rubric_category: application
+      explanation: "The sales role can see the Project reference but not open it — a real, deliberate boundary to respect, not a bug to route around."
+      weight: 1
+    - id: s5-05
+      stem: "A customer wants a firm installation date, but the acceptance for their quote is currently blocked on a Chapter 4-style configuration issue that is being escalated. What is the professional response?"
+      type: single
+      options: ["Tell the customer there is a short internal delay being resolved, without promising a specific date you cannot yet confirm", "Give the customer a specific, confident installation date right now, since a firm answer always reassures a waiting customer more than an honest delay would", "Tell the customer nothing at all until the underlying configuration issue is fully resolved and confirmed working", "Tell the customer their deal has fallen through entirely and they will need to start the whole process over again"]
+      correct: ["Tell the customer there is a short internal delay being resolved, without promising a specific date you cannot yet confirm"]
+      rubric_category: application
+      explanation: "The professional standard is honesty about the delay without a fabricated technical explanation or an unconfirmable promised date."
+      weight: 1
+    - id: s5-06
+      stem: "An agent tells a customer 'I'll personally turn your subscription on for you this afternoon' immediately after their quote is accepted. What is wrong with this promise, based on this chapter?"
+      type: single
+      options: ["Activating a real, billed Subscription is a separate, later step outside the sales agent's own conversion workflow", "Nothing is wrong, since the sales agent is described as the one who directly activates every new Subscription", "The only problem is the specific time named, not the claim that the sales agent personally performs the activation", "The problem is only that 'this afternoon' is too soon, not that the agent claimed to do the activation personally"]
+      correct: ["Activating a real, billed Subscription is a separate, later step outside the sales agent's own conversion workflow"]
+      rubric_category: analysis
+      explanation: "This chapter is explicit that plan activation is a different, later step, not something the sales agent is described as personally doing."
+      weight: 1
+    - id: s5-07
+      stem: "A Sales Order shows 'Project: PROJ-1108' as a visible link, yet opening that Project directly returns a 403. What does this combination actually demonstrate about the sales role's access?"
+      type: single
+      options: ["Reference visibility and full access are two separate things — the role can see a link without being able to open it", "It demonstrates a broken link that should be reported and removed from the Sales Order page entirely", "It demonstrates that Project records are visible only to the specific customer that the order belongs to", "It demonstrates that the Sales Order itself was created incorrectly and needs to be regenerated from the quote"]
+      correct: ["Reference visibility and full access are two separate things — the role can see a link without being able to open it"]
+      rubric_category: analysis
+      explanation: "The chapter's key permission lesson: seeing a reference to a Project is not the same as holding permission to open its full detail page."
+      weight: 1
+    - id: s5-08
+      stem: "Comparing the sales role's Project boundary here to the support role's network-monitoring boundary from the earlier support material's pattern, what principle do both illustrate?"
+      type: single
+      options: ["A missing or partial screen boundary reflects a deliberate scope decision tied to a different operational role, not an oversight", "Both boundaries exist purely because of unrelated, temporary technical limitations that will eventually be lifted", "Both boundaries only ever apply to brand-new employee accounts and disappear automatically after a probation period", "Neither boundary is real; both are simply misunderstandings that a support ticket to IT would immediately resolve"]
+      correct: ["A missing or partial screen boundary reflects a deliberate scope decision tied to a different operational role, not an oversight"]
+      rubric_category: analysis
+      explanation: "Both cases show the same underlying principle: a screen you cannot fully reach belongs to a different role's risk boundary by design."
+      weight: 1
+    - id: s5-09
+      stem: "Which Links entries appear on a Sales Order created from an accepted quote, according to this chapter?"
+      type: single
+      options: ["A link back to the originating Quote and a link to the auto-created Project", "A link to the customer's personal banking details and a link to their home address history", "A link only to the Project, since the originating Quote is deliberately discarded after acceptance", "A link only to the originating Quote, since no Project is created until a technician is later assigned"]
+      correct: ["A link back to the originating Quote and a link to the auto-created Project"]
+      rubric_category: recall
+      explanation: "The Links card connects the Sales Order back to both the originating Quote and the Project that acceptance created."
+      weight: 1
+    - id: s5-10
+      stem: "A customer asks why their new Sales Order shows 'Payment: Pending' right after their quote was accepted. What is the accurate explanation?"
+      type: single
+      options: ["No payment has been recorded against the order yet, which is the normal, accurate state at this point", "Something has gone seriously wrong with the order, and it needs to be escalated to a supervisor right away", "Pending means the order itself was silently rejected and will need to be entirely recreated from scratch", "Pending is only a temporary display glitch that will correct itself automatically within a few hours"]
+      correct: ["No payment has been recorded against the order yet, which is the normal, accurate state at this point"]
+      rubric_category: application
+      explanation: "Payment status reflects recorded payments — Pending immediately after conversion is the normal, accurate state, not a fault."
+      weight: 1
+

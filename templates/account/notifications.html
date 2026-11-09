@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block title %}Notification settings — {{ branding_name | default("Dotmac Academy") }}{% endblock %}
+{% block content %}
+<p class="page-eyebrow">Account</p>
+<h1 class="page-title">Notification settings</h1>
+<p class="page-intro">Choose which emails you'd like to receive.{% if profile_policy.email_results_default and profile_policy.email_digest_default %} These are on by default.{% endif %}</p>
+
+<form hx-post="/account/notifications" hx-target="#notifications-flash" hx-swap="innerHTML" class="mt-10 space-y-6">
+  <section class="card divide-y divide-sand-200">
+    <label for="email_results" class="flex cursor-pointer items-start gap-3 p-5">
+      <input id="email_results" type="checkbox" name="email_results" value="1"
+             {% if prefs.get("email_results", profile_policy.email_results_default) %}checked{% endif %}
+             class="mt-0.5 h-4 w-4 shrink-0 rounded">
+      <span>
+        <span class="block font-semibold text-ink">Result emails</span>
+        <span class="mt-0.5 block text-sm text-ink-soft">Get an email the first time you pass an activity or exam.</span>
+      </span>
+    </label>
+    <label for="email_digest" class="flex cursor-pointer items-start gap-3 p-5">
+      <input id="email_digest" type="checkbox" name="email_digest" value="1"
+             {% if prefs.get("email_digest", profile_policy.email_digest_default) %}checked{% endif %}
+             class="mt-0.5 h-4 w-4 shrink-0 rounded">
+      <span>
+        <span class="block font-semibold text-ink">Weekly digest</span>
+        <span class="mt-0.5 block text-sm text-ink-soft">For instructors — a weekly progress summary for each cohort you teach.</span>
+      </span>
+    </label>
+  </section>
+
+  <div class="flex items-center gap-3">
+    <button type="submit" class="btn-primary">Save preferences</button>
+    <span id="notifications-flash"></span>
+  </div>
+</form>
+
+<h2 class="mt-12 text-2xl tracking-tight">Learning reminders</h2>
+<p class="page-intro">How and when the academy nudges you about deadlines, sessions and results.</p>
+
+<form hx-post="/account/reminders" hx-target="#reminders-flash" hx-swap="innerHTML" class="mt-6 space-y-6">
+  <section class="card p-5 space-y-5">
+    <div>
+      <label for="frequency" class="block font-semibold text-ink">Email frequency</label>
+      <select id="frequency" name="frequency" class="input mt-1.5 w-full max-w-xs">
+        <option value="immediate" {% if reminder_pref.frequency == "immediate" %}selected{% endif %}>Immediately</option>
+        <option value="daily_digest" {% if reminder_pref.frequency == "daily_digest" %}selected{% endif %}>Daily digest</option>
+        <option value="weekly_digest" {% if reminder_pref.frequency == "weekly_digest" %}selected{% endif %}>Weekly digest</option>
+      </select>
+      <p class="mt-1 text-sm text-ink-soft">In-app notifications always arrive as things happen; this paces the emails.</p>
+    </div>
+    <div>
+      <span class="block font-semibold text-ink">Quiet hours <span class="font-normal text-ink-soft">(no emails between, {{ academy_tz_label }})</span></span>
+      <div class="mt-1.5 flex items-center gap-2">
+        <input type="number" min="0" max="23" name="quiet_start_hour" placeholder="22"
+               value="{{ reminder_pref.quiet_start_hour if reminder_pref.quiet_start_hour is not none }}"
+               class="input w-24" aria-label="Quiet hours start (hour)">
+        <span class="text-ink-soft">to</span>
+        <input type="number" min="0" max="23" name="quiet_end_hour" placeholder="6"
+               value="{{ reminder_pref.quiet_end_hour if reminder_pref.quiet_end_hour is not none }}"
+               class="input w-24" aria-label="Quiet hours end (hour)">
+      </div>
+    </div>
+    <div>
+      <span class="block font-semibold text-ink">Don't remind me about</span>
+      <div class="mt-2 grid gap-2 sm:grid-cols-2">
+        {% for kind in reminder_kinds %}
+        <label class="flex cursor-pointer items-center gap-2 text-sm">
+          <input type="checkbox" name="optout_{{ kind }}" value="1"
+                 {% if kind in (reminder_pref.optouts or []) %}checked{% endif %}
+                 class="h-4 w-4 rounded">
+          <span>{{ kind.replace("_", " ") | capitalize }}</span>
+        </label>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  <div class="flex items-center gap-3">
+    <button type="submit" class="btn-primary">Save reminder preferences</button>
+    <span id="reminders-flash"></span>
+  </div>
+</form>
+
+<p class="mt-6">
+  <a class="btn-ghost" href="/account">Back to profile</a>
+</p>
+{% endblock %}

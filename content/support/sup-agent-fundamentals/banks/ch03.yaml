@@ -1,0 +1,88 @@
+bank:
+  course: sup-agent-fundamentals
+  kind: chapter
+  chapter: 3
+  version: 1
+  policy:
+    mode: practice
+  questions:
+    - id: c3-01
+      stem: "Which of these is a real account-level status value?"
+      type: single
+      options: ["delinquent", "clearing", "confirmed", "breached"]
+      correct: ["delinquent"]
+      rubric_category: recall
+      explanation: "delinquent is one of the account statuses (new, active, blocked, suspended, disabled, canceled, delinquent)."
+      weight: 1
+    - id: c3-02
+      stem: "Where do a plan's download and upload bandwidth numbers live?"
+      type: single
+      options: ["On the subscription's offer (the plan itself)", "On the account status field", "On the connection indicator, alongside the live session state", "On the ticket's priority field"]
+      correct: ["On the subscription's offer (the plan itself)"]
+      rubric_category: recall
+      explanation: "Bandwidth is bundled with the plan (the offer) a subscription is tied to, not the account status or connection state."
+      weight: 1
+    - id: c3-03
+      stem: "A customer asks 'is my account okay?' Which level of status actually answers that question?"
+      type: single
+      options: ["Account status", "Subscription status", "Connection state", "Ticket priority"]
+      correct: ["Account status"]
+      rubric_category: application
+      explanation: "'Is my account okay' is an account-status question — a different question from whether a specific service or connection is working."
+      weight: 1
+    - id: c3-04
+      stem: "A customer's connection shows offline. What should you check before treating this as a fault?"
+      type: single
+      options: ["What the customer actually expects right now, since offline alone is not proof of a problem", "Nothing further — an offline indicator on its own always confirms a genuine network fault", "Only the account status, since connection state is generally too unreliable to bother checking", "Whether the ticket priority was set correctly"]
+      correct: ["What the customer actually expects right now, since offline alone is not proof of a problem"]
+      rubric_category: application
+      explanation: "Offline is a live state, not automatically a fault — it only becomes relevant once you know what the customer expects."
+      weight: 1
+    - id: c3-05
+      stem: "A customer asks what speed they are paying for. Which field are you actually reading to answer that?"
+      type: single
+      options: ["The plan's bandwidth, as sold on the subscription's offer", "The connection indicator's live state", "The account status field", "The ticket's Age field"]
+      correct: ["The plan's bandwidth, as sold on the subscription's offer"]
+      rubric_category: application
+      explanation: "'What speed am I paying for' is a plan question, answered from the offer's bandwidth figures, not a live measurement."
+      weight: 1
+    - id: c3-06
+      stem: "A business customer has one account with two subscriptions. The account is active, but one subscription is suspended for non-payment while the other is fully active. What does this demonstrate?"
+      type: single
+      options: ["Account status and subscription status are genuinely independent fields that can disagree", "The account status field is essentially redundant once you know a subscription's own status", "This situation indicates a data error somewhere that urgently needs correcting", "Subscription status is supposed to always mirror account status exactly in practice"]
+      correct: ["Account status and subscription status are genuinely independent fields that can disagree"]
+      rubric_category: analysis
+      explanation: "This is exactly why the two fields exist separately — an account can be in good standing while one specific service is not."
+      weight: 1
+    - id: c3-07
+      stem: "A brand-new customer has no subscription showing yet and calls annoyed that service 'isn't active.' What is the most likely correct read of this situation?"
+      type: single
+      options: ["This may simply reflect that installation or activation has not completed yet, not a fault", "This always means the signup process failed and must be redone", "This means the account status field is broken", "This always means a competitor poached the customer before activation"]
+      correct: ["This may simply reflect that installation or activation has not completed yet, not a fault"]
+      rubric_category: analysis
+      explanation: "A brand-new account can legitimately have no subscription yet — check what stage the account is at before assuming a fault."
+      weight: 1
+    - id: c3-08
+      stem: "An overdue-balance customer's connection shows offline and they are annoyed. What does the offline state most likely represent here?"
+      type: single
+      options: ["A correctly-working consequence of a payment-related subscription status, not a network fault", "Proof beyond doubt that the network hardware at their specific address has genuinely failed outright", "An unrelated coincidence that you should not bother investigating any further", "A billing error that must be reversed immediately without further checking"]
+      correct: ["A correctly-working consequence of a payment-related subscription status, not a network fault"]
+      rubric_category: analysis
+      explanation: "When the subscription has moved to a payment-related status, offline reflects the system working as intended, not a fault to troubleshoot."
+      weight: 1
+    - id: c3-09
+      stem: "Which tabs live directly on a customer's own account record, alongside Account?"
+      type: single
+      options: ["Service, Network, Billing, Tickets, Timeline", "Only Billing and Network", "Only Tickets, shared with the Support screen", "None — tickets only appear under Support"]
+      correct: ["Service, Network, Billing, Tickets, Timeline"]
+      rubric_category: recall
+      explanation: "The customer record itself carries Account, Service, Network, Billing, Tickets, and Timeline tabs."
+      weight: 1
+    - id: c3-10
+      stem: "You want to find a customer but only have their PPPoE identifier, not their name or account number. What should you do?"
+      type: single
+      options: ["Search Customers with the PPPoE identifier directly — it is a supported search term", "Ask the customer for their account number instead, since PPPoE identifiers cannot be searched", "Open every recent ticket one by one until you happen to find a match", "Escalate the identification question to the network team directly"]
+      correct: ["Search Customers with the PPPoE identifier directly — it is a supported search term"]
+      rubric_category: application
+      explanation: "Customer search accepts name, email, phone, account number, or PPPoE identifier — whichever the customer gives you first."
+      weight: 1

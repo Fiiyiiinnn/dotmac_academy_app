@@ -1,0 +1,250 @@
+bank:
+  course: mgmt-people-hr
+  kind: final
+  version: 1
+  policy:
+    mode: exam
+    pool: 20
+    max_attempts: 2
+    pass_threshold: 0.70
+  questions:
+    - id: phf-01
+      stem: "A role defined as \"we need another engineer\" is best described as:"
+      type: single
+      options: ["A headcount request", "A written job description", "A budget line", "A growth plan"]
+      correct: ["A headcount request"]
+      rubric_category: recall
+      explanation: "Before advertising, write the outcomes that must be true in twelve months because this person exists."
+      weight: 1
+    - id: phf-02
+      stem: "Separating must-haves from nice-to-haves matters because every must-have:"
+      type: single
+      options: ["Shrinks the pool", "Raises the salary", "Slows the advert", "Adds an interview"]
+      correct: ["Shrinks the pool"]
+      rubric_category: application
+      explanation: "So each entry must earn its place. If you would not reject an otherwise excellent candidate for lacking it, it is not a must-have."
+      weight: 1
+    - id: phf-03
+      stem: "Interviewers should score independently before discussing, because discussion first produces:"
+      type: single
+      options: ["One opinion, several faces", "A faster shared decision", "A fairer average", "A clearer record"]
+      correct: ["One opinion, several faces"]
+      rubric_category: application
+      explanation: "The same group-decision failure the Decision Making course names, applied to a candidate."
+      weight: 1
+    - id: phf-04
+      stem: "The bias that a work sample most directly defeats is:"
+      type: single
+      options: ["Confidence as competence", "Recency", "Similarity to the interviewer", "Anchoring"]
+      correct: ["Confidence as competence"]
+      rubric_category: analysis
+      explanation: "Fluency reads as ability and favours the practised interviewer. Doing the task is much harder to fake in either direction."
+      weight: 1
+    - id: phf-05
+      stem: "Roughly N2m of bad-hire cost against N14,400 of extra structured process supports the conclusion that in hiring:"
+      type: single
+      options: ["Slowing down pays", "Referrals are best", "Panels outperform", "Speed wins talent"]
+      correct: ["Slowing down pays"]
+      rubric_category: analysis
+      explanation: "About 141 times. Structure improves the odds rather than guaranteeing the outcome, on the highest-leverage decision most managers make."
+      weight: 1
+    - id: phf-06
+      stem: "The most useful reference question is generally:"
+      type: single
+      options: ["Would you re-hire them?", "Were they reliable?", "How did they perform?", "What were their strengths?"]
+      correct: ["Would you re-hire them?"]
+      rubric_category: application
+      explanation: "Referees rarely volunteer criticism, but they do hesitate \u2014 and the pause carries the information."
+      weight: 1
+    - id: phf-07
+      stem: "The first real task for a new starter belongs in:"
+      type: single
+      options: ["Week one", "Month one", "Month two", "The probation review"]
+      correct: ["Week one"]
+      rubric_category: recall
+      explanation: "However small. Nothing settles a new starter like having done something useful."
+      weight: 1
+    - id: phf-08
+      stem: "A buddy for a new starter should be a peer rather than the manager because most questions are:"
+      type: single
+      options: ["Too small to escalate", "Technically too complex", "Confidential", "Policy-related"]
+      correct: ["Too small to escalate"]
+      rubric_category: application
+      explanation: "Too small to interrupt a manager with, and too important to guess at."
+      weight: 1
+    - id: phf-09
+      stem: "Attrition inside six months is most usefully read as a failure of:"
+      type: single
+      options: ["Onboarding", "Selection", "Pay banding", "Reference checking"]
+      correct: ["Onboarding"]
+      rubric_category: application
+      explanation: "The job differing from its description, no clarity on good, no early feedback, nobody to ask, or a manager too busy to notice."
+      weight: 1
+    - id: phf-10
+      stem: "Probation criteria written at the review rather than on day one are criteria:"
+      type: single
+      options: ["Fitted to the outcome", "Legally unsound", "Much harder to measure fairly", "Set too high"]
+      correct: ["Fitted to the outcome"]
+      rubric_category: analysis
+      explanation: "Stated up front, they are something the person can actually aim at \u2014 and something you can fairly judge."
+      weight: 1
+    - id: phf-11
+      stem: "Deciding a failing probation at month three rather than month five was N576,800 cheaper, and that figure omits the cost to:"
+      type: single
+      options: ["The team and the individual", "The recruitment budget", "Statutory notice", "Payroll and administration"]
+      correct: ["The team and the individual"]
+      rubric_category: analysis
+      explanation: "The team is watching what gets tolerated; the individual spends two more months in a job they were never going to keep."
+      weight: 1
+    - id: phf-12
+      stem: "If a probation review genuinely surprises the employee, the review also reports on:"
+      type: single
+      options: ["Your supervision", "Their attitude", "The job design", "The selection process"]
+      correct: ["Your supervision"]
+      rubric_category: analysis
+      explanation: "Regular honest feedback should make the review a confirmation rather than an announcement."
+      weight: 1
+    - id: phf-13
+      stem: "A record written three months after the event is best characterised as:"
+      type: single
+      options: ["A recollection", "A summary", "An estimate", "A formal statement"]
+      correct: ["A recollection"]
+      rubric_category: recall
+      explanation: "And it reads like one to anybody assessing it later. Write records at the time."
+      weight: 1
+    - id: phf-14
+      stem: "The test of a good employment record is that it remains fair and clear when read by:"
+      type: single
+      options: ["A stranger in two years", "Your own line manager later", "The employee", "The HR team"]
+      correct: ["A stranger in two years"]
+      rubric_category: application
+      explanation: "With the author unavailable. That test rules out files full of adjectives about someone's attitude."
+      weight: 1
+    - id: phf-15
+      stem: "A note becomes evidence rather than one person's version once it has been:"
+      type: single
+      options: ["Shared with the person", "Filed centrally", "Countersigned", "Dated and countersigned"]
+      correct: ["Shared with the person"]
+      rubric_category: application
+      explanation: "It is the habit managers skip most often and the one that matters most."
+      weight: 1
+    - id: phf-16
+      stem: "Including the employee's own account in a record protects:"
+      type: single
+      options: ["Both of you", "Only them", "Only you", "The organisation"]
+      correct: ["Both of you"]
+      rubric_category: application
+      explanation: "It shows a manager who investigated rather than assumed, and settles later arguments about whether an issue was raised."
+      weight: 1
+    - id: phf-17
+      stem: "Explaining a pay gap as \"it's what they negotiated\" rewards:"
+      type: single
+      options: ["Confidence over contribution", "Loyalty over merit", "Silence over honest candour", "Tenure over skill"]
+      correct: ["Confidence over contribution"]
+      rubric_category: analysis
+      explanation: "It is a real reason, and the one that produces most resentment when discovered, because the gap tracks who asked."
+      weight: 1
+    - id: phf-18
+      stem: "Correcting a pay gap cost N480,000 against N1,375,200 to replace, chiefly because the replacement arrives at:"
+      type: single
+      options: ["The market rate", "A junior band", "The old rate", "A negotiated discount"]
+      correct: ["The market rate"]
+      rubric_category: analysis
+      explanation: "The salary saving the refusal was protecting does not exist. Compare to the real alternative, not an imaginary contented status quo."
+      weight: 1
+    - id: phf-19
+      stem: "Conduct concerns choice; capability concerns:"
+      type: single
+      options: ["Ability", "Attitude", "Attendance", "Authority"]
+      correct: ["Ability"]
+      rubric_category: recall
+      explanation: "Someone trying and not yet able. Disciplining for inability is unjust and ineffective."
+      weight: 1
+    - id: phf-20
+      stem: "An appeal must be heard by someone other than the original decider because otherwise they are:"
+      type: single
+      options: ["Defending their decision", "Exceeding authority", "Breaching confidence rules", "Duplicating work"]
+      correct: ["Defending their decision"]
+      rubric_category: application
+      explanation: "Separating the roles is what lets each stage catch the previous stage's error."
+      weight: 1
+    - id: phf-21
+      stem: "Putting the allegation in writing beforehand exists so that the employee can:"
+      type: single
+      options: ["Answer the case", "Seek legal advice", "Request a delay", "Choose a companion"]
+      correct: ["Answer the case"]
+      rubric_category: application
+      explanation: "Nobody can respond to a case they first hear in the room, and a hearing without a prepared answer is theatre."
+      weight: 1
+    - id: phf-22
+      stem: "The single fact most likely to turn a disciplinary matter into a discrimination claim is:"
+      type: single
+      options: ["Inconsistent treatment", "A delayed hearing", "An absent witness", "An unusually severe sanction"]
+      correct: ["Inconsistent treatment"]
+      rubric_category: application
+      explanation: "The same behaviour handled differently for two people. Check what happened last time rather than assuming."
+      weight: 1
+    - id: phf-23
+      stem: "A correct dismissal reached without fair process usually leaves the organisation:"
+      type: single
+      options: ["Paying for undisputed conduct", "Free to re-run it", "Protected on appeal", "Entitled to withhold all notice"]
+      correct: ["Paying for undisputed conduct"]
+      rubric_category: analysis
+      explanation: "The defensible part of the case evaporates even though nobody disputes what happened."
+      weight: 1
+    - id: phf-24
+      stem: "An organisation that has recorded no grievances in a year most likely lacks:"
+      type: single
+      options: ["A route people trust", "Any real problems", "Formal procedures", "Enough management capacity"]
+      correct: ["A route people trust"]
+      rubric_category: analysis
+      explanation: "Silence is a more common explanation than health."
+      weight: 1
+    - id: phf-25
+      stem: "The letter of resignation is best understood as:"
+      type: single
+      options: ["A lagging indicator", "A leading indicator", "A negotiating move", "A performance signal"]
+      correct: ["A lagging indicator"]
+      rubric_category: recall
+      explanation: "Withdrawal and disengagement are visible for months beforehand."
+      weight: 1
+    - id: phf-26
+      stem: "At N900,000 a leaver, cutting turnover from 25% to 15% on a team of twenty is worth about:"
+      type: single
+      options: ["N1.8m every year", "N900,000 just once", "N450,000 a year", "N4.5m a year"]
+      correct: ["N1.8m every year"]
+      rubric_category: application
+      explanation: "Five leavers against three, recurring, without winning a customer or cutting a cost."
+      weight: 1
+    - id: phf-27
+      stem: "Pay is most accurately described as the reason people leave that is:"
+      type: single
+      options: ["Stated more than decisive", "Always the true cause", "Rarely mentioned", "Almost impossible to address"]
+      correct: ["Stated more than decisive"]
+      rubric_category: analysis
+      explanation: "Someone content elsewhere rarely leaves for 10%. Someone already unhappy takes 10% as the trigger and the explanation."
+      weight: 1
+    - id: phf-28
+      stem: "A stay conversation that leads to no visible action teaches the employee that:"
+      type: single
+      options: ["Raising things is futile", "Change simply needs patience", "Managers are busy", "Feedback is welcome"]
+      correct: ["Raising things is futile"]
+      rubric_category: application
+      explanation: "Which is worse than never having asked. Act visibly on at least one thing."
+      weight: 1
+    - id: phf-29
+      stem: "Turnover averages mislead because losing your strongest and weakest people:"
+      type: single
+      options: ["Cost alike but differ entirely", "Occur at the same rate", "Share the same causes", "Are more or less equally preventable"]
+      correct: ["Cost alike but differ entirely"]
+      rubric_category: analysis
+      explanation: "Track who leaves, not only how many."
+      weight: 1
+    - id: phf-30
+      stem: "The notice period is your only real opportunity to capture:"
+      type: single
+      options: ["Undocumented knowledge", "Outstanding invoices", "Equipment and access", "Client contacts and introductions"]
+      correct: ["Undocumented knowledge"]
+      rubric_category: application
+      explanation: "Agree the handover in writing: what they own, its state, who receives it, and what only they know."
+      weight: 1

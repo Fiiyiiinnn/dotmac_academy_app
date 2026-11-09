@@ -1,0 +1,88 @@
+bank:
+  course: sls-agent-fundamentals
+  kind: chapter
+  chapter: 2
+  version: 1
+  policy:
+    mode: practice
+  questions:
+    - id: s2-01
+      stem: "Which lead status is never something you select yourself from the dropdown?"
+      type: single
+      options: ["won, which is only ever set automatically by a later, separate action", "qualified, which is only ever set automatically during lead intake itself", "contacted, which is only ever set automatically after the first phone call", "proposal, which is only ever set automatically once a quote is drafted"]
+      correct: ["won, which is only ever set automatically by a later, separate action"]
+      rubric_category: recall
+      explanation: "won is never manually selectable — it is set automatically as a consequence of quote acceptance, covered fully in Chapter 4."
+      weight: 1
+    - id: s2-02
+      stem: "Which lead field is described as carrying forward, verbatim, onto the resulting Sales Order's provenance note?"
+      type: single
+      options: ["lead_source, which later appears on the Sales Order's own ownership note", "estimated_value, which later appears on the Sales Order's own ownership note", "probability, which later appears directly on the Sales Order's ownership note", "expected_close_date, which later appears on the Sales Order's ownership note"]
+      correct: ["lead_source, which later appears on the Sales Order's own ownership note"]
+      rubric_category: recall
+      explanation: "lead_source is the field that later surfaces on the Sales Order's Sales Ownership & Source note, which is why choosing it accurately matters."
+      weight: 1
+    - id: s2-03
+      stem: "You are entering a synthetic email address for a training lead and want to avoid the validator's reserved-TLD rejection. Which address is safest to use?"
+      type: single
+      options: ["A realistic-looking address ending in a normal domain, such as an @example.com style address", "Any address at all, since the validator only checks whether an @ symbol is present in the text", "An address ending in the reserved .invalid top-level domain, since that domain exists for training use", "An address with no domain portion at all, since domain-less addresses bypass validation entirely"]
+      correct: ["A realistic-looking address ending in a normal domain, such as an @example.com style address"]
+      rubric_category: application
+      explanation: "The email validator rejects reserved-invalid TLDs like .invalid outright — a realistic address such as an @example.com one avoids the rejection."
+      weight: 1
+    - id: s2-04
+      stem: "You are qualifying a lead and it is now ready to be priced. What is the correct next action, according to this chapter?"
+      type: single
+      options: ["Open the lead's own detail page and use its Create Quote button directly", "Look in the Leads list for a separate 'Convert Lead' action next to the row", "Manually create a new customer record first, then attach a quote to it afterward", "Change the lead's status to proposal and wait for a quote to generate on its own"]
+      correct: ["Open the lead's own detail page and use its Create Quote button directly"]
+      rubric_category: application
+      explanation: "There is no separate conversion action — Create Quote, from the lead's own detail page, is the real next step."
+      weight: 1
+    - id: s2-05
+      stem: "A lead has sat in `new` status for two weeks despite three real conversations already having happened with the prospect. What is the problem with leaving it this way?"
+      type: single
+      options: ["The record no longer reflects reality, so anyone reading the pipeline sees an inaccurate picture of this lead's progress", "There is no real problem at all, since lead status in this system is purely cosmetic and has no effect on anything else the pipeline reports on", "The problem is only that the lead will eventually auto-expire after being left in new for too many days", "The problem is only that estimated_value cannot be edited while status remains stuck at new"]
+      correct: ["The record no longer reflects reality, so anyone reading the pipeline sees an inaccurate picture of this lead's progress"]
+      rubric_category: application
+      explanation: "A stale status makes the record no longer reflect reality, and pipeline reporting built on it becomes wrong for that lead."
+      weight: 1
+    - id: s2-06
+      stem: "A colleague enters a business lead's display_name as the company's marketing tagline rather than a person's actual name. Why does this matter beyond being untidy?"
+      type: single
+      options: ["Chapter 4's automatic conversion depends on the name reading as a real, person-shaped name to succeed later", "It matters only for how the lead's row is visually sorted alphabetically within the Leads list view", "It matters only because taglines take up more visible space in the narrow display_name column on screen", "It does not matter at all, since display_name is never read again once the lead has first been created"]
+      correct: ["Chapter 4's automatic conversion depends on the name reading as a real, person-shaped name to succeed later"]
+      rubric_category: analysis
+      explanation: "display_name is not cosmetic — quote acceptance later depends on it reading as a real person's name, which a tagline does not satisfy."
+      weight: 1
+    - id: s2-07
+      stem: "An agent keeps every one of their leads' lead_source values set to 'Website' by default, regardless of where the prospect actually came from, because it is the first option in the dropdown. What is the downstream effect of this habit?"
+      type: single
+      options: ["The Sales Ownership & Source note on every resulting order misrepresents which channel the deal actually came from", "There is no downstream effect at all, since lead_source is discarded the moment a quote is created from that lead", "The effect is limited to the lead's own detail page and never reaches any other screen in the system", "The effect only shows up in estimated_value calculations, which quietly adjust themselves based on lead_source"]
+      correct: ["The Sales Ownership & Source note on every resulting order misrepresents which channel the deal actually came from"]
+      rubric_category: analysis
+      explanation: "lead_source carries through to the Sales Order's provenance note — defaulting it carelessly means the business cannot see which channels actually convert."
+      weight: 1
+    - id: s2-08
+      stem: "An agent wants to mark a deal as closed the moment the customer verbally agrees, and looks for 'Won' in the lead's status dropdown. What does the absence of that option indicate?"
+      type: single
+      options: ["That reaching Won requires a different, later action rather than a direct manual status change on the lead", "That the lead was entered incorrectly and needs to be deleted and recreated from scratch", "That 'Won' only becomes selectable once the lead's estimated_value field has been filled in", "That the dropdown is missing an option due to a data-entry bug that should be reported immediately"]
+      correct: ["That reaching Won requires a different, later action rather than a direct manual status change on the lead"]
+      rubric_category: analysis
+      explanation: "Won is reached only via quote acceptance, an entirely different action — its absence from the dropdown is by design, not a bug."
+      weight: 1
+    - id: s2-09
+      stem: "Which of the following is a real, valid lead_source option in this system's dropdown?"
+      type: single
+      options: ["Referrer, listed alongside options such as Facebook, Google, and Portal", "Cold Call", "Trade Show, one of the marketing-event categories some CRMs track separately", "Direct Mail, an offline outreach channel not present in this particular dropdown"]
+      correct: ["Referrer, listed alongside options such as Facebook, Google, and Portal"]
+      rubric_category: recall
+      explanation: "Referrer is one of the real lead_source dropdown values, alongside Facebook, Instagram, Whatsapp, Email, Google, Website, and Portal."
+      weight: 1
+    - id: s2-10
+      stem: "You filter the Leads list by your own ownership at the start of a shift and see a mix of statuses across your pipeline. What is the main benefit of doing this first, according to this chapter?"
+      type: single
+      options: ["It shows the shape of your pipeline before you dive into individual leads, so your time goes where it is actually needed", "It automatically updates every lead's status to match how long ago it was last contacted by anyone", "It is the only way to see a lead's email address, since the unfiltered list hides contact fields", "It permanently reassigns any lead you view to your own ownership for the rest of that day"]
+      correct: ["It shows the shape of your pipeline before you dive into individual leads, so your time goes where it is actually needed"]
+      rubric_category: application
+      explanation: "Filtering by your own ownership first gives you the shape of your pipeline before working individual leads, the same discipline a support agent applies to their queue."
+      weight: 1

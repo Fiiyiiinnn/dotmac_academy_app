@@ -1,0 +1,252 @@
+bank:
+  course: mgmt-customer-experience
+  kind: final
+  chapter: null
+  version: 2
+  policy:
+    mode: exam
+    max_attempts: 5
+    pool: 20
+  questions:
+    - id: cxf-01
+      stem: "Experience is built in the order:"
+      type: single
+      options: ["Reliability, effort, feeling", "Feeling, effort, reliability", "Effort, reliability, feeling", "Reliability, feeling, effort"]
+      correct: ["Reliability, effort, feeling"]
+      rubric_category: recall
+      explanation: "No warmth compensates for a broken promise or a high-effort process."
+      weight: 1
+    - id: cxf-02
+      stem: "A complaint is not closed until it has been:"
+      type: single
+      options: ["Confirmed by the customer", "Resolved by the specialist", "Recorded in the system", "Reviewed by a manager"]
+      correct: ["Confirmed by the customer"]
+      rubric_category: recall
+      explanation: "Asked, not assumed. A silent close is not honest."
+      weight: 1
+    - id: cxf-03
+      stem: "In NPS scoring, promoters are those scoring:"
+      type: single
+      options: ["9 to 10", "8 to 10", "7 to 10", "9 only"]
+      correct: ["9 to 10"]
+      rubric_category: recall
+      explanation: "7–8 are passive and count only in the denominator."
+      weight: 1
+    - id: cxf-04
+      stem: "Service commitments should be set to what the system delivers:"
+      type: single
+      options: ["On a bad week", "On an average week", "On its best week", "Under normal load"]
+      correct: ["On a bad week"]
+      rubric_category: recall
+      explanation: "A commitment is a decision, not a hope."
+      weight: 1
+    - id: cxf-05
+      stem: "Of 200 responses, 96 score 9-10, 64 score 7-8 and 40 score 0-6. The NPS is:"
+      type: numeric
+      options:
+        tolerance: 1
+      correct: 28
+      rubric_category: application
+      explanation: "(96 − 40) ÷ 200 = 28."
+      weight: 1
+    - id: cxf-06
+      stem: "A customer has now explained their issue to three different people in your business. What does that prove?"
+      type: single
+      options: ["Ownership was dropped at a handover", "The issue spans more than one department", "The first contact lacked the authority to fix it", "The record system does not carry case history"]
+      correct: ["Ownership was dropped at a handover"]
+      rubric_category: application
+      explanation: "The customer should never re-explain from the beginning; needing to is the proof."
+      weight: 1
+    - id: cxf-07
+      stem: "You know at 9am that today's appointment cannot happen. What is the right action?"
+      type: single
+      options: ["Contact the customer now with a new time", "Try to find a replacement technician first", "Update the record and contact them at the slot", "Send a general apology to everyone affected"]
+      correct: ["Contact the customer now with a new time"]
+      rubric_category: application
+      explanation: "A proactive warning is a kept meta-promise; the same lateness discovered by the customer says the opposite."
+      weight: 1
+    - id: cxf-08
+      stem: "Your frontline can apologise but must escalate every remedy. What is the consequence?"
+      type: single
+      options: ["Managers become the bottleneck for every trivial fix", "Remedies stay consistent across similar complaints", "The frontline develops judgement more slowly than it should", "Escalation volumes make the real problems harder to see"]
+      correct: ["Managers become the bottleneck for every trivial fix"]
+      rubric_category: application
+      explanation: "Bounded authority defined in advance, reviewed after the fact — not pre-approved case by case."
+      weight: 1
+    - id: cxf-09
+      stem: "Which of these belong in the recovery anatomy after a service failure? (Select all that apply.)"
+      type: multi
+      options: ["A fast, specific acknowledgement", "Fixing the customer's situation first", "A make-good proportionate to the harm", "A root-cause report for the customer"]
+      correct: ["A fast, specific acknowledgement", "Fixing the customer's situation first", "A make-good proportionate to the harm"]
+      rubric_category: application
+      explanation: "Plus saying what changes — the customer needs the change, not the investigation."
+      weight: 1
+    - id: cxf-10
+      stem: "A regulator asks about a complaint from last year. What determines the outcome?"
+      type: single
+      options: ["Whether the record shows capture, acknowledgement, action and resolution", "Whether the customer was ultimately satisfied with the resolution", "Whether the failure has since been fixed at the process level", "Whether the business had a policy covering the situation"]
+      correct: ["Whether the record shows capture, acknowledgement, action and resolution"]
+      rubric_category: application
+      explanation: "Show us is the question every regime asks. The lifecycle records are the compliance evidence."
+      weight: 1
+    - id: cxf-11
+      stem: "Complaints about billing have gone from three last quarter to fourteen this quarter. How should this be treated?"
+      type: single
+      options: ["As a defect with a queue, not fourteen incidents", "As a signal to add capacity to the billing team", "As a reason to review how complaints are categorised", "As an escalation to the manager who owns billing"]
+      correct: ["As a defect with a queue, not fourteen incidents"]
+      rubric_category: application
+      explanation: "One complaint is an incident; a cluster is a finding no survey will hand you faster."
+      weight: 1
+    - id: cxf-12
+      stem: "You want a diagnostic read on how the repair process specifically is performing. What do you use?"
+      type: single
+      options: ["CSAT asked immediately after each repair", "NPS asked across the customer base quarterly", "Attrition among customers who had repairs", "Average time to resolve repair tickets"]
+      correct: ["CSAT asked immediately after each repair"]
+      rubric_category: application
+      explanation: "CSAT is transactional and diagnostic; NPS gauges the relationship and lags."
+      weight: 1
+    - id: cxf-13
+      stem: "Why does the same two-day delivery delight one customer and infuriate another?"
+      type: single
+      options: ["Experience is measured against the expectation you set", "Their tolerance for delay differs by customer type", "One was warned about the delay and the other was not", "The value of the service differs between the two"]
+      correct: ["Experience is measured against the expectation you set"]
+      rubric_category: analysis
+      explanation: "Promise three and deliver in two; promise one and deliver in two. Identical service, opposite experiences."
+      weight: 1
+    - id: cxf-14
+      stem: "Why is a business that issues the same credit every month for the same fault not doing service recovery?"
+      type: single
+      options: ["It is renting patience instead of fixing the defect", "The credits have stopped being proportionate to the harm", "Customers come to expect the credit as part of the service", "The cost of the credits now exceeds the cost of the fix"]
+      correct: ["It is renting patience instead of fixing the defect"]
+      rubric_category: analysis
+      explanation: "Recovery handles the exception. When the miss is the rule, the fix is operational."
+      weight: 1
+    - id: cxf-15
+      stem: "Why does making cancellation difficult cost more than the churn it prevents?"
+      type: single
+      options: ["Endings dominate memory, so obstructed exits become the loudest stories", "Retained customers who wanted to leave stop using the service anyway", "Regulators treat obstruction as an unfair term and act on it", "The staff time spent on retention exceeds the revenue preserved"]
+      correct: ["Endings dominate memory, so obstructed exits become the loudest stories"]
+      rubric_category: analysis
+      explanation: "Graceful departures seed returns and referrals; obstructed ones guarantee the opposite."
+      weight: 1
+    - id: cxf-16
+      stem: "Why is a business that resolves complaints on day fourteen of a fourteen-day limit in a worse position than the number suggests?"
+      type: single
+      options: ["It is compliant and its customers are uniformly unhappy", "It has no margin left if complaint volumes increase", "It is testing the limit and will eventually breach it", "It has optimised for the regulator rather than the customer"]
+      correct: ["It is compliant and its customers are uniformly unhappy"]
+      rubric_category: analysis
+      explanation: "Compliance is a floor. Aiming at it guarantees living near it."
+      weight: 1
+    - id: cxf-17
+      stem: "Why should experience metrics be low-stakes for individuals and high-stakes for decisions?"
+      type: single
+      options: ["Tying pay to scores makes them measure begging, not experience", "Individuals cannot influence the outcomes the metrics capture", "Decisions need aggregate data rather than individual results", "Individual scores have too small a sample to be reliable"]
+      correct: ["Tying pay to scores makes them measure begging, not experience"]
+      rubric_category: analysis
+      explanation: "Every measured number invites management of the number instead of the thing."
+      weight: 1
+    - id: cxf-18
+      stem: "Why does following up individually on a detractor score often produce a loyal customer?"
+      type: single
+      options: ["Being followed up on is the rarest experience in commerce", "The follow-up usually results in some form of compensation", "It gives the customer a chance to be heard before they leave", "It converts an anonymous score into a personal relationship"]
+      correct: ["Being followed up on is the rarest experience in commerce"]
+      rubric_category: analysis
+      explanation: "It is service recovery triggered by measurement instead of by complaint."
+      weight: 1
+    - id: cxf-19
+      stem: "Why are journeys more likely to fail at the seams than at the stations?"
+      type: single
+      options: ["Each department owns its own part and nobody owns the joins", "Handovers involve more people and therefore more errors", "The seams are where information has to be re-entered", "Departments are measured on their own performance only"]
+      correct: ["Each department owns its own part and nobody owns the joins"]
+      rubric_category: analysis
+      explanation: "The handover is invisible to you and visible to the customer, which is exactly the wrong way round."
+      weight: 1
+    - id: cxf-20
+      stem: "Why does an unmeasured service commitment reliably decay?"
+      type: single
+      options: ["The team quietly accepts the real number and the promise becomes decoration", "Nobody is accountable for the misses when they occur", "Customers stop reporting misses once they expect them", "The commitment was probably unrealistic when it was set"]
+      correct: ["The team quietly accepts the real number and the promise becomes decoration"]
+      rubric_category: analysis
+      explanation: "The moment staff accept 'we say two days but it's really four', customers learn the same lesson shortly after."
+      weight: 1
+    - id: cxf-21
+      stem: "A complaint that lives only in one employee's memory:"
+      type: single
+      options: ["Does not exist organisationally", "Counts once it is resolved", "Is captured at the next review", "Belongs to that employee alone"]
+      correct: ["Does not exist organisationally"]
+      rubric_category: recall
+      explanation: "It cannot be tracked, escalated, or learned from, which is what capture is for."
+      weight: 1
+    - id: cxf-22
+      stem: "Which measure asks how hard the customer had to work?"
+      type: single
+      options: ["Customer effort", "Satisfaction", "Net promoter", "Retention"]
+      correct: ["Customer effort"]
+      rubric_category: recall
+      explanation: "The strongest known predictor of disloyalty in a service interaction."
+      weight: 1
+    - id: cxf-23
+      stem: "A customer has contacted you three times about the same fault. What does that record tell you, independently of any survey?"
+      type: single
+      options: ["First contact is not resolving, and effort is high", "The fault is more complex than first assessed", "The customer is unusually persistent about it", "The agent handling it needs further training"]
+      correct: ["First contact is not resolving, and effort is high"]
+      rubric_category: application
+      explanation: "Repeat contacts are an experience measure you already own, visible entirely from your own records."
+      weight: 1
+    - id: cxf-24
+      stem: "Your frontline may credit up to a defined amount without asking a manager. What must accompany that authority?"
+      type: single
+      options: ["Review of usage after the fact", "Approval for each case above zero", "A script covering every scenario", "A manager available at all times"]
+      correct: ["Review of usage after the fact"]
+      rubric_category: application
+      explanation: "Bounded authority is defined in advance and reviewed afterwards, not pre-approved case by case."
+      weight: 1
+    - id: cxf-25
+      stem: "Of 250 responses, 130 score 9-10, 70 score 7-8 and 50 score 0-6. What is the NPS?"
+      type: numeric
+      options:
+        tolerance: 1
+      correct: 32
+      rubric_category: application
+      explanation: "(130 − 50) ÷ 250 = 32. Passives count in the denominator only."
+      weight: 1
+    - id: cxf-26
+      stem: "Which of these are moments of truth in the journey? (Select all that apply.)"
+      type: multi
+      options: ["The first delivery of the promise", "The first problem the customer hits", "The way the ending is handled", "The second renewal notice sent"]
+      correct: ["The first delivery of the promise", "The first problem the customer hits", "The way the ending is handled"]
+      rubric_category: application
+      explanation: "Peaks and endings dominate memory; a routine renewal notice is neither."
+      weight: 1
+    - id: cxf-27
+      stem: "A customer's issue has crossed three departments and each has done its part. Nobody has told the customer anything. What failed?"
+      type: single
+      options: ["Nobody owned it end to end", "Each department was too slow", "The record system lost the history", "The customer was not chased enough"]
+      correct: ["Nobody owned it end to end"]
+      rubric_category: application
+      explanation: "Others contribute; the owner carries — and the customer experiences the seams the business cannot see."
+      weight: 1
+    - id: cxf-28
+      stem: "Why does a business that meets every regulation still routinely deliver poor service?"
+      type: single
+      options: ["Compliance sets the floor, and aiming there means living near it", "Regulations cover billing rather than service quality", "Regulators measure process rather than customer outcomes", "Compliance teams are separate from operational teams"]
+      correct: ["Compliance sets the floor, and aiming there means living near it"]
+      rubric_category: analysis
+      explanation: "Legally accurate, technically fair, resolved on day fourteen of fourteen — and every customer seething."
+      weight: 1
+    - id: cxf-29
+      stem: "Why is 'as soon as possible' more dangerous to promise than a slower but specific date?"
+      type: single
+      options: ["Each customer resolves the vagueness in their own favour", "It cannot be recorded in the service agreement", "It gives operations no target to plan against", "It suggests the business does not know its timings"]
+      correct: ["Each customer resolves the vagueness in their own favour"]
+      rubric_category: analysis
+      explanation: "Experience is measured against expectation, and an unset expectation is set by the customer."
+      weight: 1
+    - id: cxf-30
+      stem: "Three months of dashboards have been reviewed and filed with no operational change. What does the business have?"
+      type: single
+      options: ["A subscription to bad news", "A baseline for future comparison", "A cultural rather than data problem", "A measurement set aimed at the wrong things"]
+      correct: ["A subscription to bad news"]
+      rubric_category: analysis
+      explanation: "Measurement earns nothing until it changes something; the loop is the programme, not the dashboard."
+      weight: 1

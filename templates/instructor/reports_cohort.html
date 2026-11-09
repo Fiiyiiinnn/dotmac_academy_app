@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block content_width %}max-w-5xl{% endblock %}
+{% block title %}{{ cohort.name }} — Progress{% endblock %}
+{% block content %}
+<div class="flex flex-wrap items-end justify-between gap-4">
+  <div>
+    <p class="page-eyebrow">Progress matrix</p>
+    <h1 class="page-title">{{ cohort.name }}</h1>
+  </div>
+  <div class="flex items-center gap-3">
+    <button class="btn-ghost px-3.5 py-2 text-sm"
+            hx-post="/instructor/reports/cohort/{{ cohort.id }}/email"
+            hx-target="#email-flash" hx-swap="innerHTML">
+      Email me this summary
+    </button>
+    <a class="inline-flex min-h-11 items-center gap-1.5 text-sm font-semibold text-brand-700 hover:text-brand-800"
+       href="/instructor/reports/cohort/{{ cohort.id }}.csv">Download CSV</a>
+  </div>
+</div>
+<div class="mt-2 min-h-[1.25rem] text-right"><span id="email-flash"></span></div>
+
+<div class="card table-frame matrix-table-frame mt-6" role="region" aria-label="Cohort progress matrix; scroll horizontally and vertically to compare learners" tabindex="0">
+  <table class="data-table matrix-table">
+    <thead>
+      <tr class="border-b border-sand-300 bg-sand-200/60 text-left text-xs uppercase tracking-wider text-ink-soft">
+        <th scope="col" class="p-3.5 font-semibold">Student</th>
+        {% for a in activities %}
+        <th scope="col" class="p-3.5 font-semibold">{{ a.title }}<span class="mt-0.5 block text-[0.65rem] font-medium normal-case tracking-normal text-ink-soft/70">{{ a.type }}</span></th>
+        {% endfor %}
+        <th scope="col" class="p-3.5 font-semibold">Completion</th>
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-sand-200">
+      {% for row in rows %}
+      <tr class="transition-colors hover:bg-sand-100">
+        <td class="p-3.5">
+          <a class="font-medium text-brand-700 hover:text-brand-800" href="/instructor/reports/student/{{ row.person_id }}">{{ row.name }}</a>
+          <span class="mt-0.5 block text-xs text-ink-soft">{{ row.email }}</span>
+        </td>
+        {% for a in activities %}
+          {% set cell = row.cells[a.id] %}
+          <td class="p-3.5">
+            {% if cell %}
+              <span class="inline-flex min-h-11 items-center gap-1.5 font-mono tabular-nums text-ink">
+                {{ "%.0f"|format(cell.fraction * 100) }}%
+                {% if cell.passed %}<span class="text-brand-600" aria-label="passed">&check;</span>{% else %}<span class="text-clay-600" aria-label="not passed">&cross;</span>{% endif %}
+              </span>
+              <span class="mt-0.5 block text-xs text-ink-soft/70">{{ cell.score }}/{{ cell.max_score }}</span>
+            {% else %}
+              <span class="text-ink-soft/50">—</span>
+            {% endif %}
+          </td>
+        {% endfor %}
+        <td class="p-3.5 font-mono font-medium tabular-nums text-ink">{{ "%.0f"|format(row.completion * 100) }}%</td>
+      </tr>
+      {% else %}
+      <tr><td colspan="{{ activities|length + 2 }}" class="p-8 text-center text-ink-soft">No enrolled students.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

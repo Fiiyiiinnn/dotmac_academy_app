@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-team-leadership
+  kind: chapter
+  chapter: 5
+  version: 2
+  policy:
+    mode: practice
+  questions:
+    - id: tl5-01
+      stem: "In a genuine crisis, how many people visibly run the response?"
+      type: single
+      options: ["One", "Two, to share the load", "A small standing committee", "Whoever is closest to the fault"]
+      correct: ["One"]
+      rubric_category: recall
+      explanation: "One incident lead sets priorities, assigns actions, and is the single point where information converges."
+      weight: 1
+    - id: tl5-02
+      stem: "When you cannot honestly promise a fix time, what do you give instead?"
+      type: single
+      options: ["The time of your next update", "Your best current estimate", "The impact assessment so far", "A range with the worst case"]
+      correct: ["The time of your next update"]
+      rubric_category: recall
+      explanation: "Never promise a fix time you do not have. A kept update rhythm is what stops the anxious pinging."
+      weight: 1
+    - id: tl5-03
+      stem: "A major outage starts. Your team wants to begin fixing immediately. What comes first?"
+      type: single
+      options: ["Sixty seconds of what we know, the impact, and how to stop the bleeding", "A call to the affected customers so they hear about it from us first", "Assigning each available person to a different possible cause to test", "Escalating to your director so they are not surprised by the news later"]
+      correct: ["Sixty seconds of what we know, the impact, and how to stop the bleeding"]
+      rubric_category: application
+      explanation: "Triage before action. Stabilise first; the elegant permanent fix is tomorrow's work."
+      weight: 1
+    - id: tl5-04
+      stem: "You promised updates every 30 minutes. The half hour is up and there is genuinely no news. What do you send?"
+      type: single
+      options: ["Still working, next update at 15:00", "Nothing until there is news", "A summary of everything already ruled out so far", "A note asking for more time before the next update"]
+      correct: ["Still working, next update at 15:00"]
+      rubric_category: application
+      explanation: "Keep the rhythm especially when there is no news; silence is what generates the pinging that consumes your responders."
+      weight: 1
+    - id: tl5-05
+      stem: "Twenty minutes into an incident, someone starts asking who deployed the change that caused it. What do you say?"
+      type: single
+      options: ["How it happened is for later — right now we fix it", "Note it in the log and we will come back to it after", "That question is not appropriate during an active incident", "Let us establish that properly before we go any further"]
+      correct: ["How it happened is for later — right now we fix it"]
+      rubric_category: application
+      explanation: "Fear of blame makes people hide exactly the information you need most."
+      weight: 1
+    - id: tl5-06
+      stem: "A manager declares an emergency most weeks. What has that cost them?"
+      type: single
+      options: ["The team's response when a real emergency arrives", "The goodwill they need to ask for extra hours", "Their credibility with the department above them", "The ability to plan any work more than a week out"]
+      correct: ["The team's response when a real emergency arrives"]
+      rubric_category: application
+      explanation: "Reserve crisis mode for genuine, significant, time-critical impact — and end it explicitly when things are stable."
+      weight: 1
+    - id: tl5-07
+      stem: "An incident has run for eleven hours and your four responders are all still on it. What should you do?"
+      type: single
+      options: ["Rotate and feed them, even though it costs handover time", "Keep the team together until it is solved", "Ask the two most experienced to continue and release the others", "Push for another two hours since the fix is probably close now"]
+      correct: ["Rotate and feed them, even though it costs handover time"]
+      rubric_category: application
+      explanation: "Two tired people alternating beat four exhausted heroes; the error rate of hour twelve undoes the work of hour two."
+      weight: 1
+    - id: tl5-08
+      stem: "What makes 'assume everyone acted reasonably on the information they had' the ground rule that lets a review work?"
+      type: single
+      options: ["It moves the question from who failed to what made the failure possible", "It keeps the meeting shorter by removing the argument about fault", "It protects junior staff from being singled out by senior colleagues", "It is required before any finding can be used in a formal process"]
+      correct: ["It moves the question from who failed to what made the failure possible"]
+      rubric_category: analysis
+      explanation: "A review hunting for a culprit gets a culprit and no system change; the same incident then recurs."
+      weight: 1
+    - id: tl5-09
+      stem: "A team runs incident reviews diligently, but the improvement actions are rarely completed. What has the review become?"
+      type: single
+      options: ["Theatre — and the same incident will recur, minus the goodwill", "A useful record even so, since the timeline is still captured", "A morale exercise, which is a legitimate purpose in its own right", "An early-warning system that flags where the real risks are held"]
+      correct: ["Theatre — and the same incident will recur, minus the goodwill"]
+      rubric_category: analysis
+      explanation: "Three fixes that happen beat fifteen that don't. Findings that evaporate teach the team that reviews are performance."
+      weight: 1
+    - id: tl5-10
+      stem: "After an intense period, your steadiest person has become cynical, error-prone and quiet. Why is that a late signal rather than an early one?"
+      type: single
+      options: ["Burnout presents only once the reserves that were masking it are gone", "Cynicism usually follows a specific grievance rather than sustained load", "Reliable people are the last to be given relief when workloads are rebalanced", "Error rates rise across a whole team before any individual becomes visible"]
+      correct: ["Burnout presents only once the reserves that were masking it are gone"]
+      rubric_category: analysis
+      explanation: "The cheapest intervention is noticing early; the second cheapest is asking. By the visible stage you are already late."
+      weight: 1

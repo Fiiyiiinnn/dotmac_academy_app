@@ -1,0 +1,90 @@
+bank:
+  course: mgmt-people-hr
+  kind: chapter
+  chapter: 3
+  version: 1
+  policy:
+    mode: practice
+  questions:
+    - id: ph3-01
+      stem: 'A record of a conversation should be written:'
+      type: single
+      options: ["At the time", "At review", "When disputed", "Once a quarter"]
+      correct: ["At the time"]
+      rubric_category: recall
+      explanation: "A note made three months later is a recollection, and it reads like one to anybody assessing it afterwards."
+      weight: 1
+    - id: ph3-02
+      stem: 'Health information should be shared:'
+      type: single
+      options: ["At minimum detail", "With the team", "In the file only", "At the manager's discretion"]
+      correct: ["At minimum detail"]
+      rubric_category: recall
+      explanation: "To whoever must act on it, usually as \"adjustments needed\" rather than a diagnosis. A colleague's condition is not team news."
+      weight: 1
+    - id: ph3-03
+      stem: 'The test of a good employment record is whether it holds up when read by:'
+      type: single
+      options: ["A stranger later", "Your own manager", "The employee", "An investigator"]
+      correct: ["A stranger later"]
+      rubric_category: application
+      explanation: "Still understandable and still fair in two years, with the author unavailable. That test rules out adjectives about someone's attitude."
+      weight: 1
+    - id: ph3-04
+      stem: 'A record is materially stronger when it also contains:'
+      type: single
+      options: ["The employee's account", "Your conclusion", "A policy citation", "A witness list"]
+      correct: ["The employee's account"]
+      rubric_category: application
+      explanation: "It shows a manager who investigated rather than assumed, and it protects the employee as much as the file protects you."
+      weight: 1
+    - id: ph3-05
+      stem: 'The habit most managers skip, and the one that turns a note into evidence, is:'
+      type: single
+      options: ["Sharing it with them", "Dating it", "Filing it centrally in HR", "Copying HR"]
+      correct: ["Sharing it with them"]
+      rubric_category: application
+      explanation: "A record the employee has seen is evidence. A record they have never seen is one person's version."
+      weight: 1
+    - id: ph3-06
+      stem: 'Pay compression arises when:'
+      type: single
+      options: ["Market rates outpace increases", "Bonuses are unequal", "Roles are broad-banded", "Overtime is uncapped"]
+      correct: ["Market rates outpace increases"]
+      rubric_category: application
+      explanation: "New hires arrive at the current market while existing staff receive percentage rises. Eventually the newcomer earns more than the person training them."
+      weight: 1
+    - id: ph3-07
+      stem: '"It''s what they negotiated" as the explanation for a pay gap is dangerous because
+  it rewards:'
+      type: single
+      options: ["Confidence over contribution", "Tenure over skill", "Silence over candour", "Risk over caution"]
+      correct: ["Confidence over contribution"]
+      rubric_category: analysis
+      explanation: "It is a real reason, and the one that produces the most resentment when discovered \u2014 because the gap tracks who asked rather than who delivered."
+      weight: 1
+    - id: ph3-08
+      stem: 'Correcting a pay gap cost N480,000 against N1,375,200 to replace the person because
+  the replacement is hired at:'
+      type: single
+      options: ["The market rate", "A lower internal band", "The old rate", "A trainee rate"]
+      correct: ["The market rate"]
+      rubric_category: analysis
+      explanation: "The salary saving that refusing was protecting does not exist. It was never a choice between paying more and paying the same."
+      weight: 1
+    - id: ph3-09
+      stem: 'The right comparison when someone asks for a raise is against:'
+      type: single
+      options: ["The real alternative", "Last year's budget", "The team average", "Their previous salary"]
+      correct: ["The real alternative"]
+      rubric_category: analysis
+      explanation: "Not an imaginary status quo in which they stay at the old rate and remain content. That version is not on the menu."
+      weight: 1
+    - id: ph3-10
+      stem: 'Offering confidentiality you may not be able to keep is best replaced with:'
+      type: single
+      options: ["A stated limit", "A written policy", "A refusal to listen", "A referral to HR"]
+      correct: ["A stated limit"]
+      rubric_category: analysis
+      explanation: "'\"I can''t promise to keep that to myself if it''s a safety matter \u2014 but I''ll tell you before I take it anywhere\" is honest and survivable.'"
+      weight: 1

@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en" {{ dotmac_ui_theme_attribute }}="{{ dotmac_ui_theme }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Onboarding — {{ branding_name | default("Dotmac Academy") }}</title>
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+  {% include "_dotmac_ui_head.html" %}
+  <link rel="stylesheet" href="/static/app.css?v=9">
+  <script src="/static/htmx.min.js" defer></script>
+</head>
+<body class="min-h-screen bg-sand-100 text-ink antialiased">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <main id="main-content" class="flex items-center justify-center px-6 py-12 sm:px-12">
+    <div class="w-full max-w-2xl">
+      <p class="page-eyebrow">Dotmac Academy</p>
+      <h1 class="mt-2 font-display text-3xl font-[560] tracking-tight text-ink">Your onboarding</h1>
+
+      {% if notice %}
+      <div class="mt-8 rounded-lg border border-brand-200 bg-brand-50 p-6">
+        <h2 class="font-display text-xl font-[560] text-ink">{{ notice.title }}</h2>
+        <p class="mt-2 text-sm text-ink-soft">{{ notice.body }}</p>
+      </div>
+      {% else %}
+
+      {% if applicant.status == "enrolled" %}
+      <div class="mt-8 rounded-lg border border-brand-200 bg-brand-50 p-6">
+        <h2 class="font-display text-xl font-[560] text-ink">You're enrolled 🎉</h2>
+        <p class="mt-2 text-sm text-ink-soft">
+          Welcome to the Dotmac Academy. We've emailed you a link to set your password —
+          once that's done, log in and your courses are waiting.
+        </p>
+        <a class="btn-primary mt-4 inline-block px-4 py-2 text-sm" href="/login">Go to login</a>
+      </div>
+      {% else %}
+
+      <p class="mt-2 text-sm text-ink-soft">
+        Hi {{ applicant.first_name }} — complete the steps below and your enrollment is automatic.
+        {% if cohort %}You're joining <strong>{{ cohort.name }}</strong>.{% endif %}
+      </p>
+
+      <div class="mt-6 space-y-5">
+
+        <!-- Entrance assessment -->
+        <div class="card p-5">
+          <div class="flex items-center justify-between gap-3">
+            <h2 class="text-sm font-semibold text-ink">1. Entrance assessment</h2>
+            {% if tasks.get("entrance_assessment") == "done" %}
+            <span class="rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-600">Done</span>
+            {% else %}
+            <span class="rounded-full bg-sand-200 px-3 py-1 text-xs font-semibold text-ink-soft">Pending</span>
+            {% endif %}
+          </div>
+          {% if tasks.get("entrance_assessment") != "done" %}
+          <p class="mt-2 text-sm text-ink-soft">
+            You still need to sit the short online entrance assessment. The personal link was
+            emailed to you when you applied — if you can't find it, we can send a fresh one.
+          </p>
+          {% if resent %}
+          <p class="mt-2 text-sm font-semibold text-brand-600">A fresh assessment link is on its way to {{ applicant.email }}.</p>
+          {% else %}
+          <form method="post" action="/onboarding/resend-assessment" hx-post="/onboarding/resend-assessment" class="mt-3">
+            <input type="hidden" name="token" value="{{ token }}">
+            <button type="submit" class="btn-primary px-4 py-2 text-sm">Email me the assessment link</button>
+          </form>
+          {% endif %}
+          {% endif %}
+        </div>
+
+        <!-- Confirm details -->
+        <div class="card p-5">
+          <div class="flex items-center justify-between gap-3">
+            <h2 class="text-sm font-semibold text-ink">2. Confirm your details</h2>
+            {% if tasks.get("confirm_details") == "done" %}
+            <span class="rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-600">Done</span>
+            {% else %}
+            <span class="rounded-full bg-sand-200 px-3 py-1 text-xs font-semibold text-ink-soft">Pending</span>
+            {% endif %}
+          </div>
+          {% if tasks.get("confirm_details") != "done" %}
+          <dl class="mt-3 grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
+            <dt class="font-semibold text-ink">Name</dt><dd class="text-ink-soft">{{ applicant.first_name }} {{ applicant.last_name }}</dd>
+            <dt class="font-semibold text-ink">Email</dt><dd class="text-ink-soft">{{ applicant.email }}</dd>
+            {% if applicant.phone %}<dt class="font-semibold text-ink">Phone</dt><dd class="text-ink-soft">{{ applicant.phone }}</dd>{% endif %}
+            {% if applicant.program %}<dt class="font-semibold text-ink">Track</dt><dd class="text-ink-soft">{{ applicant.program }}</dd>{% endif %}
+            {% if applicant.city or applicant.state %}<dt class="font-semibold text-ink">Location</dt><dd class="text-ink-soft">{{ applicant.city or "" }}{% if applicant.city and applicant.state %}, {% endif %}{{ applicant.state or "" }}</dd>{% endif %}
+          </dl>
+          <p class="mt-3 text-sm text-ink-soft">Anything wrong? Reply to your acceptance email and we'll fix it before you confirm.</p>
+          <form method="post" action="/onboarding/confirm" hx-post="/onboarding/confirm" class="mt-3">
+            <input type="hidden" name="token" value="{{ token }}">
+            <button type="submit" class="btn-primary px-4 py-2 text-sm">These details are correct</button>
+          </form>
+          {% endif %}
+        </div>
+
+        <!-- Orientation -->
+        <div class="card p-5">
+          <div class="flex items-center justify-between gap-3">
+            <h2 class="text-sm font-semibold text-ink">3. Programme orientation</h2>
+            {% if tasks.get("orientation") == "done" %}
+            <span class="rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-600">Done</span>
+            {% else %}
+            <span class="rounded-full bg-sand-200 px-3 py-1 text-xs font-semibold text-ink-soft">Pending</span>
+            {% endif %}
+          </div>
+          {% if tasks.get("orientation") != "done" %}
+          <div class="mt-3 space-y-2 text-sm text-ink-soft">
+            <p><strong class="text-ink">How the programme works.</strong> Your coursework is self-paced and online — structured courses with chapter tests, graded assessments, and labs. Field practicals and internship placement run in Abuja and Lagos alongside your studies.</p>
+            <p><strong class="text-ink">What we expect.</strong> Steady progress through your track's courses, honest work on every assessment (they're individual, one attempt where marked), and professional conduct with staff and customers.</p>
+            <p><strong class="text-ink">Safety first.</strong> Field work follows the safety procedures you'll learn in your courses — laser safety, working at height, and site power rules are pass/fail, not negotiable.</p>
+            <p><strong class="text-ink">Your certificate.</strong> Completing your track's courses and practicals earns the Dotmac Technical Academy certificate.</p>
+          </div>
+          <form method="post" action="/onboarding/orientation" hx-post="/onboarding/orientation" class="mt-3">
+            <input type="hidden" name="token" value="{{ token }}">
+            <button type="submit" class="btn-primary px-4 py-2 text-sm">I've read and understood the orientation</button>
+          </form>
+          {% endif %}
+        </div>
+
+      </div>
+      {% endif %}
+      {% endif %}
+    </div>
+  </main>
+  <script src="/static/csrf.js?v=2"></script>
+</body>
+</html>

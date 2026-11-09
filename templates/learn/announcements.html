@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Announcements — {{ branding_name | default("Technical Academy") }}{% endblock %}
+{% block content %}
+<p class="page-eyebrow">{{ branding_name | default("Technical Academy") }}</p>
+<h1 class="page-title">Announcements</h1>
+
+{% if announcements %}
+<div class="mt-8 space-y-6">
+{% for ann in announcements %}
+  <article class="card p-6">
+    <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+      <h2 class="text-xl font-medium text-ink">{{ ann.title }}</h2>
+      {% if ann.cohort_id and cohort_map.get(ann.cohort_id) %}
+      <span class="text-sm text-ink-soft">{{ cohort_map.get(ann.cohort_id) }}</span>
+      {% endif %}
+      <span class="ml-auto text-xs text-ink-soft">{{ ann.created_at.strftime('%b %d, %Y') }}</span>
+    </div>
+    <div class="prose mt-4 text-ink">{{ ann.body_html | safe }}</div>
+  </article>
+{% endfor %}
+</div>
+{% else %}
+<div class="card mt-8 p-8 text-center">
+  <p class="text-ink-soft">No announcements yet.</p>
+</div>
+{% endif %}
+{% endblock %}

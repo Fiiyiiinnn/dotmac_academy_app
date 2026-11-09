@@ -1,0 +1,89 @@
+bank:
+  course: mgmt-people-hr
+  kind: chapter
+  chapter: 1
+  version: 1
+  policy:
+    mode: practice
+  questions:
+    - id: ph1-01
+      stem: 'A role definition should be written in terms of:'
+      type: single
+      options: ["Outcomes", "Personal qualities", "Years of service", "Reporting lines"]
+      correct: ["Outcomes"]
+      rubric_category: recall
+      explanation: "What must be true in twelve months because this person exists. \"Strong team player\" is a mood; a stated change in a measure is a role."
+      weight: 1
+    - id: ph1-02
+      stem: 'Interviews become predictive mainly through:'
+      type: single
+      options: ["Structure", "Experience", "Rapport", "Intuition"]
+      correct: ["Structure"]
+      rubric_category: recall
+      explanation: "Same questions, same order, behavioural evidence, independent scoring. Unstructured interviews largely measure resemblance to the interviewer."
+      weight: 1
+    - id: ph1-03
+      stem: 'A must-have requirement earns its place only if you would:'
+      type: single
+      options: ["Reject an excellent candidate", "Prefer it slightly", "Train it later", "Pay to obtain it"]
+      correct: ["Reject an excellent candidate"]
+      rubric_category: application
+      explanation: "Every must-have shrinks the pool. A licence you could pay to obtain is a nice-to-have wearing a requirement's badge."
+      weight: 1
+    - id: ph1-04
+      stem: 'Two interviewers should record their scores:'
+      type: single
+      options: ["Before discussing", "After agreeing", "During the interview", "At the offer stage"]
+      correct: ["Before discussing"]
+      rubric_category: application
+      explanation: "Discussing first produces one loud opinion wearing two faces. Where independent scores disagree is where the useful conversation is."
+      weight: 1
+    - id: ph1-05
+      stem: 'Asking "tell me about a time a job overran" beats a hypothetical because people are:'
+      type: single
+      options: ["Concrete about the past", "Honest under pressure", "Better at stories", "Kinder in hindsight"]
+      correct: ["Concrete about the past"]
+      rubric_category: application
+      explanation: "People are fluent about hypotheticals and specific about what they actually did. Push for situation, their own action, and the result."
+      weight: 1
+    - id: ph1-06
+      stem: 'The strongest single addition to most hiring processes is:'
+      type: single
+      options: ["A work sample", "A second interview", "A personality test", "A longer advert"]
+      correct: ["A work sample"]
+      rubric_category: application
+      explanation: "Thirty minutes of the real task under realistic conditions tells you more than an hour of description, and is hardest to fake in either direction."
+      weight: 1
+    - id: ph1-07
+      stem: 'Scoring each criterion separately guards mainly against:'
+      type: single
+      options: ["Halo", "Recency", "Similarity", "Anchoring"]
+      correct: ["Halo"]
+      rubric_category: analysis
+      explanation: "Halo is one strong answer or credential colouring every other rating. Separating the criteria forces the evidence to be attached to the right thing."
+      weight: 1
+    - id: ph1-08
+      stem: 'A bad hire costing about N2m against six extra hours of structured process costing
+  N14,400 argues that hiring is where:'
+      type: single
+      options: ["Slowing down pays", "Cost matters least", "Instinct performs best", "Delegation is safest"]
+      correct: ["Slowing down pays"]
+      rubric_category: analysis
+      explanation: "Roughly 141 times the cost. Structure does not guarantee a good hire \u2014 it improves the odds on the highest-leverage decision a manager makes."
+      weight: 1
+    - id: ph1-09
+      stem: 'The costliest part of a bad hire is usually:'
+      type: single
+      options: ["Absent from the ledger", "The salary paid", "The advertising", "The rehire fee"]
+      correct: ["Absent from the ledger"]
+      rubric_category: analysis
+      explanation: "The team watching someone underperform for months while nothing visible happens. It is unmeasurable and generally worse than the money."
+      weight: 1
+    - id: ph1-10
+      stem: 'Hesitation before answering "would you re-hire them?" should be treated as:'
+      type: single
+      options: ["The answer", "A legal caution", "Poor recall", "Politeness"]
+      correct: ["The answer"]
+      rubric_category: analysis
+      explanation: "Referees rarely volunteer criticism but they do pause. The question earns its place precisely because the pause carries the information."
+      weight: 1

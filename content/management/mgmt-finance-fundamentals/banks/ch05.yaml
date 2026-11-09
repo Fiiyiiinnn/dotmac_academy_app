@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-finance-fundamentals
+  kind: chapter
+  chapter: 5
+  version: 2
+  policy:
+    mode: practice
+  questions:
+    - id: fn5-01
+      stem: "A business case must always include which option?"
+      type: single
+      options: ["Do nothing, honestly costed", "The cheapest available route", "The option finance prefers", "A phased version of the plan"]
+      correct: ["Do nothing, honestly costed"]
+      rubric_category: recall
+      explanation: "A case with one option is a preference; options make it a decision."
+      weight: 1
+    - id: fn5-02
+      stem: "The management value of a budget lies in:"
+      type: single
+      options: ["The gap between plan and actual", "The total approved for the year", "The accuracy of the original plan", "The share each team is allocated"]
+      correct: ["The gap between plan and actual"]
+      rubric_category: recall
+      explanation: "Variance, and the story behind it, fast enough to act inside the year."
+      weight: 1
+    - id: fn5-03
+      stem: "Your budget was built as 'last year plus ten percent'. What is wrong with it?"
+      type: single
+      options: ["It is a guess wearing a spreadsheet, not a plan you can steer by", "It fails to account for the inflation the business is experiencing", "It assumes the same team structure as the previous year had", "It cannot be compared against the actuals in a meaningful way"]
+      correct: ["It is a guess wearing a spreadsheet, not a plan you can steer by"]
+      rubric_category: application
+      explanation: "Build bottom-up from unit economics — so-many customers at such-margin — and you have something you can defend and steer."
+      weight: 1
+    - id: fn5-04
+      stem: "A team is underspending its maintenance budget because work has been postponed. How should that variance be read?"
+      type: single
+      options: ["As a problem, since the cost has been deferred not avoided", "As a saving, since the money was not required this period", "As neutral, since maintenance timing varies across the year", "As a planning error in how the budget was originally set"]
+      correct: ["As a problem, since the cost has been deferred not avoided"]
+      rubric_category: application
+      explanation: "Variance is neither sin nor virtue. Overspend tracking higher sales is the plan working; underspend hiding postponed maintenance is not."
+      weight: 1
+    - id: fn5-05
+      stem: "You are proposing a piece of equipment. What does 'what does it really cost?' require?"
+      type: single
+      options: ["Purchase plus running, training, maintenance and people's time", "The purchase price plus a contingency for overruns", "The purchase price and the financing cost over the term", "The purchase price less the value of what it replaces"]
+      correct: ["Purchase plus running, training, maintenance and people's time"]
+      rubric_category: application
+      explanation: "Cases that hide costs get approved once and distrusted forever after."
+      weight: 1
+    - id: fn5-06
+      stem: "Part of your case's benefit is genuinely unquantifiable — improved safety. What do you do?"
+      type: single
+      options: ["Say so plainly rather than invent a number for it", "Estimate a conservative figure and label it clearly", "Leave it out of the case and mention it verbally", "Use an industry benchmark to put a value on it"]
+      correct: ["Say so plainly rather than invent a number for it"]
+      rubric_category: application
+      explanation: "Decorated guesses discredit the real figures standing beside them."
+      weight: 1
+    - id: fn5-07
+      stem: "Which are the recognised budget pathologies to resist? (Select all that apply.)"
+      type: multi
+      options: ["The year-end spending spree", "Padding requests against expected cuts", "Treating the line as an entitlement", "Re-forecasting when reality moves"]
+      correct: ["The year-end spending spree", "Padding requests against expected cuts", "Treating the line as an entitlement"]
+      rubric_category: application
+      explanation: "Re-forecasting is the healthy behaviour: businesses that update the forecast steer, and those that defend January's numbers navigate by a photograph."
+      weight: 1
+    - id: fn5-08
+      stem: "What marks a case as trustworthy more than any other single element?"
+      type: single
+      options: ["A stated result that would mean stop", "A conservative estimate of the return", "A detailed breakdown of the full cost", "A recommendation from a second manager"]
+      correct: ["A stated result that would mean stop"]
+      rubric_category: analysis
+      explanation: "Proposers who define their own failure condition get trusted with the next case too."
+      weight: 1
+    - id: fn5-09
+      stem: "Building a case honestly convinces you the idea does not clear the bar. What has happened?"
+      type: single
+      options: ["The system worked — that is the cheapest failure available", "The case was built on assumptions that were too pessimistic", "The idea needs reframing around a different set of benefits", "The evaluation criteria were set higher than they should be"]
+      correct: ["The system worked — that is the cheapest failure available"]
+      rubric_category: analysis
+      explanation: "The case you talk yourself out of on paper never consumes the money, the people, or the year."
+      weight: 1
+    - id: fn5-10
+      stem: "Why do managers who report back on funded decisions get funded again more easily?"
+      type: single
+      options: ["Their numbers acquire a track record that carries their signature", "Their reporting demonstrates that they manage projects carefully", "Their reviews surface problems before finance has to find them", "Their estimates improve because they learn from each outcome"]
+      correct: ["Their numbers acquire a track record that carries their signature"]
+      rubric_category: analysis
+      explanation: "Finance teams everywhere fund track records long before they fund enthusiasm — and reporting the misses is what makes the record credible."
+      weight: 1

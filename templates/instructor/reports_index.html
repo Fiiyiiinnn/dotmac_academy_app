@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block content_width %}max-w-5xl{% endblock %}
+{% block title %}Reports — Dotmac Academy{% endblock %}
+{% block content %}
+<p class="page-eyebrow">Instructor</p>
+<h1 class="page-title">Reports</h1>
+<p class="mt-3 flex flex-wrap gap-3 text-sm">
+  <a class="font-semibold text-brand-600 hover:underline" href="/success-queue">Success Queue →</a>
+  <a class="font-semibold text-brand-600 hover:underline" href="/instructor/reports/academy-summary.csv">Academy summary (CSV)</a>
+</p>
+<p class="page-intro">Cohort progress matrices and student transcripts.</p>
+
+<div class="card mt-10 overflow-hidden">
+  <ul class="divide-y divide-sand-200">
+    {% for c in cohorts %}
+    <li class="flex items-center justify-between gap-4 p-4 transition-colors hover:bg-sand-100">
+      <span class="font-medium text-ink">{{ c.name }}
+        <span class="ml-1 text-sm font-normal text-ink-soft">{{ c.discipline }}</span>
+      </span>
+      <span class="flex items-center gap-4">
+        <a class="text-sm font-semibold text-brand-700 hover:text-brand-800"
+           href="/instructor/reports/cohort/{{ c.id }}/analytics">Analytics</a>
+        <a class="group inline-flex min-h-11 items-center gap-1.5 text-sm font-semibold text-brand-700 hover:text-brand-800"
+           href="/instructor/reports/cohort/{{ c.id }}">
+          View matrix
+          <span class="transition-transform group-hover:translate-x-0.5" aria-hidden="true">&rarr;</span>
+        </a>
+      </span>
+    </li>
+    {% else %}
+    <li class="p-8 text-center text-ink-soft">No cohorts yet.</li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% if comparison %}
+<h2 class="mt-10 text-xl font-medium text-ink">Cohort comparison</h2>
+<p class="mt-1 text-sm text-ink-soft">Active = any learning event in the last {{ insight_terms.active_window_days }} days.</p>
+<div class="card table-frame mt-4" role="region" aria-label="Cohort comparison table; scroll horizontally to see all columns" tabindex="0">
+  <table class="data-table">
+    <thead>
+      <tr class="border-b border-sand-200 text-left text-xs font-semibold uppercase tracking-wide text-ink-soft">
+        <th scope="col" class="p-3">Cohort</th><th scope="col" class="p-3">Learners</th><th scope="col" class="p-3">Active ({{ insight_terms.active_window_days }}d)</th>
+        <th scope="col" class="p-3">Completed</th><th scope="col" class="p-3">Completion</th>
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-sand-200">
+      {% for row in comparison %}
+      <tr>
+        <td class="p-3 font-medium text-ink">{{ row.cohort.name }}</td>
+        <td class="p-3 tabular-nums">{{ row.learners }}</td>
+        <td class="p-3 tabular-nums">{{ row.active }}</td>
+        <td class="p-3 tabular-nums">{{ row.completed }}</td>
+        <td class="p-3 tabular-nums">{{ row.completion_pct }}%</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endif %}
+{% endblock %}

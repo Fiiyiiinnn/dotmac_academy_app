@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-data-kpis
+  kind: chapter
+  chapter: 1
+  version: 2
+  policy:
+    mode: practice
+  questions:
+    - id: dk1-01
+      stem: "A measure earns its place when it:"
+      type: single
+      options: ["Changes a decision", "Can be collected easily", "Improves over time", "Covers the whole team"]
+      correct: ["Changes a decision"]
+      rubric_category: recall
+      explanation: "A metric nobody can connect to a question is a dial wired to nothing."
+      weight: 1
+    - id: dk1-02
+      stem: "Which type of indicator reports the activities that cause an outcome, early enough to influence it?"
+      type: single
+      options: ["Leading", "Lagging", "Composite", "Diagnostic"]
+      correct: ["Leading"]
+      rubric_category: recall
+      explanation: "Lagging indicators are the truth but arrive too late to change."
+      weight: 1
+    - id: dk1-03
+      stem: "A team reports 'total deliveries completed since launch' each month. What kind of metric is that?"
+      type: single
+      options: ["Vanity — it can only rise, so no value changes anything", "Lagging — it reports an outcome after it has occurred", "Output — it counts the volume of the actual mission", "Diagnostic — useful for investigating rather than reviewing"]
+      correct: ["Vanity — it can only rise, so no value changes anything"]
+      rubric_category: application
+      explanation: "The signature of a vanity metric is that no realistic value would alter what you do next week."
+      weight: 1
+    - id: dk1-04
+      stem: "Your team is graded on a number driven mainly by the season and another department's throughput. What should that number be?"
+      type: single
+      options: ["Context on the wall, not a KPI for this team", "A KPI carrying a target that is adjusted for the seasonal pattern", "A diagnostic kept in the cupboard entirely", "A shared KPI owned by both departments"]
+      correct: ["Context on the wall, not a KPI for this team"]
+      rubric_category: application
+      explanation: "Nothing corrodes a team faster than being graded on a dial they cannot turn."
+      weight: 1
+    - id: dk1-05
+      stem: "Which pair correctly matches a leading indicator to the lagging outcome it is meant to drive?"
+      type: single
+      options: ["Enquiries answered within the hour → monthly sales", "Monthly revenue reported → the quarterly profit that follows it", "Customer losses → complaints still open now", "Accidents recorded → maintenance completed"]
+      correct: ["Enquiries answered within the hour → monthly sales"]
+      rubric_category: application
+      explanation: "The pairing is a theory — and if the leading number moves while the lagging one never follows, the theory was wrong."
+      weight: 1
+    - id: dk1-06
+      stem: "Which of these make a metric actionable? (Select all that apply.)"
+      type: multi
+      options: ["A named decision depends on it", "It is expressed as a rate or ratio", "The team measured can move it", "It rises steadily over time"]
+      correct: ["A named decision depends on it", "It is expressed as a rate or ratio", "The team measured can move it"]
+      rubric_category: application
+      explanation: "Steady rise is the signature of vanity, not of usefulness."
+      weight: 1
+    - id: dk1-07
+      stem: "A team wants to replace 'deliveries this month' with something that shows whether it is improving. What do you suggest?"
+      type: single
+      options: ["Deliveries per crew per day, and share on time", "Deliveries recorded this month set against the same month last year", "Cumulative deliveries plotted as a trend", "Deliveries per customer served this month"]
+      correct: ["Deliveries per crew per day, and share on time"]
+      rubric_category: application
+      explanation: "Raw totals flatter growth and hide efficiency. Comparable numbers — per unit, per person, per week — expose real change."
+      weight: 1
+    - id: dk1-08
+      stem: "A process degrades about two percent a month. Why does nobody notice for a year?"
+      type: single
+      options: ["No single day is bad enough to trigger alarm, and memory keeps no record", "The measurement system is not sensitive enough to detect small moves", "Staff adapt to the decline and stop reporting it as a problem", "The degradation is masked by growth in the volume of work"]
+      correct: ["No single day is bad enough to trigger alarm, and memory keeps no record"]
+      rubric_category: analysis
+      explanation: "Only comparison against a recorded past reveals slow drift — which is one of the main things measurement is for."
+      weight: 1
+    - id: dk1-09
+      stem: "Why are vanity metrics worse than harmless?"
+      type: single
+      options: ["They occupy the attention honest numbers need and always say things are fine", "They cost time to collect that could be spent on actionable measures", "They give the team a false sense of the standard being expected", "They are difficult to remove once leadership has grown used to them"]
+      correct: ["They occupy the attention honest numbers need and always say things are fine"]
+      rubric_category: analysis
+      explanation: "Because they always rise, they teach an organisation that things are fine while the unwatched actionable numbers say otherwise."
+      weight: 1
+    - id: dk1-10
+      stem: "A manager tracks only leading indicators and reports steady improvement in all of them. What is the risk?"
+      type: single
+      options: ["Admiring the effort without ever checking that it works", "Reacting to short-term movement rather than to real trends", "Missing the outcomes that senior leadership actually cares about", "Choosing measures the team can influence but nobody values"]
+      correct: ["Admiring the effort without ever checking that it works"]
+      rubric_category: analysis
+      explanation: "Lagging-only is driving by the rear-view mirror; leading-only is admiring your own activity. The pair is what tests the theory."
+      weight: 1

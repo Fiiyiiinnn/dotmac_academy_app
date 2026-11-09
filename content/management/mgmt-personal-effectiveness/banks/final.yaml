@@ -1,0 +1,250 @@
+bank:
+  course: mgmt-personal-effectiveness
+  kind: final
+  version: 1
+  policy:
+    mode: exam
+    pool: 20
+    max_attempts: 2
+    pass_threshold: 0.70
+  questions:
+    - id: pef-01
+      stem: "Before changing how you work, measure by logging a week in blocks of:"
+      type: single
+      options: ["Fifteen minutes", "A full hour", "Half a day", "Two hours"]
+      correct: ["Fifteen minutes"]
+      rubric_category: recall
+      explanation: "With a one-word label, without changing behaviour. The point is a true baseline rather than an improved one."
+      weight: 1
+    - id: pef-02
+      stem: "\"I'm too busy to track my time\" should be read as:"
+      type: single
+      options: ["The finding itself", "A fair objection", "A genuine resourcing signal", "A delegation issue"]
+      correct: ["The finding itself"]
+      rubric_category: application
+      explanation: "Not a reason to skip the exercise."
+      weight: 1
+    - id: pef-03
+      stem: "The four time categories are only-you, better-by-you, anyone and nobody. The fastest gains are in:"
+      type: single
+      options: ["Nobody", "Anyone", "Better by you", "Only you"]
+      correct: ["Nobody"]
+      rubric_category: application
+      explanation: "Reports nobody reads, meetings with no decision, rework. It is the row people avoid looking at because it feels like an admission."
+      weight: 1
+    - id: pef-04
+      stem: "The full cost of an interruption is its duration plus the:"
+      type: single
+      options: ["Recovery time", "Follow-up work", "Context handover", "Time to respond"]
+      correct: ["Recovery time"]
+      rubric_category: recall
+      explanation: "Roughly ten to fifteen minutes to re-enter concentrated work, which is why the annual total is far larger than it appears."
+      weight: 1
+    - id: pef-05
+      stem: "Fifteen interruptions a day at twelve minutes of recovery amounts to roughly:"
+      type: single
+      options: ["720 hours a year", "180 hours a year", "About 1,440 hours a year", "72 hours a year"]
+      correct: ["720 hours a year"]
+      rubric_category: application
+      explanation: "Three hours a day, fifteen a week. Spent purely re-entering work already started."
+      weight: 1
+    - id: pef-06
+      stem: "That figure is best described as:"
+      type: single
+      options: ["Capacity, not cash", "Cash, not capacity", "A payroll overhead", "A recoverable saving"]
+      correct: ["Capacity, not cash"]
+      rubric_category: analysis
+      explanation: "It only becomes real if the freed time goes somewhere that matters."
+      weight: 1
+    - id: pef-07
+      stem: "Hours worked, as a measure of a manager, behaves like:"
+      type: single
+      options: ["A vanity metric", "A leading indicator", "A capacity gauge", "A quality measure"]
+      correct: ["A vanity metric"]
+      rubric_category: analysis
+      explanation: "It always rises, it feels virtuous, and no realistic value of it would change what you do next week."
+      weight: 1
+    - id: pef-08
+      stem: "The quadrant containing planning, prevention, coaching and systems is:"
+      type: single
+      options: ["Important, not urgent", "Both urgent and important", "Urgent, not important", "Neither of the two"]
+      correct: ["Important, not urgent"]
+      rubric_category: recall
+      explanation: "It has no deadline and nobody chases it, which is why it needs a defended block to survive a busy week."
+      weight: 1
+    - id: pef-09
+      stem: "A list reading \"high, high, high, medium\" is best described as:"
+      type: single
+      options: ["An inventory", "A ranked order", "A live backlog", "A rough forecast"]
+      correct: ["An inventory"]
+      rubric_category: application
+      explanation: "A real order is 1, 2, 3, and its value is answering whether something new goes above or below number three."
+      weight: 1
+    - id: pef-10
+      stem: "The strongest way to decline work is:"
+      type: single
+      options: ["The trade-off", "A flat refusal", "A soft delay", "A vague yes"]
+      correct: ["The trade-off"]
+      rubric_category: application
+      explanation: "\"Yes, and that pushes X \u2014 is that the right swap?\" It hands the decision to whoever owns the priority, with the cost attached."
+      weight: 1
+    - id: pef-11
+      stem: "Absorbing extra work into evenings is most damaging because it makes the overcommitment:"
+      type: single
+      options: ["Invisible", "Unpaid", "Permanent", "Unfair"]
+      correct: ["Invisible"]
+      rubric_category: analysis
+      explanation: "So the plan that caused it never gets corrected."
+      weight: 1
+    - id: pef-12
+      stem: "Six hours of new work against 2.8 hours of headroom consumes the headroom plus:"
+      type: single
+      options: ["Hours that do not exist", "Next week's capacity", "The team's buffer", "Somebody else's spare time"]
+      correct: ["Hours that do not exist"]
+      rubric_category: application
+      explanation: "Found in the unplanned buffer, in quality, or in evenings \u2014 none of which appear on any plan."
+      weight: 1
+    - id: pef-13
+      stem: "The trade-off conversation depends on being able to cite:"
+      type: single
+      options: ["Your real number", "A written policy", "Your manager's rules", "A team agreement"]
+      correct: ["Your real number"]
+      rubric_category: analysis
+      explanation: "Without a logged week, \"I'm quite busy\" is not an argument anyone has to accept."
+      weight: 1
+    - id: pef-14
+      stem: "If the honest plan exceeds honest capacity after removing waste, the problem is:"
+      type: single
+      options: ["Resourcing", "Prioritisation", "Self-discipline", "Poor delegation"]
+      correct: ["Resourcing"]
+      rubric_category: recall
+      explanation: "No technique fixes it, and treating it as a discipline failure ends with the work absorbed quietly until something gives."
+      weight: 1
+    - id: pef-15
+      stem: "Four hours in eight fragments is worth less than four whole hours because of:"
+      type: single
+      options: ["Repeated re-entry", "Reduced motivation", "Meeting overhead", "Slower typing"]
+      correct: ["Repeated re-entry"]
+      rubric_category: recall
+      explanation: "And because some work never reaches depth at all \u2014 it either gets a long block or it does not get done."
+      weight: 1
+    - id: pef-16
+      stem: "Difficult, indivisible work with no protected block will typically:"
+      type: single
+      options: ["Slide indefinitely", "Get delegated", "Lose accuracy", "Take twice as long"]
+      correct: ["Slide indefinitely"]
+      rubric_category: application
+      explanation: "It is exactly the work that lives permanently at \"tomorrow\"."
+      weight: 1
+    - id: pef-17
+      stem: "A protected block should be labelled in the calendar with:"
+      type: single
+      options: ["A real project name", "The words focus time", "A private symbol", "Nothing at all"]
+      correct: ["A real project name"]
+      rubric_category: application
+      explanation: "Vague labels are overwritten by anyone who thinks their meeting is more concrete than your intention."
+      weight: 1
+    - id: pef-18
+      stem: "The objection \"my team needs access to me\" is answered by observing that access is not:"
+      type: single
+      options: ["Constant availability", "A management duty", "A reasonable ask", "A daily requirement"]
+      correct: ["Constant availability"]
+      rubric_category: analysis
+      explanation: "And a team that genuinely cannot survive two hours has revealed a delegation finding."
+      weight: 1
+    - id: pef-19
+      stem: "A notification is best understood as:"
+      type: single
+      options: ["An instruction to switch", "A helpful prompt", "A courtesy signal", "A genuine efficiency gain"]
+      correct: ["An instruction to switch"]
+      rubric_category: analysis
+      explanation: "Issued by whoever happened to type. Choosing when to look is the entire point of batching."
+      weight: 1
+    - id: pef-20
+      stem: "Being reliably responsive within a known window rather than instantly available is:"
+      type: single
+      options: ["Cheaper to sustain", "Less professional", "Slower for others", "Harder to measure"]
+      correct: ["Cheaper to sustain"]
+      rubric_category: analysis
+      explanation: "And it is better service than being erratically immediate."
+      weight: 1
+    - id: pef-21
+      stem: "Fatigue belongs on a manager's list of:"
+      type: single
+      options: ["Decision-making risks", "Wellbeing concerns", "Performance factors", "Scheduling constraints"]
+      correct: ["Decision-making risks"]
+      rubric_category: analysis
+      explanation: "It degrades judgement before it degrades output, which is why nobody puts it on a register."
+      weight: 1
+    - id: pef-22
+      stem: "A capture system must have friction close to zero because otherwise it will be:"
+      type: single
+      options: ["Bypassed when busy", "Filled with noise", "Slow to review", "Duplicated somewhere else"]
+      correct: ["Bypassed when busy"]
+      rubric_category: application
+      explanation: "One place, always to hand. A capture system you have to go and find is one you will skip precisely when it matters."
+      weight: 1
+    - id: pef-23
+      stem: "Keeping five partial lists means that:"
+      type: single
+      options: ["Nothing can be ranked", "Items get lost", "Tools conflict", "Reviews take longer"]
+      correct: ["Nothing can be ranked"]
+      rubric_category: application
+      explanation: "Priority collapses to whatever is in front of you."
+      weight: 1
+    - id: pef-24
+      stem: "A list item phrased as a noun rather than an action will be:"
+      type: single
+      options: ["Skipped repeatedly", "Delegated wrongly", "Duplicated later", "Ranked too low"]
+      correct: ["Skipped repeatedly"]
+      rubric_category: recall
+      explanation: "\"Kano project\" is skipped every time it is read; \"call Musa about the Kano permit\" gets done."
+      weight: 1
+    - id: pef-25
+      stem: "The list that fails silently, and that most managers never keep, tracks:"
+      type: single
+      options: ["What you await", "What you delegated", "What you deferred", "What you finished"]
+      correct: ["What you await"]
+      rubric_category: recall
+      explanation: "What, who, since when. Untracked, you discover on the deadline that the approval never came."
+      weight: 1
+    - id: pef-26
+      stem: "An untrusted list is worse than none because it delivers:"
+      type: single
+      options: ["Overhead and anxiety", "Extra admin only", "Slower decisions", "Repeatedly duplicated effort"]
+      correct: ["Overhead and anxiety"]
+      rubric_category: analysis
+      explanation: "You bypass it quietly while still maintaining it \u2014 the cost of a system with the worry of having none."
+      weight: 1
+    - id: pef-27
+      stem: "Checklists are most valuable for people who are:"
+      type: single
+      options: ["Experienced and busy", "New to the task", "Poorly trained", "Loosely supervised"]
+      correct: ["Experienced and busy"]
+      rubric_category: analysis
+      explanation: "Confident enough to be sure and busy enough to skip step four."
+      weight: 1
+    - id: pef-28
+      stem: "After a system lapses, the recommended response is to:"
+      type: single
+      options: ["Correct the old list", "Start a fresh list", "Change to a new tool", "Rebuild from scratch"]
+      correct: ["Correct the old list"]
+      rubric_category: application
+      explanation: "Rebuilding is how people reach their fifth tool with nothing carried forward."
+      weight: 1
+    - id: pef-29
+      stem: "A capacity escalation lands when it carries numbers, named consequences, options and:"
+      type: single
+      options: ["A decision date", "An apology", "A deadline extension", "A formal resourcing request"]
+      correct: ["A decision date"]
+      rubric_category: application
+      explanation: "Plus a recommendation. Bring the options rather than the problem, and bring them before the slip."
+      weight: 1
+    - id: pef-30
+      stem: "When everything else lapses, the three things to protect are capture, one block and:"
+      type: single
+      options: ["The one-to-ones", "The weekly review", "The templates", "The waiting-on list"]
+      correct: ["The one-to-ones"]
+      rubric_category: recall
+      explanation: "Everything else restarts in ten minutes; what those three would have caught does not come back."
+      weight: 1

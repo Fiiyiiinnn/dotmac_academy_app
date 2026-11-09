@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-customer-experience
+  kind: chapter
+  chapter: 3
+  version: 2
+  policy:
+    mode: practice
+  questions:
+    - id: cx3-01
+      stem: "A service commitment should be set against:"
+      type: single
+      options: ["What the system delivers on a bad week", "What the team achieved on its best week", "What competitors are currently promising", "What the customer says they would accept"]
+      correct: ["What the system delivers on a bad week"]
+      rubric_category: recall
+      explanation: "A commitment is a decision, not a hope. The gap between marketing's promise and operations' reality is paid at the service desk."
+      weight: 1
+    - id: cx3-02
+      stem: "The recovery anatomy is: acknowledge, fix the customer's situation, make good proportionately, and:"
+      type: single
+      options: ["Say what changes", "Record the case", "Apologise again", "Offer a discount"]
+      correct: ["Say what changes"]
+      rubric_category: recall
+      explanation: "It converts a private apology into evidence of a business that learns."
+      weight: 1
+    - id: cx3-03
+      stem: "The realistic turnaround for a job is three days. Which promise produces the better experience, given identical delivery in two days?"
+      type: single
+      options: ["Promise three days and deliver in two", "Promise one day and deliver in two", "Promise two days and deliver in two", "Promise as soon as possible, deliver in two"]
+      correct: ["Promise three days and deliver in two"]
+      rubric_category: application
+      explanation: "Experience is measured against expectation, and you set the expectation. The same two days delights or infuriates."
+      weight: 1
+    - id: cx3-04
+      stem: "You learn at 9am that a technician is ill and today's appointment will not happen. What do you do?"
+      type: single
+      options: ["Tell the customer now, with the new time", "Wait until someone can be reassigned to it", "Tell them at the appointment slot if nobody is free", "Send a general apology to all affected customers"]
+      correct: ["Tell the customer now, with the new time"]
+      rubric_category: application
+      explanation: "A proactive warning is a kept meta-promise: it says we are watching your case. Discovered lateness says the opposite."
+      weight: 1
+    - id: cx3-05
+      stem: "Your team internally accepts 'we say two days, but it's really four.' What has that already done?"
+      type: single
+      options: ["Trained the staff that the business's promises are decorative", "Created a gap that customers will discover at some later point", "Made the published commitment impossible to measure honestly", "Set an internal standard that is more realistic than the external one"]
+      correct: ["Trained the staff that the business's promises are decorative"]
+      rubric_category: application
+      explanation: "Customers learn the same lesson shortly after. Systematic misses are an operations problem to fix or a promise to renegotiate."
+      weight: 1
+    - id: cx3-06
+      stem: "A serious failure has cost a customer two days of business. Your frontline offers a small goodwill credit. What is wrong?"
+      type: single
+      options: ["A trivial gesture for a serious failure insults rather than repairs", "The credit should have been approved by a manager beforehand", "Goodwill credits are the wrong remedy where business loss occurred", "The remedy was offered before the underlying fault was corrected"]
+      correct: ["A trivial gesture for a serious failure insults rather than repairs"]
+      rubric_category: application
+      explanation: "The remedy is how the customer measures your sincerity, so it must scale to the harm."
+      weight: 1
+    - id: cx3-07
+      stem: "Why is 'we regret any inconvenience that may have occurred' worse than a plain acknowledgement?"
+      type: single
+      options: ["It reads as evasion, because it names neither the fault nor the harm", "It is too formal for the channels most customers now contact you on", "It delays the moment at which the customer's situation gets fixed", "It commits the business to nothing that could later be measured"]
+      correct: ["It reads as evasion, because it names neither the fault nor the harm"]
+      rubric_category: analysis
+      explanation: "Acknowledge fast and specifically. The non-apology is transparent to everyone who receives one."
+      weight: 1
+    - id: cx3-08
+      stem: "Why is 'as soon as possible' more dangerous than a slower but specific commitment?"
+      type: single
+      options: ["Every customer resolves the ambiguity in their own favour", "It cannot be recorded in a contract or service agreement", "It gives the team no target against which to plan capacity", "It signals that the business does not know its own timings"]
+      correct: ["Every customer resolves the ambiguity in their own favour"]
+      rubric_category: analysis
+      explanation: "Vague promises feel safe to give and are the most dangerous, because they are measured against whatever the customer assumed."
+      weight: 1
+    - id: cx3-09
+      stem: "A business issues credits every month for the same recurring fault. What is it actually doing?"
+      type: single
+      options: ["Renting patience while refusing to fix the defect", "Managing a known limitation in a transparent way", "Protecting lifetime value against a short-term cost", "Buying time until the operational fix is delivered"]
+      correct: ["Renting patience while refusing to fix the defect"]
+      rubric_category: analysis
+      explanation: "Recovery handles the exception. When the miss is the rule, the fix is operational and no voucher volume substitutes."
+      weight: 1
+    - id: cx3-10
+      stem: "Why must recovery authority be pre-granted to the frontline rather than approved case by case?"
+      type: single
+      options: ["Recovery delayed by approval-hunting is recovery halved", "Managers cannot assess the harm as well as the frontline can", "Pre-approval produces more consistent remedies across cases", "It reduces the number of complaints that reach the manager"]
+      correct: ["Recovery delayed by approval-hunting is recovery halved"]
+      rubric_category: analysis
+      explanation: "The value of a remedy decays with the time taken to grant it — the speed is part of the repair."
+      weight: 1

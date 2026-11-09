@@ -1,0 +1,21 @@
+# Curriculum structure for the support discipline.
+#
+# `python -m app.cli load-curriculum` is the canonical writer for this file,
+# same as the management discipline's CURRICULUM.yaml — see that file for the
+# full rationale. This is the first course in the `support` discipline, so
+# there is no prerequisite graph yet: a single course cannot depend on
+# anything, and nothing yet depends on it.
+
+curriculum:
+  discipline: support
+
+  groups:
+    Frontline:
+      - sup-agent-fundamentals
+
+  # No prerequisites yet — the first course in a new discipline is always
+  # its own entry point. Add edges here only once a second support course
+  # exists and a genuine, content-level dependency between them is
+  # identified (see the management CURRICULUM.yaml for the bar an edge
+  # has to clear: content that is actually assumed, not merely related).
+  prerequisites: []

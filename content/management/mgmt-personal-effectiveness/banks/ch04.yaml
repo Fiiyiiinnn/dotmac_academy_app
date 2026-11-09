@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-personal-effectiveness
+  kind: chapter
+  chapter: 4
+  version: 1
+  policy:
+    mode: practice
+  questions:
+    - id: pe4-01
+      stem: "The principle behind a capture system is to capture immediately and:"
+      type: single
+      options: ["Decide later", "Act at once", "File weekly", "Sort by project"]
+      correct: ["Decide later"]
+      rubric_category: recall
+      explanation: "The head is a bad storage device and a good processor. Anything held only in memory consumes attention and surfaces at the wrong moment."
+      weight: 1
+    - id: pe4-02
+      stem: "The main cost of keeping five partial lists is that:"
+      type: single
+      options: ["Nothing can be ranked", "Items get lost", "Tools conflict", "Weekly reviews take longer"]
+      correct: ["Nothing can be ranked"]
+      rubric_category: application
+      explanation: "Priority collapses to whatever is in front of you, and a real 1, 2, 3 order becomes impossible."
+      weight: 1
+    - id: pe4-03
+      stem: "An item written as \"Kano project\" will be skipped because it is not:"
+      type: single
+      options: ["An action", "A priority", "Assigned", "Dated"]
+      correct: ["An action"]
+      rubric_category: application
+      explanation: "\"Call Musa about the Kano permit\" gets done; a noun does not."
+      weight: 1
+    - id: pe4-04
+      stem: "The list most managers never keep, and the one that fails silently, is:"
+      type: single
+      options: ["Waiting-on", "Delegated", "Someday", "Reference material"]
+      correct: ["Waiting-on"]
+      rubric_category: recall
+      explanation: "What, who, since when. Untracked, you discover on the deadline that the approval never came."
+      weight: 1
+    - id: pe4-05
+      stem: "The habit that keeps every other system honest is:"
+      type: single
+      options: ["The weekly review", "Daily planning", "Inbox zero", "Monthly reporting"]
+      correct: ["The weekly review"]
+      rubric_category: recall
+      explanation: "Empty captures, chase waiting-ons, re-rank, look ahead, look back. It is the first thing dropped and the one that matters most."
+      weight: 1
+    - id: pe4-06
+      stem: "A list you no longer trust is worse than no list because you get:"
+      type: single
+      options: ["Overhead and anxiety", "Extra admin", "Consistently slower decisions", "Duplicate work"]
+      correct: ["Overhead and anxiety"]
+      rubric_category: analysis
+      explanation: "You bypass it quietly while continuing to maintain it \u2014 the cost of a system with the worry of not having one."
+      weight: 1
+    - id: pe4-07
+      stem: "Checklists are most valuable for people who are:"
+      type: single
+      options: ["Experienced and busy", "New and untrained", "Forgetful", "Poorly supervised staff"]
+      correct: ["Experienced and busy"]
+      rubric_category: analysis
+      explanation: "Confident enough to be sure and busy enough to skip step four."
+      weight: 1
+    - id: pe4-08
+      stem: "Routines, templates and defaults work by converting:"
+      type: single
+      options: ["Repeated decisions into one", "Effort into habit", "Tasks into projects", "Loose actions into records"]
+      correct: ["Repeated decisions into one"]
+      rubric_category: application
+      explanation: "Which is why a modest routine beats an ambitious system nobody sustains."
+      weight: 1
+    - id: pe4-09
+      stem: "Re-organising a list instead of doing the work on it is best described as:"
+      type: single
+      options: ["Productive-looking delay", "Necessary system maintenance", "System improvement", "Weekly review"]
+      correct: ["Productive-looking delay"]
+      rubric_category: analysis
+      explanation: "Procrastination with good posture \u2014 and the failure mode productivity systems specifically attract."
+      weight: 1
+    - id: pe4-10
+      stem: "The test of a personal system is whether it reduces what you hold in your head and whether it:"
+      type: single
+      options: ["Survives a bad week", "Scales to a team", "Fits one tool", "Impresses other managers"]
+      correct: ["Survives a bad week"]
+      rubric_category: application
+      explanation: "A system needing a calm week to maintain will fail exactly when it is needed."
+      weight: 1

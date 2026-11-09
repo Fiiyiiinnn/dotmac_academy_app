@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-project-management
+  kind: chapter
+  chapter: 5
+  version: 2
+  policy:
+    mode: practice
+  questions:
+    - id: pm5-01
+      stem: "A risk register records what could happen, how likely, how bad, what you are doing, and:"
+      type: single
+      options: ["Who owns it", "When it started", "What it costs", "Why it exists"]
+      correct: ["Who owns it"]
+      rubric_category: recall
+      explanation: "One page, reviewed weekly. A register written once and filed is a souvenir."
+      weight: 1
+    - id: pm5-02
+      stem: "The three verbs available for a risk are reduce, accept, and:"
+      type: single
+      options: ["Prepare", "Escalate", "Transfer", "Monitor"]
+      correct: ["Prepare"]
+      rubric_category: recall
+      explanation: "Prepare means a contingency plan plus a tripwire that fires it on evidence rather than on hope."
+      weight: 1
+    - id: pm5-03
+      stem: "A task has been reported '90% done' for three weeks. How should it be tracked?"
+      type: single
+      options: ["As not done", "As nearly done", "As done, with a defect", "As blocked and at risk"]
+      correct: ["As not done"]
+      rubric_category: application
+      explanation: "The last tenth contains the problem; done means done."
+      weight: 1
+    - id: pm5-04
+      stem: "A stakeholder asks for a small addition that will 'only take an afternoon'. What is the answer that protects both project and relationship?"
+      type: single
+      options: ["Yes, through the gate — here is what it costs", "No, the scope was agreed at the start", "Yes, if it genuinely takes only an afternoon", "Yes, and we will absorb it in the contingency"]
+      correct: ["Yes, through the gate — here is what it costs"]
+      rubric_category: application
+      explanation: "Half of requests evaporate when priced; the survivors were worth doing properly."
+      weight: 1
+    - id: pm5-05
+      stem: "A change would move the project's end date. Who approves it?"
+      type: single
+      options: ["The sponsor", "The project lead", "The change board", "The affected team"]
+      correct: ["The sponsor"]
+      rubric_category: application
+      explanation: "Changes inside contingency and authority are the lead's; anything moving date, budget or outcome is a sponsor trade-off."
+      weight: 1
+    - id: pm5-06
+      stem: "Which must happen before a change is approved rather than after? (Select all that apply.)"
+      type: multi
+      options: ["It is written down, however briefly", "It is priced in money and in time", "Its knock-on effects are identified", "It is added to the project schedule"]
+      correct: ["It is written down, however briefly", "It is priced in money and in time", "Its knock-on effects are identified"]
+      rubric_category: application
+      explanation: "Updating the plan follows approval; 'it's small' is a claim, not an estimate."
+      weight: 1
+    - id: pm5-07
+      stem: "Spend is 20% over budget and progress is 30% ahead of plan. How should that be read?"
+      type: single
+      options: ["As the plan working, not as an overspend", "As a variance requiring a formal explanation", "As a signal that the estimates were too low", "As an overspend that must be recovered later"]
+      correct: ["As the plan working, not as an overspend"]
+      rubric_category: application
+      explanation: "The number matters less than the story: overspend tracking faster progress is a different story from overspend at half pace."
+      weight: 1
+    - id: pm5-08
+      stem: "A project lead reports each slip honestly as it happens, month after month, and the date keeps moving. What is missing?"
+      type: single
+      options: ["A re-plan that brings the sponsor priced options", "A firmer commitment from the delivery team", "A more frequent tracking and reporting cycle", "A revised risk register covering the new slips"]
+      correct: ["A re-plan that brings the sponsor priced options"]
+      rubric_category: analysis
+      explanation: "Narrating the slide is not managing it. Stop, re-estimate from where you are, and offer the triangle priced."
+      weight: 1
+    - id: pm5-09
+      stem: "Where does the first draft of a project's risk register come from?"
+      type: single
+      options: ["The wide estimates, external dependencies and suppliers", "A brainstorming session held at project kick-off", "The risks recorded on previous comparable projects", "The concerns raised by stakeholders during mapping"]
+      correct: ["The wide estimates, external dependencies and suppliers"]
+      rubric_category: analysis
+      explanation: "The earlier chapters' loose ends are the register — you have already found them by the time you write it."
+      weight: 1
+    - id: pm5-10
+      stem: "A project no longer clears the business case that justified it. What is the management move?"
+      type: single
+      options: ["Stop it — a project killed at the right moment is a success", "Reduce its scope until the case works again", "Continue, since the money is already committed", "Pause it until the conditions improve again"]
+      correct: ["Stop it — a project killed at the right moment is a success"]
+      rubric_category: analysis
+      explanation: "Sunk costs stay sunk. The slow-motion failure everyone saw coming is the expensive kind of politeness."
+      weight: 1

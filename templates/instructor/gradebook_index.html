@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Gradebook — {{ branding_name | default("Technical Academy") }}{% endblock %}
+{% block content %}
+<p class="page-eyebrow">Instructor</p>
+<h1 class="page-title">Gradebook</h1>
+<p class="page-intro">Weighted grade grids and CSV exports per cohort.</p>
+
+<div class="card mt-10 overflow-hidden">
+  <ul class="divide-y divide-sand-200">
+    {% for c in cohorts %}
+    <li class="flex items-center justify-between gap-4 p-4 transition-colors hover:bg-sand-100">
+      <span class="font-medium text-ink">{{ c.name }}
+        <span class="ml-1 text-sm font-normal text-ink-soft">{{ c.discipline }}</span>
+      </span>
+      <a class="group inline-flex min-h-11 items-center gap-1.5 text-sm font-semibold text-brand-700 hover:text-brand-800"
+         href="/instructor/gradebook/{{ c.id }}">
+        View gradebook
+        <span class="transition-transform group-hover:translate-x-0.5" aria-hidden="true">&rarr;</span>
+      </a>
+    </li>
+    {% else %}
+    <li class="p-8 text-center text-ink-soft">No cohorts yet.</li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}

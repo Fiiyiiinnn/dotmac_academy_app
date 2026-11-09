@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block title %}Cohort analytics — Dotmac Academy{% endblock %}
+{% block content %}
+<div class="float-right mt-2 flex flex-wrap gap-2 text-xs">
+  <a class="inline-flex min-h-11 items-center rounded-lg border border-sand-300 px-3 py-1.5 font-semibold hover:bg-sand-100" href="/instructor/reports/cohort/{{ cohort.id }}/roster.csv">Roster CSV</a>
+  <a class="inline-flex min-h-11 items-center rounded-lg border border-sand-300 px-3 py-1.5 font-semibold hover:bg-sand-100" href="/instructor/reports/cohort/{{ cohort.id }}/funnel.csv">Funnel CSV</a>
+  <a class="inline-flex min-h-11 items-center rounded-lg border border-sand-300 px-3 py-1.5 font-semibold hover:bg-sand-100" href="/instructor/reports/cohort/{{ cohort.id }}/queue.csv">Queue CSV</a>
+  <a class="inline-flex min-h-11 items-center rounded-lg border border-brand-300 bg-brand-50 px-3 py-1.5 font-semibold text-brand-700 hover:bg-brand-100" href="/success-queue/message?cohort={{ cohort.id }}">Message learners…</a>
+</div>
+<p class="page-eyebrow">Instructor</p>
+<h1 class="page-title">{{ cohort.name }} — analytics</h1>
+<p class="page-intro">Deterministic projections of the learning-event ledger and score records. {{ ov.active_rule | capitalize }}.</p>
+
+<div class="mt-8 grid gap-4 sm:grid-cols-4">
+  <div class="card p-5"><p class="text-xs font-semibold uppercase tracking-wide text-ink-soft">Learners</p>
+    <p class="mt-1 text-2xl font-medium text-ink tabular-nums">{{ ov.learners }}</p></div>
+  <div class="card p-5"><p class="text-xs font-semibold uppercase tracking-wide text-ink-soft">Active / inactive ({{ insight_terms.active_window_days }}d)</p>
+    <p class="mt-1 text-2xl font-medium text-ink tabular-nums">{{ ov.active }} / {{ ov.inactive }}</p></div>
+  <div class="card p-5"><p class="text-xs font-semibold uppercase tracking-wide text-ink-soft">Average score</p>
+    <p class="mt-1 text-2xl font-medium text-ink tabular-nums">{% if ov.avg_score_pct is not none %}{{ ov.avg_score_pct }}%{% else %}&mdash;{% endif %}</p></div>
+  <div class="card p-5"><p class="text-xs font-semibold uppercase tracking-wide text-ink-soft">Events this week</p>
+    <p class="mt-1 text-2xl font-medium text-ink tabular-nums">{{ ov.week_events }}</p>
+    <p class="text-xs text-ink-soft">vs {{ ov.prior_week_avg }} {{ insight_terms.comparison_prior_weeks }}-week average</p></div>
+</div>
+
+<h2 class="mt-10 text-xl font-medium text-ink">Work state</h2>
+<div class="mt-4 grid gap-4 sm:grid-cols-3">
+  <div class="card p-5"><p class="text-xs font-semibold uppercase tracking-wide text-ink-soft">Submitted</p>
+    <p class="mt-1 text-2xl font-medium text-ink tabular-nums">{{ ov.submitted }}</p></div>
+  <div class="card p-5"><p class="text-xs font-semibold uppercase tracking-wide text-ink-soft">Overdue</p>
+    <p class="mt-1 text-2xl font-medium {% if ov.overdue %}text-clay-600{% else %}text-ink{% endif %} tabular-nums">{{ ov.overdue }}</p></div>
+  <div class="card p-5"><p class="text-xs font-semibold uppercase tracking-wide text-ink-soft">Not attempted</p>
+    <p class="mt-1 text-2xl font-medium text-ink tabular-nums">{{ ov.not_attempted }}</p></div>
+</div>
+
+<h2 class="mt-10 text-xl font-medium text-ink">Completion funnel</h2>
+<div class="card mt-4 p-6">
+  {% set f = ov.funnel %}
+  {% for stage, count in [("Enrolled", f.enrolled), ("Started", f.started), ("Halfway", f.half), ("Completed", f.completed), ("Certified", f.certified)] %}
+  <div class="mt-3 first:mt-0">
+    <div class="flex items-baseline justify-between text-sm">
+      <span class="font-medium text-ink">{{ stage }}</span>
+      <span class="tabular-nums text-ink-soft">{{ count }}</span>
+    </div>
+    <div class="mt-1 h-2 w-full overflow-hidden rounded-full bg-sand-200">
+      <div class="h-full rounded-full bg-brand-500"
+           style="width: {{ (100 * count / f.enrolled) | round | int if f.enrolled else 0 }}%"></div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% if ov.lab_failures %}
+<h2 class="mt-10 text-xl font-medium text-ink">Lab failure patterns</h2>
+<div class="card mt-4 overflow-hidden">
+  <ul class="divide-y divide-sand-200">
+    {% for lf in ov.lab_failures %}
+    <li class="flex items-center justify-between p-4 text-sm">
+      <span class="font-medium text-ink">{{ lf.course }}</span>
+      <span class="tabular-nums text-clay-600">{{ lf.failed_checks }} failed checks</span>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}
+
+<p class="mt-10 text-sm text-ink-soft">
+  Question-level difficulty lives in each activity's
+  <a class="font-semibold text-brand-700 hover:underline" href="/instructor/reports/cohort/{{ cohort.id }}">matrix and item analysis</a>.
+</p>
+{% endblock %}

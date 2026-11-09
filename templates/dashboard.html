@@ -1,0 +1,39 @@
+{% extends "base.html" %}{% block content %}
+<p class="page-eyebrow">Your portal</p>
+<h1 class="page-title">Welcome, {{ person.first_name }}</h1>
+<p class="page-intro">Pick up where you left off, or start a new chapter below.</p>
+
+{% if courses %}
+<div class="mt-10 space-y-4">
+{% for c in courses %}
+<details class="disclosure card overflow-hidden"{% if loop.first %} open{% endif %}>
+  <summary class="flex items-center gap-3 px-6 py-5">
+    <svg class="disclosure-chevron h-4 w-4 shrink-0 text-ink-soft" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+    <h2 class="text-xl">{{ c.course.title }}</h2>
+    <span class="ml-auto inline-flex items-center rounded-full bg-sand-200 px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide text-ink-soft">{{ c.chapters | length }} chapter{{ '' if c.chapters | length == 1 else 's' }}</span>
+  </summary>
+  <ul class="divide-y divide-sand-200 border-t border-sand-200 px-6 pb-5 pt-1">
+  {% for ch in c.chapters %}
+    <li>
+      <a class="group flex items-baseline gap-3 py-2.5 transition-colors hover:text-brand-700"
+         href="/courses/{{ c.course.slug }}/chapters/{{ ch.number }}">
+        <span class="font-mono text-xs text-ink-soft tabular-nums">{{ "%02d"|format(ch.number) }}</span>
+        <span class="font-medium text-ink group-hover:text-brand-700">{{ ch.title }}</span>
+        <span class="ml-auto text-ink-soft opacity-0 transition-opacity group-hover:opacity-100" aria-hidden="true">&rarr;</span>
+      </a>
+    </li>
+  {% endfor %}
+  </ul>
+</details>
+{% endfor %}
+</div>
+
+<p class="mt-8">
+  <a class="btn-ghost" href="/progress">View your progress</a>
+</p>
+{% else %}
+<div class="card mt-10 p-8 text-center">
+  <p class="text-ink-soft">No courses loaded yet. Check back soon — your instructor is setting things up.</p>
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,88 @@
+bank:
+  course: sup-agent-fundamentals
+  kind: chapter
+  chapter: 6
+  version: 1
+  policy:
+    mode: practice
+  questions:
+    - id: b6-01
+      stem: "Across the 90-day window this chapter draws on, what share of the 1,557 SLA clocks in this operation breached their Due date?"
+      type: single
+      options: ["60.69%, the majority of all clocks tracked in the window", "About a quarter, a level most teams would treat as a routine backlog", "Under 10%, an unusually rare share of the total", "Roughly 45%, split close to evenly between breached and on-time"]
+      correct: ["60.69%, the majority of all clocks tracked in the window"]
+      rubric_category: recall
+      explanation: "60.69% of 1,557 SLA clocks breached in the window — the majority outcome, not an edge case."
+      weight: 1
+    - id: b6-02
+      stem: "In the same 90-day pull, which grouping accounted for the largest share of all SLA clocks — larger than every named team combined?"
+      type: single
+      options: ["Unassigned Team tickets, at 982 of the 1,557 clocks", "Technical Support, given its very high conversation volume", "Billing-related tickets tied to overdue balances", "Tickets originating from the phone channel specifically"]
+      correct: ["Unassigned Team tickets, at 982 of the 1,557 clocks"]
+      rubric_category: recall
+      explanation: "982 of 1,557 SLA clocks (63%) sat with 'Unassigned Team' — bigger than every named team's tickets combined."
+      weight: 1
+    - id: b6-03
+      stem: "You see a ticket in the shared queue with no Service Team and no assignee, sitting for over a day, and it is not currently on your own Workqueue. Based on this chapter, what should you do?"
+      type: single
+      options: ["Give it a real owner now, using Manual Auto-Assign or a direct self-assign to close the gap", "Leave it alone, since it has not been assigned to you specifically and none of your own tickets are breaching", "Mention it once in team chat so a supervisor knows, then return to your own queue", "Wait until the ticket eventually appears on someone's Workqueue before deciding whether it needs action"]
+      correct: ["Give it a real owner now, using Manual Auto-Assign or a direct self-assign to close the gap"]
+      rubric_category: application
+      explanation: "Unassigned tickets are the largest single driver of missed SLAs in this operation — getting a real owner onto one is the highest-leverage action available."
+      weight: 1
+    - id: b6-04
+      stem: "A customer sounds frustrated on a call, but their subscription shows a payment-related status you can see on screen. What does this chapter say you should do?"
+      type: single
+      options: ["Trust the account record and explain the real, billing-related cause behind what the customer is seeing", "Match your urgency to the customer's tone and escalate it as a technical fault needing NOC attention", "Assume the tone is exaggerated, so you can close the ticket without taking any further action at all", "Ask the customer to confirm their own tone and expectations before checking anything at all in Sub"]
+      correct: ["Trust the account record and explain the real, billing-related cause behind what the customer is seeing"]
+      rubric_category: application
+      explanation: "Tone is not the same as a technical fault — check account and subscription state, and give the customer the real, honest cause behind what they are seeing."
+      weight: 1
+    - id: b6-05
+      stem: "You are about to send a reply saying a fix needs one more day. Which reply matches this chapter's communication standard?"
+      type: single
+      options: ["Naming the likely cause, stating a technician visit is expected, and giving a specific day you will follow up", "Thanking the customer warmly for their patience and letting them know the support team is looking into the matter", "Waiting until the technician visit is fully complete before sending any further message at all", "Telling the customer the exact resolution time as though it were already confirmed, even though it is only a guess"]
+      correct: ["Naming the likely cause, stating a technician visit is expected, and giving a specific day you will follow up"]
+      rubric_category: application
+      explanation: "A professional reply names a real cause and a timeframe you can actually keep — a vague 'we're on it' commits to nothing and, against a 60.69% breach rate, is likely to be followed by silence."
+      weight: 1
+    - id: b6-06
+      stem: "Several tickets arrive close together describing the same symptom in one area. According to this chapter, how should you read that pattern compared with an individual customer's tone?"
+      type: single
+      options: ["As a stronger signal on its own, since clustered volume like this usually points to one shared cause", "As weaker than the customer's tone, since a calm-sounding customer usually means the issue is genuinely minor", "As irrelevant to this chapter, since only Chapter 4's outage process is meant to apply to clustered tickets", "As equally weighted against tone, so the two signals should just be averaged before deciding"]
+      correct: ["As a stronger signal on its own, since clustered volume like this usually points to one shared cause"]
+      rubric_category: application
+      explanation: "Clustered, similar-symptom tickets arriving close together is the one case where the volume itself is the real signal, pointing to a shared cause rather than many individual ones."
+      weight: 1
+    - id: b6-07
+      stem: "Technical Support averaged about 46 minutes of first response across 4,140 conversations, while some very low-volume teams showed multi-day averages in the same window. What is the correct reading of this contrast?"
+      type: single
+      options: ["Technical Support shows speed at real volume is achievable; the multi-day averages likely reflect near-idle queues, not typical failure", "Every team in this operation should be judged against the multi-day average as the realistic, achievable baseline", "The multi-day teams are the ones actually failing their customers here and need the most urgent corrective attention", "Response time has no real relationship to conversation volume anywhere in this operation, based on this comparison"]
+      correct: ["Technical Support shows speed at real volume is achievable; the multi-day averages likely reflect near-idle queues, not typical failure"]
+      rubric_category: analysis
+      explanation: "A handful of conversations averaging days is far more consistent with an idle queue than a team working slowly at scale — Technical Support's high-volume, fast-response result is the one worth learning from."
+      weight: 1
+    - id: b6-08
+      stem: "Unassigned tickets breach at 59.9%, almost identical to the operation's overall 60.69% breach rate, while making up 63% of all SLA clocks. What does that similarity in breach rate actually tell you?"
+      type: single
+      options: ["Unassigned tickets are not unusually risky on their own — their sheer volume is what makes them the single largest driver of breaches", "Unassigned tickets are actually the safest category overall, since their breach rate sits slightly below the operation's overall rate", "The overall breach rate is being inflated almost entirely by unassigned tickets and would otherwise look fine without them", "The similarity in breach rate is essentially a coincidence with no real bearing on where assignment effort should be focused"]
+      correct: ["Unassigned tickets are not unusually risky on their own — their sheer volume is what makes them the single largest driver of breaches"]
+      rubric_category: analysis
+      explanation: "A near-identical breach rate at 63% of total volume means the category's size, not an unusually high per-ticket risk, is what makes unassigned tickets the biggest lever — fixing assignment addresses the largest slice of the same overall problem."
+      weight: 1
+    - id: b6-09
+      stem: "Of 2,250 NCC complaint records in the same window, 14% (309) were left unclassified while Quality of Service (Data) alone made up 62%. What does the unclassified share represent, per this chapter?"
+      type: single
+      options: ["A live, current gap tracing back to the same habit of leaving ticket type unset that Chapter 2 warned against", "A rounding artifact with no real meaning, since the largest complaint category is already well known", "Evidence that most complaints in this window simply had no real underlying cause that could be classified at all", "A sign that the NCC complaint categories themselves are poorly defined and probably need to be replaced entirely"]
+      correct: ["A live, current gap tracing back to the same habit of leaving ticket type unset that Chapter 2 warned against"]
+      rubric_category: analysis
+      explanation: "The 14% unclassified share is the regulatory-complaint-level version of Chapter 2's lesson: a ticket that never gets an honest type never gets reported on correctly, and here that gap is large enough to name directly."
+      weight: 1
+    - id: b6-10
+      stem: "CSAT collection produced zero submissions across the same 90-day window. What is the correct way to treat this fact in the course?"
+      type: single
+      options: ["State it plainly as a current data gap, rather than inferring any customer-satisfaction conclusion from it", "Treat the absence of any CSAT complaints as implied evidence that most customers were reasonably satisfied", "Substitute the NCC complaint volume in its place as a stand-in measure of overall customer satisfaction", "Ignore the CSAT figure entirely, since it has no real connection to anything else covered in this chapter"]
+      correct: ["State it plainly as a current data gap, rather than inferring any customer-satisfaction conclusion from it"]
+      rubric_category: application
+      explanation: "Zero CSAT submissions means there is no satisfaction data to learn from this window — the honest response is to name the gap, not to invent a conclusion the data does not support."
+      weight: 1

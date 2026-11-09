@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-decision-making
+  kind: chapter
+  chapter: 5
+  version: 2
+  policy:
+    mode: practice
+  questions:
+    - id: dm5-01
+      stem: "Under disagree-and-commit, what does the person who argued against the decision then do?"
+      type: single
+      options: ["Executes it wholeheartedly", "Records their objection formally", "Steps back from that workstream", "Revisits it at the next review"]
+      correct: ["Executes it wholeheartedly"]
+      rubric_category: recall
+      explanation: "And the decider, for their part, does not punish the dissent. Commitment runs both ways or the standard is a fiction."
+      weight: 1
+    - id: dm5-02
+      stem: "The decision log records what was decided, when and by whom, why, who was told, and:"
+      type: single
+      options: ["What would change our minds", "How long the debate ran", "Who disagreed with it", "What it is expected to cost"]
+      correct: ["What would change our minds"]
+      rubric_category: recall
+      explanation: "The revisit trigger is what tells you later which decisions deserve reopening, instead of renegotiating everything."
+      weight: 1
+    - id: dm5-03
+      stem: "You are the most senior person in a decision meeting. When should you give your view?"
+      type: single
+      options: ["Last, after everyone else has spoken", "First, to give the discussion direction", "Early, so people can react to it", "Only if the group cannot converge"]
+      correct: ["Last, after everyone else has spoken"]
+      rubric_category: application
+      explanation: "Once a senior voice speaks, later contributions orbit their position. Collect views silently and in parallel first."
+      weight: 1
+    - id: dm5-04
+      stem: "Your team is converging quickly and comfortably on a favourite option. What should you do?"
+      type: single
+      options: ["Assign someone the job of arguing the case against it", "Ask whether anyone has reservations they have not raised", "Move to the decision while the agreement is still strong", "Delay the meeting so people can reconsider in their own time"]
+      correct: ["Assign someone the job of arguing the case against it"]
+      rubric_category: application
+      explanation: "Assigning dissent makes scepticism a role rather than a rebellion — asking for volunteers rarely produces any."
+      weight: 1
+    - id: dm5-05
+      stem: "A decision meeting has run its hour and the discussion was good. What tells you it actually decided something?"
+      type: single
+      options: ["You can say what was decided, who owns the first step, and by when", "Everyone in the room has stated that they agree with the direction", "The main options and their pros and cons have been fully explored", "The minutes record the arguments made on each side of the question"]
+      correct: ["You can say what was decided, who owns the first step, and by when"]
+      rubric_category: application
+      explanation: "If that sentence cannot be said, the meeting discussed but did not decide — so schedule the decision, not another discussion."
+      weight: 1
+    - id: dm5-06
+      stem: "Which belong in the note you circulate before a decision meeting? (Select all that apply.)"
+      type: multi
+      options: ["The decision to be made", "The criteria it will be judged on", "The options with honest pros and cons", "The full history of how it arose"]
+      correct: ["The decision to be made", "The criteria it will be judged on", "The options with honest pros and cons"]
+      rubric_category: application
+      explanation: "People who arrive having read a page argue about substance; people who arrive cold spend the hour reconstructing context."
+      weight: 1
+    - id: dm5-07
+      stem: "A decision has gone against a colleague who argued hard for the alternative. How should they hear about it?"
+      type: single
+      options: ["From you first, personally, with the reasoning", "In the written summary sent to everyone", "At the next team meeting, with the context", "From their own manager, who can support them"]
+      correct: ["From you first, personally, with the reasoning"]
+      rubric_category: application
+      explanation: "Hearing it second-hand adds insult to disappointment. Tell the people it went against first."
+      weight: 1
+    - id: dm5-08
+      stem: "A team waits for full consensus on every significant decision. What has it actually created?"
+      type: single
+      options: ["A veto for the most reluctant person, and options nobody believes in", "A slower process that nonetheless produces better-supported outcomes", "A culture where dissent is welcomed and disagreement is safe to voice", "A dependence on the meeting chair to summarise where agreement lies"]
+      correct: ["A veto for the most reluctant person, and options nobody believes in"]
+      rubric_category: analysis
+      explanation: "Consensus-hunting produces compromise options — disagree-and-commit is the workable standard instead."
+      weight: 1
+    - id: dm5-09
+      stem: "In a team without a decision log, why does the same question keep getting re-argued every few months?"
+      type: single
+      options: ["The reasoning was never recorded, so each new challenge starts from scratch", "The original decision was probably wrong and the team can sense it", "New team members are not being inducted into the team's existing rules", "Nobody was given ownership of the decision once it had been taken"]
+      correct: ["The reasoning was never recorded, so each new challenge starts from scratch"]
+      rubric_category: analysis
+      explanation: "New people inherit rules without reasoning, so they re-litigate. The log ends that and preserves what was rejected and why."
+      weight: 1
+    - id: dm5-10
+      stem: "A manager gives a diplomatic reason for an unpopular decision rather than the real one, which was cost. What does that trade?"
+      type: single
+      options: ["Short-term comfort for the trust lost when the real reason emerges", "Clarity for kindness, which is usually the right call with bad news", "Speed for accuracy, since the true reason needs more explanation", "Their own credibility for the credibility of the wider leadership team"]
+      correct: ["Short-term comfort for the trust lost when the real reason emerges"]
+      rubric_category: analysis
+      explanation: "A diplomatic fiction discovered later costs more trust than the true reason ever would."
+      weight: 1

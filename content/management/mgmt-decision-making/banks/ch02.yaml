@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-decision-making
+  kind: chapter
+  chapter: 2
+  version: 2
+  policy:
+    mode: practice
+  questions:
+    - id: dm2-01
+      stem: "Roughly how much of the information you would like should a reversible, low-stakes decision wait for?"
+      type: single
+      options: ["About 70%", "Essentially all of it", "About 30%", "Whatever a week yields"]
+      correct: ["About 70%"]
+      rubric_category: recall
+      explanation: "Through a two-way door, the last 30% costs more than the occasional reversal does."
+      weight: 1
+    - id: dm2-02
+      stem: "Being consulted on a decision means:"
+      type: single
+      options: ["Being heard before the call is made", "Holding a veto over the outcome", "Sharing responsibility for the result", "Being told promptly once it is made"]
+      correct: ["Being heard before the call is made"]
+      rubric_category: recall
+      explanation: "Say it out loud: consulted means heard, not veto. The ambiguity is what poisons the meeting afterwards."
+      weight: 1
+    - id: dm2-03
+      stem: "Your team spends three weeks choosing a trial rota, then signs a two-year supplier contract in one meeting. What is wrong?"
+      type: single
+      options: ["The sizing is backwards — heavy machinery belongs at the one-way door", "Both decisions were given far too little analysis for their stakes", "The rota should have been delegated rather than decided by the team", "The contract needed the same three weeks the rota decision received"]
+      correct: ["The sizing is backwards — heavy machinery belongs at the one-way door"]
+      rubric_category: application
+      explanation: "Agonising over two-way doors and rushing one-way doors is a common and expensive pattern."
+      weight: 1
+    - id: dm2-04
+      stem: "Two managers keep arguing 'A feels stronger than B' and getting nowhere. What breaks the loop?"
+      type: single
+      options: ["Writing down what matters before debating what wins", "Bringing in a third person to settle the disagreement", "Asking each to make the case for the other's option", "Deciding by the seniority of whoever owns the budget"]
+      correct: ["Writing down what matters before debating what wins"]
+      rubric_category: application
+      explanation: "Criteria first surfaces the real disagreement — 'is speed or cost more important?' is productive; 'I prefer B' is not."
+      weight: 1
+    - id: dm2-05
+      stem: "A decision matrix produces a winner that offends your intuition. What should you do?"
+      type: single
+      options: ["Find the criterion or weight your intuition disputes, and argue that", "Go with the matrix, since it is the more objective of the two", "Go with your intuition, since it carries experience the matrix lacks", "Rescore every option a second time to check for an arithmetic error"]
+      correct: ["Find the criterion or weight your intuition disputes, and argue that"]
+      rubric_category: application
+      explanation: "Either the matrix updates or your intuition does — both are wins. Overriding it silently teaches you nothing."
+      weight: 1
+    - id: dm2-06
+      stem: "A proposal shows a clear positive return. Which of these must the cost-benefit case still include? (Select all that apply.)"
+      type: multi
+      options: ["What the same money and people would earn elsewhere", "The ongoing maintenance, training and attention costs", "An honest assessment of doing nothing at all", "The original budget approved for the prior year"]
+      correct: ["What the same money and people would earn elsewhere", "The ongoing maintenance, training and attention costs", "An honest assessment of doing nothing at all"]
+      rubric_category: application
+      explanation: "'Worth doing' is not the bar; 'worth doing instead' is — and every proposal must beat a real status quo."
+      weight: 1
+    - id: dm2-07
+      stem: "You consulted your team and then decided against the majority view. What must you do next?"
+      type: single
+      options: ["Explain the reasoning that led you the other way", "Record the majority view alongside your decision", "Give the team a chance to appeal the outcome", "Move quickly so the disagreement does not settle"]
+      correct: ["Explain the reasoning that led you the other way"]
+      rubric_category: application
+      explanation: "Being overruled with reasons is respect; being unheard is not, and people can tell the difference immediately."
+      weight: 1
+    - id: dm2-08
+      stem: "Why do costs and benefits need different treatment when you compare them honestly?"
+      type: single
+      options: ["Costs are concrete and immediate while benefits are estimated and future", "Costs are easier to measure so they tend to be recorded more precisely", "Benefits accrue to the business while costs usually fall on a single team", "Costs recur annually whereas benefits are generally realised only once"]
+      correct: ["Costs are concrete and immediate while benefits are estimated and future"]
+      rubric_category: analysis
+      explanation: "Discount the benefits for optimism, not the costs. The asymmetry is structural, not a failure of arithmetic."
+      weight: 1
+    - id: dm2-09
+      stem: "A team habitually treats every decision as high-stakes and irreversible. What does that cost them, beyond time?"
+      type: single
+      options: ["The learning that only comes from acting and correcting course", "The goodwill of the stakeholders they consult on each occasion", "The accuracy of their estimates, which decays without practice", "The authority to decide, which drifts upward to their manager"]
+      correct: ["The learning that only comes from acting and correcting course"]
+      rubric_category: analysis
+      explanation: "Two-way doors are how a team buys experience cheaply. Treating them as one-way doors forfeits that."
+      weight: 1
+    - id: dm2-10
+      stem: "In a matrix, an option wins on total points but fails a criterion the team had marked as a requirement. What has the matrix told you?"
+      type: single
+      options: ["The option is out — requirements gate, they do not trade off", "The requirement was probably weighted too heavily to begin with", "The totals are close enough that either option would serve here", "The scoring should be repeated with the requirement removed"]
+      correct: ["The option is out — requirements gate, they do not trade off"]
+      rubric_category: analysis
+      explanation: "Marking requirements separately from preferences is precisely what catches the option that wins on points and fails on substance."
+      weight: 1

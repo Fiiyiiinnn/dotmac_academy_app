@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-vendor-procurement
+  kind: chapter
+  chapter: 3
+  version: 2
+  policy:
+    mode: practice
+  questions:
+    - id: vp3-01
+      stem: "A warranty without a response time is:"
+      type: single
+      options: ["A promise without a clock", "A standard commercial term", "Enforceable, but hard to use", "Sufficient for most purchases"]
+      correct: ["A promise without a clock"]
+      rubric_category: recall
+      explanation: "What happens when it fails, and within what period, both have to be written."
+      weight: 1
+    - id: vp3-02
+      stem: "An SLA penalty too small to change supplier behaviour is:"
+      type: single
+      options: ["A licence fee for failing", "Still better than no penalty", "A reasonable starting position", "A signal of a fair contract"]
+      correct: ["A licence fee for failing"]
+      rubric_category: recall
+      explanation: "The purpose is not revenge income — it is making the supplier's incentives point at your uptime."
+      weight: 1
+    - id: vp3-03
+      stem: "The contract says goods are supplied 'as discussed'. What have you got?"
+      type: single
+      options: ["A dispute with a delivery date", "A flexible arrangement, suiting both", "An enforceable but vague obligation", "A reference back to the quotation"]
+      correct: ["A dispute with a delivery date"]
+      rubric_category: application
+      explanation: "Scope and specification have to be explicit, referencing the written spec."
+      weight: 1
+    - id: vp3-04
+      stem: "Goods are damaged in transit. Where should the answer to 'whose loss is it?' come from?"
+      type: single
+      options: ["The contract's risk-transfer clause", "The argument between the parties", "The supplier's insurance position", "The delivery note that was signed"]
+      correct: ["The contract's risk-transfer clause"]
+      rubric_category: application
+      explanation: "Where, when, who transports, and when responsibility transfers — easily missed and expensive to omit."
+      weight: 1
+    - id: vp3-05
+      stem: "When should a contract's end and notice dates be diarised?"
+      type: single
+      options: ["The day it is signed", "Some months before it expires", "At the first annual review", "When renewal is considered"]
+      correct: ["The day it is signed"]
+      rubric_category: application
+      explanation: "An auto-renewal missed by a week can cost a year."
+      weight: 1
+    - id: vp3-06
+      stem: "Which should you look for hardest in a supplier's standard contract? (Select all that apply.)"
+      type: multi
+      options: ["Auto-renewal with a long notice window", "Liability capped below your real exposure", "Price reviews that move only upward", "A clause naming the governing law"]
+      correct: ["Auto-renewal with a long notice window", "Liability capped below your real exposure", "Price reviews that move only upward"]
+      rubric_category: application
+      explanation: "None are outrages and all are negotiable — but only before signing."
+      weight: 1
+    - id: vp3-07
+      stem: "You are happy with an incumbent supplier but have not tested the market in four years. What should you do?"
+      type: single
+      options: ["Run a genuine market check and tell them", "Keep the relationship, since it works well", "Ask the incumbent to benchmark their price", "Wait for performance to give a reason"]
+      correct: ["Run a genuine market check and tell them"]
+      rubric_category: application
+      explanation: "Good suppliers expect it, and unexamined loyalty is worth precisely what the supplier decides to charge for it."
+      weight: 1
+    - id: vp3-08
+      stem: "Why is the exit clause written for its second reading rather than its first?"
+      type: single
+      options: ["It is studied hard exactly when the relationship sours", "It is the clause suppliers most often try to weaken", "It determines how much notice each side must give", "It is the only clause that survives termination"]
+      correct: ["It is studied hard exactly when the relationship sours"]
+      rubric_category: analysis
+      explanation: "Read once at signing, then read very carefully on the worst day."
+      weight: 1
+    - id: vp3-09
+      stem: "An SLA lists eleven measures and nobody reports on any of them. What is it?"
+      type: single
+      options: ["Decoration", "A baseline", "Aspirational", "Unenforceable"]
+      correct: ["Decoration"]
+      rubric_category: analysis
+      explanation: "Few, measurable, mapped to what actually hurts when it slips — and defined as to how each is measured and by whom."
+      weight: 1
+    - id: vp3-10
+      stem: "A contract signed three years ago still carries its original price while volumes have doubled. What has happened?"
+      type: single
+      options: ["A silent margin leak nobody diarised", "A fair deal that both sides accepted", "A supplier failure to offer better terms", "A pricing clause that was drafted badly"]
+      correct: ["A silent margin leak nobody diarised"]
+      rubric_category: analysis
+      explanation: "Contracts age badly when unattended: the market moved, the discount tier did not, and the premium-support fee survived."
+      weight: 1

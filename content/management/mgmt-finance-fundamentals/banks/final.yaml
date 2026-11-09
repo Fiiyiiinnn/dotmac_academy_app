@@ -1,0 +1,253 @@
+bank:
+  course: mgmt-finance-fundamentals
+  kind: final
+  chapter: null
+  version: 2
+  policy:
+    mode: exam
+    max_attempts: 5
+    pool: 20
+  questions:
+    - id: fnf-01
+      stem: "Contribution per sale is revenue minus:"
+      type: single
+      options: ["Its variable costs", "All costs of the period", "Tax and interest charges", "The discount that was given"]
+      correct: ["Its variable costs"]
+      rubric_category: recall
+      explanation: "Contribution covers the fixed-cost treadmill first, and only then becomes profit."
+      weight: 1
+    - id: fnf-02
+      stem: "Lifetime value is estimated as:"
+      type: single
+      options: ["Margin per period × realistic lifespan", "Total revenue ever billed to them", "First-year revenue multiplied by ten", "Acquisition cost multiplied by margin"]
+      correct: ["Margin per period × realistic lifespan"]
+      rubric_category: recall
+      explanation: "Margin, not revenue; realistic, not hoped-for, lifespan."
+      weight: 1
+    - id: fnf-03
+      stem: "Capital expenditure differs from operating expense because it:"
+      type: single
+      options: ["Buys an asset that serves for years", "Requires a more senior approval", "Is paid from a different budget line", "Appears in the following period"]
+      correct: ["Buys an asset that serves for years"]
+      rubric_category: recall
+      explanation: "Which is why it is spread over the asset's life rather than hitting the period in full."
+      weight: 1
+    - id: fnf-04
+      stem: "A business case must always include which option?"
+      type: single
+      options: ["Do nothing, honestly costed", "The lowest-cost alternative", "The option finance prefers", "A phased implementation"]
+      correct: ["Do nothing, honestly costed"]
+      rubric_category: recall
+      explanation: "A case with one option is a preference, not a decision."
+      weight: 1
+    - id: fnf-05
+      stem: "The manager's working view of cash is:"
+      type: single
+      options: ["A rolling weekly forecast", "The annual cash statement", "The monthly profit account", "The aged debtors listing"]
+      correct: ["A rolling weekly forecast"]
+      rubric_category: recall
+      explanation: "Its job is making the crunch visible while cheap options still exist."
+      weight: 1
+    - id: fnf-06
+      stem: "Which comparison language do managers use across products, months and business lines?"
+      type: single
+      options: ["Margins", "Totals", "Volumes", "Balances"]
+      correct: ["Margins"]
+      rubric_category: recall
+      explanation: "Profit expressed as a percentage of revenue is what makes different-sized things comparable."
+      weight: 1
+    - id: fnf-07
+      stem: "Fixed costs are ₦2,400,000 a month and each sale contributes ₦8,000. What monthly sales volume breaks even?"
+      type: numeric
+      options:
+        tolerance: 2
+      correct: 300
+      rubric_category: application
+      explanation: "2,400,000 ÷ 8,000 = 300 sales. Beyond it, each sale's contribution falls almost straight through to profit."
+      weight: 1
+    - id: fnf-08
+      stem: "A customer pays ₦16,200 a month. Delivery costs ₦6,500, support ₦600, an amortised visit ₦900, payment fees ₦243. What is the monthly margin, in naira?"
+      type: numeric
+      options:
+        tolerance: 25
+      correct: 7957
+      rubric_category: application
+      explanation: "₦7,957 — 49% of realised revenue, not the 64% you get by counting delivery cost alone."
+      weight: 1
+    - id: fnf-09
+      stem: "Monthly churn is 5%. What is the average customer lifespan, in months?"
+      type: numeric
+      options:
+        tolerance: 1
+      correct: 20
+      rubric_category: application
+      explanation: "1 ÷ 0.05 = 20. Halve the churn and the same customer is worth twice as many months of margin."
+      weight: 1
+    - id: fnf-10
+      stem: "A product carries a 30% margin. Sales proposes a 10% price cut. How much extra volume just holds the profit level?"
+      type: single
+      options: ["About 50% more", "About 33% more", "About 25% more", "About 10% more"]
+      correct: ["About 50% more"]
+      rubric_category: application
+      explanation: "30% becomes 20%, so you need 30/20 = 1.5× the volume."
+      weight: 1
+    - id: fnf-11
+      stem: "Work was delivered eleven days ago and no invoice has gone out. What has the business done?"
+      type: single
+      options: ["Started an interest-free loan to its own customer", "Deferred the revenue into the following period", "Understated its receivables for the month end", "Created a dispute risk about the delivery date"]
+      correct: ["Started an interest-free loan to its own customer"]
+      rubric_category: application
+      explanation: "Money arrives no faster than billing sends for it."
+      weight: 1
+    - id: fnf-12
+      stem: "A customer's usage has collapsed and two complaints sit unresolved. What happens now?"
+      type: single
+      options: ["They go on an at-risk list with an owner", "They are contacted at the renewal date", "Their complaints are escalated for closure", "Their account is flagged for the next review"]
+      correct: ["They go on an at-risk list with an owner"]
+      rubric_category: application
+      explanation: "Churn announces itself before it happens; by the exit interview you are doing autopsy."
+      weight: 1
+    - id: fnf-13
+      stem: "Which of these belong in a unit's cost? (Select all that apply.)"
+      type: multi
+      options: ["Support time consumed per unit", "Delivery and re-delivery attempts", "Payment processing on the sale", "The depot's annual insurance"]
+      correct: ["Support time consumed per unit", "Delivery and re-delivery attempts", "Payment processing on the sale"]
+      rubric_category: application
+      explanation: "The test is whether the cost grows when units grow."
+      weight: 1
+    - id: fnf-14
+      stem: "A subscription business sees a spike in non-payment churn. What is checked first?"
+      type: single
+      options: ["Whether failed card payments were chased", "Whether a competitor ran a switching offer", "Whether prices changed in that same month", "Whether the service had an outage recently"]
+      correct: ["Whether failed card payments were chased"]
+      rubric_category: application
+      explanation: "A large share of 'non-payment' churn is an expired card nobody contacted."
+      weight: 1
+    - id: fnf-15
+      stem: "Your case includes a safety benefit that cannot honestly be valued. What do you do?"
+      type: single
+      options: ["State it plainly without a number", "Estimate it and label the estimate", "Omit it and raise it verbally", "Apply an industry benchmark value"]
+      correct: ["State it plainly without a number"]
+      rubric_category: application
+      explanation: "Decorated guesses discredit the real figures beside them."
+      weight: 1
+    - id: fnf-16
+      stem: "A team underspends its maintenance budget because the work was postponed. How is that variance read?"
+      type: single
+      options: ["A problem — the cost was deferred, not avoided", "A saving that improves the year's position", "Neutral, since maintenance timing always varies", "An error in how the budget was originally set"]
+      correct: ["A problem — the cost was deferred, not avoided"]
+      rubric_category: application
+      explanation: "Variance is neither sin nor virtue; the reason behind the gap is the whole point."
+      weight: 1
+    - id: fnf-17
+      stem: "A customer calls to cancel and is offered a discount to stay. What has that bought?"
+      type: single
+      options: ["Rented delay, and a lesson that leaving pays", "A saved customer at a modest margin cost", "Time to fix the cause before they leave", "A cheaper outcome than replacing them"]
+      correct: ["Rented delay, and a lesson that leaving pays"]
+      rubric_category: application
+      explanation: "Exit-door offers are the weakest retention tool; the strong ones are all upstream."
+      weight: 1
+    - id: fnf-18
+      stem: "Churn is concentrated in customers' first two months. What does that point to?"
+      type: single
+      options: ["Onboarding that fails to reach value fast", "Pricing that is uncompetitive at entry", "A product mismatch with that segment", "Sales promising more than is delivered"]
+      correct: ["Onboarding that fails to reach value fast"]
+      rubric_category: application
+      explanation: "Early-tenure churn is usually failed onboarding — which is why churn is measured by tenure."
+      weight: 1
+    - id: fnf-19
+      stem: "Why is 'profit is an opinion, cash is a fact' more than a slogan?"
+      type: single
+      options: ["Businesses die of cash timing while their profit looks fine", "Profit is calculated less often than cash is counted", "Accounting rules allow discretion in how profit is stated", "Cash balances are verifiable and profit figures are estimates"]
+      correct: ["Businesses die of cash timing while their profit looks fine"]
+      rubric_category: analysis
+      explanation: "Revenue is recognised when earned; cash arrives when the customer pays, and the gap is where payroll fails."
+      weight: 1
+    - id: fnf-20
+      stem: "Why do fast-growing businesses run out of cash more often than stagnant ones?"
+      type: single
+      options: ["Growth pays acquisition and setup now against margin arriving later", "Growth requires borrowing that carries interest costs immediately", "Growing businesses take on customers with weaker payment records", "Growth outpaces the finance team's ability to bill accurately"]
+      correct: ["Growth pays acquisition and setup now against margin arriving later"]
+      rubric_category: analysis
+      explanation: "Growth eats cash first and pays it back over the payback period."
+      weight: 1
+    - id: fnf-21
+      stem: "Why does a discount land on margin rather than revenue?"
+      type: single
+      options: ["The costs of the sale do not fall when the price does", "Revenue is recorded gross before discounts are netted", "Margin is the only base a discount is measured against", "Discounts are classified as marketing costs in accounts"]
+      correct: ["The costs of the sale do not fall when the price does"]
+      rubric_category: analysis
+      explanation: "The whole cut lands on the thin slice, not the big number — which is why the recovery volume surprises people."
+      weight: 1
+    - id: fnf-22
+      stem: "A business with the same acquisition spend as its rival but half the churn grows while the rival stands still. Why?"
+      type: single
+      options: ["New customers refill a smaller hole before counting as growth", "Its customers buy more because they stay with it longer", "Its acquisition cost per customer falls as its base grows", "Its higher lifetime value funds a larger marketing budget"]
+      correct: ["New customers refill a smaller hole before counting as growth"]
+      rubric_category: analysis
+      explanation: "The bucket matters more than the tap, and the hole grows with the base."
+      weight: 1
+    - id: fnf-23
+      stem: "Why is 'we lose a little on each but make it up on volume' a joke with a body count?"
+      type: single
+      options: ["Volume multiplies a loss exactly as it multiplies a profit", "The volume required is rarely achievable in any market", "Fixed costs per unit fall but never far enough to close it", "The loss is usually larger than the manager has calculated"]
+      correct: ["Volume multiplies a loss exactly as it multiplies a profit"]
+      rubric_category: analysis
+      explanation: "Scale is a multiplier on whatever the unit truly is; on a negative unit it is an accelerant."
+      weight: 1
+    - id: fnf-24
+      stem: "Why is a large share of receivables sitting with one customer a risk rather than a success?"
+      type: single
+      options: ["Their cash problem becomes yours without warning", "Their bargaining power over terms keeps rising", "Their departure would remove most of the revenue", "Their payment pattern distorts the aged analysis"]
+      correct: ["Their cash problem becomes yours without warning"]
+      rubric_category: analysis
+      explanation: "Concentration transfers someone else's liquidity risk onto your payroll."
+      weight: 1
+    - id: fnf-25
+      stem: "Why does a unit costed two years ago usually overstate today's margin?"
+      type: single
+      options: ["Serving costs creep up without appearing in the P&L", "Prices have typically been discounted since it was set", "Fixed cost allocations change as the business grows", "Inflation raises input costs faster than prices rise"]
+      correct: ["Serving costs creep up without appearing in the P&L"]
+      rubric_category: analysis
+      explanation: "More support contacts, longer visits, extra delivery attempts — only a re-costing finds them."
+      weight: 1
+    - id: fnf-26
+      stem: "Why does retention built on making exit difficult cost more than it saves?"
+      type: single
+      options: ["It converts churn into resentment that is paid later", "It attracts regulatory attention in most jurisdictions", "It masks the service problems that caused the leaving", "It raises the cost of serving customers who resent you"]
+      correct: ["It converts churn into resentment that is paid later"]
+      rubric_category: analysis
+      explanation: "Paid in reputation, in regulator attention, and in a base that flees the moment the walls drop."
+      weight: 1
+    - id: fnf-27
+      stem: "Why does a case that hides part of its cost damage more than that one decision?"
+      type: single
+      options: ["It gets approved once and distrusted forever after", "It produces a budget that cannot be managed to", "It leaves the overspend to be found at year end", "It transfers the missing cost onto another team"]
+      correct: ["It gets approved once and distrusted forever after"]
+      rubric_category: analysis
+      explanation: "Finance funds track records; one hidden cost prices every later case you sign."
+      weight: 1
+    - id: fnf-28
+      stem: "Why does a high-fixed-cost business feel so different above and below break-even?"
+      type: single
+      options: ["Below it every sale funds the treadmill; above it profit", "Below it variable costs dominate the cost structure", "Above it the business can negotiate better input prices", "Above it the fixed costs begin to fall per unit sold"]
+      correct: ["Below it every sale funds the treadmill; above it profit"]
+      rubric_category: analysis
+      explanation: "Which makes such businesses dangerous at low volume and wonderful at high volume."
+      weight: 1
+    - id: fnf-29
+      stem: "Why is fixing a common cause of leaving often a better investment than advertising?"
+      type: single
+      options: ["It raises every existing customer's lifetime value at once", "It costs less than an equivalent advertising campaign", "It improves satisfaction scores advertising cannot move", "It reaches customers who have already shown intent"]
+      correct: ["It raises every existing customer's lifetime value at once"]
+      rubric_category: analysis
+      explanation: "And higher lifetime value multiplies what you can afford to spend acquiring the next customer."
+      weight: 1
+    - id: fnf-30
+      stem: "Why does building a case honestly sometimes being fatal to the idea count as the system working?"
+      type: single
+      options: ["The failure on paper is the cheapest one available", "It shows the evaluation criteria were set correctly", "It prevents a weak case reaching the approval forum", "It demonstrates the manager's judgement to finance"]
+      correct: ["The failure on paper is the cheapest one available"]
+      rubric_category: analysis
+      explanation: "The idea you talk yourself out of never consumes the money, the people, or the year."
+      weight: 1

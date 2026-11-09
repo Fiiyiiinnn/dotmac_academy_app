@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-data-kpis
+  kind: chapter
+  chapter: 4
+  version: 2
+  policy:
+    mode: practice
+  questions:
+    - id: dk4-01
+      stem: "A seasonal metric should be compared against:"
+      type: single
+      options: ["The same period last cycle", "The period immediately before", "The annual average to date", "The best period on record"]
+      correct: ["The same period last cycle"]
+      rubric_category: recall
+      explanation: "The December dip that recurs every December is not this quarter's crisis."
+      weight: 1
+    - id: dk4-02
+      stem: "When an outlier appears, the first step is to:"
+      type: single
+      options: ["Verify it", "Explain it", "Exclude it", "Report it"]
+      correct: ["Verify it"]
+      rubric_category: recall
+      explanation: "A decent share of outliers are data errors — a mistyped figure, a double-count, a broken feed."
+      weight: 1
+    - id: dk4-03
+      stem: "Complaints rose 30% while the customer base doubled. What actually happened?"
+      type: single
+      options: ["Complaints per customer fell — this is an improvement", "Complaints rose, which needs investigation this quarter", "The two figures cover different periods and cannot be compared", "Growth has outpaced the service team's capacity to keep up"]
+      correct: ["Complaints per customer fell — this is an improvement"]
+      rubric_category: application
+      explanation: "Before believing any move, ask what the denominator did."
+      weight: 1
+    - id: dk4-04
+      stem: "Your on-time rate normally lands between 71 and 79. This week it is 77, down from 79. What do you do?"
+      type: single
+      options: ["Nothing — that is inside the normal wobble", "Ask the team what changed this week", "Watch it daily until it recovers", "Record it as the start of a downward run"]
+      correct: ["Nothing — that is inside the normal wobble"]
+      rubric_category: application
+      explanation: "Reacting to noise is worse than doing nothing: it generates explanations for randomness, and those get believed."
+      weight: 1
+    - id: dk4-05
+      stem: "A dashboard has shown every metric green for eleven straight months. What is the most likely explanation?"
+      type: single
+      options: ["Thresholds are loose, metrics are safe, or truth is filtered", "The operation is genuinely performing above its targets", "The targets were reset during the year to match performance", "The review cadence is too infrequent to catch the dips"]
+      correct: ["Thresholds are loose, metrics are safe, or truth is filtered"]
+      rubric_category: application
+      explanation: "Real operations wobble and sometimes fail. Trust dashboards that bring bad news; audit the ones that never do."
+      weight: 1
+    - id: dk4-06
+      stem: "Average resolution time has been flat for six months, but customers are complaining more about delays. What should you look at?"
+      type: single
+      options: ["The tail — the median plus the oldest open cases", "The definition of when the resolution clock starts", "The volume of cases handled over the same period", "The mix of case types arriving each month"]
+      correct: ["The tail — the median plus the oldest open cases"]
+      rubric_category: application
+      explanation: "Averages hide; distributions tell. A stable mean can conceal a growing tail of ancient cases."
+      weight: 1
+    - id: dk4-07
+      stem: "Which of these should trigger real attention rather than being read as wobble? (Select all that apply.)"
+      type: multi
+      options: ["A run of periods on one side of the baseline", "A step-change that persists across periods", "A point far outside the normal range", "A single downtick within the usual band"]
+      correct: ["A run of periods on one side of the baseline", "A step-change that persists across periods", "A point far outside the normal range"]
+      rubric_category: application
+      explanation: "Pattern deserves attention; the individual wobble does not, and the range belongs drawn on the chart so this is settled by looking."
+      weight: 1
+    - id: dk4-08
+      stem: "Recorded complaints have dropped sharply since a new intake process launched. Why is celebrating premature?"
+      type: single
+      options: ["The recording may have fallen rather than the complaints", "The new process may have shifted them to another channel", "The comparison period may not be long enough to judge", "The definition of a complaint may have changed with it"]
+      correct: ["The recording may have fallen rather than the complaints"]
+      rubric_category: analysis
+      explanation: "Silence in the data is not peace — a collection gap looks exactly like an improvement."
+      weight: 1
+    - id: dk4-09
+      stem: "A presentation shows a strong recovery since March. What should you check before believing it?"
+      type: single
+      options: ["Whether March was the bottom of a longer slide", "Whether the recovery has been sustained since then", "Whether the same measure was used throughout", "Whether the improvement matches the target path"]
+      correct: ["Whether March was the bottom of a longer slide"]
+      rubric_category: analysis
+      explanation: "Be suspicious of any presentation that chooses its window to flatter; a week shows weather, a year shows climate."
+      weight: 1
+    - id: dk4-10
+      stem: "Satisfaction scores are computed only from customers still on the books, and cycle time only from jobs that finished. What is the flaw?"
+      type: single
+      options: ["The departed and the stuck are the story and are not in the sample", "The sample size is too small once those groups are removed", "The two measures are not comparable across the same period", "The figures will lag reality by however long a job takes"]
+      correct: ["The departed and the stuck are the story and are not in the sample"]
+      rubric_category: analysis
+      explanation: "Survivorship: averages computed over only what remained will always look better than the truth."
+      weight: 1

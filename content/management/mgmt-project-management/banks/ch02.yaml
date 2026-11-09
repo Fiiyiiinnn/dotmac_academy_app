@@ -1,0 +1,89 @@
+bank:
+  course: mgmt-project-management
+  kind: chapter
+  chapter: 2
+  version: 2
+  policy:
+    mode: practice
+  questions:
+    - id: pm2-01
+      stem: "The critical path is the chain of dependent tasks that:"
+      type: single
+      options: ["Sets the earliest possible finish", "Carries the greatest cost", "Involves the most people", "Has the widest estimates"]
+      correct: ["Sets the earliest possible finish"]
+      rubric_category: recall
+      explanation: "A delay on it moves the end date one-for-one; a delay elsewhere consumes slack."
+      weight: 1
+    - id: pm2-02
+      stem: "A milestone must be:"
+      type: single
+      options: ["Unambiguously done or not done", "Achievable within a single week", "Owned by more than one person", "Tied to a payment being made"]
+      correct: ["Unambiguously done or not done"]
+      rubric_category: recall
+      explanation: "A milestone that can be '90% done' is a task wearing a sash."
+      weight: 1
+    - id: pm2-03
+      stem: "A 120-day project carries contingency at 15% of the plan. How many days is that?"
+      type: numeric
+      options:
+        tolerance: 1
+      correct: 18
+      rubric_category: application
+      explanation: "0.15 x 120 = 18 days, held openly by the project lead rather than hidden inside task estimates."
+      weight: 1
+    - id: pm2-04
+      stem: "You have decomposed the project into tasks. What is the test of the breakdown?"
+      type: single
+      options: ["If all of these are done, is the project done?", "Does every task take less than a week to do?", "Has each task been estimated by its own owner?", "Are the tasks arranged in the order of execution?"]
+      correct: ["If all of these are done, is the project done?"]
+      rubric_category: application
+      explanation: "Coverage, not elegance. The gaps you find in that walk-through are the cheapest gaps you will ever fix."
+      weight: 1
+    - id: pm2-05
+      stem: "A task is genuinely uncertain — it depends on what is found behind the wall. How should it be estimated?"
+      type: single
+      options: ["As a range, planned against the realistic middle", "As the most likely single figure available", "As the worst case, to be safe about it", "As the best case, with contingency on top"]
+      correct: ["As a range, planned against the realistic middle"]
+      rubric_category: application
+      explanation: "'Three to six days' is information; 'four days' is false precision — and the wide ranges are your risk list forming."
+      weight: 1
+    - id: pm2-06
+      stem: "Which categories of work are most often missing entirely from a plan? (Select all that apply.)"
+      type: multi
+      options: ["Approvals and sign-offs", "Training and handover", "Testing and rework", "The main deliverable itself"]
+      correct: ["Approvals and sign-offs", "Training and handover", "Testing and rework"]
+      rubric_category: application
+      explanation: "Plans overrun less because tasks took longer than because whole categories were never on the list."
+      weight: 1
+    - id: pm2-07
+      stem: "An external approval 'takes two weeks'. When does that clock start?"
+      type: single
+      options: ["When a complete submission is received", "When the application is first prepared", "When the approving office acknowledges it", "When the project formally requests it"]
+      correct: ["When a complete submission is received"]
+      rubric_category: application
+      explanation: "Projects routinely lose a month by submitting late paperwork punctually."
+      weight: 1
+    - id: pm2-08
+      stem: "The sponsor compresses your honest twelve-week schedule to eight weeks by decree, changing nothing else. What has happened?"
+      type: single
+      options: ["The truth has been relocated to the expensive end", "The team has been given a stretch target to aim at", "The plan now carries risk that must be registered", "The estimate has been corrected for its optimism"]
+      correct: ["The truth has been relocated to the expensive end"]
+      rubric_category: analysis
+      explanation: "A shorter date is buyable — with people, less scope, or accepted risk — but never by decree alone."
+      weight: 1
+    - id: pm2-09
+      stem: "Your first milestone lands two weeks late. What is the plan actually telling you?"
+      type: single
+      options: ["Something about the final date, this early", "That the milestone was set too ambitiously", "That the team needs additional resourcing now", "That the estimate for that task was wrong"]
+      correct: ["Something about the final date, this early"]
+      rubric_category: analysis
+      explanation: "Early milestone slippage is how the ending announces itself while there is still time to respond."
+      weight: 1
+    - id: pm2-10
+      stem: "Why is hidden padding inside every task estimate worse than a visible project-level buffer?"
+      type: single
+      options: ["It does the same job dishonestly and teaches everyone the numbers are fiction", "It makes the individual task estimates harder to compare against history", "It cannot be reallocated to whichever task actually needs the extra time", "It inflates the total by more than a single project-level buffer would"]
+      correct: ["It does the same job dishonestly and teaches everyone the numbers are fiction"]
+      rubric_category: analysis
+      explanation: "Once the team believes the numbers are padded, every estimate becomes a negotiating position."
+      weight: 1

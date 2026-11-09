@@ -1,0 +1,56 @@
+<!doctype html>
+<meta charset="utf-8">
+<style>
+* { margin:0; padding:0; box-sizing:border-box }
+body { width:1344px; height:768px; background:#f9f1dd;
+  font-family:-apple-system,"Helvetica Neue",Helvetica,Arial,sans-serif; color:#2f3733 }
+.wrap { padding:70px 76px }
+h1 { font-size:42px; font-weight:650; letter-spacing:-.5px }
+.sub { font-size:22px; color:#6c7671; margin-top:9px }
+.funnel { margin-top:42px }
+.stage { display:grid; grid-template-columns:300px 720px 1fr; align-items:center;
+  column-gap:22px; margin-bottom:14px }
+.name { font-size:21px; color:#4a544f; text-align:right }
+.bar { height:56px; background:#3f8f7a; border-radius:3px; display:flex;
+  align-items:center; padding-left:20px; color:#fff; font-size:22px; font-weight:650 }
+.bar.last { background:#2f6d5c }
+.conv { font-size:19px; color:#8a938d }
+.conv b { color:#b04a2f; font-weight:650 }
+.rule { height:1px; background:#e0d5ba; margin:30px 0 26px }
+.foot { display:flex; align-items:center; gap:34px }
+.stat { flex:none }
+.big { font-size:56px; font-weight:700; color:#2f6d5c; letter-spacing:-2px; line-height:1 }
+.cap { font-size:18px; color:#6c7671; margin-top:6px }
+.note { font-size:20px; color:#5c6560; line-height:1.45 }
+</style>
+<body>
+<div class="wrap">
+  <h1>What a sales target costs in conversations</h1>
+  <div class="sub">One seller, one month. Bar width is proportional to the count.</div>
+
+  <div class="funnel">
+    <div class="stage"><div class="name">Conversations started</div>
+      <div class="bar" style="width:720px">200</div><div class="conv"></div></div>
+    <div class="stage"><div class="name">Qualified</div>
+      <div class="bar" style="width:360px">100</div><div class="conv"><b>50%</b> survive</div></div>
+    <div class="stage"><div class="name">Discovery completed</div>
+      <div class="bar" style="width:216px">60</div><div class="conv"><b>60%</b> survive</div></div>
+    <div class="stage"><div class="name">Proposals issued</div>
+      <div class="bar" style="width:130px">36</div><div class="conv"><b>60%</b> survive</div></div>
+    <div class="stage"><div class="name">Sales closed</div>
+      <div class="bar last" style="width:43px">12</div><div class="conv"><b>33%</b> survive</div></div>
+  </div>
+
+  <div class="rule"></div>
+  <div class="foot">
+    <div class="stat">
+      <div class="big">17</div>
+      <div class="cap">conversations per sale</div>
+    </div>
+    <div class="note">
+      That single ratio turns any target into a workload. Raising the target to 18 costs
+      either <b>50% more prospecting</b> — 300 conversations — or a <b>17-point gain in
+      close rate</b> on the same 200. Both deliver. They are not equally available.
+    </div>
+  </div>
+</div>

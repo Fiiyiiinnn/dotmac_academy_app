@@ -1,0 +1,252 @@
+bank:
+  course: mgmt-communication
+  kind: final
+  chapter: null
+  version: 2
+  policy:
+    mode: exam
+    max_attempts: 5
+    pool: 20
+  questions:
+    - id: cmf-01
+      stem: "Complete the pair: sensitive → spoken first; binding → :"
+      type: single
+      options: ["Written always", "Spoken twice", "Broadcast once", "Confirmed later"]
+      correct: ["Written always"]
+      rubric_category: recall
+      explanation: "Spoken agreements about money, dates or scope do not exist until written down."
+      weight: 1
+    - id: cmf-02
+      stem: "The work order for professional writing is:"
+      type: single
+      options: ["Conclusion, meaning, support, detail", "Background, evidence, analysis, close", "Context, options, costs, decision", "Summary, timeline, cause, action"]
+      correct: ["Conclusion, meaning, support, detail"]
+      rubric_category: recall
+      explanation: "Everyone reads the first lines; almost nobody reads to the end."
+      weight: 1
+    - id: cmf-03
+      stem: "An upward brief is compressed by:"
+      type: single
+      options: ["Selection", "Rounding", "Averaging", "Omission"]
+      correct: ["Selection"]
+      rubric_category: recall
+      explanation: "Dropping detail is the job; dropping the inconvenient risk is distortion."
+      weight: 1
+    - id: cmf-04
+      stem: "Every meeting action needs one owner, one date, and:"
+      type: single
+      options: ["A stated outcome", "A named deputy", "A cost estimate", "A priority level"]
+      correct: ["A stated outcome"]
+      rubric_category: recall
+      explanation: "Who does what by when — converted before it leaves the room, then written down."
+      weight: 1
+    - id: cmf-05
+      stem: "The same project update goes to your director, your team, and a peer department. What must change?"
+      type: single
+      options: ["The framing, not the facts", "The level of detail given", "The channel used for each", "The timing of each version"]
+      correct: ["The framing, not the facts"]
+      rubric_category: application
+      explanation: "A budget story, a workload story, and a dependency story — from one set of facts."
+      weight: 1
+    - id: cmf-06
+      stem: "A weekly one-hour meeting with six attendees at a loaded ₦4,500 an hour runs for 48 weeks. Its annual cost, in naira, is:"
+      type: numeric
+      options:
+        tolerance: 5000
+      correct: 1296000
+      rubric_category: application
+      explanation: "6 × ₦4,500 × 48 = ₦1,296,000, which is the number to weigh against what the meeting actually produced."
+      weight: 1
+    - id: cmf-07
+      stem: "Your director asks whether a job will be finished on Friday. It will slip to Tuesday. What is the first sentence?"
+      type: single
+      options: ["No — Tuesday, because the parts land Monday", "Let me take you through where we are now", "That depends on when the parts actually arrive", "We are pushing hard to still make the Friday"]
+      correct: ["No — Tuesday, because the parts land Monday"]
+      rubric_category: application
+      explanation: "Answer, then reason, then caveat."
+      weight: 1
+    - id: cmf-08
+      stem: "A project in your area has stalled. You believe you can recover it quietly in two weeks. What do you do?"
+      type: single
+      options: ["Report it now with the impact and your plan", "Recover it and report what happened after", "Raise it as a risk without the full picture", "Wait until you know the recovery will hold"]
+      correct: ["Report it now with the impact and your plan"]
+      rubric_category: application
+      explanation: "Bad news goes up early, honestly, and from you — their ability to help is largest while the problem is young."
+      weight: 1
+    - id: cmf-09
+      stem: "Which of these justify holding a meeting rather than sending a document? (Select all that apply.)"
+      type: multi
+      options: ["A decision that needs discussion", "Alignment where pushback matters", "Recognition or difficult news", "A round-up of weekly status"]
+      correct: ["A decision that needs discussion", "Alignment where pushback matters", "Recognition or difficult news"]
+      rubric_category: application
+      explanation: "Meetings buy interaction. The status recital is the single largest meeting waste in most organisations."
+      weight: 1
+    - id: cmf-10
+      stem: "You need a spend approved by Thursday and it currently sits in paragraph four. What do you do?"
+      type: single
+      options: ["Separate it as an ask with a name and a date", "Move the whole paragraph to the top of the report", "Send a follow-up message pointing at the request", "Repeat the request in the report's closing lines"]
+      correct: ["Separate it as an ask with a name and a date"]
+      rubric_category: application
+      explanation: "Buried requests license the reader to miss them, and 'please advise' is not an ask."
+      weight: 1
+    - id: cmf-11
+      stem: "Two of your team are in conflict and each lobbies you separately. What is the first structural move?"
+      type: single
+      options: ["Hear each once, then bring them together", "Rule on the disagreement and communicate it", "Set working agreements without meeting jointly", "Refer it upward before it affects the team"]
+      correct: ["Hear each once, then bring them together"]
+      rubric_category: application
+      explanation: "Refuse the triangle — the agreement has to be theirs to hold, not yours to carry between them."
+      weight: 1
+    - id: cmf-12
+      stem: "A decision you argued against arrives from above and you must deliver it. What is the failure mode to avoid?"
+      type: single
+      options: ["Presenting it as something management wants", "Explaining reasoning you were not given", "Delivering it in writing rather than in person", "Allowing the team to debate it afterwards"]
+      correct: ["Presenting it as something management wants"]
+      rubric_category: application
+      explanation: "The abdication pattern buys cheap solidarity by spending the decision's credibility."
+      weight: 1
+    - id: cmf-13
+      stem: "Why does a report structured chronologically get ignored even when it is thorough?"
+      type: single
+      options: ["Its conclusion arrives after the reader has stopped reading", "Its length exceeds what a senior reader will normally consume", "Its structure gives no visual cues for someone scanning quickly", "Its detail obscures which parts the reader is expected to act on"]
+      correct: ["Its conclusion arrives after the reader has stopped reading"]
+      rubric_category: analysis
+      explanation: "The school order buries the answer; the work order serves every class of reader at once."
+      weight: 1
+    - id: cmf-14
+      stem: "A manager's brief drops an inconvenient risk to keep the summary clean. What is the real cost?"
+      type: single
+      options: ["Every future brief from them now needs verifying", "The risk goes unmanaged until it eventually lands", "The decision made on that brief was probably wrong", "Their manager loses the context for the next decision"]
+      correct: ["Every future brief from them now needs verifying"]
+      rubric_category: analysis
+      explanation: "Your compression is trusted exactly once. Leaders learn quickly whose reports can be acted on without double-checking."
+      weight: 1
+    - id: cmf-15
+      stem: "Why is silence from a manager never neutral?"
+      type: single
+      options: ["The team reads it anyway, and usually less charitably than the truth", "It leaves decisions unexplained, which slows the work down", "It gives rumours time to circulate before they can be corrected", "It signals that the manager has not been told anything either"]
+      correct: ["The team reads it anyway, and usually less charitably than the truth"]
+      rubric_category: analysis
+      explanation: "You cannot opt out of communicating; you can only choose whether the message is deliberate."
+      weight: 1
+    - id: cmf-16
+      stem: "A team's meeting actions are never reviewed at the following meeting. What follows?"
+      type: single
+      options: ["Commitments made in that room stop being real", "Actions get completed later than they should be", "The same items reappear on subsequent agendas", "People stop volunteering to take on the actions"]
+      correct: ["Commitments made in that room stop being real"]
+      rubric_category: analysis
+      explanation: "After which no meeting in that room produces action again — the thirty seconds per item is what holds it up."
+      weight: 1
+    - id: cmf-17
+      stem: "Why does bringing a ranked recommendation upward earn more autonomy than presenting neutral options?"
+      type: single
+      options: ["It shows you did the analysis they would otherwise have to redo", "It reduces the number of decisions your manager has to make", "It demonstrates that you understand the criteria that matter", "It moves the accountability for the outcome onto you instead"]
+      correct: ["It shows you did the analysis they would otherwise have to redo"]
+      rubric_category: analysis
+      explanation: "You are closer to the facts — that is why you are briefing them. Pre-digestion is the job."
+      weight: 1
+    - id: cmf-18
+      stem: "Why does delaying a difficult conversation make it harder rather than easier?"
+      type: single
+      options: ["The behaviour compounds and resentment accumulates on both sides", "The evidence becomes harder to recall accurately over time", "The other person has longer to build a defensive position", "The manager loses the standing to raise it credibly at all"]
+      correct: ["The behaviour compounds and resentment accumulates on both sides"]
+      rubric_category: analysis
+      explanation: "The eventual conversation must then carry months of freight it need never have carried."
+      weight: 1
+    - id: cmf-19
+      stem: "A manager posts an important instruction in a group chat and considers it delivered. What has actually happened?"
+      type: single
+      options: ["It reached everyone and was confirmed by nobody", "It reached the people who were online at the time", "It was delivered but without any supporting context", "It was recorded but in a place nobody will find later"]
+      correct: ["It reached everyone and was confirmed by nobody"]
+      rubric_category: analysis
+      explanation: "Broadcast channels are fine for awareness and wrong for anything requiring individual acknowledgement."
+      weight: 1
+    - id: cmf-20
+      stem: "Why do meetings without an agenda tend to produce discussion rather than decisions?"
+      type: single
+      options: ["Nobody agreed in advance what done would look like", "Attendees arrive without having done the pre-reading", "The chair has no basis for cutting a topic short", "The wrong people are usually in the room for deciding"]
+      correct: ["Nobody agreed in advance what done would look like"]
+      rubric_category: analysis
+      explanation: "The agenda is a contract, and outcome-phrased items are what let the chair force the decision sentence."
+      weight: 1
+    - id: cmf-21
+      stem: "An instruction given downward needs what, why, and:"
+      type: single
+      options: ["When", "Who else", "How long", "Where"]
+      correct: ["When"]
+      rubric_category: recall
+      explanation: "What is needed, why it matters, when it is due — and important messages need saying more than once."
+      weight: 1
+    - id: cmf-22
+      stem: "A proposal that cannot summarise itself on one page is usually:"
+      type: single
+      options: ["Not ready", "Too technical", "Badly formatted", "Over budget"]
+      correct: ["Not ready"]
+      rubric_category: recall
+      explanation: "The discipline of compressing it is what exposes the parts that are not yet thought through."
+      weight: 1
+    - id: cmf-23
+      stem: "A colleague sends you a report opening with two paragraphs of background. What is the edit?"
+      type: single
+      options: ["Move the conclusion to the first line", "Shorten the background to one paragraph", "Add a summary box above the background", "Split it into a summary and an appendix"]
+      correct: ["Move the conclusion to the first line"]
+      rubric_category: application
+      explanation: "Everyone reads the opening; almost nobody reaches the end, so the answer belongs where the attention is."
+      weight: 1
+    - id: cmf-24
+      stem: "You must tell a peer team their request will be late. What shape does the message take?"
+      type: single
+      options: ["The impact, what you are doing, what you need", "An apology, the cause, and a new estimate", "The reason for the delay and its history", "A request for more time with justification"]
+      correct: ["The impact, what you are doing, what you need"]
+      rubric_category: application
+      explanation: "The working shape converts a confession into a plan; the cause is context, not the message."
+      weight: 1
+    - id: cmf-25
+      stem: "A weekly one-hour meeting has eight attendees at a loaded ₦5,000 an hour, running 46 weeks. What does it cost annually, in naira?"
+      type: numeric
+      options:
+        tolerance: 5000
+      correct: 1840000
+      rubric_category: application
+      explanation: "8 × ₦5,000 × 46 = ₦1,840,000 — the number to weigh against what the meeting actually produced."
+      weight: 1
+    - id: cmf-26
+      stem: "Which belong in the same-day record after a decision meeting? (Select all that apply.)"
+      type: multi
+      options: ["The decisions made", "Actions with owner and date", "Items parked and why", "A transcript of the discussion"]
+      correct: ["The decisions made", "Actions with owner and date", "Items parked and why"]
+      rubric_category: application
+      explanation: "Three short lists, not a transcript. Parked items matter because raisers need to see they were heard."
+      weight: 1
+    - id: cmf-27
+      stem: "Two team members are in conflict and each has now told you the other is unreasonable. What do you refuse to become?"
+      type: single
+      options: ["The message-carrier between them", "The person who decides who is right", "The one who raises it with both", "The escalation route to their manager"]
+      correct: ["The message-carrier between them"]
+      rubric_category: application
+      explanation: "Hearing each once is understanding; carrying messages is joining a proxy war that only they can end."
+      weight: 1
+    - id: cmf-28
+      stem: "Why does a manager who never explains reasoning end up experienced as arbitrary even when their decisions are sound?"
+      type: single
+      options: ["The team can only judge what it can see", "The decisions are too complex to follow", "Explanations take time nobody has spare", "The reasoning changes between decisions"]
+      correct: ["The team can only judge what it can see"]
+      rubric_category: analysis
+      explanation: "Invisible managing produces the same impression as bad managing, because the evidence available is identical."
+      weight: 1
+    - id: cmf-29
+      stem: "Why is a status report that buries its request for help worse than one that makes no request?"
+      type: single
+      options: ["It licenses the reader to miss it and blames nobody", "It makes the report longer than it needed to be", "It signals the request is not genuinely urgent", "It leaves the writer without a record of asking"]
+      correct: ["It licenses the reader to miss it and blames nobody"]
+      rubric_category: analysis
+      explanation: "The ask goes in its own line, with a name and a date, or the reader is entitled to have missed it."
+      weight: 1
+    - id: cmf-30
+      stem: "Why do managers who deliver bad news early with a plan gain autonomy rather than lose it?"
+      type: single
+      options: ["Their reporting becomes a signal leadership can rely on", "Their problems are smaller when first surfaced", "Their honesty is rewarded as a matter of culture", "Their plans reduce the work their manager does"]
+      correct: ["Their reporting becomes a signal leadership can rely on"]
+      rubric_category: analysis
+      explanation: "The value is the reliability of the channel, not the size of any single problem travelling down it."
+      weight: 1

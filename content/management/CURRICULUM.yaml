@@ -1,0 +1,75 @@
+# Curriculum structure for the management short courses.
+#
+# Prerequisites are ENFORCED by app/services/entitlements.py but, until this
+# file existed, there was no way to create one: CoursePrerequisite was read in
+# two places and written in none. `python -m app.cli load-curriculum` is now the
+# canonical writer, and this file is authoritative — the table is a projection
+# of it, rebuildable by re-running the command.
+#
+# Keep the graph shallow. A prerequisite is a claim that the second course is
+# genuinely hard to follow without the first, not a statement about which is
+# more advanced. Every edge added is a learner blocked from something they may
+# already know, so the bar is high and the default is none.
+
+curriculum:
+  discipline: management
+
+  # Two groups, recorded here rather than in chapter frontmatter. `Chapter.part`
+  # groups chapters *within* a course outline, so tagging every chapter of a
+  # course "Function" would render one meaningless heading per course. This is
+  # documentation of the catalogue's shape, not a field the app reads.
+  groups:
+    Functional:
+      - mgmt-team-leadership
+      - mgmt-project-management
+      - mgmt-finance-fundamentals
+      - mgmt-customer-experience
+      - mgmt-vendor-procurement
+      - mgmt-people-hr
+      - mgmt-health-safety
+      - mgmt-operations-process
+    Skills:
+      - mgmt-decision-making
+      - mgmt-communication
+      - mgmt-data-kpis
+      - mgmt-sales-fundamentals
+      - mgmt-personal-effectiveness
+
+  # course: requires [...]
+  #
+  # Only four edges, each justified by content that is genuinely assumed rather
+  # than merely related. Cross-references between courses are plentiful and are
+  # deliberately NOT prerequisites — a reader meeting "see the Finance course"
+  # can follow the idea from context.
+  prerequisites:
+    # Unit economics (Finance ch2) is used directly: the discount table in
+    # Sales ch3 computes against a margin the learner is assumed to understand,
+    # and ch4 funds concessions out of it.
+    - course: mgmt-sales-fundamentals
+      requires: [mgmt-finance-fundamentals]
+
+    # Vendor ch2's total-cost-of-ownership comparison and ch3's uplift
+    # compounding both assume the Finance course's cost/margin vocabulary.
+    - course: mgmt-vendor-procurement
+      requires: [mgmt-finance-fundamentals]
+
+    # Ch3's baseline/spread work and ch5's gaming analysis are the Data course
+    # applied to service; without it, "publish the response rate" reads as
+    # pedantry rather than as the correction it is.
+    - course: mgmt-customer-experience
+      requires: [mgmt-data-kpis]
+
+    # Project Management ch5 tracks progress against plan and ch3 manages
+    # stakeholders through structured decisions; both lean on Decision Making's
+    # criteria-first discipline and its tripwire idea.
+    - course: mgmt-project-management
+      requires: [mgmt-decision-making]
+
+  # Deliberately absent, and why:
+  #
+  # - Nothing requires Leading a Team. It is the entry point for the whole
+  #   curriculum and gating it would gate everything.
+  # - Communication has no prerequisite. Every course cross-references it and
+  #   none of them assume it.
+  # - No chains longer than one edge. A learner who must finish three courses
+  #   before starting the one they were sent to do will do none of them.

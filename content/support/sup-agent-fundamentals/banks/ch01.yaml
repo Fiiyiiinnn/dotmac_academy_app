@@ -1,0 +1,88 @@
+bank:
+  course: sup-agent-fundamentals
+  kind: chapter
+  chapter: 1
+  version: 1
+  policy:
+    mode: practice
+  questions:
+    - id: o1-01
+      stem: "What is Sub, in the sense this course uses the word?"
+      type: single
+      options: ["The operator's official record of subscriber and support state", "A messaging app the support team happens to prefer for daily chat", "A backup copy the billing system keeps in case of an outage", "A convenience tool agents use only when the phones are quiet"]
+      correct: ["The operator's official record of subscriber and support state"]
+      rubric_category: recall
+      explanation: "If it did not happen in Sub, it did not officially happen — that is what makes it the record rather than just a tool."
+      weight: 1
+    - id: o1-02
+      stem: "Which of these is NOT one of the screens a support agent uses daily?"
+      type: single
+      options: ["The network monitoring and infrastructure console", "The Customers screen, where subscriber accounts and billing history live", "The Support screen, for the ticket queue", "The Workqueue screen, for assigned work"]
+      correct: ["The network monitoring and infrastructure console"]
+      rubric_category: recall
+      explanation: "Network monitoring belongs to a different role; support agents work Dashboard, Customers, Support, Workqueue, Inbox, and Reports."
+      weight: 1
+    - id: o1-03
+      stem: "Your support role can update customer accounts and activate or suspend subscriptions. What does this tell you about how access is designed?"
+      type: single
+      options: ["Access is a deliberate bundle matched to the job, not an all-or-nothing switch", "Every role eventually receives the same access once it has built trust", "Access is negotiated case by case rather than assigned by role", "Wide access is granted by default and trimmed only after a mistake"]
+      correct: ["Access is a deliberate bundle matched to the job, not an all-or-nothing switch"]
+      rubric_category: application
+      explanation: "The support role is a specific, purposeful set of permissions — read/update customer, manage subscriptions, tickets, billing reads, CRM — not a blanket grant."
+      weight: 1
+    - id: o1-04
+      stem: "You expect to see a network infrastructure screen and it is missing from your sidebar. What should you do first?"
+      type: single
+      options: ["Confirm whether the screen belongs to a different role before assuming it is an error", "Ask a colleague to open it on their own account and describe everything on it to you in detail", "Search for another route into the same screen through a different menu", "Report it as broken and continue on to your other tickets"]
+      correct: ["Confirm whether the screen belongs to a different role before assuming it is an error"]
+      rubric_category: application
+      explanation: "A missing screen is almost always a boundary by design, not an oversight — check before working around it."
+      weight: 1
+    - id: o1-05
+      stem: "A colleague resolves a customer's issue entirely over WhatsApp and never opens a ticket. What is the main problem with this, even though the customer got help?"
+      type: single
+      options: ["Nothing about the issue exists anywhere Sub can show another agent later", "The customer will likely doubt a resolution reached outside a ticket", "WhatsApp is generally a slower channel than opening a ticket first", "It technically breaks the allowed values of the ticket channel field"]
+      correct: ["Nothing about the issue exists anywhere Sub can show another agent later"]
+      rubric_category: application
+      explanation: "Resolving the problem is only half the job — if it is not in Sub, the next agent who talks to this customer starts from zero."
+      weight: 1
+    - id: o1-06
+      stem: "Your account can read and update customers, manage subscriptions, and work tickets, but cannot open the network monitoring console. What does this combination tell you about the boundary?"
+      type: single
+      options: ["It is scoped to your job's risk, not to your general trustworthiness as an employee", "It most likely means your account was only partially provisioned during onboarding and needs review", "It suggests network issues fall outside your team's responsibilities entirely", "It signals that the console is being phased out for every role in the system"]
+      correct: ["It is scoped to your job's risk, not to your general trustworthiness as an employee"]
+      rubric_category: analysis
+      explanation: "A rich set of customer and ticket permissions alongside a missing console access shows a deliberate, risk-matched design — not an incomplete account."
+      weight: 1
+    - id: o1-07
+      stem: "Two agents handle the same kind of ticket. One writes internal notes in personal shorthand; the other writes as if a reviewer will read it next year. Six months later, a complaint is escalated on one of these tickets. Which agent's ticket serves the business better, and why?"
+      type: single
+      options: ["The one who wrote for a future reader, because the note still explains itself later", "Neither one, because shorthand and full notes cost the same time to read later", "The one who used shorthand, because it shows the ticket moved through quickly", "It makes no real difference once either ticket has been closed out"]
+      correct: ["The one who wrote for a future reader, because the note still explains itself later"]
+      rubric_category: analysis
+      explanation: "The record is only as useful as it is readable later — shorthand that makes sense today is opaque to someone reviewing it under pressure months on."
+      weight: 1
+    - id: o1-08
+      stem: "A new agent assumes that because Sub is the official record, anything not entered immediately can be added later from memory with the same accuracy. What is the flaw in this assumption?"
+      type: single
+      options: ["Memory degrades, so a later reconstruction is less reliable than a timely record", "Sub technically prevents any edits once a ticket has first been created and saved", "The record only really matters for tickets that get formally escalated", "There is no flaw, since timing has no bearing on a record's usefulness"]
+      correct: ["Memory degrades, so a later reconstruction is less reliable than a timely record"]
+      rubric_category: analysis
+      explanation: "The value of 'the record' depends on entries being made close to the event, not reconstructed later from a fading memory."
+      weight: 1
+    - id: o1-09
+      stem: "Which pair correctly matches a screen to its main purpose?"
+      type: single
+      options: ["Workqueue: the specific work that has been assigned to you", "Reports: the day-to-day ticket queue you personally triage", "Inbox: a subscriber's full billing and plan history", "Dashboard: the screen where you open and edit individual tickets"]
+      correct: ["Workqueue: the specific work that has been assigned to you"]
+      rubric_category: recall
+      explanation: "Workqueue is your personal assigned work; Support holds the ticket queue, Customers holds billing/plan history, and Dashboard is the daily overview."
+      weight: 1
+    - id: o1-10
+      stem: "A conversation in Inbox goes quiet after the customer says 'thanks, that's fixed' — no ticket was ever opened for it. Is this necessarily fine?"
+      type: single
+      options: ["Not necessarily, since an unticketed conversation leaves no trace for later", "Yes, because a conversation ending on thanks never needs its own ticket", "Yes, because every Inbox conversation already counts as a ticket", "No, because every single Inbox conversation must always be escalated"]
+      correct: ["Not necessarily, since an unticketed conversation leaves no trace for later"]
+      rubric_category: application
+      explanation: "A conversation is not automatically a ticket; if the issue is worth having solved, it is usually worth a ticket so the pattern is visible later."
+      weight: 1

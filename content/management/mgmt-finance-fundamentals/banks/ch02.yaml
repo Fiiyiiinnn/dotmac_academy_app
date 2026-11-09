@@ -1,0 +1,90 @@
+bank:
+  course: mgmt-finance-fundamentals
+  kind: chapter
+  chapter: 2
+  version: 2
+  policy:
+    mode: practice
+  questions:
+    - id: fn2-01
+      stem: "Margin per unit is realised revenue per unit minus:"
+      type: single
+      options: ["Every cost that scales with units", "All fixed costs for the period", "Tax, interest, and depreciation", "Discounts granted at the point of sale"]
+      correct: ["Every cost that scales with units"]
+      rubric_category: recall
+      explanation: "Direct costs plus support time, delivery, rework and payment fees — anything that grows when units grow."
+      weight: 1
+    - id: fn2-02
+      stem: "Customer acquisition cost is calculated as:"
+      type: single
+      options: ["Acquisition spend ÷ customers gained", "Marketing budget ÷ revenue for the period", "First-year revenue ÷ customers retained", "Sales commission ÷ deals attempted"]
+      correct: ["Acquisition spend ÷ customers gained"]
+      rubric_category: recall
+      explanation: "All of it — advertising, sales salaries, commissions — over the customers those efforts actually won."
+      weight: 1
+    - id: fn2-03
+      stem: "A subscription customer pays ₦16,200 a month. Delivery costs ₦6,500, support ₦600, an amortised field visit ₦900, and payment processing ₦243. What is the margin per customer per month, in naira?"
+      type: numeric
+      options:
+        tolerance: 25
+      correct: 7957
+      rubric_category: application
+      explanation: "16,200 − (6,500 + 600 + 900 + 243) = ₦7,957, or 49% — not the 64% you get by counting delivery cost alone."
+      weight: 1
+    - id: fn2-04
+      stem: "That customer costs ₦30,000 to acquire and contributes ₦7,957 of margin a month. How many months is the payback period? Answer to one decimal place."
+      type: numeric
+      options:
+        tolerance: 0.2
+      correct: 3.8
+      rubric_category: application
+      explanation: "30,000 ÷ 7,957 = 3.8 months. Until then the customer is an investment funded by cash you already hold."
+      weight: 1
+    - id: fn2-05
+      stem: "A product carries a 30% margin. Sales wants a 10% price cut and promises the extra volume will cover it. How much extra volume is actually needed to stand still?"
+      type: single
+      options: ["About 25% more", "About 33% more", "About 50% more", "About 10% more"]
+      correct: ["About 50% more"]
+      rubric_category: application
+      explanation: "The cut comes out of the margin slice: 30% becomes 20%, so you need 30/20 = 1.5× the volume."
+      weight: 1
+    - id: fn2-06
+      stem: "You are costing one delivery. Which of these belong in the unit cost? (Select all that apply.)"
+      type: multi
+      options: ["Fuel and driver time for the run", "Time spent re-attempting failed drops", "The depot's annual insurance premium", "Card-processing fees on the payment"]
+      correct: ["Fuel and driver time for the run", "Time spent re-attempting failed drops", "Card-processing fees on the payment"]
+      rubric_category: application
+      explanation: "The test is whether the cost grows with units. Insurance does not; re-attempts and processing fees do."
+      weight: 1
+    - id: fn2-07
+      stem: "Your costing shows one customer segment is underwater once support time is counted. What do you do first?"
+      type: single
+      options: ["Reprice it, change how it is served, or stop selling it", "Stop serving that segment as soon as contracts allow", "Spread the loss across the other profitable segments", "Raise prices across the whole book to cover the gap"]
+      correct: ["Reprice it, change how it is served, or stop selling it"]
+      rubric_category: application
+      explanation: "Unit analysis buys you an informed choice; firing customers on sight is a reflex, not a decision."
+      weight: 1
+    - id: fn2-08
+      stem: "Two products both show a ₦4,000 average margin. One is a tight cluster around ₦4,000; the other is a few units at ₦20,000 and most near zero. Why does that difference change what you do?"
+      type: single
+      options: ["Growth there mostly sells the near-zero units, adding no profit", "The wide spread makes forecasting harder, so hold more stock", "Averages are unreliable, so report medians everywhere instead", "The tight product has no premium upside and should be dropped"]
+      correct: ["Growth there mostly sells the near-zero units, adding no profit"]
+      rubric_category: analysis
+      explanation: "The mean describes a unit that does not exist; the marginal unit you actually sell more of is the one that matters."
+      weight: 1
+    - id: fn2-09
+      stem: "A unit was costed two years ago at a healthy margin. Nothing was repriced, and nothing appears wrong in the monthly accounts — but support contacts per unit have doubled. What has most likely happened?"
+      type: single
+      options: ["Nothing material; support sits in overhead and is out of scope here", "Margin has quietly eroded and the old costing now overstates it", "Fixed costs have risen and unit margin is unaffected by the change", "Revenue per unit has fallen and should be reforecast upward"]
+      correct: ["Margin has quietly eroded and the old costing now overstates it"]
+      rubric_category: analysis
+      explanation: "Serving-cost creep never announces itself in a P&L — only a re-costing finds it, which is why it is annual work."
+      weight: 1
+    - id: fn2-10
+      stem: "A manager argues that a loss-making unit is fine because volume growth will fix it. What is wrong with the reasoning?"
+      type: single
+      options: ["Volume growth is rarely achievable in practice at that scale", "Volume multiplies the loss just as it would multiply a profit", "Fixed costs will fall per unit and eventually close the gap", "The loss is an accounting artefact rather than a cash outflow"]
+      correct: ["Volume multiplies the loss just as it would multiply a profit"]
+      rubric_category: analysis
+      explanation: "Scale is a multiplier on whatever the unit truly is. On a negative unit it is an accelerant."
+      weight: 1

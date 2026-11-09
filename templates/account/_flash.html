@@ -1,0 +1,5 @@
+{% if ok %}
+<span class="inline-flex items-center gap-1.5 rounded-full bg-brand-100 px-2.5 py-0.5 text-xs font-semibold text-brand-800">&check; {{ message }}</span>
+{% else %}
+<span class="inline-flex items-center gap-1.5 rounded-full bg-clay-500/15 px-2.5 py-0.5 text-xs font-semibold text-clay-600">&cross; {{ message }}</span>
+{% endif %}

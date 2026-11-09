@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-sales-fundamentals
+  kind: chapter
+  chapter: 1
+  version: 2
+  policy:
+    mode: practice
+  questions:
+    - id: sf1-01
+      stem: "Selling is best described as:"
+      type: single
+      options: ["Helping a buyer decide well, at a profit", "Persuading a buyer to choose your offer", "Presenting a product's strongest features", "Matching a price the buyer will accept"]
+      correct: ["Helping a buyer decide well, at a profit"]
+      rubric_category: recall
+      explanation: "Problem-solvers get repeat business, referrals and price tolerance; pressure-sellers get one transaction."
+      weight: 1
+    - id: sf1-02
+      stem: "Which stage of the sale do most so-called closing problems actually trace back to?"
+      type: single
+      options: ["Discovery", "Proposing", "Prospecting", "Negotiating"]
+      correct: ["Discovery"]
+      rubric_category: recall
+      explanation: "The proposal answered a question nobody asked."
+      weight: 1
+    - id: sf1-03
+      stem: "Your quarter is weak and you want to fix it. Which lever do you actually control?"
+      type: single
+      options: ["How many new conversations you start this week", "Whether the prospects in the pipeline decide", "How quickly buyers move between the stages", "What competitors are quoting for similar work"]
+      correct: ["How many new conversations you start this week"]
+      rubric_category: application
+      explanation: "You cannot force any single buyer to buy. Results this quarter reflect prospecting from months ago."
+      weight: 1
+    - id: sf1-04
+      stem: "Many proposals go out and few come back. Which skill does that point at?"
+      type: single
+      options: ["Discovery, or the quality of the proposal", "Prospecting, since volume is clearly there", "Closing, since the asks are not converting", "Negotiation, since price is likely the issue"]
+      correct: ["Discovery, or the quality of the proposal"]
+      rubric_category: application
+      explanation: "Stage conversions tell you which skill to fix; that is what makes them worth tracking."
+      weight: 1
+    - id: sf1-05
+      stem: "You land a large deal and stop prospecting to deliver it. What happens?"
+      type: single
+      options: ["A drought roughly two months later", "A stronger relationship with that client", "A temporary dip that recovers by itself", "A better conversion rate on what remains"]
+      correct: ["A drought roughly two months later"]
+      rubric_category: application
+      explanation: "Prospecting is a fixed habit, not a response to emptiness — which is why a 'sudden' drought never is."
+      weight: 1
+    - id: sf1-06
+      stem: "A prospect is pleasant, has been in your pipeline for months, and has no trigger and no timeline. What should you do?"
+      type: single
+      options: ["Drop it courteously and reclaim the hours", "Keep it warm with occasional contact", "Offer a discount to create some urgency", "Escalate to their manager for a decision"]
+      correct: ["Drop it courteously and reclaim the hours"]
+      rubric_category: application
+      explanation: "Chasing everything equally feels diligent and is the most common way sellers waste their year."
+      weight: 1
+    - id: sf1-07
+      stem: "Which behaviours build the trust every other technique spends? (Select all that apply.)"
+      type: multi
+      options: ["Accurate small claims", "Micro-promises kept on time", "Honest 'that won't suit you'", "Confident closing language"]
+      correct: ["Accurate small claims", "Micro-promises kept on time", "Honest 'that won't suit you'"]
+      rubric_category: application
+      explanation: "Buyers ask two questions: do they understand my situation, and can I believe them?"
+      weight: 1
+    - id: sf1-08
+      stem: "Why does pushing an answer before understanding the question cost more than the single sale?"
+      type: single
+      options: ["Nobody buys from that seller twice", "The wrong product gets returned later", "The buyer negotiates harder afterwards", "The proposal has to be redone anyway"]
+      correct: ["Nobody buys from that seller twice"]
+      rubric_category: analysis
+      explanation: "The reframing is practical rather than moral: repeat business and referrals are where the revenue actually lives."
+      weight: 1
+    - id: sf1-09
+      stem: "Why is a stalled sale usually stuck at an earlier stage than it appears?"
+      type: single
+      options: ["Skipping an early stage poisons every stage after it", "Buyers rarely admit which stage they are actually at", "Sellers record the stage optimistically rather than truly", "Later stages take longer, so problems surface there"]
+      correct: ["Skipping an early stage poisons every stage after it"]
+      rubric_category: analysis
+      explanation: "The stages are a diagnostic: locate where it actually stopped rather than where it appears to be stuck."
+      weight: 1
+    - id: sf1-10
+      stem: "One conversation fails unpredictably but a hundred behave predictably. What does that make selling?"
+      type: single
+      options: ["A numbers process with improvable conversions", "A skill that improves with repeated practice", "A matter of persistence more than technique", "A relationship business rather than a process"]
+      correct: ["A numbers process with improvable conversions"]
+      rubric_category: analysis
+      explanation: "Results are governed by what goes in the top and what fraction survives each stage."
+      weight: 1

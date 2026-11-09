@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-finance-fundamentals
+  kind: chapter
+  chapter: 4
+  version: 2
+  policy:
+    mode: practice
+  questions:
+    - id: fn4-01
+      stem: "Complete the distinction: profit is a periodic opinion; cash is:"
+      type: single
+      options: ["A daily fact", "A yearly total", "An accounting entry", "A planning estimate"]
+      correct: ["A daily fact"]
+      rubric_category: recall
+      explanation: "Businesses die of cash timing routinely while their income statements look fine."
+      weight: 1
+    - id: fn4-02
+      stem: "The manager's working cash tool is:"
+      type: single
+      options: ["A rolling weekly view months ahead", "The annual statement of cash flows", "The monthly profit and loss account", "The aged receivables report each week"]
+      correct: ["A rolling weekly view months ahead"]
+      rubric_category: recall
+      explanation: "Its job is to make the crunch visible while options still exist."
+      weight: 1
+    - id: fn4-03
+      stem: "A growing business keeps running short of cash despite rising profit. What is the mechanism?"
+      type: single
+      options: ["Each new customer costs money now and repays over months", "Profit is being overstated by the accounting treatment used", "Fixed costs are rising faster than the revenue base is", "Customers are paying later than the agreed payment terms"]
+      correct: ["Each new customer costs money now and repays over months"]
+      rubric_category: application
+      explanation: "Growth eats cash first and pays it back later — which is why expanding businesses are the ones that run out."
+      weight: 1
+    - id: fn4-04
+      stem: "Work was delivered eleven days ago and the invoice has not gone out. What has the business done?"
+      type: single
+      options: ["Given the customer an interest-free loan it started itself", "Delayed recognising the revenue for the current period", "Left the receivable out of the aged debtors report", "Created a dispute risk over the delivery date"]
+      correct: ["Given the customer an interest-free loan it started itself"]
+      rubric_category: application
+      explanation: "Money arrives no faster than billing sends for it."
+      weight: 1
+    - id: fn4-05
+      stem: "A subscription business reports a spike in non-payment churn. What should be checked first?"
+      type: single
+      options: ["Whether failed automatic payments are being chased", "Whether the pricing has moved recently", "Whether the service had an outage that month", "Whether competitors ran a switching offer"]
+      correct: ["Whether failed automatic payments are being chased"]
+      rubric_category: application
+      explanation: "A large share of 'non-payment' churn is just an expired card nobody contacted."
+      weight: 1
+    - id: fn4-06
+      stem: "Which belong in a collections rhythm that actually works? (Select all that apply.)"
+      type: multi
+      options: ["A reminder just before the due date", "Contact on the due date itself", "An escalating, automatic sequence after", "A pause until the relationship recovers"]
+      correct: ["A reminder just before the due date", "Contact on the due date itself", "An escalating, automatic sequence after"]
+      rubric_category: application
+      explanation: "Most late payment is disorganisation, not refusal — and a business that visibly notices lateness gets paid before those that do not."
+      weight: 1
+    - id: fn4-07
+      stem: "A customer in genuine hardship cannot pay the full amount. What is usually the better outcome?"
+      type: single
+      options: ["A documented payment plan that is reliably paid", "Full payment demanded on the original terms", "The debt written off to close the matter", "Service paused until the balance is settled"]
+      correct: ["A documented payment plan that is reliably paid"]
+      rubric_category: application
+      explanation: "Partial reliably paid beats total never paid — and receivables age badly, so early beats tough."
+      weight: 1
+    - id: fn4-08
+      stem: "Why is a cash crisis discovered rather than foreseen so much more expensive?"
+      type: single
+      options: ["You negotiate from desperation, and everyone can smell it", "The gap will have grown larger by the time it is noticed", "Emergency finance carries higher interest than planned finance", "The options available narrow to borrowing or cutting staff"]
+      correct: ["You negotiate from desperation, and everyone can smell it"]
+      rubric_category: analysis
+      explanation: "A cash crisis foreseen is a planning task; the cheap options — deferring spend, accelerating billing, arranging credit — are all early options."
+      weight: 1
+    - id: fn4-09
+      stem: "Why does a billing error cost three times rather than once?"
+      type: single
+      options: ["The rework, the delayed payment, and the lost trust", "The correction, the credit note, and the reconciliation", "The staff time, the customer's time, and the write-off", "The dispute, the escalation, and the eventual discount"]
+      correct: ["The rework, the delayed payment, and the lost trust"]
+      rubric_category: analysis
+      explanation: "The disputed invoice waits at the bottom of their pile, and wrong bills are a top complaint category everywhere."
+      weight: 1
+    - id: fn4-10
+      stem: "A large share of your receivables sits with one customer. Why is that risk rather than achievement?"
+      type: single
+      options: ["Their cash problem becomes yours at no notice", "Their bargaining power over terms increases", "Their loss would remove most of the revenue", "Their payment behaviour distorts the averages"]
+      correct: ["Their cash problem becomes yours at no notice"]
+      rubric_category: analysis
+      explanation: "Concentration in receivables transfers someone else's liquidity risk onto your payroll."
+      weight: 1

@@ -1,0 +1,88 @@
+bank:
+  course: sup-agent-fundamentals
+  kind: chapter
+  chapter: 5
+  version: 1
+  policy:
+    mode: practice
+  questions:
+    - id: e5-01
+      stem: "Which field represents a handoff of ticket ownership to another team?"
+      type: single
+      options: ["Service Team", "Channel, further up the panel", "Priority, set during triage", "Age, in hours since creation"]
+      correct: ["Service Team"]
+      rubric_category: recall
+      explanation: "Changing Service Team is how a handoff is represented on the ticket itself, visibly and on the record."
+      weight: 1
+    - id: e5-02
+      stem: "When two tickets are merged, what happens to the source ticket?"
+      type: single
+      options: ["It is canceled and linked to the target, not deleted", "It is deleted permanently from Sub with absolutely no trace left behind", "It automatically becomes the new target for any future merges", "It is quietly reopened again on its own after roughly 24 hours"]
+      correct: ["It is canceled and linked to the target, not deleted"]
+      rubric_category: recall
+      explanation: "The source is canceled and linked to the target ticket; its history stays visible through that link."
+      weight: 1
+    - id: e5-03
+      stem: "You decide a ticket needs to go to the field team for a site visit. What should you do, in order?"
+      type: single
+      options: ["Write the handoff note first, then change Service Team", "Change Service Team immediately, and skip the note to save time", "Ask the customer to call the field team directly", "Close the ticket and open a new one for the field team"]
+      correct: ["Write the handoff note first, then change Service Team"]
+      rubric_category: application
+      explanation: "Writing the note first ensures the receiving team has context the moment ownership changes, rather than starting from zero."
+      weight: 1
+    - id: e5-04
+      stem: "You find two open tickets from the same customer about the same intermittent issue — one with five detailed comments, one with none. Which should you merge into which?"
+      type: single
+      options: ["Merge the empty ticket into the detailed one", "Merge the detailed ticket into the empty one to keep the lower number", "Close both and open a third combined ticket", "Leave both open since merging risks losing history"]
+      correct: ["Merge the empty ticket into the detailed one"]
+      rubric_category: application
+      explanation: "The target should carry the useful history — merge the emptier ticket into the one with real content, regardless of ticket numbers."
+      weight: 1
+    - id: e5-05
+      stem: "You are about to hand off a ticket that is close to its due date. What should you do?"
+      type: single
+      options: ["Flag the likely breach explicitly in your handoff note", "Say nothing, since the due date is no longer your responsibility after handoff", "Extend the due date yourself before handing off", "Cancel the ticket to avoid a breach appearing on the record"]
+      correct: ["Flag the likely breach explicitly in your handoff note"]
+      rubric_category: application
+      explanation: "The SLA clock keeps running through a handoff — flagging a likely breach lets the receiving team act rather than being surprised."
+      weight: 1
+    - id: e5-06
+      stem: "A ticket breaches its due date two hours after being handed off to another team. How should this be understood?"
+      type: single
+      options: ["It reflects on the whole chain of ownership, not solely whoever is holding it now", "It is entirely the receiving team's fault, since they held it at the breach moment", "It is entirely the original agent's fault for handing it off", "Breaches after a handoff do not count against anyone"]
+      correct: ["It reflects on the whole chain of ownership, not solely whoever is holding it now"]
+      rubric_category: analysis
+      explanation: "A handoff does not reset accountability for the case as a whole — the due date is one continuous clock across the chain of ownership."
+      weight: 1
+    - id: e5-07
+      stem: "An agent hands off a ticket by messaging a colleague directly, 'can you take this one,' without changing Service Team or writing a note. What is the deeper problem beyond rudeness?"
+      type: single
+      options: ["The handoff is invisible on the record — anyone else opening the ticket cannot see it happened", "The colleague being messaged directly will most likely feel annoyed by the approach", "The ticket's priority field will automatically drop to a lower setting", "Nothing at all is wrong here, as long as the colleague agrees to take it on"]
+      correct: ["The handoff is invisible on the record — anyone else opening the ticket cannot see it happened"]
+      rubric_category: analysis
+      explanation: "A chat message is not on the ticket; without a Service Team change, no one reviewing the ticket later can see that ownership moved, or why."
+      weight: 1
+    - id: e5-08
+      stem: "An agent writes a thorough handoff note but leaves 'Reply to customer' checked by mistake. What is the likely consequence?"
+      type: single
+      options: ["The customer sees internal shorthand or context that was never meant for them", "The note simply fails to save to the ticket at all in that case", "The ticket gets automatically merged into some other existing ticket", "The receiving team never ends up seeing the note you wrote at all"]
+      correct: ["The customer sees internal shorthand or context that was never meant for them"]
+      rubric_category: analysis
+      explanation: "The Reply to customer checkbox controls visibility — leaving it checked on an internal note exposes it to the customer unintentionally."
+      weight: 1
+    - id: e5-09
+      stem: "Which of these is a reason to escalate a ticket, as opposed to simply continuing to work it yourself?"
+      type: single
+      options: ["The ticket needs something your role genuinely cannot provide, such as NOC-confirmed outage action", "The ticket is simply taking a good deal longer to resolve than you would personally like", "You personally just find this particular ticket rather uninteresting to work on", "The customer briefly asked to speak to someone else purely out of momentary frustration"]
+      correct: ["The ticket needs something your role genuinely cannot provide, such as NOC-confirmed outage action"]
+      rubric_category: application
+      explanation: "Escalate when the task is genuinely outside your role's capability or authority — not merely because it is slow or unwelcome."
+      weight: 1
+    - id: e5-10
+      stem: "What three things should a handoff note answer, at minimum?"
+      type: single
+      options: ["The actual problem, what has already been checked, and what the customer already knows", "The ticket's exact creation date and time, its channel, and its internal ID number", "The handling agent's current shift schedule, full name, and direct contact number", "The customer's complete billing history laid out in full, itemized detail"]
+      correct: ["The actual problem, what has already been checked, and what the customer already knows"]
+      rubric_category: recall
+      explanation: "A good handoff note covers the real problem, what has already been tried or ruled out, and what the customer has already been told to expect."
+      weight: 1

@@ -1,0 +1,89 @@
+bank:
+  course: mgmt-team-leadership
+  kind: chapter
+  chapter: 3
+  version: 2
+  policy:
+    mode: practice
+  questions:
+    - id: tl3-01
+      stem: "Every item on the team's shared board carries three facts: what it is, its status, and:"
+      type: single
+      options: ["Who owns the item", "When it started", "Why it matters", "How long it takes"]
+      correct: ["Who owns the item"]
+      rubric_category: recall
+      explanation: "One owner per item is what stops the 'I thought you had that' conversation."
+      weight: 1
+    - id: tl3-02
+      stem: "How many people must be able to perform each critical duty?"
+      type: single
+      options: ["At least two", "One, clearly named", "The whole team", "Half the rota"]
+      correct: ["At least two"]
+      rubric_category: recall
+      explanation: "Single points of failure are a rota problem and a training problem; close them with deliberate cross-training."
+      weight: 1
+    - id: tl3-03
+      stem: "You have five people on 40-hour weeks. History says a third of the week reliably goes to unplanned requests. How many hours of planned work should you commit the team to this week?"
+      type: numeric
+      options:
+        tolerance: 2
+      correct: 133
+      rubric_category: application
+      explanation: "5 × 40 = 200 hours, less the third that unplanned work will take: about 133. Committing all 200 is a decision to miss deadlines."
+      weight: 1
+    - id: tl3-04
+      stem: "Your priority list reads 'high, high, high, medium'. What is the problem?"
+      type: single
+      options: ["It leaves each person to rank their own work, and they will differ", "It has too few levels to describe a realistic mix of work", "It fails to record when each item was added to the list", "It should use numbers, because words get read inconsistently across a team"]
+      correct: ["It leaves each person to rank their own work, and they will differ"]
+      rubric_category: application
+      explanation: "Ranked means 1, 2, 3. When everything is high, each person quietly picks their own order and the picks do not match."
+      weight: 1
+    - id: tl3-05
+      stem: "A director asks your team to take on an urgent extra piece of work. What is the professional answer?"
+      type: single
+      options: ["Yes — and it pushes X to next month", "Yes, the team will find a way to absorb it", "No, the team is already at full capacity", "Yes, if the team can work some extra hours"]
+      correct: ["Yes — and it pushes X to next month"]
+      rubric_category: application
+      explanation: "A priority call that displaces nothing is a wish. Making the trade-off visible upward is what protects the team from silent overtime."
+      weight: 1
+    - id: tl3-06
+      stem: "An outgoing shift posted their open items in the team group chat and went home. Why is that not a handover?"
+      type: single
+      options: ["Nobody accepted it, so ownership never actually transferred", "Group chat is not the approved channel for shift information", "The message will be difficult to find again in a week's time", "It was posted after the shift rather than before it finished"]
+      correct: ["Nobody accepted it, so ownership never actually transferred"]
+      rubric_category: application
+      explanation: "A handover is a transfer of ownership. Until the receiver confirms, the sender still owns it."
+      weight: 1
+    - id: tl3-07
+      stem: "Which belong in a written shift handover? (Select all that apply.)"
+      type: multi
+      options: ["Open items and the status of each", "The next action on each open item", "Anything unusual about the shift", "A summary of routine work completed"]
+      correct: ["Open items and the status of each", "The next action on each open item", "Anything unusual about the shift"]
+      rubric_category: application
+      explanation: "A short fixed format beats prose. Routine completed work is already on the board and does not need re-narrating."
+      weight: 1
+    - id: tl3-08
+      stem: "Your team is at 80% capacity overall, but one person is at 130% — and it is your most reliable person. Why does the total hide the risk?"
+      type: single
+      options: ["Reliable people attract work, and the best ones do not complain until they resign", "Averages are always unreliable when the team has fewer than ten people on it", "The 80% figure was probably measured over too short a period to be meaningful", "Capacity should be measured per task rather than per person in the first place"]
+      correct: ["Reliable people attract work, and the best ones do not complain until they resign"]
+      rubric_category: analysis
+      explanation: "Load per person is the number that matters. Rebalance deliberately rather than waiting to be told."
+      weight: 1
+    - id: tl3-09
+      stem: "A team keeps a board, but several people also carry significant work that never appears on it. What does that make every plan built on the board?"
+      type: single
+      options: ["Fiction — the board describes a workload the team does not actually have", "Optimistic, though still broadly usable for the weekly planning session", "Accurate for the tracked work and silent about the rest of it", "A reasonable approximation, provided the untracked work stays small"]
+      correct: ["Fiction — the board describes a workload the team does not actually have"]
+      rubric_category: analysis
+      explanation: "Work that is not on the board is not owed, and work on the board has one owner. Untracked work breaks both rules at once."
+      weight: 1
+    - id: tl3-10
+      stem: "Your daily team check keeps running to forty minutes because two people work through problems in front of everyone. What is the fix?"
+      type: single
+      options: ["Move that discussion out of the check and keep the check on the board's facts", "Shorten the check by having people report only what changed since yesterday", "Hold the check every other day so the discussions have somewhere to happen", "Ask those two people to prepare their problems in advance of the meeting"]
+      correct: ["Move that discussion out of the check and keep the check on the board's facts"]
+      rubric_category: analysis
+      explanation: "The daily check exists to surface problems in hours, not to solve them. Anything that becomes a two-person discussion leaves the room."
+      weight: 1

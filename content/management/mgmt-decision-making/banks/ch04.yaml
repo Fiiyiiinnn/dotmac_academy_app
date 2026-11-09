@@ -1,0 +1,89 @@
+bank:
+  course: mgmt-decision-making
+  kind: chapter
+  chapter: 4
+  version: 2
+  policy:
+    mode: practice
+  questions:
+    - id: dm4-01
+      stem: "A tripwire is:"
+      type: single
+      options: ["Evidence decided in advance that triggers an action", "A deadline by which the decision must be taken", "The worst case you have agreed you can survive", "The point at which a decision passes upward"]
+      correct: ["Evidence decided in advance that triggers an action"]
+      rubric_category: recall
+      explanation: "Tripwires beat vigilance because they are set while you are calm, then fire when the moment is busy and awkward."
+      weight: 1
+    - id: dm4-02
+      stem: "Which override sits above expected-value reasoning?"
+      type: single
+      options: ["Never accept a small chance of ruin for a routine gain", "Never decide without at least three options on the table", "Never commit resources beyond one quarter's visibility", "Never act while the probabilities remain rough estimates"]
+      correct: ["Never accept a small chance of ruin for a routine gain"]
+      rubric_category: recall
+      explanation: "A bet that loses everything 5% of the time is not a 95% good bet — repeated, it is a guaranteed loss."
+      weight: 1
+    - id: dm4-03
+      stem: "An option has a 70% chance of gaining ₦400,000 and a 30% chance of losing ₦150,000. What is its expected value, in naira?"
+      type: numeric
+      options:
+        tolerance: 1000
+      correct: 235000
+      rubric_category: application
+      explanation: "(0.70 × 400,000) − (0.30 × 150,000) = 280,000 − 45,000 = ₦235,000. Then ask separately whether you can survive the loss case."
+      weight: 1
+    - id: dm4-04
+      stem: "You are waiting on one outstanding answer before deciding. Every realistic version of that answer leads to the same choice. What now?"
+      type: single
+      options: ["Decide — the question has become entertainment", "Wait, since the answer is already on its way", "Escalate, because the uncertainty is irreducible", "Timebox it to the end of the current week"]
+      correct: ["Decide — the question has become entertainment"]
+      rubric_category: application
+      explanation: "Stop gathering when more information would no longer change the choice."
+      weight: 1
+    - id: dm4-05
+      stem: "You are about to run a pilot before an organisation-wide rollout. What must the pilot's design include?"
+      type: single
+      options: ["The result that would convince you not to proceed", "A timeline matching the eventual full rollout plan", "Enough participants to represent every affected team", "A budget separate from the main programme's budget"]
+      correct: ["The result that would convince you not to proceed"]
+      rubric_category: application
+      explanation: "Without it, the pilot is a ceremony rather than a test — and it will confirm whatever was already decided."
+      weight: 1
+    - id: dm4-06
+      stem: "A decision has been sitting open for three weeks with no explicit deadline. What has actually been chosen each of those days?"
+      type: single
+      options: ["The status quo, repeatedly and without counting its cost", "Nothing, since no option has yet been formally selected", "A deferral, which is a legitimate choice under uncertainty", "More information, which the delay is presumably gathering"]
+      correct: ["The status quo, repeatedly and without counting its cost"]
+      rubric_category: application
+      explanation: "Waiting feels neutral; it is a choice of the status quo made hourly, usually with its costs uncounted."
+      weight: 1
+    - id: dm4-07
+      stem: "You are stuck between two options whose worst case exceeds what you are authorised to accept. What does escalating well look like?"
+      type: single
+      options: ["The situation, the options, your recommendation, and what you need", "A full written account of everything considered so far in the process", "A request for your manager to take the decision off your hands", "The two options with their risks, for your manager to choose between"]
+      correct: ["The situation, the options, your recommendation, and what you need"]
+      rubric_category: application
+      explanation: "Bring the decision, not the mess — and escalate early, at the fork in the road rather than three exits later."
+      weight: 1
+    - id: dm4-08
+      stem: "Why is 'this option is fine, it only fails 5% of the time' dangerous reasoning when the failure is catastrophic?"
+      type: single
+      options: ["Repetition makes the ruinous outcome near-certain; it just hasn't happened yet", "The 5% estimate is almost always optimistic when the stakes are that high", "Catastrophic failures attract regulatory attention regardless of frequency", "The remaining 95% of outcomes are rarely as good as they were projected"]
+      correct: ["Repetition makes the ruinous outcome near-certain; it just hasn't happened yet"]
+      rubric_category: analysis
+      explanation: "Change the option until the worst case is survivable — smaller commitment, staged rollout, explicit fallback — or decline it."
+      weight: 1
+    - id: dm4-09
+      stem: "What distinguishes a research problem from irreducible uncertainty, and why does the distinction change what you do?"
+      type: single
+      options: ["One resolves by finding out; the other resolves only by acting", "One belongs to your team; the other belongs to your manager", "One has a knowable answer; the other has several valid answers", "One is about facts; the other is about the values of the business"]
+      correct: ["One resolves by finding out; the other resolves only by acting"]
+      rubric_category: analysis
+      explanation: "Treating irreducible uncertainty as a research problem produces the paralysis of waiting for information nobody has."
+      weight: 1
+    - id: dm4-10
+      stem: "Why are tripwires set in advance more reliable than a commitment to watch the situation closely?"
+      type: single
+      options: ["They were specified while you were calm, and they fire without needing judgement", "They can be delegated to someone else, which watching closely cannot be", "They produce a written record that a later review will be able to audit", "They force the team to agree the measure before the argument gets heated"]
+      correct: ["They were specified while you were calm, and they fire without needing judgement"]
+      rubric_category: analysis
+      explanation: "Vigilance decays exactly when the situation gets busy; a tripwire does not need you to be paying attention."
+      weight: 1

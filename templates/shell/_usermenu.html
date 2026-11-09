@@ -1,0 +1,36 @@
+{# User menu — avatar (img or initials badge) + name, with an Account / Log out dropdown. #}
+<details class="shell-usermenu relative">
+  <summary aria-label="Account menu for {{ current_person.first_name }} {{ current_person.last_name }}" class="flex items-center gap-2.5 rounded border border-sand-300 bg-white py-1 pl-1 pr-2.5 transition-colors hover:border-brand-400">
+    {% if avatar_url %}
+    <img src="{{ avatar_url }}" alt="" class="h-8 w-8 shrink-0 rounded-full object-cover ring-1 ring-sand-300">
+    {% else %}
+    <span aria-hidden="true"
+          class="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-brand-100 text-xs font-bold uppercase tracking-wide text-brand-800 ring-1 ring-brand-200">
+      {{ (current_person.first_name[:1] ~ current_person.last_name[:1]) | trim or current_person.email[:1] }}
+    </span>
+    {% endif %}
+    <span class="hidden max-w-[10rem] truncate text-sm font-medium text-ink sm:inline">
+      {{ current_person.first_name }} {{ current_person.last_name }}
+    </span>
+    <svg class="h-3.5 w-3.5 shrink-0 text-ink-soft" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+  </summary>
+
+  <div class="absolute right-0 z-40 mt-2 w-56 overflow-hidden rounded-lg border border-sand-300 bg-white shadow-lift">
+    <div class="border-b border-sand-200 px-4 py-3">
+      <p class="truncate text-sm font-semibold text-ink">{{ current_person.first_name }} {{ current_person.last_name }}</p>
+      <p class="truncate text-xs text-ink-soft">{{ current_person.email }}</p>
+    </div>
+    <nav class="p-1.5">
+      <a href="/account" class="flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium text-ink-soft transition-colors hover:bg-sand-200 hover:text-brand-700">
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></svg>
+        Account
+      </a>
+      <form hx-post="/logout" hx-swap="none" class="mt-0.5">
+        <button type="submit" class="flex w-full items-center gap-2.5 rounded-lg px-3 py-2 text-left text-sm font-medium text-ink-soft transition-colors hover:bg-clay-500/10 hover:text-clay-600">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>
+          Log out
+        </button>
+      </form>
+    </nav>
+  </div>
+</details>

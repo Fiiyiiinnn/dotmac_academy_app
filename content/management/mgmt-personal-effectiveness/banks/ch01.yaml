@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-personal-effectiveness
+  kind: chapter
+  chapter: 1
+  version: 1
+  policy:
+    mode: practice
+  questions:
+    - id: pe1-01
+      stem: "Before changing how you work, the first step is to:"
+      type: single
+      options: ["Log a week", "Book focus time", "Cut a meeting", "Delegate a task"]
+      correct: ["Log a week"]
+      rubric_category: recall
+      explanation: "In fifteen-minute blocks, without changing behaviour. Most managers substantially misjudge both meetings and uninterrupted work."
+      weight: 1
+    - id: pe1-02
+      stem: "\"I'm too busy to track my time\" is best understood as:"
+      type: single
+      options: ["The finding itself", "A fair objection", "A scheduling issue", "A delegation problem"]
+      correct: ["The finding itself"]
+      rubric_category: application
+      explanation: "Not a reason to skip the exercise."
+      weight: 1
+    - id: pe1-03
+      stem: "The four time categories are only-you, better-by-you, anyone, and:"
+      type: single
+      options: ["Nobody", "Everyone", "Later", "Delegated"]
+      correct: ["Nobody"]
+      rubric_category: recall
+      explanation: "Reports nobody reads, meetings with no decision, rework. It is where the fastest gains are and the row people avoid looking at."
+      weight: 1
+    - id: pe1-04
+      stem: "Work that is yours because nobody ever decided otherwise is an example of:"
+      type: single
+      options: ["Deciding by default", "Poor delegation", "Scope creep", "Weak boundaries"]
+      correct: ["Deciding by default"]
+      rubric_category: analysis
+      explanation: "The Decision Making course's invisible failure mode, applied to a workload."
+      weight: 1
+    - id: pe1-05
+      stem: "The cost of an interruption is its duration plus:"
+      type: single
+      options: ["Recovery time", "Travel time", "The follow-up", "The context"]
+      correct: ["Recovery time"]
+      rubric_category: recall
+      explanation: "Roughly ten to fifteen minutes to re-enter concentrated work, which is why the total is far larger than the interruptions appear."
+      weight: 1
+    - id: pe1-06
+      stem: "Fifteen interruptions a day at twelve minutes of recovery costs about:"
+      type: single
+      options: ["720 hours a year", "180 hours a year", "72 hours a year", "1,440 hours a year"]
+      correct: ["720 hours a year"]
+      rubric_category: application
+      explanation: "Three hours a day, fifteen a week, 720 across 48 weeks \u2014 spent purely on re-entering work already started."
+      weight: 1
+    - id: pe1-07
+      stem: "The interruption figure is best described as:"
+      type: single
+      options: ["Capacity, not cash", "Cash, not capacity", "A payroll cost", "An overhead"]
+      correct: ["Capacity, not cash"]
+      rubric_category: analysis
+      explanation: "It only becomes real if the freed time goes somewhere that matters \u2014 the same caveat as the meeting-cost arithmetic."
+      weight: 1
+    - id: pe1-08
+      stem: "A manager who is never interruptible is best described as:"
+      type: single
+      options: ["A bottleneck", "Highly focused", "Well organised", "Poorly supported"]
+      correct: ["A bottleneck"]
+      rubric_category: application
+      explanation: "Not all interruption is waste; much of it is the job."
+      weight: 1
+    - id: pe1-09
+      stem: "Hours worked, as a measure of a manager, behaves like:"
+      type: single
+      options: ["A vanity metric", "A leading indicator", "A quality measure", "A capacity gauge"]
+      correct: ["A vanity metric"]
+      rubric_category: analysis
+      explanation: "It always rises, it feels virtuous, and no realistic value of it would change what you do next week."
+      weight: 1
+    - id: pe1-10
+      stem: "If your only-you work consistently happens after 5pm, the likeliest reading is that your day belongs to:"
+      type: single
+      options: ["Other people's priorities", "An unrealistic plan", "Poor time estimates", "Too many projects"]
+      correct: ["Other people's priorities"]
+      rubric_category: application
+      explanation: "And your own work is being done on your own time."
+      weight: 1

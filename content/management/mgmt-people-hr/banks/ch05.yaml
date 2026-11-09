@@ -1,0 +1,90 @@
+bank:
+  course: mgmt-people-hr
+  kind: chapter
+  chapter: 5
+  version: 1
+  policy:
+    mode: practice
+  questions:
+    - id: ph5-01
+      stem: 'A stay conversation differs from an exit interview because it happens:'
+      type: single
+      options: ["While you can act", "In private", "Without HR", "Annually"]
+      correct: ["While you can act"]
+      rubric_category: recall
+      explanation: "An exit interview tells you why someone left. A stay conversation tells you why someone might, in time to do something about it."
+      weight: 1
+    - id: ph5-02
+      stem: 'The reason people give for leaving is most often:'
+      type: single
+      options: ["Pay", "Their manager", "Workload", "Recognition"]
+      correct: ["Pay"]
+      rubric_category: recall
+      explanation: "It is the stated reason far more often than the deciding one. Someone content elsewhere rarely leaves for 10%."
+      weight: 1
+    - id: ph5-03
+      stem: 'Ten points of retention on a team of twenty, at N900,000 a leaver, is worth about:'
+      type: single
+      options: ["N1.8m every year", "N900,000 just once", "N450,000 a year", "N4.5m a year"]
+      correct: ["N1.8m every year"]
+      rubric_category: application
+      explanation: "Five leavers against three. It is a recurring saving available without winning a customer or cutting a cost."
+      weight: 1
+    - id: ph5-04
+      stem: 'A stay conversation that produces no visible action teaches the person that:'
+      type: single
+      options: ["Speaking up is pointless", "Change takes time", "The manager is busy", "Feedback is welcome"]
+      correct: ["Speaking up is pointless"]
+      rubric_category: application
+      explanation: "Which is worse than never having asked. Act visibly on at least one thing."
+      weight: 1
+    - id: ph5-05
+      stem: 'Counter-offers most often fail because they address:'
+      type: single
+      options: ["Only the pay", "The wrong person", "Too little money", "The notice period"]
+      correct: ["Only the pay"]
+      rubric_category: application
+      explanation: "The actual reason stays in place. If pay genuinely was the reason, fix it \u2014 then ask why it took a resignation to surface."
+      weight: 1
+    - id: ph5-06
+      stem: 'The expensive part of a departure that the notice period is your only chance to capture
+  is:'
+      type: single
+      options: ["Undocumented knowledge", "Client contacts", "Outstanding work", "Equipment return"]
+      correct: ["Undocumented knowledge"]
+      rubric_category: application
+      explanation: "'Agree the handover in writing: what they own, its state, who receives it, and what only they know.'"
+      weight: 1
+    - id: ph5-07
+      stem: 'Turnover averages hide the point because losing your strongest and your weakest people:'
+      type: single
+      options: ["Cost the same on paper", "Happen at once", "Are equally avoidable in practice", "Have the same causes"]
+      correct: ["Cost the same on paper"]
+      rubric_category: analysis
+      explanation: "They are entirely different events. Track who leaves, not only how many."
+      weight: 1
+    - id: ph5-08
+      stem: 'Withdrawal, disengagement and going quiet in meetings are best understood as:'
+      type: single
+      options: ["Leading indicators", "Performance issues", "Personality traits", "Workload symptoms"]
+      correct: ["Leading indicators"]
+      rubric_category: analysis
+      explanation: "Resignations are usually visible for months. The letter is the lagging indicator."
+      weight: 1
+    - id: ph5-09
+      stem: 'Retention is mostly bought with attention rather than money because the top reasons
+  are:'
+      type: single
+      options: ["Above pay in rank", "Cheaper to fix", "Easier to measure", "More often stated"]
+      correct: ["Above pay in rank"]
+      rubric_category: analysis
+      explanation: "Manager, future, recognition and workload all outrank pay. Money spent while those remain unaddressed buys a delay at permanent cost."
+      weight: 1
+    - id: ph5-10
+      stem: 'Treating a departing employee well matters commercially because leavers become:'
+      type: single
+      options: ["Customers and referrers", "Direct competitors and rivals", "Regulators", "Auditors"]
+      correct: ["Customers and referrers"]
+      rubric_category: analysis
+      explanation: "And occasionally returning employees, who are cheaper and better than any new hire. Everyone still employed is watching how the exit goes."
+      weight: 1

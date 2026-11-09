@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-health-safety
+  kind: chapter
+  chapter: 4
+  version: 1
+  policy:
+    mode: practice
+  questions:
+    - id: hs4-01
+      stem: "The test of a safe system of work is what the crew says when asked to describe it:"
+      type: single
+      options: ["Without the document", "In a meeting", "To a visiting auditor", "In writing"]
+      correct: ["Without the document"]
+      rubric_category: recall
+      explanation: "What they say is the actual system of work. Where it differs from the document, the document is usually wrong."
+      weight: 1
+    - id: hs4-02
+      stem: "Competence consists of knowledge, skill, experience and:"
+      type: single
+      options: ["Judgement", "Certification", "Seniority", "Supervision"]
+      correct: ["Judgement"]
+      rubric_category: recall
+      explanation: "The ability to recognise when the situation has left the method behind. It is the hardest to certify and the one that matters most."
+      weight: 1
+    - id: hs4-03
+      stem: "A permit to work adds what a method statement cannot:"
+      type: single
+      options: ["Confirmation at the moment", "A legal defence", "A cost control", "A durable training record"]
+      correct: ["Confirmation at the moment"]
+      rubric_category: application
+      explanation: "Someone with authority confirms the specific controls are in place now, and fixes a start and an end."
+      weight: 1
+    - id: hs4-04
+      stem: "Permits issued too freely become a signature ritual; permits issued too restrictively get:"
+      type: single
+      options: ["Bypassed", "Delayed", "Duplicated", "Audited"]
+      correct: ["Bypassed"]
+      rubric_category: analysis
+      explanation: "Because the job still has to happen and the permit desk closes at five. Both failures are design failures rather than discipline failures."
+      weight: 1
+    - id: hs4-05
+      stem: "In isolation practice, the person who should hold the lock is:"
+      type: single
+      options: ["The person exposed", "Their supervisor", "The electrician", "The issuer of the permit"]
+      correct: ["The person exposed"]
+      rubric_category: application
+      explanation: "Not a colleague and not a supervisor. It is the rule that saves lives."
+      weight: 1
+    - id: hs4-06
+      stem: "Lone working removes the control that nobody lists, namely:"
+      type: single
+      options: ["Someone noticing", "Shared equipment", "Peer review", "Supervision"]
+      correct: ["Someone noticing"]
+      rubric_category: application
+      explanation: "If lone work is necessary, replace that control explicitly with check-ins, a person who acts on a missed one, and a defined response."
+      weight: 1
+    - id: hs4-07
+      stem: "A check-in scheme nobody monitors is worse than none because it produces:"
+      type: single
+      options: ["Confidence without cover", "Extra paperwork", "False alarms", "A badly delayed response"]
+      correct: ["Confidence without cover"]
+      rubric_category: analysis
+      explanation: "The lone worker and the organisation both believe someone would notice."
+      weight: 1
+    - id: hs4-08
+      stem: "Stop-work authority becomes real at the moment someone uses it and is:"
+      type: single
+      options: ["Backed publicly", "Thanked privately", "Formally recorded", "Given an award"]
+      correct: ["Backed publicly"]
+      rubric_category: analysis
+      explanation: "Even when they were wrong. An unnecessary stop costs an hour; a second-guessed stop ends the practice permanently."
+      weight: 1
+    - id: hs4-09
+      stem: "A schedule in which the safe method does not fit is best classified as:"
+      type: single
+      options: ["A control failure", "A resourcing issue", "A planning preference", "A commercial pressure"]
+      correct: ["A control failure"]
+      rubric_category: analysis
+      explanation: "And one the manager owns. Nobody decides to work unsafely; they decide to hit the target, and the method is what gives."
+      weight: 1
+    - id: hs4-10
+      stem: "Long service on one system is not competence on a different one, which is hard to say because:"
+      type: single
+      options: ["Experience is respected", "Records are missing", "Training costs money", "Assessment always takes time"]
+      correct: ["Experience is respected"]
+      rubric_category: application
+      explanation: "Match competence to the specific job, not to years accumulated generally."
+      weight: 1

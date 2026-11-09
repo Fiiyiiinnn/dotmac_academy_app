@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-sales-fundamentals
+  kind: chapter
+  chapter: 2
+  version: 2
+  policy:
+    mode: practice
+  questions:
+    - id: sf2-01
+      stem: "The four qualification questions are need, means, timing and:"
+      type: single
+      options: ["Authority", "Interest", "Budget", "Fit"]
+      correct: ["Authority"]
+      rubric_category: recall
+      explanation: "Can this person decide, or are you performing for someone who cannot say yes?"
+      weight: 1
+    - id: sf2-02
+      stem: "What does the 'why now' question find?"
+      type: single
+      options: ["The trigger driving the sale", "The budget available to spend", "The competitor being considered", "The decision-maker's identity"]
+      correct: ["The trigger driving the sale"]
+      rubric_category: recall
+      explanation: "A buyer with no trigger has no urgency, whatever their interest."
+      weight: 1
+    - id: sf2-03
+      stem: "A buyer mentions that deliveries are sometimes late. What is the right next move?"
+      type: single
+      options: ["Ask how often, and what it costs when it happens", "Explain how your delivery process avoids that", "Note it as a criterion for the proposal later", "Move on to the next area of their situation"]
+      correct: ["Ask how often, and what it costs when it happens"]
+      rubric_category: application
+      explanation: "The difference between a mild annoyance and a burning problem is the sale, and only questions reveal which one you have."
+      weight: 1
+    - id: sf2-04
+      stem: "You summarise: 'So the real issue is less the price and more that deliveries are unpredictable — is that right?' What does that achieve?"
+      type: single
+      options: ["It proves you listened and corrects any misreading", "It moves the conversation toward your strongest offer", "It signals that the discovery stage is now finished", "It gives you time to think about the next question"]
+      correct: ["It proves you listened and corrects any misreading"]
+      rubric_category: application
+      explanation: "Playback often makes the buyer sharpen their own understanding of what they want, too."
+      weight: 1
+    - id: sf2-05
+      stem: "Your contact is enthusiastic but cannot approve the spend. What is your actual job now?"
+      type: single
+      options: ["Reach the decider, or equip them to sell inward", "Build the case with the person in front of you", "Ask them to obtain approval before continuing", "Qualify the opportunity out until it is authorised"]
+      correct: ["Reach the decider, or equip them to sell inward"]
+      rubric_category: application
+      explanation: "Authority is one of the four; an enthusiastic non-decider is a route, not a dead end — but not a deal either."
+      weight: 1
+    - id: sf2-06
+      stem: "Which are signatures of a dead deal? (Select all that apply.)"
+      type: multi
+      options: ["No trigger and no timeline", "Decisions postponed with new reasons", "No access to the real decider", "A long procurement process"]
+      correct: ["No trigger and no timeline", "Decisions postponed with new reasons", "No access to the real decider"]
+      rubric_category: application
+      explanation: "A long process is normal in some markets; the others are politeness standing in for a no."
+      weight: 1
+    - id: sf2-07
+      stem: "What the buyer needs is genuinely not something you do well. What is the strongest move?"
+      type: single
+      options: ["Say so plainly and point them elsewhere", "Offer the closest thing you do provide", "Stay in touch in case their need changes", "Quote for it and let them decide on fit"]
+      correct: ["Say so plainly and point them elsewhere"]
+      rubric_category: application
+      explanation: "'Honestly, what you need is X and we don't do X well' builds more long-term revenue than any forced sale."
+      weight: 1
+    - id: sf2-08
+      stem: "Beyond the need itself, why must discovery capture how the decision will be made?"
+      type: single
+      options: ["Criteria, alternatives and the path decide the outcome", "Buyers expect the seller to manage their process", "It shortens the time between proposal and decision", "It identifies which competitor is being considered"]
+      correct: ["Criteria, alternatives and the path decide the outcome"]
+      rubric_category: analysis
+      explanation: "Buyers volunteer the product they want; far fewer volunteer how the choice will actually get made."
+      weight: 1
+    - id: sf2-09
+      stem: "Why is the opportunity cost of a dead deal the biggest hidden tax on a seller's time?"
+      type: single
+      options: ["The hour spent is invisible but taken from a live deal", "Dead deals consume more time than live ones do", "Sellers overestimate how many prospects they can carry", "The effort already invested makes leaving feel wasteful"]
+      correct: ["The hour spent is invisible but taken from a live deal"]
+      rubric_category: analysis
+      explanation: "Nothing on the calendar records what the hour could have been; that is exactly why it goes unnoticed."
+      weight: 1
+    - id: sf2-10
+      stem: "Why does pitching early stop you learning as well as costing the sale?"
+      type: single
+      options: ["The buyer switches from explaining to defending", "The presentation uses the time discovery needed", "The buyer assumes the seller has already decided", "The pitch commits you to claims you cannot revise"]
+      correct: ["The buyer switches from explaining to defending"]
+      rubric_category: analysis
+      explanation: "Two things stop at once: you stop learning and they start guarding. Reverse the order."
+      weight: 1

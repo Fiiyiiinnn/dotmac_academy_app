@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% from "components/_pagination.html" import table_pagination %}
+{% block title %}Applications — {{ branding_name | default("Dotmac Academy") }}{% endblock %}
+{% block content_width %}max-w-[1360px]{% endblock %}
+{% block content %}
+<header class="page-header">
+  <div class="page-header-copy"><p class="page-eyebrow">Administration · Cohort admissions</p><h1 class="page-title">Applications</h1><p class="page-intro">Review, rank, and progress candidate records submitted through the academy intake.</p></div>
+  <div class="page-header-actions">
+    <a href="/admin/applications/export.csv?status={{ selected_status }}&q={{ search_query }}&applied_from={{ applied_from }}&applied_to={{ applied_to }}&rank={{ 'true' if rank else 'false' }}" class="btn-ghost">Export CSV</a>
+    <a href="/admin/applications/export.csv?status={{ selected_status }}&q={{ search_query }}&applied_from={{ applied_from }}&applied_to={{ applied_to }}&rank={{ 'true' if rank else 'false' }}&include_invitation=true" class="btn-ghost">Export invitations</a>
+  </div>
+</header>
+<section class="mt-6 grid gap-3 sm:grid-cols-2" aria-label="Application summary">
+  <article class="card p-4"><p class="page-eyebrow">Total received</p><p class="mt-2 font-display text-2xl font-bold text-ink">{{ metrics.total }}</p><p class="mt-1 text-xs text-ink-soft">All application records</p></article>
+  <article class="card p-4"><p class="page-eyebrow">Screened</p><p class="mt-2 font-display text-2xl font-bold text-brand-700">{{ metrics.screened }}</p><p class="mt-1 text-xs text-ink-soft">Ready for the next decision</p></article>
+</section>
+<form method="get" action="/admin/applications" class="filter-toolbar">
+  <div class="filter-grid">
+    <div class="filter-field"><label for="application-search">Applicant</label><input id="application-search" name="q" type="search" value="{{ search_query }}" placeholder="Search applicant name"></div>
+    <div class="filter-field"><label for="application-status">Status</label><select id="application-status" name="status"><option value="">All statuses</option>{% for status in statuses %}<option value="{{ status }}" {% if selected_status == status %}selected{% endif %}>{{ status | capitalize }}</option>{% endfor %}</select></div>
+    <div class="filter-field"><label for="application-from">Applied from</label><input id="application-from" name="applied_from" type="date" value="{{ applied_from }}"></div>
+    <div class="filter-field"><label for="application-to">Applied to</label><input id="application-to" name="applied_to" type="date" value="{{ applied_to }}"></div>
+    <div class="flex flex-wrap items-center gap-2 sm:col-span-2 lg:col-span-4">
+      <label class="flex min-h-10 items-center gap-2 rounded border border-sand-300 bg-white px-3 text-sm font-semibold text-ink"><input type="checkbox" name="rank" value="true" {% if rank %}checked{% endif %}> Rank by assessment</label>
+      <button type="submit" class="btn-primary">Apply filters</button>{% if selected_status or search_query or applied_from or applied_to or rank %}<a href="/admin/applications" class="btn-ghost">Clear filters</a>{% endif %}
+    </div>
+  </div>
+</form>
+{% if filter_error %}<div class="mt-4 rounded border border-clay-500/20 bg-clay-500/10 px-4 py-3 text-sm font-semibold text-clay-600">{{ filter_error }}</div>{% endif %}
+<section class="data-table-card" aria-labelledby="applications-table-heading">
+  <div class="border-b border-sand-200 px-4 py-4 sm:px-5"><h2 id="applications-table-heading" class="section-title">Applicant pipeline</h2><p class="mt-1 text-sm text-ink-soft">All candidate data and review actions in one view.</p></div>
+  <div class="table-frame" role="region" aria-label="Applicant pipeline table; scroll horizontally to see all columns" tabindex="0">
+    <table class="data-table">
+      <thead><tr><th scope="col">Applicant name &amp; email</th><th scope="col">Cohort program</th><th scope="col">Applied date</th><th scope="col">Assessment score</th><th scope="col">Status</th><th scope="col">Profile</th><th scope="col" class="text-right">Actions</th></tr></thead>
+      <tbody>
+        {% for applicant in applicants %}
+        <tr class="align-top">
+          <td><p class="cell-primary">{{ applicant.first_name }} {{ applicant.last_name }}</p><p class="cell-secondary break-all">{{ applicant.email }}</p>{% if applicant.phone %}<p class="cell-secondary">{{ applicant.phone }}</p>{% endif %}</td>
+          <td><p class="cell-primary">{{ applicant.program or "Not assigned" }}</p></td>
+          <td class="whitespace-nowrap tabular-nums"><p class="cell-primary">{{ applicant.applied_on }}</p></td>
+          <td>{% if applicant.assessment_taken_at %}<p class="cell-primary">{% if applicant.assessment_score is not none %}{{ "%.0f"|format(applicant.assessment_score * 100) }}%{% else %}Completed{% endif %}</p>{% if applicant.assessment_level %}<p class="cell-secondary">{{ applicant.assessment_level }}</p>{% endif %}{% else %}<span class="text-ink-soft">Not taken</span>{% endif %}</td>
+          <td><span class="status-badge bg-sand-200 text-ink-soft">{{ applicant.status | capitalize }}</span></td>
+          <td>{% if applicant.profile_complete %}<span class="status-badge bg-brand-50 text-brand-700">Complete</span>{% else %}<span class="status-badge bg-clay-500/15 text-clay-600">Incomplete</span>{% endif %}</td>
+          <td class="text-right"><a class="btn-ghost text-xs" href="/admin/applications/{{ applicant.id }}">Review</a>{% if applicant.assessment_invalid_reason %}<p class="cell-secondary max-w-xs text-clay-600">Invalid sitting: {{ applicant.assessment_invalid_reason }}</p>{% elif applicant.status == "waitlisted" %}<p class="cell-secondary">Accept, reject, or retain</p>{% endif %}</td>
+        </tr>
+        {% else %}<tr><td colspan="7" class="py-12 text-center text-ink-soft">{% if filter_error %}{{ filter_error }}{% else %}No applications found.{% endif %}</td></tr>{% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {{ table_pagination(request, pagination, "applications", (8, 20, 50, 100), (("status", selected_status), ("q", search_query), ("applied_from", applied_from), ("applied_to", applied_to), ("rank", "true" if rank else ""))) }}
+</section>
+{% endblock %}

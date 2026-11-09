@@ -1,0 +1,250 @@
+bank:
+  course: mgmt-health-safety
+  kind: final
+  version: 1
+  policy:
+    mode: exam
+    pool: 20
+    max_attempts: 2
+    pass_threshold: 0.70
+  questions:
+    - id: hsf-01
+      stem: "Safety outcomes are produced primarily by:"
+      type: single
+      options: ["Systems", "Individual care", "Regular reminders", "Protective equipment"]
+      correct: ["Systems"]
+      rubric_category: recall
+      explanation: "If your system depends on everyone doing the right thing every time, it has already failed \u2014 you have simply not met the day it fails on."
+      weight: 1
+    - id: hsf-02
+      stem: "A hazard differs from a risk in that a hazard is:"
+      type: single
+      options: ["The potential", "The likelihood", "The consequence", "The exposure"]
+      correct: ["The potential"]
+      rubric_category: recall
+      explanation: "Risk is how likely that harm is and how bad it would be. The distinction decides whether you eliminate or manage."
+      weight: 1
+    - id: hsf-03
+      stem: "\"Reasonably practicable\" is judged against the risk, with hindsight, and from:"
+      type: single
+      options: ["Your records", "Witness accounts", "Industry practice", "The original plan"]
+      correct: ["Your records"]
+      rubric_category: application
+      explanation: "The question after an incident is what a reasonable manager would have done and what you can actually show you did."
+      weight: 1
+    - id: hsf-04
+      stem: "Making near-miss reporting expensive stops the information while leaving:"
+      type: single
+      options: ["The rate unchanged", "The hazard visible", "The records intact", "The controls working"]
+      correct: ["The rate unchanged"]
+      rubric_category: analysis
+      explanation: "Near misses are free information about the incident you have not had yet, and blame turns the flow off without changing the underlying rate."
+      weight: 1
+    - id: hsf-05
+      stem: "The severity of a fall from height should be scored on:"
+      type: single
+      options: ["The credible outcome", "The average outcome", "The last incident", "The reported injuries"]
+      correct: ["The credible outcome"]
+      rubric_category: application
+      explanation: "Scoring by average outcome is how fatal hazards end up rated moderate."
+      weight: 1
+    - id: hsf-06
+      stem: "Only residual risk answers whether a job may proceed, provided it is scored against:"
+      type: single
+      options: ["Today's actual controls", "The documented controls", "The purchased equipment", "The approved method"]
+      correct: ["Today's actual controls"]
+      rubric_category: application
+      explanation: "The file may say 8 while the job runs at 15, because two listed controls are not present on site."
+      weight: 1
+    - id: hsf-07
+      stem: "An assessment that is generic, undated and unread by the crew is worse than none because it produces:"
+      type: single
+      options: ["A documented belief", "A compliance breach", "An audit finding", "A training gap"]
+      correct: ["A documented belief"]
+      rubric_category: analysis
+      explanation: "It records that the risk is managed when nobody has checked whether it is."
+      weight: 1
+    - id: hsf-08
+      stem: "The hierarchy of controls is ordered by how little each depends on:"
+      type: single
+      options: ["Human compliance", "Capital cost", "Site conditions", "Regulator approval"]
+      correct: ["Human compliance"]
+      rubric_category: recall
+      explanation: "Level one depends on nobody. Level five depends on one person, continuously, and fails silently when they are wrong."
+      weight: 1
+    - id: hsf-09
+      stem: "PPE sits last because the hazard remains fully present and it protects only:"
+      type: single
+      options: ["The wearer", "The employer", "The equipment", "The public"]
+      correct: ["The wearer"]
+      rubric_category: application
+      explanation: "And only when correctly selected, fitted, maintained and used, every single time."
+      weight: 1
+    - id: hsf-10
+      stem: "Elimination is frequently overlooked because it usually lives in:"
+      type: single
+      options: ["Procurement or scheduling", "Engineering design", "Safety policy", "Site supervision"]
+      correct: ["Procurement or scheduling"]
+      rubric_category: analysis
+      explanation: "Pre-cut material, pre-assembly at ground level, or a visit moved to daylight \u2014 none of which is a safety decision on paper."
+      weight: 1
+    - id: hsf-11
+      stem: "Three administrative controls do not equal one engineering control because they:"
+      type: single
+      options: ["Share a failure mode", "Cost considerably more", "Expire on one date", "Require extra records"]
+      correct: ["Share a failure mode"]
+      rubric_category: analysis
+      explanation: "All three depend on the same person remembering under the same pressure. Diversity of control type beats quantity."
+      weight: 1
+    - id: hsf-12
+      stem: "A control found taped or wedged should be treated first as evidence of:"
+      type: single
+      options: ["A design problem", "A discipline problem", "A training problem", "A supervision problem"]
+      correct: ["A design problem"]
+      rubric_category: analysis
+      explanation: "It was defeated because it made the job slower. Ask that before asking who did it."
+      weight: 1
+    - id: hsf-13
+      stem: "A control with no owner and no check date will:"
+      type: single
+      options: ["Decay into paperwork", "Fail an inspection", "Cost more to run", "Trigger an alarm"]
+      correct: ["Decay into paperwork"]
+      rubric_category: application
+      explanation: "While still appearing on the assessment as a live control, which is what makes the residual score wrong."
+      weight: 1
+    - id: hsf-14
+      stem: "The real safe system of work is best revealed by asking someone to describe the method:"
+      type: single
+      options: ["Without the document", "In a team meeting", "To a visiting auditor", "In their own writing"]
+      correct: ["Without the document"]
+      rubric_category: application
+      explanation: "What they say is the actual system. Where it differs from the document, the document is usually the thing that is wrong."
+      weight: 1
+    - id: hsf-15
+      stem: "Competence is knowledge, skill, experience and judgement \u2014 the last meaning they can recognise when:"
+      type: single
+      options: ["The method no longer fits", "A tool is missing", "Supervision is absent", "The permit has expired"]
+      correct: ["The method no longer fits"]
+      rubric_category: recall
+      explanation: "It is the hardest to certify and the thing that separates a safe worker from a merely trained one."
+      weight: 1
+    - id: hsf-16
+      stem: "In an isolation, the lock should be held by:"
+      type: single
+      options: ["The person exposed", "Their supervisor", "The permit issuer", "The duty electrician"]
+      correct: ["The person exposed"]
+      rubric_category: application
+      explanation: "Not a colleague and not a supervisor. It is the rule that saves lives."
+      weight: 1
+    - id: hsf-17
+      stem: "Lone working removes a control that appears on no assessment, namely:"
+      type: single
+      options: ["Someone noticing", "Shared equipment", "Peer checking", "Direct supervision"]
+      correct: ["Someone noticing"]
+      rubric_category: application
+      explanation: "If lone work is necessary, replace it explicitly with check-ins, someone who acts on a missed one, and a defined response."
+      weight: 1
+    - id: hsf-18
+      stem: "Stop-work authority becomes real the first time it is used and the person is:"
+      type: single
+      options: ["Backed publicly", "Thanked privately", "Formally recorded", "Later rewarded"]
+      correct: ["Backed publicly"]
+      rubric_category: analysis
+      explanation: "Even when they were wrong. An unnecessary stop costs an hour; a second-guessed stop ends the practice for the whole team."
+      weight: 1
+    - id: hsf-19
+      stem: "A schedule in which the safe method does not fit is best described as:"
+      type: single
+      options: ["A control failure", "A resourcing issue", "A commercial pressure", "A planning preference"]
+      correct: ["A control failure"]
+      rubric_category: analysis
+      explanation: "Nobody decides to work unsafely. They decide to hit the target, and the method is what gives."
+      weight: 1
+    - id: hsf-20
+      stem: "In the first hour of an incident, securing the scene comes after:"
+      type: single
+      options: ["Making people safe", "Notifying the regulator", "Photographing the area", "Recording witnesses"]
+      correct: ["Making people safe"]
+      rubric_category: recall
+      explanation: "Casualty care, then removing the continuing danger \u2014 responders are regularly the second casualty."
+      weight: 1
+    - id: hsf-21
+      stem: "Evidence after an incident is most often destroyed by:"
+      type: single
+      options: ["Restoring operation", "Deliberate concealment", "Regulator seizure", "Poor photography"]
+      correct: ["Restoring operation"]
+      rubric_category: application
+      explanation: "The instinct to clear, repair and tidy removes exactly what would have explained the event."
+      weight: 1
+    - id: hsf-22
+      stem: "An investigation asks why the error was possible and also why it was:"
+      type: single
+      options: ["Not caught", "Not reported", "Not foreseen", "Not prevented"]
+      correct: ["Not caught"]
+      rubric_category: application
+      explanation: "Two different questions with two different system answers \u2014 what allowed it, and what should have detected it before harm."
+      weight: 1
+    - id: hsf-23
+      stem: "An investigation whose root cause is a person's name has found:"
+      type: single
+      options: ["A symptom", "A conduct matter", "A training need", "A supervision gap"]
+      correct: ["A symptom"]
+      rubric_category: recall
+      explanation: "Keep going: fatigue, pressure, missing equipment, unclear method, a defeated control, an untested competence assumption."
+      weight: 1
+    - id: hsf-24
+      stem: "Each recommendation should be tested by asking whether it would have prevented:"
+      type: single
+      options: ["This event", "Any similar event", "The worst outcome", "A repeat elsewhere"]
+      correct: ["This event"]
+      rubric_category: analysis
+      explanation: "A recommendation that would not have prevented the incident it came from is a good idea in the wrong document."
+      weight: 1
+    - id: hsf-25
+      stem: "\"Reinforce training\" is a weak finding because it names a person's effort rather than:"
+      type: single
+      options: ["A system change", "A budget line", "A responsible party", "A completion date"]
+      correct: ["A system change"]
+      rubric_category: analysis
+      explanation: "Strong findings name a system change, carry one owner and a date, and would have prevented this specific event."
+      weight: 1
+    - id: hsf-26
+      stem: "The most dangerous reading on a safety dashboard is:"
+      type: single
+      options: ["Silence", "A sudden spike", "A downward trend", "An isolated outlier"]
+      correct: ["Silence"]
+      rubric_category: analysis
+      explanation: "No incidents, no near misses and no reports means either an extraordinary team or one that is not telling you."
+      weight: 1
+    - id: hsf-27
+      stem: "A team whose near-miss reports rise after a no-blame commitment has most likely become:"
+      type: single
+      options: ["Safer", "More careless", "Less supervised", "Busier"]
+      correct: ["Safer"]
+      rubric_category: analysis
+      explanation: "Reporting reflects how much happens multiplied by how safe people feel telling you. A manager who reads the count as deterioration destroys what they just built."
+      weight: 1
+    - id: hsf-28
+      stem: "The substitution test asks whether another competent person, under the same pressures, would:"
+      type: single
+      options: ["Plausibly do the same", "Refuse the work", "Report it sooner", "Seek supervision"]
+      correct: ["Plausibly do the same"]
+      rubric_category: application
+      explanation: "If yes, you are looking at a system problem wearing an individual's name."
+      weight: 1
+    - id: hsf-29
+      stem: "Under a just culture, someone who voluntarily discloses their own error must be:"
+      type: single
+      options: ["Protected", "Retrained", "Suspended", "Reassigned"]
+      correct: ["Protected"]
+      rubric_category: recall
+      explanation: "However the underlying conduct is handled. An organisation that disciplines the disclosure will not be told anything twice."
+      weight: 1
+    - id: hsf-30
+      stem: "Investigating near misses with the same method as incidents is worthwhile because the causes are:"
+      type: single
+      options: ["Identical", "Simpler", "Better recorded", "Less disputed"]
+      correct: ["Identical"]
+      rubric_category: application
+      explanation: "And the cost of learning from them is zero."
+      weight: 1

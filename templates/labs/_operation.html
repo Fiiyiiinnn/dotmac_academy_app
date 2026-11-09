@@ -1,0 +1,25 @@
+{% if operation.state in ("queued", "claimed") %}
+<div class="card p-5"
+     hx-get="/labs/operations/{{ operation.id }}"
+     hx-trigger="load delay:2s"
+     hx-target="{{ '#lab-checks' if operation.kind == 'check' else '#lab-state' }}" hx-swap="innerHTML">
+  <p class="text-sm text-ink-soft">
+    {{ "Running" if operation.state == "claimed" else "Queued" }}
+    {{ "checks" if operation.kind == "check" else "lab operation" }}&hellip;
+  </p>
+</div>
+{% elif operation.state == "succeeded" and operation.kind == "check" and score %}
+  {% include "labs/_checks.html" %}
+{% elif operation.state == "succeeded" and operation.kind == "check" %}
+<div class="card p-5"><p class="text-sm text-ink-soft">Checks finished, but their saved result is unavailable. Run checks again.</p></div>
+{% else %}
+<div class="card p-5">
+  <p class="font-medium text-clay-600">{{ "Checks" if operation.kind == "check" else "Lab operation" }} {{ "cancelled" if operation.state == "cancelled" else "failed" }}.</p>
+  {% if operation.last_error %}<p class="mt-2 text-sm text-ink-soft">{{ operation.last_error }}</p>{% endif %}
+</div>
+{% endif %}
+
+{% if operation.kind == "check" and operation.state in ("queued", "claimed", "failed", "cancelled") and saved_score %}
+  <p class="mb-2 text-sm text-ink-soft">Last saved checks for this lab environment. Run checks again after making changes.</p>
+  {% with score=saved_score %}{% include "labs/_checks.html" %}{% endwith %}
+{% endif %}

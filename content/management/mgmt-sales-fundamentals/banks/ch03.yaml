@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-sales-fundamentals
+  kind: chapter
+  chapter: 3
+  version: 2
+  policy:
+    mode: practice
+  questions:
+    - id: sf3-01
+      stem: "The bridge from a feature to a benefit is the phrase:"
+      type: single
+      options: ["Which means that…", "In other words…", "The advantage is…", "This allows us…"]
+      correct: ["Which means that…"]
+      rubric_category: recall
+      explanation: "Completed with something the buyer actually told you they care about."
+      weight: 1
+    - id: sf3-02
+      stem: "In what order should value and price appear in the conversation?"
+      type: single
+      options: ["Value, then price", "Price, then value", "Both at the same time", "Whichever they ask for"]
+      correct: ["Value, then price"]
+      rubric_category: recall
+      explanation: "A price with no established value is always too high."
+      weight: 1
+    - id: sf3-03
+      stem: "You have eleven strong benefits and the buyer named three criteria. What do you present?"
+      type: single
+      options: ["The two or three that map to their criteria", "All eleven, so nothing is left unmentioned", "The strongest five, ordered by their impact", "Whichever ones the competition cannot match"]
+      correct: ["The two or three that map to their criteria"]
+      rubric_category: application
+      explanation: "Every extra claim dilutes the ones that matter and invites objections you did not need."
+      weight: 1
+    - id: sf3-04
+      stem: "Which opening section separates your written proposal from every template the buyer got that week?"
+      type: single
+      options: ["Their situation and need, in your words", "A summary of your company's credentials", "The headline price and what it includes", "A description of the recommended solution"]
+      correct: ["Their situation and need, in your words"]
+      rubric_category: application
+      explanation: "One or two sentences proving you understood — it mirrors how buyers actually decide."
+      weight: 1
+    - id: sf3-05
+      stem: "You are sending a written quote. What must be agreed at the moment you send it?"
+      type: single
+      options: ["When you will follow it up", "How long the price holds", "Who else will receive it", "What the next discount is"]
+      correct: ["When you will follow it up"]
+      rubric_category: application
+      explanation: "A quote without an agreed follow-up is a message in a bottle."
+      weight: 1
+    - id: sf3-06
+      stem: "The buyer says the price is too expensive. What is the correct first response?"
+      type: single
+      options: ["A question, to find which of four things it means", "A discount, before the objection hardens further", "A comparison against your nearest competitor", "A restatement of the value already presented"]
+      correct: ["A question, to find which of four things it means"]
+      rubric_category: application
+      explanation: "Value not shown, unequal scopes, a real budget gap, or an opening move — each needs a different answer."
+      weight: 1
+    - id: sf3-07
+      stem: "Which belong in a proposal, whether it is a document or a sentence at a counter? (Select all that apply.)"
+      type: multi
+      options: ["Their need, shown back to them", "Evidence proportionate to the claim", "A specific and easy next step", "The full catalogue of features"]
+      correct: ["Their need, shown back to them", "Evidence proportionate to the claim", "A specific and easy next step"]
+      rubric_category: application
+      explanation: "Need, answer, evidence, price, next step — the catalogue is what dilutes it."
+      weight: 1
+    - id: sf3-08
+      stem: "Why is a generic benefit like 'saves you money' close to worthless?"
+      type: single
+      options: ["Every competitor says it, so it proves nothing", "Buyers distrust any claim involving savings", "It cannot be supported with hard evidence", "It invites a negotiation about the price"]
+      correct: ["Every competitor says it, so it proves nothing"]
+      rubric_category: analysis
+      explanation: "A benefit tied to the buyer's own words is proof you listened and proof the offer fits."
+      weight: 1
+    - id: sf3-09
+      stem: "A seller wincing slightly as they state the price communicates what?"
+      type: single
+      options: ["That they do not believe it is worth it", "That the price is open to negotiation", "That they expect the buyer to object", "That a discount has been anticipated"]
+      correct: ["That they do not believe it is worth it"]
+      rubric_category: analysis
+      explanation: "Buyers can hear the wobble. If you do not act like it is worth it, why would they?"
+      weight: 1
+    - id: sf3-10
+      stem: "Why can one oversold sale cost ten future ones?"
+      type: single
+      options: ["Reviews and word of mouth carry the disappointment", "Refunds consume the margin from several other sales", "The customer warns their entire professional network", "The complaint reaches the regulator or trade body"]
+      correct: ["Reviews and word of mouth carry the disappointment"]
+      rubric_category: analysis
+      explanation: "Underclaim slightly and overdeliver — it produces the referring, returning customers who are the cheapest revenue you get."
+      weight: 1

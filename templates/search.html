@@ -1,0 +1,61 @@
+{% extends "base.html" %}{% block content %}
+<p class="page-eyebrow">{{ branding_name | default("Technical Academy") }}</p>
+<h1 class="page-title">Search</h1>
+
+<form method="get" action="/search" class="mt-6 flex gap-2">
+  <label class="sr-only" for="academy-search-results">Search courses and chapters</label>
+  <input
+    id="academy-search-results"
+    type="search"
+    name="q"
+    value="{{ q | e }}"
+    placeholder="Search courses and chapters…"
+    autofocus
+    class="flex-1 rounded-lg border border-sand-300 bg-white px-4 py-2.5 text-sm text-ink placeholder-ink-soft shadow-sm focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-200"
+  >
+  <button type="submit"
+    class="rounded-lg bg-brand-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-brand-700 focus:outline-none focus:ring-2 focus:ring-brand-200">
+    Search
+  </button>
+</form>
+
+{% if q and not courses and not chapters %}
+<div class="card mt-8 p-8 text-center">
+  <p class="text-lg font-medium text-ink">No results for "{{ q | e }}"</p>
+  <p class="page-intro">Try a different term.</p>
+</div>
+{% endif %}
+
+{% if not q %}
+<div class="card mt-8 p-8 text-center">
+  <p class="text-ink-soft">Enter a search term above to find courses and chapters.</p>
+</div>
+{% endif %}
+
+{% if courses %}
+<h2 class="mt-8 text-xl">Courses</h2>
+<div class="mt-4 space-y-3">
+  {% for c in courses %}
+  <a href="/courses/{{ c.slug }}"
+     class="card flex items-center gap-4 p-5 transition-colors hover:border-brand-300">
+    <span class="min-w-0 flex-1 font-medium text-ink">{{ c.title }}</span>
+  </a>
+  {% endfor %}
+</div>
+{% endif %}
+
+{% if chapters %}
+<h2 class="mt-8 text-xl">Chapters</h2>
+<div class="mt-4 space-y-3">
+  {% for ch in chapters %}
+  <a href="/courses/{{ ch.course_slug }}/chapters/{{ ch.chapter_number }}"
+     class="card block p-5 transition-colors hover:border-brand-300">
+    <p class="font-medium text-ink">{{ ch.title }}</p>
+    {% if ch.snippet %}
+    <p class="mt-1 line-clamp-2 text-sm text-ink-soft">{{ ch.snippet }}</p>
+    {% endif %}
+  </a>
+  {% endfor %}
+</div>
+{% endif %}
+{% endblock %}

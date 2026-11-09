@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-vendor-procurement
+  kind: chapter
+  chapter: 6
+  version: 1
+  policy:
+    mode: practice
+  questions:
+    - id: vp6-01
+      stem: "The test for declaring a conflict of interest is whether it:"
+      type: single
+      options: ["Looks influential", "Changed the outcome", "Involves payment", "Concerns relatives"]
+      correct: ["Looks influential"]
+      rubric_category: recall
+      explanation: "The standard is what a reasonable outsider would wonder, not what you know about your own motives — you are the worst-placed person to judge whether you were swayed."
+      weight: 1
+    - id: vp6-02
+      stem: "Controls in procurement exist primarily to:"
+      type: single
+      options: ["Prove honesty", "Punish thieves", "Slow spending", "Satisfy auditors"]
+      correct: ["Prove honesty"]
+      rubric_category: recall
+      explanation: "A buyer who chose well but cannot show competing quotes has no way to demonstrate it. Controls are what keep an honest decision visibly honest to a later reviewer."
+      weight: 1
+    - id: vp6-03
+      stem: "A manager needs ₦620,000 of equipment. The approval threshold is ₦400,000, and they raise two orders of ₦310,000 a week apart. The most useful first response is to:"
+      type: single
+      options: ["Ask why the gate is avoided", "Report it as procurement fraud", "Lower the approval threshold", "Treat it as routine practice"]
+      correct: ["Ask why the gate is avoided"]
+      rubric_category: application
+      explanation: "Splitting is more often a competent person routing around a slow approval than fraud. The effect is identical, so it must be addressed — but tightening the control without fixing the delay moves the workaround somewhere less visible."
+      weight: 1
+    - id: vp6-04
+      stem: "A supplier emails new bank details ahead of a large payment. The correct action is to verify:"
+      type: single
+      options: ["Using details already held", "By replying to the email", "With the requesting manager", "Against the invoice header"]
+      correct: ["Using details already held"]
+      rubric_category: application
+      explanation: "Mandate fraud works by supplying the verification channel along with the request. Confirmation must run through contact details you held beforehand, and be done by someone other than the requester."
+      weight: 1
+    - id: vp6-05
+      stem: "Which separation of duties does receiving goods protect?"
+      type: single
+      options: ["Purchasing from confirmation", "Requesting from authorisation", "Authorisation from purchasing", "Payment from record-keeping"]
+      correct: ["Purchasing from confirmation"]
+      rubric_category: application
+      explanation: "If the person who placed the order also confirms it arrived, nothing independent establishes that anything was delivered."
+      weight: 1
+    - id: vp6-06
+      stem: "A permit is stalled and an official suggests a small payment to release it. You should:"
+      type: single
+      options: ["Escalate in writing", "Pay and record it", "Pay from petty cash", "Ask a colleague"]
+      correct: ["Escalate in writing"]
+      rubric_category: application
+      explanation: "Facilitation payments are bribes under Nigerian law and the extraterritorial regimes. Extortion is an escalation, not a decision — a manager who quietly pays protects the schedule and transfers the risk to themselves."
+      weight: 1
+    - id: vp6-07
+      stem: "A supplier offers a weekend trip during an open tender. The most decisive objection is that it is:"
+      type: single
+      options: ["Timed near a decision", "Larger than usual practice", "Absent from the register", "Offered by a bidder"]
+      correct: ["Timed near a decision"]
+      rubric_category: application
+      explanation: "Proportion matters, but timing is what converts hospitality into purchased influence. A gift during a tender cannot be separated from the tender."
+      weight: 1
+    - id: vp6-08
+      stem: "Your records show one supplier winning repeatedly with no competing quotes. This most likely indicates:"
+      type: single
+      options: ["Specification narrowing", "Deliberate invoice fraud", "Genuine supplier excellence", "Weak market competition"]
+      correct: ["Specification narrowing"]
+      rubric_category: analysis
+      explanation: "The commonest cause is drift rather than fraud: a specification quietly written around one vendor's product, or a relationship nobody declared. It may still be the right supplier — which is why the fix is to re-test and record the answer."
+      weight: 1
+    - id: vp6-09
+      stem: "A colleague's suspected irregularity is best handled by first:"
+      type: single
+      options: ["Preserving the records", "Confronting the colleague", "Questioning the supplier", "Gathering more proof"]
+      correct: ["Preserving the records"]
+      rubric_category: analysis
+      explanation: "Investigating yourself alerts the person and can destroy the trail that would have settled it either way. The standard for reporting is a reasonable concern in good faith, not proof."
+      weight: 1
+    - id: vp6-10
+      stem: "In a business too small to separate all five procurement duties, the highest-value break is to separate who:"
+      type: single
+      options: ["Verifies banking changes", "Opens incoming deliveries", "Files supplier invoices", "Signs purchase orders"]
+      correct: ["Verifies banking changes"]
+      rubric_category: analysis
+      explanation: "The supplier master file is the highest-risk point in the whole process, and bank-detail changes are where the most common modern fraud lands. Where only a few separations are affordable, that one buys the most."
+      weight: 1

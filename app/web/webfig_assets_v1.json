@@ -1,0 +1,269 @@
+{
+  "transformation_version": 1,
+  "firmware": {
+    "version": "7.15",
+    "image_repo_digest": "vrnetlab/vr-routeros@sha256:7c77ab409daf4593e22bd9ee02c57aa31cc3c752c4a14855fcfacf5ff16a8ee8"
+  },
+  "assets": {
+    "/": {
+      "sha256": "e2dd2d7e7a9cf514cd2e91c7e66c0462bc05cd6c821bfe4671ba7bbd6fe9a17d",
+      "bytes": 2723,
+      "kind": "document",
+      "content_type": "text/html"
+    },
+    "/favicon.png": {
+      "sha256": "6e08f1f90e778da22f07537040dfcdab9c29ac443d8386ba5be71fcbc418ff47",
+      "bytes": 600,
+      "kind": "static",
+      "content_type": "image/png"
+    },
+    "/favicon.svg": {
+      "sha256": "b674ae7902192a88e82246fe8e1ba1f7b3abd6405e6d0e1fc2fdca09db085176",
+      "bytes": 689,
+      "kind": "static",
+      "content_type": "image/svg+xml"
+    },
+    "/script.js": {
+      "sha256": "a810815173a50d51c409fdf5a08690e20e9d15d202c701f821e049a67eb13b7e",
+      "bytes": 797,
+      "kind": "script",
+      "content_type": "application/x-javascript"
+    },
+    "/mikrotik_logo.png": {
+      "sha256": "b540bd26191ea801657156b713fa911a97b1e33ecc0aa9875ed24fa1cbfe9a16",
+      "bytes": 1089,
+      "kind": "static",
+      "content_type": "image/png"
+    },
+    "/winbox.png": {
+      "sha256": "041f003e165cd892ea08ab140d637468343aa737eebd1470d36f7790096445e1",
+      "bytes": 1971,
+      "kind": "static",
+      "content_type": "image/png"
+    },
+    "/green.png": {
+      "sha256": "3e39b2fa11ba5c881a2742e11854237f9c53e8a4201223e95d2613dcdc17364d",
+      "bytes": 1083,
+      "kind": "static",
+      "content_type": "image/png"
+    },
+    "/license.png": {
+      "sha256": "fb57a8c99f762d7023a8d379d63a768260e4bd62b9f26ec867b3e46f7048b746",
+      "bytes": 868,
+      "kind": "static",
+      "content_type": "image/png"
+    },
+    "/help.png": {
+      "sha256": "904b0f8068e0d81e3dd71727a30e94aa780e77d316cf6d676843e5e907e8181c",
+      "bytes": 2116,
+      "kind": "static",
+      "content_type": "image/png"
+    },
+    "/webfig/": {
+      "sha256": "dc368129e9a25ce0e9b384c1018087f371a12e70fa7934344bdeb2e0d8d08e60",
+      "bytes": 557,
+      "kind": "document",
+      "content_type": "text/html",
+      "redundant_inline_redirect": "<script>\n  if (location.pathname.endsWith(\"/webfig\")) location.href = \"/webfig/\";\n</script>",
+      "master_script_tag": "<script src=\"master-min-bccb771e9320.js\"></script>"
+    },
+    "/webfig/master-d3bb55452204.css": {
+      "sha256": "9ae5e53f45fd345b3072e99f33b1891330ae5f6d2461594e174fa95bc7f22ad3",
+      "bytes": 27225,
+      "kind": "static",
+      "content_type": "text/css"
+    },
+    "/webfig/curve255-541e54a862be.js": {
+      "sha256": "972bdbcea19d2cc7690ea6f2324e13e6edef641a26a3a05bf93fa4ef4e11e412",
+      "bytes": 9157,
+      "kind": "script",
+      "content_type": "application/x-javascript"
+    },
+    "/webfig/master-min-bccb771e9320.js": {
+      "sha256": "749877d2ed4ff758aeff6bbaad2092478a0aba8afae8878f9f50214aee5a85f7",
+      "bytes": 374727,
+      "kind": "master",
+      "content_type": "application/x-javascript"
+    },
+    "/webfig/list": {
+      "sha256": "959b33fef50d0c8c3b1d52734ab76ff3710eee292a9695e9dbf4de7ac44244b9",
+      "bytes": 1090,
+      "kind": "data",
+      "content_type": "application/octet-stream"
+    },
+    "/webfig/wave2-4894c39ca96d.jg": {
+      "sha256": "e7900b776cd87d0c303594c281d7b7188a91cec17ce65d359b4044facf2fba9d",
+      "bytes": 62662,
+      "kind": "data",
+      "content_type": "application/octet-stream"
+    },
+    "/webfig/ups-e29683c8d492.jg": {
+      "sha256": "e96bed00a2bdf17a1f6bd91787af0271fca119987685cb3c92f52569ebab7225",
+      "bytes": 2346,
+      "kind": "data",
+      "content_type": "application/octet-stream"
+    },
+    "/webfig/secure-78923fa8f1de.jg": {
+      "sha256": "347e165b0085d4dd8b54125cb425c3406b6555af287c6419bc5dd2074a039eba",
+      "bytes": 18296,
+      "kind": "data",
+      "content_type": "application/octet-stream"
+    },
+    "/webfig/ppp-c528f8be6140.jg": {
+      "sha256": "a972a96b708fef9c13bf3dc08ead37705cf45ea65b336db05266144d1550006d",
+      "bytes": 36646,
+      "kind": "data",
+      "content_type": "application/octet-stream"
+    },
+    "/webfig/ipv6-f39c5a4d0962.jg": {
+      "sha256": "530d75b0f889be7583c4fe0c179bb55183c0177328d5fdb7fcad1b02b6ce4026",
+      "bytes": 64512,
+      "kind": "data",
+      "content_type": "application/octet-stream"
+    },
+    "/webfig/hotspot-f1e2e1d4af99.jg": {
+      "sha256": "4aa94fc4536b258bfdca4edb6eddb2648a85632f5865eec68858850048a7c0a0",
+      "bytes": 19549,
+      "kind": "data",
+      "content_type": "application/octet-stream"
+    },
+    "/webfig/dhcp-854259d9d835.jg": {
+      "sha256": "9767f5f73a018ed09ad5346ac91d4e24044ed2e579def8db3107ec8941d15a3d",
+      "bytes": 20600,
+      "kind": "data",
+      "content_type": "application/octet-stream"
+    },
+    "/webfig/advtool-89d29caa39a2.jg": {
+      "sha256": "2545cd8603f082790ac1722954fcfe7d6fffcb981508977b5bc93506a53726e7",
+      "bytes": 9039,
+      "kind": "data",
+      "content_type": "application/octet-stream"
+    },
+    "/webfig/roteros-54e2c09c9204.jg": {
+      "sha256": "e2abac45a0058dd64362d0f178310f8b454473143b7110aff5838a1e7c6b6fb3",
+      "bytes": 804024,
+      "kind": "data",
+      "content_type": "application/octet-stream"
+    },
+    "/logo.png": {
+      "sha256": "b5f647cc6254f520b61d9860e619431dfb2e830f719e664de464b6011ed85dfb",
+      "bytes": 68,
+      "kind": "static",
+      "content_type": "image/png"
+    },
+    "/webfig/progress.gif": {
+      "sha256": "914244cefc6978d91d7d848bdccafabdc40acb79383766fd5ee8894cd3066290",
+      "bytes": 2892,
+      "kind": "static",
+      "content_type": "image/gif"
+    },
+    "/webfig/checked.svg": {
+      "sha256": "552aba8cb4a174f77337979e96e10e6969492149a7009d32876e6569ccf5f721",
+      "bytes": 916,
+      "kind": "static",
+      "content_type": "image/svg+xml"
+    },
+    "/webfig/down-arrow.svg": {
+      "sha256": "0eb9f6c6806bfac98ff2df1ee1b068712512cc12af06e7a3a5c4c9d251f9b459",
+      "bytes": 197,
+      "kind": "static",
+      "content_type": "image/svg+xml"
+    },
+    "/webfig/down-gray.svg": {
+      "sha256": "dd4abd5a235d64116ca27a7dfc0228603ea3dde39217870289d989a7a729d7c9",
+      "bytes": 192,
+      "kind": "static",
+      "content_type": "image/svg+xml"
+    },
+    "/webfig/down.svg": {
+      "sha256": "b3b774a25ab9497758180afa8613b487291cb160bc38c6a58fbcab913861c399",
+      "bytes": 180,
+      "kind": "static",
+      "content_type": "image/svg+xml"
+    },
+    "/webfig/minimenu-pressed.svg": {
+      "sha256": "cb6fee809d86fd9221e5aaa0764700763cb90e3b59c1c504aca9e40ff923fea9",
+      "bytes": 422,
+      "kind": "static",
+      "content_type": "image/svg+xml"
+    },
+    "/webfig/minimenu.svg": {
+      "sha256": "44dd3fa38e2651da6a3f9cf2225e4654bac8287cd52ea2dd104a03cef2bd3134",
+      "bytes": 852,
+      "kind": "static",
+      "content_type": "image/svg+xml"
+    },
+    "/webfig/not-checked.svg": {
+      "sha256": "851d1098b23651477df67bc8da2db38903666fd56b19cc4364c65f673451f5cb",
+      "bytes": 243,
+      "kind": "static",
+      "content_type": "image/svg+xml"
+    },
+    "/webfig/not.svg": {
+      "sha256": "daffbd65ddfb404383a76f667b291bd77e0d09f52a4a490a41d4835c433ed37a",
+      "bytes": 136,
+      "kind": "static",
+      "content_type": "image/svg+xml"
+    },
+    "/webfig/unchecked.svg": {
+      "sha256": "6422ab35690c949e6fb9d7d58500f671c18c7858c11e12bfc6e50a8c101a57ce",
+      "bytes": 815,
+      "kind": "static",
+      "content_type": "image/svg+xml"
+    },
+    "/webfig/up-gray.svg": {
+      "sha256": "edae912d8cec62b4e5dac831d36df3156e3d6bc565c083b202b63a53c536d2dc",
+      "bytes": 192,
+      "kind": "static",
+      "content_type": "image/svg+xml"
+    },
+    "/webfig/up.svg": {
+      "sha256": "a340b1baaab0fecfe906595c4b6026ef692245e91a92432a279a8a86352c4065",
+      "bytes": 180,
+      "kind": "static",
+      "content_type": "image/svg+xml"
+    },
+    "/webfig/ascend.svg": {
+      "sha256": "bd032b4f017a45b791fafecd18af1d5179d0b2348022886d3b4553face665794",
+      "bytes": 182,
+      "kind": "static",
+      "content_type": "image/svg+xml"
+    },
+    "/webfig/descend.svg": {
+      "sha256": "9555905fa478ae4d06489978cacacbee62679d567500eff7596cbbf04716c685",
+      "bytes": 182,
+      "kind": "static",
+      "content_type": "image/svg+xml"
+    },
+    "/webfig/right-arrow.svg": {
+      "sha256": "a078d8f335412594dbb882d6d675e8288a4414ceec70fa56b736d8600f224383",
+      "bytes": 188,
+      "kind": "static",
+      "content_type": "image/svg+xml"
+    },
+    "/webfig/icons.png": {
+      "sha256": "b79c8e72074baf6c0813b4e2ad5d587da017002a5d5f3efde519c4cf147dabe6",
+      "bytes": 23939,
+      "kind": "static",
+      "content_type": "image/png"
+    },
+    "/webfig/icons24.png": {
+      "sha256": "a66d55ada966e691ce22fe63c55884b4a7c2f0da2f5323818d524aa9f41a1942",
+      "bytes": 39077,
+      "kind": "static",
+      "content_type": "image/png"
+    },
+    "/webfig/icons32.png": {
+      "sha256": "baf475fd7de5aa7f5103dc483a91fd3dcc33fdf4db6c8f1cadcdab216250293b",
+      "bytes": 54187,
+      "kind": "static",
+      "content_type": "image/png"
+    }
+  },
+  "provenance": {
+    "capture": "direct HTTP, exact owned Docker image ID and management address verified; no session/auth traffic",
+    "identity": "decoded pristine HTTP entity bytes before Academy rewriting",
+    "source_record": "academy-console-csp-followthrough-20261108",
+    "supported_schemas": 9
+  }
+}

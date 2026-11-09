@@ -1,0 +1,45 @@
+{% extends "base.html" %}{% block content %}
+<p class="page-eyebrow">{{ branding_name | default("Technical Academy") }}</p>
+<div class="mt-1.5 flex items-center justify-between">
+  <h1 class="text-3xl tracking-tight">Notifications</h1>
+  {% if notifications %}
+  <form method="post" action="/notifications/read-all">
+    <input type="hidden" name="csrf_token" value="{{ request.state.csrf_token | default('') }}">
+    <button type="submit"
+      class="rounded-lg border border-sand-300 bg-white px-4 py-2 text-sm text-ink-soft hover:text-ink focus:outline-none focus:ring-2 focus:ring-brand-200"
+      hx-post="/notifications/read-all" hx-target="body" hx-push-url="true">
+      Mark all read
+    </button>
+  </form>
+  {% endif %}
+</div>
+
+{% if not notifications %}
+<div class="card mt-8 p-8 text-center">
+  <p class="text-ink-soft">You have no notifications yet.</p>
+</div>
+{% else %}
+<div class="mt-6 space-y-3">
+  {% for n in notifications %}
+  <div class="card p-5 {{ 'border-brand-300 bg-brand-50/40' if not n.read_at else '' }}">
+    <div class="flex items-start gap-3">
+      <div class="min-w-0 flex-1">
+        {% if n.link %}
+        <a href="{{ n.link }}" class="inline-flex min-h-11 items-center font-medium text-ink hover:text-brand-600">{{ n.title }}</a>
+        {% else %}
+        <p class="font-medium text-ink">{{ n.title }}</p>
+        {% endif %}
+        {% if n.body %}
+        <p class="mt-1 text-sm text-ink-soft">{{ n.body }}</p>
+        {% endif %}
+        <p class="mt-2 text-xs text-ink-soft">{{ n.created_at.strftime('%d %b %Y, %H:%M') if n.created_at else '' }}</p>
+      </div>
+      {% if not n.read_at %}
+      <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-brand-500" aria-label="Unread"></span>
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,252 @@
+bank:
+  course: mgmt-data-kpis
+  kind: final
+  chapter: null
+  version: 2
+  policy:
+    mode: exam
+    max_attempts: 5
+    pool: 20
+  questions:
+    - id: dkf-01
+      stem: "A measure earns its place on the wall when it:"
+      type: single
+      options: ["Changes a decision", "Is easy to collect", "Improves each month", "Covers every team"]
+      correct: ["Changes a decision"]
+      rubric_category: recall
+      explanation: "A metric nobody can connect to a question is a dial wired to nothing."
+      weight: 1
+    - id: dkf-02
+      stem: "The five KPI families are output, quality, speed, cost and:"
+      type: single
+      options: ["Satisfaction", "Compliance", "Utilisation", "Capacity"]
+      correct: ["Satisfaction"]
+      rubric_category: recall
+      explanation: "The outside check on the four internal families — a team can hit all four and still fail the people it serves."
+      weight: 1
+    - id: dkf-03
+      stem: "A baseline records a metric's level, its shape, and its:"
+      type: single
+      options: ["Spread", "Owner", "Source", "Target"]
+      correct: ["Spread"]
+      rubric_category: recall
+      explanation: "How much it bounces in normal operation — which decides how often it can honestly be judged."
+      weight: 1
+    - id: dkf-04
+      stem: "How many KPIs should a single team carry?"
+      type: single
+      options: ["Three to six", "One or two", "Eight to twelve", "One per person"]
+      correct: ["Three to six"]
+      rubric_category: recall
+      explanation: "Few enough that every member can recite them and the review actually looks at each."
+      weight: 1
+    - id: dkf-05
+      stem: "A seasonal metric is read against:"
+      type: single
+      options: ["The same period last cycle", "The period just before it", "The year-to-date average", "The best period recorded"]
+      correct: ["The same period last cycle"]
+      rubric_category: recall
+      explanation: "Reserve alarm for departures from the rhythm, not for the rhythm."
+      weight: 1
+    - id: dkf-06
+      stem: "In a review, a genuine signal ends either in an accepted-and-recorded reason or in:"
+      type: single
+      options: ["An owner and a date", "A follow-up meeting", "A deeper analysis", "A revised target"]
+      correct: ["An owner and a date"]
+      rubric_category: recall
+      explanation: "No thirds. 'We should look into it' without a name is how reviews become theatre."
+      weight: 1
+    - id: dkf-07
+      stem: "Your team completed 260 of 340 scheduled jobs on time this month. What is the on-time rate, as a percentage to the nearest whole number?"
+      type: numeric
+      options:
+        tolerance: 1
+      correct: 76
+      rubric_category: application
+      explanation: "260 ÷ 340 = 76.5%. The rate is the comparable number; 260 on its own says only that the team was busy."
+      weight: 1
+    - id: dkf-08
+      stem: "Complaints rose from 30 to 39 while customers grew from 1,200 to 1,800. What is the new complaint rate per 100 customers, to one decimal place?"
+      type: numeric
+      options:
+        tolerance: 0.2
+      correct: 2.2
+      rubric_category: application
+      explanation: "39 ÷ 18 = 2.2 per hundred, down from 2.5. The count rose and the rate fell — always ask what the denominator did."
+      weight: 1
+    - id: dkf-09
+      stem: "A team reports 'cumulative jobs completed since launch' every month. What is that?"
+      type: single
+      options: ["A vanity metric — it can only ever rise", "A lagging indicator of the team's output", "An output measure needing a denominator", "A diagnostic that belongs in the cupboard"]
+      correct: ["A vanity metric — it can only ever rise"]
+      rubric_category: application
+      explanation: "No realistic value of it would change what anyone does next week."
+      weight: 1
+    - id: dkf-10
+      stem: "A dispatch team is measured on jobs completed per day and nothing else. What follows?"
+      type: single
+      options: ["Output rises at the cost of quality or work mix", "The team concentrates on the highest-value jobs", "Completion times improve while volumes hold", "Cost per job falls as the team gets practised"]
+      correct: ["Output rises at the cost of quality or work mix"]
+      rubric_category: application
+      explanation: "Any single metric maximised alone is achieved at the expense of the others."
+      weight: 1
+    - id: dkf-11
+      stem: "Your on-time rate normally sits between 71 and 79. It reads 77 this week, down from 79. What do you do?"
+      type: single
+      options: ["Nothing — that is inside the normal wobble", "Ask the team what went wrong this week", "Track it daily until it recovers again", "Log it as the first point of a downward run"]
+      correct: ["Nothing — that is inside the normal wobble"]
+      rubric_category: application
+      explanation: "Reacting to noise generates explanations for randomness, and those get believed."
+      weight: 1
+    - id: dkf-12
+      stem: "Two managers produce different honest figures for the same KPI. What is missing?"
+      type: single
+      options: ["A written definition with its edges", "A single system both draw from", "Agreement on the reporting period", "One named owner for the metric"]
+      correct: ["A written definition with its edges"]
+      rubric_category: application
+      explanation: "Every ambiguity in a definition is eventually resolved in the direction that flatters."
+      weight: 1
+    - id: dkf-13
+      stem: "Which of these make a metric actionable? (Select all that apply.)"
+      type: multi
+      options: ["A named decision depends on it", "It is a rate rather than a total", "The team measured can move it", "It has risen for six months"]
+      correct: ["A named decision depends on it", "It is a rate rather than a total", "The team measured can move it"]
+      rubric_category: application
+      explanation: "A steady rise is the signature of vanity, not of usefulness."
+      weight: 1
+    - id: dkf-14
+      stem: "You are about to push hard on turnaround time. What goes on the wall beside it?"
+      type: single
+      options: ["A quality floor that must hold", "A cost ceiling for the quarter", "A six-month baseline chart", "A record of process owners"]
+      correct: ["A quality floor that must hold"]
+      rubric_category: application
+      explanation: "An unguarded target announces exactly which corner may be cut."
+      weight: 1
+    - id: dkf-15
+      stem: "A metric has never been measured and leadership wants a target for it. What is the honest answer?"
+      type: single
+      options: ["Measure it for a quarter first", "Set a target from industry norms", "Set a modest target and revise", "Estimate a baseline from records"]
+      correct: ["Measure it for a quarter first"]
+      rubric_category: application
+      explanation: "That is not stalling; it is the difference between aiming and gesturing."
+      weight: 1
+    - id: dkf-16
+      stem: "A KPI dropped and the chart does not explain why. What comes before choosing a fix?"
+      type: single
+      options: ["Going to the cases and sites behind it", "Breaking it down by team and period", "Checking the definition for recent drift", "Asking the metric's owner to explain"]
+      correct: ["Going to the cases and sites behind it"]
+      rubric_category: application
+      explanation: "The metric says that something changed, never why."
+      weight: 1
+    - id: dkf-17
+      stem: "A corrective action is agreed. What must be stated besides the owner and the date?"
+      type: single
+      options: ["What it should do to the number", "Which root cause it addresses", "What resources it will require", "Which metrics it might disturb"]
+      correct: ["What it should do to the number"]
+      rubric_category: application
+      explanation: "A fix without a predicted effect can never fail, which means it can never teach."
+      weight: 1
+    - id: dkf-18
+      stem: "Someone proposes a seventh KPI for a team that already has six. What is the question?"
+      type: single
+      options: ["Which of the six does it replace?", "Is the data already available?", "Which family does it belong to?", "Can this team actually move it?"]
+      correct: ["Which of the six does it replace?"]
+      rubric_category: application
+      explanation: "The wall is finite by design; 'is it interesting?' is never the test."
+      weight: 1
+    - id: dkf-19
+      stem: "You find a team reclassifying cases to keep a metric inside target. What is the first move?"
+      type: single
+      options: ["Ask what made the fake cheaper than the real", "Restate the affected periods correctly", "Tighten the definition to close the gap", "Handle it as a conduct matter directly"]
+      correct: ["Ask what made the fake cheaper than the real"]
+      rubric_category: application
+      explanation: "Gaming is rational behaviour under pressure — system feedback first, discipline only for what survives a fixed system."
+      weight: 1
+    - id: dkf-20
+      stem: "Conditions genuinely changed and a January target is now nonsense. What makes a reset legitimate?"
+      type: single
+      options: ["Doing it openly with the reason stated", "Doing it before the period closes", "Agreeing it with the affected team", "Keeping the original on the record"]
+      correct: ["Doing it openly with the reason stated"]
+      rubric_category: application
+      explanation: "Corrosive when quietly done to convert a miss into a hit. The difference is daylight."
+      weight: 1
+    - id: dkf-21
+      stem: "Average resolution time is flat for six months while customers complain more about delays. Where do you look?"
+      type: single
+      options: ["The tail — median plus the oldest cases", "The definition of when the clock starts", "The volume handled across the period", "The mix of case types arriving"]
+      correct: ["The tail — median plus the oldest cases"]
+      rubric_category: application
+      explanation: "Averages hide; distributions tell. The damage lives in the tail."
+      weight: 1
+    - id: dkf-22
+      stem: "Why does a process degrading two percent a month go unnoticed for a year?"
+      type: single
+      options: ["No single day is bad enough to alarm anyone, and memory keeps no record", "The measurement system lacks the sensitivity to detect a change that small", "Staff adapt to the decline and stop reporting it as an exception", "Growth in workload volume masks the deterioration in the rate"]
+      correct: ["No single day is bad enough to alarm anyone, and memory keeps no record"]
+      rubric_category: analysis
+      explanation: "Only comparison against a recorded past reveals slow drift."
+      weight: 1
+    - id: dkf-23
+      stem: "A team's output holds steady while its backlog age climbs. What is really happening?"
+      type: single
+      options: ["It is falling behind while appearing to hold steady", "The work mix has shifted toward more complex cases", "Output is being measured over an unhelpful period", "The backlog holds items that should have been closed"]
+      correct: ["It is falling behind while appearing to hold steady"]
+      rubric_category: analysis
+      explanation: "Speed is where problems queue up quietly, which is why the family belongs on the wall."
+      weight: 1
+    - id: dkf-24
+      stem: "Deliveries now hit 96% on-time after 'on-time' was redefined. What has the metric become?"
+      type: single
+      options: ["A number that has stopped indicating and started lying", "A target that was easier to reach than was intended", "A measure that has drifted from its written definition", "A family optimised at the expense of the other four"]
+      correct: ["A number that has stopped indicating and started lying"]
+      rubric_category: analysis
+      explanation: "The target is a proxy. When the number and the goal come apart, believe the goal."
+      weight: 1
+    - id: dkf-25
+      stem: "Recorded complaints fell sharply right after a new intake process launched. Why hold the celebration?"
+      type: single
+      options: ["The recording may have fallen rather than the complaints", "The complaints may have moved to a different channel", "The comparison period may be too short to judge", "The definition of a complaint may have changed too"]
+      correct: ["The recording may have fallen rather than the complaints"]
+      rubric_category: analysis
+      explanation: "Silence in the data is not peace; a collection gap looks exactly like an improvement."
+      weight: 1
+    - id: dkf-26
+      stem: "Satisfaction is computed from customers still on the books, cycle time from jobs that finished. What is wrong?"
+      type: single
+      options: ["The departed and the stuck are the story and are missing", "The remaining sample is too small to draw conclusions", "The two measures cover different periods entirely", "The figures lag reality by however long a job runs"]
+      correct: ["The departed and the stuck are the story and are missing"]
+      rubric_category: analysis
+      explanation: "Survivorship: an average over only what remained will always flatter."
+      weight: 1
+    - id: dkf-27
+      stem: "A dashboard has been entirely green for eleven months. What does that most likely mean?"
+      type: single
+      options: ["Loose thresholds, safe metrics, or filtered truth", "An operation that is genuinely exceeding its targets", "Targets that were quietly reset during the year", "A review cadence too slow to catch the dips"]
+      correct: ["Loose thresholds, safe metrics, or filtered truth"]
+      rubric_category: analysis
+      explanation: "Real operations wobble and sometimes fail. Audit the dashboard that never brings bad news."
+      weight: 1
+    - id: dkf-28
+      stem: "A team hits its quarterly target in week five and then coasts. What has the target become?"
+      type: single
+      options: ["A ceiling rather than a floor", "A number set too low for them", "A goal without a guard metric", "A measure of the wrong thing"]
+      correct: ["A ceiling rather than a floor"]
+      rubric_category: analysis
+      explanation: "Review the metric's trend, not just target attainment, and celebrate beating the path."
+      weight: 1
+    - id: dkf-29
+      stem: "Why is the chosen KPI set a statement of priorities regardless of what the mission statement says?"
+      type: single
+      options: ["The team reads it as the definition of what management wants", "It decides which parts of the work get resourced each quarter", "It is revisited far more often than any mission statement", "It is what performance conversations end up referring to"]
+      correct: ["The team reads it as the definition of what management wants"]
+      rubric_category: analysis
+      explanation: "Choose the set as deliberately as you would write the priorities down, because that is what it is."
+      weight: 1
+    - id: dkf-30
+      stem: "A manager reacts badly the first time someone presents an honest bad number. What has started?"
+      type: single
+      options: ["The dashboard's drift toward permanent green", "A reluctance to attend the operational review", "A shift of focus onto the healthier metrics", "An argument about how the number was derived"]
+      correct: ["The dashboard's drift toward permanent green"]
+      rubric_category: analysis
+      explanation: "Publicly valuing an honest bad number over a decorated good one is what keeps the data truthful."
+      weight: 1

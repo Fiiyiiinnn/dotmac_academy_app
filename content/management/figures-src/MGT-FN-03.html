@@ -1,0 +1,66 @@
+<!doctype html>
+<meta charset="utf-8">
+<style>
+* { margin:0; padding:0; box-sizing:border-box }
+body { width:1344px; height:768px; background:#f9f1dd;
+  font-family:-apple-system,"Helvetica Neue",Helvetica,Arial,sans-serif; color:#2f3733 }
+.wrap { padding:64px 76px }
+h1 { font-size:42px; font-weight:650; letter-spacing:-.5px }
+.sub { font-size:22px; color:#6c7671; margin-top:9px }
+.rows { margin-top:38px }
+.row { display:grid; grid-template-columns:150px 620px 1fr; align-items:center;
+  column-gap:26px; height:56px }
+.lab { text-align:right; font-size:20px; color:#4a544f }
+.lab b { font-weight:650; color:#2f3733 }
+.track { position:relative; height:34px; background:#ece2c8; border-radius:3px }
+.fill { position:absolute; left:0; top:0; height:34px; border-radius:3px;
+  display:flex; align-items:center; justify-content:flex-end; padding-right:12px;
+  color:#fff; font-size:17px; font-weight:650 }
+.life { font-size:19px; color:#4a544f; white-space:nowrap }
+.life b { font-weight:650; font-size:22px }
+.hdr { display:grid; grid-template-columns:150px 620px 1fr; column-gap:26px;
+  font-size:16px; color:#8a938d; margin-bottom:8px }
+.hdr div:nth-child(1) { text-align:right }
+.rule { height:1px; background:#e0d5ba; margin:26px 0 22px }
+.foot { display:flex; gap:28px; align-items:flex-start }
+.big { font-size:52px; font-weight:700; color:#2f6d5c; letter-spacing:-2px; line-height:1; flex:none }
+.note { font-size:20px; color:#5c6560; line-height:1.45 }
+.note b { color:#b04a2f }
+</style>
+<body>
+<div class="wrap">
+  <h1>The monthly number nobody flinches at</h1>
+  <div class="sub">Monthly churn, and what it does over a year. Bar length is the share of customers still there after twelve months.</div>
+
+  <div class="hdr"><div>monthly churn</div><div>still there after 12 months</div><div>average lifespan</div></div>
+  <div class="rows">
+    <div class="row"><div class="lab"><b>1%</b></div>
+      <div class="track"><div class="fill" style="width:549px; background:#2f6d5c">88.6%</div></div>
+      <div class="life"><b>100</b> months</div></div>
+    <div class="row"><div class="lab"><b>2%</b></div>
+      <div class="track"><div class="fill" style="width:487px; background:#3f8f7a">78.5%</div></div>
+      <div class="life"><b>50</b> months</div></div>
+    <div class="row"><div class="lab"><b>3%</b></div>
+      <div class="track"><div class="fill" style="width:430px; background:#6f9f91">69.4%</div></div>
+      <div class="life"><b>33</b> months</div></div>
+    <div class="row"><div class="lab"><b>5%</b></div>
+      <div class="track"><div class="fill" style="width:335px; background:#c76349">54.0%</div></div>
+      <div class="life"><b>20</b> months</div></div>
+    <div class="row"><div class="lab"><b>8%</b></div>
+      <div class="track"><div class="fill" style="width:228px; background:#b04a2f">36.8%</div></div>
+      <div class="life"><b>12.5</b> months</div></div>
+    <div class="row"><div class="lab"><b>10%</b></div>
+      <div class="track"><div class="fill" style="width:175px; background:#8f3b24">28.2%</div></div>
+      <div class="life"><b>10</b> months</div></div>
+  </div>
+
+  <div class="rule"></div>
+  <div class="foot">
+    <div class="big">×2</div>
+    <div class="note">
+      Because lifespan is <b>1 ÷ churn</b>, halving churn <b>doubles</b> lifetime value — without
+      winning a single customer. And 5% a month, a figure that passes without comment in most
+      reviews, loses <b>nearly half the base in a year</b>.
+    </div>
+  </div>
+</div>

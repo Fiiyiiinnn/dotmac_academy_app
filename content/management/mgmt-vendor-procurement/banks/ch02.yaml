@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-vendor-procurement
+  kind: chapter
+  chapter: 2
+  version: 2
+  policy:
+    mode: practice
+  questions:
+    - id: vp2-01
+      stem: "Total cost of ownership counts the purchase price plus running costs, maintenance, downtime and:"
+      type: single
+      options: ["Lifespan and residual value", "The supplier's payment terms", "The cost of the tender process", "The interest on the financing"]
+      correct: ["Lifespan and residual value"]
+      rubric_category: recall
+      explanation: "Two purchases with different prices and different lifespans compare per year of service, not per invoice."
+      weight: 1
+    - id: vp2-02
+      stem: "A specification should state:"
+      type: single
+      options: ["What it must do", "Which model to supply", "The budget available", "The preferred brand"]
+      correct: ["What it must do"]
+      rubric_category: recall
+      explanation: "State the need in performance terms; over-specifying a brand narrows the field and imports someone else's markup."
+      weight: 1
+    - id: vp2-03
+      stem: "You asked three suppliers to 'quote for a generator' by phone. What have you produced?"
+      type: single
+      options: ["Three quotes that cannot be compared", "A useful spread of market prices", "A shortlist to specify against later", "Enough information to negotiate with"]
+      correct: ["Three quotes that cannot be compared"]
+      rubric_category: application
+      explanation: "A written spec makes quotes comparable; three quotes against three phone conversations cannot be judged side by side."
+      weight: 1
+    - id: vp2-04
+      stem: "The cheapest quote turns out to exclude delivery, installation and the first service. What must happen before comparing?"
+      type: single
+      options: ["Force every quote onto the same scope", "Ask the cheapest supplier to add them", "Weight the quotes by what is included", "Discount the others by the same items"]
+      correct: ["Force every quote onto the same scope"]
+      rubric_category: application
+      explanation: "The sticker-price winner frequently stops winning once the exclusions are put back in."
+      weight: 1
+    - id: vp2-05
+      stem: "One bid is far below the others. What is the right response?"
+      type: single
+      options: ["Ask them to walk through how they will meet the spec", "Accept it, since competition has done its job", "Reject it as unrealistic and not worth pursuing", "Split the award between them and the runner-up"]
+      correct: ["Ask them to walk through how they will meet the spec"]
+      rubric_category: application
+      explanation: "Misunderstood spec, recovery through variations, or a low price until switching hurts — the answer is always informative."
+      weight: 1
+    - id: vp2-06
+      stem: "Which belong in a total-cost comparison over a realistic horizon? (Select all that apply.)"
+      type: multi
+      options: ["Consumables and running costs", "Maintenance and downtime cost", "Training and installation", "The supplier's own margin"]
+      correct: ["Consumables and running costs", "Maintenance and downtime cost", "Training and installation"]
+      rubric_category: application
+      explanation: "The supplier's margin is their business; what the purchase consumes is yours."
+      weight: 1
+    - id: vp2-07
+      stem: "For a routine repeat purchase, how many genuine quotes are usually enough?"
+      type: single
+      options: ["Two or three", "One, if trusted", "Five or more", "As many as possible"]
+      correct: ["Two or three"]
+      rubric_category: application
+      explanation: "Enough to keep everyone honest; reserve the wide competitive net for large or unfamiliar spends."
+      weight: 1
+    - id: vp2-08
+      stem: "A supplier was told the target price before quoting. What is their quote?"
+      type: single
+      options: ["Theatre rather than competition", "A useful benchmark for the others", "Evidence the target is achievable", "A negotiating position to work from"]
+      correct: ["Theatre rather than competition"]
+      rubric_category: analysis
+      explanation: "A quote written to a disclosed target tells you nothing about the market."
+      weight: 1
+    - id: vp2-09
+      stem: "Why does a vague specification produce padded prices as well as disputes?"
+      type: single
+      options: ["The supplier prices the risk of the ambiguity", "Suppliers add margin when they sense inexperience", "Vague specs attract suppliers with weaker offers", "The buyer cannot negotiate without firm details"]
+      correct: ["The supplier prices the risk of the ambiguity"]
+      rubric_category: analysis
+      explanation: "Every ambiguity you leave becomes either a padded price or an argument later — usually whichever suits them."
+      weight: 1
+    - id: vp2-10
+      stem: "Why does how a supplier behaves during the sourcing conversation matter as much as their price?"
+      type: single
+      options: ["It is how they will behave in the dispute", "It indicates their financial stability", "It predicts their delivery performance", "It reveals their internal cost structure"]
+      correct: ["It is how they will behave in the dispute"]
+      rubric_category: analysis
+      explanation: "For repeat purchases you are choosing a counterparty for years, not a price for today."
+      weight: 1

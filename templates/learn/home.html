@@ -1,0 +1,137 @@
+{% extends "base.html" %}{% block content %}
+<p class="page-eyebrow">Your portal</p>
+<h1 class="page-title">Welcome, {{ person.first_name }}</h1>
+
+{% if total_cards %}
+<p class="page-intro">Pick up where you left off, or keep working through your courses.</p>
+
+{% if continue_to %}
+<div class="card mt-8 flex flex-col gap-5 p-6 sm:flex-row sm:items-center">
+  <div class="min-w-0">
+    <p class="font-sans text-xs font-semibold uppercase tracking-[0.16em] text-brand-600">Continue</p>
+    <p class="mt-1 truncate text-lg font-medium text-ink">{{ continue_to.chapter.title }}</p>
+    <p class="text-sm text-ink-soft">{{ continue_to.course.title }} &middot; Chapter {{ continue_to.chapter.number }}</p>
+  </div>
+  <a class="btn-primary sm:ml-auto"
+     href="/courses/{{ continue_to.course.slug }}/chapters/{{ continue_to.chapter.number }}">Resume &rarr;</a>
+</div>
+{% endif %}
+
+<div class="mt-10 flex flex-wrap items-baseline gap-2">
+  <h2 class="section-title">My courses</h2>
+  <nav class="ml-auto flex flex-wrap gap-1.5 text-xs font-semibold" aria-label="Course filters">
+    <a href="/learn" class="status-badge {{ 'bg-brand-600 text-white' if not state_filter else 'bg-sand-200 text-ink-soft hover:bg-sand-300' }}">All ({{ total_cards }})</a>
+    {% for f in ['in_progress', 'upcoming', 'completed', 'expired', 'locked'] %}
+    {% if counts[f] %}
+    <a href="/learn?filter={{ f }}" class="status-badge {{ 'bg-brand-600 text-white' if state_filter == f else 'bg-sand-200 text-ink-soft hover:bg-sand-300' }}">{{ f.replace('_', ' ') | capitalize }} ({{ counts[f] }})</a>
+    {% endif %}
+    {% endfor %}
+  </nav>
+</div>
+
+<div class="mt-4 grid gap-4">
+{% for c in cards %}
+  <article class="card block p-6 {{ 'border-sand-300 bg-sand-50' if c.state in ['locked', 'expired'] else '' }}">
+    <div class="flex flex-wrap items-baseline gap-3">
+      <h3 class="text-lg font-medium text-ink">{{ c.course.title }}</h3>
+      {% if c.state == 'locked' %}
+      <span class="status-badge bg-sand-200 px-2.5 py-0.5 text-xs font-semibold text-ink-soft" title="{{ c.locked_reason }}" aria-label="Locked: {{ c.locked_reason }}">Locked</span>
+      {% elif c.state == 'upcoming' %}
+      <span class="status-badge bg-brand-100 px-2.5 py-0.5 text-xs font-semibold text-brand-800">Starts {{ c.starts_at | localtime | datefmt if c.starts_at else 'soon' }}</span>
+      {% elif c.state == 'completed' %}
+      <span class="status-badge bg-brand-100 px-2.5 py-0.5 text-xs font-semibold text-brand-800">Completed</span>
+      {% elif c.state == 'expired' %}
+      <span class="status-badge bg-clay-500/15 px-2.5 py-0.5 text-xs font-semibold text-clay-600">Window closed</span>
+      {% endif %}
+      <span class="ml-auto font-mono text-sm tabular-nums text-ink-soft">{{ c.pct }}%</span>
+    </div>
+
+    <div class="mt-3 h-2 w-full overflow-hidden rounded-full bg-sand-200">
+      <div class="h-full rounded-full bg-brand-500" style="width: {{ c.pct }}%"></div>
+    </div>
+
+    <div class="mt-3 flex flex-wrap gap-x-5 gap-y-1 text-xs text-ink-soft">
+      <span>{{ c.passed }} of {{ c.total }} activit{{ 'y' if c.total == 1 else 'ies' }} passed</span>
+      <span>Grade <b class="font-mono text-ink">{{ c.grade_pct }}%</b>{% if c.final_threshold_pct %} &middot; final pass mark {{ c.final_threshold_pct }}%{% endif %}</span>
+      {% if c.next_deadline %}<span>Next deadline {{ c.next_deadline | localtime | datefmt }}</span>{% endif %}
+      {% if c.last_read %}<span>Last read: Ch {{ c.last_read.number }} — {{ c.last_read.title }}</span>{% endif %}
+      {% if c.certificate_status == 'issued' %}<a href="/certificates/{{ c.course.id }}" class="font-semibold text-brand-700 hover:underline">Certificate ready &darr;</a>
+      {% elif c.certificate_status == 'eligible' %}<a href="/certificates/{{ c.course.id }}" class="font-semibold text-brand-700 hover:underline">Get your certificate</a>{% endif %}
+    </div>
+
+    {% if c.next_session %}
+    <p class="mt-2 text-xs text-ink-soft">Live session: <b class="text-ink">{{ c.next_session.title }}</b> &middot; {{ c.next_session.starts_at | localtime | datefmt }}
+      <a href="/timetable/sessions/{{ c.next_session.id }}" class="font-semibold text-brand-700 hover:underline">Details</a></p>
+    {% endif %}
+
+    <div class="mt-4 flex flex-wrap items-center gap-3">
+      {% if c.action %}
+      <a class="btn-primary" href="{{ c.action.href }}">{{ c.action.label }}</a>
+      {% endif %}
+      {% if c.state == 'locked' %}
+      <p class="text-xs text-ink-soft">{{ c.locked_reason or 'Complete the previous course to unlock this course.' }}</p>
+      {% elif c.next_activity and c.state == 'in_progress' %}
+      <span class="text-xs text-ink-soft">Next up: {{ c.next_activity.title }}</span>
+      {% endif %}
+    </div>
+  </article>
+{% else %}
+  <div class="card p-8 text-center text-ink-soft">No courses in this view.</div>
+{% endfor %}
+</div>
+
+<h2 class="section-title mt-10">Recent results</h2>
+{% if recent %}
+<div class="card mt-4 overflow-hidden">
+  <ul class="divide-y divide-sand-200">
+  {% for r in recent %}
+    <li class="flex items-center gap-3 px-6 py-3.5">
+      <span class="min-w-0 flex-1 truncate font-medium text-ink">{{ r.title }}</span>
+      <span class="font-mono text-sm tabular-nums text-ink-soft">{{ r.pct }}%</span>
+      {% if r.passed %}
+      <span class="status-badge bg-brand-100 px-2.5 py-0.5 text-xs font-semibold text-brand-800">Pass</span>
+      {% else %}
+      <span class="status-badge bg-clay-500/15 px-2.5 py-0.5 text-xs font-semibold text-clay-600">Fail</span>
+      {% endif %}
+    </li>
+  {% endfor %}
+  </ul>
+</div>
+{% else %}
+<div class="card mt-4 p-8 text-center">
+  <img src="/static/img/empty-results.webp" alt="" class="mx-auto mb-3 h-24 w-24" loading="lazy">
+  <p class="text-ink-soft">No results yet — your scores will appear here once you complete an activity.</p>
+</div>
+{% endif %}
+
+<p class="mt-8">
+  <a class="btn-ghost" href="/progress">View full progress</a>
+</p>
+
+{% else %}
+<div class="card mt-10 p-8 text-center">
+  <p class="text-lg font-medium text-ink">You're not enrolled in a course yet</p>
+  <p class="page-intro">Once an instructor enrolls you in a cohort, your courses will show up here.</p>
+  {% if is_instructor or is_admin %}
+  <p class="mt-5 flex flex-wrap justify-center gap-3">
+    {% if is_instructor %}<a class="btn-ghost" href="/instructor">Go to Teaching</a>{% endif %}
+    {% if is_admin %}<a class="btn-ghost" href="/admin">Go to Admin</a>{% endif %}
+  </p>
+  {% endif %}
+</div>
+{% endif %}
+
+{% if announcements %}
+<h2 class="section-title mt-10">Announcements</h2>
+<div class="mt-4 space-y-3">
+{% for ann in announcements %}
+  <a href="/announcements" class="card block p-5 transition-colors hover:border-brand-300">
+    <div class="flex items-baseline gap-3">
+      <span class="min-w-0 flex-1 font-medium text-ink">{{ ann.title }}</span>
+      <span class="text-xs text-ink-soft">{{ ann.created_at.strftime('%b %d') }}</span>
+    </div>
+  </a>
+{% endfor %}
+</div>
+{% endif %}
+{% endblock %}

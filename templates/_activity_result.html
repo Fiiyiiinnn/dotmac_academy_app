@@ -1,0 +1,46 @@
+<div class="card overflow-hidden">
+  <div class="flex flex-wrap items-center justify-between gap-3 border-b border-sand-200 bg-sand-200/50 px-5 py-3.5">
+    {% if score.passed %}
+    <span class="inline-flex items-center rounded-full bg-brand-100 px-2.5 py-0.5 text-xs font-semibold text-brand-800">Passed</span>
+    {% else %}
+    <span class="inline-flex items-center rounded-full bg-clay-500/15 px-2.5 py-0.5 text-xs font-semibold text-clay-600">Not passed</span>
+    {% endif %}
+    <span class="flex items-baseline gap-1.5 text-sm text-ink-soft"><span class="text-xs font-semibold uppercase tracking-[0.16em]">Score</span><span class="font-mono tabular-nums text-ink">{{ score.score }}/{{ score.max_score }} ({{ "%.0f"|format(score.fraction*100) }}%)</span></span>
+  </div>
+  {% if reveal %}
+  <ul class="divide-y divide-sand-200">
+  {% for item in score.per_item %}
+    <li class="flex items-start gap-3 px-5 py-3.5">
+      {% if item.correct %}
+      <span class="mt-0.5 inline-flex items-center rounded-full bg-brand-100 px-2 py-0.5 text-[0.7rem] font-semibold text-brand-800">correct</span>
+      {% else %}
+      <span class="mt-0.5 inline-flex items-center rounded-full bg-clay-500/15 px-2 py-0.5 text-[0.7rem] font-semibold text-clay-600">incorrect</span>
+      {% endif %}
+      <div class="min-w-0">
+        <p class="text-sm text-ink">{{ questions[item.id].stem }}</p>
+        {% if questions[item.id].explanation %}<p class="mt-0.5 text-sm text-ink-soft">{{ questions[item.id].explanation }}</p>{% endif %}
+        {% if not item.correct %}<p class="mt-0.5 text-sm text-ink-soft">Expected: <span class="font-mono">{{ item.expected|join(', ') }}</span></p>{% endif %}
+      </div>
+    </li>
+  {% endfor %}
+  </ul>
+  {% else %}
+  <div class="px-5 py-4 text-sm text-ink-soft">
+    Per-question answers are held back until you pass or use all your attempts, so retakes stay fair. Your score is shown above.
+  </div>
+  {% endif %}
+  {% if course and course_completion and course_completion.status == "completed" %}
+  <div class="border-t border-sand-200 bg-brand-100 px-5 py-5">
+    <p class="text-lg font-semibold text-brand-900">Well done, you completed {{ course.title }}.</p>
+    <p class="mt-1 text-sm text-brand-900/80">Congratulations. Your certificate is ready to download.</p>
+    <div class="mt-4 flex flex-wrap gap-3">
+      <a class="btn-primary" href="/certificates/{{ course.id }}">Download certificate</a>
+      <a class="btn-ghost bg-white/80" href="/courses/{{ course.slug }}">Back to course</a>
+    </div>
+  </div>
+  {% elif course and next_chapter %}
+  <div class="border-t border-sand-200 bg-white px-5 py-4">
+    <a class="btn-primary" href="/courses/{{ course.slug }}/chapters/{{ next_chapter.number }}">Continue to Chapter {{ next_chapter.number }} <span aria-hidden="true">&rarr;</span></a>
+  </div>
+  {% endif %}
+</div>

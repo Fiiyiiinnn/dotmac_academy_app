@@ -1,0 +1,177 @@
+{% extends "base.html" %}
+{% from "components/_pagination.html" import table_pagination %}
+{% block title %}{{ cohort.name }} — Cohort workspace{% endblock %}
+{% block content_width %}max-w-[1360px]{% endblock %}
+{% block content %}
+<nav class="mb-5 flex flex-wrap items-center gap-2 text-sm text-ink-soft" aria-label="Breadcrumb">
+  <a class="font-semibold text-brand-700 hover:text-brand-800" href="/instructor">Teaching home</a>
+  <span aria-hidden="true">/</span>
+  <span aria-current="page">{{ cohort.name }}</span>
+</nav>
+
+<header class="page-header">
+  <div class="page-header-copy">
+    <p class="page-eyebrow">Cohort workspace</p>
+    <h1 class="page-title">{{ cohort.name }}</h1>
+    <p class="page-intro">{{ cohort.discipline | title }} · {{ cohort.delivery_mode | replace('_', ' ') | title }} delivery</p>
+    <div class="mt-3 flex flex-wrap items-center gap-2">
+      <span class="status-badge {% if cohort.status == 'active' %}bg-brand-50 text-brand-700{% else %}bg-sand-200 text-ink-soft{% endif %}">{{ cohort.status | capitalize }}</span>
+      <span class="text-sm text-ink-soft">{{ student_total }} enrolled student{% if student_total != 1 %}s{% endif %}</span>
+    </div>
+  </div>
+  <div class="page-header-actions">
+    <a class="btn-ghost" href="/instructor/reports/cohort/{{ cohort.id }}">Progress report</a>
+    <a class="btn-ghost" href="/instructor/gradebook/{{ cohort.id }}">Gradebook</a>
+    <a class="btn-ghost" href="/instructor/cohorts/{{ cohort.id }}/timetable">Timetable</a>
+    <a class="btn-primary" href="/instructor/cohorts">Edit cohort</a>
+  </div>
+</header>
+
+<section class="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4" aria-label="Cohort summary">
+  <article class="card p-5"><p class="text-sm font-semibold text-ink-soft">Active students</p><p class="mt-2 font-mono text-3xl font-semibold tabular-nums text-ink">{{ active_student_count }}</p><p class="mt-1 text-xs text-ink-soft">of {{ student_total }} total enrollments</p></article>
+  <article class="card p-5"><p class="text-sm font-semibold text-ink-soft">Average progress</p><p class="mt-2 font-mono text-3xl font-semibold tabular-nums text-ink">{{ (average_progress * 100) | round | int }}%</p><p class="mt-1 text-xs text-ink-soft">Across active course offerings</p></article>
+  <article class="card p-5"><p class="text-sm font-semibold text-ink-soft">Needs attention</p><p class="mt-2 font-mono text-3xl font-semibold tabular-nums {% if at_risk_count %}text-clay-600{% else %}text-ink{% endif %}">{{ at_risk_count }}</p><p class="mt-1 text-xs text-ink-soft">Below 50% with no recent activity</p></article>
+  <article class="card p-5"><p class="text-sm font-semibold text-ink-soft">Learning setup</p><p class="mt-2 font-mono text-3xl font-semibold tabular-nums text-ink">{{ course_rows | length }}</p><p class="mt-1 text-xs text-ink-soft">courses · {{ facilitators | length }} facilitator{% if facilitators | length != 1 %}s{% endif %}</p></article>
+</section>
+
+<section class="data-table-card mt-8" aria-labelledby="students-heading">
+  <div class="flex flex-wrap items-center justify-between gap-3 border-b border-sand-200 px-4 py-4 sm:px-5">
+    <div><h2 id="students-heading" class="section-title">Enrolled students</h2><p class="mt-1 text-sm text-ink-soft">Enrollment state, learning track, progress, and latest activity for every learner.</p></div>
+    <div class="flex flex-wrap items-center gap-2">
+      <a class="btn-ghost text-sm" href="/instructor/reports/cohort/{{ cohort.id }}/roster.csv">Download roster CSV</a>
+      <a class="btn-primary text-sm" href="#add-students">Add students</a>
+    </div>
+  </div>
+  <div class="table-frame" role="region" aria-label="Enrolled students; scroll horizontally to see all columns" tabindex="0">
+    <table class="data-table min-w-[1100px]">
+      <thead><tr><th scope="col">Student</th><th scope="col">Enrollment</th><th scope="col">Track</th><th scope="col">Progress</th><th scope="col">Last activity</th><th scope="col">Learning signal</th><th scope="col" class="text-right">Actions</th></tr></thead>
+      <tbody>
+        {% for row in students %}
+        {% set progress = (row.completion_pct * 100) | round | int %}
+        <tr>
+          <td><p class="cell-primary">{{ row.person.first_name }} {{ row.person.last_name }}</p><p class="cell-secondary">{{ row.person.email }}</p>{% if row.person.status != 'active' %}<span class="mt-1 status-badge bg-clay-500/15 text-clay-700">Account {{ row.person.status }}</span>{% endif %}</td>
+          <td><span class="status-badge {% if row.enrollment.status == 'active' %}bg-brand-50 text-brand-700{% elif row.enrollment.status == 'waitlisted' %}bg-sand-200 text-ink-soft{% else %}bg-sand-200 text-ink-soft{% endif %}">{{ row.enrollment.status | capitalize }}</span></td>
+          <td><p class="cell-primary">{{ row.track_name or 'Unassigned' }}</p></td>
+          <td>
+            <div class="flex min-w-40 items-center gap-3"><div class="h-2 flex-1 overflow-hidden rounded-full bg-sand-200" role="progressbar" aria-label="{{ row.person.first_name }} {{ row.person.last_name }} progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{ progress }}"><span class="block h-full rounded-full bg-brand-600" style="width: {{ progress }}%"></span></div><span class="w-10 text-right font-mono text-sm font-semibold tabular-nums text-ink">{{ progress }}%</span></div>
+          </td>
+          <td>{% if row.last_activity_at %}<p class="cell-primary"><time datetime="{{ row.last_activity_at.isoformat() }}">{{ row.last_activity_at.strftime('%d %b %Y') }}</time></p><p class="cell-secondary">{{ row.last_activity_at.strftime('%H:%M') }}</p>{% else %}<span class="text-ink-soft">No scored activity</span>{% endif %}</td>
+          <td>{% if row.enrollment.status != 'active' %}<span class="status-badge bg-sand-200 text-ink-soft">Not active</span>{% elif row.at_risk %}<span class="status-badge bg-clay-500/15 text-clay-700">Needs attention</span>{% else %}<span class="status-badge bg-brand-50 text-brand-700">On track</span>{% endif %}</td>
+          <td class="text-right">
+            <div class="flex flex-wrap justify-end gap-2">
+              <a class="btn-ghost text-xs" href="/instructor/reports/student/{{ row.person.id }}">View learner</a>
+              {% if row.enrollment.status == 'active' %}
+              <form hx-post="/instructor/cohorts/{{ cohort.id }}/roster/{{ row.person.id }}/state"
+                    hx-target="#roster-state-error-{{ row.person.id }}" hx-swap="innerHTML"
+                    hx-confirm="Un-enroll {{ row.person.first_name }} {{ row.person.last_name }}? Their progress and history will be retained.">
+                <input type="hidden" name="state" value="dropped">
+                <input type="hidden" name="return_to" value="/instructor/cohorts/{{ cohort.id }}">
+                <button type="submit" class="btn-ghost px-2 py-1 text-xs">Un-enroll</button>
+              </form>
+              {% else %}
+              <form hx-post="/instructor/cohorts/{{ cohort.id }}/roster/{{ row.person.id }}/state"
+                    hx-target="#roster-state-error-{{ row.person.id }}" hx-swap="innerHTML">
+                <input type="hidden" name="state" value="active">
+                <input type="hidden" name="return_to" value="/instructor/cohorts/{{ cohort.id }}">
+                <button type="submit" class="btn-ghost px-2 py-1 text-xs">Reactivate</button>
+              </form>
+              {% endif %}
+            </div>
+            <div id="roster-state-error-{{ row.person.id }}" class="mt-1 text-left"></div>
+          </td>
+        </tr>
+        {% else %}
+        <tr><td colspan="7" class="py-12 text-center text-ink-soft">No students are enrolled in this cohort yet. <a class="font-semibold text-brand-700" href="#add-students">Add students</a>.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {{ table_pagination(request, pagination, "students", (12, 24, 48, 96)) }}
+</section>
+
+<section id="add-students" class="card mt-8 scroll-mt-24 p-5 sm:p-6" aria-labelledby="add-students-heading">
+  <div class="max-w-3xl">
+    <p class="page-eyebrow">Cohort membership</p>
+    <h2 id="add-students-heading" class="section-title mt-1">Add students</h2>
+    <p class="mt-1 text-sm text-ink-soft">Invite a new learner or enroll people who already have an Academy profile.</p>
+  </div>
+  <div class="mt-5 grid gap-6 border-t border-sand-200 pt-5 lg:grid-cols-2">
+    <form class="space-y-4" hx-post="/instructor/cohorts/{{ cohort.id }}/invite"
+          hx-target="#invite-result-{{ cohort.id }}" hx-swap="innerHTML">
+      <input type="hidden" name="return_to" value="/instructor/cohorts/{{ cohort.id }}">
+      <div><h3 class="font-semibold text-ink">Invite a new student</h3><p class="mt-1 text-sm text-ink-soft">Creates the learner profile, enrolls them, and emails an account-setup link.</p></div>
+      <div class="grid gap-3 sm:grid-cols-2">
+        <label class="block"><span class="mb-1.5 block text-sm font-semibold text-ink">First name</span><input name="first_name" type="text" autocomplete="given-name" class="w-full px-3.5 py-2 text-sm" required></label>
+        <label class="block"><span class="mb-1.5 block text-sm font-semibold text-ink">Last name</span><input name="last_name" type="text" autocomplete="family-name" class="w-full px-3.5 py-2 text-sm" required></label>
+      </div>
+      <label class="block"><span class="mb-1.5 block text-sm font-semibold text-ink">Email</span><input name="email" type="email" autocomplete="email" placeholder="student@example.com" class="w-full px-3.5 py-2 text-sm" required></label>
+      <label class="block">
+        <span class="mb-1.5 block text-sm font-semibold text-ink">Learning track <span class="font-normal text-ink-soft">(optional)</span></span>
+        <select name="track_id" class="w-full px-3.5 py-2 text-sm"><option value="">No track (cohort-wide access)</option>{% for item in track_items %}<option value="{{ item.track.id }}">{{ item.track.name }}</option>{% endfor %}</select>
+      </label>
+      <button type="submit" class="btn-primary">Send invite and enroll</button>
+      <div id="invite-result-{{ cohort.id }}" aria-live="polite"></div>
+    </form>
+
+    <form class="space-y-4 border-t border-sand-200 pt-6 lg:border-l lg:border-t-0 lg:pl-6 lg:pt-0"
+          hx-post="/instructor/cohorts/{{ cohort.id }}/enroll"
+          hx-target="#enroll-result-{{ cohort.id }}" hx-swap="innerHTML">
+      <input type="hidden" name="return_to" value="/instructor/cohorts/{{ cohort.id }}">
+      <div><h3 class="font-semibold text-ink">Enroll existing students</h3><p class="mt-1 text-sm text-ink-soft">Enter one or more existing learner emails, separated by commas or new lines.</p></div>
+      <label class="block"><span class="mb-1.5 block text-sm font-semibold text-ink">Student emails</span><textarea name="emails" rows="5" placeholder="student@example.com&#10;another@example.com" class="w-full px-3.5 py-2 text-sm" required></textarea></label>
+      <label class="block">
+        <span class="mb-1.5 block text-sm font-semibold text-ink">Learning track <span class="font-normal text-ink-soft">(optional)</span></span>
+        <select name="track_id" class="w-full px-3.5 py-2 text-sm"><option value="">No track (cohort-wide access)</option>{% for item in track_items %}<option value="{{ item.track.id }}">{{ item.track.name }}</option>{% endfor %}</select>
+      </label>
+      <button type="submit" class="btn-primary">Enroll students</button>
+      <div id="enroll-result-{{ cohort.id }}" aria-live="polite"></div>
+    </form>
+  </div>
+</section>
+
+<div class="mt-8 grid gap-6 xl:grid-cols-[minmax(0,1.8fr)_minmax(300px,1fr)]">
+  <section class="space-y-4" aria-labelledby="curriculum-heading">
+    <div class="flex flex-wrap items-end justify-between gap-3"><div><h2 id="curriculum-heading" class="section-title">Courses and content</h2><p class="mt-1 text-sm text-ink-soft">The complete curriculum currently offered to this cohort.</p></div><a class="font-semibold text-brand-700 hover:text-brand-800" href="/instructor/courses">Manage course library</a></div>
+    {% for item in course_rows %}
+    <details class="card disclosure overflow-hidden" {% if loop.first %}open{% endif %}>
+      <summary class="flex cursor-pointer list-none flex-wrap items-center justify-between gap-4 p-5 hover:bg-sand-100">
+        <span class="min-w-0"><span class="block text-lg font-semibold text-ink">{{ item.course.title }}</span><span class="mt-1 block text-sm text-ink-soft">{{ item.course.discipline | title }} · Version {{ item.course.version }}{% if item.track_names %} · {{ item.track_names | join(', ') }}{% endif %}</span></span>
+        <span class="flex items-center gap-2"><span class="status-badge {% if item.offering.status == 'active' %}bg-brand-50 text-brand-700{% else %}bg-sand-200 text-ink-soft{% endif %}">{{ item.offering.status | capitalize }}</span><span class="status-badge bg-sand-200 text-ink-soft">{{ item.chapters | length }} chapters · {{ item.activity_count }} activities</span><span class="disclosure-chevron text-ink-soft" aria-hidden="true">›</span></span>
+      </summary>
+      <div class="border-t border-sand-200 p-5">
+        {% if item.offering.starts_at or item.offering.ends_at %}<p class="mb-4 text-sm text-ink-soft">Availability: {% if item.offering.starts_at %}{{ item.offering.starts_at.strftime('%d %b %Y') }}{% else %}Open start{% endif %} — {% if item.offering.ends_at %}{{ item.offering.ends_at.strftime('%d %b %Y') }}{% else %}No end date{% endif %}</p>{% endif %}
+        <ol class="space-y-3">
+          {% for chapter_item in item.chapters %}
+          <li class="rounded-lg border border-sand-200 bg-white p-4">
+            <div class="flex flex-wrap items-start justify-between gap-3"><div><p class="text-xs font-semibold uppercase tracking-wide text-ink-soft">Chapter {{ chapter_item.chapter.number }}{% if chapter_item.chapter.part %} · {{ chapter_item.chapter.part }}{% endif %}</p><h3 class="mt-1 font-semibold text-ink">{{ chapter_item.chapter.title }}</h3></div><span class="text-xs font-semibold text-ink-soft">{{ chapter_item.activities | length }} activit{% if chapter_item.activities | length == 1 %}y{% else %}ies{% endif %}</span></div>
+            {% if chapter_item.activities %}<ul class="mt-3 grid gap-2 sm:grid-cols-2">{% for activity in chapter_item.activities %}<li class="flex items-start justify-between gap-3 rounded-md bg-sand-100 px-3 py-2 text-sm"><span class="font-medium text-ink">{{ activity.title }}</span><span class="shrink-0 text-xs uppercase tracking-wide text-ink-soft">{{ activity.type | replace('_', ' ') }}</span></li>{% endfor %}</ul>{% else %}<p class="mt-2 text-sm text-ink-soft">No activities in this chapter yet.</p>{% endif %}
+          </li>
+          {% endfor %}
+        </ol>
+        {% if item.standalone_activities %}<div class="mt-4"><h3 class="text-sm font-semibold text-ink">Course-level activities</h3><ul class="mt-2 grid gap-2 sm:grid-cols-2">{% for activity in item.standalone_activities %}<li class="flex items-start justify-between gap-3 rounded-md bg-sand-100 px-3 py-2 text-sm"><span class="font-medium text-ink">{{ activity.title }}</span><span class="shrink-0 text-xs uppercase tracking-wide text-ink-soft">{{ activity.type | replace('_', ' ') }}</span></li>{% endfor %}</ul></div>{% endif %}
+        {% if not item.chapters and not item.standalone_activities %}<p class="rounded-lg bg-sand-100 p-4 text-sm text-ink-soft">No chapters or activities have been added to this course yet.</p>{% endif %}
+        <div class="mt-4 flex flex-wrap items-center gap-2 border-t border-sand-200 pt-4">
+          <a class="btn-primary text-sm" href="/instructor/courses/{{ item.course.id }}/preview">Open course content</a>
+          <a class="btn-ghost text-sm" href="/instructor/courses/{{ item.course.id }}/edit">Edit course</a>
+        </div>
+      </div>
+    </details>
+    {% else %}
+    <div class="card p-8 text-center"><p class="text-ink-soft">No courses are offered to this cohort yet.</p><a class="btn-primary mt-4" href="/instructor/cohorts">Assign courses</a></div>
+    {% endfor %}
+  </section>
+
+  <aside class="space-y-6">
+    <section class="card p-5" aria-labelledby="facilitators-heading">
+      <div class="flex items-center justify-between gap-3"><h2 id="facilitators-heading" class="section-title">Facilitators</h2><span class="status-badge bg-sand-200 text-ink-soft">{{ facilitators | length }} assigned</span></div>
+      {% if facilitators %}<ul class="mt-4 divide-y divide-sand-200">{% for enrollment, facilitator in facilitators %}<li class="flex items-center gap-3 py-3 first:pt-0 last:pb-0"><span class="flex size-10 shrink-0 items-center justify-center rounded-full bg-brand-50 font-semibold text-brand-700" aria-hidden="true">{{ facilitator.first_name[:1] }}{{ facilitator.last_name[:1] }}</span><span class="min-w-0"><span class="block font-semibold text-ink">{{ facilitator.first_name }} {{ facilitator.last_name }}</span><span class="block truncate text-sm text-ink-soft">{{ facilitator.email }}</span></span></li>{% endfor %}</ul>{% else %}<p class="mt-4 rounded-lg bg-sand-100 p-4 text-sm text-ink-soft">No facilitator has been assigned to this cohort.</p>{% endif %}
+      <a class="btn-ghost mt-4 w-full justify-center text-sm" href="/instructor/cohorts">Manage facilitators</a>
+    </section>
+
+    <section class="card p-5" aria-labelledby="tracks-heading">
+      <div class="flex items-center justify-between gap-3"><h2 id="tracks-heading" class="section-title">Learning tracks</h2><span class="status-badge bg-sand-200 text-ink-soft">{{ track_items | length }}</span></div>
+      {% if track_items %}<ul class="mt-4 space-y-3">{% for item in track_items %}<li class="rounded-lg border border-sand-200 p-3"><p class="font-semibold text-ink">{{ item.track.name }}</p><p class="mt-1 text-sm text-ink-soft">{{ item.courses | length }} course{% if item.courses | length != 1 %}s{% endif %}</p></li>{% endfor %}</ul>{% else %}<p class="mt-4 rounded-lg bg-sand-100 p-4 text-sm text-ink-soft">No learning tracks are configured.</p>{% endif %}
+    </section>
+  </aside>
+</div>
+{% endblock %}

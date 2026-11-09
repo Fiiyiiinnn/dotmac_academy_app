@@ -1,0 +1,525 @@
+academy_erp_completion_checkpoints|tenant_id|uuid|NO
+academy_erp_completion_checkpoints|completion_id|uuid|NO
+academy_erp_completion_checkpoints|erp_synced_at|timestamp with time zone|YES
+account_tokens|id|uuid|NO
+account_tokens|tenant_id|uuid|NO
+account_tokens|person_id|uuid|NO
+account_tokens|kind|character varying|NO
+account_tokens|token_hash|character varying|NO
+account_tokens|expires_at|timestamp with time zone|NO
+account_tokens|used_at|timestamp with time zone|YES
+account_tokens|created_at|timestamp with time zone|NO
+account_tokens|updated_at|timestamp with time zone|NO
+activities|id|uuid|NO
+activities|tenant_id|uuid|NO
+activities|course_id|uuid|NO
+activities|chapter_number|integer|YES
+activities|type|character varying|NO
+activities|bank_id|uuid|YES
+activities|title|character varying|NO
+activities|pass_threshold|double precision|NO
+activities|created_at|timestamp with time zone|NO
+activities|updated_at|timestamp with time zone|NO
+activities|max_attempts|integer|YES
+activities|grading|character varying|NO
+activities|question_count|integer|YES
+activities|weight|double precision|NO
+activities|assessment_mode|character varying|NO
+activity_attempts|id|uuid|NO
+activity_attempts|tenant_id|uuid|NO
+activity_attempts|activity_id|uuid|NO
+activity_attempts|person_id|uuid|NO
+activity_attempts|question_ext_ids|jsonb|NO
+activity_attempts|started_at|timestamp with time zone|NO
+activity_attempts|submitted_at|timestamp with time zone|YES
+activity_attempts|created_at|timestamp with time zone|NO
+activity_attempts|updated_at|timestamp with time zone|NO
+alembic_version|version_num|character varying|NO
+announcements|id|uuid|NO
+announcements|tenant_id|uuid|NO
+announcements|cohort_id|uuid|YES
+announcements|author_person_id|uuid|NO
+announcements|title|character varying|NO
+announcements|body_md|text|NO
+announcements|body_html|text|NO
+announcements|created_at|timestamp with time zone|NO
+announcements|updated_at|timestamp with time zone|NO
+applicants|id|uuid|NO
+applicants|tenant_id|uuid|NO
+applicants|email|character varying|NO
+applicants|first_name|character varying|NO
+applicants|last_name|character varying|NO
+applicants|phone|character varying|YES
+applicants|program|character varying|YES
+applicants|status|character varying|NO
+applicants|source|character varying|NO
+applicants|external_ref|character varying|YES
+applicants|notes|character varying|YES
+applicants|applied_on|date|NO
+applicants|person_id|uuid|YES
+applicants|created_at|timestamp with time zone|NO
+applicants|updated_at|timestamp with time zone|NO
+applicants|cohort_id|uuid|YES
+applicants|assessment_score|double precision|YES
+applicants|assessment_level|character varying|YES
+applicants|assessment_profile|jsonb|YES
+applicants|assessment_taken_at|timestamp with time zone|YES
+applicants|assessment_token_hash|character varying|YES
+applicants|assessment_started_at|timestamp with time zone|YES
+applicants|assessment_time_exceeded|boolean|NO
+applicants|assessment_answers|jsonb|YES
+applicants|assessment_valid|boolean|YES
+applicants|assessment_invalid_reason|character varying|YES
+applicants|assessment_reset_count|integer|NO
+applicants|date_of_birth|date|YES
+applicants|state|character varying|YES
+applicants|city|character varying|YES
+applicants|highest_qualification|character varying|YES
+applicants|field_of_study|character varying|YES
+applicants|years_experience|integer|YES
+applicants|current_role|character varying|YES
+applicants|has_device|boolean|YES
+applicants|has_internet|boolean|YES
+applicants|can_work_at_height|boolean|YES
+applicants|available_from|date|YES
+applicants|heard_from|character varying|YES
+applicants|cv_url|character varying|YES
+applicants|assessment_deadline|timestamp with time zone|YES
+applicants|invite_sent_at|timestamp with time zone|YES
+applicants|assessment_elapsed_seconds|integer|NO
+applicants|onboarding_token_hash|character varying|YES
+applicants|track_id|uuid|YES
+applicants|assessment_bank_id|uuid|YES
+applicants|assessment_return_url|character varying|YES
+applicants|assessment_erp_synced_at|timestamp with time zone|YES
+applicants|assessment_result_version|integer|NO
+attempt_grants|id|uuid|NO
+attempt_grants|tenant_id|uuid|NO
+attempt_grants|activity_id|uuid|NO
+attempt_grants|person_id|uuid|NO
+attempt_grants|extra_attempts|integer|NO
+attempt_grants|reason|text|NO
+attempt_grants|granted_by|uuid|YES
+attempt_grants|created_at|timestamp with time zone|NO
+attempt_grants|updated_at|timestamp with time zone|NO
+audit_events|id|uuid|NO
+audit_events|tenant_id|uuid|NO
+audit_events|actor_person_id|uuid|YES
+audit_events|action|character varying|NO
+audit_events|entity_type|character varying|NO
+audit_events|entity_id|character varying|YES
+audit_events|details|jsonb|NO
+audit_events|created_at|timestamp with time zone|NO
+auth_sessions|id|uuid|NO
+auth_sessions|tenant_id|uuid|NO
+auth_sessions|person_id|uuid|NO
+auth_sessions|token_hash|character varying|NO
+auth_sessions|expires_at|timestamp with time zone|NO
+auth_sessions|revoked_at|timestamp with time zone|YES
+auth_sessions|created_at|timestamp with time zone|NO
+auth_sessions|updated_at|timestamp with time zone|NO
+certificates|id|uuid|NO
+certificates|tenant_id|uuid|NO
+certificates|person_id|uuid|NO
+certificates|course_id|uuid|NO
+certificates|serial|character varying|NO
+certificates|issued_at|timestamp with time zone|NO
+certificates|created_at|timestamp with time zone|NO
+certificates|updated_at|timestamp with time zone|NO
+chapter_bookmarks|id|uuid|NO
+chapter_bookmarks|tenant_id|uuid|NO
+chapter_bookmarks|person_id|uuid|NO
+chapter_bookmarks|course_id|uuid|NO
+chapter_bookmarks|chapter_id|uuid|NO
+chapter_bookmarks|created_at|timestamp with time zone|NO
+chapter_bookmarks|updated_at|timestamp with time zone|NO
+chapter_notes|id|uuid|NO
+chapter_notes|tenant_id|uuid|NO
+chapter_notes|person_id|uuid|NO
+chapter_notes|course_id|uuid|NO
+chapter_notes|chapter_id|uuid|NO
+chapter_notes|body|text|NO
+chapter_notes|created_at|timestamp with time zone|NO
+chapter_notes|updated_at|timestamp with time zone|NO
+chapter_reads|id|uuid|NO
+chapter_reads|tenant_id|uuid|NO
+chapter_reads|person_id|uuid|NO
+chapter_reads|chapter_id|uuid|NO
+chapter_reads|created_at|timestamp with time zone|NO
+chapter_reads|updated_at|timestamp with time zone|NO
+chapters|id|uuid|NO
+chapters|tenant_id|uuid|NO
+chapters|course_id|uuid|NO
+chapters|number|integer|NO
+chapters|title|character varying|NO
+chapters|part|character varying|NO
+chapters|body_html|text|NO
+chapters|source_hash|character varying|NO
+chapters|order_index|integer|NO
+chapters|created_at|timestamp with time zone|NO
+chapters|updated_at|timestamp with time zone|NO
+chapters|body_md|text|NO
+class_sessions|id|uuid|NO
+class_sessions|tenant_id|uuid|NO
+class_sessions|cohort_id|uuid|NO
+class_sessions|offering_id|uuid|YES
+class_sessions|session_type|character varying|NO
+class_sessions|title|character varying|NO
+class_sessions|starts_at|timestamp with time zone|NO
+class_sessions|ends_at|timestamp with time zone|YES
+class_sessions|instructor_person_id|uuid|YES
+class_sessions|location|character varying|YES
+class_sessions|join_url|character varying|YES
+class_sessions|notes|text|YES
+class_sessions|status|character varying|NO
+class_sessions|created_at|timestamp with time zone|NO
+class_sessions|updated_at|timestamp with time zone|NO
+cohort_tracks|id|uuid|NO
+cohort_tracks|tenant_id|uuid|NO
+cohort_tracks|cohort_id|uuid|NO
+cohort_tracks|track_id|uuid|NO
+cohort_tracks|status|character varying|NO
+cohort_tracks|created_at|timestamp with time zone|NO
+cohort_tracks|updated_at|timestamp with time zone|NO
+cohorts|id|uuid|NO
+cohorts|tenant_id|uuid|NO
+cohorts|name|character varying|NO
+cohorts|discipline|character varying|NO
+cohorts|status|character varying|NO
+cohorts|created_at|timestamp with time zone|NO
+cohorts|updated_at|timestamp with time zone|NO
+cohorts|delivery_mode|character varying|NO
+cohorts|entrance_bank_id|uuid|YES
+cohorts|entrance_time_limit_minutes|integer|YES
+cohorts|auto_accept_threshold|double precision|YES
+course_completions|id|uuid|NO
+course_completions|tenant_id|uuid|NO
+course_completions|person_id|uuid|NO
+course_completions|course_id|uuid|NO
+course_completions|status|character varying|NO
+course_completions|pct|double precision|NO
+course_completions|completed_at|timestamp with time zone|YES
+course_completions|created_at|timestamp with time zone|NO
+course_completions|updated_at|timestamp with time zone|NO
+course_completions|erp_synced_at|timestamp with time zone|YES
+course_completions|erp_synced_pct|double precision|YES
+course_offerings|id|uuid|NO
+course_offerings|tenant_id|uuid|NO
+course_offerings|cohort_id|uuid|NO
+course_offerings|course_id|uuid|NO
+course_offerings|status|character varying|NO
+course_offerings|created_at|timestamp with time zone|NO
+course_offerings|updated_at|timestamp with time zone|NO
+course_offerings|starts_at|timestamp with time zone|YES
+course_offerings|ends_at|timestamp with time zone|YES
+course_prerequisites|id|uuid|NO
+course_prerequisites|tenant_id|uuid|NO
+course_prerequisites|course_id|uuid|NO
+course_prerequisites|requires_course_id|uuid|NO
+course_prerequisites|created_at|timestamp with time zone|NO
+course_prerequisites|updated_at|timestamp with time zone|NO
+courses|id|uuid|NO
+courses|tenant_id|uuid|NO
+courses|slug|character varying|NO
+courses|title|character varying|NO
+courses|discipline|character varying|NO
+courses|source_ref|character varying|NO
+courses|version|integer|NO
+courses|created_at|timestamp with time zone|NO
+courses|updated_at|timestamp with time zone|NO
+courses|status|character varying|NO
+courses|listed|boolean|NO
+email_outbox|id|uuid|NO
+email_outbox|tenant_id|uuid|NO
+email_outbox|idempotency_key|character varying|NO
+email_outbox|kind|character varying|NO
+email_outbox|recipient|character varying|NO
+email_outbox|subject|character varying|NO
+email_outbox|html_body|text|NO
+email_outbox|text_body|text|YES
+email_outbox|payload|jsonb|NO
+email_outbox|status|character varying|NO
+email_outbox|attempts|integer|NO
+email_outbox|available_at|timestamp with time zone|NO
+email_outbox|sent_at|timestamp with time zone|YES
+email_outbox|last_error|character varying|YES
+email_outbox|created_at|timestamp with time zone|NO
+email_outbox|updated_at|timestamp with time zone|NO
+enrollments|id|uuid|NO
+enrollments|tenant_id|uuid|NO
+enrollments|cohort_id|uuid|NO
+enrollments|person_id|uuid|NO
+enrollments|role_in_cohort|character varying|NO
+enrollments|status|character varying|NO
+enrollments|created_at|timestamp with time zone|NO
+enrollments|updated_at|timestamp with time zone|NO
+enrollments|track_id|uuid|YES
+enrollments|audience|character varying|YES
+enrollments|employee_ref|character varying|YES
+enrollments|access_ends_at|timestamp with time zone|YES
+facilitator_nominations|id|uuid|NO
+facilitator_nominations|tenant_id|uuid|NO
+facilitator_nominations|person_id|uuid|NO
+facilitator_nominations|nominated_by_person_id|uuid|YES
+facilitator_nominations|scope_type|character varying|NO
+facilitator_nominations|cohort_id|uuid|YES
+facilitator_nominations|offering_id|uuid|YES
+facilitator_nominations|status|character varying|NO
+facilitator_nominations|activated_at|timestamp with time zone|YES
+facilitator_nominations|revoked_at|timestamp with time zone|YES
+facilitator_nominations|activation_reason|character varying|YES
+facilitator_nominations|created_at|timestamp with time zone|NO
+facilitator_nominations|updated_at|timestamp with time zone|NO
+facilitator_requirements|id|uuid|NO
+facilitator_requirements|tenant_id|uuid|NO
+facilitator_requirements|nomination_id|uuid|NO
+facilitator_requirements|course_id|uuid|NO
+facilitator_requirements|created_at|timestamp with time zone|NO
+facilitator_requirements|updated_at|timestamp with time zone|NO
+lab_console_activity|instance_id|uuid|NO
+lab_console_activity|tenant_id|uuid|NO
+lab_console_activity|last_seen_at|timestamp with time zone|NO
+lab_instances|id|uuid|NO
+lab_instances|tenant_id|uuid|NO
+lab_instances|activity_id|uuid|NO
+lab_instances|person_id|uuid|NO
+lab_instances|instance_name|character varying|NO
+lab_instances|seed|jsonb|NO
+lab_instances|status|character varying|NO
+lab_instances|consoles|jsonb|NO
+lab_instances|error|text|YES
+lab_instances|started_at|timestamp with time zone|YES
+lab_instances|last_active_at|timestamp with time zone|YES
+lab_instances|created_at|timestamp with time zone|NO
+lab_instances|updated_at|timestamp with time zone|NO
+lab_instances|runtime_presence|character varying|NO
+lab_operations|id|uuid|NO
+lab_operations|tenant_id|uuid|NO
+lab_operations|instance_id|uuid|NO
+lab_operations|kind|character varying|NO
+lab_operations|state|character varying|NO
+lab_operations|requested_by|uuid|YES
+lab_operations|requested_at|timestamp with time zone|NO
+lab_operations|not_before|timestamp with time zone|NO
+lab_operations|claimed_by|character varying|YES
+lab_operations|claimed_at|timestamp with time zone|YES
+lab_operations|heartbeat_at|timestamp with time zone|YES
+lab_operations|attempts|integer|NO
+lab_operations|finished_at|timestamp with time zone|YES
+lab_operations|last_error|text|YES
+lab_operations|created_at|timestamp with time zone|NO
+lab_operations|updated_at|timestamp with time zone|NO
+lab_operations|claimed_host|character varying|YES
+lab_operations|claimed_epoch|character varying|YES
+lab_operations|origin|character varying|YES
+lab_operations|runtime_precondition|character varying|YES
+lab_templates|id|uuid|NO
+lab_templates|tenant_id|uuid|NO
+lab_templates|course_id|uuid|NO
+lab_templates|chapter_number|integer|YES
+lab_templates|activity_id|uuid|NO
+lab_templates|slug|character varying|NO
+lab_templates|title|character varying|NO
+lab_templates|topology|text|NO
+lab_templates|instructions_html|text|NO
+lab_templates|checks|jsonb|NO
+lab_templates|seed_spec|jsonb|NO
+lab_templates|limits|jsonb|NO
+lab_templates|engine|character varying|NO
+lab_templates|source_hash|character varying|NO
+lab_templates|version|integer|NO
+lab_templates|created_at|timestamp with time zone|NO
+lab_templates|updated_at|timestamp with time zone|NO
+lab_templates|instructions_md|text|YES
+lab_templates|access|jsonb|NO
+learning_events|id|uuid|NO
+learning_events|tenant_id|uuid|NO
+learning_events|person_id|uuid|NO
+learning_events|course_id|uuid|YES
+learning_events|kind|character varying|NO
+learning_events|subject_id|uuid|YES
+learning_events|detail|jsonb|NO
+learning_events|occurred_at|timestamp with time zone|NO
+learning_events|created_at|timestamp with time zone|NO
+learning_events|updated_at|timestamp with time zone|NO
+notifications|id|uuid|NO
+notifications|tenant_id|uuid|NO
+notifications|person_id|uuid|NO
+notifications|kind|character varying|NO
+notifications|title|character varying|NO
+notifications|body|text|NO
+notifications|link|character varying|YES
+notifications|read_at|timestamp with time zone|YES
+notifications|created_at|timestamp with time zone|NO
+notifications|updated_at|timestamp with time zone|NO
+offering_activities|id|uuid|NO
+offering_activities|tenant_id|uuid|NO
+offering_activities|offering_id|uuid|NO
+offering_activities|activity_id|uuid|NO
+offering_activities|release_at|timestamp with time zone|YES
+offering_activities|due_at|timestamp with time zone|YES
+offering_activities|created_at|timestamp with time zone|NO
+offering_activities|updated_at|timestamp with time zone|NO
+onboarding_tasks|id|uuid|NO
+onboarding_tasks|tenant_id|uuid|NO
+onboarding_tasks|applicant_id|uuid|NO
+onboarding_tasks|key|character varying|NO
+onboarding_tasks|label|character varying|NO
+onboarding_tasks|order_index|integer|NO
+onboarding_tasks|status|character varying|NO
+onboarding_tasks|completed_at|timestamp with time zone|YES
+onboarding_tasks|created_at|timestamp with time zone|NO
+onboarding_tasks|updated_at|timestamp with time zone|NO
+people|id|uuid|NO
+people|tenant_id|uuid|NO
+people|email|character varying|NO
+people|first_name|character varying|NO
+people|last_name|character varying|NO
+people|created_at|timestamp with time zone|NO
+people|updated_at|timestamp with time zone|NO
+people|avatar_path|character varying|YES
+people|prefs|jsonb|NO
+people|status|character varying|NO
+person_roles|id|uuid|NO
+person_roles|tenant_id|uuid|NO
+person_roles|person_id|uuid|NO
+person_roles|role_id|uuid|NO
+person_roles|created_at|timestamp with time zone|NO
+person_roles|updated_at|timestamp with time zone|NO
+platform_settings|key|character varying|NO
+platform_settings|value|text|YES
+question_banks|id|uuid|NO
+question_banks|tenant_id|uuid|NO
+question_banks|course_id|uuid|NO
+question_banks|chapter_number|integer|YES
+question_banks|kind|character varying|NO
+question_banks|version|integer|NO
+question_banks|created_at|timestamp with time zone|NO
+question_banks|updated_at|timestamp with time zone|NO
+questions|id|uuid|NO
+questions|tenant_id|uuid|NO
+questions|bank_id|uuid|NO
+questions|ext_id|character varying|NO
+questions|stem|text|NO
+questions|type|character varying|NO
+questions|options|jsonb|NO
+questions|correct|jsonb|NO
+questions|rubric_category|character varying|NO
+questions|explanation|text|NO
+questions|weight|integer|NO
+questions|created_at|timestamp with time zone|NO
+questions|updated_at|timestamp with time zone|NO
+questions|category|character varying|YES
+reminder_log|id|uuid|NO
+reminder_log|tenant_id|uuid|NO
+reminder_log|person_id|uuid|NO
+reminder_log|event_kind|character varying|NO
+reminder_log|occurrence_key|character varying|NO
+reminder_log|title|character varying|NO
+reminder_log|link|character varying|YES
+reminder_log|channel|character varying|NO
+reminder_log|status|character varying|NO
+reminder_log|outbox_key|character varying|YES
+reminder_log|sent_at|timestamp with time zone|YES
+reminder_log|created_at|timestamp with time zone|NO
+reminder_log|updated_at|timestamp with time zone|NO
+reminder_preferences|id|uuid|NO
+reminder_preferences|tenant_id|uuid|NO
+reminder_preferences|person_id|uuid|NO
+reminder_preferences|frequency|character varying|NO
+reminder_preferences|quiet_start_hour|integer|YES
+reminder_preferences|quiet_end_hour|integer|YES
+reminder_preferences|optouts|jsonb|NO
+reminder_preferences|created_at|timestamp with time zone|NO
+reminder_preferences|updated_at|timestamp with time zone|NO
+roles|id|uuid|NO
+roles|tenant_id|uuid|NO
+roles|slug|character varying|NO
+roles|name|character varying|NO
+roles|created_at|timestamp with time zone|NO
+roles|updated_at|timestamp with time zone|NO
+scores|id|uuid|NO
+scores|tenant_id|uuid|NO
+scores|submission_id|uuid|NO
+scores|score|double precision|NO
+scores|max_score|double precision|NO
+scores|fraction|double precision|NO
+scores|passed|boolean|NO
+scores|per_item|jsonb|NO
+scores|source|character varying|NO
+scores|override_reason|text|YES
+scores|created_at|timestamp with time zone|NO
+scores|updated_at|timestamp with time zone|NO
+submissions|id|uuid|NO
+submissions|tenant_id|uuid|NO
+submissions|activity_id|uuid|NO
+submissions|person_id|uuid|NO
+submissions|answers|jsonb|NO
+submissions|attempt_no|integer|NO
+submissions|created_at|timestamp with time zone|NO
+submissions|updated_at|timestamp with time zone|NO
+subtopic_reads|id|uuid|NO
+subtopic_reads|tenant_id|uuid|NO
+subtopic_reads|person_id|uuid|NO
+subtopic_reads|chapter_id|uuid|NO
+subtopic_reads|subtopic_slug|character varying|NO
+subtopic_reads|created_at|timestamp with time zone|NO
+subtopic_reads|updated_at|timestamp with time zone|NO
+success_queue_entries|id|uuid|NO
+success_queue_entries|tenant_id|uuid|NO
+success_queue_entries|person_id|uuid|NO
+success_queue_entries|cohort_id|uuid|YES
+success_queue_entries|reason_kind|character varying|NO
+success_queue_entries|supporting_facts|jsonb|NO
+success_queue_entries|severity|character varying|NO
+success_queue_entries|detected_at|timestamp with time zone|NO
+success_queue_entries|assigned_to|uuid|YES
+success_queue_entries|recommended_action|text|NO
+success_queue_entries|status|character varying|NO
+success_queue_entries|resolved_at|timestamp with time zone|YES
+success_queue_entries|resolved_by|uuid|YES
+success_queue_entries|score_hint|double precision|NO
+success_queue_entries|created_at|timestamp with time zone|NO
+success_queue_entries|updated_at|timestamp with time zone|NO
+tenant_domains|id|uuid|NO
+tenant_domains|tenant_id|uuid|NO
+tenant_domains|domain|character varying|NO
+tenant_domains|verified_at|timestamp with time zone|YES
+tenant_domains|created_at|timestamp with time zone|NO
+tenant_domains|updated_at|timestamp with time zone|NO
+tenant_entrance_defaults|tenant_id|uuid|NO
+tenant_entrance_defaults|default_bank_id|uuid|YES
+tenant_entrance_defaults|default_time_limit_minutes|integer|YES
+tenant_entrance_defaults|created_at|timestamp with time zone|NO
+tenant_entrance_defaults|updated_at|timestamp with time zone|NO
+tenants|id|uuid|NO
+tenants|slug|character varying|NO
+tenants|name|character varying|NO
+tenants|is_active|boolean|NO
+tenants|suspended_at|timestamp with time zone|YES
+tenants|deleted_at|timestamp with time zone|YES
+tenants|created_at|timestamp with time zone|NO
+tenants|updated_at|timestamp with time zone|NO
+track_courses|id|uuid|NO
+track_courses|tenant_id|uuid|NO
+track_courses|track_id|uuid|NO
+track_courses|course_id|uuid|NO
+track_courses|order_index|integer|NO
+track_courses|created_at|timestamp with time zone|NO
+track_courses|updated_at|timestamp with time zone|NO
+tracks|id|uuid|NO
+tracks|tenant_id|uuid|NO
+tracks|slug|character varying|NO
+tracks|name|character varying|NO
+tracks|status|character varying|NO
+tracks|created_at|timestamp with time zone|NO
+tracks|updated_at|timestamp with time zone|NO
+user_credentials|id|uuid|NO
+user_credentials|tenant_id|uuid|NO
+user_credentials|person_id|uuid|NO
+user_credentials|email|character varying|NO
+user_credentials|password_hash|character varying|NO
+user_credentials|created_at|timestamp with time zone|NO
+user_credentials|updated_at|timestamp with time zone|NO
+user_credentials|failed_login_attempts|integer|NO
+user_credentials|locked_until|timestamp with time zone|YES

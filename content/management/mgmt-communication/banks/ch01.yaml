@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-communication
+  kind: chapter
+  chapter: 1
+  version: 2
+  policy:
+    mode: practice
+  questions:
+    - id: cm1-01
+      stem: "The test of a downward instruction is not 'did I say it?' but:"
+      type: single
+      options: ["Can they say it back?", "Did I put it in writing?", "Did anyone ask questions?", "Was everybody present?"]
+      correct: ["Can they say it back?"]
+      rubric_category: recall
+      explanation: "One announcement is not understanding. The playback is the check."
+      weight: 1
+    - id: cm1-02
+      stem: "Complete the channel rule: sensitive → spoken first; binding → :"
+      type: single
+      options: ["Written always", "Spoken twice", "Broadcast widely", "Confirmed verbally"]
+      correct: ["Written always"]
+      rubric_category: recall
+      explanation: "Spoken agreements about money, dates or scope do not exist until they are written down."
+      weight: 1
+    - id: cm1-03
+      stem: "You are about to send a project update to your director, your team, and a neighbouring department. What changes between the three?"
+      type: single
+      options: ["The framing, while the facts stay the same", "The level of detail each audience receives", "The channel each version is sent through", "The amount of context provided up front"]
+      correct: ["The framing, while the facts stay the same"]
+      rubric_category: application
+      explanation: "The same update is a budget story upward, a workload story downward, and a dependency story sideways."
+      weight: 1
+    - id: cm1-04
+      stem: "A decision you argued against has come down from above and you must now tell your team. How do you open?"
+      type: single
+      options: ["With the decision and its honest reasoning, as its owner", "By explaining that management has decided this, not you", "By stating that you raised concerns before it was settled", "With the practical changes first, and the reasoning later on"]
+      correct: ["With the decision and its honest reasoning, as its owner"]
+      rubric_category: application
+      explanation: "'Management wants us to' buys cheap solidarity by spending the decision's credibility."
+      weight: 1
+    - id: cm1-05
+      stem: "You agreed a delivery date with a peer team in a corridor conversation. What must happen next?"
+      type: single
+      options: ["Write it down and send it to them", "Add it to your own team's board", "Confirm it again before the date", "Tell your manager it is agreed"]
+      correct: ["Write it down and send it to them"]
+      rubric_category: application
+      explanation: "Neither side owns the other's memory, and you have no authority to settle a dispute between equals."
+      weight: 1
+    - id: cm1-06
+      stem: "There is a reorganisation coming that you are not yet allowed to discuss, and the team is speculating. What do you say?"
+      type: single
+      options: ["That a decision is coming you cannot discuss, and they will hear it from you first", "Nothing, since discussing it at all would breach the confidence you were given", "That they should not believe rumours until something official is announced", "That you are not aware of anything that has been decided at this stage"]
+      correct: ["That a decision is coming you cannot discuss, and they will hear it from you first"]
+      rubric_category: application
+      explanation: "Replace an unavoidable silence with a promise you can keep — silence gets read as confirmation."
+      weight: 1
+    - id: cm1-07
+      stem: "Before sending any significant communication, which three questions frame it?"
+      type: single
+      options: ["What do they know, what do they care about, what happens next", "What is the message, who needs it, which channel suits it", "What changed, who is affected, when does it take effect", "What is urgent, what is important, what can wait a week"]
+      correct: ["What do they know, what do they care about, what happens next"]
+      rubric_category: application
+      explanation: "Design from the audience backwards. Communication that assigns no action and changes no understanding is noise."
+      weight: 1
+    - id: cm1-08
+      stem: "A manager consistently oversells their team's capacity in senior meetings. What does that buy and what does it cost?"
+      type: single
+      options: ["Praise today, and commitments the team cannot meet tomorrow", "Visibility for the team, at the price of the manager's own time", "Faster approvals, though the quality of the work will eventually drop", "Goodwill upward, which is spent on the next difficult negotiation"]
+      correct: ["Praise today, and commitments the team cannot meet tomorrow"]
+      rubric_category: analysis
+      explanation: "You are the team's voice outward. Inflating them and underselling them are both misrepresentation."
+      weight: 1
+    - id: cm1-09
+      stem: "Why is a broadcast channel the wrong place for something that needs individual acknowledgement?"
+      type: single
+      options: ["It reaches everyone and confirms nothing", "It cannot carry enough detail to be useful", "It leaves no record that can be searched later", "It reaches people outside the intended audience"]
+      correct: ["It reaches everyone and confirms nothing"]
+      rubric_category: analysis
+      explanation: "'I posted it in the group' is not delivery, exactly as it is not a handover."
+      weight: 1
+    - id: cm1-10
+      stem: "A manager never explains the reasoning behind their decisions, though the decisions are sound. How does the team experience them?"
+      type: single
+      options: ["As arbitrary, because unexplained decisions get read uncharitably", "As distant, though the quality of the decisions is still recognised", "As overloaded, since explaining would take time they do not have", "As inconsistent, because each decision is judged on its own merits"]
+      correct: ["As arbitrary, because unexplained decisions get read uncharitably"]
+      rubric_category: analysis
+      explanation: "You cannot opt out of communicating; you can only choose whether the message is deliberate."
+      weight: 1

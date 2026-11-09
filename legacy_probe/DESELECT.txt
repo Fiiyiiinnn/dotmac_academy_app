@@ -1,0 +1,2 @@
+legacy_probe/services/test_a2_callsite_defaults.py::test_first_completion_with_certificate_keeps_historical_delivery
+legacy_probe/test_credential_policy_settings.py::test_valid_policy_write_flushes_without_committing

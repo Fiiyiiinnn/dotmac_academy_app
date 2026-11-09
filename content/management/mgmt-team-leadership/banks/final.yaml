@@ -1,0 +1,251 @@
+bank:
+  course: mgmt-team-leadership
+  kind: final
+  chapter: null
+  version: 2
+  policy:
+    mode: exam
+    max_attempts: 5
+    pool: 20
+  questions:
+    - id: tlf-01
+      stem: "A manager's four products are clarity, throughput, quality and growth. Which one is a team that only its manager can operate failing?"
+      type: single
+      options: ["Growth", "Clarity", "Quality", "Throughput"]
+      correct: ["Growth"]
+      rubric_category: recall
+      explanation: "A team that cannot run without you is a single point of failure you built."
+      weight: 1
+    - id: tlf-02
+      stem: "Delegation levels run from 'do exactly this' up to 'fully yours'. What should happen to a recurring responsibility over time?"
+      type: single
+      options: ["It moves up a level every few cycles", "It stays at the level first assigned", "It moves down whenever quality dips", "It alternates between two adjacent levels"]
+      correct: ["It moves up a level every few cycles"]
+      rubric_category: recall
+      explanation: "Level 1 is a teaching stage, not a resting place."
+      weight: 1
+    - id: tlf-03
+      stem: "The feedback structure is situation, behaviour, impact. What comes immediately after you have delivered all three?"
+      type: single
+      options: ["You stop and let them respond", "You propose the corrective action", "You agree a date to review it", "You record it in a written note"]
+      correct: ["You stop and let them respond"]
+      rubric_category: recall
+      explanation: "Half the time there is context you lack; the other half they draw the conclusion themselves."
+      weight: 1
+    - id: tlf-04
+      stem: "During a crisis, how often should you send an update when there is no news?"
+      type: single
+      options: ["On the interval you promised", "Only when something changes", "Twice as often as when there is", "When somebody asks you for one"]
+      correct: ["On the interval you promised"]
+      rubric_category: recall
+      explanation: "'Still working, next update at 15:00' is what prevents the anxious pinging that consumes your responders."
+      weight: 1
+    - id: tlf-05
+      stem: "Your best technician is at 130% load while the team sits at 80% overall. What should you do first?"
+      type: single
+      options: ["Rebalance the load before they raise it with you", "Ask whether they are comfortable with the workload", "Recognise the extra effort publicly at the team check", "Recruit, since the team is evidently short of capacity"]
+      correct: ["Rebalance the load before they raise it with you"]
+      rubric_category: application
+      explanation: "Reliable people attract work and the best ones do not complain until they resign."
+      weight: 1
+    - id: tlf-06
+      stem: "You have five people on 40-hour weeks and roughly a third of every week goes to unplanned requests. Committing all 200 hours to planned work is best described as:"
+      type: single
+      options: ["A decision to miss deadlines", "Ambitious but achievable planning", "Correct, since unplanned work varies", "Reasonable if the team agrees to it"]
+      correct: ["A decision to miss deadlines"]
+      rubric_category: application
+      explanation: "Plan against realistic available hours and hold a buffer for the unplanned work you predictably receive — about 133 hours here."
+      weight: 1
+    - id: tlf-07
+      stem: "A task you delegated comes back late and wrong. You had never said what 'done' looked like. Whose failure is it, and what follows?"
+      type: single
+      options: ["Yours — own the specification gap and re-specify before they redo it", "Theirs — they should have asked you what the finished work required", "Shared — both of you contributed, so treat it as a learning experience", "Neither — first attempts at unfamiliar work are expected to come back rough"]
+      correct: ["Yours — own the specification gap and re-specify before they redo it"]
+      rubric_category: application
+      explanation: "Separate specification failures from execution failures; the response to each is different."
+      weight: 1
+    - id: tlf-08
+      stem: "You are about to give corrective feedback to someone who did good work last week that you never mentioned. What should you do?"
+      type: single
+      options: ["Give the specific praise as its own thing, not as a cushion", "Open with the praise so the correction lands more gently", "Skip the praise, since raising it now would look manipulative", "Save both for the next scheduled one-to-one conversation"]
+      correct: ["Give the specific praise as its own thing, not as a cushion"]
+      rubric_category: application
+      explanation: "Specific positive feedback should far outnumber corrective feedback — that is what makes the corrective kind survivable."
+      weight: 1
+    - id: tlf-09
+      stem: "A shift ends and the outgoing technician tells the incoming one about an open fault in passing on the way out. What is missing?"
+      type: single
+      options: ["A written record and an explicit acceptance", "A note to the manager that the fault is open", "A time estimate for resolving the open fault", "An entry on the board describing the fault"]
+      correct: ["A written record and an explicit acceptance"]
+      rubric_category: application
+      explanation: "Until the receiver confirms, the sender still owns it — and verbal-only handovers degrade with tiredness."
+      weight: 1
+    - id: tlf-10
+      stem: "Which of these are genuinely your job as the manager rather than the team's? (Select all that apply.)"
+      type: multi
+      options: ["Maintaining one ranked priority order", "Deciding what new work displaces", "Choosing how each task is executed", "Removing the blockers people report"]
+      correct: ["Maintaining one ranked priority order", "Deciding what new work displaces", "Removing the blockers people report"]
+      rubric_category: application
+      explanation: "Setting priority and unblocking are yours; method belongs to the person doing the work wherever the constraints allow."
+      weight: 1
+    - id: tlf-11
+      stem: "Someone brings you a problem that is within their ability but new to them. Wherever the stakes allow, you should:"
+      type: single
+      options: ["Ask what they would do if you were not there", "Talk them through how you would approach it", "Solve it now and coach on the next occasion", "Pair with them so they can see it done once"]
+      correct: ["Ask what they would do if you were not there"]
+      rubric_category: application
+      explanation: "People commit to their own plans far harder than to yours — including when their approach is merely different."
+      weight: 1
+    - id: tlf-12
+      stem: "An outage has run for two hours and a director keeps asking for a fix time you do not have. What do you give them?"
+      type: single
+      options: ["Impact, what is being done, and the time of the next update", "Your team's best estimate, clearly labelled as an estimate only", "A commitment to call the moment the service is fully restored", "The technical detail of what has been ruled out so far today"]
+      correct: ["Impact, what is being done, and the time of the next update"]
+      rubric_category: application
+      explanation: "Never promise a fix time you do not have; give the time of your next update instead."
+      weight: 1
+    - id: tlf-13
+      stem: "You have been in post two weeks and can see three things to change. What do you do first?"
+      type: single
+      options: ["Fix the small irritation that everyone mentioned to you", "Set out the three changes at the next team meeting", "Wait a full quarter before changing anything at all", "Start with the change that has the largest impact"]
+      correct: ["Fix the small irritation that everyone mentioned to you"]
+      rubric_category: application
+      explanation: "Fixing a broken rota or a pointless report earns more trust than announcing a vision."
+      weight: 1
+    - id: tlf-14
+      stem: "A manager insists on approving every decision their team makes, however small. Which two of the four management products suffer most?"
+      type: single
+      options: ["Throughput and growth", "Clarity and quality", "Quality and throughput", "Growth and clarity"]
+      correct: ["Throughput and growth"]
+      rubric_category: analysis
+      explanation: "The approval queue slows the work and prevents anyone else developing judgement."
+      weight: 1
+    - id: tlf-15
+      stem: "Why is 'it is faster if I do it myself' true for a single task and wrong as a policy?"
+      type: single
+      options: ["It is faster once, but every task only you can do becomes a queue with one server", "It underestimates how long teaching a colleague the same task will really take", "It ignores that the manager's time is more expensive than the team member's", "It assumes the task will recur when in practice most tasks are one-off work"]
+      correct: ["It is faster once, but every task only you can do becomes a queue with one server"]
+      rubric_category: analysis
+      explanation: "Your absence, overload, or leave then becomes the team's outage."
+      weight: 1
+    - id: tlf-16
+      stem: "Two managers have identical stated standards. One tolerates late handovers; the other addresses them the first week. What actually differs?"
+      type: single
+      options: ["Their real standards — what you accept is the standard, whatever you state", "Their communication styles, which is largely a matter of personal preference", "The seniority of their teams, since experienced staff need less correction", "Their tolerance for conflict, which affects morale more than it does output"]
+      correct: ["Their real standards — what you accept is the standard, whatever you state"]
+      rubric_category: analysis
+      explanation: "Everyone else on the team is watching what you tolerate, and your best people notice first."
+      weight: 1
+    - id: tlf-17
+      stem: "A manager runs blameless reviews after every incident but rarely completes the resulting actions. What is the second-order cost?"
+      type: single
+      options: ["The team learns that reviews are theatre, so the honesty in them decays", "The incident log becomes unreliable as a record of what actually occurred", "The manager loses standing with the department above them over time", "Reviews start taking longer because old findings must be revisited first"]
+      correct: ["The team learns that reviews are theatre, so the honesty in them decays"]
+      rubric_category: analysis
+      explanation: "The candour a blameless review depends on is spent, not renewed, when nothing changes afterwards."
+      weight: 1
+    - id: tlf-18
+      stem: "Why does an unclear delegation usually surface as a performance problem rather than as a management one?"
+      type: single
+      options: ["The visible failure is theirs, and nobody audits the instruction that produced it", "Performance problems are simply more common than delegation problems are", "Managers are trained to diagnose performance and not to diagnose handovers", "The delay between the handover and the failure hides the connection entirely"]
+      correct: ["The visible failure is theirs, and nobody audits the instruction that produced it"]
+      rubric_category: analysis
+      explanation: "Most delegation failures are specification failures. Diagnose clarity before skill, obstacles, or will."
+      weight: 1
+    - id: tlf-19
+      stem: "A supervisor declares a crisis roughly monthly. When a genuine one arrives, why is the response slower than it should be?"
+      type: single
+      options: ["The signal has been spent — the team can no longer tell this one apart", "The team is already fatigued from the previous declared emergencies", "Nobody has been trained in the incident procedure for a real event", "The supervisor will have lost the authority to direct people by then"]
+      correct: ["The signal has been spent — the team can no longer tell this one apart"]
+      rubric_category: analysis
+      explanation: "Declare crisis mode rarely and end it explicitly, or the word stops carrying information."
+      weight: 1
+    - id: tlf-20
+      stem: "A new manager protects their hands-on work and lets planning, feedback and one-to-ones absorb whatever the week throws at them. What is the underlying error?"
+      type: single
+      options: ["They are defending the minority activity and sacrificing their actual output", "They have taken on more hands-on work than the role was designed to carry", "They have not yet been given the authority to decline the hands-on requests", "They are managing their own time rather than delegating the scheduling of it"]
+      correct: ["They are defending the minority activity and sacrificing their actual output"]
+      rubric_category: analysis
+      explanation: "Hands-on work is the scheduled minority you give up under pressure; the management half is what you protect."
+      weight: 1
+    - id: tlf-21
+      stem: "Delegation levels run from 'do exactly this' to 'fully yours'. What does level 2 ask of the person?"
+      type: single
+      options: ["Gather the facts so you decide together", "Decide, then tell you before acting", "Act, and report what they did", "Follow the steps you set out"]
+      correct: ["Gather the facts so you decide together"]
+      rubric_category: recall
+      explanation: "Level 2 is investigate-then-decide-jointly; the decision has not moved to them yet."
+      weight: 1
+    - id: tlf-22
+      stem: "The four roots of underperformance are unclear expectations, missing skills, obstacles, and:"
+      type: single
+      options: ["Will", "Attitude", "Workload", "Supervision"]
+      correct: ["Will"]
+      rubric_category: recall
+      explanation: "The rarest of the four, and the only one that is a discipline problem."
+      weight: 1
+    - id: tlf-23
+      stem: "Your team's board shows nine items and three people are carrying significant work that is not on it. What is the first thing to fix?"
+      type: single
+      options: ["Get the untracked work onto the board", "Rebalance the load across the nine items", "Reduce the number of items in progress", "Add owners to the items that lack them"]
+      correct: ["Get the untracked work onto the board"]
+      rubric_category: application
+      explanation: "Every plan built on a partial board is fiction, so nothing downstream is worth doing first."
+      weight: 1
+    - id: tlf-24
+      stem: "A team member asks how to handle a supplier who has missed a second deadline. They could work it out. What do you say?"
+      type: single
+      options: ["What have you tried, and what are the options?", "Here is exactly how I would handle it", "Escalate it to me and I will call them", "Send them the contract's delay clause"]
+      correct: ["What have you tried, and what are the options?"]
+      rubric_category: application
+      explanation: "Solving it now guarantees the same question tomorrow; coaching builds the judgement that stops it recurring."
+      weight: 1
+    - id: tlf-25
+      stem: "An incident has run four hours. Your director messages every ten minutes asking for progress. What do you do?"
+      type: single
+      options: ["Set an update interval and hold it", "Reply to each message as it lands", "Ask them to route questions through email", "Delegate the replies to a team member"]
+      correct: ["Set an update interval and hold it"]
+      rubric_category: application
+      explanation: "A promised rhythm absorbs the anxiety that otherwise consumes the people fixing the fault."
+      weight: 1
+    - id: tlf-26
+      stem: "Which belong in a written handover between shifts? (Select all that apply.)"
+      type: multi
+      options: ["Each open item and its status", "The next action on each", "Anything unusual encountered", "A list of completed routine work"]
+      correct: ["Each open item and its status", "The next action on each", "Anything unusual encountered"]
+      rubric_category: application
+      explanation: "Completed routine work is already recorded; the handover carries what is still owed."
+      weight: 1
+    - id: tlf-27
+      stem: "You have five people on 40-hour weeks. Roughly a third of each week goes to unplanned requests. How many hours of planned work should you commit, to the nearest hour?"
+      type: numeric
+      options:
+        tolerance: 3
+      correct: 133
+      rubric_category: application
+      explanation: "200 hours less the third that unplanned work reliably takes. Committing all 200 is a decision to miss deadlines."
+      weight: 1
+    - id: tlf-28
+      stem: "Why does a manager who never assigns work beyond proven ability cap the team permanently?"
+      type: single
+      options: ["Growth only happens in the gap past current ability", "The team loses interest without fresh challenges", "Stronger performers leave for better opportunities", "The manager becomes the only source of new skills"]
+      correct: ["Growth only happens in the gap past current ability"]
+      rubric_category: analysis
+      explanation: "Stretch assignments are the raw material of coaching; without them the team stays exactly its current size."
+      weight: 1
+    - id: tlf-29
+      stem: "Two managers hold identical stated standards. One addresses a late handover in the first week; the other lets it pass. What actually differs?"
+      type: single
+      options: ["Their real standard, which is what they tolerate", "Their communication style and directness", "Their tolerance for uncomfortable conversations", "The seniority of the people they manage"]
+      correct: ["Their real standard, which is what they tolerate"]
+      rubric_category: analysis
+      explanation: "The team reads what is accepted, not what is announced, and the best people notice first."
+      weight: 1
+    - id: tlf-30
+      stem: "A manager runs blameless reviews but the agreed fixes rarely get done. What has the review become?"
+      type: single
+      options: ["Theatre, and the candour it relies on decays", "A record that is still useful for the timeline", "A morale exercise with some residual value", "An early-warning system for repeat incidents"]
+      correct: ["Theatre, and the candour it relies on decays"]
+      rubric_category: analysis
+      explanation: "Honesty in a review is spent, not renewed, when nothing changes afterwards."
+      weight: 1

@@ -1,0 +1,252 @@
+bank:
+  course: mgmt-project-management
+  kind: final
+  chapter: null
+  version: 2
+  policy:
+    mode: exam
+    max_attempts: 5
+    pool: 20
+  questions:
+    - id: pmf-01
+      stem: "A project is defined by:"
+      type: single
+      options: ["Its ending", "Its budget", "Its sponsor", "Its team"]
+      correct: ["Its ending"]
+      rubric_category: recall
+      explanation: "Temporary, with a defined result — otherwise it is an expensive habit."
+      weight: 1
+    - id: pmf-02
+      stem: "The critical path is the chain of tasks that:"
+      type: single
+      options: ["Sets the earliest finish", "Costs the most to run", "Carries the most risk", "Uses the most people"]
+      correct: ["Sets the earliest finish"]
+      rubric_category: recall
+      explanation: "Delay there moves the end date one-for-one."
+      weight: 1
+    - id: pmf-03
+      stem: "A milestone must be:"
+      type: single
+      options: ["Binary — done or not", "Reached within a month", "Tied to a payment", "Owned by the sponsor"]
+      correct: ["Binary — done or not"]
+      rubric_category: recall
+      explanation: "One that can be '90% done' is a task wearing a sash."
+      weight: 1
+    - id: pmf-04
+      stem: "A hold point inspects work that is about to be:"
+      type: single
+      options: ["Covered up", "Handed over", "Paid for", "Repeated"]
+      correct: ["Covered up"]
+      rubric_category: recall
+      explanation: "Foundations, wiring, waterproofing — checked before they disappear."
+      weight: 1
+    - id: pmf-05
+      stem: "Which risk verb pairs a contingency plan with a tripwire?"
+      type: single
+      options: ["Prepare", "Reduce", "Accept", "Transfer"]
+      correct: ["Prepare"]
+      rubric_category: recall
+      explanation: "The trigger is decided in advance so the response fires on evidence, not after a week of hoping."
+      weight: 1
+    - id: pmf-06
+      stem: "Handover transfers ownership only when the receiver:"
+      type: single
+      options: ["Explicitly accepts it", "Has been trained on it", "Signs the punch list", "Holds the run-book"]
+      correct: ["Explicitly accepts it"]
+      rubric_category: recall
+      explanation: "And can actually operate what they are receiving."
+      weight: 1
+    - id: pmf-07
+      stem: "A 120-day plan carries 15% contingency. How many days is the buffer?"
+      type: numeric
+      options:
+        tolerance: 1
+      correct: 18
+      rubric_category: application
+      explanation: "0.15 x 120 = 18 days, held openly at project level rather than hidden in task estimates."
+      weight: 1
+    - id: pmf-08
+      stem: "A ₦4,200,000 contract holds 10% retention until acceptance. How much is held, in naira?"
+      type: numeric
+      options:
+        tolerance: 1000
+      correct: 420000
+      rubric_category: application
+      explanation: "₦420,000 — the leverage that survives until the defects clear."
+      weight: 1
+    - id: pmf-09
+      stem: "A charter states the outcome as 'improve the warehouse'. What has been missed?"
+      type: single
+      options: ["A finished state anyone could recognise", "The name of the person accountable", "The budget available for the work", "The date the work must complete by"]
+      correct: ["A finished state anyone could recognise"]
+      rubric_category: application
+      explanation: "Concrete enough that everyone would agree, looking at it, that it is done."
+      weight: 1
+    - id: pmf-10
+      stem: "Which part of the scope statement prevents the most argument?"
+      type: single
+      options: ["What the project will not do", "The deliverables to be produced", "The tasks and their owners", "The milestones and their dates"]
+      correct: ["What the project will not do"]
+      rubric_category: application
+      explanation: "The boundary is where the arguments happen."
+      weight: 1
+    - id: pmf-11
+      stem: "A task has read '90% done' for three weeks. How is it tracked?"
+      type: single
+      options: ["Not done", "Nearly done", "Done with defects", "Blocked"]
+      correct: ["Not done"]
+      rubric_category: application
+      explanation: "The last tenth contains the problem."
+      weight: 1
+    - id: pmf-12
+      stem: "A stakeholder requests a small addition. What is the reply that protects project and relationship?"
+      type: single
+      options: ["Yes, through the gate — here is the price", "No, the scope was fixed at the start", "Yes, if it really is only an afternoon", "Yes, and we will find it in contingency"]
+      correct: ["Yes, through the gate — here is the price"]
+      rubric_category: application
+      explanation: "Half of requests evaporate when priced; the survivors were worth doing properly."
+      weight: 1
+    - id: pmf-13
+      stem: "A change would move the end date. Who decides?"
+      type: single
+      options: ["The sponsor", "The project lead", "The change board", "The delivery team"]
+      correct: ["The sponsor"]
+      rubric_category: application
+      explanation: "Date, budget and outcome are the sponsor's trade-offs."
+      weight: 1
+    - id: pmf-14
+      stem: "Which categories of work are most often absent from a plan entirely? (Select all that apply.)"
+      type: multi
+      options: ["Approvals and sign-offs", "Training and handover", "Testing and rework", "The primary deliverable"]
+      correct: ["Approvals and sign-offs", "Training and handover", "Testing and rework"]
+      rubric_category: application
+      explanation: "Plans overrun less because tasks ran long than because whole categories were never listed."
+      weight: 1
+    - id: pmf-15
+      stem: "An approval is stated to take two weeks. From when does that run?"
+      type: single
+      options: ["A complete submission", "The first contact made", "The project's request", "The office's acknowledgement"]
+      correct: ["A complete submission"]
+      rubric_category: application
+      explanation: "Projects lose a month by submitting late paperwork punctually."
+      weight: 1
+    - id: pmf-16
+      stem: "The permit has not arrived and the site team wants to start covered work. What is this?"
+      type: single
+      options: ["An explicit sponsor-level risk decision", "A normal judgement for the site lead", "Acceptable if the permit is imminent", "Fine where the work is reversible"]
+      correct: ["An explicit sponsor-level risk decision"]
+      rubric_category: application
+      explanation: "Building past an ungranted approval bets on someone else's decision and hands them leverage."
+      weight: 1
+    - id: pmf-17
+      stem: "A supplier is about to repeat an installation fifty times. What comes first?"
+      type: single
+      options: ["Approving the first as the benchmark", "Agreeing the inspection schedule", "Confirming the specification covers it", "Requesting a written method statement"]
+      correct: ["Approving the first as the benchmark"]
+      rubric_category: application
+      explanation: "First-article approval turns 'like that one' into the standard."
+      weight: 1
+    - id: pmf-18
+      stem: "You have occupied and started using the delivered space, unsigned. What is the position?"
+      type: single
+      options: ["You have accepted it in practice", "Acceptance still awaits signature", "The punch list must clear first", "Retention can still be withheld"]
+      correct: ["You have accepted it in practice"]
+      rubric_category: application
+      explanation: "Occupying, using or paying is acceptance whatever the paperwork says."
+      weight: 1
+    - id: pmf-19
+      stem: "Spend is 20% over budget while progress runs 30% ahead. How is that read?"
+      type: single
+      options: ["The plan working, not an overspend", "A variance needing formal explanation", "Evidence the estimates were too low", "An overspend to recover later on"]
+      correct: ["The plan working, not an overspend"]
+      rubric_category: application
+      explanation: "The number matters less than the story it belongs to."
+      weight: 1
+    - id: pmf-20
+      stem: "A slip of three weeks becomes clear at month three of six. What do you do?"
+      type: single
+      options: ["Disclose now, with options attached", "Attempt recovery, then report it", "Report it at the next milestone", "Absorb it into the contingency"]
+      correct: ["Disclose now, with options attached"]
+      rubric_category: application
+      explanation: "Early bad news costs discomfort; late bad news costs trust, and trust is what the next approval runs on."
+      weight: 1
+    - id: pmf-21
+      stem: "The project team has 'supported' the new system for four months. What was missed?"
+      type: single
+      options: ["An explicit end to the support window", "Sufficient training for the operators", "Complete handover documentation", "A defects list driven down to zero"]
+      correct: ["An explicit end to the support window"]
+      rubric_category: application
+      explanation: "Otherwise the project team becomes the permanent unpaid operations team."
+      weight: 1
+    - id: pmf-22
+      stem: "Technical difficulty is missing from the standard causes of overrun. What does that indicate?"
+      type: single
+      options: ["Projects fail at managing the work, not doing it", "Technical risks are identified early and handled", "Most projects are simpler than teams expect", "Technical problems get absorbed by contingency"]
+      correct: ["Projects fail at managing the work, not doing it"]
+      rubric_category: analysis
+      explanation: "Definition, estimation, decisions and honesty are what get skipped."
+      weight: 1
+    - id: pmf-23
+      stem: "A schedule is compressed by decree with no change to scope, people or accepted risk. What has happened?"
+      type: single
+      options: ["The truth has moved to the expensive end", "The team has been given a stretch target", "A risk has been created that needs logging", "An optimistic estimate has been corrected"]
+      correct: ["The truth has moved to the expensive end"]
+      rubric_category: analysis
+      explanation: "A shorter date is buyable — with scope, people or risk, chosen explicitly."
+      weight: 1
+    - id: pmf-24
+      stem: "A project reported green for four months, then declared a six-week slip. What was the real failure?"
+      type: single
+      options: ["Honesty was more expensive than silence", "The tracking system did not detect it", "The plan lacked milestones to show it", "The team was under-resourced throughout"]
+      correct: ["Honesty was more expensive than silence"]
+      rubric_category: analysis
+      explanation: "On troubled projects everyone knows before anyone says."
+      weight: 1
+    - id: pmf-25
+      stem: "A supplier who raised a problem early got a difficult meeting about it. What did that purchase?"
+      type: single
+      options: ["Problems buried under the next layer of work", "A supplier who works more carefully from now", "A relationship needing repair before next stage", "A reputation for enforcing the agreed standard"]
+      correct: ["Problems buried under the next layer of work"]
+      rubric_category: analysis
+      explanation: "Keep honesty safe outward, or defects surface only when they are expensive."
+      weight: 1
+    - id: pmf-26
+      stem: "Rejecting work against a stricter standard than you specified is:"
+      type: single
+      options: ["A variation to negotiate honestly", "A proper use of the acceptance gate", "A defect the supplier must correct", "Grounds to withhold the retention"]
+      correct: ["A variation to negotiate honestly"]
+      rubric_category: analysis
+      explanation: "Judge against the standard you specified; if it was wrong, that is a lesson for the next spec."
+      weight: 1
+    - id: pmf-27
+      stem: "A lead reports each slip honestly, month after month, and the date keeps moving. What is missing?"
+      type: single
+      options: ["A re-plan offering the sponsor priced options", "A firmer commitment from the delivery team", "A shorter interval between status reports", "A revised register covering the new slips"]
+      correct: ["A re-plan offering the sponsor priced options"]
+      rubric_category: analysis
+      explanation: "Narrating the slide is not managing it."
+      weight: 1
+    - id: pmf-28
+      stem: "A project no longer clears the business case that justified it. What is the management move?"
+      type: single
+      options: ["Stop it — the right ending is a success", "Cut scope until the case works again", "Continue, as the money is committed", "Pause until conditions improve again"]
+      correct: ["Stop it — the right ending is a success"]
+      rubric_category: analysis
+      explanation: "Sunk costs stay sunk, and the slow-motion failure is the expensive kind of politeness."
+      weight: 1
+    - id: pmf-29
+      stem: "Why does honest estimating on the next project depend on this project's closeout?"
+      type: single
+      options: ["Someone must record what things really took", "Estimators need the previous project's plan", "Historical figures require formal approval", "Comparable work is identified at closeout"]
+      correct: ["Someone must record what things really took"]
+      rubric_category: analysis
+      explanation: "The history that beats memory exists only if the closing project deposits it."
+      weight: 1
+    - id: pmf-30
+      stem: "A project ends but nobody declares it over. What follows?"
+      type: single
+      options: ["A ghost that haunts calendars and budgets", "A team reassigned without any handover", "Documentation that never gets completed", "Benefits that are never measured at all"]
+      correct: ["A ghost that haunts calendars and budgets"]
+      rubric_category: analysis
+      explanation: "Declared endings return attention — the scarcest resource — to whatever comes next."
+      weight: 1

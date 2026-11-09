@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-customer-experience
+  kind: chapter
+  chapter: 2
+  version: 2
+  policy:
+    mode: practice
+  questions:
+    - id: cx2-01
+      stem: "The five complaint states run: captured, acknowledged, resolved, learned from, and:"
+      type: single
+      options: ["Confirmed", "Escalated", "Reviewed", "Archived"]
+      correct: ["Confirmed"]
+      rubric_category: recall
+      explanation: "Confirmed means the customer agrees it is resolved — asked, not assumed."
+      weight: 1
+    - id: cx2-02
+      stem: "How many named owners does a complaint have from capture to confirmation?"
+      type: single
+      options: ["One", "One per department involved", "One per stage of the lifecycle", "Whoever is on shift at the time"]
+      correct: ["One"]
+      rubric_category: recall
+      explanation: "Others contribute; the owner carries."
+      weight: 1
+    - id: cx2-03
+      stem: "A complaint was resolved technically and the ticket closed, but nobody asked the customer. What has the business done?"
+      type: single
+      options: ["Convinced itself it is improving while the customer leaves", "Saved the time that a confirmation call would have taken", "Closed correctly, since the underlying fault was genuinely fixed", "Left the record incomplete for the purposes of later analysis"]
+      correct: ["Convinced itself it is improving while the customer leaves"]
+      rubric_category: application
+      explanation: "Resolution is defined by the customer's problem being addressed, not by your ticket being closed."
+      weight: 1
+    - id: cx2-04
+      stem: "A complaint must transfer at shift end. What does the customer need to be told?"
+      type: single
+      options: ["Who now has it, and that they hold the full history", "That the case has moved to the next available agent", "That the transfer will not delay the resolution time", "Nothing, provided the internal handover is complete"]
+      correct: ["Who now has it, and that they hold the full history"]
+      rubric_category: application
+      explanation: "The customer should never re-explain from the beginning — needing to is proof that ownership dropped."
+      weight: 1
+    - id: cx2-05
+      stem: "Your frontline can only apologise and escalate every fix to a manager. What have you actually built?"
+      type: single
+      options: ["A complaint routing system rather than a handling one", "A control that prevents inconsistent remedies being given", "A bottleneck that will clear once managers are better staffed", "A training gap that will close as the frontline gains experience"]
+      correct: ["A complaint routing system rather than a handling one"]
+      rubric_category: application
+      explanation: "Bounded authority — defined amounts and actions, reviewed after the fact rather than pre-approved each time."
+      weight: 1
+    - id: cx2-06
+      stem: "Which must escalate immediately rather than being handled at first contact? (Select all that apply.)"
+      type: multi
+      options: ["A legal threat from the customer", "A safety issue arising from the fault", "A systemic failure affecting many customers", "A request to reverse a small charge"]
+      correct: ["A legal threat from the customer", "A safety issue arising from the fault", "A systemic failure affecting many customers"]
+      rubric_category: application
+      explanation: "Escalation done right is the owner bringing in bigger tools, not the owner letting go."
+      weight: 1
+    - id: cx2-07
+      stem: "A customer is shouting and has been for two minutes. What do you do?"
+      type: single
+      options: ["Let them finish, then acknowledge the frustration", "Interrupt politely to establish the facts of the case", "Apologise immediately to bring the temperature down", "Explain what went wrong so they understand the cause"]
+      correct: ["Let them finish, then acknowledge the frustration"]
+      rubric_category: application
+      explanation: "Venting uninterrupted removes half the pressure; interruption restarts it."
+      weight: 1
+    - id: cx2-08
+      stem: "Why does a complaint aging past its target time need to escalate automatically rather than on request?"
+      type: single
+      options: ["So aging cases become visible before the customer gives up on you", "So the owner is held accountable for the delay that has occurred", "So the manager can reassign it to someone with more capacity", "So the customer receives an update from a more senior person"]
+      correct: ["So aging cases become visible before the customer gives up on you"]
+      rubric_category: analysis
+      explanation: "Not as punishment — as a tripwire, because nobody volunteers the case that is quietly slipping."
+      weight: 1
+    - id: cx2-09
+      stem: "Most unhappy customers never complain. What does that make each complaint you do receive?"
+      type: single
+      options: ["A relationship still open and a defect report from the field", "A signal that the underlying problem is worse than it appears", "An indicator of the customers most likely to leave next", "Evidence that your complaint channels are working correctly"]
+      correct: ["A relationship still open and a defect report from the field"]
+      rubric_category: analysis
+      explanation: "The rest simply leave and tell their friends why — which is why the ones who speak are doubly valuable."
+      weight: 1
+    - id: cx2-10
+      stem: "Twelve customers complain about the same billing behaviour this quarter. What has changed about how you should treat it?"
+      type: single
+      options: ["It is no longer an incident but a defect with a queue", "It should be escalated to the manager responsible for billing", "It justifies a proactive message to all affected customers", "It requires a review of how the complaints were categorised"]
+      correct: ["It is no longer an incident but a defect with a queue"]
+      rubric_category: analysis
+      explanation: "One complaint is an incident; twelve about the same thing is the learned-from state doing its job."
+      weight: 1

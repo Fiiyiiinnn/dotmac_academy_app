@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-communication
+  kind: chapter
+  chapter: 3
+  version: 2
+  policy:
+    mode: practice
+  questions:
+    - id: cm3-01
+      stem: "Compression in an upward brief must be achieved by:"
+      type: single
+      options: ["Selection", "Rounding", "Summarising", "Simplifying"]
+      correct: ["Selection"]
+      rubric_category: recall
+      explanation: "Shorten by selection, never by distortion. Your compression is trusted exactly once."
+      weight: 1
+    - id: cm3-02
+      stem: "The spoken form of conclusion-first is:"
+      type: single
+      options: ["Answer, reason, caveat", "Context, answer, plan", "Question, options, ask", "Summary, detail, close"]
+      correct: ["Answer, reason, caveat"]
+      rubric_category: recall
+      explanation: "Evasive-sounding answers are usually preparation dumped in narrative order."
+      weight: 1
+    - id: cm3-03
+      stem: "Your director asks 'will it be done by Friday?' The honest position is that it will slip to Tuesday. What do you say first?"
+      type: single
+      options: ["No — Tuesday, because the parts arrive Monday", "Let me walk you through where we currently are", "It depends on whether the parts arrive on time", "We are doing everything possible to hit Friday"]
+      correct: ["No — Tuesday, because the parts arrive Monday"]
+      rubric_category: application
+      explanation: "Answer the question that was asked, first and directly, then add the reason."
+      weight: 1
+    - id: cm3-04
+      stem: "You have three viable options for a decision your manager must make. What goes in the brief?"
+      type: single
+      options: ["All three, ranked, with a named recommendation", "The one you consider strongest, with its reasoning", "All three described neutrally so they can choose", "Two options plus the do-nothing case for comparison"]
+      correct: ["All three, ranked, with a named recommendation"]
+      rubric_category: application
+      explanation: "The option-dump feels respectful and actually exports your homework. You are closer to the facts than they are."
+      weight: 1
+    - id: cm3-05
+      stem: "A project in your area has stalled badly and you think you can recover it quietly within two weeks. What do you do?"
+      type: single
+      options: ["Tell your manager now, with impact and your plan", "Recover it first, then report what happened", "Flag it as a risk without the full detail yet", "Wait until the two weeks confirm the recovery"]
+      correct: ["Tell your manager now, with impact and your plan"]
+      rubric_category: application
+      explanation: "Their ability to help or shield is largest when the problem is young, and they must never hear it from someone else."
+      weight: 1
+    - id: cm3-06
+      stem: "You are asked a question in a senior meeting and you genuinely do not know the answer. What is the strongest response?"
+      type: single
+      options: ["I don't know — I'll have it by four o'clock", "My best estimate is around three weeks", "I'd rather not guess at this stage", "Let me check and come back to you soon"]
+      correct: ["I don't know — I'll have it by four o'clock"]
+      rubric_category: application
+      explanation: "That answer, delivered reliably, builds more credibility than fluent guessing — and guesses are always discovered."
+      weight: 1
+    - id: cm3-07
+      stem: "You need two weeks of a colleague's time, which will push another piece of work. How do you frame the request upward?"
+      type: single
+      options: ["As a trade-off: what it costs, what it delays, why it is worth it", "As a resourcing request with the dates and the person named", "As a risk to the current plan if the time is not made available", "As a decision for your manager between the two pieces of work"]
+      correct: ["As a trade-off: what it costs, what it delays, why it is worth it"]
+      rubric_category: application
+      explanation: "Translate into their decision terms: effort becomes cost, delay becomes impact, requests become trade-offs."
+      weight: 1
+    - id: cm3-08
+      stem: "A manager summarises a genuinely mixed picture as broadly positive. Why is this worse than being wrong?"
+      type: single
+      options: ["It converts a brief into something that cannot be relied on at all", "It delays the intervention that the difficult parts actually required", "It sets an expectation the next report will have to contradict", "It removes the manager's own ability to ask for help later on"]
+      correct: ["It converts a brief into something that cannot be relied on at all"]
+      rubric_category: analysis
+      explanation: "Dropping detail is your job; dropping the inconvenient risk is how briefs become lies with good formatting."
+      weight: 1
+    - id: cm3-09
+      stem: "A manager brings neutral option-dumps upward twice in a row. What have they taught their director?"
+      type: single
+      options: ["That they are a messenger rather than a manager", "That they are careful not to overstep their remit", "That the decisions are harder than they appear", "That they need more support to reach a view"]
+      correct: ["That they are a messenger rather than a manager"]
+      rubric_category: analysis
+      explanation: "Being overruled is fine and instructive. Bringing no recommendation is the only losing move."
+      weight: 1
+    - id: cm3-10
+      stem: "Why do managers who escalate problems early with plans attached tend to gain autonomy rather than lose it?"
+      type: single
+      options: ["Their reporting becomes the early-warning system leadership can rely on", "Their problems are smaller by the time anyone senior has to act on them", "Their willingness to escalate signals they understand the limits of their remit", "Their record of solved problems accumulates faster than their record of failures"]
+      correct: ["Their reporting becomes the early-warning system leadership can rely on"]
+      rubric_category: analysis
+      explanation: "The value is the reliability of the signal, not the size of any individual problem."
+      weight: 1

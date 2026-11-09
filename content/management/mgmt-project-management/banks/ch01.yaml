@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-project-management
+  kind: chapter
+  chapter: 1
+  version: 2
+  policy:
+    mode: practice
+  questions:
+    - id: pm1-01
+      stem: "A project is defined by:"
+      type: single
+      options: ["Its ending", "Its budget", "Its team", "Its sponsor"]
+      correct: ["Its ending"]
+      rubric_category: recall
+      explanation: "Temporary, with a defined result. Work that runs for years with no finish line is an expensive habit."
+      weight: 1
+    - id: pm1-02
+      stem: "Every project trades between scope, time and:"
+      type: single
+      options: ["Cost", "Risk", "Quality", "People"]
+      correct: ["Cost"]
+      rubric_category: recall
+      explanation: "Pretending all three are fixed means the trade-off gets made later and silently, usually as quality."
+      weight: 1
+    - id: pm1-03
+      stem: "A project charter says the outcome is 'improve the warehouse'. What is wrong with it?"
+      type: single
+      options: ["Nobody could recognise the finished state", "It does not name who is accountable for it", "It gives no indication of the budget available", "It fails to state when the work should finish"]
+      correct: ["Nobody could recognise the finished state"]
+      rubric_category: application
+      explanation: "The outcome must be concrete enough that everyone would agree, looking at it, that it is done."
+      weight: 1
+    - id: pm1-04
+      stem: "Which part of a scope statement does most to prevent arguments later?"
+      type: single
+      options: ["The list of what the project will not do", "The list of deliverables to be produced", "The breakdown of tasks and their owners", "The schedule of milestones and dates"]
+      correct: ["The list of what the project will not do"]
+      rubric_category: application
+      explanation: "The boundary is where the arguments happen, so writing the exclusions is more protective than the inclusions."
+      weight: 1
+    - id: pm1-05
+      stem: "Your resourcing plan says 'Amina will do it alongside her day job'. What has just been recorded?"
+      type: single
+      options: ["A hope, in the place where a fact belongs", "A reasonable allocation for a small project", "A risk that should be added to the register", "A decision that the sponsor needs to approve"]
+      correct: ["A hope, in the place where a fact belongs"]
+      rubric_category: application
+      explanation: "Actual availability is a planning fact, and this is the most common resourcing lie in small-business projects."
+      weight: 1
+    - id: pm1-06
+      stem: "Which three roles must be filled by name before work starts? (Select all that apply.)"
+      type: multi
+      options: ["A sponsor who owns the why", "One accountable project lead", "Doers with real availability", "A dedicated quality inspector"]
+      correct: ["A sponsor who owns the why", "One accountable project lead", "Doers with real availability"]
+      rubric_category: application
+      explanation: "Titles vary; these three functions do not. Shared leadership of a project is no leadership."
+      weight: 1
+    - id: pm1-07
+      stem: "Scope, time and cost have collided on your project. Who decides which one bends?"
+      type: single
+      options: ["The sponsor", "The project lead", "The steering group", "The delivery team"]
+      correct: ["The sponsor"]
+      rubric_category: application
+      explanation: "The sponsor owns the why and pays for the result, so the trade-off is theirs."
+      weight: 1
+    - id: pm1-08
+      stem: "Technical difficulty is absent from the standard list of overrun causes. What does that tell you?"
+      type: single
+      options: ["Projects fail at the management of the work, not the work", "Technical risk is usually identified and handled early", "Most projects are simpler than their teams expect them to be", "Technical problems are absorbed into the schedule contingency"]
+      correct: ["Projects fail at the management of the work, not the work"]
+      rubric_category: analysis
+      explanation: "Definition, estimation, decisions and honesty are what get skipped — not the engineering."
+      weight: 1
+    - id: pm1-09
+      stem: "A project reported green for four months and then declared a six-week slip. What was the real failure?"
+      type: single
+      options: ["Reporting a problem felt like admitting failure", "The slip was not detected by the tracking system", "The plan lacked the milestones to show progress", "The team was not given the resources it needed"]
+      correct: ["Reporting a problem felt like admitting failure"]
+      rubric_category: analysis
+      explanation: "On troubled projects everyone knows before anyone says. The status was green because honesty was expensive."
+      weight: 1
+    - id: pm1-10
+      stem: "A project has no named decision-maker. What actually happens to the decisions?"
+      type: single
+      options: ["They queue, and the queue is a hidden cost", "They get taken by whoever is available", "They escalate automatically to the sponsor", "They are made collectively by the team"]
+      correct: ["They queue, and the queue is a hidden cost"]
+      rubric_category: analysis
+      explanation: "A project without a decider does not avoid decisions; it accrues decision debt while waiting."
+      weight: 1

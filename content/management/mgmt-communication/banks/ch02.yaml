@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-communication
+  kind: chapter
+  chapter: 2
+  version: 2
+  policy:
+    mode: practice
+  questions:
+    - id: cm2-01
+      stem: "The work order for a report runs:"
+      type: single
+      options: ["Conclusion, meaning, support, detail", "Background, analysis, evidence, conclusion", "Context, timeline, findings, recommendation", "Summary, background, options, next steps"]
+      correct: ["Conclusion, meaning, support, detail"]
+      rubric_category: recall
+      explanation: "Everyone reads the first lines; some read the middle; almost nobody reads to the end."
+      weight: 1
+    - id: cm2-02
+      stem: "An incident report must distinguish between:"
+      type: single
+      options: ["What is confirmed and what is suspected", "What is urgent and what can wait", "What is technical and what is commercial", "What is internal and what is customer-facing"]
+      correct: ["What is confirmed and what is suspected"]
+      rubric_category: recall
+      explanation: "Writing while the cause is only partly known is normal; presenting a suspicion as a finding is not."
+      weight: 1
+    - id: cm2-03
+      stem: "Your draft opens: 'I am writing to provide a comprehensive update regarding recent developments on the site.' What is the edit?"
+      type: single
+      options: ["Delete it and start where the content starts", "Move it below the summary of what happened", "Shorten it to a single introductory clause", "Replace it with the date and the site name"]
+      correct: ["Delete it and start where the content starts"]
+      rubric_category: application
+      explanation: "Throat-clearing says nothing and spends the two sentences that were guaranteed to be read."
+      weight: 1
+    - id: cm2-04
+      stem: "You need spend approval, and it currently sits in the fourth paragraph of your report. What do you do?"
+      type: single
+      options: ["Pull it out as a separated ask with a name and a date", "Move it to the opening line of the report's summary", "Repeat it at both the beginning and the end of the report", "Send a separate message pointing the reader to the request"]
+      correct: ["Pull it out as a separated ask with a name and a date"]
+      rubric_category: application
+      explanation: "Buried requests license the reader to miss them. 'Please advise' is not an ask."
+      weight: 1
+    - id: cm2-05
+      stem: "Which belong in a status report? (Select all that apply.)"
+      type: multi
+      options: ["One-line overall state, committed to", "What was done and what is next", "Risks and blockers with what you need", "The history of the effort so far"]
+      correct: ["One-line overall state, committed to", "What was done and what is next", "Risks and blockers with what you need"]
+      rubric_category: application
+      explanation: "On track, at risk, or blocked — pick one. The history of your effort changes nothing for the reader."
+      weight: 1
+    - id: cm2-06
+      stem: "A section lists three risks inside one long paragraph, while another renders its reasoning as fifteen fragments. What is the fix for each?"
+      type: single
+      options: ["Bullet the risks; return the reasoning to prose", "Bullet both, since bullets are easier to scan", "Leave the risks; shorten the fifteen fragments", "Convert both into a single summary table"]
+      correct: ["Bullet the risks; return the reasoning to prose"]
+      rubric_category: application
+      explanation: "Bullets carry items; prose carries reasoning. A report that is all bullets has stopped explaining."
+      weight: 1
+    - id: cm2-07
+      stem: "Your report states 'downtime was 4.2 hours'. What is missing?"
+      type: single
+      options: ["What the figure means against a comparison", "The period the figure was measured over", "The method by which it was calculated", "The threshold it was supposed to meet"]
+      correct: ["What the figure means against a comparison"]
+      rubric_category: application
+      explanation: "'Downtime doubled versus last month' informs; a bare figure makes the reader do the analysis you were paid to do."
+      weight: 1
+    - id: cm2-08
+      stem: "Why does writing for the reader your report might be forwarded to also work as an honesty check?"
+      type: single
+      options: ["A report you would not want forwarded is usually shading the truth somewhere", "Forwarded reports are read by people with the authority to verify claims", "Naming things fully makes it harder to leave inconvenient details out", "A stranger cannot supply the context that would excuse a weak result"]
+      correct: ["A report you would not want forwarded is usually shading the truth somewhere"]
+      rubric_category: analysis
+      explanation: "A reputation for unvarnished reports compounds; the first discovered varnish cancels it."
+      weight: 1
+    - id: cm2-09
+      stem: "A manager's reports are thorough, chronological, and reliably ignored. What is the structural cause?"
+      type: single
+      options: ["The conclusion arrives after the readers have stopped reading", "The reports are longer than the readers have time to consume", "The reports lack the visual structure that makes them scannable", "The manager sends them to a wider audience than actually needs them"]
+      correct: ["The conclusion arrives after the readers have stopped reading"]
+      rubric_category: analysis
+      explanation: "The school order buries the answer. Structure for how reports are actually consumed and every class of reader gets served."
+      weight: 1
+    - id: cm2-10
+      stem: "Why is 'no action needed, for your awareness' worth writing explicitly?"
+      type: single
+      options: ["It lets the reader file the report without wondering what they owe you", "It shortens the report by removing the need for a closing section", "It signals that the situation is under control and needs no escalation", "It distinguishes routine reporting from the reports that matter most"]
+      correct: ["It lets the reader file the report without wondering what they owe you"]
+      rubric_category: analysis
+      explanation: "Reports whose purpose is ambiguous get no action and a vague sense you are generating paperwork."
+      weight: 1

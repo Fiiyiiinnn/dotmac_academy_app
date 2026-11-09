@@ -1,0 +1,398 @@
+{% extends "base.html" %}
+{% block content_width %}max-w-5xl{% endblock %}
+{% block title %}Cohorts — Dotmac Academy{% endblock %}
+{% block content %}
+<p class="page-eyebrow">Instructor</p>
+<h1 class="page-title">Cohorts</h1>
+<p class="page-intro">Manage student groups, their tracks, and the course paths each track contains.</p>
+
+<div class="mt-10 space-y-4" id="cohort-list">
+  {% for row in cohort_rows %}
+  {% set c = row.cohort %}
+  {% set track_course_options = row.available_courses|default(all_courses|default(courses, true), true) %}
+  <section class="card p-5">
+    <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+      <h2 class="text-xl">{{ c.name }}</h2>
+      <span class="text-sm text-ink-soft">{{ c.discipline }}</span>
+      <span class="ml-auto inline-flex items-center rounded-full bg-sand-200 px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide text-ink-soft">{{ c.status }}</span>
+    </div>
+    <p class="mt-2 text-sm">
+      <a class="font-semibold text-brand-600 underline" href="/instructor/cohorts/{{ c.id }}/timetable">Timetable &amp; sessions →</a>
+    </p>
+
+    <details class="disclosure mt-5 border-t border-sand-200 pt-4" open>
+      <summary class="flex cursor-pointer list-none flex-wrap items-center justify-between gap-3 rounded-lg bg-sand-100 px-3.5 py-2.5 text-sm font-semibold text-ink hover:bg-sand-200">
+        <span>Facilitators</span>
+        <span class="flex items-center gap-2">
+          <span class="inline-flex items-center rounded-full bg-white px-2.5 py-0.5 text-xs font-semibold text-ink-soft">{{ row.facilitators|length }} nomination{% if row.facilitators|length != 1 %}s{% endif %}</span>
+          <span class="disclosure-chevron text-ink-soft" aria-hidden="true">&rsaquo;</span>
+        </span>
+      </summary>
+      <div class="mt-3 space-y-3">
+        {% if row.facilitators %}
+        <ul class="grid gap-2 sm:grid-cols-2">
+          {% for assignment in row.facilitators %}
+          {% set facilitator = assignment.person %}
+          {% set nomination = assignment.nomination %}
+          <li class="flex items-center gap-3 rounded-lg border border-sand-200 bg-white p-3">
+            <span class="min-w-0 flex-1">
+              <span class="block font-medium text-ink">{{ facilitator.first_name }} {{ facilitator.last_name }}</span>
+              <span class="block truncate text-xs text-ink-soft">{{ facilitator.email }}</span>
+              <span class="mt-1 block text-xs text-ink-soft">
+                {% if nomination.scope_type == 'course' %}Course: {{ assignment.course.title }}{% else %}Entire cohort{% endif %}
+                &middot;
+                <span class="font-semibold {% if nomination.status == 'active' %}text-brand-700{% else %}text-clay-600{% endif %}">{{ nomination.status | capitalize }}</span>
+              </span>
+            </span>
+            {% if is_admin %}
+            <form hx-post="/instructor/facilitators/{{ nomination.id }}/revoke"
+                  hx-target="body" hx-push-url="true">
+              <button type="submit" class="btn-ghost px-2 py-1 text-xs">Revoke</button>
+            </form>
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+        {% else %}
+        <p class="rounded-lg bg-sand-100 p-3 text-sm text-ink-soft">No facilitator nominations exist for this cohort yet.</p>
+        {% endif %}
+
+        {% if is_admin %}
+          {% if row.available_facilitators %}
+          <form class="grid gap-2 border-t border-sand-200 pt-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end"
+                hx-post="/instructor/cohorts/{{ c.id }}/facilitators" hx-target="body" hx-push-url="true">
+            <input type="hidden" name="scope" value="cohort">
+            <label class="min-w-0 flex-1">
+              <span class="mb-1.5 block text-sm font-semibold text-ink">Nominate for the entire cohort</span>
+              <select name="facilitator_id" class="w-full px-3.5 py-2 text-sm" required>
+                <option value="">Select any active user</option>
+                {% for nominee in row.available_facilitators %}
+                <option value="{{ nominee.id }}">{{ nominee.first_name }} {{ nominee.last_name }} &mdash; {{ nominee.email }}</option>
+                {% endfor %}
+              </select>
+            </label>
+            <button type="submit" class="btn-primary">Nominate for cohort</button>
+          </form>
+          {% if row.offerings %}
+          <form class="grid gap-2 border-t border-sand-200 pt-3 sm:grid-cols-2 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_auto] lg:items-end"
+                hx-post="/instructor/cohorts/{{ c.id }}/facilitators" hx-target="body" hx-push-url="true">
+            <input type="hidden" name="scope" value="course">
+            <label class="min-w-0">
+              <span class="mb-1.5 block text-sm font-semibold text-ink">Nominee for one course</span>
+              <select name="facilitator_id" class="w-full px-3.5 py-2 text-sm" required>
+                <option value="">Select any active user</option>
+                {% for nominee in row.available_facilitators %}
+                <option value="{{ nominee.id }}">{{ nominee.first_name }} {{ nominee.last_name }} &mdash; {{ nominee.email }}</option>
+                {% endfor %}
+              </select>
+            </label>
+            <label class="min-w-0">
+              <span class="mb-1.5 block text-sm font-semibold text-ink">Course</span>
+              <select name="offering_id" class="w-full px-3.5 py-2 text-sm" required>
+                <option value="">Select a course</option>
+                {% for item in row.offerings %}
+                <option value="{{ item.offering.id }}">{{ item.course.title }}</option>
+                {% endfor %}
+              </select>
+            </label>
+            <button type="submit" class="btn-primary">Nominate for course</button>
+          </form>
+          {% endif %}
+          <p class="text-xs text-ink-soft">The nominee is notified now. Access activates only after the required course completion is recorded; existing learner enrollment, track, and progress are unchanged.</p>
+          {% else %}
+          <p class="border-t border-sand-200 pt-3 text-xs text-ink-soft">No active users are available for nomination.</p>
+          {% endif %}
+        {% else %}
+        <p class="border-t border-sand-200 pt-3 text-xs text-ink-soft">Only admins can nominate or revoke facilitators.</p>
+        {% endif %}
+      </div>
+    </details>
+    <details class="disclosure mt-5 border-t border-sand-200 pt-4" open>
+      <summary class="flex cursor-pointer list-none flex-wrap items-center justify-between gap-3 rounded-lg bg-sand-100 px-3.5 py-2.5 text-sm font-semibold text-ink hover:bg-sand-200">
+        <span>Tracks</span>
+        <span class="flex items-center gap-2">
+          <span class="inline-flex items-center rounded-full bg-white px-2.5 py-0.5 text-xs font-semibold text-ink-soft">{{ row.tracks|length }} total</span>
+          <span class="disclosure-chevron text-ink-soft" aria-hidden="true">›</span>
+        </span>
+      </summary>
+      <div class="mt-3 grid gap-3">
+        {% for item in row.tracks %}
+        <div class="rounded-lg border border-sand-200 bg-white p-3">
+          <div class="flex flex-wrap items-baseline justify-between gap-2">
+            <h3 class="text-sm font-semibold text-ink">{{ item.track.name }}</h3>
+            <span class="text-xs font-semibold uppercase tracking-wide text-ink-soft">{{ item.courses|length }} courses</span>
+          </div>
+          {% if item.courses %}
+          <ol class="mt-2 list-decimal space-y-1 pl-5 text-sm text-ink-soft">
+            {% for course in item.courses %}
+            <li>{{ course.title }}{% if course.id in item.zero_activity_course_ids %} <span class="font-semibold text-clay-600">⚠ no activities yet — will block progress for anyone who reaches this course</span>{% endif %}</li>
+            {% endfor %}
+          </ol>
+          {% if can_manage_cohorts %}<details class="disclosure mt-3 border-t border-sand-200 pt-3">
+            <summary class="cursor-pointer list-none text-sm font-semibold text-brand-700">Reorder courses</summary>
+            <form class="mt-2 space-y-2" hx-post="/instructor/tracks/{{ item.track.id }}/reorder" hx-target="body" hx-push-url="true">
+              <div class="grid gap-1.5">
+                {% for course in item.courses %}
+                <div class="flex items-center gap-2 rounded-md border border-sand-200 px-2 py-1.5 text-sm">
+                  <input type="hidden" name="course_ids" value="{{ course.id }}">
+                  <input type="number" name="position_{{ course.id }}" min="1" value="{{ loop.index }}"
+                         class="w-20 px-2 py-1 text-xs" aria-label="Position for {{ course.title }}">
+                  <span class="min-w-0 flex-1 text-ink">{{ course.title }}</span>
+                </div>
+                {% endfor %}
+              </div>
+              <button type="submit" class="btn-ghost px-3.5 py-2 text-sm">Save order</button>
+              <div id="track-reorder-error-{{ item.track.id }}"></div>
+            </form>
+          </details>{% endif %}
+          {% else %}
+          <p class="mt-2 text-sm text-ink-soft">No courses in this track yet.</p>
+          {% endif %}
+          {% if can_manage_cohorts %}<details class="disclosure mt-3 border-t border-sand-200 pt-3">
+            <summary class="cursor-pointer list-none text-sm font-semibold text-brand-700">Add courses</summary>
+            <form class="mt-2 space-y-3" hx-post="/instructor/cohorts/{{ c.id }}/tracks/{{ item.track.id }}/courses" hx-target="body" hx-push-url="true">
+              {% set assigned_ids = item.courses | map(attribute='id') | list %}
+              <div class="max-h-36 overflow-y-auto rounded-lg border border-sand-200 bg-sand-50 p-2">
+                {% for course in track_course_options %}
+                {% if course.id not in assigned_ids %}
+                <label class="flex cursor-pointer items-start gap-2 rounded-md px-2 py-1.5 text-sm hover:bg-sand-100">
+                  <input type="checkbox" name="course_ids" value="{{ course.id }}" class="mt-0.5">
+                  <span class="min-w-0 flex-1">
+                    <span class="block font-medium text-ink">{{ course.title }}</span>
+                    <span class="block text-xs text-ink-soft">{{ course.slug }}</span>
+                  </span>
+                  <input type="number" name="position_{{ course.id }}" min="1" placeholder="#"
+                         class="w-20 shrink-0 px-2 py-1 text-xs" aria-label="Position for {{ course.title }}">
+                </label>
+                {% endif %}
+                {% endfor %}
+              </div>
+              {% if draft_course_count %}
+              <p class="text-xs text-ink-soft">{{ draft_course_count }} draft course(s) hidden — <a class="font-semibold text-brand-600 underline" href="/instructor/courses">publish them first from Manage Courses</a> before adding to a track.</p>
+              {% endif %}
+              <button type="submit" class="btn-ghost px-3.5 py-2 text-sm">Add selected courses</button>
+              <div id="track-courses-error-{{ item.track.id }}"></div>
+            </form>
+          </details>{% endif %}
+        </div>
+        {% else %}
+        <p class="rounded-lg bg-sand-100 p-3 text-sm text-ink-soft">No tracks yet. Create one before inviting students into this cohort.</p>
+        {% endfor %}
+      </div>
+      {% if can_manage_cohorts %}<form class="mt-4 grid gap-3 border-t border-sand-200 pt-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)_auto]"
+            hx-post="/instructor/cohorts/{{ c.id }}/tracks"
+            hx-target="body"
+            hx-push-url="true">
+        <label class="block">
+          <span class="mb-1.5 block text-sm font-semibold text-ink">Track name</span>
+          <input name="name" type="text" placeholder="Fiber Technician" class="w-full px-3.5 py-2 text-sm" required>
+        </label>
+        <fieldset class="block">
+          <legend class="mb-1.5 block text-sm font-semibold text-ink">Courses</legend>
+          {% if track_course_options %}
+          <div class="max-h-44 overflow-y-auto rounded-lg border border-sand-200 bg-white p-2">
+            {% for course in track_course_options %}
+            <label class="flex cursor-pointer items-start gap-2 rounded-md px-2 py-1.5 text-sm hover:bg-sand-100">
+              <input type="checkbox" name="course_ids" value="{{ course.id }}" class="mt-0.5">
+              <span class="min-w-0 flex-1">
+                <span class="block font-medium text-ink">{{ course.title }}</span>
+                <span class="block text-xs text-ink-soft">{{ course.slug }}</span>
+              </span>
+              <input type="number" name="position_{{ course.id }}" min="1" placeholder="#"
+                     class="w-20 shrink-0 px-2 py-1 text-xs" aria-label="Position for {{ course.title }}">
+            </label>
+            {% endfor %}
+          </div>
+          {% else %}
+          <p class="rounded-lg bg-sand-100 p-3 text-sm text-ink-soft">No courses have been created yet for this tenant.</p>
+          {% endif %}
+          {% if draft_course_count %}
+          <p class="mt-2 text-xs text-ink-soft">{{ draft_course_count }} draft course(s) hidden — <a class="font-semibold text-brand-600 underline" href="/instructor/courses">publish them first from Manage Courses</a> before adding to a track.</p>
+          {% endif %}
+        </fieldset>
+        <div class="flex items-end">
+          <button type="submit" class="btn-primary">Create track</button>
+        </div>
+        <div class="lg:col-span-3" id="track-form-error-{{ c.id }}"></div>
+      </form>{% endif %}
+    </details>
+
+    <details class="disclosure mt-5 border-t border-sand-200 pt-4">
+      <summary class="flex cursor-pointer list-none flex-wrap items-center justify-between gap-3 rounded-lg bg-sand-100 px-3.5 py-2.5 text-sm font-semibold text-ink hover:bg-sand-200">
+        <span>Roster</span>
+        <span class="flex items-center gap-2">
+          <span class="inline-flex items-center rounded-full bg-white px-2.5 py-0.5 text-xs font-semibold text-ink-soft">{{ row.active_student_count }} active · {{ row.roster|length }} total</span>
+          <span class="disclosure-chevron text-ink-soft" aria-hidden="true">›</span>
+        </span>
+      </summary>
+      {% if row.roster %}
+      <div class="table-frame mt-3 rounded-lg border border-sand-200" role="region" aria-label="Cohort roster table; scroll horizontally to see all columns" tabindex="0">
+        <table class="data-table min-w-full divide-y divide-sand-200 text-sm">
+          <thead class="bg-sand-100 text-left text-xs font-semibold uppercase tracking-wide text-ink-soft">
+            <tr>
+              <th scope="col" class="px-3 py-2">Student</th>
+              <th scope="col" class="px-3 py-2">Email</th>
+              <th scope="col" class="px-3 py-2">Role</th>
+              <th scope="col" class="px-3 py-2">Track</th>
+              <th scope="col" class="px-3 py-2">Status</th>
+              <th scope="col" class="px-3 py-2">Actions</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-sand-200 bg-white">
+            {% for member in row.roster %}
+            {% set student = member.person %}
+            {% set enrollment = member.enrollment %}
+            {% set can_manage = can_manage_cohorts and (enrollment.role_in_cohort == 'student' or is_admin) %}
+            <tr>
+              <td class="px-3 py-2 font-medium text-ink">{{ student.first_name }} {{ student.last_name }}</td>
+              <td class="px-3 py-2 text-ink-soft">{{ student.email }}</td>
+              <td class="px-3 py-2 text-ink-soft">{{ enrollment.role_in_cohort }}</td>
+              <td class="px-3 py-2">
+                {% if enrollment.role_in_cohort == 'student' and row.tracks %}
+                <form class="flex min-w-[12rem] gap-2" hx-post="/instructor/cohorts/{{ c.id }}/roster/{{ student.id }}/track" hx-target="body" hx-push-url="true">
+                  <select name="track_id" class="min-w-0 flex-1 px-2 py-1 text-xs">
+                    {% for item in row.tracks %}
+                    <option value="{{ item.track.id }}" {% if enrollment.track_id == item.track.id %}selected{% endif %}>{{ item.track.name }}</option>
+                    {% endfor %}
+                  </select>
+                  <button type="submit" class="btn-ghost px-2 py-1 text-xs">Save</button>
+                </form>
+                <div id="roster-track-error-{{ c.id }}-{{ student.id }}"></div>
+                {% else %}
+                <span class="text-ink-soft">—</span>
+                {% endif %}
+              </td>
+              <td class="px-3 py-2">
+                <span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold
+                  {% if enrollment.status == 'active' %}bg-brand-100 text-brand-800
+                  {% elif enrollment.status == 'dropped' %}bg-clay-500/15 text-clay-600
+                  {% else %}bg-sand-200 text-ink-soft{% endif %}">{{ enrollment.status }}</span>
+                {% if student.status != 'active' %}
+                <span class="ml-1 inline-flex items-center rounded-full bg-clay-500/15 px-2.5 py-0.5 text-xs font-semibold text-clay-600">account {{ student.status }}</span>
+                {% endif %}
+              </td>
+              <td class="px-3 py-2">
+                {% if can_manage %}
+                <div class="flex flex-wrap items-center gap-1.5">
+                  {% if enrollment.status != 'active' %}
+                  <form hx-post="/instructor/cohorts/{{ c.id }}/roster/{{ student.id }}/state"
+                        hx-target="#roster-state-error-{{ c.id }}-{{ student.id }}" hx-swap="innerHTML">
+                    <input type="hidden" name="state" value="active">
+                    <button type="submit" class="btn-ghost px-2 py-1 text-xs">Reactivate</button>
+                  </form>
+                  {% endif %}
+                  {% if enrollment.status != 'dropped' %}
+                  <form hx-post="/instructor/cohorts/{{ c.id }}/roster/{{ student.id }}/state"
+                        hx-target="#roster-state-error-{{ c.id }}-{{ student.id }}" hx-swap="innerHTML">
+                    <input type="hidden" name="state" value="dropped">
+                    <button type="submit" class="btn-ghost px-2 py-1 text-xs">Drop</button>
+                  </form>
+                  {% endif %}
+                </div>
+                {% else %}
+                <span class="text-xs text-ink-soft">Admin only</span>
+                {% endif %}
+                {% if is_admin and enrollment.track_id %}
+                <form class="mt-1.5" hx-post="/instructor/cohorts/{{ c.id }}/roster/{{ student.id }}/track/clear"
+                      hx-target="#roster-track-clear-error-{{ c.id }}-{{ student.id }}" hx-swap="innerHTML">
+                  <button type="submit" class="btn-ghost px-2 py-1 text-xs">Clear track</button>
+                </form>
+                {% endif %}
+                <div id="roster-state-error-{{ c.id }}-{{ student.id }}" class="mt-1"></div>
+                <div id="roster-track-clear-error-{{ c.id }}-{{ student.id }}" class="mt-1"></div>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% else %}
+      <p class="mt-3 rounded-lg bg-sand-100 p-3 text-sm text-ink-soft">No students are enrolled in this cohort yet.</p>
+      {% endif %}
+    </details>
+
+    {% if can_manage_cohorts %}<div class="mt-4 grid gap-4 border-t border-sand-200 pt-4 lg:grid-cols-2">
+      <form class="space-y-3"
+            hx-post="/instructor/cohorts/{{ c.id }}/invite"
+            hx-target="#invite-result-{{ c.id }}"
+            hx-swap="innerHTML">
+        <h3 class="text-sm font-semibold text-ink">Invite new student</h3>
+        <div class="grid gap-2 sm:grid-cols-2">
+          <label class="sr-only" for="invite-first-{{ c.id }}">First name</label>
+          <input id="invite-first-{{ c.id }}" name="first_name" type="text" placeholder="First name"
+                 class="w-full px-3.5 py-2 text-sm" required>
+          <label class="sr-only" for="invite-last-{{ c.id }}">Last name</label>
+          <input id="invite-last-{{ c.id }}" name="last_name" type="text" placeholder="Last name"
+                 class="w-full px-3.5 py-2 text-sm" required>
+        </div>
+        <label class="block">
+          <span class="mb-1.5 block text-sm font-semibold text-ink">Track</span>
+          <select name="track_id" class="w-full px-3.5 py-2 text-sm" {% if not row.tracks %}disabled{% endif %}>
+            {% for item in row.tracks %}
+            <option value="{{ item.track.id }}">{{ item.track.name }}</option>
+            {% endfor %}
+          </select>
+        </label>
+        <div class="flex flex-wrap items-center gap-2">
+          <label class="sr-only" for="invite-email-{{ c.id }}">Student email</label>
+          <input id="invite-email-{{ c.id }}" name="email" type="email" placeholder="student@example.com"
+                 class="min-w-[16rem] flex-1 px-3.5 py-2 text-sm" required>
+          <button type="submit" class="btn-primary">Send invite</button>
+        </div>
+        <div id="invite-result-{{ c.id }}"></div>
+      </form>
+
+      <form class="space-y-3"
+            hx-post="/instructor/cohorts/{{ c.id }}/enroll"
+            hx-target="#enroll-result-{{ c.id }}"
+            hx-swap="innerHTML">
+        <h3 class="text-sm font-semibold text-ink">Enroll existing students</h3>
+        <label class="block">
+          <span class="mb-1.5 block text-sm font-semibold text-ink">Track</span>
+          <select name="track_id" class="w-full px-3.5 py-2 text-sm" {% if not row.tracks %}disabled{% endif %}>
+            {% for item in row.tracks %}
+            <option value="{{ item.track.id }}">{{ item.track.name }}</option>
+            {% endfor %}
+          </select>
+        </label>
+        <div class="flex flex-wrap items-start gap-2">
+          <label class="sr-only" for="enroll-{{ c.id }}">Student emails</label>
+          <textarea id="enroll-{{ c.id }}" name="emails" rows="3"
+                    placeholder="student@example.com, another@example.com"
+                    class="min-w-[16rem] flex-1 px-3.5 py-2 text-sm" required></textarea>
+          <button type="submit" class="btn-ghost">Enroll</button>
+        </div>
+        <div id="enroll-result-{{ c.id }}"></div>
+      </form>
+    </div>{% endif %}
+  </section>
+  {% else %}
+  <div class="card p-8 text-center">
+    <p class="text-ink-soft">No cohorts yet. Create your first one below.</p>
+  </div>
+  {% endfor %}
+</div>
+
+{% if can_manage_cohorts %}<section class="card mt-10 p-6">
+  <h2 class="text-xl">Create cohort</h2>
+  <p class="mt-1.5 text-sm text-ink-soft">A new cohort starts empty. Create tracks for it, then invite students into the right track.</p>
+  <form class="mt-5 grid gap-4 sm:grid-cols-2"
+        hx-post="/instructor/cohorts"
+        hx-target="body"
+        hx-push-url="true">
+    <div>
+      <label for="cohort-name" class="mb-1.5 block text-sm font-semibold text-ink">Cohort name</label>
+      <input id="cohort-name" name="name" type="text" placeholder="e.g. Lagos Fiber — Q3"
+             class="w-full px-3.5 py-2.5 text-[0.95rem]" required>
+    </div>
+    <div>
+      <label for="cohort-discipline" class="mb-1.5 block text-sm font-semibold text-ink">Discipline</label>
+      <input id="cohort-discipline" name="discipline" type="text" placeholder="e.g. Fiber"
+             class="w-full px-3.5 py-2.5 text-[0.95rem]" required>
+    </div>
+    <div class="sm:col-span-2">
+      <button type="submit" class="btn-primary">Create cohort</button>
+    </div>
+  </form>
+</section>{% endif %}
+{% endblock %}

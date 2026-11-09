@@ -1,0 +1,89 @@
+bank:
+  course: mgmt-finance-fundamentals
+  kind: chapter
+  chapter: 3
+  version: 2
+  policy:
+    mode: practice
+  questions:
+    - id: fn3-01
+      stem: "Churn is best described as:"
+      type: single
+      options: ["Customers lost as a share of the base", "Revenue lost through discounting", "The cost of replacing a customer", "Customers who never renewed at all"]
+      correct: ["Customers lost as a share of the base"]
+      rubric_category: recall
+      explanation: "Its mirror is retention, and it governs how long the average customer stays."
+      weight: 1
+    - id: fn3-02
+      stem: "Halving churn does what to the average customer's lifespan?"
+      type: single
+      options: ["Roughly doubles it", "Roughly halves it", "Leaves it unchanged", "Raises it by a tenth"]
+      correct: ["Roughly doubles it"]
+      rubric_category: recall
+      explanation: "Which raises every customer's lifetime value at once — the reason a point of retention outweighs points of acquisition."
+      weight: 1
+    - id: fn3-03
+      stem: "Monthly churn runs at 5%. What is the average customer lifespan, in months?"
+      type: numeric
+      options:
+        tolerance: 1
+      correct: 20
+      rubric_category: application
+      explanation: "1 ÷ 0.05 = 20 months. Cut churn to 2.5% and the same customer is worth 40 months of margin instead."
+      weight: 1
+    - id: fn3-04
+      stem: "A customer's usage has fallen sharply and two complaints are still unresolved. What should happen?"
+      type: single
+      options: ["They go on an at-risk list with a named owner", "They are contacted when the renewal date arrives", "Their account is flagged for the next review cycle", "Their complaints are escalated to close them faster"]
+      correct: ["They go on an at-risk list with a named owner"]
+      rubric_category: application
+      explanation: "Churn announces itself before it happens. By exit interview you are doing autopsy, not medicine."
+      weight: 1
+    - id: fn3-05
+      stem: "A customer calls to cancel and is offered a 20% discount to stay. What does that tool actually buy?"
+      type: single
+      options: ["Rented delay, and a lesson that leaving is rewarded", "A recovered customer at a modest cost to margin", "Time to fix the underlying problem before they go", "A cheaper outcome than acquiring a replacement"]
+      correct: ["Rented delay, and a lesson that leaving is rewarded"]
+      rubric_category: application
+      explanation: "Exit-door offers are the weakest retention tool; the strong ones are all upstream."
+      weight: 1
+    - id: fn3-06
+      stem: "Churn is highest among customers in their first two months. What does that most likely point to?"
+      type: single
+      options: ["Onboarding that fails to reach real value fast", "Pricing that is uncompetitive for new customers", "A product that does not suit the segment being sold to", "Sales promising more than operations can deliver"]
+      correct: ["Onboarding that fails to reach real value fast"]
+      rubric_category: application
+      explanation: "Early-tenure churn is usually failed onboarding, which is why churn must be measured by tenure and not just in total."
+      weight: 1
+    - id: fn3-07
+      stem: "Which ways of measuring churn tell you something different? (Select all that apply.)"
+      type: multi
+      options: ["By count of customers lost", "By revenue lost", "By tenure and segment", "By month of the year"]
+      correct: ["By count of customers lost", "By revenue lost", "By tenure and segment"]
+      rubric_category: application
+      explanation: "Losing your biggest customers is worse than the count shows, and the leak is usually concentrated by segment or tenure."
+      weight: 1
+    - id: fn3-08
+      stem: "A business runs the same acquisition spend as its competitor but half the churn. Why does it grow while the competitor stands still?"
+      type: single
+      options: ["New customers refill a smaller hole before any count as growth", "Its customers spend more because they stay longer with it", "Its acquisition cost per customer falls as the base grows", "Its lifetime value calculation supports more marketing spend"]
+      correct: ["New customers refill a smaller hole before any count as growth"]
+      rubric_category: analysis
+      explanation: "The bucket matters more than the tap, and as the base grows the hole grows with it."
+      weight: 1
+    - id: fn3-09
+      stem: "A business improves retention by making cancellation slow and difficult. What has it converted churn into?"
+      type: single
+      options: ["Resentment, paid out later in reputation and regulator attention", "A delay that buys time to fix the underlying service problems", "A cost saving that shows up immediately in the retention numbers", "A contractual arrangement that customers accepted when they signed"]
+      correct: ["Resentment, paid out later in reputation and regulator attention"]
+      rubric_category: analysis
+      explanation: "Retention built on trapping customers produces a base that flees the moment the walls drop."
+      weight: 1
+    - id: fn3-10
+      stem: "Why is fixing a common cause of leaving often a better use of money than advertising?"
+      type: single
+      options: ["It raises the lifetime value of every existing customer at once", "It costs less than an equivalent advertising campaign would", "It improves the satisfaction scores that advertising cannot move", "It addresses customers who have already demonstrated intent"]
+      correct: ["It raises the lifetime value of every existing customer at once"]
+      rubric_category: analysis
+      explanation: "And a higher lifetime value multiplies what you can afford to spend acquiring the next customer, which compounds again."
+      weight: 1

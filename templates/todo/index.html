@@ -1,0 +1,114 @@
+{% extends "base.html" %}{% block content %}
+<p class="page-eyebrow">{{ branding_name | default("Technical Academy") }}</p>
+<h1 class="page-title">To-Do</h1>
+<p class="mt-2 text-sm text-ink-soft">Everything with a date, in one place. All times are {{ academy_tz_label }}.</p>
+
+{% macro deadline_list(rows) %}
+<div class="mt-3 space-y-3">
+  {% for row in rows %}
+  <div class="card flex flex-wrap items-center gap-4 p-5">
+    <div class="min-w-0 flex-1">
+      <p class="font-medium text-ink">{{ row.activity.title }}</p>
+      <p class="mt-0.5 text-sm text-ink-soft">{{ row.course_title }} · due {{ (row.due_at | localtime).strftime('%a %-d %b %Y, %H:%M') }}</p>
+    </div>
+    <a href="/courses/{{ row.course_slug }}/chapters/{{ row.activity.chapter_number }}" class="btn-primary shrink-0 px-4 py-2 text-sm">Open activity</a>
+  </div>
+  {% endfor %}
+</div>
+{% endmacro %}
+
+<h2 class="mt-8 text-sm font-semibold uppercase tracking-wide {% if timeline.overdue %}text-red-700{% else %}text-ink-soft{% endif %}">Overdue</h2>
+{% if timeline.overdue %}{{ deadline_list(timeline.overdue) }}
+{% else %}<div class="card mt-3 p-5 text-ink-soft">Nothing overdue — keep it that way.</div>{% endif %}
+
+<h2 class="mt-8 text-sm font-semibold uppercase tracking-wide text-ink-soft">Due today</h2>
+{% if timeline.due_today %}{{ deadline_list(timeline.due_today) }}
+{% else %}<div class="card mt-3 p-5 text-ink-soft">Nothing due today.</div>{% endif %}
+
+<h2 class="mt-8 text-sm font-semibold uppercase tracking-wide text-ink-soft">Next {{ timeline.near_deadline_days }} days</h2>
+{% if timeline.next_7 %}{{ deadline_list(timeline.next_7) }}
+{% else %}<div class="card mt-3 p-5 text-ink-soft">{% if timeline.near_deadline_days == 7 %}Nothing due this week.{% else %}Nothing due in the next {{ timeline.near_deadline_days }} days.{% endif %}</div>{% endif %}
+
+<h2 class="mt-8 text-sm font-semibold uppercase tracking-wide text-ink-soft">Next {{ timeline.far_deadline_days }} days</h2>
+{% if timeline.next_30 %}{{ deadline_list(timeline.next_30) }}
+{% else %}<div class="card mt-3 p-5 text-ink-soft">Nothing further out yet.</div>{% endif %}
+
+<h2 class="mt-8 text-sm font-semibold uppercase tracking-wide text-ink-soft">Live sessions</h2>
+{% if timeline.sessions %}
+<div class="mt-3 space-y-3">
+  {% for s, cohort_name in timeline.sessions %}
+  <div class="card flex flex-wrap items-center gap-4 p-5">
+    <div class="min-w-0 flex-1">
+      <a href="/timetable/sessions/{{ s.id }}" class="font-medium text-ink hover:text-brand-700">{{ s.title }}</a>
+      <p class="mt-0.5 text-sm text-ink-soft">{{ cohort_name }} · {{ (s.starts_at | localtime).strftime('%a %-d %b %Y, %H:%M') }}</p>
+    </div>
+    {% if s.id in timeline.joinable %}
+    <a href="{{ s.join_url }}" target="_blank" rel="noopener" class="btn-primary shrink-0 px-4 py-2 text-sm">Join now</a>
+    {% endif %}
+  </div>
+  {% endfor %}
+</div>
+{% else %}<div class="card mt-3 p-5 text-ink-soft">No upcoming sessions.</div>{% endif %}
+
+<h2 class="mt-8 text-sm font-semibold uppercase tracking-wide text-ink-soft">Recently graded</h2>
+{% if timeline.graded %}
+<div class="mt-3 space-y-3">
+  {% for g in timeline.graded %}
+  <div class="card flex flex-wrap items-center gap-4 p-5">
+    <div class="min-w-0 flex-1">
+      <p class="font-medium text-ink">{{ g.activity.title }}</p>
+      <p class="mt-0.5 text-sm text-ink-soft">{{ g.course_title }} · {{ (g.score.fraction * 100) | round | int }}% · {{ 'passed' if g.score.passed else 'not yet' }}</p>
+    </div>
+    {% if g.feedback_available %}
+    <span class="shrink-0 rounded-full bg-brand-100 px-2.5 py-0.5 text-xs font-medium text-brand-800">feedback available</span>
+    {% endif %}
+  </div>
+  {% endfor %}
+</div>
+{% else %}<div class="card mt-3 p-5 text-ink-soft">No recent results.</div>{% endif %}
+
+<h2 class="mt-8 text-sm font-semibold uppercase tracking-wide text-ink-soft">Feedback to read</h2>
+{% if timeline.feedback %}
+<div class="mt-3 space-y-3">
+  {% for g in timeline.feedback %}
+  <div class="card flex flex-wrap items-center gap-4 p-5">
+    <div class="min-w-0 flex-1">
+      <p class="font-medium text-ink">{{ g.activity.title }}</p>
+      <p class="mt-0.5 text-sm text-ink-soft">{{ g.course_title }} · feedback is available to review</p>
+    </div>
+    <a href="/courses/{{ g.course_slug }}/chapters/{{ g.activity.chapter_number }}" class="btn-primary shrink-0 px-4 py-2 text-sm">Review feedback</a>
+  </div>
+  {% endfor %}
+</div>
+{% else %}<div class="card mt-3 p-5 text-ink-soft">No feedback waiting.</div>{% endif %}
+
+<h2 class="mt-8 text-sm font-semibold uppercase tracking-wide text-ink-soft">Course dates</h2>
+{% if timeline.course_windows %}
+<div class="mt-3 space-y-3">
+  {% for w in timeline.course_windows %}
+  <div class="card p-5">
+    <p class="font-medium text-ink">{{ w.course_title }}</p>
+    <p class="mt-0.5 text-sm text-ink-soft">{{ 'opens' if w.kind == 'opens' else 'closes' }} {{ (w.at | localtime).strftime('%a %-d %b %Y, %H:%M') }}</p>
+  </div>
+  {% endfor %}
+</div>
+{% else %}<div class="card mt-3 p-5 text-ink-soft">No course openings or closings in the next {{ timeline.window_horizon_days }} days.</div>{% endif %}
+
+<h2 class="mt-10 text-sm font-semibold uppercase tracking-wide text-ink-soft">Calendar export</h2>
+<div class="card mt-3 p-5">
+  {% if new_feed_token %}
+  <p class="text-sm text-ink">Your personal calendar feed — copy it now; it is shown only once:</p>
+  <code class="mt-2 block overflow-x-auto rounded bg-sand-100 p-3 text-xs">{{ request.base_url }}calendar.ics?token={{ new_feed_token }}</code>
+  <p class="mt-2 text-xs text-ink-soft">Add it to Google Calendar, Outlook, or your phone as a subscribed calendar. Rotating replaces this link.</p>
+  {% else %}
+  <p class="text-sm text-ink-soft">
+    {% if has_feed_token %}A calendar feed exists for your account. Rotating issues a new link and disables the old one.{% else %}Subscribe to your sessions and deadlines from any calendar app.{% endif %}
+  </p>
+  {% endif %}
+  <form method="post" action="/todo/calendar-feed" class="mt-3">
+    <input type="hidden" name="csrf_token" value="{{ request.state.csrf_token | default('') }}">
+    <button type="submit" class="btn-primary px-4 py-2 text-sm"
+            hx-post="/todo/calendar-feed" hx-target="body" hx-push-url="true">{{ 'Rotate feed link' if has_feed_token else 'Create feed link' }}</button>
+  </form>
+</div>
+{% endblock %}

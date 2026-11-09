@@ -1,0 +1,88 @@
+bank:
+  course: sls-agent-fundamentals
+  kind: chapter
+  chapter: 1
+  version: 1
+  policy:
+    mode: practice
+  questions:
+    - id: s1-01
+      stem: "Which three screens make up the connected sales flow this course covers?"
+      type: single
+      options: ["Leads, Quotes, and Sales Orders, all grouped together under the Sales area of the sidebar", "Dashboard, Reports, and Workqueue, screens shared equally with every other role in Sub", "Customers, Billing, and Tickets, the same everyday screens support agents mostly use", "Network, Monitoring, and Infrastructure, screens reserved for a completely different team"]
+      correct: ["Leads, Quotes, and Sales Orders, all grouped together under the Sales area of the sidebar"]
+      rubric_category: recall
+      explanation: "The three connected sales screens are Leads, Quotes, and Sales Orders, covered across the next four chapters."
+      weight: 1
+    - id: s1-02
+      stem: "According to this chapter, does dotmac_sub currently ship a seeded 'sales' role with its own scoped permissions?"
+      type: single
+      options: ["No — the relevant permission keys exist but stay admin-implicit until a role is defined", "Yes — a dedicated sales role has shipped with exactly the crm:lead, crm:quote, and crm:sales_order keys attached", "Yes — but the shipped sales role deliberately covers Leads and Quotes while excluding Sales Orders entirely", "No — sales-related permission keys do not exist anywhere in the current system configuration at all"]
+      correct: ["No — the relevant permission keys exist but stay admin-implicit until a role is defined"]
+      rubric_category: recall
+      explanation: "The permission keys exist and are UI-assignable, but no seeded role carries them yet — they stay admin-implicit until one exists."
+      weight: 1
+    - id: s1-03
+      stem: "Your account can open several screens beyond Leads, Quotes, and Sales Orders. Based on this chapter, what is the most likely explanation?"
+      type: single
+      options: ["No seeded sales role exists yet, so your access is likely broader, admin-implicit access rather than a purpose-built role", "Your job description has quietly and formally grown to include those additional administrative areas as of today", "The extra screens were deliberately granted to you specifically because you closed a particularly large deal recently", "Every single role configured in Sub receives identical access, regardless of the actual job being performed by it"]
+      correct: ["No seeded sales role exists yet, so your access is likely broader, admin-implicit access rather than a purpose-built role"]
+      rubric_category: application
+      explanation: "With no dedicated sales role seeded, whoever does sales work most likely does so from broader, admin-like access rather than a narrowly scoped role."
+      weight: 1
+    - id: s1-04
+      stem: "You close a deal and want to set yourself as the Sales Agent on the resulting Sales Order, but your name is not in the dropdown. What should you check first?"
+      type: single
+      options: ["Whether your account holds the specific 'Customer Experience' role, since that dropdown is populated from it", "Whether your account holds any crm:lead or crm:quote permission at all, since those drive that dropdown directly", "Whether the Sales Order itself was created correctly, since a malformed order would hide the dropdown entirely", "Whether your account was created before or after the Sales Order, since account creation ordering affects it"]
+      correct: ["Whether your account holds the specific 'Customer Experience' role, since that dropdown is populated from it"]
+      rubric_category: application
+      explanation: "The Sales Agent attribution dropdown lists only users holding the role literally named Customer Experience — a different, narrower thing than sales permissions."
+      weight: 1
+    - id: s1-05
+      stem: "A colleague says 'just track your leads in a personal spreadsheet, it's faster than Sub.' What is the correct response, based on this chapter's framing?"
+      type: single
+      options: ["Decline, because Sub is the record for sales activity — a lead not entered there did not officially happen", "Agree, since a personal spreadsheet is generally easier and faster to search than the Leads screen", "Agree, but only for the leads that currently seem unlikely to ever convert into a real deal", "Decline, but only because a spreadsheet technically cannot store an email address field correctly"]
+      correct: ["Decline, because Sub is the record for sales activity — a lead not entered there did not officially happen"]
+      rubric_category: application
+      explanation: "The chapter states plainly that Sub is the record for sales too — a lead's details not entered there did not officially happen."
+      weight: 1
+    - id: s1-06
+      stem: "A new agent assumes wide access to non-sales screens means they should start using whichever ones look useful for prospecting. What is the flaw in that reasoning?"
+      type: single
+      options: ["Technical ability to reach a screen is not the same as that screen being part of the actual sales job", "There is no real flaw, since any screen reachable from a sales account was clearly intended for sales use", "The flaw only applies narrowly to billing-related screens, and not to any other kind of screen at all", "The flaw is that using extra screens would formally violate a written, published sales-role policy document"]
+      correct: ["Technical ability to reach a screen is not the same as that screen being part of the actual sales job"]
+      rubric_category: analysis
+      explanation: "Broad access reflects a gap in the role model, not an intentional expansion of the sales job — reachability and job scope are different things."
+      weight: 1
+    - id: s1-07
+      stem: "Two agents both close deals of similar size. One appears in the Sales Agent attribution dropdown and one does not, purely based on an unrelated role assignment. What does this reveal about the attribution mechanism?"
+      type: single
+      options: ["It measures a specific role membership, not who actually performed the sales work on the deal", "It measures deal size directly, since larger deals unlock the attribution dropdown for that agent", "It reveals a data-entry mistake on one of the two Sales Orders that needs correcting", "It reveals that one of the two agents lacks any sales permissions whatsoever"]
+      correct: ["It measures a specific role membership, not who actually performed the sales work on the deal"]
+      rubric_category: analysis
+      explanation: "The dropdown is driven by the Customer Experience role specifically, which can diverge from who actually worked the deal — a role-mapping gap, not a data error."
+      weight: 1
+    - id: s1-08
+      stem: "Given that no seeded sales role exists yet, what is the most accurate way to describe the current state of sales access in dotmac_sub?"
+      type: single
+      options: ["A real, currently unresolved gap in the role model, not a deliberate design choice to trust sales agents broadly", "A deliberate, permanent design decision to give every single sales agent full administrative access forever", "A temporary security incident that is actively being investigated and urgently contained right now", "Something irrelevant to how this particular course should be taught, since access details rarely change"]
+      correct: ["A real, currently unresolved gap in the role model, not a deliberate design choice to trust sales agents broadly"]
+      rubric_category: analysis
+      explanation: "The chapter names this as an honest, current gap — a role that has not yet been defined and seeded — rather than an intentional access policy."
+      weight: 1
+    - id: s1-09
+      stem: "Which statement correctly distinguishes crm:lead/crm:quote/crm:sales_order permission keys from the Sales Agent attribution dropdown?"
+      type: single
+      options: ["The permission keys govern who can act on leads/quotes/orders; the dropdown is governed separately by the Customer Experience role", "They are actually the same underlying mechanism, just displayed in two different places within the admin interface", "The permission keys only ever apply to Sales Orders specifically, while the dropdown only applies to Leads and Quotes", "The dropdown is simply the older of the two mechanisms, and the permission keys are meant to fully replace it eventually"]
+      correct: ["The permission keys govern who can act on leads/quotes/orders; the dropdown is governed separately by the Customer Experience role"]
+      rubric_category: recall
+      explanation: "These are two separate mechanisms: permission keys control action ability, while the attribution dropdown is populated from a specific, different role."
+      weight: 1
+    - id: s1-10
+      stem: "A supervisor asks you to confirm exactly what your account can and cannot do before assigning you new leads. What is the appropriate response, given this chapter?"
+      type: single
+      options: ["Ask plainly what role your account holds today, since it is most likely broader admin-style access rather than a dedicated sales role", "Assume the dropdown you cannot personally use for Sales Agent attribution is already the complete and final answer to what your account can and cannot do", "Tell them nothing at all needs confirming, since every account configured in Sub carries identical access by default", "Simply guess based on whichever screens happen to be visible in your sidebar on that particular morning"]
+      correct: ["Ask plainly what role your account holds today, since it is most likely broader admin-style access rather than a dedicated sales role"]
+      rubric_category: application
+      explanation: "The chapter's explicit action item is to ask your supervisor plainly what role your account holds, rather than assuming a tidy dedicated role exists."
+      weight: 1

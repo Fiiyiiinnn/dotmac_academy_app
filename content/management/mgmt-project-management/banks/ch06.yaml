@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-project-management
+  kind: chapter
+  chapter: 6
+  version: 2
+  policy:
+    mode: practice
+  questions:
+    - id: pm6-01
+      stem: "Ownership transfers at handover only when the receiver:"
+      type: single
+      options: ["Explicitly accepts it", "Signs the punch list", "Attends the training", "Receives the run-book"]
+      correct: ["Explicitly accepts it"]
+      rubric_category: recall
+      explanation: "And acceptance requires that they can actually operate what they are receiving."
+      weight: 1
+    - id: pm6-02
+      stem: "The benefits check-back against the original business case should be:"
+      type: single
+      options: ["Scheduled, and reported either way", "Run if the sponsor requests it", "Included in the closure report", "Left to the operating department"]
+      correct: ["Scheduled, and reported either way"]
+      rubric_category: recall
+      explanation: "It is the loop that keeps the next business case honest, and the step nearly every organisation skips."
+      weight: 1
+    - id: pm6-03
+      stem: "The team who will operate the result are meeting it for the first time at handover. What does that predict?"
+      type: single
+      options: ["A project that will be handed back", "A longer training period than planned", "A run-book that needs rewriting", "A delay to the final acceptance"]
+      correct: ["A project that will be handed back"]
+      rubric_category: application
+      explanation: "Operators should have been stakeholders since the mapping — raising the operational facts the project cannot see."
+      weight: 1
+    - id: pm6-04
+      stem: "What is the test of the handover documentation?"
+      type: single
+      options: ["Could a competent stranger keep it alive from this?", "Does it cover every component that was installed?", "Has the receiving team confirmed they have read it?", "Is it stored where the operations team can find it?"]
+      correct: ["Could a competent stranger keep it alive from this?"]
+      rubric_category: application
+      explanation: "How to operate it, how to tell it is healthy, what care it needs, what to do when it misbehaves, who to call."
+      weight: 1
+    - id: pm6-05
+      stem: "The project team has been supporting the new system 'until it settles' for four months. What went wrong?"
+      type: single
+      options: ["The supported period was never explicitly ended", "The handover documentation was insufficient", "The operators were not trained thoroughly enough", "The defects list was never driven down to zero"]
+      correct: ["The supported period was never explicitly ended"]
+      rubric_category: application
+      explanation: "Agree a window, then end it explicitly, or the project team becomes the permanent unpaid operations team."
+      weight: 1
+    - id: pm6-06
+      stem: "Which belong to closing the business rather than closing the work? (Select all that apply.)"
+      type: multi
+      options: ["Retentions released after defects clear", "Warranties registered with claim routes", "The project account closed to billing", "The final milestone marked complete"]
+      correct: ["Retentions released after defects clear", "Warranties registered with claim routes", "The project account closed to billing"]
+      rubric_category: application
+      explanation: "The administrative tail is where money and leverage quietly leak."
+      weight: 1
+    - id: pm6-07
+      stem: "Your closeout review produced thirty findings. What should you do with them?"
+      type: single
+      options: ["Take the three that will change the next project", "Circulate all thirty to the wider organisation", "File them for the next project team to read", "Group them by theme and assign each an owner"]
+      correct: ["Take the three that will change the next project"]
+      rubric_category: application
+      explanation: "Three findings that actually change the next project beat thirty that get filed."
+      weight: 1
+    - id: pm6-08
+      stem: "Why does the last five percent of the budget deserve the same scrutiny as the first?"
+      type: single
+      options: ["Leverage and money leak quietly once attention moves on", "Final invoices are more likely to contain errors", "Suppliers price closeout work at a premium rate", "The remaining spend is harder to forecast accurately"]
+      correct: ["Leverage and money leak quietly once attention moves on"]
+      rubric_category: analysis
+      explanation: "Unreleased retentions, unsettled accounts and open project codes all outlive the project unless someone closes them."
+      weight: 1
+    - id: pm6-09
+      stem: "A project ends without anyone declaring it over. What happens next?"
+      type: single
+      options: ["It haunts calendars and budgets for months", "Its team is reassigned without a handover", "Its documentation is never fully completed", "Its benefits are never measured or reported"]
+      correct: ["It haunts calendars and budgets for months"]
+      rubric_category: analysis
+      explanation: "Declared endings return the scarcest resource — attention — to whatever comes next."
+      weight: 1
+    - id: pm6-10
+      stem: "Why does 'check against history' when estimating depend on closeout?"
+      type: single
+      options: ["Someone has to record what things actually took and cost", "Estimators need access to the previous project's plan", "Historical data must be approved before it can be reused", "Comparable projects are only identified during closeout"]
+      correct: ["Someone has to record what things actually took and cost"]
+      rubric_category: analysis
+      explanation: "The history that beats memory only exists if the closing project deposits it where the next estimator will look."
+      weight: 1

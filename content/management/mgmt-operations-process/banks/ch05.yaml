@@ -1,0 +1,88 @@
+bank:
+  course: mgmt-operations-process
+  kind: chapter
+  chapter: 5
+  version: 1
+  policy:
+    mode: practice
+  questions:
+    - id: op5-01
+      stem: "A daily operational review should end every raised problem with:"
+      type: single
+      options: ["An owner and a time", "A recorded note", "A follow-up meeting", "A priority rating"]
+      correct: ["An owner and a time"]
+      rubric_category: recall
+      explanation: "Otherwise the review teaches people that raising things achieves nothing."
+      weight: 1
+    - id: op5-02
+      stem: "A daily review in which each person recites what a shared board already shows is:"
+      type: single
+      options: ["The meeting to delete", "A useful ritual", "A team-building habit", "A reporting duty"]
+      correct: ["The meeting to delete"]
+      rubric_category: application
+      explanation: "It is the one-way update meeting the Communication course argues should be a document."
+      weight: 1
+    - id: op5-03
+      stem: "The main value of a daily rather than weekly review is:"
+      type: single
+      options: ["Speed of detection", "Team visibility", "Manager oversight", "Record keeping"]
+      correct: ["Speed of detection"]
+      rubric_category: analysis
+      explanation: "A problem found in the morning has a day to be fixed; found weekly it has already spent four days becoming customer-visible."
+      weight: 1
+    - id: op5-04
+      stem: "The operational number most teams fail to watch, and the earliest warning available, is:"
+      type: single
+      options: ["The constraint's queue", "Total output", "Overtime hours", "Total complaint volume"]
+      correct: ["The constraint's queue"]
+      rubric_category: analysis
+      explanation: "It moves before output falls, before dates slip, and before a customer complains."
+      weight: 1
+    - id: op5-05
+      stem: "Escalation triggers should be age-based as well as event-based because age catches what:"
+      type: single
+      options: ["Judgement misses", "Systems ignore", "Customers report", "Reports omit"]
+      correct: ["Judgement misses"]
+      rubric_category: application
+      explanation: "Nobody is watching a job that is merely sitting there."
+      weight: 1
+    - id: op5-06
+      stem: "\"Escalate to operations\" is inadequate as a route because an escalation needs:"
+      type: single
+      options: ["A named person", "A written form", "A severity level", "A time limit"]
+      correct: ["A named person"]
+      rubric_category: recall
+      explanation: "And a response commitment, or the frontline learns to stop escalating."
+      weight: 1
+    - id: op5-07
+      stem: "The real score of an escalation system is the share of complaints that were:"
+      type: single
+      options: ["Already known", "Resolved quickly", "Formally logged", "Fairly raised by customers"]
+      correct: ["Already known"]
+      rubric_category: analysis
+      explanation: "If most complaints are news to you, the triggers are not firing."
+      weight: 1
+    - id: op5-08
+      stem: "Month-end peaks, rainy season and a marketing push are examples of demand that is:"
+      type: single
+      options: ["Predictable", "Unforeseeable", "Externally driven", "Seasonally neutral"]
+      correct: ["Predictable"]
+      rubric_category: recall
+      explanation: "Plan capacity against them explicitly, and keep the buffer for what genuinely cannot be foreseen."
+      weight: 1
+    - id: op5-09
+      stem: "Committing 100% of capacity to planned work is best described as:"
+      type: single
+      options: ["A decision to miss dates", "Efficient scheduling", "Full utilisation", "Tight planning"]
+      correct: ["A decision to miss dates"]
+      rubric_category: application
+      explanation: "The unplanned share is historically reliable even when its content is not."
+      weight: 1
+    - id: op5-10
+      stem: "The strongest driver of further improvement suggestions from a team is:"
+      type: single
+      options: ["Seeing one implemented", "A suggestion scheme", "Manager encouragement", "A standing financial reward"]
+      correct: ["Seeing one implemented"]
+      rubric_category: application
+      explanation: "Named, and visible. Closing the loop is what keeps the list alive."
+      weight: 1

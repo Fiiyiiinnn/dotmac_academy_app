@@ -1,0 +1,7 @@
+{% if sent %}
+<span class="inline-flex items-center gap-1.5 rounded-full bg-brand-100 px-2.5 py-0.5 text-xs font-semibold text-brand-800">&check; Test email sent to {{ to }}</span>
+{% elif unconfigured %}
+<span class="inline-flex items-center gap-1.5 rounded-full bg-clay-500/15 px-2.5 py-0.5 text-xs font-semibold text-clay-600">&cross; SMTP is not configured — set an SMTP host above and save first.</span>
+{% else %}
+<span class="inline-flex items-center gap-1.5 rounded-full bg-clay-500/15 px-2.5 py-0.5 text-xs font-semibold text-clay-600">&cross; Test email not sent{% if error %}: {{ error }}{% endif %}</span>
+{% endif %}

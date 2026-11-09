@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Lab Monitor — Dotmac Academy{% endblock %}
+{% block content_width %}max-w-5xl{% endblock %}
+{% block content %}
+<p class="page-eyebrow">Operations</p>
+<h1 class="page-title">Active labs</h1>
+<p class="page-intro">Live lab instances across the platform and where each one stands.</p>
+
+<div class="card table-frame mt-10" role="region" aria-label="Active labs table; scroll horizontally to see all columns" tabindex="0">
+  <table class="data-table">
+    <thead>
+      <tr class="border-b border-sand-300 bg-sand-200/60 text-left text-xs uppercase tracking-wider text-ink-soft">
+        <th scope="col" class="p-3.5 font-semibold">Person</th>
+        <th scope="col" class="p-3.5 font-semibold">Activity</th>
+        <th scope="col" class="p-3.5 font-semibold">Instance</th>
+        <th scope="col" class="p-3.5 font-semibold">Status</th>
+        <th scope="col" class="p-3.5 font-semibold">Last active</th>
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-sand-200">
+      {% for id, status, instance_name, activity_id, last_active_at, email in rows %}
+      <tr class="transition-colors hover:bg-sand-100">
+        <td class="p-3.5 text-ink">{{ email }}</td>
+        <td class="p-3.5 font-mono tabular-nums text-ink-soft">{{ activity_id }}</td>
+        <td class="p-3.5 font-mono text-xs text-ink-soft">{{ instance_name }}</td>
+        <td class="p-3.5">
+          {% if status == "active" %}
+          <span class="inline-flex items-center gap-1.5 rounded-full bg-brand-100 px-2.5 py-0.5 text-xs font-semibold text-brand-800"><span class="h-1.5 w-1.5 rounded-full bg-brand-600"></span>{{ status }}</span>
+          {% elif status == "error" %}
+          <span class="inline-flex items-center rounded-full bg-clay-500/15 px-2.5 py-0.5 text-xs font-semibold text-clay-600">{{ status }}</span>
+          {% else %}
+          <span class="inline-flex items-center rounded-full bg-sand-200 px-2.5 py-0.5 text-xs font-semibold text-ink-soft">{{ status }}</span>
+          {% endif %}
+        </td>
+        <td class="p-3.5 font-mono tabular-nums text-ink-soft">{{ last_active_at or "—" }}</td>
+      </tr>
+      {% else %}
+      <tr><td colspan="5" class="p-10 text-center text-ink-soft">
+        <img src="/static/img/empty-labs.webp" alt="" class="mx-auto mb-3 h-24 w-24" loading="lazy">
+        No active labs.
+      </td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

@@ -1,0 +1,89 @@
+bank:
+  course: mgmt-project-management
+  kind: chapter
+  chapter: 4
+  version: 2
+  policy:
+    mode: practice
+  questions:
+    - id: pm4-01
+      stem: "A contract's real job is to settle:"
+      type: single
+      options: ["The bad day, agreed in advance", "The price of the work involved", "The scope of what is delivered", "The relationship between the parties"]
+      correct: ["The bad day, agreed in advance"]
+      rubric_category: recall
+      explanation: "Delay remedies, defect rectification, variation pricing and exit — agreed while everyone is still friends."
+      weight: 1
+    - id: pm4-02
+      stem: "A hold point is an inspection scheduled at work that is about to be:"
+      type: single
+      options: ["Covered up", "Paid for", "Repeated", "Handed over"]
+      correct: ["Covered up"]
+      rubric_category: recall
+      explanation: "Foundations, wiring, waterproofing — a hold point skipped to save time is the most expensive time ever saved."
+      weight: 1
+    - id: pm4-03
+      stem: "A specification says the finish must be 'good quality'. What have you actually written?"
+      type: single
+      options: ["A future argument", "A minimum standard", "A shared expectation", "A basis for pricing"]
+      correct: ["A future argument"]
+      rubric_category: application
+      explanation: "Specify checkable outcomes against named standards; citing a formal standard imports a hundred settled arguments in one line."
+      weight: 1
+    - id: pm4-04
+      stem: "A supplier is about to repeat an installation fifty times. What should happen first?"
+      type: single
+      options: ["Inspect and approve the first one as the benchmark", "Agree an inspection schedule covering the whole of the batch", "Confirm the specification covers every variation", "Ask for a method statement before work begins"]
+      correct: ["Inspect and approve the first one as the benchmark"]
+      rubric_category: application
+      explanation: "First-article approval fixes the standard: 'like that one' becomes the reference for everything after."
+      weight: 1
+    - id: pm4-05
+      stem: "You have moved into the space and started using it, though nothing was signed. What is the position?"
+      type: single
+      options: ["You have accepted the work in practice", "Acceptance is still pending the paperwork", "The supplier must still clear the punch list", "The retention can be held until it is signed"]
+      correct: ["You have accepted the work in practice"]
+      rubric_category: application
+      explanation: "Occupying, using or paying for work is acceptance whatever the paperwork says — which is why you do not do it early."
+      weight: 1
+    - id: pm4-06
+      stem: "A contract is worth ₦4,200,000 and holds 10% retention until acceptance. How much is retained, in naira?"
+      type: numeric
+      options:
+        tolerance: 1000
+      correct: 420000
+      rubric_category: application
+      explanation: "0.10 x 4,200,000 = ₦420,000 — the leverage that survives until defects clear."
+      weight: 1
+    - id: pm4-07
+      stem: "Minor defects are found at acceptance. What do they block?"
+      type: single
+      options: ["Final payment, not necessarily acceptance", "Acceptance itself, until every last item is cleared", "Nothing, provided they are recorded", "The release of the supplier from site"]
+      correct: ["Final payment, not necessarily acceptance"]
+      rubric_category: application
+      explanation: "The punch list carries a standard reference, a fix owner and a date; the money is what holds it."
+      weight: 1
+    - id: pm4-08
+      stem: "A supplier who raised a problem early was given a difficult meeting about it. What have you bought?"
+      type: single
+      options: ["A supplier who buries the next problem under the next layer", "A supplier who takes more care over the remaining work", "A relationship that will need repairing before the next stage", "A reputation for holding suppliers to the agreed standard"]
+      correct: ["A supplier who buries the next problem under the next layer"]
+      rubric_category: analysis
+      explanation: "Blameless-review logic pointed outward: keep honesty safe or problems surface only when they are expensive."
+      weight: 1
+    - id: pm4-09
+      stem: "At acceptance you reject work against a standard stricter than the one you specified. What is that?"
+      type: single
+      options: ["A variation to negotiate, not a defect to enforce", "A perfectly legitimate use of the acceptance gate", "A defect the supplier is obliged to correct", "A reason to withhold the retention entirely"]
+      correct: ["A variation to negotiate, not a defect to enforce"]
+      rubric_category: analysis
+      explanation: "Judge against the standard you specified, not the one you wish you had — and take the lesson into the next spec."
+      weight: 1
+    - id: pm4-10
+      stem: "Invoices are arriving faster than progress and crews are thinning. Why decide the escalation trigger now rather than later?"
+      type: single
+      options: ["The decision must fire even when the relationship makes it awkward", "The contract requires notice to be given within a fixed period", "The supplier will otherwise dispute the basis of the escalation", "The evidence is easier to assemble before the work stops"]
+      correct: ["The decision must fire even when the relationship makes it awkward"]
+      rubric_category: analysis
+      explanation: "A tripwire set while you are calm survives the moment when raising it feels rude."
+      weight: 1

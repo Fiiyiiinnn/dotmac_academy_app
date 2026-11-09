@@ -1,0 +1,250 @@
+bank:
+  course: mgmt-vendor-procurement
+  kind: final
+  chapter: null
+  version: 2
+  policy:
+    mode: exam
+    max_attempts: 5
+    pool: 20
+  questions:
+    - id: vpf-01
+      stem: "The purchasing spine runs requisition, approval and:"
+      type: single
+      options: ["Purchase order", "Delivery note", "Goods receipt", "Payment run"]
+      correct: ["Purchase order"]
+      rubric_category: recall
+      explanation: "Need stated, spend authorised in advance, order specified."
+      weight: 1
+    - id: vpf-02
+      stem: "Three-way matching compares the invoice against the PO and:"
+      type: single
+      options: ["The delivery", "The budget", "The contract", "The quotation"]
+      correct: ["The delivery"]
+      rubric_category: recall
+      explanation: "That chain makes overbilling and phantom deliveries visible."
+      weight: 1
+    - id: vpf-03
+      stem: "Total cost of ownership adds running costs, maintenance, downtime and:"
+      type: single
+      options: ["Lifespan and residual value", "The supplier's payment terms", "The cost of tendering it", "The financing interest"]
+      correct: ["Lifespan and residual value"]
+      rubric_category: recall
+      explanation: "Compare per year of service, not per invoice."
+      weight: 1
+    - id: vpf-04
+      stem: "A warranty without a response time is:"
+      type: single
+      options: ["A promise without a clock", "A standard commercial term", "Enforceable but awkward", "Adequate for most buys"]
+      correct: ["A promise without a clock"]
+      rubric_category: recall
+      explanation: "The remedy and its period both have to be written."
+      weight: 1
+    - id: vpf-05
+      stem: "Every durable asset must have, at all times:"
+      type: single
+      options: ["A named holder", "A service record", "An insured value", "A renewal date"]
+      correct: ["A named holder"]
+      rubric_category: recall
+      explanation: "Issue, transfer and return all go through the record."
+      weight: 1
+    - id: vpf-06
+      stem: "Consolidate the routine; diversify the:"
+      type: single
+      options: ["Critical", "Costly", "Frequent", "Unfamiliar"]
+      correct: ["Critical"]
+      rubric_category: recall
+      explanation: "A critical input with one source is a single point of failure."
+      weight: 1
+    - id: vpf-07
+      stem: "An invoice arrives above the remembered price and no PO was raised. What follows?"
+      type: single
+      options: ["The supplier's price memory wins", "The buyer's recollection settles it", "The delivery note decides the amount", "The purchase needs late approval"]
+      correct: ["The supplier's price memory wins"]
+      rubric_category: application
+      explanation: "The PO exists so the invoice has something to be checked against."
+      weight: 1
+    - id: vpf-08
+      stem: "Most purchases at a site are travelling the emergency lane. What is that?"
+      type: single
+      options: ["A planning problem wearing a siren", "A business responsive to urgency", "An approval ladder that is too slow", "A supplier base holding no stock"]
+      correct: ["A planning problem wearing a siren"]
+      rubric_category: application
+      explanation: "Design the emergency path in advance; watch the ratio that uses it."
+      weight: 1
+    - id: vpf-09
+      stem: "The preferred supplier is your cousin's company. What must you do?"
+      type: single
+      options: ["Declare it and step out of the choice", "Get a second quote for comparison", "Proceed if the price is clearly best", "Have your manager approve instead"]
+      correct: ["Declare it and step out of the choice"]
+      rubric_category: application
+      explanation: "The purchase may be right; the undeclared version is always wrong."
+      weight: 1
+    - id: vpf-10
+      stem: "Three suppliers were asked by phone to 'quote for a generator'. What did that produce?"
+      type: single
+      options: ["Quotes that cannot be compared", "A useful spread of market prices", "A shortlist to specify against", "Enough to begin negotiating"]
+      correct: ["Quotes that cannot be compared"]
+      rubric_category: application
+      explanation: "A written spec is what makes quotes comparable side by side."
+      weight: 1
+    - id: vpf-11
+      stem: "The cheapest quote excludes delivery, installation and first service. What comes first?"
+      type: single
+      options: ["Put every quote on the same scope", "Ask them to add the missing items", "Weight each quote by inclusions", "Reduce the others by those items"]
+      correct: ["Put every quote on the same scope"]
+      rubric_category: application
+      explanation: "The sticker-price winner frequently stops winning."
+      weight: 1
+    - id: vpf-12
+      stem: "One bid comes in far below the rest. What do you do?"
+      type: single
+      options: ["Ask how they will meet the spec at it", "Accept it — competition has worked", "Reject it as plainly unrealistic", "Split the award to limit the risk"]
+      correct: ["Ask how they will meet the spec at it"]
+      rubric_category: application
+      explanation: "Misread spec, recovery through variations, or cheap until switching hurts."
+      weight: 1
+    - id: vpf-13
+      stem: "A carton is visibly damaged and the driver is waiting for a signature. What do you do?"
+      type: single
+      options: ["Note it on the document before signing", "Sign, then report it to the supplier", "Refuse the entire delivery outright", "Photograph it and sign as usual"]
+      correct: ["Note it on the document before signing"]
+      rubric_category: application
+      explanation: "The signature is evidence of acceptance."
+      weight: 1
+    - id: vpf-14
+      stem: "40 of 60 items arrive with the rest promised next week. What happens to the PO?"
+      type: single
+      options: ["It stays open until actually filled", "It closes and a new one is raised", "It is amended to the 40 received", "It settles with the balance tracked"]
+      correct: ["It stays open until actually filled"]
+      rubric_category: application
+      explanation: "Partial deliveries are fine when tracked and a silent shortfall when not."
+      weight: 1
+    - id: vpf-15
+      stem: "Which are separated under separation of duties? (Select all that apply.)"
+      type: multi
+      options: ["Who requests it", "Who approves the spend", "Who receives the goods", "Who eventually uses it"]
+      correct: ["Who requests it", "Who approves the spend", "Who receives the goods"]
+      rubric_category: application
+      explanation: "The user is not part of the control."
+      weight: 1
+    - id: vpf-16
+      stem: "A stock count comes up short against the record. What has it given you?"
+      type: single
+      options: ["A variance whose cause needs finding", "A number to correct in the system", "Proof that theft has occurred", "A measure of stock management"]
+      correct: ["A variance whose cause needs finding"]
+      rubric_category: application
+      explanation: "Drift between records and shelves is an early warning, not just an error."
+      weight: 1
+    - id: vpf-17
+      stem: "A delivery is late for the first time. What is the first move?"
+      type: single
+      options: ["Raise it factually, fast, at working level", "Log it for the quarterly supplier review", "Invoke the contract's service credits", "Escalate to both managers together"]
+      correct: ["Raise it factually, fast, at working level"]
+      rubric_category: application
+      explanation: "Most failures die here."
+      weight: 1
+    - id: vpf-18
+      stem: "You are switching suppliers. How is it run?"
+      type: single
+      options: ["As a project, replacement qualified first", "As a clean break when notice expires", "As an immediate stop once permitted", "As a split award to test the new one"]
+      correct: ["As a project, replacement qualified first"]
+      rubric_category: application
+      explanation: "Qualify, overlap, protect stock through the cutover, exit on terms."
+      weight: 1
+    - id: vpf-19
+      stem: "When are a contract's end and notice dates diarised?"
+      type: single
+      options: ["The day it is signed", "Three months before it ends", "At the first annual review", "When renewal is considered"]
+      correct: ["The day it is signed"]
+      rubric_category: application
+      explanation: "An auto-renewal missed by a week can cost a year."
+      weight: 1
+    - id: vpf-20
+      stem: "Which supplier lever do most businesses never pull?"
+      type: single
+      options: ["Paying the good ones on time", "Increasing the order volumes", "Offering a longer contract", "Sharing demand forecasts"]
+      correct: ["Paying the good ones on time"]
+      rubric_category: application
+      explanation: "It buys priority, favours, and honesty that money cannot otherwise reach."
+      weight: 1
+    - id: vpf-21
+      stem: "Why does approval discipline protect the trusted more than it polices them?"
+      type: single
+      options: ["Without it an accusation cannot be disproved", "It distributes the workload more evenly", "It gives them cover for larger purchases", "It shows auditors the process was followed"]
+      correct: ["Without it an accusation cannot be disproved"]
+      rubric_category: analysis
+      explanation: "The controls are what let honest people demonstrate that they are honest."
+      weight: 1
+    - id: vpf-22
+      stem: "Why does routing purchases through one doorway change supplier behaviour?"
+      type: single
+      options: ["Pricing games need side doors to work", "Suppliers prefer a single point of contact", "Consolidated orders appear larger to them", "Payment terms become easier to enforce"]
+      correct: ["Pricing games need side doors to work"]
+      rubric_category: analysis
+      explanation: "Suppliers learn quickly who can be talked into an informal order."
+      weight: 1
+    - id: vpf-23
+      stem: "Why does a vague specification produce padded prices as well as disputes?"
+      type: single
+      options: ["The supplier prices the risk of the ambiguity", "Suppliers add margin when buyers seem new", "Weaker suppliers are attracted to vague specs", "The buyer has no basis on which to negotiate"]
+      correct: ["The supplier prices the risk of the ambiguity"]
+      rubric_category: analysis
+      explanation: "Every ambiguity becomes a padded price or an argument later."
+      weight: 1
+    - id: vpf-24
+      stem: "Why is a quote from a supplier told the target price worthless?"
+      type: single
+      options: ["It is theatre rather than competition", "It anchors the other quotes upward", "It cannot be compared on scope", "It commits them to nothing real"]
+      correct: ["It is theatre rather than competition"]
+      rubric_category: analysis
+      explanation: "A quote written to a disclosed target tells you nothing about the market."
+      weight: 1
+    - id: vpf-25
+      stem: "Why is the exit clause written for its second reading?"
+      type: single
+      options: ["It is studied hardest when things go wrong", "It is what suppliers most want weakened", "It sets the notice each side must give", "It is the clause surviving termination"]
+      correct: ["It is studied hardest when things go wrong"]
+      rubric_category: analysis
+      explanation: "Read once at signing, then very carefully on the worst day."
+      weight: 1
+    - id: vpf-26
+      stem: "Why is 'we noticed later' the weakest sentence in procurement?"
+      type: single
+      options: ["Delivery is the last cheap moment to fix it", "Contract windows for claims will have closed", "The goods have dispersed beyond recounting", "The driver is no longer available to confirm"]
+      correct: ["Delivery is the last cheap moment to fix it"]
+      rubric_category: analysis
+      explanation: "After the driver leaves it is your word against theirs; after dispersal it is nobody's."
+      weight: 1
+    - id: vpf-27
+      stem: "A site has accepted that 'some loss is normal' and stopped measuring. What follows?"
+      type: single
+      options: ["What is unmeasured grows", "Loss settles at that level", "Staff grow more careful", "The cost joins overheads"]
+      correct: ["What is unmeasured grows"]
+      rubric_category: analysis
+      explanation: "Normalisation is the pattern to watch hardest."
+      weight: 1
+    - id: vpf-28
+      stem: "Why is a supplier squeezed to breaking point a risk rather than a bargain?"
+      type: single
+      options: ["They cut the corners you cannot see", "They raise prices at the next renewal", "They serve better payers ahead of you", "They lose the staff who know you"]
+      correct: ["They cut the corners you cannot see"]
+      rubric_category: analysis
+      explanation: "Aligned incentives means margin enough that nobody needs invisible corners."
+      weight: 1
+    - id: vpf-29
+      stem: "A three-year-old contract still carries its original price while volumes doubled. What is that?"
+      type: single
+      options: ["A silent margin leak nobody diarised", "A fair deal both sides agreed to", "A supplier who should have offered more", "A pricing clause that was badly drafted"]
+      correct: ["A silent margin leak nobody diarised"]
+      rubric_category: analysis
+      explanation: "Contracts age badly when unattended; unexamined loyalty is priced by the other side."
+      weight: 1
+    - id: vpf-30
+      stem: "Why should the supplier relationship be institutional rather than personal?"
+      type: single
+      options: ["The knowledge must survive a departure", "Personal ties compromise objectivity", "Suppliers exploit friendly relationships", "It prevents favouritism in awards"]
+      correct: ["The knowledge must survive a departure"]
+      rubric_category: analysis
+      explanation: "Records, reviews and files that belong to the business — the whole course in one sentence."
+      weight: 1

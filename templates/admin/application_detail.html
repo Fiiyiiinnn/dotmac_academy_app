@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+{% block content_width %}max-w-5xl{% endblock %}
+{% block title %}Review {{ applicant.first_name }} {{ applicant.last_name }} — Dotmac Academy{% endblock %}
+{% block content %}
+<div class="mx-auto max-w-5xl space-y-6">
+  <div>
+    <a class="text-sm font-semibold text-brand-600 underline" href="/admin/applications">← Applications</a>
+    <div class="mt-3 flex flex-wrap items-start justify-between gap-4">
+      <div>
+        <h1 class="font-display text-3xl font-[560] text-ink">{{ applicant.first_name }} {{ applicant.last_name }}</h1>
+        <p class="mt-1 text-ink-soft">{{ applicant.email }} · {{ applicant.program or "No track" }}</p>
+      </div>
+      <span class="rounded-full bg-sand-200 px-3 py-1 text-sm font-semibold text-ink">{{ applicant.status }}</span>
+    </div>
+  </div>
+
+  <section class="card grid gap-5 p-5 sm:grid-cols-3">
+    <div>
+      <p class="text-xs font-semibold uppercase tracking-[0.12em] text-ink-soft">Assessment</p>
+      <p class="mt-1 text-lg font-semibold text-ink">
+        {% if applicant.assessment_score is not none %}{{ "%.0f"|format(applicant.assessment_score * 100) }}%{% else %}Not completed{% endif %}
+      </p>
+      {% if applicant.assessment_invalid_reason %}
+      <p class="text-sm text-clay-600">No signal: {{ applicant.assessment_invalid_reason }}</p>
+      {% endif %}
+    </div>
+    <div>
+      <p class="text-xs font-semibold uppercase tracking-[0.12em] text-ink-soft">Applied</p>
+      <p class="mt-1 font-semibold text-ink">{{ applicant.applied_on }}</p>
+      <p class="text-sm text-ink-soft">{{ applicant.source }}</p>
+    </div>
+    <div>
+      <p class="text-xs font-semibold uppercase tracking-[0.12em] text-ink-soft">Profile</p>
+      <p class="mt-1 font-semibold text-ink">{{ "Complete" if applicant.profile_complete else "Incomplete" }}</p>
+      {% if applicant.missing_profile_fields %}
+      <p class="text-sm text-ink-soft">{{ applicant.missing_profile_fields|join(", ") }}</p>
+      {% endif %}
+    </div>
+  </section>
+
+  <section class="card p-5">
+    <h2 class="font-display text-xl font-[560] text-ink">Training placement</h2>
+    <p class="mt-1 text-sm text-ink-soft">
+      Acceptance and enrolment use this canonical cohort/track pair.
+    </p>
+    {% if intake_choices %}
+    <form method="post" action="/admin/applications/{{ applicant.id }}/intake"
+          hx-post="/admin/applications/{{ applicant.id }}/intake" hx-target="body"
+          class="mt-4 grid gap-3 sm:grid-cols-[1fr_1fr_auto] sm:items-end">
+      <div>
+        <label class="block text-sm font-semibold text-ink" for="intake-choice">Cohort and track</label>
+        <select id="intake-choice" name="intake_choice" required class="mt-2 w-full px-3 py-2">
+          <option value="" disabled {% if not applicant.track_id %}selected{% endif %}>Choose an active placement…</option>
+          {% for choice in intake_choices %}
+          <option value="{{ choice.value }}"
+                  {% if applicant.cohort_id == choice.cohort_id and applicant.track_id == choice.track_id %}selected{% endif %}>
+            {{ choice.track }} — {{ choice.cohort }}
+          </option>
+          {% endfor %}
+        </select>
+      </div>
+      <div>
+        <label class="block text-sm font-semibold text-ink" for="intake-reason">Reason</label>
+        <input id="intake-reason" name="reason" maxlength="1000" placeholder="Placement or correction note"
+               class="mt-2 w-full px-3 py-2">
+      </div>
+      <button type="submit" class="btn-primary px-4 py-2 text-sm">Save placement</button>
+    </form>
+    {% else %}
+    <p class="mt-3 text-sm text-clay-600">No active cohort/track pair is configured. Configure one before accepting applicants.</p>
+    {% endif %}
+  </section>
+
+  <section class="card p-5">
+    <h2 class="font-display text-xl font-[560] text-ink">Available actions</h2>
+    {% if actions %}
+    <div class="mt-4 grid gap-4">
+      {% for action in actions %}
+      <form method="post" action="/admin/applications/{{ applicant.id }}/action"
+            hx-post="/admin/applications/{{ applicant.id }}/action" hx-target="body"
+            class="rounded-lg border border-sand-200 p-4">
+        <input type="hidden" name="action" value="{{ action.key }}">
+        <label class="block text-sm font-semibold text-ink" for="reason-{{ action.key }}">{{ action.label }}</label>
+        <input id="reason-{{ action.key }}" name="reason" maxlength="1000" placeholder="Reason or review note"
+               class="mt-2 w-full px-3 py-2">
+        {% if action.key == "resend_invitation" %}
+        <label class="mt-3 flex items-center gap-2 text-sm font-semibold text-ink">
+          <input type="checkbox" name="extend_access" value="true" checked>
+          Also extend access
+        </label>
+        {% endif %}
+        <button type="submit"
+                class="{{ 'btn-secondary' if action.destructive else 'btn-primary' }} mt-3 px-4 py-2 text-sm"
+                {% if action.destructive %}onclick="return confirm('Confirm this action?')"{% endif %}>
+          {{ action.label }}
+        </button>
+      </form>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p class="mt-3 text-sm text-ink-soft">No state transition is currently available.</p>
+    {% endif %}
+  </section>
+
+  <section class="card p-5">
+    <h2 class="font-display text-xl font-[560] text-ink">Decision history</h2>
+    <ol class="mt-4 space-y-3">
+      {% for event in history %}
+      <li class="border-l-2 border-sand-300 pl-4">
+        <p class="text-sm font-semibold text-ink">
+          {% if event.action == "applicant.intake_assigned" %}
+          Training placement assigned: {{ event.details.get("track_name") }}
+          {% else %}
+          {{ event.details.get("from_status") or "Baseline" }} → {{ event.details.get("to_status") or event.action }}
+          {% endif %}
+        </p>
+        <p class="text-xs text-ink-soft">{{ event.created_at }} · {{ event.details.get("source", "unknown") }}</p>
+        {% if event.details.get("reason") %}<p class="mt-1 text-sm text-ink-soft">{{ event.details.get("reason") }}</p>{% endif %}
+      </li>
+      {% else %}
+      <li class="text-sm text-ink-soft">No transition history recorded yet.</li>
+      {% endfor %}
+    </ol>
+  </section>
+</div>
+{% endblock %}

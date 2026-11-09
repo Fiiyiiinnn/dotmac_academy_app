@@ -1,0 +1,837 @@
+# Dotmac Academy entrance assessment — 90 questions, 18 per competency.
+#
+# Sat by candidates ONE time each (grade_entrance refuses a second sitting), so
+# the leak this bank has to survive is candidates comparing notes WITHIN a hiring
+# round, not one person retaking. With `entrance_questions_per_category: 6` each
+# candidate draws a stratified third — same shape for everyone, different paper.
+#
+# Distractor balance is a scoring requirement here, not a style note: the
+# validity gate in app/services/entrance_exam.py rejects a sitting at or below
+# 33% as `near_chance` on the stated basis that guessing scores 25%. That only
+# holds while the options are balanced. See lint_bank's distractor rule.
+bank:
+  course: fibre-entrance
+  kind: chapter
+  chapter: 1
+  version: 2
+  questions:
+
+    # ---------------------------------------------------------------- numeracy
+    - id: ent-num-01
+      stem: "A drum is labelled 500 m of fibre cable. You have used 375 m. How much cable is left on the drum?"
+      type: single
+      options: ["75 m", "125 m", "175 m", "225 m"]
+      correct: ["125 m"]
+      rubric_category: application
+      category: numeracy
+      explanation: "500 - 375 = 125 m."
+      weight: 1
+    - id: ent-num-02
+      stem: "A cable route measures 2.5 km. How many metres is that?"
+      type: single
+      options: ["250 m", "2,500 m", "25,000 m", "0.25 m"]
+      correct: ["2,500 m"]
+      rubric_category: recall
+      category: numeracy
+      explanation: "1 km = 1,000 m, so 2.5 km = 2,500 m."
+      weight: 1
+    - id: ent-num-03
+      stem: "Two crews work together on the same estate. Crew A completes 6 customer drops per day and Crew B completes 4 per day. Working together at these rates, how many days will 60 drops take?"
+      type: single
+      options: ["5 days", "6 days", "10 days", "15 days"]
+      correct: ["6 days"]
+      rubric_category: application
+      category: numeracy
+      explanation: "Combined rate is 6 + 4 = 10 drops per day; 60 / 10 = 6 days."
+      weight: 1
+    - id: ent-num-04
+      stem: "A 40-core fibre cable has 25% of its cores already in use. How many cores are still free?"
+      type: single
+      options: ["10", "15", "25", "30"]
+      correct: ["30"]
+      rubric_category: application
+      category: numeracy
+      explanation: "25% of 40 = 10 cores in use, so 40 - 10 = 30 free."
+      weight: 1
+    - id: ent-num-05
+      stem: "A signal leaves the transmitter at -3 dBm. Along the link it loses a total of 12 dB. What power arrives at the receiver?"
+      type: single
+      options: ["-9 dBm", "-12 dBm", "-15 dBm", "+9 dBm"]
+      correct: ["-15 dBm"]
+      rubric_category: application
+      category: numeracy
+      explanation: "Losing 12 dB from -3 dBm gives -3 - 12 = -15 dBm."
+      weight: 1
+    - id: ent-num-06
+      stem: "Fibre loses roughly 0.35 dB for every kilometre of cable. Over a 20 km run, approximately how much loss comes from the fibre itself?"
+      type: single
+      options: ["0.7 dB", "3.5 dB", "7 dB", "70 dB"]
+      correct: ["7 dB"]
+      rubric_category: application
+      category: numeracy
+      explanation: "0.35 dB/km x 20 km = 7 dB."
+      weight: 1
+    - id: ent-num-07
+      stem: "A route needs 8 splices and each splice loses about 0.1 dB. What is the total splice loss?"
+      type: single
+      options: ["0.8 dB", "1.8 dB", "8.0 dB", "0.08 dB"]
+      correct: ["0.8 dB"]
+      rubric_category: application
+      category: numeracy
+      explanation: "8 x 0.1 = 0.8 dB."
+      weight: 1
+    - id: ent-num-08
+      stem: "A drum holds 1,000 m. You complete three drops using 85 m each. How much cable remains?"
+      type: single
+      options: ["745 m", "755 m", "715 m", "835 m"]
+      correct: ["745 m"]
+      rubric_category: application
+      category: numeracy
+      explanation: "3 x 85 = 255; 1,000 - 255 = 745 m."
+      weight: 1
+    - id: ent-num-09
+      stem: "How many centimetres are there in one metre?"
+      type: single
+      options: ["100", "10", "1,000", "12"]
+      correct: ["100"]
+      rubric_category: recall
+      category: numeracy
+      explanation: "1 m = 100 cm."
+      weight: 1
+    - id: ent-num-10
+      stem: "Four technicians working three days complete 48 installations between them. What is the average per technician per day?"
+      type: single
+      options: ["4", "3", "12", "16"]
+      correct: ["4"]
+      rubric_category: application
+      category: numeracy
+      explanation: "48 / (4 x 3) = 4 installations."
+      weight: 1
+    - id: ent-num-11
+      stem: "A 320-core cable has 15% of its cores in use. How many are free?"
+      type: single
+      options: ["272", "305", "48", "268"]
+      correct: ["272"]
+      rubric_category: application
+      category: numeracy
+      explanation: "15% of 320 = 48 in use; 320 - 48 = 272 free."
+      weight: 1
+    - id: ent-num-12
+      stem: "A job is quoted at 90 minutes. You have six of them and an eight-hour working day. What is the position?"
+      type: single
+      options: ["Nine hours of work — it does not fit", "Exactly eight hours — it just fits", "Seven and a half hours — it fits", "Six hours of work — it fits easily"]
+      correct: ["Nine hours of work — it does not fit"]
+      rubric_category: application
+      category: numeracy
+      explanation: "6 x 90 min = 540 min = 9 hours, which exceeds the 8-hour day."
+      weight: 1
+    - id: ent-num-13
+      stem: "A quote of ₦45,000 carries a 20% discount. What is the price after the discount?"
+      type: single
+      options: ["₦36,000", "₦40,000", "₦34,000", "₦25,000"]
+      correct: ["₦36,000"]
+      rubric_category: application
+      category: numeracy
+      explanation: "20% of 45,000 = 9,000; 45,000 - 9,000 = ₦36,000."
+      weight: 1
+    - id: ent-num-14
+      stem: "How many metres is 0.5 km?"
+      type: single
+      options: ["500 m", "50 m", "5,000 m", "5 m"]
+      correct: ["500 m"]
+      rubric_category: recall
+      category: numeracy
+      explanation: "0.5 x 1,000 = 500 m."
+      weight: 1
+    - id: ent-num-15
+      stem: "Three crews each complete 7 drops a day. Over five working days, how many drops are completed in total?"
+      type: single
+      options: ["105", "35", "21", "150"]
+      correct: ["105"]
+      rubric_category: application
+      category: numeracy
+      explanation: "3 x 7 x 5 = 105 drops."
+      weight: 1
+    - id: ent-num-16
+      stem: "A link has a loss budget of 28 dB and currently measures 24.4 dB. Each additional connector adds about 0.5 dB. How many more connectors fit inside the budget?"
+      type: single
+      options: ["7", "5", "3", "9"]
+      correct: ["7"]
+      rubric_category: analysis
+      category: numeracy
+      explanation: "28 - 24.4 = 3.6 dB of headroom; 3.6 / 0.5 = 7 connectors."
+      weight: 1
+    - id: ent-num-17
+      stem: "Route A is 12 km with 4 splices. Route B is 9 km with 9 splices. Fibre loses 0.35 dB/km and each splice 0.1 dB. Which route has the lower total loss?"
+      type: single
+      options: ["Route B, by about 0.55 dB", "Route A, by about 0.55 dB", "They are the same to within 0.1 dB", "Route A, by more than 2 dB"]
+      correct: ["Route B, by about 0.55 dB"]
+      rubric_category: analysis
+      category: numeracy
+      explanation: "A = 4.2 + 0.4 = 4.6 dB; B = 3.15 + 0.9 = 4.05 dB. The shorter route wins despite more splices."
+      weight: 1
+    - id: ent-num-18
+      stem: "A team completes 42 jobs in six days. To meet demand it must reach 56 jobs in the same six days. By roughly what percentage must output rise?"
+      type: single
+      options: ["About a third", "About a quarter", "About a half", "About a tenth"]
+      correct: ["About a third"]
+      rubric_category: analysis
+      category: numeracy
+      explanation: "14 / 42 = 0.33, so about a 33% increase."
+      weight: 1
+
+    # -------------------------------------------------- reading_comprehension
+    - id: ent-read-01
+      stem: "A work order states: 'Install the ONT within 2 metres of a power socket. Do not mount it higher than 1.5 m from the floor.' Which installation follows BOTH instructions?"
+      type: single
+      options: ["Mounted 1.8 m high, 1 m from a socket", "Mounted 1.2 m high, 1.5 m from a socket", "Mounted 1.4 m high, 3 m from a socket", "Mounted 2.0 m high and 4 m from a socket"]
+      correct: ["Mounted 1.2 m high, 1.5 m from a socket"]
+      rubric_category: application
+      category: reading_comprehension
+      explanation: "Only this option is both at or below 1.5 m high and within 2 m of a socket."
+      weight: 1
+    - id: ent-read-02
+      stem: "A work order states: 'Call the customer 30 minutes before arrival. If there is no answer, call your supervisor before leaving the site.' You arrive, call the customer twice, and get no answer. What should you do next?"
+      type: single
+      options: ["Leave the site immediately", "Call your supervisor", "Carry out the installation without the customer", "Wait at the site until the customer calls back"]
+      correct: ["Call your supervisor"]
+      rubric_category: application
+      category: reading_comprehension
+      explanation: "The instruction requires calling the supervisor before leaving the site."
+      weight: 1
+    - id: ent-read-03
+      stem: "Procedure: 'Test every fibre at 1310 nm and 1550 nm. A fibre passes only if loss is 0.5 dB or lower at BOTH wavelengths. If it fails at either wavelength, re-clean and re-test once. If it fails again, replace the connector.' A fibre reads 0.4 dB at 1310 nm and 0.7 dB at 1550 nm. You re-clean it; it now reads 0.4 dB and 0.6 dB. What do you do?"
+      type: single
+      options: ["Accept it, because it passes at 1310 nm", "Re-clean and test it a second time", "Replace the connector", "Record it as a pass because the reading improved"]
+      correct: ["Replace the connector"]
+      rubric_category: analysis
+      category: reading_comprehension
+      explanation: "0.6 dB still exceeds 0.5 dB, so it failed again after its one permitted re-clean."
+      weight: 1
+    - id: ent-read-04
+      stem: "Your job sheet says: 'Materials issued: 30 m drop cable, 4 cable clips, 2 connectors. Any unused material must be returned to the store the same day.' You use 22 m of cable, 3 clips and both connectors. What must you return?"
+      type: single
+      options: ["Nothing, because all the packets were opened", "8 m of cable and 1 clip", "8 m of cable only", "1 clip only"]
+      correct: ["8 m of cable and 1 clip"]
+      rubric_category: application
+      category: reading_comprehension
+      explanation: "Unused material is 30 - 22 = 8 m of cable and 4 - 3 = 1 clip; both must be returned."
+      weight: 1
+    - id: ent-read-05
+      stem: "Escalation rules: 'Escalate to the NOC if (a) more than one customer on the same street reports no service, OR (b) the ONT shows a red LOS light after a reboot. Do NOT escalate a single customer who has a working ONT and only a WiFi complaint — resolve that on site.' A customer reports slow WiFi. Their ONT shows a green PON light with no LOS, and no other customer has complained. What is the correct action?"
+      type: single
+      options: ["Escalate to the NOC, because slow speed is a network fault", "Escalate to the NOC, because every complaint must be escalated", "Resolve it on site — it is a WiFi-only complaint", "Reboot the ONT and then escalate it anyway"]
+      correct: ["Resolve it on site — it is a WiFi-only complaint"]
+      rubric_category: analysis
+      category: reading_comprehension
+      explanation: "The rules explicitly exclude this case from escalation and require it to be resolved on site."
+      weight: 1
+    - id: ent-read-06
+      stem: "Rule: 'Do jobs in priority order — P1 (service down) first, then P2 (degraded), then P3 (new install). Within the same priority, do the job logged earliest first.' Your queue is: Job A, new install, logged 08:00. Job B, service down, logged 11:00. Job C, degraded, logged 09:00. Job D, service down, logged 09:30. Which job do you do FIRST?"
+      type: single
+      options: ["Job A", "Job B", "Job C", "Job D"]
+      correct: ["Job D"]
+      rubric_category: analysis
+      category: reading_comprehension
+      explanation: "P1 jobs come first (B and D); of those, D was logged earlier (09:30 vs 11:00)."
+      weight: 1
+    - id: ent-read-07
+      stem: "Rule: 'Photograph the completed work before you leave. If the customer refuses photography inside the property, photograph the external work only and record the refusal on the job sheet.' The customer objects to photos indoors. What do you do?"
+      type: single
+      options: ["Photograph outside and note the refusal", "Take no photographs at all on this job", "Photograph indoors once the customer leaves", "Close the job and mark photos unavailable"]
+      correct: ["Photograph outside and note the refusal"]
+      rubric_category: application
+      category: reading_comprehension
+      explanation: "The rule provides for exactly this case: external photos plus a recorded refusal."
+      weight: 1
+    - id: ent-read-08
+      stem: "Notice: 'Overtime is paid only when it is approved in advance by a supervisor. Work performed beyond scheduled hours without prior approval will not be paid.' You finish a job two hours late without contacting anyone, because it was nearly done. What is the position?"
+      type: single
+      options: ["Unpaid — no prior approval was obtained", "Paid, because the work was genuinely done", "Paid at the standard rather than overtime rate", "Paid once a supervisor approves it afterwards"]
+      correct: ["Unpaid — no prior approval was obtained"]
+      rubric_category: application
+      category: reading_comprehension
+      explanation: "'Approved in advance' is a precondition, not a preference; retrospective approval is not provided for."
+      weight: 1
+    - id: ent-read-09
+      stem: "Stores policy: 'Consumables may be drawn without a requisition up to ₦5,000 per visit. Anything above that, or any tool of any value, requires a signed requisition.' You need ₦3,200 of cable ties and a ₦2,000 crimping tool. What do you need?"
+      type: single
+      options: ["A requisition, because a tool is involved", "Nothing — the combined total is under ₦5,000", "A requisition only for the cable ties", "Nothing, since neither item alone exceeds it"]
+      correct: ["A requisition, because a tool is involved"]
+      rubric_category: analysis
+      category: reading_comprehension
+      explanation: "The tool clause applies at any value, independently of the ₦5,000 consumables threshold."
+      weight: 1
+    - id: ent-read-10
+      stem: "Instruction: 'Where the route crosses private land, obtain the owner's written permission before any excavation. Verbal permission is not sufficient.' The owner is present and says to go ahead. What do you do?"
+      type: single
+      options: ["Get it in writing before digging", "Begin work, since the owner is present", "Begin, and get the signature afterwards", "Record their agreement in the job notes"]
+      correct: ["Get it in writing before digging"]
+      rubric_category: application
+      category: reading_comprehension
+      explanation: "The instruction rules out verbal permission explicitly, whoever is standing there."
+      weight: 1
+    - id: ent-read-11
+      stem: "Rule: 'Report any customer complaint about a technician's conduct to the area manager the same day, even if the complaint is resolved on site.' A customer complains, you apologise, and they are satisfied. What now?"
+      type: single
+      options: ["Report it to the area manager today", "No report — the matter was resolved", "Report it only if it recurs later on", "Note it on the job sheet and move on"]
+      correct: ["Report it to the area manager today"]
+      rubric_category: application
+      category: reading_comprehension
+      explanation: "The rule covers complaints that were resolved on site — that is the case it names."
+      weight: 1
+    - id: ent-read-12
+      stem: "Procedure: 'Before energising, confirm the customer's account is active. If the account shows unpaid, do not energise; leave the installation complete but inactive and inform the customer.' The account is unpaid but the customer promises to pay this afternoon. What do you do?"
+      type: single
+      options: ["Complete the work but leave it inactive", "Energise it, given the promise to pay", "Stop and remove the equipment you fitted", "Energise briefly to prove it works, then off"]
+      correct: ["Complete the work but leave it inactive"]
+      rubric_category: analysis
+      category: reading_comprehension
+      explanation: "The procedure names the unpaid case and its action; a promise does not change the account state."
+      weight: 1
+    - id: ent-read-13
+      stem: "Which statement is a written instruction rather than a description?"
+      type: single
+      options: ["Test both directions after terminating", "The link was tested in both directions", "Testing both directions is good practice", "Most technicians test in both directions"]
+      correct: ["Test both directions after terminating"]
+      rubric_category: recall
+      category: reading_comprehension
+      explanation: "An instruction directs an action; the others report, advise, or describe."
+      weight: 1
+    - id: ent-read-14
+      stem: "Rule: 'A job may be closed only when the customer has signed OR, where the customer is absent, a supervisor has authorised closure.' The customer is absent and you cannot reach your supervisor. Can you close the job?"
+      type: single
+      options: ["No — neither condition has been met", "Yes, because the work is finished", "Yes, if you note the customer's absence", "No, unless the work took under an hour"]
+      correct: ["No — neither condition has been met"]
+      rubric_category: application
+      category: reading_comprehension
+      explanation: "The rule offers two routes to closure and neither is available here."
+      weight: 1
+    - id: ent-read-15
+      stem: "Notice: 'Vehicles must be refuelled before returning to the depot. Fuel receipts must be submitted within 48 hours or the claim is refused.' You refuel on Friday evening. When must the receipt be in?"
+      type: single
+      options: ["By Sunday evening", "By Monday morning", "By the end of the month", "Within the same working week"]
+      correct: ["By Sunday evening"]
+      rubric_category: application
+      category: reading_comprehension
+      explanation: "48 hours from Friday evening is Sunday evening; the rule counts hours, not working days."
+      weight: 1
+    - id: ent-read-16
+      stem: "Instruction: 'Wear high-visibility clothing at all times on the public highway, including when working from the vehicle.' You are sitting in the van completing paperwork at the roadside. What applies?"
+      type: single
+      options: ["High-visibility clothing is required", "It is not required inside the vehicle", "It is required only when outside it", "It is advisory rather than required"]
+      correct: ["High-visibility clothing is required"]
+      rubric_category: application
+      category: reading_comprehension
+      explanation: "The instruction names working from the vehicle as an included case."
+      weight: 1
+    - id: ent-read-17
+      stem: "Two documents conflict: the job sheet says use 2 mm clips, the standard says 3 mm for external runs. The standard states it 'overrides job-specific instructions where safety or durability is affected.' What do you do?"
+      type: single
+      options: ["Use 3 mm and record why you deviated", "Use 2 mm as the job sheet specifies", "Use whichever size the stores issued", "Stop work until the conflict is resolved"]
+      correct: ["Use 3 mm and record why you deviated"]
+      rubric_category: analysis
+      category: reading_comprehension
+      explanation: "The standard states its own precedence for durability, and the deviation needs recording."
+      weight: 1
+    - id: ent-read-18
+      stem: "Rule: 'Report a near miss even where no injury or damage occurred.' A ladder slipped but you caught it and nobody was hurt. What follows?"
+      type: single
+      options: ["It is reportable as a near miss", "No report — there was no injury", "Report it only if it happens again", "Mention it verbally at the next brief"]
+      correct: ["It is reportable as a near miss"]
+      rubric_category: analysis
+      category: reading_comprehension
+      explanation: "A near miss is defined by what could have happened; the rule names the no-injury case directly."
+      weight: 1
+
+    # ----------------------------------------------------- logical_reasoning
+    - id: ent-logic-01
+      stem: "Using the same light source and meter, a technician tests four fibres. Fibres 1, 2 and 4 carry light. Fibre 3 does not. What is the most reasonable first conclusion?"
+      type: single
+      options: ["All four of the fibres are broken", "The problem is specific to fibre 3", "The light source is faulty", "The meter is faulty"]
+      correct: ["The problem is specific to fibre 3"]
+      rubric_category: analysis
+      category: logical_reasoning
+      explanation: "The same source and meter worked on three fibres, so the fault is isolated to fibre 3."
+      weight: 1
+    - id: ent-logic-02
+      stem: "What number comes next in this sequence?  2, 4, 8, 16, ..."
+      type: single
+      options: ["18", "20", "24", "32"]
+      correct: ["32"]
+      rubric_category: application
+      category: logical_reasoning
+      explanation: "Each number is double the one before it, so 16 x 2 = 32."
+      weight: 1
+    - id: ent-logic-03
+      stem: "A customer has no internet. The technician swaps the customer's router for a known-good router, changing nothing else, and the internet works. What does this show?"
+      type: single
+      options: ["The fibre into the house is broken", "The original router was the fault", "The ONT is faulty", "The ISP network is down"]
+      correct: ["The original router was the fault"]
+      rubric_category: application
+      category: logical_reasoning
+      explanation: "Only the router was changed and the service came back, so the fault was in the original router."
+      weight: 1
+    - id: ent-logic-04
+      stem: "Every customer on one street is offline. Customers on the next street are working normally. Which explanation is MOST likely?"
+      type: single
+      options: ["Every router on that street failed at the same moment", "Something shared by that street has failed", "The entire city network is down", "All the customers on that street stopped paying at once"]
+      correct: ["Something shared by that street has failed"]
+      rubric_category: analysis
+      category: logical_reasoning
+      explanation: "A fault affecting exactly one street, and no other, points to infrastructure shared by that street."
+      weight: 1
+    - id: ent-logic-05
+      stem: "Ada, Bola and Chidi each did exactly one job today — a splice, a survey, or an install (one each). Bola did not do the splice. Chidi did the install. Ada did not do the survey. Who did the splice?"
+      type: single
+      options: ["Ada", "Bola", "Chidi", "It cannot be determined"]
+      correct: ["Ada"]
+      rubric_category: analysis
+      category: logical_reasoning
+      explanation: "Chidi installed, so the splice and survey belong to Ada and Bola; Ada did not survey, so Ada spliced."
+      weight: 1
+    - id: ent-logic-06
+      stem: "A customer says their internet slows to a crawl every evening around 7pm and recovers late at night. The ONT stays green the whole time and never loses its link. Which explanation best fits this pattern?"
+      type: single
+      options: ["The fibre cable has been cut somewhere", "The ONT hardware has failed entirely", "Congestion at peak hours, not a fault", "The customer's account has been suspended"]
+      correct: ["Congestion at peak hours, not a fault"]
+      rubric_category: analysis
+      category: logical_reasoning
+      explanation: "A problem appearing only at peak hours that never drops the optical link points to congestion."
+      weight: 1
+    - id: ent-logic-07
+      stem: "A fault appears only when it rains, and clears when the weather dries. What does that pattern most suggest?"
+      type: single
+      options: ["Water reaching a joint or an enclosure", "A configuration error made at install", "An account or billing system problem", "A fault in the customer's own router"]
+      correct: ["Water reaching a joint or an enclosure"]
+      rubric_category: analysis
+      category: logical_reasoning
+      explanation: "A fault correlated with rain and reversing when dry points to water ingress, not configuration."
+      weight: 1
+    - id: ent-logic-08
+      stem: "What comes next?  3, 6, 12, 24, ..."
+      type: single
+      options: ["48", "36", "30", "72"]
+      correct: ["48"]
+      rubric_category: application
+      category: logical_reasoning
+      explanation: "Each term doubles: 24 x 2 = 48."
+      weight: 1
+    - id: ent-logic-09
+      stem: "All technicians in the depot carry a power meter. Musa is a technician in that depot. Which statement must be true?"
+      type: single
+      options: ["Musa carries a power meter", "Musa carries only a power meter", "Everyone with a meter is a technician", "Musa is the only one with a meter"]
+      correct: ["Musa carries a power meter"]
+      rubric_category: application
+      category: logical_reasoning
+      explanation: "The other options reverse the statement or add claims it never made."
+      weight: 1
+    - id: ent-logic-10
+      stem: "You replace a suspect patch lead and the fault clears. An hour later the fault returns. What is the most reasonable reading?"
+      type: single
+      options: ["The lead was not the real cause", "The replacement lead is also faulty", "The whole route needs replacing now", "The fault will clear again by itself"]
+      correct: ["The lead was not the real cause"]
+      rubric_category: analysis
+      category: logical_reasoning
+      explanation: "A fix that holds for an hour and then fails points past the component you changed."
+      weight: 1
+    - id: ent-logic-11
+      stem: "Four jobs are booked: two installs, one repair, one survey. The repair is not first. The survey is last. An install is first. What could the order be?"
+      type: single
+      options: ["Install, install, repair, survey", "Repair, install, install, survey", "Install, survey, repair, install", "Survey, install, install, repair"]
+      correct: ["Install, install, repair, survey"]
+      rubric_category: analysis
+      category: logical_reasoning
+      explanation: "Only this order puts an install first, the survey last, and the repair anywhere but first."
+      weight: 1
+    - id: ent-logic-12
+      stem: "Three customers on the same splitter are down; two others on that splitter are fine. What does this rule out?"
+      type: single
+      options: ["A total failure of that splitter", "A fault in any individual drop", "A problem at the exchange end", "A fault in the feeder to the area"]
+      correct: ["A total failure of that splitter"]
+      rubric_category: analysis
+      category: logical_reasoning
+      explanation: "If the splitter had failed completely, the two working customers would also be down."
+      weight: 1
+    - id: ent-logic-13
+      stem: "A meter reads correctly on a known-good reference lead but gives wild readings on every field fibre you test. What is the most likely explanation?"
+      type: single
+      options: ["The field fibres or their connectors are dirty", "The meter needs to be replaced entirely", "The reference lead is giving a false pass", "Every field fibre has been broken today"]
+      correct: ["The field fibres or their connectors are dirty"]
+      rubric_category: analysis
+      category: logical_reasoning
+      explanation: "The meter proves itself on the reference lead, so the variable is what is being tested."
+      weight: 1
+    - id: ent-logic-14
+      stem: "Which number does not belong?  4, 9, 16, 20, 25"
+      type: single
+      options: ["20", "4", "16", "25"]
+      correct: ["20"]
+      rubric_category: application
+      category: logical_reasoning
+      explanation: "All the others are square numbers; 20 is not."
+      weight: 1
+    - id: ent-logic-15
+      stem: "A job takes twice as long as expected every time it is done at night, and the equipment is identical. What should be investigated first?"
+      type: single
+      options: ["What differs about working at night", "Whether the equipment is faulty", "Whether the estimate itself is wrong", "Whether the team is less capable"]
+      correct: ["What differs about working at night"]
+      rubric_category: analysis
+      category: logical_reasoning
+      explanation: "The equipment is constant and the timing is not, so the difference lives in the conditions."
+      weight: 1
+    - id: ent-logic-16
+      stem: "If every fibre in a cable tests good individually, but the circuit through the cable fails, where should you look next?"
+      type: single
+      options: ["At the joints and patching at each end", "At the fibre in the middle of the run", "At the manufacturer's cable specification", "At the customer's equipment settings"]
+      correct: ["At the joints and patching at each end"]
+      rubric_category: application
+      category: logical_reasoning
+      explanation: "The fibres pass individually, so the failure is in how they are connected together."
+      weight: 1
+    - id: ent-logic-17
+      stem: "What comes next?  1, 4, 9, 16, ..."
+      type: single
+      options: ["25", "20", "24", "32"]
+      correct: ["25"]
+      rubric_category: application
+      category: logical_reasoning
+      explanation: "The sequence is squares: 1, 4, 9, 16, 25."
+      weight: 1
+    - id: ent-logic-18
+      stem: "A customer's service fails at the same time every morning, and the only thing that happens then is a neighbour's generator starting. What is the sensible next step?"
+      type: single
+      options: ["Check for interference or a shared power path", "Replace the customer's ONT immediately", "Tell the customer it is not your problem", "Ask the neighbour to stop using the generator"]
+      correct: ["Check for interference or a shared power path"]
+      rubric_category: application
+      category: logical_reasoning
+      explanation: "A reliable coincidence in time is a lead to test, not a conclusion and not a dismissal."
+      weight: 1
+
+    # ------------------------------------------------------ safety_awareness
+    - id: ent-safe-01
+      stem: "You are about to climb a pole to install an aerial drop. What must you do FIRST?"
+      type: single
+      options: ["Climb quickly, before the weather changes", "Inspect the pole and your harness", "Ask the customer to hold the ladder steady", "Take your gloves off so you can grip better"]
+      correct: ["Inspect the pole and your harness"]
+      rubric_category: recall
+      category: safety_awareness
+      explanation: "The pole's condition and your fall protection must be checked before any climb begins."
+      weight: 1
+    - id: ent-safe-02
+      stem: "Why must you never look directly into the end of a fibre or a fibre light source?"
+      type: single
+      options: ["It leaves the fibre dirty and permanently unusable", "Invisible laser light can damage your eyes", "It causes the fibre to snap under tension", "It voids the equipment warranty terms"]
+      correct: ["Invisible laser light can damage your eyes"]
+      rubric_category: recall
+      category: safety_awareness
+      explanation: "Fibre carries laser light you cannot see, and it can cause permanent eye injury."
+      weight: 1
+    - id: ent-safe-03
+      stem: "What is the correct way to deal with the tiny fibre offcuts produced when you cleave fibre?"
+      type: single
+      options: ["Drop them and sweep up at the end of the job", "Blow them off the work surface", "Put them in a sealed offcut container", "Keep them in your pocket until you finish"]
+      correct: ["Put them in a sealed offcut container"]
+      rubric_category: application
+      category: safety_awareness
+      explanation: "Fibre shards are sharp and nearly invisible, and can pierce skin or eyes."
+      weight: 1
+    - id: ent-safe-04
+      stem: "Working in a customer's home, you find that the only power socket you can use is scorched and smells burnt. What should you do?"
+      type: single
+      options: ["Use it anyway, since you only need it briefly", "Do not use it; report it", "Repair the socket yourself before continuing", "Cover it with insulating tape and carry on"]
+      correct: ["Do not use it; report it"]
+      rubric_category: application
+      category: safety_awareness
+      explanation: "A burnt socket is an electrical hazard and outside your scope — do not use it, and report it."
+      weight: 1
+    - id: ent-safe-05
+      stem: "You need to enter a deep underground cable chamber that has been sealed shut for months. What is the correct FIRST step?"
+      type: single
+      options: ["Climb in quickly and open the ducts", "Test the atmosphere before entry", "Drop a lit match in to check for gas", "Ask a colleague to watch from the roadside"]
+      correct: ["Test the atmosphere before entry"]
+      rubric_category: application
+      category: safety_awareness
+      explanation: "A sealed chamber is a confined space; the atmosphere must be tested and procedure followed."
+      weight: 1
+    - id: ent-safe-06
+      stem: "Your supervisor is pressing you to finish a job today, but the only ladder available has a cracked side rail. What should you do?"
+      type: single
+      options: ["Use it carefully, because the job is urgent", "Use it, but have someone hold it steady", "Refuse it, report it, get a safe one", "Use it only for short climbs to the eaves"]
+      correct: ["Refuse it, report it, get a safe one"]
+      rubric_category: application
+      category: safety_awareness
+      explanation: "Defective access equipment must be taken out of use and reported; schedule pressure never justifies it."
+      weight: 1
+    - id: ent-safe-07
+      stem: "You are working at the roadside on a busy street. What must be in place before you start?"
+      type: single
+      options: ["Signage and cones protecting the work area", "A colleague keeping a watch on the passing traffic", "A note to the police about the work", "Hazard lights on the vehicle only"]
+      correct: ["Signage and cones protecting the work area"]
+      rubric_category: recall
+      category: safety_awareness
+      explanation: "Traffic must be directed away from you by physical signing, not by anyone's vigilance."
+      weight: 1
+    - id: ent-safe-08
+      stem: "A cable you are about to cut is not on your work order, but it looks disused. What do you do?"
+      type: single
+      options: ["Confirm it is dead before cutting it", "Cut it, since it is clearly disused", "Cut it through and label both of the cut ends", "Trace it back later and cut it now"]
+      correct: ["Confirm it is dead before cutting it"]
+      rubric_category: application
+      category: safety_awareness
+      explanation: "'Looks disused' is an inference, not a test. Every other option cuts first."
+      weight: 1
+    - id: ent-safe-09
+      stem: "Halfway up a ladder you notice its footing has shifted on soft ground. What do you do?"
+      type: single
+      options: ["Come down and re-set the footing", "Finish quickly and then come down", "Ask a colleague to hold it steady", "Shift your weight to the firmer side"]
+      correct: ["Come down and re-set the footing"]
+      rubric_category: application
+      category: safety_awareness
+      explanation: "Every other option continues working from an unstable ladder."
+      weight: 1
+    - id: ent-safe-10
+      stem: "You must lift a heavy drum from the vehicle on your own. What is the correct approach?"
+      type: single
+      options: ["Get help or use an aid — do not lift it alone", "Lift it with a straight back and your knees locked", "Lift quickly to minimise the strain", "Roll it off the tailgate onto the ground"]
+      correct: ["Get help or use an aid — do not lift it alone"]
+      rubric_category: application
+      category: safety_awareness
+      explanation: "The first control for a load beyond safe manual handling is not to handle it manually."
+      weight: 1
+    - id: ent-safe-11
+      stem: "Which piece of equipment protects you specifically against falls when working at height?"
+      type: single
+      options: ["A fall-arrest harness and anchor", "Safety boots fitted with steel toecaps", "High-visibility outer clothing", "Cut-resistant working gloves"]
+      correct: ["A fall-arrest harness and anchor"]
+      rubric_category: recall
+      category: safety_awareness
+      explanation: "The others protect against different hazards entirely."
+      weight: 1
+    - id: ent-safe-12
+      stem: "You arrive at a site alone and find the work needs two people to be done safely. What do you do?"
+      type: single
+      options: ["Stop and arrange a second person", "Do the parts that are safe alone", "Proceed carefully and take extra time", "Ask the customer to assist you briefly"]
+      correct: ["Stop and arrange a second person"]
+      rubric_category: application
+      category: safety_awareness
+      explanation: "A customer is not trained labour, and 'carefully' does not convert a two-person task."
+      weight: 1
+    - id: ent-safe-13
+      stem: "During a splice you get isopropyl alcohol in your eye. What is the immediate action?"
+      type: single
+      options: ["Irrigate the eye with clean water at once", "Finish the splice, then wash it out", "Rub the eye until the stinging passes", "Apply an eye patch and drive yourself to a clinic"]
+      correct: ["Irrigate the eye with clean water at once"]
+      rubric_category: application
+      category: safety_awareness
+      explanation: "Chemical eye contact is irrigated immediately; delay and rubbing both make it worse."
+      weight: 1
+    - id: ent-safe-14
+      stem: "A colleague is working in a way you believe is unsafe, but they are senior to you. What should you do?"
+      type: single
+      options: ["Raise it with them, and escalate if needed", "Say nothing, since they are more senior", "Report them afterwards without speaking up", "Copy their method, since they know best"]
+      correct: ["Raise it with them, and escalate if needed"]
+      rubric_category: analysis
+      category: safety_awareness
+      explanation: "Seniority does not suspend the duty to stop unsafe work; silence is the only unavailable option."
+      weight: 1
+    - id: ent-safe-15
+      stem: "Why is a near miss worth reporting even though nobody was hurt?"
+      type: single
+      options: ["It reveals a hazard before it injures someone", "It provides a record for insurance purposes", "It demonstrates that procedures were followed", "It shows management who is being careful"]
+      correct: ["It reveals a hazard before it injures someone"]
+      rubric_category: analysis
+      category: safety_awareness
+      explanation: "The near miss and the injury share a cause; only the outcome differed, and only by luck."
+      weight: 1
+    - id: ent-safe-16
+      stem: "You smell gas on entering a customer's property. What is the correct action?"
+      type: single
+      options: ["Leave, keep sources of ignition off, raise the alarm", "Open the windows and continue with the job", "Track down the source before deciding what to do next", "Switch on the lights to see the area better"]
+      correct: ["Leave, keep sources of ignition off, raise the alarm"]
+      rubric_category: application
+      category: safety_awareness
+      explanation: "Operating a light switch is itself a source of ignition; the response is to leave and raise the alarm."
+      weight: 1
+    - id: ent-safe-17
+      stem: "Why is schedule pressure a recognised safety hazard rather than just a management problem?"
+      type: single
+      options: ["It makes skipping a control feel reasonable at the time", "It causes technicians to work longer than they should", "It reduces the time available for proper documentation", "It leads to disputes between supervisors and crews"]
+      correct: ["It makes skipping a control feel reasonable at the time"]
+      rubric_category: analysis
+      category: safety_awareness
+      explanation: "Pressure changes the judgement, not the risk — which is why the rules are written to be non-negotiable."
+      weight: 1
+    - id: ent-safe-18
+      stem: "A customer insists you work in a way that breaches a safety rule, because it is quicker. What do you do?"
+      type: single
+      options: ["Decline, explain why, and offer the safe route", "Comply, since the customer is paying for it", "Comply but record the customer's insistence", "Leave the site without explaining anything"]
+      correct: ["Decline, explain why, and offer the safe route"]
+      rubric_category: analysis
+      category: safety_awareness
+      explanation: "A customer cannot authorise a breach, and recording their insistence does not make it safe."
+      weight: 1
+
+    # ------------------------------------------------------ technical_digital
+    - id: ent-tech-01
+      stem: "What does a fibre-optic cable use to carry information?"
+      type: single
+      options: ["Electricity through copper wire", "Light through a glass core", "Radio waves through the air", "Water pressure through a tube"]
+      correct: ["Light through a glass core"]
+      rubric_category: recall
+      category: technical_digital
+      explanation: "Fibre carries data as pulses of light travelling down a thin glass core."
+      weight: 1
+    - id: ent-tech-02
+      stem: "A field app asks you to upload a photo of the finished installation. The upload fails with the message 'no internet connection'. What is the most sensible first step?"
+      type: single
+      options: ["Delete the app and reinstall it now", "Check your data or WiFi, then retry", "Ask the customer for their WiFi password", "Skip the photo and close the job off"]
+      correct: ["Check your data or WiFi, then retry"]
+      rubric_category: application
+      category: technical_digital
+      explanation: "The message points at connectivity, so check the phone's data or WiFi before anything else."
+      weight: 1
+    - id: ent-tech-03
+      stem: "What is the main job of the router in a customer's home?"
+      type: single
+      options: ["To convert the fibre's light into an electrical signal", "To share one connection among several devices", "To store the customer's files permanently", "To supply electrical power to the ONT"]
+      correct: ["To share one connection among several devices"]
+      rubric_category: recall
+      category: technical_digital
+      explanation: "Converting the fibre's light is the ONT's job, not the router's."
+      weight: 1
+    - id: ent-tech-04
+      stem: "Which tool would you use to confirm that light is actually arriving at the far end of a fibre?"
+      type: single
+      options: ["A multimeter", "An optical power meter", "A torque wrench", "A cable-tie gun"]
+      correct: ["An optical power meter"]
+      rubric_category: recall
+      category: technical_digital
+      explanation: "A multimeter measures electrical values, not light."
+      weight: 1
+    - id: ent-tech-05
+      stem: "A customer's ONT shows a steady green PON light with no alarms, but no device in the house can reach the internet. Where is the fault MOST likely to be?"
+      type: single
+      options: ["In the fibre between the street and the house", "In the ISP's core network somewhere", "In the router or the home network", "In the optical splitter serving the street"]
+      correct: ["In the router or the home network"]
+      rubric_category: analysis
+      category: technical_digital
+      explanation: "A healthy ONT link shows the fibre side is fine, so the fault lies downstream of it."
+      weight: 1
+    - id: ent-tech-06
+      stem: "In a fibre network, how can a single fibre coming from the exchange end up serving many different homes?"
+      type: single
+      options: ["Each home has its own fibre back to the exchange", "A splitter divides the light among several homes", "The fibre is switched between homes by hand", "Each home is given a different colour of cable"]
+      correct: ["A splitter divides the light among several homes"]
+      rubric_category: analysis
+      category: technical_digital
+      explanation: "A passive splitter shares one feeder fibre's light among multiple premises."
+      weight: 1
+    - id: ent-tech-07
+      stem: "What does the ONT in a customer's home do?"
+      type: single
+      options: ["Converts the fibre's light to an electrical signal", "Shares the connection between devices", "Stores the customer's account details", "Amplifies the WiFi signal upstairs"]
+      correct: ["Converts the fibre's light to an electrical signal"]
+      rubric_category: recall
+      category: technical_digital
+      explanation: "The ONT terminates the optical network; the router shares the connection."
+      weight: 1
+    - id: ent-tech-08
+      stem: "A red LOS light on an ONT most directly indicates:"
+      type: single
+      options: ["No optical signal is being received", "The customer's account is unpaid", "The WiFi password is incorrect", "The device is running too hot"]
+      correct: ["No optical signal is being received"]
+      rubric_category: recall
+      category: technical_digital
+      explanation: "LOS is loss of signal on the optical side, which is a fibre-path problem."
+      weight: 1
+    - id: ent-tech-09
+      stem: "A customer says WiFi is fine near the router but drops at the back of the house. What is the most likely cause?"
+      type: single
+      options: ["Distance and walls weakening the signal", "A fault on the fibre into the property", "The ONT overheating during the day", "The account bandwidth being exceeded"]
+      correct: ["Distance and walls weakening the signal"]
+      rubric_category: application
+      category: technical_digital
+      explanation: "A problem that varies with location inside the home is a coverage problem, not a line fault."
+      weight: 1
+    - id: ent-tech-10
+      stem: "Why is a fibre connector cleaned before it is plugged in?"
+      type: single
+      options: ["Dirt on the end face blocks light and adds loss", "Cleaning prevents the connector from corroding", "It removes static that would damage the port", "It is required to keep the warranty valid"]
+      correct: ["Dirt on the end face blocks light and adds loss"]
+      rubric_category: application
+      category: technical_digital
+      explanation: "A speck on the end face sits directly in the light path — contamination is a leading cause of loss."
+      weight: 1
+    - id: ent-tech-11
+      stem: "You must record a serial number from a device into the job app. What is the safest way to avoid an error?"
+      type: single
+      options: ["Scan or photograph it rather than typing it", "Type it carefully and check it once after", "Write it on paper and enter it at the depot", "Ask the customer to read it out to you"]
+      correct: ["Scan or photograph it rather than typing it"]
+      rubric_category: application
+      category: technical_digital
+      explanation: "Removing the transcription step removes the class of error, rather than trying to be careful."
+      weight: 1
+    - id: ent-tech-12
+      stem: "What does bandwidth describe?"
+      type: single
+      options: ["How much data a connection can carry", "How far the fibre can physically reach", "How many devices may be connected", "How long the equipment will last"]
+      correct: ["How much data a connection can carry"]
+      rubric_category: recall
+      category: technical_digital
+      explanation: "Bandwidth is capacity, usually expressed per second."
+      weight: 1
+    - id: ent-tech-13
+      stem: "A job app will not sync and shows records queued. You are in a basement. What is the likely explanation?"
+      type: single
+      options: ["No mobile signal reaches the basement", "The app has been corrupted and must be reset", "The records were entered in the wrong format", "The server has rejected your login details"]
+      correct: ["No mobile signal reaches the basement"]
+      rubric_category: application
+      category: technical_digital
+      explanation: "Queued records with a location-dependent symptom point at connectivity."
+      weight: 1
+    - id: ent-tech-14
+      stem: "Why is a photograph of completed work recorded on the job?"
+      type: single
+      options: ["It evidences the state of the work when you left", "It proves the technician attended the property", "It allows the customer to be billed correctly", "It replaces the need for a customer signature"]
+      correct: ["It evidences the state of the work when you left"]
+      rubric_category: application
+      category: technical_digital
+      explanation: "The photo is the record that settles later disputes about condition and quality."
+      weight: 1
+    - id: ent-tech-15
+      stem: "Two customers on the same splitter both lose service at the same moment. Where would you look first?"
+      type: single
+      options: ["The feeder or splitter they share", "Each customer's own router", "The WiFi settings in both homes", "The billing system's account status"]
+      correct: ["The feeder or splitter they share"]
+      rubric_category: analysis
+      category: technical_digital
+      explanation: "Simultaneous loss for customers sharing infrastructure points at the shared element."
+      weight: 1
+    - id: ent-tech-16
+      stem: "A speed test run over WiFi shows far less than the customer's subscribed speed. What should you check before escalating?"
+      type: single
+      options: ["The same test over a wired connection", "Whether the account is fully paid up", "The optical power at the street cabinet", "How many devices the customer owns"]
+      correct: ["The same test over a wired connection"]
+      rubric_category: analysis
+      category: technical_digital
+      explanation: "A wired test separates the WiFi from the service; without it you cannot tell which is slow."
+      weight: 1
+    - id: ent-tech-17
+      stem: "Why does bending a fibre cable too tightly cause a problem?"
+      type: single
+      options: ["Light escapes at the bend, so loss rises", "The copper conductor inside it fractures", "The outer sheath loses its colour coding", "The connector at the end becomes loose"]
+      correct: ["Light escapes at the bend, so loss rises"]
+      rubric_category: analysis
+      category: technical_digital
+      explanation: "Beyond the minimum bend radius light leaves the core; there is no copper conductor in a fibre."
+      weight: 1
+    - id: ent-tech-18
+      stem: "A customer's service worked for a year and failed the day after building work started outside. What is the most reasonable first line of enquiry?"
+      type: single
+      options: ["Whether the excavation damaged the cable", "Whether the customer changed their router", "Whether the account has fallen into arrears", "Whether the ONT has reached end of life"]
+      correct: ["Whether the excavation damaged the cable"]
+      rubric_category: analysis
+      category: technical_digital
+      explanation: "A year of stable service ending the day digging began is the strongest available lead."
+      weight: 1
