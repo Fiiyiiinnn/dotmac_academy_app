@@ -19,3 +19,6 @@ artifacts/
 # Runtime data, not source (copied host-side at deploy)
 static/avatars/
 static/figures/
+
+# Proprietary compatibility corpus is acquired privately in CI only.
+tests/fixtures/webfig/*.gz

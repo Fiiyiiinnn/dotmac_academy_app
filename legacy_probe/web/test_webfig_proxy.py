@@ -28,6 +28,8 @@ from app.web.console_proxy import (
 )
 from legacy_probe.web.test_console_proxy import _entitled_activity, _login, _make_person
 
+pytestmark = pytest.mark.private_fixture_data
+
 _WEBFIG_FIXTURES = Path(__file__).resolve().parents[2] / "tests" / "fixtures" / "webfig"
 
 

@@ -50,8 +50,11 @@ jobs:
         tests/test_browser_csrf.py tests/test_browser_fetch_csrf.py
         tests/test_routeros_readiness.py tests/test_console_document.py
         tests/test_webfig_adapter.py tests/test_webfig_data_parser.py
+        tests/test_private_fixture_acquisition.py
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -70,45 +73,63 @@ jobs:
           poetry check --lock
           poetry install --no-interaction --no-root
       - name: Lint maintained source
-        run: poetry run ruff check --no-cache app scripts tests alembic
+        run: poetry run ruff check --no-cache conftest.py app scripts tests alembic
       - name: Check maintained formatting
         if: ${{ !cancelled() && steps.dependencies.outcome == 'success' }}
-        run: poetry run ruff format --no-cache --check app scripts tests alembic
+        run: poetry run ruff format --no-cache --check conftest.py app scripts tests alembic
+      - name: Prove private fixture reporting with synthetic canaries
+        id: fixture_privacy
+        env:
+          TEST_DATABASE_URL: ""
+          TEST_MIGRATION_DATABASE_URL: ""
+        run: |
+          mkdir -p artifacts
+          poetry run pytest tests/test_private_fixture_reporting.py -q --tb=short --junitxml=artifacts/private-fixture-privacy.xml
+      - name: Verify synthetic privacy execution evidence
+        id: fixture_privacy_evidence
+        if: ${{ !cancelled() && steps.fixture_privacy.outcome != 'skipped' }}
+        run: poetry run python scripts/check_ci_test_skips.py artifacts/private-fixture-privacy.xml tests/ci-skips.txt
+      - name: Acquire mandatory private compatibility fixtures
+        id: fixtures
+        if: ${{ success() && steps.fixture_privacy.outcome == 'success' && steps.fixture_privacy_evidence.outcome == 'success' }}
+        env:
+          ACADEMY_WEBFIG_FIXTURE_SSH_KEY: ${{ secrets.ACADEMY_WEBFIG_FIXTURE_SSH_KEY }}
+        run: python -I -S scripts/materialize_webfig_fixtures.py
       - name: Bootstrap isolated CI roles
         id: database
-        if: ${{ !cancelled() && steps.dependencies.outcome == 'success' }}
+        if: ${{ !cancelled() && steps.fixtures.outcome == 'success' && steps.dependencies.outcome == 'success' }}
         run: psql -h 127.0.0.1 -p 5437 -U postgres -d academy_v2_ci -v ON_ERROR_STOP=1 -f deploy/initdb-roles.sql
       - name: Migration safety regression tests
         id: migration_safety
-        if: ${{ !cancelled() && steps.database.outcome == 'success' }}
+        if: ${{ !cancelled() && steps.fixtures.outcome == 'success' && steps.database.outcome == 'success' }}
         run: |
           mkdir -p artifacts
           read -r -a safety_files <<< "$MIGRATION_SAFETY_TESTS"
           poetry run pytest "${safety_files[@]}" -q --tb=short --junitxml=artifacts/migration-safety.xml
       - name: Verify migration safety execution evidence
-        if: ${{ !cancelled() && steps.migration_safety.outcome != 'skipped' }}
+        if: ${{ !cancelled() && steps.fixtures.outcome == 'success' && steps.migration_safety.outcome != 'skipped' }}
         run: poetry run python scripts/check_ci_test_skips.py artifacts/migration-safety.xml tests/ci-skips.txt
       - name: Maintained composition and transfer tests
         id: maintained
-        if: ${{ !cancelled() && steps.migration_safety.outcome == 'success' }}
+        if: ${{ !cancelled() && steps.fixtures.outcome == 'success' && steps.migration_safety.outcome == 'success' }}
         run: |
           mkdir -p artifacts
           read -r -a safety_files <<< "$MIGRATION_SAFETY_TESTS"
-          ignores=()
+          ignores=("--ignore=tests/test_private_fixture_reporting.py")
           for path in "${safety_files[@]}"; do ignores+=("--ignore=$path"); done
           poetry run pytest tests "${ignores[@]}" -q --tb=short --junitxml=artifacts/maintained.xml
       - name: Verify maintained execution evidence
-        if: ${{ !cancelled() && steps.maintained.outcome != 'skipped' }}
+        if: ${{ !cancelled() && steps.fixtures.outcome == 'success' && steps.maintained.outcome != 'skipped' }}
         run: poetry run python scripts/check_ci_test_skips.py artifacts/maintained.xml tests/ci-skips.txt
       - name: Create independent legacy qualification genesis
         id: legacy_database
-        if: ${{ !cancelled() && steps.database.outcome == 'success' }}
+        if: ${{ !cancelled() && steps.fixtures.outcome == 'success' && steps.database.outcome == 'success' }}
         env:
           TEST_DATABASE_URL: postgresql+psycopg://postgres@127.0.0.1:5437/academy_v2_ci
         run: poetry run python -m legacy_probe.genesis academy_v2_legacy_ci
       - name: Legacy behavioral qualification with declared exclusions
         id: legacy
-        if: ${{ !cancelled() && steps.legacy_database.outcome == 'success' }}
+        if: ${{ !cancelled() && steps.fixtures.outcome == 'success' && steps.legacy_database.outcome == 'success' }}
         env:
           TEST_DATABASE_URL: postgresql+psycopg://app_user@127.0.0.1:5437/academy_v2_legacy_ci
           TEST_MIGRATION_DATABASE_URL: postgresql+psycopg://app_admin@127.0.0.1:5437/academy_v2_legacy_ci
@@ -118,13 +139,18 @@ jobs:
           MIGRATION_DATABASE_URL: postgresql+psycopg://app_admin@127.0.0.1:5437/academy_v2_legacy_ci
         run: poetry run python scripts/qualify_legacy.py
       - name: Verify legacy execution evidence
-        if: ${{ !cancelled() && steps.legacy.outcome != 'skipped' }}
+        if: ${{ !cancelled() && steps.fixtures.outcome == 'success' && steps.legacy.outcome != 'skipped' }}
         run: poetry run python scripts/check_ci_test_skips.py artifacts/legacy.xml legacy_probe/ci-skips.txt
       - name: Preserve qualification evidence
         if: ${{ always() }}
         uses: actions/upload-artifact@v4
         with:
           name: academy-v2-qualification-${{ github.sha }}
-          path: artifacts/
+          path: |
+            artifacts/private-fixture-privacy.xml
+            artifacts/migration-safety.xml
+            artifacts/maintained.xml
+            artifacts/legacy.xml
+            artifacts/fixture-evidence.json
           if-no-files-found: error
           retention-days: 30

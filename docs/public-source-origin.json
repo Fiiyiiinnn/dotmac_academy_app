@@ -1,0 +1,11 @@
+{
+  "schema": "academy.public-source-origin.v1",
+  "original_private_repository_id": 1449046316,
+  "original_source_commit": "42fee6c5da8e238231bd2ff594acb5ad40d88aab",
+  "original_source_tree": "932afde146fe5e1486d6012d1382857d8555d158",
+  "public_history": "fresh_unrelated_root_without_vendor_payloads",
+  "private_fixture_repository_id": 1451803855,
+  "private_fixture_commit": "013278c9398be5023e67a07ced081fc8c6367ba4",
+  "application_runtime_changes": false,
+  "production_deployment_requires_explicit_candidate_approval": true
+}

@@ -17,6 +17,8 @@ from app.web import labs
 from app.web import webfig_adapter as adapter
 from app.web.console_proxy import rewrite_location
 
+pytestmark = pytest.mark.private_fixture_data
+
 PREFIX = "/labs/instances/12345678-1234-1234-1234-123456789abc/console/r1"
 
 

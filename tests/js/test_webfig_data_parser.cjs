@@ -208,7 +208,19 @@ test("closed AST materializer rejects every executable node category independent
     }
 });
 
-test("all nine captured ROM schemas and actual module list parse as data under strict CSP", () => {
+function privateFixtureContract(run) {
+    return () => {
+        try {
+            run();
+        } catch {
+            // Node's TAP assertion details may include parsed vendor data. Keep
+            // the failing test identity while withholding all original details.
+            throw new Error("Private fixture contract failed; diagnostics withheld");
+        }
+    };
+}
+
+test("all nine captured ROM schemas and actual module list parse as data under strict CSP", privateFixtureContract(() => {
     const manifestPath = path.join(ROOT, "tests/fixtures/webfig/manifest.json");
     assert.ok(fs.existsSync(manifestPath), "captured ROM fixture manifest is required in hosted CI");
     const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
@@ -239,7 +251,7 @@ test("all nine captured ROM schemas and actual module list parse as data under s
         assert.ok(Array.isArray(schema) && schema.length > 0, fixture.path);
     }
     assert.equal(listedHashes.size, 0);
-});
+}));
 
 test("skin JSON and legacy object-literal data vectors parse with code generation disabled", () => {
     const {api} = load();
