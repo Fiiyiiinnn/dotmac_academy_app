@@ -11,6 +11,7 @@ operator-run live proof in docs/oidc-login.md.
 from __future__ import annotations
 
 import time
+from uuid import uuid4
 
 import pytest
 from dotmac_auth_oidc import AuthorizationRedirect, LoginState, VerifiedSubject
@@ -68,8 +69,9 @@ class _FakeClient:
         self._subject = subject
 
     def start_login(self, *, return_to="/", ttl_seconds=600, state_store=None):
+        state_id = uuid4().hex
         state = LoginState(
-            state_id="ceremony-1",
+            state_id=state_id,
             nonce="nonce-1",
             code_verifier="verifier-1",
             redirect_uri="https://academy.dotmac.io/login/oidc/callback",
@@ -78,8 +80,8 @@ class _FakeClient:
         )
         state_store.put(state, ttl_seconds=ttl_seconds)
         return AuthorizationRedirect(
-            url=f"{ISSUER}/protocol/openid-connect/auth?state=ceremony-1",
-            state="ceremony-1",
+            url=f"{ISSUER}/protocol/openid-connect/auth?state={state_id}",
+            state=state_id,
         )
 
     def complete_login(self, *, code, state_parameter, stored_state, ttl_seconds=600, state_store=None):
