@@ -64,6 +64,7 @@ _CONSUME_SQL: Final[str] = (
     f"DELETE FROM {_CEREMONY_TABLE} "  # noqa: S608 - module constant, values bound
     "WHERE tenant_id = :tenant_id "
     "  AND state_hash = :state_hash "
+    "  AND provider_binding = :provider_binding "
     "  AND expires_at > now() "
     "RETURNING code_verifier, nonce, redirect_uri, return_to, issued_at, provider_binding"
 )
@@ -140,7 +141,11 @@ class AcademyOidcStateStore:
         row = (
             self._db.execute(
                 text(_CONSUME_SQL),
-                {"tenant_id": str(self._tenant_id), "state_hash": _state_hash(state_id)},
+                {
+                    "tenant_id": str(self._tenant_id),
+                    "state_hash": _state_hash(state_id),
+                    "provider_binding": self._binding,
+                },
             )
             .mappings()
             .first()

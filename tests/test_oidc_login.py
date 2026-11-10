@@ -17,6 +17,7 @@ from dotmac_auth_oidc import AuthorizationRedirect, LoginState, VerifiedSubject
 from dotmac_auth_oidc.errors import StateError
 from dotmac_kernel.external_identity import bind_external_identity
 from dotmac_kernel.models import AuthSession
+from pydantic import ValidationError
 from sqlalchemy import select
 
 from app.config import Settings, validate_settings
@@ -37,6 +38,27 @@ def test_oidc_enabled_without_secret_is_a_configuration_error():
 def test_oidc_enabled_with_complete_config_has_no_oidc_error():
     errors = validate_settings(Settings(oidc_enabled=True, oidc_client_secret="test-secret"))
     assert not any("OIDC" in error for error in errors)
+
+
+@pytest.mark.parametrize(
+    ("value", "expected"),
+    [
+        ("instructor,admin", ("instructor", "admin")),
+        (" instructor , custom-staff ", ("instructor", "custom-staff")),
+        ('["instructor", "admin"]', ("instructor", "admin")),
+        ("", ()),
+    ],
+)
+def test_oidc_staff_roles_load_from_environment(monkeypatch, value, expected):
+    monkeypatch.setenv("OIDC_STAFF_ROLES", value)
+    assert Settings(_env_file=None).oidc_staff_roles == expected
+
+
+@pytest.mark.parametrize("value", ["instructor,", "admin,admin", '["admin", 1]', "[invalid"])
+def test_malformed_oidc_staff_roles_refuse_configuration(monkeypatch, value):
+    monkeypatch.setenv("OIDC_STAFF_ROLES", value)
+    with pytest.raises(ValidationError, match="oidc_staff_roles"):
+        Settings(_env_file=None)
 
 
 class _FakeClient:

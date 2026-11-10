@@ -34,7 +34,7 @@ explicit operator act with recorded evidence.
 | `OIDC_CLIENT_SECRET` | — | Secret. Held like `SMTP_PASSWORD`; never a stored setting. |
 | `OIDC_REDIRECT_URL` | `https://academy.dotmac.io/login/oidc/callback` | Must match the client registration exactly. |
 | `OIDC_PROVIDER_BINDING` | `dotmac-keycloak` | Local registration name written on bindings. |
-| `OIDC_STAFF_ROLES` | `instructor,admin` | Pilot cohort role slugs. |
+| `OIDC_STAFF_ROLES` | `instructor,admin` | CSV or JSON array of distinct role slugs; empty denies everyone. |
 | `OIDC_CEREMONY_TTL_SECONDS` | `600` | Ceremony lifetime. |
 | `OIDC_HTTP_TIMEOUT_SECONDS` | `10` | Every provider call is bounded. |
 

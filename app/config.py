@@ -8,6 +8,7 @@ operator settings arrive with the kernel settings port; until then
 
 from __future__ import annotations
 
+import json
 import math
 from typing import Annotated
 
@@ -318,6 +319,26 @@ class Settings(KernelSettings):
     lab_operation_unknown_lease_seconds: int = 600
     lab_operation_unknown_max_attempts: int = 3
     lab_process_termination_grace_seconds: int = 5
+
+    @field_validator("oidc_staff_roles", mode="before")
+    @classmethod
+    def _oidc_staff_roles(cls, value: object) -> tuple[str, ...]:
+        message = "oidc_staff_roles must contain distinct non-empty role slugs"
+        if isinstance(value, str):
+            if value.lstrip().startswith("["):
+                try:
+                    value = json.loads(value)
+                except ValueError:
+                    raise ValueError(message) from None
+            else:
+                value = tuple(part.strip() for part in value.split(",")) if value.strip() else ()
+        if type(value) not in (list, tuple):
+            raise ValueError(message)
+        if any(type(slug) is not str or not slug or slug != slug.strip() or "," in slug for slug in value):
+            raise ValueError(message)
+        if len(set(value)) != len(value):
+            raise ValueError(message)
+        return tuple(value)
 
     @field_validator(*LAB_EXECUTION_POLICY_SHAPES, mode="before")
     @classmethod
