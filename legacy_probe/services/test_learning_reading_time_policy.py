@@ -118,6 +118,9 @@ def test_both_presentations_apply_same_composed_policy_after_legacy_html_word_co
         result = instructor._preview_course_response(request, db, tenant.id, course, [chapter], chapter)
         assert observations == ["activity", "policy"]
     else:
+        note = SimpleNamespace(body="Owner note")
+        bookmark_state = Mock(return_value={"bookmarked": True, "note": note})
+        monkeypatch.setattr(learn.bookmarks, "get_state", bookmark_state)
         db.scalars.side_effect = [
             Mock(first=Mock(return_value=course)),
             Mock(first=Mock(return_value=chapter)),
@@ -142,6 +145,11 @@ def test_both_presentations_apply_same_composed_policy_after_legacy_html_word_co
         result = learn.chapter(course.slug, 1, request, person=person, db=db)
         assert observations == ["completion", "policy", "completion"]
         assert db.scalars.call_count == 6
+        bookmark_state.assert_called_once_with(
+            db, tenant_id=tenant.id, person_id=person.id, chapter_id=chapter.id
+        )
+        assert result["bookmarked"] is True
+        assert result["note"] is note
     assert result["reading_minutes"] == (2 if body else 0)
     db.add.assert_not_called()
     db.flush.assert_not_called()

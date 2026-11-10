@@ -1,8 +1,9 @@
 """Bookmarks & personal notes web router (roadmap P1 item 11).
 
-``/bookmarks`` is the learner's collection page; the chapter-scoped partials
-are lazily loaded into the chapter page via htmx, so the chapter route itself
-stays untouched. Thin adapters: all writes live in ``services.bookmarks``.
+``/bookmarks`` is the learner's collection page. The chapter page renders
+the initial bookmark/note partials server-side; these routes remain their
+htmx swap targets for toggle/save. Thin adapters: all writes live in
+``services.bookmarks``.
 """
 
 # Ported at new-composition genesis (web layer wave).

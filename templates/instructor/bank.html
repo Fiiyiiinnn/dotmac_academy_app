@@ -98,7 +98,8 @@
       <span class="flex gap-2">
         <a class="btn-ghost px-3 py-1.5 text-sm"
            href="/instructor/courses/{{ course.id }}/banks/{{ bank.id }}?edit={{ q.ext_id }}">Edit</a>
-        <form method="post" action="/instructor/courses/{{ course.id }}/banks/{{ bank.id }}/draft/questions/{{ q.ext_id }}/delete">
+        <form method="post" action="/instructor/courses/{{ course.id }}/banks/{{ bank.id }}/draft/questions/{{ q.ext_id }}/delete"
+              data-confirm-submit="Delete draft question {{ q.ext_id }}?">
           <button class="btn-ghost px-3 py-1.5 text-sm" type="submit">Delete</button>
         </form>
       </span>

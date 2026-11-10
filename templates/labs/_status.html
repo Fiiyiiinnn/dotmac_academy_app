@@ -15,7 +15,14 @@
       <span class="text-xs font-semibold uppercase tracking-[0.16em] text-ink-soft">Status</span>
       <span class="inline-flex items-center rounded-full bg-sand-200 px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide text-ink-soft">{{ instance.status }}</span>
     </div>
-    <p class="mt-3 text-ink-soft">Provisioning your lab&hellip;</p>
+    <p class="mt-3 text-ink-soft">
+      {% if instance.status == "queued" %}Waiting for lab capacity&hellip;
+      {% elif instance.status == "resetting" %}Resetting your lab environment&hellip;
+      {% else %}Building your lab environment&hellip;{% endif %}
+    </p>
+    <p class="mt-1 text-xs text-ink-soft">
+      {% if instance.started_at %}Started {{ instance.started_at | elapsed }} &middot; {% endif %}Last updated {{ instance.updated_at | elapsed }} ({{ (instance.updated_at | localtime).strftime('%H:%M') }} {{ academy_tz_label }}). This page updates automatically.
+    </p>
     <div hx-get="/labs/instances/{{ instance.id }}/status"
          hx-trigger="load delay:2s"
          hx-target="#lab-state" hx-swap="innerHTML"></div>

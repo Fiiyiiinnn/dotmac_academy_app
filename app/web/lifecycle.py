@@ -26,7 +26,7 @@ from app.services.email_outbox import enqueue_email
 from app.services.exceptions import BadRequestError, ConflictError
 from app.services.invitation_policy import invitation_acceptance_policy
 from app.services.security import hash_token
-from app.ui import UI_STYLESHEET_URL, UI_THEME, UI_THEME_ATTRIBUTE
+from app.ui import APP_CSS_URL, UI_STYLESHEET_URL, UI_THEME, UI_THEME_ATTRIBUTE
 from app.web.email_links import absolute_surface_link
 
 logger = logging.getLogger(__name__)
@@ -42,7 +42,7 @@ def _page(title: str, body: str) -> HTMLResponse:
         f"<!doctype html><html lang=en {UI_THEME_ATTRIBUTE}='{UI_THEME}'><head><meta charset=utf-8>"
         f"<meta name=viewport content='width=device-width, initial-scale=1'>"
         f"<title>{title}</title><link rel=stylesheet href='{UI_STYLESHEET_URL}'>"
-        f"<link rel=stylesheet href='/static/app.css?v=2'>"
+        f"<link rel=stylesheet href='{APP_CSS_URL}'>"
         f"<script src='/static/htmx.min.js' defer></script></head>"
         f"<body class='min-h-screen bg-sand-100 text-ink'>"
         f"<main class='mx-auto flex min-h-screen max-w-md flex-col justify-center px-6 py-12'>"

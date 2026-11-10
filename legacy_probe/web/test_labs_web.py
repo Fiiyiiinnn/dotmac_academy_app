@@ -283,7 +283,7 @@ def test_check_enqueues_worker_operation_without_writing_score(
         f"/labs/instances/{inst.id}/check", headers={**h, "x-csrf-token": csrf}
     )
     assert r.status_code == 200
-    assert "queued" in r.text.lower()
+    assert "Waiting to run checks" in r.text
     operation = (
         admin_session.query(LabOperation)
         .filter_by(instance_id=inst.id, state="queued")

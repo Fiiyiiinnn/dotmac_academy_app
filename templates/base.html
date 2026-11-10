@@ -11,8 +11,9 @@
   <meta property="og:type" content="website">
   <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
   {% include "_dotmac_ui_head.html" %}
-  <!-- Compiled Tailwind v3 build + self-hosted Academic Modernist fonts. Bump ?v= on css change. -->
-  <link rel="stylesheet" href="/static/app.css?v=10">
+  <!-- Compiled Tailwind v3 build + self-hosted fonts. Cache key is a
+       content digest from app.ui; never hand-bump a version here. -->
+  <link rel="stylesheet" href="{{ academy_app_css_url }}">
   <script src="/static/htmx.min.js" defer></script>
 </head>
 <body class="min-h-screen bg-sand-100 text-ink antialiased">

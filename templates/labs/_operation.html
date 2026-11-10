@@ -3,9 +3,14 @@
      hx-get="/labs/operations/{{ operation.id }}"
      hx-trigger="load delay:2s"
      hx-target="{{ '#lab-checks' if operation.kind == 'check' else '#lab-state' }}" hx-swap="innerHTML">
-  <p class="text-sm text-ink-soft">
-    {{ "Running" if operation.state == "claimed" else "Queued" }}
-    {{ "checks" if operation.kind == "check" else "lab operation" }}&hellip;
+  <p class="text-sm font-medium text-ink">
+    {% if operation.kind == "check" %}{{ "Running checks" if operation.state == "claimed" else "Waiting to run checks" }}
+    {% elif operation.kind == "deploy" %}{{ "Building your lab environment" if operation.state == "claimed" else "Waiting for lab capacity" }}
+    {% elif operation.kind == "destroy" %}{{ "Removing your lab environment" if operation.state == "claimed" else "Waiting to remove your lab" }}
+    {% else %}{{ "Working on your lab" if operation.state == "claimed" else "Queued" }}{% endif %}&hellip;
+  </p>
+  <p class="mt-1 text-xs text-ink-soft">
+    {% if operation.state == "claimed" and operation.claimed_at %}Started {{ operation.claimed_at | elapsed }} &middot; {% endif %}Requested {{ operation.requested_at | elapsed }} ({{ (operation.requested_at | localtime).strftime('%H:%M') }} {{ academy_tz_label }}). This updates automatically.
   </p>
 </div>
 {% elif operation.state == "succeeded" and operation.kind == "check" and score %}

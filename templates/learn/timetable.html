@@ -1,4 +1,4 @@
-{% extends "base.html" %}{% block content %}
+{% extends "base.html" %}{% block title %}My timetable — {{ branding_name | default("Dotmac Academy") }}{% endblock %}{% block content %}
 <p class="page-eyebrow">{{ branding_name | default("Technical Academy") }}</p>
 <h1 class="page-title">My timetable</h1>
 <p class="mt-2 text-sm text-ink-soft">All times are {{ academy_tz_label }}.</p>

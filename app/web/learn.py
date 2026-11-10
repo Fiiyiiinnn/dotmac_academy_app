@@ -29,6 +29,7 @@ from app.api.deps import get_db, require_tenant
 from app.services import announcements as ann_svc
 from app.services import (
     bank_authoring,
+    bookmarks,
     exam_engine,
     insights,
     learner_dashboard,
@@ -349,6 +350,11 @@ def chapter(
     # The gate the activity links honour, decided here rather than in the
     # browser: every subtopic of THIS chapter recorded as read.
     chapter_subtopics_complete = all(s["slug"] in this_chapter_done for s in this_chapter_subtopics)
+    # Bookmark/note state is known here, so the page renders it inline
+    # (bookmarks/_toggle.html + _note.html) instead of fetching both
+    # partials again on load; the bookmark routes remain the swap targets
+    # for the toggle/save POSTs themselves.
+    bookmark_state = bookmarks.get_state(db, tenant_id=tenant.id, person_id=person.id, chapter_id=ch.id)
     return templates.TemplateResponse(
         request,
         "chapter.html",
@@ -369,6 +375,8 @@ def chapter(
             "completed_chapter_ids": completed_chapter_ids,
             "completed_chapters": len(completed_chapter_ids),
             "chapter_subtopics_complete": chapter_subtopics_complete,
+            "bookmarked": bookmark_state["bookmarked"],
+            "note": bookmark_state["note"],
         },
     )
 

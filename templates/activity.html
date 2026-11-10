@@ -1,4 +1,4 @@
-{% extends "base.html" %}{% block content %}
+{% extends "base.html" %}{% block title %}{{ activity.title }} — Dotmac Academy{% endblock %}{% block content %}
 <p class="page-eyebrow">Chapter test</p>
 <h1 class="mt-1.5 text-2xl tracking-tight">{{ activity.title }}</h1>
 <form hx-post="/activities/{{ activity.id }}/submit" hx-target="#result" hx-swap="innerHTML" class="mt-8 space-y-5">

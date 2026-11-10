@@ -10,6 +10,7 @@ slightly different integration.
 
 from __future__ import annotations
 
+from hashlib import sha256
 from pathlib import Path
 from typing import Final
 
@@ -27,6 +28,28 @@ UI_STYLESHEET_URL: Final[str] = stylesheet_url()
 UI_THEME_ATTRIBUTE: Final[str] = THEME_ATTRIBUTE
 UI_THEME: Final[str] = DEFAULT_THEME
 
+_APP_CSS_PATH: Final[Path] = Path(__file__).resolve().parent.parent / "static" / "app.css"
+
+
+def _app_css_url() -> str:
+    """Cache-bust the product stylesheet by content, never by hand.
+
+    Manual `?v=` bumps drifted across the shell, login, and lifecycle
+    pages, so returning browsers kept stale CSS on exactly the
+    email-linked pages. Deriving the query from the file bytes (the same
+    digest idea as `dotmac_ui.assets.asset_digest`) makes every consumer
+    agree automatically. A missing file degrades to the plain URL rather
+    than breaking import.
+    """
+    try:
+        digest = sha256(_APP_CSS_PATH.read_bytes()).hexdigest()[:12]
+    except OSError:
+        return "/static/app.css"
+    return f"/static/app.css?v={digest}"
+
+
+APP_CSS_URL: Final[str] = _app_css_url()
+
 
 def template_globals() -> dict[str, str | int]:
     """Values every full-page template needs to consume the UI contract."""
@@ -35,10 +58,12 @@ def template_globals() -> dict[str, str | int]:
         "dotmac_ui_stylesheet_url": UI_STYLESHEET_URL,
         "dotmac_ui_theme_attribute": UI_THEME_ATTRIBUTE,
         "dotmac_ui_theme": UI_THEME,
+        "academy_app_css_url": APP_CSS_URL,
     }
 
 
 __all__ = [
+    "APP_CSS_URL",
     "UI_ASSET_DIRECTORY",
     "UI_ASSET_MOUNT",
     "UI_STYLESHEET_URL",

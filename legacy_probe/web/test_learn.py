@@ -543,6 +543,9 @@ def test_chapter_get_keeps_sidebar_batch_and_later_current_flag_observations(
 
     case = chapter_owner_route
     other = SimpleNamespace(id=uuid.uuid4(), body_html="<h2>Other</h2>", number=2)
+    note = SimpleNamespace(body="Owner note")
+    bookmark_state = Mock(return_value={"bookmarked": True, "note": note})
+    monkeypatch.setattr(case.learn.bookmarks, "get_state", bookmark_state)
     chapter_ids = [case.chapter.id, other.id]
     case.db.scalars.side_effect = [
         Mock(first=Mock(return_value=case.course)),
@@ -566,6 +569,14 @@ def test_chapter_get_keeps_sidebar_batch_and_later_current_flag_observations(
     assert result["completed_chapter_ids"] == {other.id}
     assert result["completed_chapters"] == 1
     assert result["completed"] is current_done
+    bookmark_state.assert_called_once_with(
+        case.db,
+        tenant_id=case.tenant.id,
+        person_id=case.person.id,
+        chapter_id=case.chapter.id,
+    )
+    assert result["bookmarked"] is True
+    assert result["note"] is note
     assert result["chapter"] is case.chapter and result["course"] is case.course
     assert result["chapters"] == [case.chapter, other]
     assert result["next_chapter"] is other and result["previous_chapter"] is None

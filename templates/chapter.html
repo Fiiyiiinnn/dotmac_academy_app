@@ -102,13 +102,13 @@
         </div>
         <div class="flex shrink-0 flex-wrap items-center gap-2">
           <a class="btn-ghost px-3.5 py-2 text-sm" href="/courses/{{ course.slug }}">Course home</a>
-          <span hx-get="/bookmarks/chapters/{{ course.slug }}/{{ chapter.number }}/toggle" hx-trigger="load" hx-swap="outerHTML"></span>
+          {% include "bookmarks/_toggle.html" %}
         </div>
       </div>
 
       <article class="prose coursework-article" data-course-slug="{{ course.slug }}" data-chapter-number="{{ chapter.number }}" data-activity-taken="{{ 'true' if activity_taken else 'false' }}" data-has-activity="{{ 'true' if activity else 'false' }}" data-subtopics-complete="{{ 'true' if chapter_subtopics_complete else 'false' }}">{{ chapter.body_html | safe }}</article>
 
-      <div hx-get="/bookmarks/chapters/{{ course.slug }}/{{ chapter.number }}/note" hx-trigger="load" hx-swap="outerHTML"></div>
+      {% with saved=false %}{% include "bookmarks/_note.html" %}{% endwith %}
 
       <nav class="coursework-actions" aria-label="Chapter navigation">
         {% if previous_chapter %}

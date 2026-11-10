@@ -131,3 +131,31 @@ def test_actual_toggle_note_escape_partial_keys_and_rollback(current_account):
         "bookmarked": False,
         "note": None,
     }
+
+
+def test_chapter_page_server_renders_bookmark_and_note(current_account):
+    """The chapter page arrives with bookmark/note already rendered —
+    no load-time htmx fetches for state the server already knows."""
+    from app.web import learn as learn_routes
+
+    a = current_account
+    course, chapter = seed(a)
+    chapter.body_html = "<h2>Intro</h2><p>Read me.</p>"
+    a.admin.commit()
+    bookmarks.toggle_bookmark(a.db, tenant_id=a.tid, person_id=a.pid, course_id=course.id, chapter_id=chapter.id)
+    bookmarks.save_note(
+        a.db,
+        tenant_id=a.tid,
+        person_id=a.pid,
+        course_id=course.id,
+        chapter_id=chapter.id,
+        body="remember this",
+    )
+    request = _request(a.tenant, a.token)
+    person = require_web_user(request, a.db)
+    response = learn_routes.chapter(course.slug, 1, request, person, a.db)
+    body = response.body.decode()
+    assert response.context["bookmarked"] is True
+    assert "Bookmarked" in body
+    assert "remember this" in body
+    assert 'hx-get="/bookmarks/chapters/' not in body

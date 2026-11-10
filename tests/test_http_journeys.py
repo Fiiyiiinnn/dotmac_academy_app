@@ -316,7 +316,7 @@ assert str(deploys[0].requested_by) == os.environ["JOURNEY_PERSON"]
 assert post(f"/labs/{activity}/launch").status_code == 200
 assert len(rows(LabInstance)) == 2 and len(rows(LabOperation, instance_id=instance.id)) == 1
 status = client.get(f"/labs/instances/{instance.id}/status")
-assert status.status_code == 200 and "queued" in status.text.lower()
+assert status.status_code == 200 and "Waiting for lab capacity" in status.text
 assert post(f"/labs/instances/{instance.id}/check").status_code == 409
 assert post(f"/labs/instances/{instance.id}/reset").status_code == 409
 
