@@ -14,6 +14,7 @@ from sqlalchemy.orm import Session
 
 from app.models.email_outbox import EmailOutbox
 from app.services.email import EmailResult, send_email_detailed
+from app.services.email_delivery_gate import EmailDeliveryDeferred, delivery_lease
 
 logger = logging.getLogger(__name__)
 
@@ -72,56 +73,64 @@ def deliver_pending(db: Session, *, limit: int = 100, now: datetime | None = Non
     back to pending; a stable Message-ID lets downstream mail systems deduplicate
     that narrow crash window.
     """
-    now = now or datetime.now(UTC)
     counts = {"sent": 0, "retried": 0, "failed": 0}
-    for _ in range(limit):
-        row = db.scalars(
-            select(EmailOutbox)
-            .where(EmailOutbox.status == "pending")
-            .where(EmailOutbox.available_at <= now)
-            .order_by(EmailOutbox.available_at, EmailOutbox.created_at)
-            .with_for_update(skip_locked=True)
-            .limit(1)
-        ).first()
-        if row is None:
-            break
+    try:
+        with delivery_lease():
+            now = now or datetime.now(UTC)
+            for _ in range(limit):
+                row = db.scalars(
+                    select(EmailOutbox)
+                    .where(EmailOutbox.status == "pending")
+                    .where(EmailOutbox.available_at <= now)
+                    .order_by(EmailOutbox.available_at, EmailOutbox.created_at)
+                    .with_for_update(skip_locked=True)
+                    .limit(1)
+                ).first()
+                if row is None:
+                    break
 
-        try:
-            attachments = _attachments(db, row)
-            result = send_email_detailed(
-                row.recipient,
-                row.subject,
-                row.html_body,
-                text_body=row.text_body,
-                db=db,
-                attachments=attachments,
-                message_id=f"<academy-outbox-{row.id}@dotmac.local>",
-            )
-        except Exception as exc:
-            error_class = type(exc).__name__
-            logger.warning(
-                "could not prepare email outbox row %s (%s)",
-                row.id,
-                error_class,
-            )
-            result = EmailResult(False, error_class)
-        row.attempts += 1
-        if result.sent:
-            row.status = "sent"
-            row.sent_at = now
-            row.last_error = None
-            _apply_delivery_projection(db, row, now)
-            counts["sent"] += 1
-        elif row.attempts >= MAX_ATTEMPTS:
-            row.status = "failed"
-            row.last_error = result.error[:120] or "delivery_failed"
-            counts["failed"] += 1
-        else:
-            delay_minutes = min(24 * 60, 2 ** min(row.attempts, 10))
-            row.available_at = now + timedelta(minutes=delay_minutes)
-            row.last_error = result.error[:120] or "delivery_failed"
-            counts["retried"] += 1
-        db.flush()
+                try:
+                    attachments = _attachments(db, row)
+                    result = send_email_detailed(
+                        row.recipient,
+                        row.subject,
+                        row.html_body,
+                        text_body=row.text_body,
+                        db=db,
+                        attachments=attachments,
+                        message_id=f"<academy-outbox-{row.id}@dotmac.local>",
+                    )
+                except EmailDeliveryDeferred:
+                    raise
+                except Exception as exc:
+                    error_class = type(exc).__name__
+                    logger.warning(
+                        "could not prepare email outbox row %s (%s)",
+                        row.id,
+                        error_class,
+                    )
+                    result = EmailResult(False, error_class)
+                if getattr(result, "deferred", False):
+                    break
+                row.attempts += 1
+                if result.sent:
+                    row.status = "sent"
+                    row.sent_at = now
+                    row.last_error = None
+                    _apply_delivery_projection(db, row, now)
+                    counts["sent"] += 1
+                elif row.attempts >= MAX_ATTEMPTS:
+                    row.status = "failed"
+                    row.last_error = result.error[:120] or "delivery_failed"
+                    counts["failed"] += 1
+                else:
+                    delay_minutes = min(24 * 60, 2 ** min(row.attempts, 10))
+                    row.available_at = now + timedelta(minutes=delay_minutes)
+                    row.last_error = result.error[:120] or "delivery_failed"
+                    counts["retried"] += 1
+                db.flush()
+    except EmailDeliveryDeferred:
+        logger.info("email outbox delivery deferred by sender gate")
     return counts
 
 
