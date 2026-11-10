@@ -105,6 +105,17 @@
           </button>
         </form>
 
+        {% if oidc_enabled %}
+        <div class="mt-6 flex items-center gap-3 text-xs text-ink-soft" aria-hidden="true">
+          <span class="h-px flex-1 bg-sand-300"></span><span>Staff</span><span class="h-px flex-1 bg-sand-300"></span>
+        </div>
+        <form hx-post="/login/oidc" hx-swap="none" class="mt-4">
+          <button type="submit" class="btn-ghost w-full py-2.5 text-[0.95rem]">
+            Continue with Dotmac
+          </button>
+        </form>
+        {% endif %}
+
         <p class="mt-8 text-xs text-ink-soft/80">
           Trouble signing in? Use password reset or ask your cohort instructor to reset your access.
         </p>

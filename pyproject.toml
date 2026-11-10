@@ -32,6 +32,7 @@ gunicorn = "^22.0"
 # Starter platform + modules. Pinned exactly, never caret ranges: adopting
 # a kernel or module release is a deliberate act with a changelog to read.
 dotmac-kernel = { version = "0.1.0a108", source = "forgejo" }
+dotmac-auth-oidc = { version = "0.1.0a2", source = "forgejo" }
 dotmac-learning = { version = "0.1.0a6", source = "forgejo" }
 dotmac-ui = { version = "0.1.0a9", source = "forgejo" }
 dotmac-delivery-resend = { version = "0.1.0a1", source = "forgejo" }

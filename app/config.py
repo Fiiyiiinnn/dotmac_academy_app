@@ -273,6 +273,19 @@ class Settings(KernelSettings):
     # kernel-backed settings store.
     smtp_password: str = ""
 
+    # Federated (Keycloak) staff login. Deployment configuration, not a
+    # stored setting: the client secret is env-only like smtp_password.
+    # Inert unless oidc_enabled; local password login always remains.
+    oidc_enabled: bool = False
+    oidc_issuer: str = "https://idp.dotmac.io/realms/dotmac"
+    oidc_client_id: str = "dotmac-academy"
+    oidc_client_secret: str = ""
+    oidc_redirect_url: str = "https://academy.dotmac.io/login/oidc/callback"
+    oidc_provider_binding: str = "dotmac-keycloak"
+    oidc_staff_roles: Annotated[tuple[str, ...], NoDecode] = Field(default_factory=lambda: ("instructor", "admin"))
+    oidc_ceremony_ttl_seconds: int = 600
+    oidc_http_timeout_seconds: float = 10.0
+
     # ERP integration (inert when URL/secrets are empty).
     academy_public_base_url: str = ""
     erp_allowed_return_origins: str = ""
@@ -604,4 +617,15 @@ def validate_settings(s: Settings) -> list[str]:
             errors.append("ERP inbound and outbound HMAC secrets must be distinct")
     if s.is_production and s.academy_public_base_url and not s.academy_public_base_url.startswith("https://"):
         errors.append("ACADEMY_PUBLIC_BASE_URL must use HTTPS in production")
+    if s.oidc_enabled:
+        if not s.oidc_client_secret:
+            errors.append("OIDC_CLIENT_SECRET is required when OIDC_ENABLED is true")
+        if not s.oidc_client_id:
+            errors.append("OIDC_CLIENT_ID is required when OIDC_ENABLED is true")
+        if not s.oidc_issuer.startswith("https://"):
+            errors.append("OIDC_ISSUER must be an HTTPS URL when OIDC_ENABLED is true")
+        if not s.oidc_redirect_url.startswith("https://"):
+            errors.append("OIDC_REDIRECT_URL must be an HTTPS URL when OIDC_ENABLED is true")
+        if s.oidc_ceremony_ttl_seconds <= 0 or s.oidc_http_timeout_seconds <= 0:
+            errors.append("OIDC ceremony TTL and HTTP timeout must be positive")
     return errors
