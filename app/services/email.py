@@ -28,6 +28,8 @@ from email.message import EmailMessage
 from dotmac_learning import has_other_passing_score
 from sqlalchemy.orm import Session
 
+from app.services.email_delivery_gate import EmailDeliveryDeferred, delivery_lease
+
 logger = logging.getLogger(__name__)
 
 
@@ -35,6 +37,7 @@ logger = logging.getLogger(__name__)
 class EmailResult:
     sent: bool
     error: str = ""
+    deferred: bool = False
 
 
 def send_email_detailed(
@@ -63,28 +66,32 @@ def send_email_detailed(
         logger.info("No recipient address; skipping email: %s", subject)
         return EmailResult(False, msg)
     try:
-        email_msg = EmailMessage()
-        email_msg["From"] = cfg.smtp_from
-        email_msg["To"] = to
-        email_msg["Subject"] = subject
-        if message_id:
-            email_msg["Message-ID"] = message_id
-        email_msg.set_content(text_body or "This message requires an HTML-capable email client.")
-        email_msg.add_alternative(html_body, subtype="html")
-        for filename, data, mimetype in attachments or []:
-            maintype, _, subtype = mimetype.partition("/")
-            email_msg.add_attachment(
-                data, maintype=maintype or "application", subtype=subtype or "octet-stream", filename=filename
-            )
+        with delivery_lease():
+            email_msg = EmailMessage()
+            email_msg["From"] = cfg.smtp_from
+            email_msg["To"] = to
+            email_msg["Subject"] = subject
+            if message_id:
+                email_msg["Message-ID"] = message_id
+            email_msg.set_content(text_body or "This message requires an HTML-capable email client.")
+            email_msg.add_alternative(html_body, subtype="html")
+            for filename, data, mimetype in attachments or []:
+                maintype, _, subtype = mimetype.partition("/")
+                email_msg.add_attachment(
+                    data, maintype=maintype or "application", subtype=subtype or "octet-stream", filename=filename
+                )
 
-        with smtplib.SMTP(cfg.smtp_host, cfg.smtp_port, timeout=15) as smtp:
-            if cfg.smtp_starttls:
-                smtp.starttls()
-            if cfg.smtp_user:
-                smtp.login(cfg.smtp_user, cfg.smtp_password)
-            smtp.send_message(email_msg)
-        logger.info("sent email to %s: %s", to, subject)
-        return EmailResult(True)
+            with smtplib.SMTP(cfg.smtp_host, cfg.smtp_port, timeout=15) as smtp:
+                if cfg.smtp_starttls:
+                    smtp.starttls()
+                if cfg.smtp_user:
+                    smtp.login(cfg.smtp_user, cfg.smtp_password)
+                smtp.send_message(email_msg)
+            logger.info("sent email to %s: %s", to, subject)
+            return EmailResult(True)
+    except EmailDeliveryDeferred:
+        logger.info("email delivery deferred by sender gate")
+        return EmailResult(False, "delivery_deferred", deferred=True)
     except Exception as exc:  # never let an email failure propagate
         error_class = type(exc).__name__
         logger.warning("failed to send email to %s (%s): %s", to, subject, error_class)

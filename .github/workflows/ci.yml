@@ -52,6 +52,7 @@ jobs:
         tests/test_webfig_adapter.py tests/test_webfig_data_parser.py
         tests/test_private_fixture_acquisition.py
         tests/test_http_journeys.py
+        tests/test_email_delivery_gate.py
         tests/test_oidc_login.py tests/test_oidc_http_journeys.py
         tests/test_oidc_boundaries.py tests/test_oidc_model_ownership.py
     steps:
@@ -102,9 +103,35 @@ jobs:
         id: database
         if: ${{ !cancelled() && steps.fixtures.outcome == 'success' && steps.dependencies.outcome == 'success' }}
         run: psql -h 127.0.0.1 -p 5437 -U postgres -d academy_v2_ci -v ON_ERROR_STOP=1 -f deploy/initdb-roles.sql
+      - name: Provision isolated CI mail delivery gate
+        id: email_gate
+        if: ${{ !cancelled() && steps.fixtures.outcome == 'success' && steps.database.outcome == 'success' }}
+        run: |
+          sudo -n python3 -I -S - <<'PYGATE'
+          import os
+          import stat
+          from pathlib import Path
+
+          assert os.geteuid() == 0
+          os.umask(0o022)
+          directory = Path('/var/lib/dotmac-academy/mail-delivery')
+          for path in (directory.parent, directory):
+              assert not path.is_symlink()
+              path.mkdir(mode=0o755, exist_ok=True)
+              info = path.stat()
+              assert stat.S_ISDIR(info.st_mode) and info.st_uid == 0
+              assert not info.st_mode & 0o022
+          for name, data in (('lock', b''), ('state', b'OPEN\n')):
+              fd = os.open(directory / name, os.O_WRONLY | os.O_CREAT | os.O_EXCL | os.O_NOFOLLOW, 0o644)
+              with os.fdopen(fd, 'wb') as stream:
+                  stream.write(data)
+                  stream.flush()
+                  os.fsync(stream.fileno())
+                  os.fchmod(stream.fileno(), 0o644)
+          PYGATE
       - name: Migration safety regression tests
         id: migration_safety
-        if: ${{ !cancelled() && steps.fixtures.outcome == 'success' && steps.database.outcome == 'success' }}
+        if: ${{ !cancelled() && steps.fixtures.outcome == 'success' && steps.database.outcome == 'success' && steps.email_gate.outcome == 'success' }}
         run: |
           mkdir -p artifacts
           read -r -a safety_files <<< "$MIGRATION_SAFETY_TESTS"
@@ -126,7 +153,7 @@ jobs:
         run: poetry run python scripts/check_ci_test_skips.py artifacts/maintained.xml tests/ci-skips.txt
       - name: Create independent legacy qualification genesis
         id: legacy_database
-        if: ${{ !cancelled() && steps.fixtures.outcome == 'success' && steps.database.outcome == 'success' }}
+        if: ${{ !cancelled() && steps.fixtures.outcome == 'success' && steps.database.outcome == 'success' && steps.email_gate.outcome == 'success' }}
         env:
           TEST_DATABASE_URL: postgresql+psycopg://postgres@127.0.0.1:5437/academy_v2_ci
         run: poetry run python -m legacy_probe.genesis academy_v2_legacy_ci
