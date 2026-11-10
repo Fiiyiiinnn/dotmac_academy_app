@@ -115,17 +115,17 @@ def test_unbound_subject_and_student_binding_are_refused(current_account):
 
     # Even a binding created directly through the kernel cannot mint a
     # student session: the login service re-checks the staff cohort.
-    bind_external_identity(
-        a.db,
-        tenant=a.tenant,
-        party=student,
-        provider_binding=oidc_login.provider_binding(),
-        issuer=ISSUER,
-        subject=SUBJECT,
-        bound_by="test-operator",
-        reason="direct kernel bind",
-    )
-    a.db.commit()
+    with a.db.begin():
+        bind_external_identity(
+            a.db,
+            tenant=a.tenant,
+            party=student,
+            provider_binding=oidc_login.provider_binding(),
+            issuer=ISSUER,
+            subject=SUBJECT,
+            bound_by="test-operator",
+            reason="direct kernel bind",
+        )
     client = _FakeClient(SUBJECT)
     started = oidc_login.begin_login(a.db, tenant=a.tenant, client=client)
     a.db.commit()
