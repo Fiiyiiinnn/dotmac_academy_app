@@ -1,10 +1,10 @@
-"""Prepared authenticated account-wide password change; SOURCE ONLY.
+"""Active authenticated account-wide password change through Kernel's owner.
 
-Consumes the future Kernel method-scoped account-change owner. The actual
-request cookie and caller Session/root authorize self; projections/UUIDs do not.
-Every membership/session/token writer must participate in the Party-first
-protocol. Canonical AccountToken FK adoption and hosted qualification remain
-separate gates. No service commit/rollback or external effect occurs here.
+The /account/password route consumes the released method-scoped account-change
+API. The actual request cookie and caller Session/root authorize self;
+projections/UUIDs do not. Canonical account-token foreign keys are already part
+of the composed lineage. Membership/session/token writers must follow the
+Party-first protocol; this service does not commit or roll back its caller.
 """
 
 # Ported at new-composition genesis (presentation-coupled wave).

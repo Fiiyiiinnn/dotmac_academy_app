@@ -51,6 +51,7 @@ jobs:
         tests/test_routeros_readiness.py tests/test_console_document.py
         tests/test_webfig_adapter.py tests/test_webfig_data_parser.py
         tests/test_private_fixture_acquisition.py
+        tests/test_http_journeys.py
     steps:
       - uses: actions/checkout@v4
         with:

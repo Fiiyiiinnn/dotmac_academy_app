@@ -1,0 +1,140 @@
+{
+  "schema": "academy.post-cutover-gaps.v1",
+  "as_of": "2026-11-10",
+  "accepted_runtime": {
+    "repository_id": 1451805046,
+    "commit": "d12260b6996b18b27e04a784042f764bd583952d",
+    "kernel": "0.1.0a108",
+    "live_acceptance_receipt_sha256": "77a1c92de14230717b3f31986ae0772eb5b373294684c1fc5dac2955045e75dd"
+  },
+  "items": [
+    {
+      "id": "admissions-live-proof",
+      "priority": "medium",
+      "status": "open_evidence",
+      "scope": "Applicant apply-to-enrolled business journey, distinct from historical D1 retained-schema admission",
+      "closure": [
+        "Hosted full-assembly HTTP journey passes",
+        "Candidate-bound controlled live applicant journey and owned cleanup recorded",
+        "Explicit non-delivering email boundary; no ERP or lab side effects"
+      ],
+      "implemented_in_this_change": [
+        "tests/test_http_journeys.py admissions manual-review journey"
+      ],
+      "limits": [
+        "Short synthetic assessment does not prove validity or automatic acceptance",
+        "Hosted HTTP proof does not substitute for recorded production live proof"
+      ]
+    },
+    {
+      "id": "http-journey-regressions",
+      "priority": "medium",
+      "status": "hosted_regressions_added",
+      "scope": "Full application HTTP assembly rather than only service or bare-router calls",
+      "implemented_in_this_change": [
+        "apply/assessment/admin review/onboarding/enrollment/invite claim/login",
+        "forgot/reset privacy, CSRF, invalid/reused tokens and login",
+        "lab launch/poll/check/reset intent and foreign-owner denial"
+      ],
+      "closure": [
+        "New journeys and all required existing CI partitions pass",
+        "Retain JUnit collection and skip evidence"
+      ],
+      "limits": [
+        "File-count ratios are source-pattern indicators, not route coverage quality",
+        "Lab route tests enqueue intents and use explicit test projections; no physical provider is exercised"
+      ],
+      "qualification_evidence": "Required CI and JUnit for the exact revision; this tracker does not certify a passing run"
+    },
+    {
+      "id": "erp-app-sync-receiver",
+      "priority": "low_dependency",
+      "status": "off_pending_receiver_qualification",
+      "scope": "Completion observation shadow sender; existing ERP webhook remains authoritative",
+      "closure": [
+        "Qualified destination receiver and authenticated route contract",
+        "HMAC and idempotency/replay proof",
+        "Authorized shadow enablement and observed delivery/readback"
+      ],
+      "limits": [
+        "ERP v2 skeleton existence alone is insufficient",
+        "Sender shadow result never stamps legacy checkpoint",
+        "Progress observations remain outside this completion-only contract"
+      ]
+    },
+    {
+      "id": "kernel-settings-read-adoption",
+      "priority": "low_internal",
+      "status": "phase_0_read_cutover_pending",
+      "evidence": [
+        "A production comparison recorded 159 keys with zero divergence on 2026-11-08"
+      ],
+      "scope": "Legacy settings reads remain authoritative; process-local Kernel specs are registered",
+      "closure": [
+        "Strict Kernel read path and Academy relations-layer integration",
+        "Fresh current-candidate comparison and read-path proof",
+        "Deliberate phase advancement"
+      ],
+      "limits": [
+        "Historical zero divergence does not itself activate Kernel reads"
+      ]
+    },
+    {
+      "id": "credential-operation-adoption",
+      "priority": "low_internal",
+      "status": "stale_blockers_corrected_current_user_flows_wired",
+      "evidence": [
+        "a0003 already persists lifecycle_version/reset_required",
+        "a0004 already binds AccountToken to canonical Party/PartyPerson identities",
+        "Kernel a108 already provides verify, complete_account_reset, assign_authorized_password and change_authenticated_account_password",
+        "Active route callsites consume these owners; the misleading source-only/future migration headers are corrected in this revision"
+      ],
+      "scope": "Active login, token-authorized reset, invitation assignment and authenticated password change consume released Kernel owners",
+      "closure": [
+        "Qualify active credential HTTP journeys at the exact revision",
+        "Track future cohort force-reset/generated-material provisioning separately if product scope requires them"
+      ],
+      "limits": [
+        "Current user flows do not require the future API/schema work described by stale headers",
+        "No Academy caller/operator workflow exists for cohort force-reset or generated-material provisioning; this change does not add those use cases"
+      ]
+    },
+    {
+      "id": "learner-weekly-digest",
+      "priority": "product_decision",
+      "status": "off_by_default_decision_held",
+      "scope": "Learner weekly digest, separate from instructor email-digest which defaults enabled",
+      "closure": [
+        "Record explicit product decision for learner digest",
+        "If enabled, review recipients, effective settings and scheduled delivery proof"
+      ],
+      "limits": [
+        "Dormancy at the existing default is parity, not a deployment regression",
+        "No enablement is performed by this change"
+      ]
+    },
+    {
+      "id": "post-cutover-docs",
+      "priority": "minor",
+      "status": "corrected_in_this_revision",
+      "implemented_in_this_change": [
+        "README current composition and canonical repository identity",
+        "docs/cutover.md current acceptance, gaps and historical boundaries",
+        "docs/flip-runbook.md historical initial flip and current fix-forward-only recovery"
+      ],
+      "closure": [
+        "Merge reviewed documentation revision"
+      ],
+      "limits": [
+        "Legacy DB, final dump, source and receipts remain retained until explicit deletion approval"
+      ]
+    }
+  ],
+  "related_backlog": {
+    "repository_naming": "completed: canonical public michaelayoade/dotmac_academy_app ID1451805046; old histories archived",
+    "legacy_retirement": "separate operational cleanup; preserve shared resources needed by accepted application",
+    "d8_residual_authority": "separate itemized authority evidence; not closed by browser acceptance",
+    "d1_record_reconciliation": "historical retained-schema route superseded; reconcile any separately applicable hosted-proof requirement without conflating applicant admissions",
+    "archive_deletion": "held until explicit approval"
+  }
+}

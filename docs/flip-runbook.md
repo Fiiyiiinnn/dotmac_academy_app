@@ -1,15 +1,22 @@
-# Academy v2 downtime flip runbook
+# Academy historical downtime flip runbook
 
-This runbook describes the sequence and acceptance evidence. Use deployment
-packet issue 3 for the concrete host commands, service names, and target
-details; this document intentionally does not invent host-specific names or
-commands. No production flip is claimed or authorized by this document.
+> **Historical procedure — updated 2026-11-10.** The initial flip completed on
+> 2026-11-08 and the new application has accepted production writes. Recovery
+> is **fix forward only**: never restore legacy traffic or the legacy database
+> as the production recovery target. This document does not authorize another
+> import, flip, rollback, retirement or deletion. See [current cutover status](cutover.md).
+
+The sequence below preserves the original initial-flip procedure and acceptance
+evidence requirements. Deployment packet issue 3 supplied the concrete host
+commands, service names and target details; this document does not invent
+host-specific names or commands. Its original pre-write recovery procedure
+applied only before the completed flip and is not current authorization.
 
 The candidate must be one exact immutable commit whose hosted checks are
 green. Pin its full commit ID and CI run in the private receipt before the
 window. Do not substitute a later green commit during execution.
 
-## Decisions baked in
+## Historical decisions
 
 - People without credentials (108 in the 2026-11-07 inventory) import as
   parties with no login; they claim later via invite/reset. Excluding them
@@ -23,7 +30,7 @@ window. Do not substitute a later green commit during execution.
 - Auth sessions expire at the flip by design; password hashes carry verbatim
   and upgrade to Argon2id on first login.
 
-## Downtime sequence
+## Historical initial downtime sequence
 
 1. **Bind the source first.** Using deployment packet issue 3, record and
    independently verify the source host, database name, PostgreSQL cluster
@@ -114,28 +121,38 @@ window. Do not substitute a later green commit during execution.
     production `authorized_keys` after successful completion. Also revoke it
     on abort whenever it is no longer needed to perform the approved recovery
     or evidence handling.
-12. **Retain evidence and retire deliberately.** Keep the final dump and
-    private receipts according to the approved retention plan. Retire the
-    legacy app only after the acceptance window and explicit acceptance.
+12. **Retain evidence and retire deliberately.** Keep the legacy database,
+    final dump, source and private receipts as archive/evidence until Michael
+    explicitly approves deletion. Legacy retirement remains a separate
+    authorized follow-up; acceptance alone does not authorize deletion.
 
-## Rollback
+## Current recovery and retention
 
-**Before production traffic or v2 writes:** stop all v2 processes, workers,
-timers, schedulers, and reconciliation tasks; remove and verify cleanup of
-the v2 smoke runtime; then abandon the destination database. Reinstate only
-the verified legacy services, with their fences removed deliberately, and
-confirm service health. Keep the original source identity and snapshot
-evidence. Revoke the snapshot key if it is no longer needed.
+The new application has accepted production writes since 2026-11-08.
+Michael's fix-forward-only ruling supersedes the original rollback procedure
+and the later suggestion to await a reconciliation/restore decision before
+returning to legacy. Resolve defects in the current application; never restore
+legacy traffic or the legacy database as the production recovery target.
+Preserve evidence and obtain the appropriate authorization for any further
+production operation.
 
-**After any v2 production writes:** do not point traffic back to legacy as an
-automatic rollback. V2 writes are not replayed automatically. Stop and fence
-both sides, preserve evidence, and require an explicit reconciliation or
-restore plan before changing service direction. Record the approved plan and
-its decision owner in the private receipt.
+Retain the legacy database, final dump, source and receipts as archive/evidence
+until Michael explicitly approves deletion. Legacy retirement and residual
+D8 authority remain separate work; completed live acceptance does not close
+those items or authorize removal of potentially shared resources.
 
-## Private receipt
+### Historical pre-write recovery boundary
 
-Keep the receipt access-restricted and out of Git. It records at least:
+Before the initial flip accepted any production writes, the original procedure
+allowed stopping every new-application writer, cleaning up its smoke runtime,
+abandoning the unaccepted destination and reinstating verified legacy services.
+That boundary has passed. This paragraph preserves the historical decision;
+it must not be used to authorize a present rollback.
+
+## Historical private receipt requirements
+
+Keep retained receipts access-restricted and out of Git. The initial-flip
+receipt requirements included:
 
 - exact candidate commit and hosted green CI run;
 - source host/database/cluster identity, tenant scope, migration head, and
@@ -151,5 +168,5 @@ Keep the receipt access-restricted and out of Git. It records at least:
   history;
 - smoke identity, suppressed external effects, smoke results, and runtime
   teardown evidence;
-- restart policy, rollback disposition, snapshot-key revocation on completion
+- restart policy, historical recovery disposition, snapshot-key revocation on completion
   or abort, and remaining cleanup/retention actions.

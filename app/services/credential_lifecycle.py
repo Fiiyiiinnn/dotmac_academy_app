@@ -1,9 +1,9 @@
-"""Academy's token-authorized account-reset ports for the canonical owner.
+"""Academy's active token-authorized account-reset ports for Kernel's owner.
 
-SOURCE ONLY: requires future Kernel account reset + identity-lock migration,
-canonical identity adoption, retargeted AccountToken.person_id FKs and persisted
-AcademyCredentialPolicy.reset_required BOOLEAN NOT NULL with no defaults. The
-existing product model does not yet supply that field. No activation is implied.
+The public reset route uses the released account-reset API. The composed
+identity migrations already persist lifecycle_version/reset_required and bind
+account tokens to canonical Party/PartyPerson identities. These are current
+schema facts, not future activation prerequisites.
 
 All credential membership/session writers must participate in the canonical
 Party lock protocol. The caller owns the Session and root transaction. Expected

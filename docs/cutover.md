@@ -1,103 +1,100 @@
-# Academy v2 candidate and cutover gates
+# Academy cutover status and historical evidence
 
-## Current evidence and limits
+## Current status — 2026-11-10
 
-The 2026-11-07 production-snapshot rehearsal and previous hosted qualification
-are historical supporting evidence. The cutover-safety corrections require a
-fresh exact-revision CI result and a new isolated rehearsal before a flip.
+The production data cutover completed on 2026-11-08. The new application has
+accepted live writes since that flip. Michael subsequently approved exact
+public source revision `d12260b6996b18b27e04a784042f764bd583952d`, tree
+`d273399b7ccaa812208a242dc7794f1289873819`, deployed to both web and lab
+hosts on 2026-11-10. No second import or traffic flip is pending.
 
-`scripts/v6_import.run_import` now owns one destination root transaction for
-identity, Learning V6, product, ERP history and settings. It refuses nonfresh
-or RLS-filtered extents and aborts on any exception. Product mappings reject
-unreviewed schema changes and compare all mapped values. ERP ACKs and immutable
-imported memberships have a dedicated verified transfer. Settings are one
-validated batch, with no per-key commit fallback.
+The canonical public repository is
+[michaelayoade/dotmac_academy_app](https://github.com/michaelayoade/dotmac_academy_app),
+stable GitHub ID `1451805046`. Repository naming is complete. See the
+[repository identity crosswalk](../README.md#public-source-and-private-qualification-data)
+for the separate public legacy archive, private composed-app archive and private
+fixture repository. Names may change; stable repository IDs and exact revisions
+bind the evidence.
 
-Use [the downtime runbook](flip-runbook.md) for writer fencing, source-bound
-quiet checks, smoke isolation and rollback. A green CI result does not prove
-live writer shutdown or physical runtime absence. Source/destination identity,
-archive digest, exact source schema, provider inventory and operational receipts
-remain gates for the approved execution window.
+**Recovery is fix forward only.** The legacy database is not a rollback target.
+Retain the legacy database, final dump, source and receipts as archive/evidence
+until Michael explicitly approves deletion. Earlier instructions to return
+traffic to legacy, or to seek a reconciliation decision before doing so, are
+superseded by this ruling. Acceptance does not itself authorize retirement or
+deletion; legacy retirement and D8 residual authority remain separate work.
 
-Detailed mapping review: [migration preflight findings](migration-preflight.md).
+## Qualification and live acceptance
 
-## Gate 1: reproducible candidate
+[Public CI run 42687722118](https://github.com/michaelayoade/dotmac_academy_app/actions/runs/42687722118)
+qualified the exact deployed revision: **4,903 passed**, zero failures/errors,
+and two declared legacy skips (`test_banks_lint_clean` and `test_full_flow`).
+The run includes synthetic reporting-privacy checks before pinned private
+fixture acquisition. Missing fixture access, changed bytes or incomplete
+execution fail qualification. See the [README](../README.md) for the trusted
+CI and private fixture requirements.
 
-- Private GitHub repository `michaelayoade/dotmac_academy_v2`.
-- Poetry 2.4.1, Python 3.12, committed dependency lock, exact platform pins.
-- Repository Actions secret `FORGEJO_READ_TOKEN`, sourced from OpenBao
-  `secret/dotmac/forgejo/read-token#value`; never put its value in source or logs.
-- CI lint/format, maintained PostgreSQL tests and declared legacy qualification
-  all pass at the candidate revision. Keep JUnit and legacy-selection artifacts.
-- Review every legacy exclusion; copied tests of retired internals do not
-  establish parity for the active replacement. Open parity gaps block release.
-- CI uses a disposable loopback-only PostgreSQL service. Trust authentication
-  and `deploy/initdb-roles.sql` sample passwords are CI-only, not prod assets.
+The deployed composition uses Kernel `0.1.0a108`, Learning `0.1.0a6`, UI
+`0.1.0a9`, delivery-resend `0.1.0a1` and app-sync source
+`e1bfa54e23bd8184c20beb2dc1d9f0938fa336f6`. All three approved acceptance
+areas passed:
 
-Detailed source review: [migration preflight findings](migration-preflight.md).
+| Area | Evidence and limit |
+| --- | --- |
+| Delivery-resend adoption | Installed module and actual caller wiring verified, backed by 670 hosted authority cases. No real SMTP send probe was performed. |
+| Linux ttyd | Scoped CSP, real WebSocket keyboard input and terminal output, isolation, saved grade/reload and logout passed. A separate authenticated wrong-origin Upgrade request returned 403; browser cookie transmission was not established by the browser probe. |
+| RouterOS/WebFig | Ready before first console 200, normal device login and Quick Set-to-WebFig navigation, all nine schemas, confined device POSTs, Interfaces/group behavior, denial checks and logout passed, with zero CSP script errors. |
 
-## Gate 2: complete the migration caller before a production-data rehearsal
+Owned fixture cleanup completed: zero owned runtimes, active fixture sessions
+or synthetic outbound mail remained. Seven original timers were restored and
+active. Historical reaped records remain evidence, not live runtimes.
 
-The implemented Academy operator pipeline must be qualified for these steps at the exact candidate revision:
+The final `AcademyLiveAcceptanceReceipt.v1` has `overall_acceptance=true` and
+SHA256 `77a1c92de14230717b3f31986ae0772eb5b373294684c1fc5dac2955045e75dd`.
+The full receipt and operational evidence are retained privately; public docs
+do not contain host details, private operational paths or fixture payloads.
+These results establish the named acceptance scopes, not closure of all
+migration, integration or module-adoption debt.
 
-1. Bind the candidate revision, restored snapshot digest, exact source and
-   destination database identities, and the explicit tenant extent.
-2. Import tenant and identity records (people to genuine kernel Party,
-   PartyPerson and credentials/roles) preserving UUIDs; reconcile every mapping.
-3. Build Learning SnapshotV6 from the restored legacy snapshot. Retain a private
-   exceptions queue and refuse import when any exception remains unresolved.
-   Never silently discard rows or substitute semantic defaults after refusal.
-4. Import and independently verify V6 within one destination root transaction
-   per declared tenant extent, as required by the released Learning contract.
-5. Transform-copy Academy product tables in dependency order, including ERP ACK
-   facts; reconcile keys, row counts and values against the declared mapping.
-6. Import platform settings through validated `set_many`; report rejected keys,
-   invalid values and NULL policy decisions. SMTP credentials stay env-only.
-7. Produce a private receipt: source/destination identities, dump checksum,
-   candidate SHA and release pins, tenant extent, start/end times, expected and
-   observed per-table counts, identity equivalence, settings outcomes, exception
-   decisions, verification and smoke outcomes. Do not put row data, credentials,
-   password hashes or snapshots in CI artifacts or Git.
+## Remaining work and authority boundaries
 
-The caller must never import a partial snapshot merely because `build_snapshot`
-returned both a snapshot and exceptions. Any refusal leaves the destination unaccepted; abandon it or diagnose within
-the approved isolated rehearsal. Do not promote a partially verified database.
+| Work item | Current status / acceptance still needed |
+| --- | --- |
+| Admissions business journey | Live apply-to-enrolled proof is not recorded. Do not infer it from login, lab acceptance or the older D1 route. |
+| Thin HTTP regression coverage | `tests/test_http_journeys.py` exercises the full application assembly for admissions/manual review, reset/invite and lab intent/ownership journeys. These run in the first CI partition; retain exact-revision JUnit evidence. Aggregate test or file counts do not establish complete route coverage. |
+| ERP app-sync | An ERP v2 application skeleton is recorded; receiver qualification and live availability remain unproven here. Closure requires a qualified authenticated receiver route, idempotency and HMAC behavior, followed by authorized shadow enablement and readback. The old ERP webhook remains authoritative. |
+| Settings | The historical 2026-11-08 production comparison passed: 159 keys, zero divergence. Legacy settings remain authoritative pending a deliberate Kernel strict-read/relations-layer cutover and fresh proof; the historical comparison alone does not establish that cutover. |
+| Credential operations | Current login, reset, invitation assignment and authenticated password change are wired to released Kernel owners. `a0003` persists lifecycle/reset policy and `a0004` binds tokens to Party/PartyPerson; generic future API/migration and SOURCE ONLY headers were stale and are corrected here. The new HTTP journeys cover these active user flows; exact-revision hosted qualification remains required. Cohort force-reset and generated-material provisioning have no Academy caller; they are separate use cases, not prerequisites for current flows. |
+| Weekly learner digest | Off by default, matching the existing parity gate. Enabling it needs an explicit product decision. The separate instructor email digest defaults on; its policy does not establish learner digest activation. |
+| D1 retained-schema admission | Historical platform-route work for the old application, distinct from the Admissions apply-to-enrolled business journey. Older records conflict on disposition/proof; reconcile them against the new-composition ruling before claiming closure. |
+| Legacy retirement and D8 residual authority | Separate follow-ups; retain archive/evidence and review residual ownership without assuming live console acceptance closes them. |
 
-## Gate 3: separately authorized production snapshot rehearsal
+Repository naming is completed work and is not an outstanding adoption gate.
 
-Approval must name the production source and the dedicated test-server target.
-Only a read-only `pg_dump` is authorized at this gate; no traffic switch,
-production writes or writer stoppage. Stream a custom-format dump using the
-approved secret loader, protect it at rest (0600/private directory), record its
-checksum, and restore only into a uniquely named isolated test database.
+The [seven-gap closure tracker](post-cutover-gaps.json) records evidence, limits
+and closure criteria separately from implementation. Hosted HTTP qualification
+and production live proof are distinct records.
 
-Use the same candidate pipeline qualified by CI. Disable outbound SMTP/ERP and
-lab provisioning on the restored environment. Review all exceptions explicitly,
-reconcile data and exercise health, login, lab-result consequences and worker
-ACL/RLS. Record duration so the downtime estimate includes dump, restore,
-transformation, verification and smoke. Remove only this rehearsal's resources
-under the agreed retention policy. Never alter shared host services/firewalls.
+## Historical migration evidence
 
-## Gate 4: deployment and recovery packet
+The earlier candidate gates, production-snapshot rehearsals, V6 transfer and
+one downtime flip explain how the current application was established. They
+are historical evidence, not instructions to repeat a production import or
+flip. Their detailed mappings, schema decisions, identities, exceptions and
+receipts remain retained under the existing privacy and retention boundaries.
 
-Before requesting the downtime window, record the target host, immutable image
-or release identity, runtime roles and least-privilege grants, web/worker
-entrypoints, SMTP env secret, ERP/lab-host settings, writer inventory, health
-checks, traffic switch and recovery commands. Production roles need separately
-provisioned secrets, never the CI passwords. Prove that all web/CLI/scheduler,
-lab-worker and inbound integration writers can be fenced.
+- [Migration preflight findings](migration-preflight.md) record mapping and
+  safety review. The importer binds one destination root transaction for
+  identity, Learning V6, product, ERP history and settings, refuses nonfresh or
+  RLS-filtered extents, rejects unresolved exceptions and verifies mapped
+  values. Those controls do not authorize running it against the live target.
+- [The historical downtime runbook](flip-runbook.md) records writer fencing,
+  quiescence, final dump, smoke isolation and the original flip process. Any
+  pre-write rollback wording there is superseded by the current fix-forward
+  ruling above. It is not a present rollback or retirement authorization.
+- Private migration and acceptance receipts bind source/destination identities,
+  snapshot digests, revisions, pins, tenant extent, reconciliation, exceptions
+  and smoke outcomes. Keep row data, password hashes, snapshots, credentials,
+  vendor bytes and unsanitized diagnostics out of public Git and CI artifacts.
 
-Recovery has a precise boundary: before v2 accepts writes, return traffic only
-after verifying the legacy database is unchanged and all v2 writers are stopped.
-After v2 accepts writes, returning to a stale legacy database loses those writes;
-recovery needs an explicitly approved reconciliation/restore decision. Retaining
-the legacy app alone does not prove rollback safety.
-
-## Gate 5: separately authorized downtime flip
-
-After Gates 1-4 pass and Michael approves a window: fence every writer, verify
-quiescence, capture the final dump, run the identical rehearsed pipeline, check
-receipt and smoke outcomes, then switch traffic and enable the intended writers.
-Abort before traffic if any reconciliation, exception or smoke gate fails.
-Retain legacy read-only through acceptance; archive and close superseded D8
-items only after acceptance. Snapshot permission does not authorize this gate.
+Any further production operation needs its own authorized scope. Isolated
+migration work belongs on the dedicated test server; do not use local Docker.
