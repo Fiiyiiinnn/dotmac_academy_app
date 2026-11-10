@@ -3,7 +3,8 @@
 DISPOSITIONS: test_owner_composition_exact_declared_owners. v2 census
 re-derived: ``platform_settings`` is superseded by kernel
 ``domain_settings`` (kernel-owned, not product); ``lab_result_deliveries``
-is product-owned in v2. Product table count remains 19.
+is product-owned in v2. The new OIDC ceremony-state table brings the product
+table count to 20.
 
 Genuine factory/owner checks for hosted CI; never executed locally.
 
@@ -66,6 +67,7 @@ def test_ordinary_factory_uses_all_actual_owner_declarations():
             "academy_credential_policies",
             "academy_erp_completion_checkpoints",
             "academy_erp_imported_completion_keys",
+            "academy_oidc_login_states",
             "account_tokens",
             "applicants",
             "email_outbox",
@@ -83,7 +85,7 @@ def test_ordinary_factory_uses_all_actual_owner_declarations():
             "tenant_entrance_defaults",
         )
     }
-    assert len(products) == 19
+    assert len(products) == 20
     assert {key for key, owner in graph.owners.items() if owner == "academy"} == {
         physical_key(table) for table in products
     }

@@ -74,6 +74,53 @@ def _bootstrap(args: argparse.Namespace) -> None:
     print(f"tenant {t.slug} ({t.id}) created")
 
 
+def _oidc_party(db: Session, *, tenant_id, email: str):
+    """Resolve the operator-named local party for an OIDC binding act."""
+    from dotmac_kernel.models import Party
+    from sqlalchemy import func, select
+
+    from app.services.identity import normalize_email
+
+    parties = db.scalars(
+        select(Party)
+        .where(Party.tenant_id == tenant_id, func.lower(Party.email) == normalize_email(email))
+        .execution_options(populate_existing=True)
+    ).all()
+    if len(parties) != 1:
+        raise SystemExit(f"expected exactly one party for {email!r} in this tenant, found {len(parties)}")
+    return parties[0]
+
+
+def _oidc_bind(args: argparse.Namespace) -> None:
+    from app.services import oidc_login
+
+    with _tenant_session(args.tenant_slug) as (db, tenant):
+        party = _oidc_party(db, tenant_id=tenant.id, email=args.email)
+        try:
+            binding = oidc_login.bind_staff_identity(
+                db,
+                tenant=tenant,
+                party=party,
+                subject=args.subject,
+                bound_by=args.bound_by,
+                reason=args.reason,
+            )
+        except ValueError as exc:
+            raise SystemExit(str(exc)) from exc
+        party_id, binding_id = party.id, binding.id
+    print(f"bound party {party_id} binding {binding_id}")
+
+
+def _oidc_disable(args: argparse.Namespace) -> None:
+    from app.services import oidc_login
+
+    with _tenant_session(args.tenant_slug) as (db, tenant):
+        party = _oidc_party(db, tenant_id=tenant.id, email=args.email)
+        party_id = party.id
+        count = oidc_login.disable_staff_identities(db, tenant=tenant, party_id=party_id)
+    print(f"disabled {count} binding(s) for party {party_id}")
+
+
 def _settings_shadow_sweep(args: argparse.Namespace) -> None:
     """ADR-0003 shadow gate: kernel resolution vs the legacy store, read-only.
 
@@ -1275,6 +1322,30 @@ def main() -> None:
     b.add_argument("--admin-email", required=True, help="Email for the initial admin user")
     b.add_argument("--admin-password", required=True, help="Password for the initial admin user")
     b.set_defaults(func=_bootstrap)
+
+    ob = sub.add_parser(
+        "oidc-bind",
+        help="Bind one exact Keycloak subject to one staff party (OIDC pilot).",
+        description=(
+            "Explicit operator act: bind the exact Keycloak subject (sub) for "
+            "a staff member to their Academy party. No email matching and no "
+            "just-in-time provisioning happen at login."
+        ),
+    )
+    ob.add_argument("--tenant-slug", required=True, help="Slug of the target tenant")
+    ob.add_argument("--email", required=True, help="The staff member's Academy email (lookup only)")
+    ob.add_argument("--subject", required=True, help="Exact Keycloak subject (sub) from the IdP admin console")
+    ob.add_argument("--bound-by", required=True, help="Operator identity recorded on the binding")
+    ob.add_argument("--reason", required=True, help="Evidence recorded on the binding")
+    ob.set_defaults(func=_oidc_bind)
+
+    od = sub.add_parser(
+        "oidc-disable",
+        help="Disable a party's Keycloak bindings and revoke their OIDC sessions.",
+    )
+    od.add_argument("--tenant-slug", required=True, help="Slug of the target tenant")
+    od.add_argument("--email", required=True, help="The staff member's Academy email (lookup only)")
+    od.set_defaults(func=_oidc_disable)
 
     imp = sub.add_parser(
         "import-foundation",

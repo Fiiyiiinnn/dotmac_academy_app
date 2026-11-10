@@ -53,6 +53,8 @@ jobs:
         tests/test_private_fixture_acquisition.py
         tests/test_http_journeys.py
         tests/test_email_delivery_gate.py
+        tests/test_oidc_login.py tests/test_oidc_http_journeys.py
+        tests/test_oidc_boundaries.py tests/test_oidc_model_ownership.py
     steps:
       - uses: actions/checkout@v4
         with:
