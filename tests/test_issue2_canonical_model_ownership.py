@@ -333,6 +333,7 @@ def test_actual_installed_disabled_learning_is_in_inspection_graph():
     assert graph.owners[("public", "tenants")] == "kernel"
     assert graph.owners[("public", "academy_erp_completion_checkpoints")] == "academy"
     assert graph.owners[("public", "academy_erp_imported_completion_keys")] == "academy"
+    assert graph.owners[("public", "academy_oidc_login_states")] == "academy"
     assert all(
         fk.column.table.metadata is graph.metadata
         for table in graph.metadata.tables.values()
@@ -345,13 +346,16 @@ def test_identity_reference_copies_are_excluded_from_product_ownership():
     from app.models.identity_extensions import IdentityExtensionBase
 
     tables = product_owned_tables()
-    assert len(tables) == 19
-    assert len({physical_key(table) for table in tables}) == 19
+    assert len(tables) == 20
+    assert len({physical_key(table) for table in tables}) == 20
     assert "public.tenants" in IdentityExtensionBase.metadata.tables
     assert all(table.name not in {"tenants", "parties", "party_persons", "user_credentials"} for table in tables)
-    assert {"academy_account_profiles", "academy_credential_policies", "account_tokens"} <= {
-        table.name for table in tables
-    }
+    assert {
+        "academy_account_profiles",
+        "academy_credential_policies",
+        "account_tokens",
+        "academy_oidc_login_states",
+    } <= {table.name for table in tables}
 
 
 def test_normalized_duplicate_owners_are_refused_before_copy():

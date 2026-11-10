@@ -92,6 +92,7 @@ def product_owned_tables() -> tuple[sa.Table, ...]:
     from app.models.lab import LabConsoleActivity, LabInstance, LabOperation, LabTemplate
     from app.models.lab_result_delivery import LabResultDelivery
     from app.models.notification import Notification
+    from app.models.oidc_login import AcademyOidcLoginState
     from app.models.onboarding import OnboardingTask
     from app.models.reminder import ReminderLog, ReminderPreference
 
@@ -116,6 +117,7 @@ def product_owned_tables() -> tuple[sa.Table, ...]:
             ERPImportedCompletionKey,
             AcademyAccountProfile,
             AcademyCredentialPolicy,
+            AcademyOidcLoginState,
             FacilitatorNomination,
             FacilitatorRequirement,
         )

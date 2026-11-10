@@ -196,6 +196,8 @@ assembly = ProductAssemblySpec(
                 WebRouteRef("academy", "legacy", "login_form"),
                 WebRouteRef("academy", "legacy", "login"),
                 WebRouteRef("academy", "legacy", "logout"),
+                WebRouteRef("academy", "legacy", "oidc_login_start"),
+                WebRouteRef("academy", "legacy", "oidc_login_callback"),
                 WebRouteRef("academy", "legacy", "forgot_form"),
                 WebRouteRef("academy", "legacy", "forgot_submit"),
                 WebRouteRef("academy", "legacy", "reset_form"),
