@@ -57,6 +57,9 @@
           <img src="/static/img/cover-{{ item.course.slug }}.webp" alt="" loading="lazy" data-hide-on-error>
           <div class="card-body">
             <h3>{{ item.course.title }}</h3>
+            {% if item.course.title == "Fiber Engineering" %}
+            <p><a href="/fibre-optic-training">View fibre optic training</a></p>
+            {% endif %}
             <p class="card-meta"><b>{{ item.chapter_count }}</b> chapters · chapter tests + final assessment</p>
           </div>
         </article>
